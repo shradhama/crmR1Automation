@@ -362,6 +362,7 @@ public WebElement getContactSavenCloseBtn() {
 		wait.until(ExpectedConditions.elementToBeClickable(selectcallto));
 		Thread.sleep(5000);
 		return driver.findElement(selectcallto);
+	}
 
 	public WebElement getContactTypeMedia()
 	{

@@ -262,21 +262,12 @@ public class ContactPageTest extends base{
 
 		//Open Contacts page and open existing contact
 		hp.getContactsTab().click();
-
 		Actions action = new Actions(driver);
 		WebElement OpenContact = cp.getopencontact();
 		action.doubleClick(OpenContact).perform();
-		
-
-		cp.getselectexistingcontact().click();
-		cp.getscrollrightongrid().sendKeys(Keys.ARROW_RIGHT);
-		cp.getopenexistingcontact().click();
-
-
 		amro = new CRMAddMarketingRelationshipOwner(driver);
 
 		//Click Arrow for Marketing Relationship Owner
-
 		amro.gethdbtn().click();
 
 		//Click on Marketing Relationship Owner field search icon  to select a user from lookup
@@ -342,10 +333,8 @@ public class ContactPageTest extends base{
 
 		//Save Phone Call
 		ap.getAccSaveCloseBtn().click();
-
 		act = new Actions(driver);
 		act.moveToElement(ap.getPhoneCallTimelineSubject()).perform();
-
 		String validatephonecallsubject = ap.getPhoneCallTimelineSubject().getText();
 		System.out.println("Phone Call Subject is: "+validatephonecallsubject);
 		Assert.assertEquals(validatephonecallsubject, phonesubject);
