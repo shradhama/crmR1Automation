@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,7 +30,7 @@ public class CRMContactPage {
 	By savecontact = By.xpath("//button[@aria-label = 'Save']");
 	By verifycontact = By.xpath("//h1[@data-id='header_title']");
 	By contactformemailtxtfield = By.xpath("//input[@data-id='emailaddress1.fieldControl-mail-text-input']");
-	By contactformbusinessphonetxtfield = By.xpath("//input[@aria-describedby='id-fd46b725-b6a7-47e9-b1d0-6f99bbc77f32-10-telephone16-telephone1.fieldControl-InputMaskControl-description']");
+	By contactformbusinessphonetxtfield = By.xpath("//input[@aria-label='Business Phone']");
 	By contactsectionmenubtn = By.xpath("//button[@data-lp-id='SubGridStandard:contact-OverflowButton']");
 	By contactsavenclosebtn = By.xpath("//button[@aria-label='Save & Close']");
 	By contactnameinheader = By.xpath("//h1[@data-id='header_title']");
@@ -36,7 +38,7 @@ public class CRMContactPage {
 	By createnewcontactbtn = By.xpath("//button[@aria-label='New']");
 	By contactfirstnamelabel = By.xpath("//label[text()='First Name']");
 	By contacttypetxtbx = By.xpath("//input[@id='xxc_typecode_ledit']");
-	By contacttypeexpandbtn = By.xpath("//button[@aria-label='Toggle menu']");
+	By contacttypeexpandbtn = By.xpath("//div[@data-lp-id='MscrmControls.MultiSelectPicklist.UpdMSPicklistControl|xxc_typecode.fieldControl|contact']/div/div[6]/div[1]/div[2]/button[1]/span[1]");
 	By contacttypebuyer = By.xpath("//div[contains(text(),'Buyer')]");
 	By contactaccountnametxtbx = By.xpath("//input[@aria-label='Account Name, Lookup']");
 	By searchrecordsbtn = By.xpath("//button[@aria-label='Search records for Account Name, Lookup field']");
@@ -57,11 +59,19 @@ public class CRMContactPage {
 	By contactstatusoutofbusiness = By.xpath("//option[contains(text(),'Out of Business')]");
 	By statusreasonoutofbusinessinheader = By.xpath("//div[@title='Out of Business']");
 	By contactstatusreason = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.PicklistStatusControl|header_statuscode.fieldControl|contact']");
-	
 	By selectexistingcontact = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[2]/div");
 	By scrollrightongrid = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[4]/div[10]");
 	By openexistingcontact = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[2]/div[10]/div[1]/button[1]");
-	
+	By contacttypemedia = By.xpath("//div[contains(text(),'Media')]");
+	By jobfunctionfieldlabel = By.xpath("//label[contains(text(),'Job Function')]");
+	By jobfunctionfieldtxtbox = By.xpath("//input[@aria-label='Job Function']");
+	By jobfunctionfieldexpandbtn = By.xpath("//button[@aria-label='Toggle menu']");
+	By jobfunctionvalueslist = By.xpath("//div[@id='xxc_jobrolecode_i']/div[6]/div[2]/ul/li");
+	By jobfunctionvalue = By.xpath("//div[@id='xxc_jobrolecode_i']/div[6]/div[2]/ul/li[1]/label");
+	By contactrefreshbtn = By.xpath("//button[@aria-label='Refresh']");
+	By contacttypeselectedvaluetxtbx = By.xpath("//div[@data-lp-id='MscrmControls.MultiSelectPicklist.UpdMSPicklistControl|xxc_typecode.fieldControl|contact']");
+	By removecontacttypemediabtn = By.xpath("//button[@aria-label='Remove Media']");
+	By businessphonelabel = By.xpath("//label[text()='Business Phone']");
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -338,5 +348,54 @@ public WebElement getContactSavenCloseBtn() {
 		return driver.findElement(openexistingcontact);
 	}
 	
+	public WebElement getContactTypeMedia()
+	{
+		return driver.findElement(contacttypemedia);
+	}
+	
+	public List<WebElement> getJobFunctionFieldLabel()
+	{
+		return driver.findElements(jobfunctionfieldlabel);
+	}
+	
+	public WebElement getJobFunctionFieldTxtBox()
+	{
+		return driver.findElement(jobfunctionfieldtxtbox);
+	}
+	
+	public WebElement getJobFunctionFieldExpandBtn()
+	{
+		return driver.findElement(jobfunctionfieldexpandbtn);
+	}
+	
+	public List<WebElement> getJobFunctionvValuesList()
+	{
+		return driver.findElements(jobfunctionvalueslist);
+	}
+	
+	public WebElement getJobFunctionValue()
+	{
+		return driver.findElement(jobfunctionvalue);
+	}
+	public WebElement getContactFormRefreshBtn() throws InterruptedException
+	{
+		Thread.sleep(5000);
+		return driver.findElement(contactrefreshbtn);
+	}
+	
+	public WebElement getContactTypeSelectedValueTxtbx()
+	{
+		return driver.findElement(contacttypeselectedvaluetxtbx);
+	}
+	
+	public WebElement getRemoveContactTypeMediaBtn()
+	{
+		return driver.findElement(removecontacttypemediabtn);
+	}
+
+	public WebElement getBusinessPhoneLabel() {
+		
+		return driver.findElement(businessphonelabel);
+	}
 	
 }
