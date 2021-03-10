@@ -20,9 +20,7 @@ public class CRMAddMarketingRelationshipOwner {
 	
 	// Verify marketing relationship owner added at Summary tab for account
 	By marownerverify = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.SimpleLookupControl|xxc_marketingrelationshipownerid.fieldControl|account']");
-
-	By conmarverify = By.xpath("//div[@data-id = 'xxc_marketingrelationshipownerid.fieldControl-LookupResultsDropdown_xxc_marketingrelationshipownerid_selected_tag_text']");
-	
+	By conmarverifydd = By.xpath("//div[@data-id = 'xxc_marketingrelationshipownerid.fieldControl-LookupResultsDropdown_xxc_marketingrelationshipownerid_selected_tag_text']"); //Locator for Marketing Relationship Owner at COntact Summary tab
 	By owner = By.xpath("//span[@data-id='header_xxc_marketingrelationshipownerid.fieldControl-fullname0_0_1']");
 
 	public CRMAddMarketingRelationshipOwner (WebDriver driver) {
@@ -61,11 +59,11 @@ public class CRMAddMarketingRelationshipOwner {
 	}
 
 	
-	public WebElement getconmarverify() {
+	public WebElement getconmarverifydd() {
 		// TODO Auto-generated method stub
 		wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(conmarverify));
-		return driver.findElement(conmarverify);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(conmarverifydd));
+		return driver.findElement(conmarverifydd);
 	}
 	
 }
