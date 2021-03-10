@@ -57,10 +57,6 @@ public class CRMContactPage {
 	By contactstatusoutofbusiness = By.xpath("//option[contains(text(),'Out of Business')]");
 	By statusreasonoutofbusinessinheader = By.xpath("//div[@title='Out of Business']");
 	By contactstatusreason = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.PicklistStatusControl|header_statuscode.fieldControl|contact']");
-	
-	By selectexistingcontact = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[2]/div");
-	By scrollrightongrid = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[4]/div[10]");
-	By openexistingcontact = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[2]/div[10]/div[1]/button[1]");
 	By opencontact = By.xpath("//div[@data-id = 'cell-0-2']");
 	By calltophonecall = By.xpath("//input[@aria-label = 'Call To, Multiple Selection Lookup']");
 	By searchcallto = By.xpath("//button[@aria-label = 'Search records for Call To, Multiple Selection Lookup field']");
@@ -319,30 +315,6 @@ public WebElement getContactSavenCloseBtn() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasonoutofbusinessinheader));
 		return driver.findElement(contactstatusreason);
-	}
-	
-	public WebElement getscrollrightongrid() throws InterruptedException {
-		
-		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(scrollrightongrid));
-		Thread.sleep(10000);
-		return driver.findElement(scrollrightongrid);
-	}
-	
-	public WebElement getselectexistingcontact() throws InterruptedException {
-		
-		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(selectexistingcontact));
-		Thread.sleep(10000);
-		return driver.findElement(selectexistingcontact);
-	}
-	
-	public WebElement getopenexistingcontact() throws InterruptedException {
-		
-		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(openexistingcontact));
-		Thread.sleep(10000);
-		return driver.findElement(openexistingcontact);
 	}
 	
 	public WebElement getopencontact() throws InterruptedException {
