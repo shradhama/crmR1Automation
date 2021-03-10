@@ -72,6 +72,14 @@ public class CRMContactPage {
 	By contacttypeselectedvaluetxtbx = By.xpath("//div[@data-lp-id='MscrmControls.MultiSelectPicklist.UpdMSPicklistControl|xxc_typecode.fieldControl|contact']");
 	By removecontacttypemediabtn = By.xpath("//button[@aria-label='Remove Media']");
 	By businessphonelabel = By.xpath("//label[text()='Business Phone']");
+	By cletterfilterlink = By.xpath("//a[@id='C_link']"); //Locator for 'C' letter filter link
+	By selectcontactname = By.xpath("//div[@data-id='cell-2-2']"); //Locator to select Contact name in Grid
+	By contactnaviagtebtn = By.xpath("//button[contains(@title, 'Navigate to') and contains(@class ,'cc-ds-rowbtn cc-gridcell-navigable wj-btn wj-btn-default cc-ds-rowbtn-nav')]"); //Locator for Navigate button on Contact grid
+	By contactactivatebtn = By.xpath("//button[@aria-label='Activate']"); //Locator for Activate button in Contact form header
+	By contactactivatepopupstatusfield = By.xpath("//select[@aria-label='Status']"); //Locator for 'Status field on contact activation pop-up
+	By contactstatusdonotcall = By.xpath("//option[contains(text(),'Do Not Call')]"); //Locator for 'Do Not Call' contact status in drop-down
+	By activatepopupactivatebtn = By.xpath("//button[@data-id='ok_id']"); //Locator for Activate button on pop-up
+	By statusreasondonotcallinheader = By.xpath("//div[@title='Do Not Call']"); //Locator for contact status reason in contact form header
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -194,8 +202,8 @@ public class CRMContactPage {
 		return driver.findElement(contactformbusinessphonetxtfield);
 	}
 	
-public WebElement getContactSavenCloseBtn() {
-		
+	public WebElement getContactSavenCloseBtn() throws InterruptedException {
+		Thread.sleep(6000);
 		return driver.findElement(contactsavenclosebtn);
 	}
 	
@@ -397,5 +405,49 @@ public WebElement getContactSavenCloseBtn() {
 		
 		return driver.findElement(businessphonelabel);
 	}
+	
+	public WebElement getCLetterFilterLink() throws InterruptedException {
+		
+		Thread.sleep(10000);
+		return driver.findElement(cletterfilterlink);
+	}
+	
+	public WebElement selectContactName() throws InterruptedException
+	{
+		Thread.sleep(10000);
+		return driver.findElement(selectcontactname);
+	}
+	
+	public WebElement getContactNaviagteBtn() {
+		return driver.findElement(contactnaviagtebtn);
+	}
+	
+	public WebElement getContactStatusDoNotCall() {
+		return driver.findElement(contactstatusdonotcall);
+	}
+	
+	public WebElement getContactActivateBtn() {
+		return driver.findElement(contactactivatebtn);
+	}
+	
+	public WebElement getContactActivatePopupStatusField() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactactivatepopupstatusfield));
+		return driver.findElement(contactactivatepopupstatusfield);
+	}
+	
+	public WebElement getActivatePopupActivatebtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(activatepopupactivatebtn)).click();
+		return driver.findElement(activatepopupactivatebtn);
+	}
+	
+	public WebElement getContactStatusResonForActiveContact() {
+
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasondonotcallinheader));
+		return driver.findElement(contactstatusreason);
+	}
+
 	
 }
