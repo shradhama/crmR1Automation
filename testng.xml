@@ -10,8 +10,9 @@
 			<!-- <class name="crmframework.crmAutomation.OtherTest" /> -->
 			<class name="crmframework.crmAutomation.ContactPageTest" />
 			<methods>
-				<include name="TS001_VerifyHomePageTest" />
-				<include name="TS004_VerifyMarketingRelationshipOwnerContactTest" />
+				 <include name="TS001_VerifyHomePageTest" />
+				 <include name="TS005_VerifyPhoneCallOnContactTest" />
+				 <include name="TS004_VerifyMarketingRelationshipOwnerContactTest" />
 			</methods>
 		</classes>
 	</test>

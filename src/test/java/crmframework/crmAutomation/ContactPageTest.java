@@ -249,7 +249,7 @@ public class ContactPageTest extends base{
 	public void TS004_VerifyMarketingRelationshipOwnerContactTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
-		//TS28- Select any existing Buyer Contact and deactivate it
+		//T77- Select any existing Buyer Contact and deactivate it
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
 		hp = new CRMHomePage(driver);
@@ -259,9 +259,9 @@ public class ContactPageTest extends base{
 
 		//Open Contacts page and open existing contact
 		hp.getContactsTab().click();
-		cp.getselectexistingcontact().click();
-		cp.getscrollrightongrid().sendKeys(Keys.ARROW_RIGHT);
-		cp.getopenexistingcontact().click();
+		Actions action = new Actions(driver);
+		WebElement OpenContact = cp.getopencontact();
+		action.doubleClick(OpenContact).perform();
 		
 		amro = new CRMAddMarketingRelationshipOwner(driver);
 		
@@ -290,6 +290,63 @@ public class ContactPageTest extends base{
 		Assert.assertTrue(verifyOwner.getText().contains(ownertxt));
 		System.out.println("Marketing Relationship Owner is added successfully");
 		
+		//Navigate back to Active accounts list
+		ap.getPageBackBtn().click();
+	}
+
+	@Test(priority=5)
+	public void TS005_VerifyPhoneCallOnContactTest() throws InterruptedException {
+
+		//The purpose of this test case to verify :-
+		//T80: Add Phone Call to an existing Contact
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		
+		//Open Contacts page and open existing contact
+		hp.getContactsTab().click();
+		Actions action = new Actions(driver);
+		WebElement OpenContact = cp.getopencontact();
+		action.doubleClick(OpenContact).perform();
+
+		//Select Phone Call option under Timeline section
+		ap.getAddTimelineBtn().click();
+		ap.getphonecalloption().click();
+
+		//Enter Phone Call details
+		String phonesubject = "CybSubject";
+		ap.getphonecallsubject().click();
+		ap.getphonecallsubject().clear();
+		ap.getphonecallsubject().sendKeys(phonesubject);
+		cp.getcalltophonecall().click();
+		cp.getsearchcallto().click();
+		cp.getselectcallto().click();
+		cp.getclicktab().click();
+		ap.getclickphonecallduedatecalendor().click();
+		ap.getphonecallduedatecurrent().click();
+		ap.getphonecallduetimoptionn().click();
+		ap.getphonecallselectduetime().click();
+
+		//Save Phone Call
+		ap.getAccSaveCloseBtn().click();
+
+		act = new Actions(driver);
+		act.moveToElement(ap.getPhoneCallTimelineSubject()).perform();
+
+		String validatephonecallsubject = ap.getPhoneCallTimelineSubject().getText();
+		System.out.println("Phone Call Subject is: "+validatephonecallsubject);
+		Assert.assertEquals(validatephonecallsubject, phonesubject);
+		if (validatephonecallsubject.equalsIgnoreCase(phonesubject)) {
+			System.out.println("Phone call added successfully");		
+		}
+		else {
+
+			System.out.println("Phone call not added successfully");
+
+		}
+
 		//Navigate back to Active accounts list
 		ap.getPageBackBtn().click();
 	}
