@@ -2,6 +2,7 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
+
   <suite name="Suite" duration-ms="166548" started-at="2021-03-10T12:32:30Z" finished-at="2021-03-10T12:35:17Z">
     <groups>
     </groups>
@@ -23,6 +24,24 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS005_VerifyPhoneCallOnContactTest -->
+
+  <suite name="Suite" duration-ms="204553" started-at="2021-03-10T11:27:55Z" finished-at="2021-03-10T11:31:20Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="204553" started-at="2021-03-10T11:27:55Z" finished-at="2021-03-10T11:31:20Z">
+      <class name="crmframework.crmAutomation.ContactPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@29774679]" name="initialize" is-config="true" duration-ms="6826" started-at="2021-03-10T16:57:55Z" finished-at="2021-03-10T16:58:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@29774679]" name="TS001_VerifyHomePageTest" duration-ms="104672" started-at="2021-03-10T16:58:02Z" finished-at="2021-03-10T16:59:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS001_VerifyHomePageTest -->
+        <test-method status="PASS" signature="TS005_VerifyJobFunctionFieldTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@29774679]" name="TS005_VerifyJobFunctionFieldTest" duration-ms="93002" started-at="2021-03-10T16:59:47Z" finished-at="2021-03-10T17:01:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS005_VerifyJobFunctionFieldTest -->
       </class> <!-- crmframework.crmAutomation.ContactPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
