@@ -11,7 +11,7 @@
 			<class name="crmframework.crmAutomation.ContactPageTest" />
 			<methods>
 				<include name="TS001_VerifyHomePageTest" />
-				<include name="TS004_VerifyMarketingRelationshipOwnerContactTest" />
+				<include name="TS005_VerifyJobFunctionFieldTest" />
 			</methods>
 		</classes>
 	</test>
