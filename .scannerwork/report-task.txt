@@ -1,0 +1,5 @@
+projectKey=crm:R1Auto
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/crm:R1Auto
+ceTaskId=AXenOWoVSravtL0K69DN
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXenOWoVSravtL0K69DN

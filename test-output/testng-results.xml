@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="109871" started-at="2021-03-10T05:51:50Z" finished-at="2021-03-10T05:53:40Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="109871" started-at="2021-03-10T05:51:50Z" finished-at="2021-03-10T05:53:40Z">
+      <class name="crmframework.crmAutomation.ContactPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="initialize" is-config="true" duration-ms="2933" started-at="2021-03-10T11:21:51Z" finished-at="2021-03-10T11:21:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS001_VerifyHomePageTest" duration-ms="79484" started-at="2021-03-10T11:21:53Z" finished-at="2021-03-10T11:23:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS001_VerifyHomePageTest -->
+        <test-method status="PASS" signature="TS004_VerifyMarketingRelationshipOwnerContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS004_VerifyMarketingRelationshipOwnerContactTest" duration-ms="27426" started-at="2021-03-10T11:23:13Z" finished-at="2021-03-10T11:23:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS004_VerifyMarketingRelationshipOwnerContactTest -->
+      </class> <!-- crmframework.crmAutomation.ContactPageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

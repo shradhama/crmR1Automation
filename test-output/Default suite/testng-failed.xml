@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="crmframework.crmAutomation.AccountPageTest">
+        <methods>
+          <include name="verifyAccountStatusToActivateAccount"/>
+          <include name="verifyAddNoteToAccount"/>
+          <include name="verifyAddMarketingRelationshipOwnerToAccount"/>
+          <include name="verifyDeactivateAccount"/>
+          <include name="verifyPhoneCallOnAccount"/>
+          <include name="verifyAddNewPostToAccount"/>
+          <include name="verifyRelatedTabOnAccount"/>
+          <include name="verifyCrmHomePage"/>
+          <include name="verifySearchAccount"/>
+          <include name="verifySateAndRegionInGrid"/>
+          <include name="verifyParentAccount"/>
+          <include name="initialize"/>
+          <include name="verifyAddTimelineToAccount"/>
+          <include name="verifyCreateNewAccount"/>
+          <include name="verifyAddIncentiveToAccount"/>
+          <include name="closeDriver"/>
+          <include name="verifyAddIncentiveDetailsToAccount"/>
+          <include name="verifyAuditHistoryTabOnAccount"/>
+          <include name="verifyMediaSegmentationField"/>
+          <include name="verifyAccountStatusToDeactivateAccount"/>
+        </methods>
+      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
