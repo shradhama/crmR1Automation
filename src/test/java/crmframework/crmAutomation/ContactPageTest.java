@@ -286,7 +286,7 @@ public class ContactPageTest extends base{
 		act.moveToElement(ap.getAddress()).perform();
 		
 		//Verify Marketing Relationship Owner lookup value in Account Information section in the Summary tab
-		WebElement verifyOwner = amro.getconmarverify();
+		WebElement verifyOwner = amro.getconmarverifydd();
 		Assert.assertTrue(verifyOwner.getText().contains(ownertxt));
 		System.out.println("Marketing Relationship Owner is added successfully");
 		
