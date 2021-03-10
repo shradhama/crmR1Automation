@@ -59,6 +59,11 @@ public class CRMContactPage {
 	By contactstatusoutofbusiness = By.xpath("//option[contains(text(),'Out of Business')]");
 	By statusreasonoutofbusinessinheader = By.xpath("//div[@title='Out of Business']");
 	By contactstatusreason = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.PicklistStatusControl|header_statuscode.fieldControl|contact']");
+	By opencontact = By.xpath("//div[@data-id = 'cell-0-2']");
+	By calltophonecall = By.xpath("//input[@aria-label = 'Call To, Multiple Selection Lookup']");
+	By searchcallto = By.xpath("//button[@aria-label = 'Search records for Call To, Multiple Selection Lookup field']");
+	By selectcallto = By.xpath("//li[@data-id = 'to.fieldControl-LookupResultsDropdown_to_resultsContainer']");
+	By clicktab = By.xpath("//li[@aria-label = 'Phone Call']");
 	By selectexistingcontact = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[2]/div");
 	By scrollrightongrid = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[4]/div[10]");
 	By openexistingcontact = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[2]/div[10]/div[1]/button[1]");
@@ -72,6 +77,7 @@ public class CRMContactPage {
 	By contacttypeselectedvaluetxtbx = By.xpath("//div[@data-lp-id='MscrmControls.MultiSelectPicklist.UpdMSPicklistControl|xxc_typecode.fieldControl|contact']");
 	By removecontacttypemediabtn = By.xpath("//button[@aria-label='Remove Media']");
 	By businessphonelabel = By.xpath("//label[text()='Business Phone']");
+
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -327,27 +333,36 @@ public WebElement getContactSavenCloseBtn() {
 		return driver.findElement(contactstatusreason);
 	}
 	
-	public WebElement getscrollrightongrid() {
+	public WebElement getopencontact() throws InterruptedException {
 		
 		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(scrollrightongrid));
-		return driver.findElement(scrollrightongrid);
+		wait.until(ExpectedConditions.elementToBeClickable(opencontact));
+		Thread.sleep(10000);
+		return driver.findElement(opencontact);
 	}
 	
-	public WebElement getselectexistingcontact() {
+	public WebElement getcalltophonecall()  {
 		
 		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(selectexistingcontact));
-		return driver.findElement(selectexistingcontact);
+		wait.until(ExpectedConditions.elementToBeClickable(calltophonecall));
+		return driver.findElement(calltophonecall);
 	}
 	
-	public WebElement getopenexistingcontact() {
+	public WebElement getsearchcallto()  {
 		
 		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(openexistingcontact));
-		return driver.findElement(openexistingcontact);
+		wait.until(ExpectedConditions.elementToBeClickable(searchcallto));
+		return driver.findElement(searchcallto);
 	}
 	
+
+	public WebElement getselectcallto() throws InterruptedException  {
+		
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(selectcallto));
+		Thread.sleep(5000);
+		return driver.findElement(selectcallto);
+
 	public WebElement getContactTypeMedia()
 	{
 		return driver.findElement(contacttypemedia);
@@ -396,6 +411,12 @@ public WebElement getContactSavenCloseBtn() {
 	public WebElement getBusinessPhoneLabel() {
 		
 		return driver.findElement(businessphonelabel);
+
 	}
 	
+	public WebElement getclicktab() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(clicktab));
+		return driver.findElement(clicktab);
+	}
 }

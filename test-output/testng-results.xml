@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
+
+  <suite name="Suite" duration-ms="166548" started-at="2021-03-10T12:32:30Z" finished-at="2021-03-10T12:35:17Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="166548" started-at="2021-03-10T12:32:30Z" finished-at="2021-03-10T12:35:17Z">
+      <class name="crmframework.crmAutomation.ContactPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="initialize" is-config="true" duration-ms="5709" started-at="2021-03-10T18:02:30Z" finished-at="2021-03-10T18:02:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS001_VerifyHomePageTest" duration-ms="86614" started-at="2021-03-10T18:02:36Z" finished-at="2021-03-10T18:04:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS001_VerifyHomePageTest -->
+        <test-method status="PASS" signature="TS004_VerifyMarketingRelationshipOwnerContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS004_VerifyMarketingRelationshipOwnerContactTest" duration-ms="33153" started-at="2021-03-10T18:04:03Z" finished-at="2021-03-10T18:04:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS004_VerifyMarketingRelationshipOwnerContactTest -->
+        <test-method status="PASS" signature="TS005_VerifyPhoneCallOnContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS005_VerifyPhoneCallOnContactTest" duration-ms="41003" started-at="2021-03-10T18:04:36Z" finished-at="2021-03-10T18:05:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS005_VerifyPhoneCallOnContactTest -->
+
   <suite name="Suite" duration-ms="204553" started-at="2021-03-10T11:27:55Z" finished-at="2021-03-10T11:31:20Z">
     <groups>
     </groups>
