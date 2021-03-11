@@ -85,6 +85,7 @@ public class CRMContactPage {
 	By contactstatusdonotcall = By.xpath("//option[contains(text(),'Do Not Call')]"); //Locator for 'Do Not Call' contact status in drop-down
 	By activatepopupactivatebtn = By.xpath("//button[@data-id='ok_id']"); //Locator for Activate button on pop-up
 	By statusreasondonotcallinheader = By.xpath("//div[@title='Do Not Call']"); //Locator for contact status reason in contact form header
+	By verifycontactappointment = By.xpath("//div[@id = 'TimelineGroupsMainContainer']/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/label[1]");//Locator for subject for appointment in time line section for a contact
 	By contactaddtimelinebtn = By.xpath("//button[@aria-label='Create a timeline record.']"); //Locator for Add Timeline button for Contact
 	By contacttaskbtnontimeline = By.xpath("//div[text() = 'Task']");
 	By contacttasksubjecttxtbx = By.xpath("//input[@aria-label='Subject']");
@@ -479,12 +480,15 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.elementToBeClickable(clicktab));
 		return driver.findElement(clicktab);
 	}
-	
+	public WebElement getverifycontactappointment() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(verifycontactappointment));
+		return driver.findElement(verifycontactappointment);
+	}
 	public WebElement getContactAddTimelineBtn()
 	{
 		return driver.findElement(contactaddtimelinebtn);
 	}
-	
 	public WebElement getContactTaskBtnOnTimeline()
 	{
 		wait = new WebDriverWait (driver,20);
@@ -503,6 +507,7 @@ public class CRMContactPage {
 		return driver.findElement(contacttasksavenclosebtn);
 	}
 	
+
 	public WebElement getDuplicateRecordsPopupTitle() throws InterruptedException
 	{
 		Thread.sleep(5000);
@@ -530,4 +535,5 @@ public class CRMContactPage {
 	{
 		return driver.findElement(duplicaterecordspopupignorensavebtn);
 	}
+
 }

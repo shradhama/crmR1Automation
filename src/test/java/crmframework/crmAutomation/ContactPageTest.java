@@ -533,6 +533,52 @@ public class ContactPageTest extends base{
 		//Click on Save & Close button
 		cp.getContactSavenCloseBtn().click();
 	}
+	@Test(priority=7)
+	public void TS007_VerifyAddAppointmentToContactTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//TS271- Select any contact and add Timeline for the same
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		
+		//Open Contacts page and open existing contact
+		hp.getContactsTab().click();
+		Actions action = new Actions(driver);
+		WebElement OpenContact = cp.getopencontact();
+		action.doubleClick(OpenContact).perform();
+
+		//Select Phone Call option under Timeline section
+		ap.getAddTimelineBtn().click();
+		ap.getApptmntActivityOptn().click();
+
+		ap.getTimelineSujecttxbx().click();
+		String subtext = "Cyb_ApptJan";
+		ap.getTimelineSujecttxbx().sendKeys(subtext);
+
+		ap.getTimelineSavenClosebtn().click();
+
+		//Verify that added Timeline is reflected correctly
+		act = new Actions(driver);
+		act.moveToElement(cp.getverifycontactappointment()).perform();
+		String validateappointmentcallsubject = cp.getverifycontactappointment().getText();
+		System.out.println("Appointment subject is: "+validateappointmentcallsubject);
+		Assert.assertEquals(validateappointmentcallsubject, subtext);
+		if (validateappointmentcallsubject.equalsIgnoreCase(subtext)) {
+			System.out.println("Appointment is added successfully");		
+		}
+		else {
+
+			System.out.println("Appointment is not added successfully");
+
+		}
+		
+		//Navigate back to Active Contacts list
+		ap.getPageBackBtn().click();
+	}
+
 
 	@Test(priority=8)
 	public void TS008_VerifyAddNewTaskFromTimelineToContactTest() throws InterruptedException

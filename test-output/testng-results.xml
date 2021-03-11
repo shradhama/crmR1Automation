@@ -2,7 +2,33 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
+
   <suite name="Suite" duration-ms="189067" started-at="2021-03-11T11:52:51Z" finished-at="2021-03-11T11:56:00Z">
+
+  <suite name="Suite" duration-ms="182057" started-at="2021-03-11T11:21:27Z" finished-at="2021-03-11T11:24:29Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="182057" started-at="2021-03-11T11:21:27Z" finished-at="2021-03-11T11:24:29Z">
+      <class name="crmframework.crmAutomation.AccountPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3532ec19]" name="initialize" is-config="true" duration-ms="5846" started-at="2021-03-11T16:51:27Z" finished-at="2021-03-11T16:51:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3532ec19]" name="TS001_VerifyHomePageTest" duration-ms="94820" started-at="2021-03-11T16:51:32Z" finished-at="2021-03-11T16:53:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS001_VerifyHomePageTest -->
+        <test-method status="PASS" signature="TS003_VerifyAddAppointmentToAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3532ec19]" name="TS003_VerifyAddAppointmentToAccountTest" duration-ms="80814" started-at="2021-03-11T16:53:07Z" finished-at="2021-03-11T16:54:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS003_VerifyAddAppointmentToAccountTest -->
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3532ec19]" name="closeDriver" is-config="true" duration-ms="540" started-at="2021-03-11T16:54:28Z" finished-at="2021-03-11T16:54:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
+  <suite name="Suite" duration-ms="172990" started-at="2021-03-11T07:29:23Z" finished-at="2021-03-11T07:32:16Z">
+
     <groups>
     </groups>
     <test name="Test" duration-ms="189067" started-at="2021-03-11T11:52:51Z" finished-at="2021-03-11T11:56:00Z">
