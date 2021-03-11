@@ -85,7 +85,10 @@ public class CRMContactPage {
 	By contactstatusdonotcall = By.xpath("//option[contains(text(),'Do Not Call')]"); //Locator for 'Do Not Call' contact status in drop-down
 	By activatepopupactivatebtn = By.xpath("//button[@data-id='ok_id']"); //Locator for Activate button on pop-up
 	By statusreasondonotcallinheader = By.xpath("//div[@title='Do Not Call']"); //Locator for contact status reason in contact form header
-
+	By contactaddtimelinebtn = By.xpath("//button[@aria-label='Create a timeline record.']"); //Locator for Add Timeline button for Contact
+	By contacttaskbtnontimeline = By.xpath("//div[text() = 'Task']");
+	By contacttasksubjecttxtbx = By.xpath("//input[@aria-label='Subject']");
+	By contacttasksavenclosebtn = By.xpath("//button[@data-id='quickCreateSaveAndCloseBtn']");
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -471,4 +474,29 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.elementToBeClickable(clicktab));
 		return driver.findElement(clicktab);
 	}
+	
+	public WebElement getContactAddTimelineBtn()
+	{
+		return driver.findElement(contactaddtimelinebtn);
+	}
+	
+	public WebElement getContactTaskBtnOnTimeline()
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contacttaskbtnontimeline));
+		return driver.findElement(contacttaskbtnontimeline);
+	}
+	
+	public WebElement getContactTaskSujecttxbx() throws InterruptedException
+	{
+		Thread.sleep(5000);
+		return driver.findElement(contacttasksubjecttxtbx);
+	}
+	
+	public WebElement getContactTaskSavenClosebtn()
+	{
+		return driver.findElement(contacttasksavenclosebtn);
+	}
+	
+	
 }
