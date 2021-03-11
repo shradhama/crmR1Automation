@@ -86,14 +86,14 @@ public class CRMContactPage {
 	By activatepopupactivatebtn = By.xpath("//button[@data-id='ok_id']"); //Locator for Activate button on pop-up
 	By statusreasondonotcallinheader = By.xpath("//div[@title='Do Not Call']"); //Locator for contact status reason in contact form header
 	By contactaddtimelinebtn = By.xpath("//button[@aria-label='Create a timeline record.']"); //Locator for Add Timeline button for Contact
-	By contacttaskbtnontimeline = By.xpath("//div[text() = 'Task']");
-	By contacttasksubjecttxtbx = By.xpath("//input[@aria-label='Subject']");
-	By contacttasksavenclosebtn = By.xpath("//button[@data-id='quickCreateSaveAndCloseBtn']");
-	By duplicaterecordspopuptitle = By.xpath("//h1[@aria-label='Duplicate records found']");
-	By duplicaterecordspopupcancelbtn = By.xpath("//button[@aria-label = 'Cancel']");
-	By unsavedchangespopuptitle = By.xpath("//h1[@aria-label='Unsaved changes']");
-	By discardchangesbtn = By.xpath("//button[@aria-label='Discard changes']");
-	By duplicaterecordspopupignorensavebtn = By.xpath("//button[@aria-label='Ignore and save']");
+	By contacttaskbtnontimeline = By.xpath("//div[text() = 'Task']"); //Locator for Task option on Timeline pop-up
+	By contacttasksubjecttxtbx = By.xpath("//input[@aria-label='Subject']"); //Locator for Task Subject checkbox
+	By contacttasksavenclosebtn = By.xpath("//button[@data-id='quickCreateSaveAndCloseBtn']");//Locator for Save & Close button on Contact form
+	By duplicaterecordspopuptitle = By.xpath("//h1[@aria-label='Duplicate records found']"); //Locator for Duplicate records pop-up title
+	By duplicaterecordspopupcancelbtn = By.xpath("//button[@aria-label = 'Cancel']"); //Locator for Duplicate records pop-up cancel button
+	By unsavedchangespopuptitle = By.xpath("//h1[@aria-label='Unsaved changes']"); //Locator for Unsaved Changes Pop-up title
+	By discardchangesbtn = By.xpath("//button[@aria-label='Discard changes']"); //Locator for Discard changes button
+	By duplicaterecordspopupignorensavebtn = By.xpath("//button[@aria-label='Ignore and save']"); //Locator for Ignore and save button
 	
 	public CRMContactPage(WebDriver driver) {
 
