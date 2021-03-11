@@ -50,8 +50,9 @@ public class CRMHomePage {
 		return driver.findElement(startsearch);		
 	}
 	
-	public WebElement getAccountTab() {
+	public WebElement getAccountTab() throws InterruptedException {
 		// web element for the Account tab at left find side pane.
+		Thread.sleep(5000);
 		return driver.findElement(accountTab);
 	}
 	

@@ -173,7 +173,7 @@ public class AccountPageTest extends base {
 	}
 
 	@Test(priority=3)
-	public void TS003_VerifyAddTimelineToAccountTest() throws InterruptedException
+	public void TS003_VerifyAddAppointmentToAccountTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//TS295- Select any account and add Timeline
@@ -201,18 +201,23 @@ public class AccountPageTest extends base {
 		ap.getTimelineSavenClosebtn().click();
 
 		//Verify that added Timeline is reflected correctly
-		WebElement timeline = driver.findElement(By.xpath("//*[text()='"+subtext+"']"));
-		Assert.assertEquals(timeline.getText(), subtext);
+		act = new Actions(driver);
+		act.moveToElement(ap.getverifyaccountppointment()).perform();
+		String validateappointmentcallsubject = ap.getverifyaccountppointment().getText();
+		System.out.println("Appointment subject is: "+validateappointmentcallsubject);
+		Assert.assertEquals(validateappointmentcallsubject, subtext);
+		if (validateappointmentcallsubject.equalsIgnoreCase(subtext)) {
+			System.out.println("Appointment is added successfully");		
+		}
+		else {
 
-		//Verify that expected Success message displayed
-		Assert.assertEquals("Your changes were saved.", ap.getSuccessMsg().getText());
+			System.out.println("Appointment is not added successfully");
+
+		}
 
 		//Navigate back to Active accounts lis
 		ap.getPageBackBtn().click();
 	}
-
-
-
 	@Test(priority=4)
 	public void TS004_VerifyAddMarketingRelationshipOwnerToAccountTest() throws InterruptedException {
 
