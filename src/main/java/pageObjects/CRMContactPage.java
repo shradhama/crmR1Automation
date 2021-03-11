@@ -76,7 +76,7 @@ public class CRMContactPage {
 	By contactrefreshbtn = By.xpath("//button[@aria-label='Refresh']");
 	By contacttypeselectedvaluetxtbx = By.xpath("//div[@data-lp-id='MscrmControls.MultiSelectPicklist.UpdMSPicklistControl|xxc_typecode.fieldControl|contact']");
 	By removecontacttypemediabtn = By.xpath("//button[@aria-label='Remove Media']");
-	By businessphonelabel = By.xpath("//label[text()='Busin
+	By businessphonelabel = By.xpath("//label[text()='Business Phone']");
 	By cletterfilterlink = By.xpath("//a[@id='C_link']"); //Locator for 'C' letter filter link
 	By selectcontactname = By.xpath("//div[@data-id='cell-2-2']"); //Locator to select Contact name in Grid
 	By contactnaviagtebtn = By.xpath("//button[contains(@title, 'Navigate to') and contains(@class ,'cc-ds-rowbtn cc-gridcell-navigable wj-btn wj-btn-default cc-ds-rowbtn-nav')]"); //Locator for Navigate button on Contact grid
