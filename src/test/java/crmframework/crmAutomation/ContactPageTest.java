@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -36,6 +37,7 @@ public class ContactPageTest extends base{
 	public GenerateData genData;
 	public String newcontactname;
 	public String outofbusiness;
+	public String donotcall;
 	CRMLandingPage lap;
 	CRMLoginPage lp;
 	AppLandingPage alp;
@@ -459,6 +461,70 @@ public class ContactPageTest extends base{
 
 		//Navigate back to Active Contacts list
 		ap.getPageBackBtn().click();
+	}
+
+	@Test(priority=6)
+	public void TS006_VerifyContactStatusToActivateContactTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T68- Contact Status and Contact Status Reason functionality for contact activation
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Contacts Tab at left menu.
+		hp.getContactsTab().click();
+
+		//Click on the select a view drop-down available below header
+		cp.getActiveContactDropDownBtn().click();
+
+		//Select 'Inactive Contacts' option
+		cp.getInactiveContactOptn().click();
+
+		boolean staleElement = true;
+		try {
+			while(staleElement){
+				//Open any Inactive contact from list
+				cp.getCLetterFilterLink().click();
+				cp.selectContactName().click();
+				cp.getContactNaviagteBtn().click();
+
+				//Click 'Activate' button available in the top panel
+				cp.getContactActivateBtn().click();
+
+				//Select 'Contact Status: Do Not Call' in the confirm Contact Activation pop-up
+				cp.getContactActivatePopupStatusField().click();
+				WebElement donotcallstatus = cp.getContactStatusDoNotCall();
+				donotcall = cp.getContactStatusDoNotCall().getText();
+				System.out.println("Account Status: " + donotcall);
+				donotcallstatus.click();
+
+				//Click on 'Activate' button
+				cp.getActivatePopupActivatebtn();
+				staleElement = false;
+			}
+		}
+		catch (StaleElementReferenceException exe) {
+			staleElement = false;
+			System.out.println(exe.getMessage());
+		}
+		catch (WebDriverException ex) {
+			System.out.println(ex.getMessage());
+		}
+
+		//Verify that Contact is activated and selected contact Status Reason is displayed at the right side of the header.
+		WebElement contactstatusreasoninheader = cp.getContactStatusResonForActiveContact();
+		System.out.println("Account Status Reason: " + (contactstatusreasoninheader.getText()));
+		Assert.assertTrue(contactstatusreasoninheader.getText().contains(donotcall));
+
+		//Verify that Top ribbon 'Activate' option changes to 'Deactivate'
+		Assert.assertTrue(cp.getDeactivateBtn().isDisplayed());
+		System.out.println("Contact is activated with selected contact status reason");
+		
+		//Click on Save & Close button
+		cp.getContactSavenCloseBtn().click();
 	}
 
 	//	@AfterTest
