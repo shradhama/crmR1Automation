@@ -6,11 +6,7 @@
       <class name="crmframework.crmAutomation.ContactPageTest">
         <methods>
           <include name="initialize"/>
-
-          <include name="TS005_VerifyPhoneCallOnContactTest"/>
-
-          <include name="TS005_VerifyJobFunctionFieldTest"/>
-
+          <include name="TS002_VerifyCreateNewContactTest"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.ContactPageTest -->
     </classes>

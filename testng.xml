@@ -11,7 +11,8 @@
 			<class name="crmframework.crmAutomation.ContactPageTest" />
 			<methods>
 				 <include name="TS001_VerifyHomePageTest" />
-				 <include name="TS008_VerifyAddNewTaskFromTimelineToContactTest" />
+				 <include name="TS002_VerifyCreateNewContactTest"/>
+				 <include name="TS009_VerifyDuplicateContactTest" />
 			</methods>
 		</classes>
 	</test>
