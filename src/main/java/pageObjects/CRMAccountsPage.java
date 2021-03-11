@@ -211,6 +211,7 @@ public class CRMAccountsPage {
 	By tasksavenclosebtn = By.xpath("//button[@data-id='quickCreateSaveAndCloseBtn']");
 	By acctypelabel = By.xpath("//label[contains(text(),'Type')]");
 	By accstreet3label = By.xpath("//label[contains(text(),'Street 3')]");
+	By verifyaccountppointment = By.xpath("//div[@id = 'TimelineMainContainerSection']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/label[1]");//Locator for getting text of subject for an appointment
 	
 	public CRMAccountsPage(WebDriver driver) {
 
@@ -319,10 +320,11 @@ public class CRMAccountsPage {
 		return driver.findElement(appointmentactivityoptn);
 	}
 	
-	public WebElement getTimelineSujecttxbx()
+	public WebElement getTimelineSujecttxbx() throws InterruptedException
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.elementToBeClickable(timelinesubjecttxtbx));
+		Thread.sleep(10000);
 		return driver.findElement(timelinesubjecttxtbx);
 	}
 	
@@ -1271,6 +1273,13 @@ public class CRMAccountsPage {
 	public WebElement getAccStreet3Label()
 	{
 		return driver.findElement(accstreet3label);
+	}
+	public WebElement getverifyaccountppointment() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccountppointment));
+		Thread.sleep(10000);
+		return driver.findElement(verifyaccountppointment);
 	}
 }
 
