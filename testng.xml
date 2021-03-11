@@ -14,9 +14,7 @@
 				 <include name="TS001_VerifyHomePageTest" />
 				 <include name="TS005_VerifyPhoneCallOnContactTest" />
 				 <include name="TS004_VerifyMarketingRelationshipOwnerContactTest" />
-
-				<include name="TS001_VerifyHomePageTest" />
-				<include name="TS005_VerifyJobFunctionFieldTest" />
+	     		 <!--<include name="TS005_VerifyJobFunctionFieldTest" />-->
 			</methods>
 		</classes>
 	</test>

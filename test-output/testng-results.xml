@@ -1,44 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-
-  <suite name="Suite" duration-ms="166548" started-at="2021-03-10T12:32:30Z" finished-at="2021-03-10T12:35:17Z">
+  <suite name="Suite" duration-ms="232996" started-at="2021-03-10T13:10:47Z" finished-at="2021-03-10T13:14:40Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="166548" started-at="2021-03-10T12:32:30Z" finished-at="2021-03-10T12:35:17Z">
+    <test name="Test" duration-ms="232996" started-at="2021-03-10T13:10:47Z" finished-at="2021-03-10T13:14:40Z">
       <class name="crmframework.crmAutomation.ContactPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="initialize" is-config="true" duration-ms="5709" started-at="2021-03-10T18:02:30Z" finished-at="2021-03-10T18:02:36Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="initialize" is-config="true" duration-ms="6987" started-at="2021-03-10T18:40:47Z" finished-at="2021-03-10T18:40:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS001_VerifyHomePageTest" duration-ms="86614" started-at="2021-03-10T18:02:36Z" finished-at="2021-03-10T18:04:03Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS001_VerifyHomePageTest" duration-ms="77476" started-at="2021-03-10T18:40:54Z" finished-at="2021-03-10T18:42:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS004_VerifyMarketingRelationshipOwnerContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS004_VerifyMarketingRelationshipOwnerContactTest" duration-ms="33153" started-at="2021-03-10T18:04:03Z" finished-at="2021-03-10T18:04:36Z">
+        <test-method status="PASS" signature="TS004_VerifyMarketingRelationshipOwnerContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS004_VerifyMarketingRelationshipOwnerContactTest" duration-ms="38368" started-at="2021-03-10T18:42:12Z" finished-at="2021-03-10T18:42:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS004_VerifyMarketingRelationshipOwnerContactTest -->
-        <test-method status="PASS" signature="TS005_VerifyPhoneCallOnContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS005_VerifyPhoneCallOnContactTest" duration-ms="41003" started-at="2021-03-10T18:04:36Z" finished-at="2021-03-10T18:05:17Z">
+        <test-method status="PASS" signature="TS005_VerifyPhoneCallOnContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS005_VerifyPhoneCallOnContactTest" duration-ms="42381" started-at="2021-03-10T18:42:50Z" finished-at="2021-03-10T18:43:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS005_VerifyPhoneCallOnContactTest -->
-
-  <suite name="Suite" duration-ms="204553" started-at="2021-03-10T11:27:55Z" finished-at="2021-03-10T11:31:20Z">
-    <groups>
-    </groups>
-    <test name="Test" duration-ms="204553" started-at="2021-03-10T11:27:55Z" finished-at="2021-03-10T11:31:20Z">
-      <class name="crmframework.crmAutomation.ContactPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@29774679]" name="initialize" is-config="true" duration-ms="6826" started-at="2021-03-10T16:57:55Z" finished-at="2021-03-10T16:58:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@29774679]" name="TS001_VerifyHomePageTest" duration-ms="104672" started-at="2021-03-10T16:58:02Z" finished-at="2021-03-10T16:59:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS005_VerifyJobFunctionFieldTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@29774679]" name="TS005_VerifyJobFunctionFieldTest" duration-ms="93002" started-at="2021-03-10T16:59:47Z" finished-at="2021-03-10T17:01:20Z">
+        <test-method status="PASS" signature="TS005_VerifyJobFunctionFieldTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS005_VerifyJobFunctionFieldTest" duration-ms="67675" started-at="2021-03-10T18:43:33Z" finished-at="2021-03-10T18:44:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS005_VerifyJobFunctionFieldTest -->
