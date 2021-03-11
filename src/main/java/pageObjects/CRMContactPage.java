@@ -59,6 +59,11 @@ public class CRMContactPage {
 	By contactstatusoutofbusiness = By.xpath("//option[contains(text(),'Out of Business')]");
 	By statusreasonoutofbusinessinheader = By.xpath("//div[@title='Out of Business']");
 	By contactstatusreason = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.PicklistStatusControl|header_statuscode.fieldControl|contact']");
+	By opencontact = By.xpath("//div[@data-id = 'cell-0-2']");
+	By calltophonecall = By.xpath("//input[@aria-label = 'Call To, Multiple Selection Lookup']");
+	By searchcallto = By.xpath("//button[@aria-label = 'Search records for Call To, Multiple Selection Lookup field']");
+	By selectcallto = By.xpath("//li[@data-id = 'to.fieldControl-LookupResultsDropdown_to_resultsContainer']");
+	By clicktab = By.xpath("//li[@aria-label = 'Phone Call']");
 	By selectexistingcontact = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[2]/div");
 	By scrollrightongrid = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[4]/div[10]");
 	By openexistingcontact = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[2]/div[10]/div[1]/button[1]");
@@ -71,7 +76,7 @@ public class CRMContactPage {
 	By contactrefreshbtn = By.xpath("//button[@aria-label='Refresh']");
 	By contacttypeselectedvaluetxtbx = By.xpath("//div[@data-lp-id='MscrmControls.MultiSelectPicklist.UpdMSPicklistControl|xxc_typecode.fieldControl|contact']");
 	By removecontacttypemediabtn = By.xpath("//button[@aria-label='Remove Media']");
-	By businessphonelabel = By.xpath("//label[text()='Business Phone']");
+	By businessphonelabel = By.xpath("//label[text()='Busin
 	By cletterfilterlink = By.xpath("//a[@id='C_link']"); //Locator for 'C' letter filter link
 	By selectcontactname = By.xpath("//div[@data-id='cell-2-2']"); //Locator to select Contact name in Grid
 	By contactnaviagtebtn = By.xpath("//button[contains(@title, 'Navigate to') and contains(@class ,'cc-ds-rowbtn cc-gridcell-navigable wj-btn wj-btn-default cc-ds-rowbtn-nav')]"); //Locator for Navigate button on Contact grid
@@ -80,6 +85,7 @@ public class CRMContactPage {
 	By contactstatusdonotcall = By.xpath("//option[contains(text(),'Do Not Call')]"); //Locator for 'Do Not Call' contact status in drop-down
 	By activatepopupactivatebtn = By.xpath("//button[@data-id='ok_id']"); //Locator for Activate button on pop-up
 	By statusreasondonotcallinheader = By.xpath("//div[@title='Do Not Call']"); //Locator for contact status reason in contact form header
+
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -335,27 +341,37 @@ public class CRMContactPage {
 		return driver.findElement(contactstatusreason);
 	}
 	
-	public WebElement getscrollrightongrid() {
+	public WebElement getopencontact() throws InterruptedException {
 		
 		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(scrollrightongrid));
-		return driver.findElement(scrollrightongrid);
+		wait.until(ExpectedConditions.elementToBeClickable(opencontact));
+		Thread.sleep(10000);
+		return driver.findElement(opencontact);
 	}
 	
-	public WebElement getselectexistingcontact() {
+	public WebElement getcalltophonecall()  {
 		
 		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(selectexistingcontact));
-		return driver.findElement(selectexistingcontact);
+		wait.until(ExpectedConditions.elementToBeClickable(calltophonecall));
+		return driver.findElement(calltophonecall);
 	}
 	
-	public WebElement getopenexistingcontact() {
+	public WebElement getsearchcallto()  {
 		
 		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(openexistingcontact));
-		return driver.findElement(openexistingcontact);
+		wait.until(ExpectedConditions.elementToBeClickable(searchcallto));
+		return driver.findElement(searchcallto);
 	}
 	
+
+	public WebElement getselectcallto() throws InterruptedException  {
+		
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(selectcallto));
+		Thread.sleep(5000);
+		return driver.findElement(selectcallto);
+	}
+
 	public WebElement getContactTypeMedia()
 	{
 		return driver.findElement(contacttypemedia);
@@ -404,6 +420,7 @@ public class CRMContactPage {
 	public WebElement getBusinessPhoneLabel() {
 		
 		return driver.findElement(businessphonelabel);
+
 	}
 	
 	public WebElement getCLetterFilterLink() throws InterruptedException {
@@ -448,6 +465,10 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasondonotcallinheader));
 		return driver.findElement(contactstatusreason);
 	}
-
-	
+                                   
+	public WebElement getclicktab() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(clicktab));
+		return driver.findElement(clicktab);
+	}
 }
