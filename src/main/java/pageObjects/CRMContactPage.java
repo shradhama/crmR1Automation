@@ -90,6 +90,11 @@ public class CRMContactPage {
 	By contacttaskbtnontimeline = By.xpath("//div[text() = 'Task']");
 	By contacttasksubjecttxtbx = By.xpath("//input[@aria-label='Subject']");
 	By contacttasksavenclosebtn = By.xpath("//button[@data-id='quickCreateSaveAndCloseBtn']");
+	By duplicaterecordspopuptitle = By.xpath("//h1[@aria-label='Duplicate records found']");
+	By duplicaterecordspopupcancelbtn = By.xpath("//button[@aria-label = 'Cancel']");
+	By unsavedchangespopuptitle = By.xpath("//h1[@aria-label='Unsaved changes']");
+	By discardchangesbtn = By.xpath("//button[@aria-label='Discard changes']");
+	By duplicaterecordspopupignorensavebtn = By.xpath("//button[@aria-label='Ignore and save']");
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -502,4 +507,33 @@ public class CRMContactPage {
 		return driver.findElement(contacttasksavenclosebtn);
 	}
 	
+
+	public WebElement getDuplicateRecordsPopupTitle() throws InterruptedException
+	{
+		Thread.sleep(5000);
+		return driver.findElement(duplicaterecordspopuptitle);
+	}
+	
+	public WebElement getDuplicateRecordsPopupCancelbtn()
+	{
+		return driver.findElement(duplicaterecordspopupcancelbtn);
+	}
+	
+	public WebElement getUnsavedChangesPopupTitle()
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(unsavedchangespopuptitle));
+		return driver.findElement(unsavedchangespopuptitle);
+	}
+	
+	public WebElement getDiscardChangesBtn()
+	{
+		return driver.findElement(discardchangesbtn);
+	}
+	
+	public WebElement getDuplicateRecordsPopupIgnorenSavebtn()
+	{
+		return driver.findElement(duplicaterecordspopupignorensavebtn);
+	}
+
 }
