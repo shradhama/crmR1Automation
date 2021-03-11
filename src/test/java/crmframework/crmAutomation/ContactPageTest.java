@@ -573,6 +573,49 @@ public class ContactPageTest extends base{
 	}
 
 
+	@Test(priority=8)
+	public void TS008_VerifyAddNewTaskFromTimelineToContactTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify that:-
+		//TS272- User is able to add a new Task from Timeline section on contact form
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		cp = new CRMContactPage(driver);
+		ap = new CRMAccountsPage(driver);
+		
+		//Click on Contacts tab from left menu
+		hp.getContactsTab().click();
+
+		//Click on 'Q' link to sort accounts starts with 'Q'
+		cp.getQLetterFilterLink().click();	
+
+		//Select the Contact name in list
+		cp.selectContactName().click();
+		cp.getContactNaviagteBtn().click();
+
+		//Click on create a timeline button
+		cp.getContactAddTimelineBtn().click();
+		cp.getContactTaskBtnOnTimeline().click();
+
+		cp.getContactTaskSujecttxbx().click();
+		String subtext = "Cyb_ContactTask";
+		cp.getContactTaskSujecttxbx().sendKeys(subtext);
+
+		cp.getContactTaskSavenClosebtn().click();
+
+		//Verify that added Task is reflected correctly
+		WebElement task = driver.findElement(By.xpath("//*[text()='"+subtext+"']"));
+		Assert.assertEquals(task.getText(), subtext);
+
+		//Verify that expected Success message displayed
+		Assert.assertEquals("Your changes were saved.", ap.getSuccessMsg().getText());
+		System.out.println("Added new task to Contact successfully");
+		
+		//Navigate back to Active accounts list
+		ap.getPageBackBtn().click();
+	}
+	
 	//	@AfterTest
 	//	public void closeDriver()
 	//	{

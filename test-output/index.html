@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>C:\Users\shradhama\crmR1Automation\testng.xml</span>
+                    <span>C:\Users\nilamma\crmR1Automation\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -107,6 +107,7 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.AccountPageTest" hash-for-method="TS003_VerifyAddAppointmentToAccountTest">TS003_VerifyAddAppointmentToAccountTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS008_VerifyAddNewTaskFromTimelineToContactTest">TS008_VerifyAddNewTaskFromTimelineToContactTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -139,6 +140,9 @@
                   <a name="TS003_VerifyAddAppointmentToAccountTest">
                   </a> <!-- TS003_VerifyAddAppointmentToAccountTest -->
                   <span class="method-name">TS003_VerifyAddAppointmentToAccountTest</span>
+                  <a name="TS008_VerifyAddNewTaskFromTimelineToContactTest">
+                  </a> <!-- TS008_VerifyAddNewTaskFromTimelineToContactTest -->
+                  <span class="method-name">TS008_VerifyAddNewTaskFromTimelineToContactTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -146,7 +150,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\shradhama\crmR1Automation\testng.xml</span>
+            <span class="header-content">C:\Users\nilamma\crmR1Automation\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -159,6 +163,7 @@
         &lt;methods&gt;
           &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
           &lt;include name=&quot;TS003_VerifyAddAppointmentToAccountTest&quot;/&gt;
+          &lt;include name=&quot;TS008_VerifyAddNewTaskFromTimelineToContactTest&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- crmframework.crmAutomation.AccountPageTest --&gt;
     &lt;/classes&gt;
@@ -209,6 +214,12 @@ data.setCell(1, 0, 1)
 data.setCell(1, 1, 'TS003_VerifyAddAppointmentToAccountTest')
 data.setCell(1, 2, 'crmframework.crmAutomation.AccountPageTest')
 data.setCell(1, 3, 80814);
+data.setCell(0, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(0, 3, 108797);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'TS008_VerifyAddNewTaskFromTimelineToContactTest')
+data.setCell(1, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(1, 3, 58197);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -229,6 +240,7 @@ return data;
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">21 ignored methods</span>
+            <span class="header-content">6 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -239,6 +251,11 @@ return data;
                 <span class="ignored-method-name">TS017_VerifyDuplicateAccountTest</span>
                 <br/>
                 <span class="ignored-method-name">TS024_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest</span>
+                <span class="ignored-method-name">TS006_VerifyContactStatusToActivateContactTest</span>
+                <br/>
+                <span class="ignored-method-name">TS005_VerifyPhoneCallOnContactTest</span>
+                <br/>
+                <span class="ignored-method-name">TS005_VerifyJobFunctionFieldTest</span>
                 <br/>
                 <span class="ignored-method-name">TS020_VerifyAddContactTest</span>
                 <br/>
@@ -276,6 +293,8 @@ return data;
                 <br/>
                 <span class="ignored-method-name">TS002_VerifyCreateNewAccountTest</span>
                 <br/>
+                <span class="ignored-method-name">TS004_VerifyMarketingRelationshipOwnerContactTest</span>
+                <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -298,6 +317,11 @@ return data;
               <div class="test-method">
                 <span class="method-name">TS003_VerifyAddAppointmentToAccountTest</span>
                 <span class="method-start">100699 ms</span>
+                <span class="method-start">5963 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS008_VerifyAddNewTaskFromTimelineToContactTest</span>
+                <span class="method-start">114777 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">closeDriver</span>

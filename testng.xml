@@ -14,6 +14,7 @@
 				<!--<include name="TS005_VerifyPhoneCallOnContactTest" />-->
 				 <!--<include name="TS004_VerifyMarketingRelationshipOwnerContactTest" />-->
 	     		<include name="TS003_VerifyAddAppointmentToAccountTest" />
+				 <include name="TS008_VerifyAddNewTaskFromTimelineToContactTest" />
 			</methods>
 		</classes>
 	</test>
