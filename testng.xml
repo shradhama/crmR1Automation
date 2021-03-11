@@ -11,11 +11,7 @@
 			<class name="crmframework.crmAutomation.ContactPageTest" />
 			<methods>
 				 <include name="TS001_VerifyHomePageTest" />
-				 <include name="TS005_VerifyPhoneCallOnContactTest" />
-				 <include name="TS004_VerifyMarketingRelationshipOwnerContactTest" />
-	     		 <!--<include name="TS005_VerifyJobFunctionFieldTest" />-->
-				<include name="TS001_VerifyHomePageTest" />
-				<include name="TS006_VerifyContactStatusToActivateContactTest" />
+				 <include name="TS008_VerifyAddNewTaskFromTimelineToContactTest" />
 			</methods>
 		</classes>
 	</test>
