@@ -110,7 +110,7 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS005_VerifyJobFunctionFieldTest">TS005_VerifyJobFunctionFieldTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS006_VerifyContactStatusToActivateContactTest">TS006_VerifyContactStatusToActivateContactTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -145,9 +145,9 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="TS005_VerifyJobFunctionFieldTest">
-                  </a> <!-- TS005_VerifyJobFunctionFieldTest -->
-                  <span class="method-name">TS005_VerifyJobFunctionFieldTest</span>
+                  <a name="TS006_VerifyContactStatusToActivateContactTest">
+                  </a> <!-- TS006_VerifyContactStatusToActivateContactTest -->
+                  <span class="method-name">TS006_VerifyContactStatusToActivateContactTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -178,7 +178,7 @@
       &lt;class name=&quot;crmframework.crmAutomation.ContactPageTest&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
-
+          &lt;include name=&quot;TS006_VerifyContactStatusToActivateContactTest&quot;/&gt;
           &lt;include name=&quot;TS005_VerifyPhoneCallOnContactTest&quot;/&gt;
           &lt;include name=&quot;TS004_VerifyMarketingRelationshipOwnerContactTest&quot;/&gt;
 
@@ -229,7 +229,7 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TS001_VerifyHomePageTest')
 data.setCell(0, 2, 'crmframework.crmAutomation.ContactPageTest')
-
+data.setCell(0, 3, 102443);
 data.setCell(0, 3, 86614);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'TS005_VerifyPhoneCallOnContactTest')
@@ -239,17 +239,18 @@ data.setCell(2, 0, 2)
 data.setCell(2, 1, 'TS004_VerifyMarketingRelationshipOwnerContactTest')
 data.setCell(2, 2, 'crmframework.crmAutomation.ContactPageTest')
 data.setCell(2, 3, 33153);
-
 data.setCell(0, 3, 104672);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TS005_VerifyJobFunctionFieldTest')
+data.setCell(1, 1, 'TS006_VerifyContactStatusToActivateContactTest')
 data.setCell(1, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(1, 3, 59611);
 data.setCell(1, 3, 93002);
 
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
 
               <span class="suite-total-time">Total running time: 2 minutes</span>
 
@@ -268,12 +269,14 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">crmframework.crmAutomation.ContactPageTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">TS005_VerifyJobFunctionFieldTest</span>
+                <br/>
                 <span class="ignored-method-name">TS002_VerifyCreateNewContactTest</span>
                 <br/>
                 <span class="ignored-method-name">TS004_VerifyMarketingRelationshipOwnerContactTest</span>
@@ -297,7 +300,7 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">TS001_VerifyHomePageTest</span>
-
+                <span class="method-start">5613 ms</span>
                 <span class="method-start">5762 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
@@ -307,12 +310,12 @@ return data;
               <div class="test-method">
                 <span class="method-name">TS005_VerifyPhoneCallOnContactTest</span>
                 <span class="method-start">125536 ms</span>
-
                 <span class="method-start">6842 ms</span>
+
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">TS005_VerifyJobFunctionFieldTest</span>
-                <span class="method-start">111532 ms</span>
+                <span class="method-name">TS006_VerifyContactStatusToActivateContactTest</span>
+                <span class="method-start">108074 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
