@@ -32,6 +32,7 @@ import pageObjects.CRMLoginPage;
 import resources.GenerateData;
 import resources.base;
 
+
 @Listeners({TestListeners.class})
 public class ContactPageTest extends base{
 

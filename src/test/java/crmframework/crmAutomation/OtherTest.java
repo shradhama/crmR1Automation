@@ -38,7 +38,7 @@ public class OtherTest extends base{
 	public String buysatCorplvl, outofbusiness;
 	public String ContactFirstName;
 	public String ContactLastName;
-	CRMLandingPage lap;
+	public CRMLandingPage lap;
 	CRMLoginPage lp;
 	AppLandingPage alp;
 	CRMHomePage hp;
