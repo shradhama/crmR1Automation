@@ -3,7 +3,9 @@ package crmframework.crmAutomation;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -714,6 +716,87 @@ public class ContactPageTest extends base{
 
 		//Clear the search term to navigate to active accounts page
 		hp.getClearSearch().click();*/
+	}
+	@Test(priority=9)
+	public void TS009_VerifyExportToExcelTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T293- Verify Export To Excel functionality for Accounts
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		cp = new CRMContactPage(driver);
+		ap = new CRMAccountsPage(driver);
+		
+		//Click on Contacts tab from left menu and search contacts containing Cyb
+		hp.getContactsTab().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
+		ap.getclicksearchbutton().click();
+		
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+		
+		//Click Export To Excel option under it
+		cp.getexporttoexcelbtn().click();
+		
+		//Export file to online excel
+		ap.getopenexcelonline().click();
+		
+		//ap.getsaveexcelonline().click();
+		ap.getsaveexcelonline().click();   
+		
+		//Click Track Progress button
+		cp.getexporttrackprogressbtn().click();
+		
+		//Switch to previous browser tab
+		Thread.sleep(10000);
+		Set<String> windows = driver.getWindowHandles();
+		Iterator<String>it = windows.iterator();
+		String parentId = it.next();
+		String childId = it.next();
+		driver.switchTo().window(parentId);
+		
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+				
+		//Click Export To Excel option under it
+		cp.getexporttoexcelbtn().click();
+		
+		//Export Excel to Static Worksheet
+		ap.getexporttostaticworksheet().click();
+		
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+				
+		//Click Export To Excel option under it
+		cp.getexporttoexcelbtn().click();
+		
+		//Export Excel to Static Worksheet Page Only
+		ap.getexporttostaticworksheetpageonly().click();
+		
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+				
+		//Click Export To Excel dropdown arrow option under it
+		cp.getexporttoexcelbtn().click();
+		
+		//Export to Dynamic Worksheet
+		ap.getexporttodynamicworksheet().click();
+		cp.getexportselectbox1().click();
+		cp.getexportselectbox2().click();
+		ap.getexportworksheetpopup().click();
+		
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+						
+		//Click Export To Excel option under it
+		cp.getexporttoexcelbtn().click();
+		
+		//Export to Dynamic Pivot Table
+		ap.getexporttodynamicpivottable().click();
+		cp.getexportselectbox1().click();
+		cp.getexportselectbox2().click();
+		ap.getexportworksheetpopup().click();
 	}
 	
 	//	@AfterTest

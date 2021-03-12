@@ -1,6 +1,8 @@
 package crmframework.crmAutomation;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -255,9 +257,8 @@ public class OtherTest extends base{
 		ap.getPageBackBtn().click();			
 		//Thread.sleep(3000);
 	}
-	
-	@Test(priority=28)
-	public void TS023_VerifyExportToExcelTest() throws InterruptedException
+	@Test(priority=5)
+	public void TS005_VerifyExportToExcelTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//CRM-T293- Verify Export To Excel functionality for Accounts
@@ -266,8 +267,10 @@ public class OtherTest extends base{
 		ap = new CRMAccountsPage(driver);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-		//Click on Accounts Tab at left menu.
+		//Click on Accounts Tab at left menu and search accounts containing Cyb
 		hp.getAccountTab().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
+		ap.getclicksearchbutton().click();
 		
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
@@ -277,11 +280,20 @@ public class OtherTest extends base{
 		
 		//Export file to online excel
 		ap.getopenexcelonline().click();
-		//ap.getsaveexcelonline().click();
 		
-		Thread.sleep(5000);
-		ap.getclosepopupexcelonline().click();   
-		Thread.sleep(10000);
+		//ap.getsaveexcelonline().click();
+		ap.getsaveexcelonline().click();   
+		
+		//Click Track Progress button
+		ap.gettrackprogressexportbtn().click();
+		
+		//Switch to previous browser tab
+		Set<String> windows = driver.getWindowHandles();
+		Iterator<String>it = windows.iterator();
+		String parentId = it.next();
+		String childId = it.next();
+		driver.switchTo().window(parentId);
+				
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
 				
@@ -301,7 +313,7 @@ public class OtherTest extends base{
 		ap.getexporttostaticworksheetpageonly().click();
 		
 		//Click three dots for Export option in header
-		//ap.getclickoverflowbutton().click();
+		ap.getclickoverflowbutton().click();
 				
 		//Click Export To Excel dropdown arrow option under it
 		ap.getclickexporttoexcelbutton().click();

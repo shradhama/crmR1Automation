@@ -90,11 +90,10 @@ public class CRMContactPage {
 	By contacttaskbtnontimeline = By.xpath("//div[text() = 'Task']");
 	By contacttasksubjecttxtbx = By.xpath("//input[@aria-label='Subject']");
 	By contacttasksavenclosebtn = By.xpath("//button[@data-id='quickCreateSaveAndCloseBtn']");
-	By duplicaterecordspopuptitle = By.xpath("//h1[@aria-label='Duplicate records found']");
-	By duplicaterecordspopupcancelbtn = By.xpath("//button[@aria-label = 'Cancel']");
-	By unsavedchangespopuptitle = By.xpath("//h1[@aria-label='Unsaved changes']");
-	By discardchangesbtn = By.xpath("//button[@aria-label='Discard changes']");
-	By duplicaterecordspopupignorensavebtn = By.xpath("//button[@aria-label='Ignore and save']");
+	By exporttoexcelbtn = By.xpath("//button[@id ='contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.ExportToExcel.Menu$splitButtonId_button1$button']");//Locator for export to excel arrow for contacts
+	By exportselectbox1 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeycontactaddress1_latitude']");//Locator for selecting columns to be included in dynamic sheet and dynamic pivot table for export to options
+	By exportselectbox2 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeycontactcallback']");//Locator for selecting columns to be included in dynamic sheet and dynamic pivot table for export to options
+	By exporttrackprogressbtn = By.xpath("//button[@aria-label = 'Track Progress']");//Locator for track progress button for export excel online option for contacts
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -506,34 +505,32 @@ public class CRMContactPage {
 	{
 		return driver.findElement(contacttasksavenclosebtn);
 	}
-	
-
-	public WebElement getDuplicateRecordsPopupTitle() throws InterruptedException
-	{
-		Thread.sleep(5000);
-		return driver.findElement(duplicaterecordspopuptitle);
-	}
-	
-	public WebElement getDuplicateRecordsPopupCancelbtn()
-	{
-		return driver.findElement(duplicaterecordspopupcancelbtn);
-	}
-	
-	public WebElement getUnsavedChangesPopupTitle()
+	public WebElement getexporttoexcelbtn() throws InterruptedException
 	{
 		wait = new WebDriverWait (driver,20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(unsavedchangespopuptitle));
-		return driver.findElement(unsavedchangespopuptitle);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(exporttoexcelbtn));
+		Thread.sleep(3000);
+		return driver.findElement(exporttoexcelbtn);
 	}
-	
-	public WebElement getDiscardChangesBtn()
+	public WebElement getexportselectbox1() throws InterruptedException
 	{
-		return driver.findElement(discardchangesbtn);
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(exportselectbox1));
+		Thread.sleep(3000);
+		return driver.findElement(exportselectbox1);
 	}
-	
-	public WebElement getDuplicateRecordsPopupIgnorenSavebtn()
+	public WebElement getexportselectbox2() throws InterruptedException
 	{
-		return driver.findElement(duplicaterecordspopupignorensavebtn);
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(exportselectbox2));
+		Thread.sleep(3000);
+		return driver.findElement(exportselectbox2);
 	}
-
+	public WebElement getexporttrackprogressbtn() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(exporttrackprogressbtn));
+		Thread.sleep(15000);
+		return driver.findElement(exporttrackprogressbtn);
+	}
 }

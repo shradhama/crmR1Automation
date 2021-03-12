@@ -103,7 +103,6 @@ public class CRMAccountsPage {
 	By phonecalloption = By.xpath("//li[@aria-label = 'Phone Call Activity']");
 	By phonecallsubject = By.xpath("//input[@data-id='subject.fieldControl-text-box-text']");
 	By clickphonecallduedatecalendor = By.xpath("//div [@class = 'ms-TextField-wrapper']/div/i");
-	//By phonecallduedatecurrent = By.xpath("//button[@class='dayButton-222 dayIsToday-223 ms-CalendarDay-dayIsToday']");
 	By phonecallduetimoption = By.xpath("//div[@id = 'scheduledend_fabric_comboboxwrapper']/button/span");
 	By phonecallselectduetime = By.xpath("//button[@id = 'scheduledend_fabric_combobox-list47']");
 	By clickregiongridfunnel = By.xpath("//div[@data-id = 'xxc_regionid']");
@@ -194,11 +193,10 @@ public class CRMAccountsPage {
 	By list = By.xpath("//ul[@aria-label= 'Active Account Sub Grid']/li[1]");
 	By listmember = By.xpath("//div[@aria-label = 'Active List Members']");
 	By openexcelonline = By.xpath("//button[@aria-label = 'Open in Excel Online']");
-	By exporttostaticworksheet = By.xpath("//button[@aria-label = 'Static Worksheet']/span/span[2]");
-	By exporttostaticworksheetpageonly = By.xpath("//span[contains(text(),'Static Worksheet (Page only)')]");
-	By exporttodynamicworksheet = By.xpath("//span[contains(text(),'Dynamic Worksheet')]");
-	By exporttodynamicpivottable = By.xpath("//span[contains(text(),'Dynamic PivotTable')]");
-	By closepopupexcelonline = By.xpath("//button[@data-id='dialogCloseIconButton']/span[1]");
+	By exporttostaticworksheet = By.xpath("//button[@aria-label = 'Static Worksheet']");
+	By exporttostaticworksheetpageonly = By.xpath("//button[@aria-label = 'Static Worksheet (Page only)']");
+	By exporttodynamicworksheet = By.xpath("//button[@aria-label = 'Dynamic Worksheet']");
+	By exporttodynamicpivottable = By.xpath("//button[@aria-label = 'Dynamic PivotTable']");
 	By phoneCallTimelineSubject= By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div/div[2]/div[2]/label[1]");
 	By accrefreshbtn = By.xpath("//button[@aria-label='Refresh']");
 	By duplicaterecordspopupcancelbtn = By.xpath("//button[@aria-label = 'Cancel']");
@@ -212,6 +210,7 @@ public class CRMAccountsPage {
 	By acctypelabel = By.xpath("//label[contains(text(),'Type')]");
 	By accstreet3label = By.xpath("//label[contains(text(),'Street 3')]");
 	By verifyaccountppointment = By.xpath("//div[@id = 'TimelineMainContainerSection']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/label[1]");//Locator for getting text of subject for an appointment
+	By trackprogressexportbtn = By.xpath("//div[@data-id = 'alertdialog']div[1]/div[3]/button[1]/span[1]"); //Locator for track progress for export online option for accounts
 	
 	public CRMAccountsPage(WebDriver driver) {
 
@@ -818,8 +817,8 @@ public class CRMAccountsPage {
 		return driver.findElement(duplicaterecordspopupignorensavebtn);
 	}
 	
-	public WebElement getclickoverflowbutton() {
-		
+	public WebElement getclickoverflowbutton() throws InterruptedException {
+		Thread.sleep(10000);
 		return driver.findElement(clickoverflowbutton);
 	}
 	
@@ -833,20 +832,13 @@ public class CRMAccountsPage {
 		return driver.findElement(openexcelonline);
 	}
 
-	public WebElement getsaveexcelonline() 
+	public WebElement getsaveexcelonline() throws InterruptedException 
 	{
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(saveexcelonline));
+		Thread.sleep(20000);
 		return driver.findElement(saveexcelonline);
 	}
-
-	public WebElement getclosepopupexcelonline() 
-	{
-		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(closepopupexcelonline));
-		return driver.findElement(closepopupexcelonline);
-	}
-
 	public WebElement getexporttostaticworksheet() 
 	{
 		wait = new WebDriverWait (driver,15);
@@ -1280,6 +1272,13 @@ public class CRMAccountsPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccountppointment));
 		Thread.sleep(10000);
 		return driver.findElement(verifyaccountppointment);
+	}
+	public WebElement gettrackprogressexportbtn() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(trackprogressexportbtn));
+		Thread.sleep(20000);
+		return driver.findElement(trackprogressexportbtn);
 	}
 }
 
