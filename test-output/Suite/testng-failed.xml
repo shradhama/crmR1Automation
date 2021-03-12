@@ -6,8 +6,10 @@
       <class name="crmframework.crmAutomation.AccountPageTest">
         <methods>
           <include name="initialize"/>
+          <include name="TS002_VerifyCreateNewContactTest"/>
           <include name="closeDriver"/>
           <include name="TS003_VerifyAddAppointmentToAccountTest"/>
+
         </methods>
       </class> <!-- crmframework.crmAutomation.AccountPageTest -->
     </classes>
