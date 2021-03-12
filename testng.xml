@@ -6,12 +6,20 @@
 	</listners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<!-- <class name="crmframework.crmAutomation.AccountPageTest" /> -->
+			<class name="crmframework.crmAutomation.AccountPageTest" />
 			<!-- <class name="crmframework.crmAutomation.OtherTest" /> -->
-			<class name="crmframework.crmAutomation.ContactPageTest" />
+			<!-- <class name="crmframework.crmAutomation.ContactPageTest" />-->
 			<methods>
 				 <include name="TS001_VerifyHomePageTest" />
+
+				 <include name="TS002_VerifyCreateNewContactTest"/>
+				 <include name="TS009_VerifyDuplicateContactTest" />
+
+				<!--<include name="TS005_VerifyPhoneCallOnContactTest" />-->
+				 <!--<include name="TS004_VerifyMarketingRelationshipOwnerContactTest" />-->
+	     		<include name="TS003_VerifyAddAppointmentToAccountTest" />
 				 <include name="TS008_VerifyAddNewTaskFromTimelineToContactTest" />
+
 			</methods>
 		</classes>
 	</test>
