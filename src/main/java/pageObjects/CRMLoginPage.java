@@ -36,8 +36,9 @@ public class CRMLoginPage {
 		return driver.findElement(signin);
 	}
 
-	public WebElement getVerify() {
-		//web element for the mobile authenticate code verification button. 
+	public WebElement getVerify() throws InterruptedException {
+		//web element for the mobile authenticate code verification button.
+		Thread.sleep(10000);
 		return driver.findElement(verify);
 		
 	}
