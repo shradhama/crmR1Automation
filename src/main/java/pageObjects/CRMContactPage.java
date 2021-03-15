@@ -13,7 +13,7 @@ public class CRMContactPage {
 
 	public WebDriver driver;
 	public FluentWait<WebDriver> wait;
-	
+
 	By scrolltoaddcontact = By.xpath("//h2[@data-id = 'form-sectionHeader-SUMMARY_TAB_column_3_section_1']");
 	By clicknewcontactbutton = By.xpath("//button[@aria-label = 'New Contact']");
 	By firstname = By.xpath("//input[@aria-label = 'First Name']");
@@ -114,115 +114,119 @@ public class CRMContactPage {
 	By fullnameddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[2]");//Locator for Full Name group by option
 	By regionddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[9]");//Locator for region group by option
 	By groupbyverification = By.xpath("//button[@aria-label = 'Toggle Group']");//Locator for verification of grouping by options
-	
+	By phonecalloutcomedeclinedoptn = By.xpath("//option[contains(text(),'Declined')]"); //Locator for Phone Call Outcome 'Declined' option
+	By declinedreasonselectdd = By.xpath("//select[@aria-label='Declined Reason']"); //Locator for Declined Reason drop down
+	By selectdeclinedreasonname = By.xpath("//select[@aria-label='Declined Reason']/option[2]"); //Locator for Declined Reason value from Call reason field
+	By contactmarketprofiledeclinedreasonfield = By.xpath("//div[@data-id='cell-0-4']"); //Locator for Declined reason value on Contact market profile tab
+
 	public CRMContactPage(WebDriver driver) {
 
 		this.driver = driver;
 	}
-	
+
 	public WebElement getscrolltoaddcontact() {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(scrolltoaddcontact));
 		return driver.findElement(scrolltoaddcontact);
 	}
-	
+
 	public WebElement getclicknewcontactbutton() {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(clicknewcontactbutton));
 		return driver.findElement(clicknewcontactbutton);
 	}
 
 	public WebElement getfirstname() {
-	
-	wait = new WebDriverWait (driver,15);
-	wait.until(ExpectedConditions.elementToBeClickable(firstname));
-	return driver.findElement(firstname);
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(firstname));
+		return driver.findElement(firstname);
 	}
 
 	public WebElement getlastname() {
-	
-	wait = new WebDriverWait (driver,15);
-	wait.until(ExpectedConditions.elementToBeClickable(lastname));
-	return driver.findElement(lastname);
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(lastname));
+		return driver.findElement(lastname);
 	}
 
 	public WebElement getmobile() {
-	
-	wait = new WebDriverWait (driver,15);
-	wait.until(ExpectedConditions.elementToBeClickable(mobile));
-	return driver.findElement(mobile);
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(mobile));
+		return driver.findElement(mobile);
 	}
-	
+
 	public WebElement getscrolltocontactaddress() {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(scrolltocontactaddress));
 		return driver.findElement(scrolltocontactaddress);
 	}
-	
+
 	public WebElement getemail() {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(email));
 		return driver.findElement(email);
 	}
-	
+
 	public WebElement getstreet1() {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(street1));
 		return driver.findElement(street1);
 	}
-	
+
 	public WebElement getcity() {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(city));
 		return driver.findElement(city);
 	}
-	
+
 	public WebElement getstateorprovince() {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(stateorprovince));
 		return driver.findElement(stateorprovince);
 	}
 
 	public WebElement getziporpostalcode() {
-	
-	wait = new WebDriverWait (driver,15);
-	wait.until(ExpectedConditions.elementToBeClickable(ziporpostalcode));
-	return driver.findElement(ziporpostalcode);
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(ziporpostalcode));
+		return driver.findElement(ziporpostalcode);
 	}
 
 	public WebElement getcountry() {
-	
-	wait = new WebDriverWait (driver,15);
-	wait.until(ExpectedConditions.elementToBeClickable(country));
-	return driver.findElement(country);
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(country));
+		return driver.findElement(country);
 	}
 
 	public WebElement getclicklistbox() {
-	
-	wait = new WebDriverWait (driver,15);
-	wait.until(ExpectedConditions.elementToBeClickable(clicklistbox));
-	return driver.findElement(clicklistbox);
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(clicklistbox));
+		return driver.findElement(clicklistbox);
 	}
 
 	public WebElement getsavecontact() {
-	
-	wait = new WebDriverWait (driver,15);
-	wait.until(ExpectedConditions.elementToBeClickable(savecontact));
-	return driver.findElement(savecontact);
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(savecontact));
+		return driver.findElement(savecontact);
 	}
-	
+
 	public WebElement getverifycontact() throws InterruptedException {
-		
+
 		Thread.sleep(7000);
 		return driver.findElement(verifycontact);
-		}
+	}
 	public WebElement getContactFormEmailField() {
 
 		wait = new WebDriverWait (driver,20);
@@ -235,31 +239,31 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(contactformbusinessphonetxtfield));
 		return driver.findElement(contactformbusinessphonetxtfield);
 	}
-	
+
 	public WebElement getContactSavenCloseBtn() throws InterruptedException {
 		Thread.sleep(6000);
 		return driver.findElement(contactsavenclosebtn);
 	}
-	
+
 	public WebElement getContactNameinHeader() throws InterruptedException {
-		
+
 		Thread.sleep(7000);
 		return driver.findElement(contactnameinheader);
 	}
-	
+
 	public WebElement getActiveContactsLabel() {
 		return driver.findElement(activecontactslabel);
 	}
-	
+
 	public WebElement getCreateNewContactBtn() throws InterruptedException {
 		Thread.sleep(5000);
 		return driver.findElement(createnewcontactbtn);
 	}
-	
+
 	public WebElement getContactFirstNameLabel() {
 		return driver.findElement(contactfirstnamelabel);
 	}
-	
+
 	public WebElement getContactTypetxtbx()
 	{
 		return driver.findElement(contacttypetxtbx);
@@ -274,36 +278,36 @@ public class CRMContactPage {
 	{
 		return driver.findElement(contacttypebuyer);
 	}
-	
+
 	public WebElement getContactAccountNameTxtbx()
 	{
 		return driver.findElement(contactaccountnametxtbx);
 	}
-	
+
 	public WebElement getSearchRecordsBtn()
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(searchrecordsbtn));	
 		return driver.findElement(searchrecordsbtn);
 	}
-	
+
 	public WebElement getAccountNameTitle() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(accountnametitle));
 		return driver.findElement(accountnametitle);
 	}
-	
+
 	public WebElement getScrollTextOnContactForm() {
-		
+
 		return driver.findElement(scrolltextoncontactform);
 	}
-		
+
 	public WebElement getMobilePhoneLabel() {
-		
+
 		return driver.findElement(mobilephonelabel);
 	}
 	public WebElement getCityLabel() {
-		
+
 		return driver.findElement(citylabel);
 	}
 	public WebElement getCountrytxbx()
@@ -320,80 +324,80 @@ public class CRMContactPage {
 	{
 		return driver.findElement(countryname);
 	}
-	
+
 	public WebElement getContactSectionMenuBtn()
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(contactsectionmenubtn));
 		return driver.findElement(contactsectionmenubtn);
 	}
-	
+
 	public WebElement getValidateInactiveContactName() throws InterruptedException {
 		Thread.sleep(6000);
 		return driver.findElement(validateInactiveContact);
 	}
-	
+
 	public WebElement getInactiveContactOptn() {
 		return driver.findElement(inactivecontactsoptn);
 	}
-	
+
 	public WebElement getActiveContactDropDownBtn() {
 		return driver.findElement(contactdropdownbtn);
 	}
-	
+
 	public WebElement getDeactivateBtn() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(deactivatebtn));
 		return driver.findElement(deactivatebtn);
 	}
-	
+
 	public WebElement getDeactivateOkBtn() {
 		return driver.findElement(deactivateokbtn);
 	}
-	
+
 	public WebElement getQLetterFilterLink() throws InterruptedException {
-		
+
 		Thread.sleep(10000);
 		return driver.findElement(qletterfilterlink);
 	}
-	
+
 	public WebElement getContactStatusOutofBusiness() {
 
 		return driver.findElement(contactstatusoutofbusiness);
 	}
-	
+
 	public WebElement getContactStatusResonForInactiveAcc() {
 
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasonoutofbusinessinheader));
 		return driver.findElement(contactstatusreason);
 	}
-	
+
 	public WebElement getopencontact() throws InterruptedException {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(opencontact));
 		Thread.sleep(10000);
 		return driver.findElement(opencontact);
 	}
-	
+
 	public WebElement getcalltophonecall()  {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(calltophonecall));
 		return driver.findElement(calltophonecall);
 	}
-	
+
 	public WebElement getsearchcallto()  {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(searchcallto));
 		return driver.findElement(searchcallto);
 	}
-	
+
 
 	public WebElement getselectcallto() throws InterruptedException  {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(selectcallto));
 		Thread.sleep(5000);
@@ -404,27 +408,27 @@ public class CRMContactPage {
 	{
 		return driver.findElement(contacttypemedia);
 	}
-	
+
 	public List<WebElement> getJobFunctionFieldLabel()
 	{
 		return driver.findElements(jobfunctionfieldlabel);
 	}
-	
+
 	public WebElement getJobFunctionFieldTxtBox()
 	{
 		return driver.findElement(jobfunctionfieldtxtbox);
 	}
-	
+
 	public WebElement getJobFunctionFieldExpandBtn()
 	{
 		return driver.findElement(jobfunctionfieldexpandbtn);
 	}
-	
+
 	public List<WebElement> getJobFunctionvValuesList()
 	{
 		return driver.findElements(jobfunctionvalueslist);
 	}
-	
+
 	public WebElement getJobFunctionValue()
 	{
 		return driver.findElement(jobfunctionvalue);
@@ -434,66 +438,66 @@ public class CRMContactPage {
 		Thread.sleep(5000);
 		return driver.findElement(contactrefreshbtn);
 	}
-	
+
 	public WebElement getContactTypeSelectedValueTxtbx()
 	{
 		return driver.findElement(contacttypeselectedvaluetxtbx);
 	}
-	
+
 	public WebElement getRemoveContactTypeMediaBtn()
 	{
 		return driver.findElement(removecontacttypemediabtn);
 	}
 
 	public WebElement getBusinessPhoneLabel() {
-		
+
 		return driver.findElement(businessphonelabel);
 
 	}
-	
+
 	public WebElement getCLetterFilterLink() throws InterruptedException {
-		
+
 		Thread.sleep(10000);
 		return driver.findElement(cletterfilterlink);
 	}
-	
+
 	public WebElement selectContactName() throws InterruptedException
 	{
 		Thread.sleep(10000);
 		return driver.findElement(selectcontactname);
 	}
-	
+
 	public WebElement getContactNaviagteBtn() {
 		return driver.findElement(contactnaviagtebtn);
 	}
-	
+
 	public WebElement getContactStatusDoNotCall() {
 		return driver.findElement(contactstatusdonotcall);
 	}
-	
+
 	public WebElement getContactActivateBtn() {
 		return driver.findElement(contactactivatebtn);
 	}
-	
+
 	public WebElement getContactActivatePopupStatusField() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(contactactivatepopupstatusfield));
 		return driver.findElement(contactactivatepopupstatusfield);
 	}
-	
+
 	public WebElement getActivatePopupActivatebtn() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.elementToBeClickable(activatepopupactivatebtn)).click();
 		return driver.findElement(activatepopupactivatebtn);
 	}
-	
+
 	public WebElement getContactStatusResonForActiveContact() {
 
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasondonotcallinheader));
 		return driver.findElement(contactstatusreason);
 	}
-                                   
+
 	public WebElement getclicktab() {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(clicktab));
@@ -514,13 +518,13 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(contacttaskbtnontimeline));
 		return driver.findElement(contacttaskbtnontimeline);
 	}
-	
+
 	public WebElement getContactTaskSujecttxbx() throws InterruptedException
 	{
 		Thread.sleep(5000);
 		return driver.findElement(contacttasksubjecttxtbx);
 	}
-	
+
 	public WebElement getContactTaskSavenClosebtn()
 	{
 		return driver.findElement(contacttasksavenclosebtn);
@@ -553,66 +557,66 @@ public class CRMContactPage {
 		Thread.sleep(15000);
 		return driver.findElement(exporttrackprogressbtn);
 	}
-	
-public WebElement getContactMarketProfilesTab() {
-		
+
+	public WebElement getContactMarketProfilesTab() {
+
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(contactmarketprofilestab));
 		return driver.findElement(contactmarketprofilestab);
 	}
-	
+
 	public WebElement getNoDataAvailableTextForMarketProfile() {
-		
+
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(nodataavailabletextformarketprofile));
 		return driver.findElement(nodataavailabletextformarketprofile);
 	}
-	
+
 	public WebElement getContactSummaryTab() {
-		
+
 		return driver.findElement(contactsummarytab);
 	}
-	
+
 	public WebElement getphonecalloption() {
-		
+
 		return driver.findElement(phonecalloption);
 	}
-	
+
 	public WebElement getNewPhoneCallMarketOutcomeBtn()  {
-		
+
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(newphonecallmarketoutcomebtn));
 		return driver.findElement(newphonecallmarketoutcomebtn);
 	}
-	
+
 	public WebElement getPhoneCallMarketSubjectTxtBx() throws InterruptedException  {
 		Thread.sleep(6000);
 		return driver.findElement(phonecallmarketsubjecttxtbx);
 	}
-	
+
 	public WebElement getMarketSearchBtn() {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(marketsearchbtn));
 		return driver.findElement(marketsearchbtn);
 	}
-	
+
 	public WebElement selectMarketName() {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(selectmarketname));
 		return driver.findElement(selectmarketname);
 	}
-	
+
 	public WebElement getPhoneCallOutcomeTxtBx() {
-	
+
 		return driver.findElement(phonecalloutcometxtbx);
 	}
-	
+
 	public WebElement selectPhoneCallOutcomeOption() {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(phonecalloutcomeoptn));
 		return driver.findElement(phonecalloutcomeoptn);
 	}
-	
+
 	public WebElement getPhoneCallMarketOutcomeSavenCloseBtn() {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(phonecallmarketoutcomesavenclosebtn));
@@ -622,24 +626,24 @@ public WebElement getContactMarketProfilesTab() {
 		Thread.sleep(5000);
 		return driver.findElement(phonecallmarkcompletebtn);
 	}
-	
+
 	public WebElement getNewlyCreatedContactMarketProfileField() {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(newlycreatedcontactmarketprofilefield));
 		return driver.findElement(newlycreatedcontactmarketprofilefield);
 	}
-	
+
 	public WebElement getValidateNewlyCreatedContactMarketProfileName() {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(validatenewlycreatedcontactmarketprofilename));
 		return driver.findElement(validatenewlycreatedcontactmarketprofilename);
 	}
-		
+
 	public WebElement getPhoneCallDescriptionLabel()
 	{
 		return driver.findElement(phonecalldescriptionlabel);
 	}
-	
+
 	public WebElement getContactMarketProfileIsRegisteredField()
 	{
 		return driver.findElement(contactmarketprofileisregisteredfield);
@@ -672,5 +676,26 @@ public WebElement getContactMarketProfilesTab() {
 		Thread.sleep(5000);
 		return driver.findElement(groupbyverification);
 	}
-	
+	public WebElement selectPhoneCallOutcomeDeclinedOption() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(phonecalloutcomedeclinedoptn));
+		return driver.findElement(phonecalloutcomedeclinedoptn);
+	}
+
+	public WebElement getDeclinedReasonSelectDD() {
+
+		return driver.findElement(declinedreasonselectdd);
+	}
+
+	public WebElement selectDeclinedReasonName() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(selectdeclinedreasonname);
+	}
+
+	public WebElement getContactMarketProfileDeclinedReasonField() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactmarketprofiledeclinedreasonfield));
+		return driver.findElement(contactmarketprofiledeclinedreasonfield);
+	}
+
 }

@@ -5,8 +5,8 @@
     <classes>
       <class name="crmframework.crmAutomation.ContactPageTest">
         <methods>
+          <include name="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined"/>
           <include name="initialize"/>
-          <include name="TS012_ManualFail_VerifyContactMarketRecordProfile_Registered"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.ContactPageTest -->
     </classes>
