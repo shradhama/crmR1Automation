@@ -114,6 +114,10 @@ public class CRMContactPage {
 	By fullnameddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[2]");//Locator for Full Name group by option
 	By regionddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[9]");//Locator for region group by option
 	By groupbyverification = By.xpath("//button[@aria-label = 'Toggle Group']");//Locator for verification of grouping by options
+	By scrolltoaccountdetails = By.xpath("//h2[@data-id = 'form-sectionHeader-CUSTOMER_DETAILS_TAB']");//Locator for Account Details section on Contact page
+	By scrolltoregdetails = By.xpath("//button[@data-id = 'xxc_registration|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_registration.RefreshButton']");//Locator for Registration details section
+	By scrolltolistdetails = By.xpath("//button[@dfata-id = 'xxc_listmember|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_listmember.RefreshButton']");//Locator for Associated Lists
+	By contactlistsgrid = By.xpath("//div[@data-id = 'contactquickform.AccountAssociatedLists_container']");//Locator for lists grid on contact form
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -671,6 +675,27 @@ public WebElement getContactMarketProfilesTab() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(groupbyverification));
 		Thread.sleep(5000);
 		return driver.findElement(groupbyverification);
+	}
+	public WebElement getscrolltoaccountdetails() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(scrolltoaccountdetails));
+		Thread.sleep(5000);
+		return driver.findElement(scrolltoaccountdetails);
+	}
+	public WebElement getscrolltoregdetails() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(scrolltoregdetails));
+		Thread.sleep(5000);
+		return driver.findElement(scrolltoregdetails);
+	}
+	public WebElement getscrolltolistdetails() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(scrolltolistdetails));
+		Thread.sleep(5000);
+		return driver.findElement(scrolltolistdetails);
 	}
 	
 }

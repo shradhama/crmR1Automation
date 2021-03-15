@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">CRM Automation Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Mar 15, 2021 11:15:10 AM</span></a>
+<a href="#"><span class="badge badge-primary">Mar 15, 2021 03:06:29 PM</span></a>
 </li>
 </ul>
 </div>
@@ -87,7 +87,7 @@
           <div class="test-detail">
             <p class="name">TS001_VerifyHomePageTest</p>
             <p class="text-sm">
-              <span>11:15:29 AM</span> / <span>00:01:57:349</span>
+              <span>15:06:33 PM</span> / <span>00:01:27:420</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -96,9 +96,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">TS001_VerifyHomePageTest</h5>
-<span class='badge badge-success'>03.15.2021 11:15:29</span>
-<span class='badge badge-danger'>03.15.2021 11:17:26</span>
-<span class='badge badge-default'>00:01:57:349</span>
+<span class='badge badge-success'>03.15.2021 15:06:33</span>
+<span class='badge badge-danger'>03.15.2021 15:08:01</span>
+<span class='badge badge-default'>00:01:27:420</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 </div>
@@ -108,7 +108,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:17:26 AM</td>
+        <td>3:08:01 PM</td>
         <td>
           Test Passed
         </td>
@@ -123,9 +123,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">TS012_ManualFail_VerifyContactMarketRecordProfile_Registered</p>
+            <p class="name">TS011_VerifyAssociatedListsSectionContactTest</p>
             <p class="text-sm">
-              <span>11:17:26 AM</span> / <span>00:02:06:952</span>
+              <span>15:08:01 PM</span> / <span>00:01:06:018</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -133,10 +133,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">TS012_ManualFail_VerifyContactMarketRecordProfile_Registered</h5>
-<span class='badge badge-success'>03.15.2021 11:17:26</span>
-<span class='badge badge-danger'>03.15.2021 11:19:33</span>
-<span class='badge badge-default'>00:02:06:952</span>
+<h5 class="test-status text-fail">TS011_VerifyAssociatedListsSectionContactTest</h5>
+<span class='badge badge-success'>03.15.2021 15:08:01</span>
+<span class='badge badge-danger'>03.15.2021 15:09:07</span>
+<span class='badge badge-default'>00:01:06:018</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 </div>
 </div>
@@ -146,13 +146,13 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>11:19:33 AM</td>
+        <td>3:09:07 PM</td>
         <td>
-          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2'] (tried for 15 second(s) with 500 MILLISECONDS interval)
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[@dfata-id = 'xxc_listmember|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_listmember.RefreshButton'] (tried for 20 second(s) with 500 MILLISECONDS interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:623)
-	at crmframework.crmAutomation.ContactPageTest.TS012_ManualFail_VerifyContactMarketRecordProfile_Registered(ContactPageTest.java:875)
+	at pageObjects.CRMContactPage.getscrolltolistdetails(CRMContactPage.java:695)
+	at crmframework.crmAutomation.ContactPageTest.TS011_VerifyAssociatedListsSectionContactTest(ContactPageTest.java:947)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -174,13 +174,13 @@
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
 	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2']
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //button[@dfata-id = 'xxc_listmember|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_listmember.RefreshButton']
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+System info: host: 'SHRADHAMA-W10', ip: '172.27.182.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: driver.version: unknown
 	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
 	at java.util.Optional.orElseThrow(Unknown Source)
@@ -240,9 +240,9 @@ Driver info: driver.version: unknown
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>11:17:26 AM</td>
+<td>15:08:01 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>TS012_ManualFail_VerifyContactMarketRecordProfile_Registered</a>
+<a href="#" class="linked" test-id='2' id='2'>TS011_VerifyAssociatedListsSectionContactTest</a>
 </td>
 </tr>
 </tbody>
@@ -262,13 +262,13 @@ Driver info: driver.version: unknown
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Mar 15, 2021 11:15:10 AM</h3>
+<h3>Mar 15, 2021 03:06:29 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Mar 15, 2021 11:19:34 AM</h3>
+<h3>Mar 15, 2021 03:09:07 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -338,7 +338,7 @@ Driver info: driver.version: unknown
 </div></div>
 <script>
 var timeline = {
-"TS001_VerifyHomePageTest":117.349,"TS012_ManualFail_VerifyContactMarketRecordProfile_Registered":126.952
+"TS001_VerifyHomePageTest":87.42,"TS011_VerifyAssociatedListsSectionContactTest":66.018
 };
 </script>
 <div class="row">

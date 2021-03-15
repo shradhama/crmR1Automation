@@ -6,7 +6,7 @@
       <class name="crmframework.crmAutomation.ContactPageTest">
         <methods>
           <include name="initialize"/>
-          <include name="TS012_ManualFail_VerifyContactMarketRecordProfile_Registered"/>
+          <include name="TS011_VerifyAssociatedListsSectionContactTest"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.ContactPageTest -->
     </classes>

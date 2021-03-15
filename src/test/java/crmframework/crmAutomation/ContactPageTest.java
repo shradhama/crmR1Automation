@@ -917,7 +917,65 @@ public class ContactPageTest extends base{
 		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Region is successful.");
 		System.out.println("Group by Region is working properly.");
 	}
-	
+	@Test(priority=11)
+	public void TS011_VerifyAssociatedListsSectionContactTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T288- Verify lists are available or not for an Account
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Open Contacts page and open existing contact
+		hp.getContactsTab().click();
+		Actions action = new Actions(driver);
+		WebElement OpenContact = cp.getopencontact();
+		action.doubleClick(OpenContact).perform();
+		
+		//Scroll to Associated Lists section
+		WebElement accounts = cp.getscrolltoaccountdetails();
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView(true);",accounts);
+		
+		WebElement registrations = cp.getscrolltoregdetails();
+		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView(true);",registrations);
+		
+		WebElement associatedlists = cp.getscrolltolistdetails();
+		JavascriptExecutor jse2 = (JavascriptExecutor)driver;
+		jse1.executeScript("arguments[0].scrollIntoView(true);",associatedlists);
+		
+		// Verify if Lists are available in Lists section
+		WebElement NoList = ap.getnolist();
+		Assert.assertFalse(NoList.getText().equalsIgnoreCase(""));
+		System.out.println("List is available for the account");
+		
+		// Verify for List Members
+		WebElement List = ap.getlist();
+		List.click();
+		
+		ap.getSelectedListName().click();
+		
+		//Scroll till Members section	
+		WebElement listmemremovedlabel = ap.getListMemRemovedLabel();	
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",listmemremovedlabel);
+		Thread.sleep(3000);
+		
+		WebElement memberslabel = ap.getMembersLabel();	
+		JavascriptExecutor jse3 = (JavascriptExecutor)driver;
+		jse3.executeScript("arguments[0].scrollIntoView(true);",memberslabel);
+		Thread.sleep(5000);
+		
+		WebElement ListMember = ap.getlistmember();
+		Assert.assertFalse(ListMember.getText().equalsIgnoreCase(""));
+		System.out.println("List memeber is available");
+		ap.getPageBackBtn().click();
+		ap.getPageBackBtn().click();
+	}
 	//	@AfterTest
 	//	public void closeDriver()
 	//	{
