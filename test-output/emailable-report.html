@@ -31,41 +31,18 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">246.2 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">3</td><td class="numi">3</td><td class="numi">0</td><td class="numi">0</td><td class="numi">213.2 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr><th colspan="4">Test &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="1">crmframework.crmAutomation.ContactPageTest</td><td><a href="#m1"><b>TS013_ManualFail_VerifyContactMarketRecordProfile_Declined</b>  </a></td><td class="numi">1</td><td>1615803680535</td><td class="numi">130704</td></tr>
 <tr><th colspan="4">Test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="1">crmframework.crmAutomation.ContactPageTest</td><td><a href="#m2"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1615803573923</td><td class="numi">106561</td></tr>
+<tr class="passedodd"><td rowspan="3">crmframework.crmAutomation.ContactPageTest</td><td><a href="#m1"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1615813155199</td><td class="numi">93717</td></tr><tr class="passedodd"><td><a href="#m2"><b>TS015_VerifyAddNewNoteToContactTest</b>  </a></td><td class="numi">1</td><td>1615813248984</td><td class="numi">69408</td></tr><tr class="passedodd"><td><a href="#m3"><b>TS016_VerifyAddNewPostToContactTest</b>  </a></td><td class="numi">1</td><td>1615813318403</td><td class="numi">41708</td></tr>
 </table>
 <h1>Test</h1>
-<h2 id="m1">crmframework.crmAutomation.ContactPageTest:TS013_ManualFail_VerifyContactMarketRecordProfile_Declined</h2>
-<div style="padding-left:3em">
-<p>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;] (tried for 15 second(s) with 500 MILLISECONDS interval)</p>
-org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-<br/>at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:632)
-<br/>at crmframework.crmAutomation.ContactPageTest.TS013_ManualFail_VerifyContactMarketRecordProfile_Declined(ContactPageTest.java:1002)
-<br/>25 lines not shown
-<p>Caused by Cannot locate an element using By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: driver.version: unknown</p>
-org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-<br/>at java.util.Optional.orElseThrow(Unknown Source)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-<br/>at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:632)
-<br/>at crmframework.crmAutomation.ContactPageTest.TS013_ManualFail_VerifyContactMarketRecordProfile_Declined(ContactPageTest.java:1002)
-<br/>25 lines not shown
-</div>
+<h2 id="m1">crmframework.crmAutomation.ContactPageTest:TS015_VerifyAddNewNoteToContactTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 <h2 id="m2">crmframework.crmAutomation.ContactPageTest:TS001_VerifyHomePageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">crmframework.crmAutomation.ContactPageTest:TS016_VerifyAddNewPostToContactTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>
