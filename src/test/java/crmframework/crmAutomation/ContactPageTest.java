@@ -883,6 +883,40 @@ public class ContactPageTest extends base{
 		//Click on 'Back' button
 		ap.getPageBackBtn().click();
 	}
+	@Test(priority=10)
+	public void TS010_VerifyGroupByOptionsContactTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T217- Verify Group By options for Contact
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		cp = new CRMContactPage(driver);
+		ap = new CRMAccountsPage(driver);
+		
+		//Click on Contacts tab from left menu and search contacts containing Cyb
+		hp.getContactsTab().click();
+		
+		//Open Group By drop down list options
+		cp.getclickgroupbydd().click();
+		
+		//Select Full Name option from Group By drop down list
+		cp.getfullnameddopt().click();
+		
+		//Verify if records are grouped by Full Name
+		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Full Name is not working.");
+		System.out.println("Group by Full Name is working properly.");
+
+		//Open Group By drop down list options
+		cp.getclickgroupbydd().click();
+		
+		//Select Region option from Group By drop down list
+		cp.getregionddopt().click();
+		
+		//Verify if records are grouped by Region
+		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Region is successful.");
+		System.out.println("Group by Region is working properly.");
+	}
 	
 	//	@AfterTest
 	//	public void closeDriver()
