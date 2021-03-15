@@ -1022,7 +1022,7 @@ public class ContactPageTest extends base{
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
 		cp = new CRMContactPage(driver);
-		
+
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		//Open Contacts page and open existing contact
@@ -1032,44 +1032,129 @@ public class ContactPageTest extends base{
 		Actions action = new Actions(driver);
 		WebElement OpenContact = cp.getopencontact();
 		action.doubleClick(OpenContact).perform();
-		
+
 		//Scroll to Associated Lists section
 		WebElement accounts = cp.getscrolltoaccountdetails();
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].scrollIntoView(true);",accounts);
-		
+
 		WebElement registrations = cp.getscrolltoregdetails();
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
 		jse1.executeScript("arguments[0].scrollIntoView(true);",registrations);
-		
-	/*	WebElement associatedlists = cp.getscrolltolistdetails();
+
+		/*	WebElement associatedlists = cp.getscrolltolistdetails();
 		JavascriptExecutor jse2 = (JavascriptExecutor)driver;
 		jse2.executeScript("arguments[0].scrollIntoView(true);",associatedlists);*/
-		
+
 		// Verify if Lists are available in Lists section
 		WebElement NoList = cp.getcontactlistsgrid();
 		Assert.assertFalse(NoList.getText().equalsIgnoreCase(""));
 		System.out.println("List is available for the account");
-		
+
 		// Verify for List Members
 		WebElement List = cp.getclickcontactlist();
 		List.click();
 		//System.out.println("List opened is "+List.getText());
 		//ap.getSelectedListName().click();
-		
+
 		//Scroll till Members section	
 		/*WebElement listmemremovedlabel = ap.getListMemRemovedLabel();	
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].scrollIntoView(true);",listmemremovedlabel);*/
-				
+
 		WebElement memberslabel = ap.getMembersLabel();	
 		JavascriptExecutor jse3 = (JavascriptExecutor)driver;
 		jse3.executeScript("arguments[0].scrollIntoView(true);",memberslabel);
-				
+
 		WebElement ListMember = ap.getlistmember();
 		Assert.assertFalse(ListMember.getText().equalsIgnoreCase(""));
 		System.out.println("List memeber is available");
 		ap.getPageBackBtn().click();
+		ap.getPageBackBtn().click();
+	}
+
+	@Test(priority=15)
+	public void TS015_VerifyAddNewNoteToContactTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T273- Select any contact and add new Note to Contact
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+
+		//Click on Contacts tab
+		hp.getContactsTab().click();
+
+		//Click on 'B' link to sort contacts starts with 'B'
+		cp.getBLetterFilterLink().click();	
+
+		//Select the contact name in list
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+
+		//Click on create a timeline button and select Note option
+		cp.getContactAddTimelineBtn().click();
+		cp.getContactNoteTimelineOptn().click();
+
+		cp.getContactNoteTitleTextbox().click();
+		String subjectnote = "Cyb_ContactNote";
+		cp.getContactNoteTitleTextbox().sendKeys(subjectnote);
+		//Thread.sleep(15000);
+		cp.getContactAddNoteButton().click();
+
+		//to scroll down
+		act = new Actions(driver);
+		act.moveToElement(cp.getViewCreatedNoteToContact()).perform();
+
+		String validateNoteSubject = cp.getViewCreatedNoteToContact().getText();
+		Assert.assertEquals(validateNoteSubject, subjectnote);
+		System.out.println("Note title is: "+ validateNoteSubject);
+		Thread.sleep(10000);
+		cp.getContactTimelineDetails().click();
+		cp.getContactDeleteNote().click();
+		cp.getOkConfirmBtn().click();
+
+		//Navigate back to Active contact list
+		ap.getPageBackBtn().click();
+	}
+
+	@Test(priority=16)
+	public void TS016_VerifyAddNewPostToContactTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//T274- Select any Contact and add Post to Contact
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+
+		//Click on Contacts tab
+		hp.getContactsTab().click();
+
+		//Click on 'B' link to sort accounts starts with 'B'
+		cp.getBLetterFilterLink().click();	
+
+		//Select the contact name in list
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+
+		//Click on create a timeline button and select Post option
+		cp.getContactAddTimelineBtn().click();
+		cp.getContactPostTimelineOptn().click();
+		cp.getContactPostEnterText().click();
+		cp.getContactPostEnterText().sendKeys("Cyb_"+ genData.generateRandomString(10));
+		String postText= cp.getContactPostEnterText().getAttribute("title");
+		System.out.println("Created Post: "+postText);
+		cp.getContactPostAddButton().click();
+		String validatePostText = cp.getContactViewCreatedPost().getText();
+		System.out.println("Viewed Post is: "+ validatePostText);
+		Assert.assertEquals(validatePostText, postText);
+		cp.getContactTimelineDetails().click();
+		cp.getContactDeletePost().click();
+		cp.getOkConfirmBtn().click();
 		ap.getPageBackBtn().click();
 	}
 	//	@AfterTest

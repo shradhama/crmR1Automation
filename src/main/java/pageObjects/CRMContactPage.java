@@ -123,6 +123,20 @@ public class CRMContactPage {
 	By scrolltolistdetails = By.xpath("//div[@data-id = 'contactquickform-QuickFormSectionContainer']");//Locator for Associated Lists
 	By contactlistsgrid = By.xpath("//div[@data-id = 'contactquickform.AccountAssociatedLists_container']");//Locator for lists grid on contact form
 	By clickcontactlist = By.xpath("//div[@aria-label = 'Active Account Sub Grid']/div[2]/div[2]/a[1]");//Locator to click List Name
+	By bletterfilterlink = By.xpath("//a[@id='B_link']"); //Locator for 'B' letter filter link for contacts
+	By contactnotetimelineoptn = By.xpath("//li[@data-id='notescontrol-createNewRecord_flyoutMenuItem_notes']"); //Locator for 'Note' option on Timeline pop-up on Contact form
+	By contactnotetitletxtbox = By.xpath("//input[@id='create_note_medium_title']"); //Locator for Nite Title text box
+	By viewcreatednotetocontact = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]"); //Locator to view newly created note for Contact
+	By contactdeletenote = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[2]/span"); //Locator for Delete note btn
+	By contacttimelinedetails = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]"); //Locator for Timeline details
+	By okconfirmbtn = By.xpath("//span[@id='confirmButtonText']"); //Locator for OK btn on delete note confirmation pop-up
+	By contactaddnotebutton = By.xpath("//button[@id='create_note_add_btn']"); //Locator for Add note btn
+	By contactposttimelineoptn =By.xpath("//li[@data-id='notescontrol-createNewRecord_flyoutMenuItem_post']"); //Locator for Post option on Timeline pop-up
+	By contactpostentertext = By.xpath("//textarea[@id='create_post_postText']"); //Locator Post text box
+	By contactpostaddbtn = By.xpath("//button[@id='create_post_add_btn']"); //Locator for Add Post btn
+	By contactpostcancelbtn = By.xpath("//button[@id='create_post_cancel_btn']"); //Locator for Post Cancel btn
+	By contactviewcreatedpost = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[2]/div[2]/div[1]/div[1]"); //Locator to view newly created post
+	By contactdeletepost = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[3]/span");  //Locator for Delete Post btn
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -736,5 +750,75 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(clickcontactlist));
 		Thread.sleep(5000);
 		return driver.findElement(clickcontactlist);
+	}
+
+	public WebElement getBLetterFilterLink() throws InterruptedException {
+
+		Thread.sleep(10000);
+		return driver.findElement(bletterfilterlink);
+	}
+
+	public WebElement getContactNoteTimelineOptn()
+	{
+		return driver.findElement(contactnotetimelineoptn);
+	}
+
+	public WebElement getContactNoteTitleTextbox()
+	{
+		return driver.findElement(contactnotetitletxtbox);	
+	}
+
+	public WebElement getViewCreatedNoteToContact()
+	{
+		return driver.findElement(viewcreatednotetocontact);
+	}
+
+	public WebElement getContactDeleteNote()
+	{
+		return driver.findElement(contactdeletenote);	
+	}
+	public WebElement getContactTimelineDetails()
+	{
+		return driver.findElement(contacttimelinedetails);
+	}
+
+	public WebElement getOkConfirmBtn()
+	{
+		return driver.findElement(okconfirmbtn);
+	}
+
+	public WebElement getContactAddNoteButton()
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactaddnotebutton));
+		return driver.findElement(contactaddnotebutton);
+	}
+
+	public WebElement getContactPostTimelineOptn()
+	{
+		return driver.findElement(contactposttimelineoptn);
+	}
+
+	public WebElement getContactPostEnterText()
+	{
+		return driver.findElement(contactpostentertext);
+	}
+	public WebElement getContactPostAddButton()
+	{
+		return driver.findElement(contactpostaddbtn);
+	}
+	public WebElement getContactPostCancelButton()
+	{
+		return driver.findElement(contactpostcancelbtn);
+	}
+
+	public WebElement getContactViewCreatedPost()
+	{
+		return driver.findElement(contactviewcreatedpost);
+	}
+
+	public WebElement getContactDeletePost()
+	{
+		return driver.findElement(contactdeletepost);	
 	}
 }

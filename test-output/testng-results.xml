@@ -1,74 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="246204" started-at="2021-03-15T10:19:25Z" finished-at="2021-03-15T10:23:31Z">
+  <suite name="Suite" duration-ms="213151" started-at="2021-03-15T12:59:06Z" finished-at="2021-03-15T13:02:40Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="246204" started-at="2021-03-15T10:19:25Z" finished-at="2021-03-15T10:23:31Z">
+    <test name="Test" duration-ms="213151" started-at="2021-03-15T12:59:06Z" finished-at="2021-03-15T13:02:40Z">
       <class name="crmframework.crmAutomation.ContactPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="initialize" is-config="true" duration-ms="8759" started-at="2021-03-15T15:49:25Z" finished-at="2021-03-15T15:49:33Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="initialize" is-config="true" duration-ms="8207" started-at="2021-03-15T18:29:06Z" finished-at="2021-03-15T18:29:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS001_VerifyHomePageTest" duration-ms="106561" started-at="2021-03-15T15:49:33Z" finished-at="2021-03-15T15:51:20Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS001_VerifyHomePageTest" duration-ms="93717" started-at="2021-03-15T18:29:15Z" finished-at="2021-03-15T18:30:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="FAIL" signature="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined" duration-ms="130704" started-at="2021-03-15T15:51:20Z" finished-at="2021-03-15T15:53:31Z">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2'] (tried for 15 second(s) with 500 MILLISECONDS interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2'] (tried for 15 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:632)
-	at crmframework.crmAutomation.ContactPageTest.TS013_ManualFail_VerifyContactMarketRecordProfile_Declined(ContactPageTest.java:1002)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 26 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method status="PASS" signature="TS015_VerifyAddNewNoteToContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS015_VerifyAddNewNoteToContactTest" duration-ms="69408" started-at="2021-03-15T18:30:48Z" finished-at="2021-03-15T18:31:58Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS013_ManualFail_VerifyContactMarketRecordProfile_Declined -->
+        </test-method> <!-- TS015_VerifyAddNewNoteToContactTest -->
+        <test-method status="PASS" signature="TS016_VerifyAddNewPostToContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS016_VerifyAddNewPostToContactTest" duration-ms="41708" started-at="2021-03-15T18:31:58Z" finished-at="2021-03-15T18:32:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS016_VerifyAddNewPostToContactTest -->
       </class> <!-- crmframework.crmAutomation.ContactPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

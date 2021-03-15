@@ -11,7 +11,8 @@
 			<class name="crmframework.crmAutomation.ContactPageTest" />
 			<methods>
 				 <include name="TS001_VerifyHomePageTest" />
-	     		<include name="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined" />
+	     		<include name="TS015_VerifyAddNewNoteToContactTest" />
+	     		<include name="TS016_VerifyAddNewPostToContactTest" />
 			</methods>
 		</classes>
 	</test>
