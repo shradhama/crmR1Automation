@@ -94,7 +94,11 @@ public class CRMContactPage {
 	By exportselectbox1 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeycontactaddress1_latitude']");//Locator for selecting columns to be included in dynamic sheet and dynamic pivot table for export to options
 	By exportselectbox2 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeycontactcallback']");//Locator for selecting columns to be included in dynamic sheet and dynamic pivot table for export to options
 	By exporttrackprogressbtn = By.xpath("//button[@aria-label = 'Track Progress']");//Locator for track progress button for export excel online option for contacts
-	
+	By clickgroupbydd = By.xpath("//div[@aria-label = 'Group By']/div[1]/div[1]/div[1]/span[1]/button[1]");//Locator for arrow for Group By drop down
+	By fullnameddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[2]");//Locator for Full Name group by option
+	By regionddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[9]");//Locator for region group by option
+	By groupbyverification = By.xpath("//button[@aria-label = 'Toggle Group']");//Locator for verification of grouping by options
+		
 	public CRMContactPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -533,4 +537,33 @@ public class CRMContactPage {
 		Thread.sleep(15000);
 		return driver.findElement(exporttrackprogressbtn);
 	}
+	public WebElement getclickgroupbydd() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(clickgroupbydd));
+		Thread.sleep(10000);
+		return driver.findElement(clickgroupbydd);
+	}
+	public WebElement getfullnameddopt() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(fullnameddopt));
+		Thread.sleep(5000);
+		return driver.findElement(fullnameddopt);
+	}
+	public WebElement getregionddopt() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(regionddopt));
+		Thread.sleep(5000);
+		return driver.findElement(regionddopt);
+	}
+	public WebElement getgroupbyverification() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(groupbyverification));
+		Thread.sleep(5000);
+		return driver.findElement(groupbyverification);
+	}
+	
 }
