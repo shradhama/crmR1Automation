@@ -139,7 +139,7 @@ public class ContactPageTest extends base{
 		cp.getemail().sendKeys(genData.generateEmail(15));
 		newcontactemail = cp.getemail().getAttribute("Value");
 		System.out.println("New Contact's Email:" +newcontactemail);
-		
+
 		cp.getmobile().sendKeys(genData.generateRandomNumber(10));
 		cp.getMobilePhoneLabel().click();
 		Thread.sleep(2000);
@@ -317,7 +317,7 @@ public class ContactPageTest extends base{
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
 		cp = new CRMContactPage(driver);
-		
+
 		//Open Contacts page and open existing contact
 		hp.getContactsTab().click();
 		Actions action = new Actions(driver);
@@ -361,12 +361,6 @@ public class ContactPageTest extends base{
 		//Navigate back to Active accounts list
 		ap.getPageBackBtn().click();
 	}
-
-//	@AfterTest
-//	public void closeDriver()
-//	{
-//		driver.close();
-//	}
 
 	//Manual Fail_Caught By Automation	
 	@Test(priority=5)
@@ -531,7 +525,7 @@ public class ContactPageTest extends base{
 		//Verify that Top ribbon 'Activate' option changes to 'Deactivate'
 		Assert.assertTrue(cp.getDeactivateBtn().isDisplayed());
 		System.out.println("Contact is activated with selected contact status reason");
-		
+
 		//Click on Save & Close button
 		cp.getContactSavenCloseBtn().click();
 	}
@@ -545,7 +539,7 @@ public class ContactPageTest extends base{
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
 		cp = new CRMContactPage(driver);
-		
+
 		//Open Contacts page and open existing contact
 		hp.getContactsTab().click();
 		Actions action = new Actions(driver);
@@ -576,7 +570,7 @@ public class ContactPageTest extends base{
 			System.out.println("Appointment is not added successfully");
 
 		}
-		
+
 		//Navigate back to Active Contacts list
 		ap.getPageBackBtn().click();
 	}
@@ -592,7 +586,7 @@ public class ContactPageTest extends base{
 		hp = new CRMHomePage(driver);
 		cp = new CRMContactPage(driver);
 		ap = new CRMAccountsPage(driver);
-		
+
 		//Click on Contacts tab from left menu
 		hp.getContactsTab().click();
 
@@ -620,11 +614,11 @@ public class ContactPageTest extends base{
 		//Verify that expected Success message displayed
 		Assert.assertEquals("Your changes were saved.", ap.getSuccessMsg().getText());
 		System.out.println("Added new task to Contact successfully");
-		
+
 		//Navigate back to Active accounts list
 		ap.getPageBackBtn().click();
 	}
-	
+
 	//Test script Fail_Caught By Automation	
 	@Test(priority=9)
 	public void TS009_ManualFail_VerifyDuplicateContactTest() throws InterruptedException
@@ -681,23 +675,23 @@ public class ContactPageTest extends base{
 
 		//Click on 'Cancel' button
 		cp.getDuplicateRecordsPopupCancelbtn().click();
-		
+
 		//Save the contact name in string variable
 		newcontactname = cp.getContactNameinHeader().getText();
 		System.out.println("Contact Name: "+newcontactname);
-		
+
 		//Scroll till Email field
 		WebElement scrollText1 = cp.getScrollTextOnContactForm();	
 		js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].scrollIntoView(true);",scrollText1);
 		Thread.sleep(3000);
-		
+
 		//Update the Email field again with the email ID (From Create contact test case)
 		cp.getemail().click();
 		cp.getemail().sendKeys(Keys.CONTROL + "a");
 		cp.getemail().sendKeys(Keys.DELETE);
 		cp.getemail().sendKeys(newcontactemail);
-		
+
 		//Click on Save & Close button
 		cp.getContactSavenCloseBtn().click();
 
@@ -727,27 +721,27 @@ public class ContactPageTest extends base{
 		hp = new CRMHomePage(driver);
 		cp = new CRMContactPage(driver);
 		ap = new CRMAccountsPage(driver);
-		
+
 		//Click on Contacts tab from left menu and search contacts containing Cyb
 		hp.getContactsTab().click();
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
 		ap.getclicksearchbutton().click();
-		
+
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
-		
+
 		//Click Export To Excel option under it
 		cp.getexporttoexcelbtn().click();
-		
+
 		//Export file to online excel
 		ap.getopenexcelonline().click();
-		
+
 		//ap.getsaveexcelonline().click();
 		ap.getsaveexcelonline().click();   
-		
+
 		//Click Track Progress button
 		cp.getexporttrackprogressbtn().click();
-		
+
 		//Switch to previous browser tab
 		Thread.sleep(10000);
 		Set<String> windows = driver.getWindowHandles();
@@ -755,48 +749,139 @@ public class ContactPageTest extends base{
 		String parentId = it.next();
 		String childId = it.next();
 		driver.switchTo().window(parentId);
-		
+
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
-				
+
 		//Click Export To Excel option under it
 		cp.getexporttoexcelbtn().click();
-		
+
 		//Export Excel to Static Worksheet
 		ap.getexporttostaticworksheet().click();
-		
+
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
-				
+
 		//Click Export To Excel option under it
 		cp.getexporttoexcelbtn().click();
-		
+
 		//Export Excel to Static Worksheet Page Only
 		ap.getexporttostaticworksheetpageonly().click();
-		
+
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
-				
+
 		//Click Export To Excel dropdown arrow option under it
 		cp.getexporttoexcelbtn().click();
-		
+
 		//Export to Dynamic Worksheet
 		ap.getexporttodynamicworksheet().click();
 		cp.getexportselectbox1().click();
 		cp.getexportselectbox2().click();
 		ap.getexportworksheetpopup().click();
-		
+
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
-						
+
 		//Click Export To Excel option under it
 		cp.getexporttoexcelbtn().click();
-		
+
 		//Export to Dynamic Pivot Table
 		ap.getexporttodynamicpivottable().click();
 		cp.getexportselectbox1().click();
 		cp.getexportselectbox2().click();
 		ap.getexportworksheetpopup().click();
+	}
+
+	//Manual Fail_Caught by Automation
+	@Test(priority=12)
+	public void TS012_ManualFail_VerifyContactMarketRecordProfile_Registered() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T396- that Contact market record profile is automatically created when phone 
+		//call market outcome is 'Registered' if profile does not exist
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Contacts Tab at left menu
+		hp.getContactsTab().click();
+
+		//In Active Contacts system view, select and open an active contact
+		cp.getCLetterFilterLink().click();
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+
+		//Navigate to Contact Market Profile Tab
+		cp.getContactMarketProfilesTab().click();
+
+		//Verify that there should be no record for a market
+		Assert.assertTrue(cp.getNoDataAvailableTextForMarketProfile().isDisplayed());
+
+		//Navigate back to Summary tab
+		cp.getContactSummaryTab().click();
+
+		//Click on create a timeline button
+		cp.getContactAddTimelineBtn().click();
+
+		//Select option Phone call
+		cp.getphonecalloption().click();
+
+		//Enter required details and click on save
+		//Enter Phone Call details
+		String phonesubject = "CybSubject";
+		ap.getphonecallsubject().click();
+		ap.getphonecallsubject().clear();
+		ap.getphonecallsubject().sendKeys(phonesubject);
+		cp.getcalltophonecall().click();
+		cp.getsearchcallto().click();
+		cp.getselectcallto().click();
+		cp.getclicktab().click();
+		ap.getclickphonecallduedatecalendor().click();
+		ap.getphonecallduedatecurrent().click();
+		ap.getphonecallduetimoptionn().click();
+		ap.getphonecallselectduetime().click();
+
+		//Save Phone Call
+		cp.getsavecontact().click();
+
+		//Scroll down on phone call record to view Call Outcomes section
+		WebElement phonecalldescriptionlabel = cp.getPhoneCallDescriptionLabel();	
+		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+		jse1.executeScript("arguments[0].scrollIntoView(true);",phonecalldescriptionlabel);
+		Thread.sleep(5000);
+
+		//Click on New Phone Call Market Outcome option to create new call outcome
+		cp.getNewPhoneCallMarketOutcomeBtn().click();
+		cp.getPhoneCallMarketSubjectTxtBx().click();
+		cp.getMarketSearchBtn().click();
+
+		String marketname = cp.selectMarketName().getText();
+		System.out.println("Selected Market Name: "+ marketname);
+		cp.selectMarketName().click();
+		cp.getPhoneCallOutcomeTxtBx().click();
+		cp.selectPhoneCallOutcomeOption().click();
+		cp.getPhoneCallMarketOutcomeSavenCloseBtn().click();
+
+		//Now mark the Phone as complete using the 'Mark Complete' button in header
+		cp.getPhoneCallMarkCompleteBtn().click();
+
+		cp.getContactFormRefreshBtn().click();
+		cp.getContactMarketProfilesTab().click();
+
+		//Verify that a new contact market profile should be automatically created for the market
+		Assert.assertTrue(cp.getNewlyCreatedContactMarketProfileField().isDisplayed());
+
+		//Verify that select market name is displayed under contact market profiles tab
+		Assert.assertTrue(cp.getValidateNewlyCreatedContactMarketProfileName().getText().contains(marketname));
+		
+		//Verify that Is Registered should set to Yes
+		Assert.assertTrue(cp.getContactMarketProfileIsRegisteredField().getText().contains("Yes"));
+		
+		//Click on 'Back' button
+		ap.getPageBackBtn().click();
 	}
 	
 	//	@AfterTest
