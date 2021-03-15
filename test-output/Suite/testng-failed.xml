@@ -5,6 +5,7 @@
     <classes>
       <class name="crmframework.crmAutomation.ContactPageTest">
         <methods>
+          <include name="TS001_VerifyHomePageTest"/>
           <include name="initialize"/>
           <include name="TS011_VerifyAssociatedListsSectionContactTest"/>
         </methods>

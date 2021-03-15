@@ -115,9 +115,10 @@ public class CRMContactPage {
 	By regionddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[9]");//Locator for region group by option
 	By groupbyverification = By.xpath("//button[@aria-label = 'Toggle Group']");//Locator for verification of grouping by options
 	By scrolltoaccountdetails = By.xpath("//h2[@data-id = 'form-sectionHeader-CUSTOMER_DETAILS_TAB']");//Locator for Account Details section on Contact page
-	By scrolltoregdetails = By.xpath("//button[@data-id = 'xxc_registration|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_registration.RefreshButton']");//Locator for Registration details section
-	By scrolltolistdetails = By.xpath("//button[@dfata-id = 'xxc_listmember|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_listmember.RefreshButton']");//Locator for Associated Lists
+	By scrolltoregdetails = By.xpath("//div[@data-id = 'dataSetRoot_Registrations']");//Locator for Registration details section
+	By scrolltolistdetails = By.xpath("//div[@data-id = 'contactquickform-QuickFormSectionContainer']");//Locator for Associated Lists
 	By contactlistsgrid = By.xpath("//div[@data-id = 'contactquickform.AccountAssociatedLists_container']");//Locator for lists grid on contact form
+	By clickcontactlist = By.xpath("//div[@aria-label = 'Active Account Sub Grid']/div[2]/div[2]/a[1]");//Locator to click List Name
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -697,5 +698,18 @@ public WebElement getContactMarketProfilesTab() {
 		Thread.sleep(5000);
 		return driver.findElement(scrolltolistdetails);
 	}
-	
+	public WebElement getcontactlistsgrid() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactlistsgrid));
+		Thread.sleep(5000);
+		return driver.findElement(contactlistsgrid);
+	}
+	public WebElement getclickcontactlist() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(clickcontactlist));
+		Thread.sleep(5000);
+		return driver.findElement(clickcontactlist);
+	}
 }

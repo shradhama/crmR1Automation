@@ -202,7 +202,7 @@ public class CRMAccountsPage {
 	By duplicaterecordspopupcancelbtn = By.xpath("//button[@aria-label = 'Cancel']");
 	By phonecallduedatecurrent = By.xpath("//div[@aria-label = 'Calendar']/div[1]/div[2]/div[2]/div[2]/table[1]/tbody[1]/tr[3]/td[3]/button[1]");
 	By selectedlistname = By.xpath("//div[@data-id='xxc_list.fieldControl-LookupResultsDropdown_xxc_list_selected_tag_text']");
-	By listmemremovedlabel = By.xpath("//span[@title='Last List Member Removed']");
+	By listmemremovedlabel = By.xpath("//span[@title='Last List Member Removed']/label[1]");
 	By memberslabel = By.xpath("//h2[contains(text(),'Members')]");
 	By taskbtnontimeline = By.xpath("//div[text() = 'Task']");
 	By tasksubjecttxtbx = By.xpath("//input[@aria-label='Subject']");
@@ -1225,17 +1225,19 @@ public class CRMAccountsPage {
 		return driver.findElement(selectedlistname);
 	}
 	
-	public WebElement getListMemRemovedLabel()
+	public WebElement getListMemRemovedLabel() throws InterruptedException
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(listmemremovedlabel));
+		Thread.sleep(5000);
 		return driver.findElement(listmemremovedlabel);
 	}
 	
-	public WebElement getMembersLabel()
+	public WebElement getMembersLabel() throws InterruptedException
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(memberslabel));
+		Thread.sleep(5000);
 		return driver.findElement(memberslabel);
 	}
 	

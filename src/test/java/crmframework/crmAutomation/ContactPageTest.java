@@ -931,6 +931,8 @@ public class ContactPageTest extends base{
 
 		//Open Contacts page and open existing contact
 		hp.getContactsTab().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("listcontact"));
+		ap.getclicksearchbutton().click();
 		Actions action = new Actions(driver);
 		WebElement OpenContact = cp.getopencontact();
 		action.doubleClick(OpenContact).perform();
@@ -942,34 +944,32 @@ public class ContactPageTest extends base{
 		
 		WebElement registrations = cp.getscrolltoregdetails();
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
-		jse.executeScript("arguments[0].scrollIntoView(true);",registrations);
+		jse1.executeScript("arguments[0].scrollIntoView(true);",registrations);
 		
-		WebElement associatedlists = cp.getscrolltolistdetails();
+	/*	WebElement associatedlists = cp.getscrolltolistdetails();
 		JavascriptExecutor jse2 = (JavascriptExecutor)driver;
-		jse1.executeScript("arguments[0].scrollIntoView(true);",associatedlists);
+		jse2.executeScript("arguments[0].scrollIntoView(true);",associatedlists);*/
 		
 		// Verify if Lists are available in Lists section
-		WebElement NoList = ap.getnolist();
+		WebElement NoList = cp.getcontactlistsgrid();
 		Assert.assertFalse(NoList.getText().equalsIgnoreCase(""));
 		System.out.println("List is available for the account");
 		
 		// Verify for List Members
-		WebElement List = ap.getlist();
+		WebElement List = cp.getclickcontactlist();
 		List.click();
-		
-		ap.getSelectedListName().click();
+		//System.out.println("List opened is "+List.getText());
+		//ap.getSelectedListName().click();
 		
 		//Scroll till Members section	
-		WebElement listmemremovedlabel = ap.getListMemRemovedLabel();	
+		/*WebElement listmemremovedlabel = ap.getListMemRemovedLabel();	
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView(true);",listmemremovedlabel);
-		Thread.sleep(3000);
-		
+		js.executeScript("arguments[0].scrollIntoView(true);",listmemremovedlabel);*/
+				
 		WebElement memberslabel = ap.getMembersLabel();	
 		JavascriptExecutor jse3 = (JavascriptExecutor)driver;
 		jse3.executeScript("arguments[0].scrollIntoView(true);",memberslabel);
-		Thread.sleep(5000);
-		
+				
 		WebElement ListMember = ap.getlistmember();
 		Assert.assertFalse(ListMember.getText().equalsIgnoreCase(""));
 		System.out.println("List memeber is available");
