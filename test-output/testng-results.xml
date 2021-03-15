@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="262305" started-at="2021-03-15T05:45:11Z" finished-at="2021-03-15T05:49:33Z">
+  <suite name="Suite" duration-ms="246204" started-at="2021-03-15T10:19:25Z" finished-at="2021-03-15T10:23:31Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="262305" started-at="2021-03-15T05:45:11Z" finished-at="2021-03-15T05:49:33Z">
+    <test name="Test" duration-ms="246204" started-at="2021-03-15T10:19:25Z" finished-at="2021-03-15T10:23:31Z">
       <class name="crmframework.crmAutomation.ContactPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="initialize" is-config="true" duration-ms="17750" started-at="2021-03-15T11:15:11Z" finished-at="2021-03-15T11:15:29Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="initialize" is-config="true" duration-ms="8759" started-at="2021-03-15T15:49:25Z" finished-at="2021-03-15T15:49:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS001_VerifyHomePageTest" duration-ms="117368" started-at="2021-03-15T11:15:29Z" finished-at="2021-03-15T11:17:26Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS001_VerifyHomePageTest" duration-ms="106561" started-at="2021-03-15T15:49:33Z" finished-at="2021-03-15T15:51:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="FAIL" signature="TS012_ManualFail_VerifyContactMarketRecordProfile_Registered()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS012_ManualFail_VerifyContactMarketRecordProfile_Registered" duration-ms="126861" started-at="2021-03-15T11:17:26Z" finished-at="2021-03-15T11:19:33Z">
+        <test-method status="FAIL" signature="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined" duration-ms="130704" started-at="2021-03-15T15:51:20Z" finished-at="2021-03-15T15:53:31Z">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2'] (tried for 15 second(s) with 500 MILLISECONDS interval)]]>
@@ -24,8 +24,8 @@
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2'] (tried for 15 second(s) with 500 MILLISECONDS interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:623)
-	at crmframework.crmAutomation.ContactPageTest.TS012_ManualFail_VerifyContactMarketRecordProfile_Registered(ContactPageTest.java:875)
+	at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:632)
+	at crmframework.crmAutomation.ContactPageTest.TS013_ManualFail_VerifyContactMarketRecordProfile_Declined(ContactPageTest.java:1002)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -68,7 +68,7 @@ Driver info: driver.version: unknown
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS012_ManualFail_VerifyContactMarketRecordProfile_Registered -->
+        </test-method> <!-- TS013_ManualFail_VerifyContactMarketRecordProfile_Declined -->
       </class> <!-- crmframework.crmAutomation.ContactPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
