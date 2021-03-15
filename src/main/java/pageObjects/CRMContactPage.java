@@ -118,7 +118,12 @@ public class CRMContactPage {
 	By declinedreasonselectdd = By.xpath("//select[@aria-label='Declined Reason']"); //Locator for Declined Reason drop down
 	By selectdeclinedreasonname = By.xpath("//select[@aria-label='Declined Reason']/option[2]"); //Locator for Declined Reason value from Call reason field
 	By contactmarketprofiledeclinedreasonfield = By.xpath("//div[@data-id='cell-0-4']"); //Locator for Declined reason value on Contact market profile tab
-
+	By scrolltoaccountdetails = By.xpath("//h2[@data-id = 'form-sectionHeader-CUSTOMER_DETAILS_TAB']");//Locator for Account Details section on Contact page
+	By scrolltoregdetails = By.xpath("//div[@data-id = 'dataSetRoot_Registrations']");//Locator for Registration details section
+	By scrolltolistdetails = By.xpath("//div[@data-id = 'contactquickform-QuickFormSectionContainer']");//Locator for Associated Lists
+	By contactlistsgrid = By.xpath("//div[@data-id = 'contactquickform.AccountAssociatedLists_container']");//Locator for lists grid on contact form
+	By clickcontactlist = By.xpath("//div[@aria-label = 'Active Account Sub Grid']/div[2]/div[2]/a[1]");//Locator to click List Name
+	
 	public CRMContactPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -697,5 +702,39 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(contactmarketprofiledeclinedreasonfield));
 		return driver.findElement(contactmarketprofiledeclinedreasonfield);
 	}
-
+	public WebElement getscrolltoaccountdetails() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(scrolltoaccountdetails));
+		Thread.sleep(5000);
+		return driver.findElement(scrolltoaccountdetails);
+	}
+	public WebElement getscrolltoregdetails() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(scrolltoregdetails));
+		Thread.sleep(5000);
+		return driver.findElement(scrolltoregdetails);
+	}
+	public WebElement getscrolltolistdetails() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(scrolltolistdetails));
+		Thread.sleep(5000);
+		return driver.findElement(scrolltolistdetails);
+	}
+	public WebElement getcontactlistsgrid() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactlistsgrid));
+		Thread.sleep(5000);
+		return driver.findElement(contactlistsgrid);
+	}
+	public WebElement getclickcontactlist() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(clickcontactlist));
+		Thread.sleep(5000);
+		return driver.findElement(clickcontactlist);
+	}
 }
