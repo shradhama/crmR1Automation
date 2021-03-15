@@ -94,6 +94,22 @@ public class CRMContactPage {
 	By exportselectbox1 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeycontactaddress1_latitude']");//Locator for selecting columns to be included in dynamic sheet and dynamic pivot table for export to options
 	By exportselectbox2 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeycontactcallback']");//Locator for selecting columns to be included in dynamic sheet and dynamic pivot table for export to options
 	By exporttrackprogressbtn = By.xpath("//button[@aria-label = 'Track Progress']");//Locator for track progress button for export excel online option for contacts
+	By contactmarketprofilestab = By.xpath("//li[@aria-label='Contact Market Profiles']"); //Locator for Contact Market Profiles tab
+	By nodataavailabletextformarketprofile =  By.xpath("//div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid']/div/div/div/span[2]"); //Locator for No Data Available Text for Contact Market Profile
+	By contactsummarytab = By.xpath("//li[@aria-label='Summary']"); //Locator for Summary tab on Contact form
+	By phonecalloption = By.xpath("//li[@aria-label = 'Phone Call Activity']"); //Locator for Phone call option on Timeline pop-up
+	By phonecalldescriptionlabel = By.xpath("//h2[contains(text(),'Description')]"); //Locator for Description label on Phone call page
+	By newphonecallmarketoutcomebtn = By.xpath("//button[@aria-label='New Phone Call Market Outcome']"); //Locator for add New Phone Call Market Outcome button
+	By phonecallmarketsubjecttxtbx = By.xpath("//input[@aria-label='Market, Lookup']"); //Locator for Market subject text box
+	By marketsearchbtn = By.xpath("//button[@aria-label='Search records for Market, Lookup field']"); //Locator for Search records for Markets
+	By selectmarketname = By.xpath("//span[@data-id='xxc_marketid.fieldControl-xxc_name0_0_0']"); //Locator for select market name
+	By phonecalloutcometxtbx = By.xpath("//select[@aria-label='Call Outcome']"); //Locator for Call outcome text box
+	By phonecalloutcomeoptn = By.xpath("//option[contains(text(),'Registered')]"); //Locator for 'Registered' outcome
+	By phonecallmarketoutcomesavenclosebtn = By.xpath("//button[@id='quickCreateSaveAndCloseBtn']"); //Locator for Save & Close button on Phone call outcome pop-up
+	By phonecallmarkcompletebtn = By.xpath("//button[@aria-label='Mark Complete']"); //Locator for Mark Complete button on 'Phone call' page
+	By newlycreatedcontactmarketprofilefield = By.xpath("//div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2']"); //Locator for newly created contact market profile field
+	By validatenewlycreatedcontactmarketprofilename = By.xpath("//div[@data-id='cell-0-2']"); //Locator for validate newly created contact market profile name
+	By contactmarketprofileisregisteredfield = By.xpath("//div[@data-id='cell-0-3']"); //Locator for Contact market profile 'IsRegistered' field value
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -533,4 +549,96 @@ public class CRMContactPage {
 		Thread.sleep(15000);
 		return driver.findElement(exporttrackprogressbtn);
 	}
+	
+public WebElement getContactMarketProfilesTab() {
+		
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactmarketprofilestab));
+		return driver.findElement(contactmarketprofilestab);
+	}
+	
+	public WebElement getNoDataAvailableTextForMarketProfile() {
+		
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(nodataavailabletextformarketprofile));
+		return driver.findElement(nodataavailabletextformarketprofile);
+	}
+	
+	public WebElement getContactSummaryTab() {
+		
+		return driver.findElement(contactsummarytab);
+	}
+	
+	public WebElement getphonecalloption() {
+		
+		return driver.findElement(phonecalloption);
+	}
+	
+	public WebElement getNewPhoneCallMarketOutcomeBtn()  {
+		
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(newphonecallmarketoutcomebtn));
+		return driver.findElement(newphonecallmarketoutcomebtn);
+	}
+	
+	public WebElement getPhoneCallMarketSubjectTxtBx() throws InterruptedException  {
+		Thread.sleep(6000);
+		return driver.findElement(phonecallmarketsubjecttxtbx);
+	}
+	
+	public WebElement getMarketSearchBtn() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(marketsearchbtn));
+		return driver.findElement(marketsearchbtn);
+	}
+	
+	public WebElement selectMarketName() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectmarketname));
+		return driver.findElement(selectmarketname);
+	}
+	
+	public WebElement getPhoneCallOutcomeTxtBx() {
+	
+		return driver.findElement(phonecalloutcometxtbx);
+	}
+	
+	public WebElement selectPhoneCallOutcomeOption() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(phonecalloutcomeoptn));
+		return driver.findElement(phonecalloutcomeoptn);
+	}
+	
+	public WebElement getPhoneCallMarketOutcomeSavenCloseBtn() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(phonecallmarketoutcomesavenclosebtn));
+		return driver.findElement(phonecallmarketoutcomesavenclosebtn);
+	}
+	public WebElement getPhoneCallMarkCompleteBtn() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(phonecallmarkcompletebtn);
+	}
+	
+	public WebElement getNewlyCreatedContactMarketProfileField() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(newlycreatedcontactmarketprofilefield));
+		return driver.findElement(newlycreatedcontactmarketprofilefield);
+	}
+	
+	public WebElement getValidateNewlyCreatedContactMarketProfileName() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(validatenewlycreatedcontactmarketprofilename));
+		return driver.findElement(validatenewlycreatedcontactmarketprofilename);
+	}
+		
+	public WebElement getPhoneCallDescriptionLabel()
+	{
+		return driver.findElement(phonecalldescriptionlabel);
+	}
+	
+	public WebElement getContactMarketProfileIsRegisteredField()
+	{
+		return driver.findElement(contactmarketprofileisregisteredfield);
+	}
+	
 }

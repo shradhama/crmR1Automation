@@ -3,15 +3,12 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.AccountPageTest">
+      <class name="crmframework.crmAutomation.ContactPageTest">
         <methods>
           <include name="initialize"/>
-          <include name="TS002_VerifyCreateNewContactTest"/>
-          <include name="closeDriver"/>
-          <include name="TS003_VerifyAddAppointmentToAccountTest"/>
-
+          <include name="TS012_ManualFail_VerifyContactMarketRecordProfile_Registered"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
+      </class> <!-- crmframework.crmAutomation.ContactPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
