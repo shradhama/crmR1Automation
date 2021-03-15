@@ -110,6 +110,10 @@ public class CRMContactPage {
 	By newlycreatedcontactmarketprofilefield = By.xpath("//div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2']"); //Locator for newly created contact market profile field
 	By validatenewlycreatedcontactmarketprofilename = By.xpath("//div[@data-id='cell-0-2']"); //Locator for validate newly created contact market profile name
 	By contactmarketprofileisregisteredfield = By.xpath("//div[@data-id='cell-0-3']"); //Locator for Contact market profile 'IsRegistered' field value
+	By clickgroupbydd = By.xpath("//div[@aria-label = 'Group By']/div[1]/div[1]/div[1]/span[1]/button[1]");//Locator for arrow for Group By drop down
+	By fullnameddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[2]");//Locator for Full Name group by option
+	By regionddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[9]");//Locator for region group by option
+	By groupbyverification = By.xpath("//button[@aria-label = 'Toggle Group']");//Locator for verification of grouping by options
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -639,6 +643,34 @@ public WebElement getContactMarketProfilesTab() {
 	public WebElement getContactMarketProfileIsRegisteredField()
 	{
 		return driver.findElement(contactmarketprofileisregisteredfield);
+	}
+	public WebElement getclickgroupbydd() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(clickgroupbydd));
+		Thread.sleep(10000);
+		return driver.findElement(clickgroupbydd);
+	}
+	public WebElement getfullnameddopt() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(fullnameddopt));
+		Thread.sleep(5000);
+		return driver.findElement(fullnameddopt);
+	}
+	public WebElement getregionddopt() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(regionddopt));
+		Thread.sleep(5000);
+		return driver.findElement(regionddopt);
+	}
+	public WebElement getgroupbyverification() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(groupbyverification));
+		Thread.sleep(5000);
+		return driver.findElement(groupbyverification);
 	}
 	
 }
