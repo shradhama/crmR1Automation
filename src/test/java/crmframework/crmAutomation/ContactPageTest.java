@@ -30,6 +30,7 @@ import pageObjects.CRMHomePage;
 import pageObjects.CRMLandingPage;
 import pageObjects.CRMLoginPage;
 import resources.GenerateData;
+import resources.Utility;
 import resources.base;
 
 @Listeners({TestListeners.class})
@@ -37,6 +38,7 @@ public class ContactPageTest extends base{
 
 	public WebDriverWait wait;
 	public GenerateData genData;
+	public Utility utl;
 	public String newcontactname;
 	public String outofbusiness;
 	public String donotcall;
@@ -56,6 +58,7 @@ public class ContactPageTest extends base{
 	{
 		driver = initializeDriver();
 		genData=new GenerateData();
+		utl = new Utility(driver);
 	}
 
 	@Test(priority=1)
@@ -1156,6 +1159,255 @@ public class ContactPageTest extends base{
 		cp.getContactDeletePost().click();
 		cp.getOkConfirmBtn().click();
 		ap.getPageBackBtn().click();
+	}
+
+	@Test(priority=17)
+	public void TS017_VerifyMandatoryFieldsOnContactFormTest() throws InterruptedException
+	{
+		//The purpose of this test case to:-
+		//T51- Verify all the mandatory fields on contact form
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+
+		//Click on Contacts tab
+		hp.getContactsTab().click();
+
+		//Click on New button in header to open new contact form
+		cp.getCreateNewContactBtn().click();
+
+		//Verify all the mandatory fields on Contact form
+		Assert.assertTrue(cp.getRequiredFieldFirstName().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldType().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldAccountName().isDisplayed());
+
+		utl.scrollToElement(cp.getScrollTextOnContactForm());
+
+		Assert.assertTrue(cp.getRequiredFieldEmail().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldBusinessPhone().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldMobilePhone().isDisplayed());
+
+		utl.scrollToElement(cp.getMobilePhoneLabel());
+
+		Assert.assertTrue(cp.getRequiredFieldStreet1().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldCity().isDisplayed());
+
+		utl.scrollToElement(cp.getCityLabel());
+
+		Assert.assertTrue(cp.getRequiredFieldState().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldZipCode().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldCountry().isDisplayed());
+
+		cp.getContactMarketProfilesTab().click();
+		cp.getContactSummaryTab().click();
+
+		//Scroll till Business phone field	
+		utl.scrollToElement(cp.getScrollTextOnContactForm());
+
+		//Step-6: Enter the value for Business Phone
+		cp.getContactFormBusinessPhoneField().click();
+		cp.getContactFormBusinessPhoneField().sendKeys(genData.generateRandomNumber(10));
+		cp.getBusinessPhoneLabel().click();
+		cp.getContactMarketProfilesTab().click();
+		cp.getContactSummaryTab().click();
+
+		//Verify that First Name,Type, Account Name fields should be mandatory
+		Assert.assertTrue(cp.getRequiredFieldFirstName().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldType().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldAccountName().isDisplayed());
+
+		//Verify that below fields should not be displayed as mandatory now
+		utl.scrollToElement(cp.getScrollTextOnContactForm());
+
+		List<WebElement> NotRequiredFieldEmail = cp.getNotRequiredFieldEmail();
+		Assert.assertTrue(NotRequiredFieldEmail.size()== 0);
+
+		List<WebElement> NotRequiredFieldMobilePhone = cp.getNotRequiredFieldMobilePhone();
+		Assert.assertTrue(NotRequiredFieldMobilePhone.size()== 0);
+
+		//Verify that Business Phone field should be mandatory
+		Assert.assertTrue(cp.getRequiredFieldBusinessPhone().isDisplayed());
+
+		utl.scrollToElement(cp.getMobilePhoneLabel());
+
+		List<WebElement> NotRequiredFieldStreet1 = cp.getNotRequiredFieldStreet1();
+		Assert.assertTrue(NotRequiredFieldStreet1.size()== 0);
+
+		List<WebElement> NotRequiredFieldCity = cp.getNotRequiredFieldCity();
+		Assert.assertTrue(NotRequiredFieldCity.size()== 0);
+
+		utl.scrollToElement(cp.getCityLabel());
+
+		List<WebElement> NotRequiredFieldState = cp.getNotRequiredFieldState();
+		Assert.assertTrue(NotRequiredFieldState.size()== 0);
+
+		List<WebElement> NotRequiredFieldZipCode = cp.getNotRequiredFieldZipCode();
+		Assert.assertTrue(NotRequiredFieldZipCode.size()== 0);
+
+		List<WebElement> NotRequiredFieldCountry = cp.getNotRequiredFieldCountry();
+		Assert.assertTrue(NotRequiredFieldCountry.size()== 0);
+
+		cp.getContactMarketProfilesTab().click();
+		cp.getContactSummaryTab().click();
+
+		//Scroll till Business phone field
+		utl.scrollToElement(cp.getScrollTextOnContactForm());
+
+		//Step:8- Remove the value of Business Phone and then Enter the value for Mobile Phone
+		cp.getContactFormBusinessPhoneField().click();
+		cp.getContactFormBusinessPhoneField().sendKeys(Keys.BACK_SPACE);
+		cp.getBusinessPhoneLabel().click();
+
+		cp.getmobile().click();
+		cp.getmobile().sendKeys(genData.generateRandomNumber(10));
+		cp.getMobilePhoneLabel().click();
+
+		cp.getContactMarketProfilesTab().click();
+		cp.getContactSummaryTab().click();
+
+		//Verify that First Name,Type, Account Name fields should be mandatory
+		Assert.assertTrue(cp.getRequiredFieldFirstName().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldType().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldAccountName().isDisplayed());
+
+		utl.scrollToElement(cp.getScrollTextOnContactForm());
+		//Verify that below fields should not be displayed as mandatory now
+		List<WebElement> NotRequiredFieldEmail1 = cp.getNotRequiredFieldEmail();
+		Assert.assertTrue(NotRequiredFieldEmail1.size()== 0);
+
+		List<WebElement> NotRequiredFieldBusinessPhone = cp.getNotRequiredFieldBusinessPhone();
+		Assert.assertTrue(NotRequiredFieldBusinessPhone.size()== 0);
+
+		//Verify that Mobile Phone field should be mandatory
+		Assert.assertTrue(cp.getRequiredFieldMobilePhone().isDisplayed());
+
+		utl.scrollToElement(cp.getMobilePhoneLabel());
+
+		List<WebElement> NotRequiredFieldStreet12 = cp.getNotRequiredFieldStreet1();
+		Assert.assertTrue(NotRequiredFieldStreet12.size()== 0);
+
+		List<WebElement> NotRequiredFieldCity1 = cp.getNotRequiredFieldCity();
+		Assert.assertTrue(NotRequiredFieldCity1.size()== 0);
+
+		utl.scrollToElement(cp.getCityLabel());
+
+		List<WebElement> NotRequiredFieldState1 = cp.getNotRequiredFieldState();
+		Assert.assertTrue(NotRequiredFieldState1.size()== 0);
+
+		List<WebElement> NotRequiredFieldZipCode1 = cp.getNotRequiredFieldZipCode();
+		Assert.assertTrue(NotRequiredFieldZipCode1.size()== 0);
+
+		List<WebElement> NotRequiredFieldCountry1 = cp.getNotRequiredFieldCountry();
+		Assert.assertTrue(NotRequiredFieldCountry1.size()== 0);
+
+		cp.getContactMarketProfilesTab().click();
+		cp.getContactSummaryTab().click();
+
+		//Step-10: Remove the value of Mobile Phone and Enter email address in Email field
+		//Scroll till Mobile Phone field
+		utl.scrollToElement(cp.getScrollTextOnContactForm());
+
+		cp.getmobile().click();
+		cp.getmobile().sendKeys(Keys.BACK_SPACE);
+		cp.getMobilePhoneLabel().click();
+
+		cp.getemail().click();
+		cp.getemail().sendKeys(genData.generateEmail(15));
+
+		//Verify that Email field is mandatory
+		Assert.assertTrue(cp.getRequiredFieldEmail().isDisplayed());
+		cp.getBusinessPhoneLabel().click();
+		Thread.sleep(2000);
+		//Verify that Mobile Phone, Business Phone fields should not be displayed as mandatory now
+		List<WebElement> NotRequiredFieldBusinessPhone1 = cp.getNotRequiredFieldBusinessPhone();
+		Assert.assertTrue(NotRequiredFieldBusinessPhone1.size()== 0);
+
+		List<WebElement> NotRequiredFieldMobilePhone1 = cp.getNotRequiredFieldMobilePhone();
+		Assert.assertTrue(NotRequiredFieldMobilePhone1.size()== 0);
+
+		utl.scrollToElement(cp.getMobilePhoneLabel());
+
+		List<WebElement> NotRequiredFieldStreet13 = cp.getNotRequiredFieldStreet1();
+		Assert.assertTrue(NotRequiredFieldStreet13.size()== 0);
+
+		List<WebElement> NotRequiredFieldCity2 = cp.getNotRequiredFieldCity();
+		Assert.assertTrue(NotRequiredFieldCity2.size()== 0);
+
+		utl.scrollToElement(cp.getCityLabel());
+
+		List<WebElement> NotRequiredFieldState2 = cp.getNotRequiredFieldState();
+		Assert.assertTrue(NotRequiredFieldState2.size()== 0);
+
+		List<WebElement> NotRequiredFieldZipCode2 = cp.getNotRequiredFieldZipCode();
+		Assert.assertTrue(NotRequiredFieldZipCode2.size()== 0);
+
+		List<WebElement> NotRequiredFieldCountry2 = cp.getNotRequiredFieldCountry();
+		Assert.assertTrue(NotRequiredFieldCountry2.size()== 0);
+
+		cp.getContactMarketProfilesTab().click();
+		cp.getContactSummaryTab().click();
+
+		//Verify that First Name, Type, Account Name fields should be mandatory
+		Assert.assertTrue(cp.getRequiredFieldFirstName().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldType().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldAccountName().isDisplayed());
+
+		//Step:12- Remove the value of Email field and Enter data for address fields
+		utl.scrollToElement(cp.getScrollTextOnContactForm());
+		cp.getemail().click();
+		cp.getemail().sendKeys(Keys.CONTROL + "a");
+		cp.getemail().sendKeys(Keys.DELETE);
+		cp.getemail().click();
+
+		utl.scrollToElement(cp.getMobilePhoneLabel());
+		cp.getstreet1().click();
+		cp.getstreet1().sendKeys(genData.generateRandomAlphaNumeric(15));
+		cp.getcity().sendKeys(prop.getProperty("city"));
+
+		utl.scrollToElement(cp.getCityLabel());
+		cp.getstateorprovince().sendKeys(prop.getProperty("state"));
+		cp.getziporpostalcode().sendKeys(genData.generateRandomNumber(6));
+		cp.getCountrytxbx().click();
+		cp.getCountrydrpbtn().click();
+		cp.getCountryName().click();
+
+		cp.getContactMarketProfilesTab().click();
+		cp.getContactSummaryTab().click();
+
+		//Verify that First Name, Type,Account Name fields should be mandatory
+		Assert.assertTrue(cp.getRequiredFieldFirstName().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldType().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldAccountName().isDisplayed());
+
+		utl.scrollToElement(cp.getScrollTextOnContactForm());
+
+		//Verify that Email,Business Phone,Mobile Phone fields should not be displayed as mandatory now
+		List<WebElement> NotRequiredFieldEmail2 = cp.getNotRequiredFieldEmail();
+		Assert.assertTrue(NotRequiredFieldEmail2.size()== 0);
+
+		List<WebElement> NotRequiredFieldBusinessPhone2 = cp.getNotRequiredFieldBusinessPhone();
+		Assert.assertTrue(NotRequiredFieldBusinessPhone2.size()== 0);
+
+		List<WebElement> NotRequiredFieldMobilePhone2 = cp.getNotRequiredFieldMobilePhone();
+		Assert.assertTrue(NotRequiredFieldMobilePhone2.size()== 0);
+
+		utl.scrollToElement(cp.getMobilePhoneLabel());
+
+		//Verify that Address data fields should be displayed as mandatory now
+		Assert.assertTrue(cp.getRequiredFieldStreet1().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldCity().isDisplayed());
+
+		utl.scrollToElement(cp.getCityLabel());
+
+		Assert.assertTrue(cp.getRequiredFieldState().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldZipCode().isDisplayed());
+		Assert.assertTrue(cp.getRequiredFieldCountry().isDisplayed());
+
+		//Navigate back to Active Contact list
+		ap.getPageBackBtn().click();
+		ap.getDiscardChangesBtn().click();
 	}
 	//	@AfterTest
 	//	public void closeDriver()

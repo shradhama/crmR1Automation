@@ -35,7 +35,8 @@ public class CRMContactPage {
 	By contactsavenclosebtn = By.xpath("//button[@aria-label='Save & Close']");
 	By contactnameinheader = By.xpath("//h1[@data-id='header_title']");
 	By activecontactslabel = By.xpath("//h1[@aria-label='Active Contacts']");
-	By createnewcontactbtn = By.xpath("//button[@aria-label='New']");
+	//By createnewcontactbtn = By.xpath("//button[@aria-label='New']");
+	By createnewcontactbtn = By.xpath("//button[@id='contact|NoRelationship|HomePageGrid|Mscrm.NewRecordFromGrid11-button']");
 	By contactfirstnamelabel = By.xpath("//label[text()='First Name']");
 	By contacttypetxtbx = By.xpath("//input[@id='xxc_typecode_ledit']");
 	By contacttypeexpandbtn = By.xpath("//div[@data-lp-id='MscrmControls.MultiSelectPicklist.UpdMSPicklistControl|xxc_typecode.fieldControl|contact']/div/div[6]/div[1]/div[2]/button[1]/span[1]");
@@ -137,7 +138,18 @@ public class CRMContactPage {
 	By contactpostcancelbtn = By.xpath("//button[@id='create_post_cancel_btn']"); //Locator for Post Cancel btn
 	By contactviewcreatedpost = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[2]/div[2]/div[1]/div[1]"); //Locator to view newly created post
 	By contactdeletepost = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[3]/span");  //Locator for Delete Post btn
-	
+	By requiredfieldfirstname = By.xpath("//div[@aria-label='Required field First Name']");
+	By requiredfieldtype = By.xpath("//div[@aria-label='Required field Type']");
+	By requiredfieldaccountname = By.xpath("//div[@aria-label='Required field Account Name']");
+	By requiredfieldemail = By.xpath("//div[@aria-label='Required field Email']");
+	By requiredfieldbusinessphone = By.xpath("//div[@aria-label='Required field Business Phone']");
+	By requiredfieldmobilephone = By.xpath("//div[@aria-label='Required field Mobile Phone']");
+	By requiredfieldstreet1 = By.xpath("//div[@aria-label='Required field Street 1']");
+	By requiredfieldcity = By.xpath("//div[@aria-label='Required field City']");
+	By requiredfieldzipcode = By.xpath("//div[@aria-label='Required field ZIP/Postal Code']");
+	By requiredfieldcountry = By.xpath("//div[@aria-label='Required field Country']");
+	By requiredfieldstate = By.xpath("//div[@aria-label='Required field State/Province']");
+
 	public CRMContactPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -820,5 +832,100 @@ public class CRMContactPage {
 	public WebElement getContactDeletePost()
 	{
 		return driver.findElement(contactdeletepost);	
+	}
+
+	public WebElement getRequiredFieldFirstName()
+	{
+		return driver.findElement(requiredfieldfirstname);	
+	}
+
+	public WebElement getRequiredFieldType()
+	{
+		return driver.findElement(requiredfieldtype);	
+	}
+
+	public WebElement getRequiredFieldAccountName()
+	{
+		return driver.findElement(requiredfieldaccountname);	
+	}
+
+	public WebElement getRequiredFieldEmail()
+	{
+		return driver.findElement(requiredfieldemail);	
+	}
+
+	public WebElement getRequiredFieldBusinessPhone()
+	{
+		return driver.findElement(requiredfieldbusinessphone);	
+	}
+
+	public WebElement getRequiredFieldMobilePhone()
+	{
+		return driver.findElement(requiredfieldmobilephone);	
+	}
+
+	public WebElement getRequiredFieldStreet1()
+	{
+		return driver.findElement(requiredfieldstreet1);	
+	}
+
+	public WebElement getRequiredFieldCity()
+	{
+		return driver.findElement(requiredfieldcity);	
+	}
+
+	public WebElement getRequiredFieldZipCode()
+	{
+		return driver.findElement(requiredfieldzipcode);	
+	}
+
+	public WebElement getRequiredFieldCountry()
+	{
+		return driver.findElement(requiredfieldcountry);	
+	}
+
+	public WebElement getRequiredFieldState()
+	{
+		return driver.findElement(requiredfieldstate);	
+	}
+
+	public List<WebElement> getNotRequiredFieldEmail()
+	{
+		return driver.findElements(requiredfieldemail);	
+	}
+
+	public List<WebElement> getNotRequiredFieldMobilePhone()
+	{
+		return driver.findElements(requiredfieldmobilephone);	
+	}
+
+	public List<WebElement> getNotRequiredFieldStreet1()
+	{
+		return driver.findElements(requiredfieldstreet1);	
+	}
+
+	public List<WebElement> getNotRequiredFieldCity()
+	{
+		return driver.findElements(requiredfieldcity);	
+	}
+
+	public List<WebElement> getNotRequiredFieldZipCode()
+	{
+		return driver.findElements(requiredfieldzipcode);	
+	}
+
+	public List<WebElement> getNotRequiredFieldCountry()
+	{
+		return driver.findElements(requiredfieldcountry);	
+	}
+
+	public List<WebElement> getNotRequiredFieldState()
+	{
+		return driver.findElements(requiredfieldstate);	
+	}
+
+	public List<WebElement> getNotRequiredFieldBusinessPhone()
+	{
+		return driver.findElements(requiredfieldbusinessphone);	
 	}
 }
