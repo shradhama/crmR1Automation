@@ -11,8 +11,7 @@
 			<class name="crmframework.crmAutomation.ContactPageTest" />
 			<methods>
 				 <include name="TS001_VerifyHomePageTest" />
-	     		<include name="TS015_VerifyAddNewNoteToContactTest" />
-	     		<include name="TS016_VerifyAddNewPostToContactTest" />
+	     		<include name="TS017_VerifyMandatoryFieldsOnContactFormTest" />
 			</methods>
 		</classes>
 	</test>
