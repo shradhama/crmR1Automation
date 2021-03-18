@@ -13,7 +13,7 @@ public class CRMAccountsPage {
 
 	public WebDriver driver;
 	public FluentWait<WebDriver> wait;
-	
+
 	By accountnewbtn = By.xpath("//span[contains(text(),'New')]");
 	By accountNametxtbx = By.xpath("//input[@id='id-276390f9-8bbf-4452-8f24-636b0ccaee2c-1-name8-name.fieldControl-text-box-text']");
 	By accountnamesearchtable= By.xpath("//div[@data-id='cell-0-2']");
@@ -211,21 +211,25 @@ public class CRMAccountsPage {
 	By accstreet3label = By.xpath("//label[contains(text(),'Street 3')]");
 	By verifyaccountppointment = By.xpath("//div[@id = 'TimelineMainContainerSection']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/label[1]");//Locator for getting text of subject for an appointment
 	By trackprogressexportbtn = By.xpath("//div[@data-id = 'alertdialog']div[1]/div[3]/button[1]/span[1]"); //Locator for track progress for export online option for accounts
-	
+	By clickcountry = By.xpath("//div[@class = 'wj-listbox-item'][2]"); 
+	By summarytab = By.xpath("//h2[@data-id = 'form-sectionHeader-SUMMARY_TAB_column_3_section_1']");
+	By accountinfosection = By.xpath("//h2[@data-id = 'form-sectionHeader-ACCOUNT_INFORMATION']");
+	By countryautocompletelist = By.xpath("//div[@class='wj-listbox-item']");
+
 	public CRMAccountsPage(WebDriver driver) {
 
 		this.driver = driver;
 	}
-	
+
 	public WebElement getPhoneCallTimelineSubject() {
 		return driver.findElement(phoneCallTimelineSubject);
 	}
-	
+
 	public WebElement getAccountnametxtbx() {
-		
+
 		return driver.findElement(accountNametxtbx);
 	}
-	
+
 	public WebElement getAccountNewbtn() throws InterruptedException
 	{
 		Thread.sleep(10000);
@@ -240,85 +244,85 @@ public class CRMAccountsPage {
 	{
 		return driver.findElement(phn);
 	}
-	
+
 	public WebElement getAddress()
 	{
 		return driver.findElement(address);
 	}
-	
+
 	public WebElement getAccTypetxtbx()
 	{
 		return driver.findElement(acctypetxtbx);
 	}
-	
+
 	public WebElement getAcctypeExpandbtn()
 	{
 		return driver.findElement(acctypeexpandbtn);
 	}
-	
+
 	public WebElement getAccTypeBuyer()
 	{
 		return driver.findElement(acctypebuyer);
 	}
-	
+
 	public WebElement getStreet1()
 	{
 		return driver.findElement(street1);
 	}
-	
+
 	public WebElement getState()
 	{
 		return driver.findElement(state);
 	}
-	
+
 	public WebElement getCity()
 	{
 		return driver.findElement(city);
 	}
-	
+
 	public WebElement getZipcode()
 	{
 		return driver.findElement(zip);
 	}
-	
+
 	public WebElement getCountrytxbx()
 	{
 		return driver.findElement(countrytxtbx);
 	}
-	
+
 	public WebElement getCountrydrpbtn()
 	{
 		return driver.findElement(cntryexpandbtn);
 	}
-	
+
 	public WebElement getCountryName()
 	{
 		return driver.findElement(countryname);
 	}
-	
+
 	public WebElement getAccSaveCloseBtn() throws InterruptedException
 	{
 		Thread.sleep(6000);
 		return driver.findElement(accsavenclosebtn);
 	}
-	
-	
+
+
 	public WebElement getAccountName() throws InterruptedException
 	{
 		Thread.sleep(10000);
 		return driver.findElement(accountname);
 	}
-	
+
 	public WebElement getAddTimelineBtn()
 	{
 		return driver.findElement(addtimelinebtn);
 	}
-	
+
 	public WebElement getApptmntActivityOptn()
 	{
 		return driver.findElement(appointmentactivityoptn);
 	}
-	
+
 	public WebElement getTimelineSujecttxbx() throws InterruptedException
 	{
 		wait = new WebDriverWait (driver,20);
@@ -326,28 +330,28 @@ public class CRMAccountsPage {
 		Thread.sleep(10000);
 		return driver.findElement(timelinesubjecttxtbx);
 	}
-	
+
 	public WebElement getTimelineSavenClosebtn()
 	{
 		return driver.findElement(timelinesavenclosebtn);
 	}
-	
+
 	public WebElement getSuccessMsg()
 	{
 		return driver.findElement(successmsg);
 	}
-	
+
 	public WebElement getAccPageBackBtn()
 	{
 		return driver.findElement(accpagebackbtn);
 	}
-	
+
 	public WebElement getRelatedTab() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(relatedTab));
 		return driver.findElement(relatedTab);
 	}
-	
+
 	public WebElement getSelectActivitiesRelated() {
 		return driver.findElement(activitiesRelatedTab);
 	}
@@ -355,86 +359,86 @@ public class CRMAccountsPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(activityTab));
 		return driver.findElement(activityTab);
 	}
-	
+
 	public WebElement getAllFilterLink() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(allfilterlink));
 		return driver.findElement(allfilterlink);
 	}
-	
+
 	public WebElement getDeactivateBtn() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(deactivatebtn));
 		return driver.findElement(deactivatebtn);
 	}
-	
+
 	public WebElement getDeactivateOkBtn() {
 		return driver.findElement(deactivateokbtn);
 	}
 	public WebElement getActivateBtn() {
 		return driver.findElement(activatebtn);
 	}
-	
+
 	public WebElement getDeactivateAccName() {
 		return driver.findElement(deactivateaccname);
 	}
-	
+
 	public WebElement getActiveAccDropDownBtn() {
 		return driver.findElement(accdropdownbtn);
 	}
-	
+
 	public WebElement getInactiveAccOptn() {
 		return driver.findElement(inactiveacctsoptn);
 	}
-	
+
 	public WebElement getValidateInactiveAccName() {
 		return driver.findElement(validateInactiveAcc);
 	}
 
 	public WebElement getCLetterFilterLink() throws InterruptedException {
-		
+
 		Thread.sleep(10000);
-//		wait = new WebDriverWait (driver,20);
-//		wait.until(ExpectedConditions.elementToBeClickable(cletterfilterlink));
+		//		wait = new WebDriverWait (driver,20);
+		//		wait.until(ExpectedConditions.elementToBeClickable(cletterfilterlink));
 		return driver.findElement(cletterfilterlink);
 	}
 
 	public WebElement getAccNaviagteBtn() {
 		return driver.findElement(accnaviagtebtn);
 	}
-	
+
 	public WebElement getParentAccLabel() {
 		return driver.findElement(parentacclabel);
 	}
-	
+
 	public WebElement getParentAcctxbx() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(parentacctxtbx));
 		return driver.findElement(parentacctxtbx);
 	}
-	
+
 	public WebElement getParentAccSearchBtn() {
 		return driver.findElement(parentaccsearchbtn);
 	}
-	
+
 	public WebElement selectParentAccName() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(selectparentacc));
 		return driver.findElement(selectparentacc);
 	}
-	
+
 	public WebElement getRecentRecordsLink() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(recentrecordslink));
 		return driver.findElement(recentrecordslink);
 	}
-	
+
 	public WebElement getAccSaveBtn() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.elementToBeClickable(accsavebtn));
 		return driver.findElement(accsavebtn);
 	}
-	
+
 	public WebElement getActivatePopupStatusField() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(activatepopupstatusfield));
@@ -475,26 +479,26 @@ public class CRMAccountsPage {
 
 		return driver.findElement(inactiveaccountslabel);
 	}
-	
+
 	public WebElement getAccStatusOutofBusiness() {
 
 		return driver.findElement(accstatusoutofbusiness);
 	}
-	
+
 	public WebElement getDeactivatePopupDeactivatebtn() {
 
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.elementToBeClickable(deactivatepopupdeactivatebtn)).click();
 		return driver.findElement(deactivatepopupdeactivatebtn);
 	}
-	
+
 	public WebElement getAccStatusResonForInactiveAcc() {
 
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasonoutofbusinessinheader));
 		return driver.findElement(accstatusreason);
 	}
-	
+
 	public WebElement getPageBackBtn() throws InterruptedException
 	{
 		Thread.sleep(5000);
@@ -511,47 +515,47 @@ public class CRMAccountsPage {
 		Thread.sleep(5000);
 		return driver.findElements(mediasegmentationfieldlabel);
 	}
-	
+
 	public List<WebElement> getMediaTypeFieldLabel()
 	{
 		return driver.findElements(mediatypefieldlabel);
 	}
-	
+
 	public WebElement getMediaSegmentationDropdown()
 	{
 		return driver.findElement(mediasegmentationdrpdown);
 	}
-	
+
 	public WebElement getMediaSegmentationName()
 	{
 		return driver.findElement(mediasegmentationname);
 	}
-	
+
 	public WebElement getMediaTypeDropdown()
 	{
 		return driver.findElement(mediatypedrpdown);
 	}
-	
+
 	public WebElement getMediaTypeName()
 	{
 		return driver.findElement(mediatypename);
 	}
-	
+
 	public WebElement getAccTypeSelectedValueTxtbx()
 	{
 		return driver.findElement(acctypeselectedvaluetxtbx);
 	}
-	
+
 	public WebElement getRemoveAccTypeMediaBtn()
 	{
 		return driver.findElement(removeacctypemediabtn);
 	}
-	
+
 	public WebElement getNewAccountHeader()
 	{
 		return driver.findElement(newaccountheader);
 	}
-	
+
 	public WebElement getDiscardChangesBtn()
 	{
 		return driver.findElement(discardchangesbtn);
@@ -607,7 +611,7 @@ public class CRMAccountsPage {
 	{
 		return driver.findElement(postCancelButton);
 	}
-	
+
 	public WebElement getViewCreatedPost()
 	{
 		return driver.findElement(viewCreatedPost);
@@ -643,24 +647,24 @@ public class CRMAccountsPage {
 		Thread.sleep(20000);
 		return driver.findElement(validateaccnameinsearchresults);
 	}
-	
+
 	public WebElement getapplocation() {
-		
+
 		return driver.findElement(applocation);
 	}
-	
+
 	public WebElement getphonecalloption() {
-		
+
 		return driver.findElement(phonecalloption);
 	}
 
 	public WebElement getphonecallsubject() {
-		
+
 		return driver.findElement(phonecallsubject);
 	}
 
 	public WebElement getclickphonecallduedatecalendor() {
-		
+
 		return driver.findElement(clickphonecallduedatecalendor);
 	}
 
@@ -678,10 +682,10 @@ public class CRMAccountsPage {
 	}
 
 	public WebElement getphonecallselectduetime() {
-		
+
 		return driver.findElement(phonecallselectduetime);
 	}
-	
+
 	public WebElement getclickregiongridfunnel() throws InterruptedException {
 		Thread.sleep(5000);
 		return driver.findElement(clickregiongridfunnel);
@@ -714,7 +718,7 @@ public class CRMAccountsPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(selectregionvalue));
 		return driver.findElement(selectregionvalue);
 	}
-	
+
 	public WebElement getselectregionvalueactual() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(selectvalueregionactual));
@@ -742,7 +746,7 @@ public class CRMAccountsPage {
 		Thread.sleep(5000);
 		return driver.findElement(clickdbanamegridfunnel);
 	}
-	
+
 	public WebElement getselectoperatorone()
 	{
 		wait = new WebDriverWait (driver,20);
@@ -750,12 +754,12 @@ public class CRMAccountsPage {
 		return driver.findElement(selectoperatorone);
 	}
 
-    public WebElement getclearfiltergrid() {
+	public WebElement getclearfiltergrid() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(clearfiltergrid));
 		return driver.findElement(clearfiltergrid);
 	}
-	
+
 	public WebElement getclickdbaphonegridfunnel() throws InterruptedException
 	{
 		Thread.sleep(5000);
@@ -767,27 +771,27 @@ public class CRMAccountsPage {
 		Thread.sleep(5000);
 		return driver.findElement(clickdbacitygridfunnel);
 	}
-	
+
 	public WebElement getAccDBANametxbox()
 	{
-//		wait = new WebDriverWait (driver,20);
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(newaccountheader));
+		//		wait = new WebDriverWait (driver,20);
+		//		wait.until(ExpectedConditions.visibilityOfElementLocated(newaccountheader));
 		return driver.findElement(accdbanametxtbx);
 	}
-	
+
 	public WebElement getDuplicateRecordsPopupTitle() throws InterruptedException
 	{
 		Thread.sleep(5000);
-//		wait = new WebDriverWait (driver,20);
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(duplicaterecordspopuptitle));
+		//		wait = new WebDriverWait (driver,20);
+		//		wait.until(ExpectedConditions.visibilityOfElementLocated(duplicaterecordspopuptitle));
 		return driver.findElement(duplicaterecordspopuptitle);
 	}
-	
+
 	public WebElement getDuplicateRecordsPopupCancelbtn()
 	{
 		return driver.findElement(duplicaterecordspopupcancelbtn);
 	}
-	
+
 	public WebElement getUnsavedChangesPopupTitle()
 	{
 		wait = new WebDriverWait (driver,20);
@@ -798,37 +802,37 @@ public class CRMAccountsPage {
 	{
 		return driver.findElement(phoneinsearchtable);
 	}
-	
+
 	public WebElement getPhoneTxtbxLabel() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		return driver.findElement(phonetxboxlabel);
 	}
-	
+
 	public WebElement getHLetterFilterLink() {
 
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.elementToBeClickable(hletterfilterlink));
 		return driver.findElement(hletterfilterlink);
 	}
-	
+
 	public WebElement getDuplicateRecordsPopupIgnorenSavebtn()
 	{
 		return driver.findElement(duplicaterecordspopupignorensavebtn);
 	}
-	
+
 	public WebElement getclickoverflowbutton() throws InterruptedException {
 		Thread.sleep(10000);
 		return driver.findElement(clickoverflowbutton);
 	}
-	
+
 	public WebElement getclickexporttoexcelbutton() {
-		
+
 		return driver.findElement(clickexporttoexcelbutton);
 	}
 
 	public WebElement getopenexcelonline() {
-		
+
 		return driver.findElement(openexcelonline);
 	}
 
@@ -891,85 +895,85 @@ public class CRMAccountsPage {
 	{
 		return driver.findElement(contactssectionlabel);
 	}
-	
+
 	public WebElement getContactsSectionEmailField()
 	{
 		return driver.findElement(contactssectionemailfield);
 	}
-	
+
 	public WebElement getContactsSectionBusinessPhoneField()
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(contactssectionlabel));
 		return driver.findElement(contactssectionbusinessphonefield);
 	}
-	
+
 	public WebElement getContactsSectionEmailFieldLabel()
 	{
 		return driver.findElement(contactssectionemailfieldlabel);
 	}
-	
+
 	public WebElement getContactsSectionContactName() throws InterruptedException
 	{
 		Thread.sleep(4000);
 		return driver.findElement(contactssectioncontactname);
 	}
-	
+
 	public WebElement getAssociatedListsLabel()
 	{
 		return driver.findElement(associatedlistslabel);
 	}
-	
+
 	public WebElement getContactsSectionMobilePhoneField()
 	{
 		return driver.findElement(contactssectionmobilephonefield);
 	}
-	
+
 	public WebElement getContactNavigateBtn()
 	{
 		return driver.findElement(contactnavigatebtn);
 	}
-	
+
 	public WebElement getAccRefreshBtn() throws InterruptedException
 	{
-//		wait = new WebDriverWait (driver,20);
-//		wait.until(ExpectedConditions.elementToBeClickable(accrefreshbtn));
+		//		wait = new WebDriverWait (driver,20);
+		//		wait.until(ExpectedConditions.elementToBeClickable(accrefreshbtn));
 		Thread.sleep(5000);
 		return driver.findElement(accrefreshbtn);
 	}
-	
+
 	public List<WebElement> getActiveContactsList() throws InterruptedException
 	{
 		Thread.sleep(5000);
 		return driver.findElements(activecontactslist);
 	}
-	
+
 	public WebElement getBLetterFilterLink() {
 
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.elementToBeClickable(bletterfilterlink));
 		return driver.findElement(bletterfilterlink);
 	}
-	
+
 	public WebElement getRelatedTabContactsItem() {
 		return driver.findElement(relatedtabcontactsitem);
 	}
-	
+
 	public WebElement getContactAssociatedViewDropDownIcon()
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(contactassociatedviewlabel));
 		return driver.findElement(contactassociatedviewdropdownicon);
 	}
-	
+
 	public WebElement getContactAssociatedViewLabel() {
 		return driver.findElement(contactassociatedviewlabel);
 	}
-	
+
 	public WebElement getSelectViewsAllContactsItem() {
 		return driver.findElement(selectviewsallcontactsitem);
 	}
-	
+
 	public WebElement getEnteraNoteLabel() {
 		return driver.findElement(enteranotelabel);
 	}
@@ -993,7 +997,7 @@ public class CRMAccountsPage {
 	{
 		return driver.findElement(phoneRequiredIcon);
 	}
-	
+
 	public WebElement getsearchaccounttextbox()
 	{
 		wait = new WebDriverWait (driver,20);
@@ -1217,51 +1221,51 @@ public class CRMAccountsPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(listmember));
 		return driver.findElement(listmember);
 	}
-	
+
 	public WebElement getSelectedListName()
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(selectedlistname));
 		return driver.findElement(selectedlistname);
 	}
-	
+
 	public WebElement getListMemRemovedLabel()
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(listmemremovedlabel));
 		return driver.findElement(listmemremovedlabel);
 	}
-	
+
 	public WebElement getMembersLabel()
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(memberslabel));
 		return driver.findElement(memberslabel);
 	}
-	
+
 	public WebElement getTaskBtnOnTimeline()
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(taskbtnontimeline));
 		return driver.findElement(taskbtnontimeline);
 	}
-	
+
 	public WebElement getTaskSujecttxbx() throws InterruptedException
 	{
 		Thread.sleep(5000);
 		return driver.findElement(tasksubjecttxtbx);
 	}
-	
+
 	public WebElement getTaskSavenClosebtn()
 	{
 		return driver.findElement(tasksavenclosebtn);
 	}
-	
+
 	public WebElement getAccTypeLabel()
 	{
 		return driver.findElement(acctypelabel);
 	}
-	
+
 	public WebElement getAccStreet3Label()
 	{
 		return driver.findElement(accstreet3label);
@@ -1280,6 +1284,31 @@ public class CRMAccountsPage {
 		Thread.sleep(20000);
 		return driver.findElement(trackprogressexportbtn);
 	}
+
+	public WebElement getclickcountry()
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(clickcountry));
+		return driver.findElement(clickcountry);
+	}
+	public WebElement getsummarytab()
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(summarytab));
+		return driver.findElement(summarytab);
+	}
+	public WebElement getaccountinfosection()
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(accountinfosection));
+		return driver.findElement(accountinfosection);
+	}
+
+	public List<WebElement> getCountryAutocompleteList()
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(countryautocompletelist));
+		return driver.findElements(countryautocompletelist);
+	}
 }
 
-	

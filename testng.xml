@@ -7,12 +7,12 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<!--<class name="crmframework.crmAutomation.AccountPageTest" />-->
-			<!-- <class name="crmframework.crmAutomation.OtherTest" /> -->
-			<class name="crmframework.crmAutomation.ContactPageTest" />
+			<class name="crmframework.crmAutomation.OtherTest" />
 			<methods>
-				 <include name="TS001_VerifyHomePageTest" />
-	     		<include name="TS017_VerifyMandatoryFieldsOnContactFormTest" />
+				<include name="TS001_VerifyHomePageTest"/>
+				<include name="TS029_VerifyCountryAutocomplete"/>
 			</methods>
+		<!-- 	<class name="crmframework.crmAutomation.ContactPageTest" /> -->
 		</classes>
 	</test>
 </suite>
