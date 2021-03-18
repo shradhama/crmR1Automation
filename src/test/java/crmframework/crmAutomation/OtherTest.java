@@ -2,6 +2,7 @@ package crmframework.crmAutomation;
 
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -26,6 +27,7 @@ import pageObjects.CRMIncentiveTab;
 import pageObjects.CRMLandingPage;
 import pageObjects.CRMLoginPage;
 import resources.GenerateData;
+import resources.Utility;
 import resources.base;
 
 @Listeners({TestListeners.class})
@@ -35,6 +37,7 @@ public class OtherTest extends base{
 	public String accnameText;
 	public String phoneno;
 	public GenerateData genData;
+	public Utility utl;
 	public String buysatCorplvl, outofbusiness;
 	public String ContactFirstName;
 	public String ContactLastName;
@@ -54,6 +57,7 @@ public class OtherTest extends base{
 	{
 		driver = initializeDriver();
 		genData=new GenerateData();
+		utl = new Utility(driver);
 	}
 	
 	@Test(priority=1)
@@ -498,6 +502,63 @@ public class OtherTest extends base{
 		Assert.assertEquals("Your changes were saved.", ap.getSuccessMsg().getText());
 
 		//Navigate back to Active accounts list
+		ap.getPageBackBtn().click();
+	}
+	
+	@Test(priority=29)
+	public void TS029_VerifyCountryAutocomplete() throws InterruptedException
+	{
+		//The purpose of this test case to:-
+		//CRM-T132- Verify a picklist should be displayed after user starts typing country name 
+		//in country field
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Accounts Tab at left menu.
+		hp.getAccountTab().click();
+	
+		//Open active account
+		ap.getAccountName().click();
+		ap.getAccNaviagteBtn().click();
+	
+		//Scroll to Address section
+		utl.scrollToElement(ap.getAddress());
+
+		//Delete data already selected in country field
+		WebElement country = ap.getCountrytxbx();
+		country.sendKeys(Keys.CONTROL + "a");
+		country.sendKeys(Keys.DELETE);
+
+		//Enter some characters to search country name
+		ap.getCountrytxbx().sendKeys(prop.getProperty("country"));
+		Thread.sleep(5000);
+
+		List<WebElement> list = ap.getCountryAutocompleteList();
+		for(int i=0; i<list.size(); i++)
+		{
+			System.out.println(list.get(i).getText());
+			Assert.assertTrue(list.get(i).getText().contains(prop.getProperty("country")));
+		}
+		
+		String ExpectedCountry = ap.getclickcountry().getText();
+		System.out.println("Expected Country: " + ExpectedCountry);
+
+		//Select searched country from drop down list
+		ap.getclickcountry().click();
+
+		//Save country for an existing account
+		ap.getAccSaveBtn().click();
+		Thread.sleep(5000);
+		
+		//Validate selected country
+		String UpdatedCountryOnAccountForm = ap.getCountrytxbx().getAttribute("value").toString();
+		System.out.println("Updated country: " + UpdatedCountryOnAccountForm);
+
+		Assert.assertEquals(UpdatedCountryOnAccountForm, ExpectedCountry);
+		
+		//Click Back button
 		ap.getPageBackBtn().click();
 	}
 	

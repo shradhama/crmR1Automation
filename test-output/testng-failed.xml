@@ -3,12 +3,12 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.ContactPageTest">
+      <class name="crmframework.crmAutomation.OtherTest">
         <methods>
-          <include name="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined"/>
+          <include name="TS029_VerifyCountryAutocomplete"/>
           <include name="initialize"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.ContactPageTest -->
+      </class> <!-- crmframework.crmAutomation.OtherTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
