@@ -149,7 +149,15 @@ public class CRMContactPage {
 	By requiredfieldzipcode = By.xpath("//div[@aria-label='Required field ZIP/Postal Code']");
 	By requiredfieldcountry = By.xpath("//div[@aria-label='Required field Country']");
 	By requiredfieldstate = By.xpath("//div[@aria-label='Required field State/Province']");
-
+	By countryautocompletelist = By.xpath("//div[@class='wj-listbox-item']"); //Locator for Country autocomplete list
+	By selectcountry = By.xpath("//div[@class = 'wj-listbox-item'][2]"); //Locator of Country name from picklist
+	By personalsection = By.xpath("//h2[@data-id = 'form-sectionHeader-PERSONAL_NOTES_SECTION']");//Locator for Personal section
+	By conprefsection = By.xpath("//h2[@data-id = 'form-sectionHeader-CONTACT_PREFERENCES']");//Locator for Contact Preferences section
+	By personalnotes = By.xpath("//textarea[@aria-label = 'Description']");//Locator for Notes under Personal section
+	By personalownerid = By.xpath("//div[@data-id = 'header_ownerid-FieldSectionItemContainer']");//Locator for Owner Id under Personal section
+	By personaloriginatinglead = By.xpath("//div[@data-id = 'originatingleadid-FieldSectionItemContainer']");//Locator for Originating Lead under Personal section
+	By conprefoptions = By.xpath("//section[@data-id = 'CONTACT_PREFERENCES']/div[1]/div[1]/div[1]/div");//Locator for options under Contact Preferences section
+	
 	public CRMContactPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -927,5 +935,49 @@ public class CRMContactPage {
 	public List<WebElement> getNotRequiredFieldBusinessPhone()
 	{
 		return driver.findElements(requiredfieldbusinessphone);	
+	}
+	public List<WebElement> getCountryAutocompleteList()
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(countryautocompletelist));
+		return driver.findElements(countryautocompletelist);
+	}
+
+	public WebElement SelectCountry()
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(selectcountry));
+		return driver.findElement(selectcountry);
+	}
+
+	public WebElement getpersonalsection() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(personalsection));
+		return driver.findElement(personalsection);
+	}
+	public WebElement getconprefsection() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(conprefsection));
+		return driver.findElement(conprefsection);
+	}
+	public WebElement getpersonalnotes() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(personalnotes));
+		return driver.findElement(personalnotes);
+	}
+	public WebElement getpersonalownerid() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(personalownerid));
+		return driver.findElement(personalownerid);
+	}
+	public WebElement getpersonaloriginatinglead() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(personaloriginatinglead));
+		return driver.findElement(personaloriginatinglead);
+	}
+	public WebElement getconprefoptions() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(conprefoptions));
+		return driver.findElement(conprefoptions);
 	}
 }

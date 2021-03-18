@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="187034" started-at="2021-03-18T07:48:01Z" finished-at="2021-03-18T07:51:08Z">
+  <suite name="Suite" duration-ms="222130" started-at="2021-03-18T14:02:48Z" finished-at="2021-03-18T14:06:30Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="187034" started-at="2021-03-18T07:48:01Z" finished-at="2021-03-18T07:51:08Z">
+    <test name="Test" duration-ms="222130" started-at="2021-03-18T14:02:48Z" finished-at="2021-03-18T14:06:30Z">
       <class name="crmframework.crmAutomation.OtherTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.OtherTest@523884b2]" name="initialize" is-config="true" duration-ms="11351" started-at="2021-03-18T13:18:01Z" finished-at="2021-03-18T13:18:12Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.OtherTest@523884b2]" name="initialize" is-config="true" duration-ms="11247" started-at="2021-03-18T19:32:48Z" finished-at="2021-03-18T19:32:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.OtherTest@523884b2]" name="TS001_VerifyHomePageTest" duration-ms="125239" started-at="2021-03-18T13:18:12Z" finished-at="2021-03-18T13:20:17Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.OtherTest@523884b2]" name="TS001_VerifyHomePageTest" duration-ms="129695" started-at="2021-03-18T19:32:59Z" finished-at="2021-03-18T19:35:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS029_VerifyCountryAutocomplete()[pri:0, instance:crmframework.crmAutomation.OtherTest@523884b2]" name="TS029_VerifyCountryAutocomplete" duration-ms="50296" started-at="2021-03-18T13:20:17Z" finished-at="2021-03-18T13:21:08Z">
+        <test-method status="PASS" signature="TS019_VerifyDetailsTabOnAccountTest()[pri:0, instance:crmframework.crmAutomation.OtherTest@523884b2]" name="TS019_VerifyDetailsTabOnAccountTest" duration-ms="81101" started-at="2021-03-18T19:35:09Z" finished-at="2021-03-18T19:36:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS029_VerifyCountryAutocomplete -->
+        </test-method> <!-- TS019_VerifyDetailsTabOnAccountTest -->
       </class> <!-- crmframework.crmAutomation.OtherTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

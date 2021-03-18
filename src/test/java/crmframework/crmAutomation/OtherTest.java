@@ -32,7 +32,7 @@ import resources.base;
 
 @Listeners({TestListeners.class})
 public class OtherTest extends base{
-	
+
 	public WebDriverWait wait;
 	public String accnameText;
 	public String phoneno;
@@ -51,7 +51,7 @@ public class OtherTest extends base{
 	Actions act;
 	CRMContactPage cp;
 	JavascriptExecutor jse;
-	
+
 	@BeforeTest
 	public void initialize() throws IOException
 	{
@@ -59,7 +59,7 @@ public class OtherTest extends base{
 		genData=new GenerateData();
 		utl = new Utility(driver);
 	}
-	
+
 	@Test(priority=1)
 	public void TS001_VerifyHomePageTest() throws IOException, InterruptedException {
 
@@ -96,7 +96,7 @@ public class OtherTest extends base{
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
 	}
-	
+
 	@Test(priority=3)
 	public void TS003_VerifyAddIncentiveToAccountTest() throws InterruptedException {
 
@@ -275,72 +275,72 @@ public class OtherTest extends base{
 		hp.getAccountTab().click();
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
 		ap.getclicksearchbutton().click();
-		
+
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
-		
+
 		//Click Export To Excel option under it
 		ap.getclickexporttoexcelbutton().click();
-		
+
 		//Export file to online excel
 		ap.getopenexcelonline().click();
-		
+
 		//ap.getsaveexcelonline().click();
 		ap.getsaveexcelonline().click();   
-		
+
 		//Click Track Progress button
 		ap.gettrackprogressexportbtn().click();
-		
+
 		//Switch to previous browser tab
 		Set<String> windows = driver.getWindowHandles();
 		Iterator<String>it = windows.iterator();
 		String parentId = it.next();
 		String childId = it.next();
 		driver.switchTo().window(parentId);
-				
+
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
-				
+
 		//Click Export To Excel option under it
 		ap.getclickexporttoexcelbutton().click();
-		
+
 		//Export Excel to Static Worksheet
 		ap.getexporttostaticworksheet().click();
-		
+
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
-				
+
 		//Click Export To Excel option under it
 		ap.getclickexporttoexcelbutton().click();
-		
+
 		//Export Excel to Static Worksheet Page Only
 		ap.getexporttostaticworksheetpageonly().click();
-		
+
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
-				
+
 		//Click Export To Excel dropdown arrow option under it
 		ap.getclickexporttoexcelbutton().click();
-		
+
 		//Export to Dynamic Worksheet
 		ap.getexporttodynamicworksheet().click();
 		ap.getselectcheckbox1().click();
 		ap.getselectcheckbox2().click();
 		ap.getexportworksheetpopup().click();
-		
+
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
-						
+
 		//Click Export To Excel option under it
 		ap.getclickexporttoexcelbutton().click();
-		
+
 		//Export to Dynamic Pivot Table
 		ap.getexporttodynamicpivottable().click();
 		ap.getselectcheckbox1().click();
 		ap.getselectcheckbox2().click();
 		ap.getexportworksheetpopup().click();
 	}
-	
+
 	@Test(priority=26)
 	public void TS025_VerifyBusinessRuleForAddressTest() throws InterruptedException {
 
@@ -355,11 +355,11 @@ public class OtherTest extends base{
 		Thread.sleep(10000);
 		//Click on 'New' button
 		ap.getAccountNewbtn().click();
-		
+
 		ap.getAccountnametxtbx().click();
 		ap.getAccountnametxtbx().sendKeys(genData.generateRandomAlphaNumeric(10));
 		ap.getAccSaveBtn().click();
-		
+
 		ap.getNotificationExpandIcon().click();
 		ap.getNotificationExpandIcon().click();
 		ap.getAccountnametxtbx().sendKeys(Keys.TAB);
@@ -377,11 +377,11 @@ public class OtherTest extends base{
 
 		//Enter Street1 address
 		ap.getStreet1().sendKeys(prop.getProperty("street1"));
-	
+
 		//Enter City
 		ap.getCity().click();
 		ap.getCity().sendKeys(prop.getProperty("city"));
-		
+
 		//Scroll down on the page		
 		WebElement accstreet3label = ap.getAccStreet3Label();
 		jse = (JavascriptExecutor)driver;
@@ -400,14 +400,14 @@ public class OtherTest extends base{
 		ap.getCountrydrpbtn().click();
 		ap.getCountryName().click();
 		ap.getAccSaveBtn().click();
-		
+
 		String typewarningmessage=ap.getTypeNotificationWrapperMsg().getText();
 		Assert.assertEquals(typewarningmessage, "Type : Required fields must be filled in.");
 		System.out.println("Displayed only Type warning message displayed.");
 		ap.getPageBackBtn().click();
 		ap.getDiscardChangesBtn().click();
 	}
-	
+
 	@Test(priority=26)
 	public void TS026_VerifyAssociatedListsSectionTest() throws InterruptedException
 	{
@@ -416,56 +416,56 @@ public class OtherTest extends base{
 
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
-		
+
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		//Click on Accounts Tab at left menu.
 		hp.getAccountTab().click();
-		
+
 		//Open an existing account
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("listaccount"));
 		ap.getclicksearchbutton().click();
 		hp.getSearchResultAcc().click();
 		ap.getAccNaviagteBtn().click();
-		
+
 		//Scroll to Associated Lists section
 		WebElement contacts = ap.getscrolltocontacts();
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].scrollIntoView(true);",contacts);
-		
+
 		WebElement associatedlists = ap.getscrolltoassociatedlists();
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
 		jse1.executeScript("arguments[0].scrollIntoView(true);",associatedlists);
-		
+
 		// Verify if Lists are available in Lists section
 		WebElement NoList = ap.getnolist();
 		Assert.assertFalse(NoList.getText().equalsIgnoreCase(""));
 		System.out.println("List is available for the account");
-		
+
 		// Verify for List Members
 		WebElement List = ap.getlist();
 		List.click();
-		
+
 		ap.getSelectedListName().click();
-		
+
 		//Scroll till Members section	
 		WebElement listmemremovedlabel = ap.getListMemRemovedLabel();	
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].scrollIntoView(true);",listmemremovedlabel);
 		Thread.sleep(3000);
-		
+
 		WebElement memberslabel = ap.getMembersLabel();	
 		JavascriptExecutor jse3 = (JavascriptExecutor)driver;
 		jse3.executeScript("arguments[0].scrollIntoView(true);",memberslabel);
 		Thread.sleep(5000);
-		
+
 		WebElement ListMember = ap.getlistmember();
 		Assert.assertFalse(ListMember.getText().equalsIgnoreCase(""));
 		System.out.println("List memeber is available");
 		ap.getPageBackBtn().click();
 		ap.getPageBackBtn().click();
 	}
-	
+
 	@Test(priority=27)
 	public void TS027_VerifyAddNewTaskFromTimelineToAccountTest() throws InterruptedException
 	{
@@ -504,7 +504,7 @@ public class OtherTest extends base{
 		//Navigate back to Active accounts list
 		ap.getPageBackBtn().click();
 	}
-	
+
 	@Test(priority=29)
 	public void TS029_VerifyCountryAutocomplete() throws InterruptedException
 	{
@@ -518,11 +518,11 @@ public class OtherTest extends base{
 
 		//Click on Accounts Tab at left menu.
 		hp.getAccountTab().click();
-	
+
 		//Open active account
 		ap.getAccountName().click();
 		ap.getAccNaviagteBtn().click();
-	
+
 		//Scroll to Address section
 		utl.scrollToElement(ap.getAddress());
 
@@ -541,7 +541,7 @@ public class OtherTest extends base{
 			System.out.println(list.get(i).getText());
 			Assert.assertTrue(list.get(i).getText().contains(prop.getProperty("country")));
 		}
-		
+
 		String ExpectedCountry = ap.getclickcountry().getText();
 		System.out.println("Expected Country: " + ExpectedCountry);
 
@@ -551,17 +551,56 @@ public class OtherTest extends base{
 		//Save country for an existing account
 		ap.getAccSaveBtn().click();
 		Thread.sleep(5000);
-		
+
 		//Validate selected country
 		String UpdatedCountryOnAccountForm = ap.getCountrytxbx().getAttribute("value").toString();
 		System.out.println("Updated country: " + UpdatedCountryOnAccountForm);
 
 		Assert.assertEquals(UpdatedCountryOnAccountForm, ExpectedCountry);
-		
+
 		//Click Back button
 		ap.getPageBackBtn().click();
 	}
-	
+
+	@Test(priority=19)
+	public void TS019_VerifyDetailsTabOnAccountTest() throws InterruptedException {
+
+		//The purpose of this test case to verify :-
+		//T300: Select any existing contact and click on Details and verify details
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		hp.getAccountTab().click();
+
+		ap = new CRMAccountsPage(driver);
+		//Click on 'C' link to sort accounts starts with 'C'
+		ap.getCLetterFilterLink().click();
+
+		//Select the account name in list
+		ap.getAccountName().click();
+		ap.getAccNaviagteBtn().click();
+
+		//click on Details Tab
+		ap.getdetailsTab().click();
+
+		//Verify if two sections are displayed on Details tab
+		Assert.assertTrue(ap.getoriginatinglead().isDisplayed());
+		System.out.println("Personal originating leads section is available on Details tab.");
+		WebElement scrollsection = ap.getcontactpreferences();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",scrollsection);
+		Assert.assertTrue(ap.getcontactpreferences().isDisplayed());
+		System.out.println("Contact Preferences section is available on Details tab.");
+
+		//Verify details under Contact Preferences section
+		Assert.assertTrue(ap.getconprefoptions().isDisplayed());
+		System.out.println("Contact preference options available on Details tab.");
+
+		//Navigate back to Active Contacts list
+		Thread.sleep(15000);
+		ap.getPageBackBtn().click();
+	}
+
 	/*@AfterTest
 	public void closeDriver()
 	{
