@@ -69,7 +69,6 @@ public class OtherTest extends base{
 		driver.get(prop.getProperty("url")); //CRM App
 		driver.manage().window().maximize();
 		lap = new CRMLandingPage(driver);
-		//lap.getLogin().sendKeys(prop.getProperty("username"));
 		lap.getLogin().sendKeys(System.getenv("username"));
 		lap.getnext().click();
 
@@ -77,7 +76,6 @@ public class OtherTest extends base{
 		lp.getpwd().click();
 
 		lp.getpwd().sendKeys(System.getenv("password"));
-		//lp.getpwd().sendKeys(prop.getProperty("password"));
 		Thread.sleep(15000);
 		lp.getsignin().click();
 		//Wait to enter the verification code from Mobile

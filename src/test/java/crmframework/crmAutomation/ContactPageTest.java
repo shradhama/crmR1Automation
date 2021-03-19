@@ -70,13 +70,11 @@ public class ContactPageTest extends base{
 		driver.get(prop.getProperty("url")); //CRM App
 		driver.manage().window().maximize();
 		lap = new CRMLandingPage(driver);
-		//lap.getLogin().sendKeys(prop.getProperty("username"));
 		lap.getLogin().sendKeys(System.getenv("username"));
 		lap.getnext().click();
 
 		lp= new CRMLoginPage(driver);
 		lp.getpwd().click();
-		//lp.getpwd().sendKeys(prop.getProperty("password"));
 		lp.getpwd().sendKeys(System.getenv("password"));
 		lp.getsignin().click();
 		//Wait to enter the verification code from Mobile
@@ -310,8 +308,8 @@ public class ContactPageTest extends base{
 	}
 
 
-	@Test(priority=5)
-	public void TS005_VerifyPhoneCallOnContactTest() throws InterruptedException {
+	@Test(priority=20)
+	public void TS020_VerifyPhoneCallOnContactTest() throws InterruptedException {
 
 		//The purpose of this test case to verify :-
 		//T80: Add Phone Call to an existing Contact
@@ -367,7 +365,7 @@ public class ContactPageTest extends base{
 
 	//Manual Fail_Caught By Automation	
 	@Test(priority=5)
-	public void TS005_VerifyJobFunctionFieldTest() throws InterruptedException
+	public void TS005_ManualFail_VerifyJobFunctionFieldTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//CRM-T35- Job Function drop-down field is visible on Contact form only if Type equal to 'Media' is selected
@@ -714,8 +712,8 @@ public class ContactPageTest extends base{
 		//Clear the search term to navigate to active accounts page
 		hp.getClearSearch().click();*/
 	}
-	@Test(priority=9)
-	public void TS009_VerifyExportToExcelTest() throws InterruptedException
+	@Test(priority=10)
+	public void TS010_VerifyExportToExcelTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//CRM-T293- Verify Export To Excel functionality for Accounts
@@ -886,8 +884,8 @@ public class ContactPageTest extends base{
 		//Click on 'Back' button
 		ap.getPageBackBtn().click();
 	}
-	@Test(priority=10)
-	public void TS010_VerifyGroupByOptionsContactTest() throws InterruptedException
+	@Test(priority=14)
+	public void TS014_VerifyGroupByOptionsContactTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//CRM-T217- Verify Group By options for Contact
