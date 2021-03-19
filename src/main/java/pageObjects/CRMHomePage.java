@@ -25,6 +25,7 @@ public class CRMHomePage {
 	By inactiveaccountstitle = By.xpath("//h1[@aria-label='Inactive Accounts']");
 	By searchresultcontactfullname = By.xpath("//div[@data-id = 'cell-0-2']");
 	By inactivecontactstitle = By.xpath("//h1[@aria-label='Inactive Contacts']");
+	By searchresultcontactemail = By.xpath("//div[@data-id = 'cell-0-5']");
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -106,5 +107,10 @@ public class CRMHomePage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(inactivecontactstitle));
 		return driver.findElement(searchaccount);	
+	}
+	
+	public WebElement getSearchResultContactEmail() throws InterruptedException {
+		Thread.sleep(3000);
+		return driver.findElement(searchresultcontactemail);	
 	}
 }

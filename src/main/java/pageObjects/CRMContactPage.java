@@ -40,7 +40,7 @@ public class CRMContactPage {
 	By contactfirstnamelabel = By.xpath("//label[text()='First Name']");
 	By contacttypetxtbx = By.xpath("//input[@id='xxc_typecode_ledit']");
 	By contacttypeexpandbtn = By.xpath("//div[@data-lp-id='MscrmControls.MultiSelectPicklist.UpdMSPicklistControl|xxc_typecode.fieldControl|contact']/div/div[6]/div[1]/div[2]/button[1]/span[1]");
-	By contacttypebuyer = By.xpath("//div[contains(text(),'Buyer')]");
+	By contacttypebuyer = By.xpath("//ul[@class='msos-selected-items msos-selection']/li[1]");
 	By contactaccountnametxtbx = By.xpath("//input[@aria-label='Account Name, Lookup']");
 	By searchrecordsbtn = By.xpath("//button[@aria-label='Search records for Account Name, Lookup field']");
 	By accountnametitle = By.xpath("//span[@data-id='parentcustomerid.fieldControl-name0_0_0']");
@@ -157,6 +157,21 @@ public class CRMContactPage {
 	By personalownerid = By.xpath("//div[@data-id = 'header_ownerid-FieldSectionItemContainer']");//Locator for Owner Id under Personal section
 	By personaloriginatinglead = By.xpath("//div[@data-id = 'originatingleadid-FieldSectionItemContainer']");//Locator for Originating Lead under Personal section
 	By conprefoptions = By.xpath("//section[@data-id = 'CONTACT_PREFERENCES']/div[1]/div[1]/div[1]/div");//Locator for options under Contact Preferences section
+	By clickcontactfullnamegrid = By.xpath("//div[@data-id = 'fullname']");//Locator for Full Name filter arrow on Contacts grid
+	By clickcontactaccnamegrid = By.xpath("//div[@data-id = 'parentcustomerid']");//Locator for account name filter arrow in contact grid
+	By clickcontactphonegrid = By.xpath("//div[@data-id = 'telephone1']");//Locator for business phone filter arrow in contact grid
+	By clickcontactemailgrid = By.xpath("//div[@data-id = 'emailaddress1']");//Locator for email filter arrow in contact grid
+	By clickcontactstategrid = By.xpath("//div[@data-id = 'address1_stateorprovince']");//Locator for state filter arrow in contact grid
+	By clickcontactregiongrid = By.xpath("//div[@data-id = 'xxc_regionid']");//Locator for state filter arrow in contact grid
+	By updateaccountname = By.xpath("//ul[@data-id = 'parentcustomerid.fieldControl-LookupResultsDropdown_parentcustomerid_SelectedRecordList']");//Locator for selected account name
+	By deleteselectedaccname = By.xpath("//ul[@data-id = 'parentcustomerid.fieldControl-LookupResultsDropdown_parentcustomerid_SelectedRecordList']/li[1]/div[1]");//Locator for deleting selected account name
+	By selectaccountname = By.xpath("//ul[@aria-label = 'Lookup recently used results']/li[1]");//Locator for selecting account name
+	By accountnamelookup = By.xpath("//div[@data-id = 'parentcustomerid-FieldSectionItemContainer']/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/button[1]");//Locator for account name lookup search
+	By clickaccnamelookup = By.xpath("//input[@aria-label = 'Account Name, Lookup']");//Locator for Account Name field
+	By audithistorygrid = By.xpath("//div[@class = 'ms-crm-Form-AssociatedGrid-Layout-Lite']/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]");//Locator for audit history grid
+	By clickrelatedtab = By.xpath("ul[@aria-label = 'Contact Form']/li[7]");
+	By openaudithistory = By.xpath("//div[@id = 'navAudit']");
+	By noaudithistory = By.xpath("//img[@id='emptyButtonImage']");
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -979,5 +994,78 @@ public class CRMContactPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(conprefoptions));
 		return driver.findElement(conprefoptions);
+	}
+	public WebElement getclickcontactfullnamegrid() throws InterruptedException
+	{
+		Thread.sleep(7000);
+		return driver.findElement(clickcontactfullnamegrid);
+	}
+	public WebElement getclickcontactaccnamegrid() throws InterruptedException 
+	{
+		Thread.sleep(7000);
+		return driver.findElement(clickcontactaccnamegrid);
+	}
+	public WebElement getclickcontactphonegrid() throws InterruptedException 
+	{
+		Thread.sleep(7000);
+		return driver.findElement(clickcontactphonegrid);
+	}
+	public WebElement getclickcontactemailgrid() throws InterruptedException 
+	{
+		Thread.sleep(7000);
+		return driver.findElement(clickcontactemailgrid);
+	}
+	public WebElement getclickcontactstategrid() throws InterruptedException 
+	{
+		Thread.sleep(7000);
+		return driver.findElement(clickcontactstategrid);
+	}
+	public WebElement getclickcontactregiongrid() throws InterruptedException 
+	{
+		Thread.sleep(7000);
+		return driver.findElement(clickcontactregiongrid);
+	}
+	public WebElement getupdateaccountname() throws InterruptedException 
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(updateaccountname));
+		//Thread.sleep(5000);
+		return driver.findElement(updateaccountname);
+	}
+	public WebElement getdeleteselectedaccname() throws InterruptedException 
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(deleteselectedaccname));
+		//Thread.sleep(5000);
+		return driver.findElement(deleteselectedaccname);
+	}
+	public WebElement getaccountnamelookup() throws InterruptedException 
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accountnamelookup));
+		//Thread.sleep(5000);
+		return driver.findElement(accountnamelookup);
+	}
+	public WebElement getselectaccountname() 
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectaccountname));
+		return driver.findElement(selectaccountname);
+	}
+	public WebElement getclickaccnamelookup() 
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(clickaccnamelookup));
+		return driver.findElement(clickaccnamelookup);
+	}
+	public WebElement getaudithistorygrid() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(audithistorygrid));
+		return driver.findElement(audithistorygrid);
+	}
+	public WebElement getnoaudithistory() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(noaudithistory));
+		return driver.findElement(noaudithistory);
 	}
 }
