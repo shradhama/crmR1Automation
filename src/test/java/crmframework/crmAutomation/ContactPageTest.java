@@ -1409,6 +1409,116 @@ public class ContactPageTest extends base{
 		ap.getPageBackBtn().click();
 		ap.getDiscardChangesBtn().click();
 	}
+
+	@Test(priority=18)
+	public void TS018_VerifyCountryAutocompletePicklist() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T135- Verify a picklist should be displayed after user starts typing country name 
+		//in country field
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Contact Tab at left menu
+		hp.getContactsTab().click();
+
+		//Open active contact from grid
+		cp.getBLetterFilterLink().click();
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+
+		//Scroll to Address section
+		utl.scrollToElement(ap.getEnteraNoteLabel());
+		utl.scrollToElement(cp.getBusinessPhoneLabel());
+		utl.scrollToElement(cp.getCityLabel());
+
+		//Delete data already selected in country field
+		WebElement country = cp.getCountrytxbx();
+		country.sendKeys(Keys.CONTROL + "a");
+		country.sendKeys(Keys.DELETE);
+
+		//Enter some characters to search country name
+		cp.getCountrytxbx().sendKeys(prop.getProperty("country"));
+		Thread.sleep(5000);
+
+		List<WebElement> list = cp.getCountryAutocompleteList();
+		for(int i=0; i<list.size(); i++)
+		{
+			System.out.println(list.get(i).getText());
+			Assert.assertTrue(list.get(i).getText().contains(prop.getProperty("country")));
+		}
+
+		String ExpectedCountry = cp.SelectCountry().getText();
+		System.out.println("Expected Country: " + ExpectedCountry);
+
+		//Select searched country from drop down list
+		cp.SelectCountry().click();
+
+		//Save country for an existing account
+		cp.getsavecontact().click();
+		Thread.sleep(5000);
+
+		//Validate selected country
+		String UpdatedCountryOnAccountForm = cp.getCountrytxbx().getAttribute("value").toString();
+		System.out.println("Updated country: " + UpdatedCountryOnAccountForm);
+
+		Assert.assertEquals(UpdatedCountryOnAccountForm, ExpectedCountry);
+
+		//Click Back button
+		ap.getPageBackBtn().click();
+	}
+
+	@Test(priority=19)
+	public void TS019_VerifyDetailsTabOnContactTest() throws InterruptedException {
+
+		//The purpose of this test case to verify :-
+		//T300: Select any existing contact and click on Details and verify details
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Open Contacts page and open existing contact
+		hp.getContactsTab().click();
+		ap.getCLetterFilterLink().click();
+		ap.getAccountName().click();
+		ap.getAccNaviagteBtn().click();
+		
+		//click on Details Tab
+		ap.getdetailsTab().click();
+
+		//Verify if two sections are displayed on Details tab
+		Assert.assertTrue(cp.getpersonalsection().isDisplayed());
+		System.out.println("Personal section is available on Details tab.");
+		WebElement scrollsection = cp.getconprefsection();
+		js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",scrollsection);
+		Assert.assertTrue(cp.getconprefsection().isDisplayed());
+		System.out.println("Contact Preferences section is available on Details tab.");
+
+		//Verify details under Personal section
+		Assert.assertTrue(cp.getpersonalnotes().isDisplayed());
+		System.out.println("Personal notes section is available on Details tab.");
+		Assert.assertTrue(cp.getpersonalownerid().isDisplayed());
+		System.out.println("Personal owner id section is available on Details tab.");
+		Assert.assertTrue(cp.getpersonaloriginatinglead().isDisplayed());
+		System.out.println("Personal originating leads section is available on Details tab.");
+
+		//Verify details under Contact Preferences section
+		//List <WebElement> ContactPrefOptions = cp.getconprefoptions();
+		Assert.assertTrue(ap.getconprefoptions().isDisplayed());
+		System.out.println("Contact preference options available on Details tab.");
+
+		//Navigate back to Active Contacts list
+		Thread.sleep(15000);
+		ap.getPageBackBtn().click();
+
+	}
 	//	@AfterTest
 	//	public void closeDriver()
 	//	{

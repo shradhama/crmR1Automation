@@ -215,6 +215,9 @@ public class CRMAccountsPage {
 	By summarytab = By.xpath("//h2[@data-id = 'form-sectionHeader-SUMMARY_TAB_column_3_section_1']");
 	By accountinfosection = By.xpath("//h2[@data-id = 'form-sectionHeader-ACCOUNT_INFORMATION']");
 	By countryautocompletelist = By.xpath("//div[@class='wj-listbox-item']");
+	By originatinglead = By.xpath("//input[@aria-label = 'Originating Lead, Lookup']");//Locator for originating lead on details tab
+	By contactpreferences = By.xpath("//section[@aria-label = 'Contact Preferences']");//Locator for Contact Preferences on details tab
+	By conprefoptions = By.xpath("//section[@data-id = 'CONTACT_PREFERENCES']");//Locator for Contact Preferences
 
 	public CRMAccountsPage(WebDriver driver) {
 
@@ -1309,6 +1312,36 @@ public class CRMAccountsPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(countryautocompletelist));
 		return driver.findElements(countryautocompletelist);
+	}
+
+
+	public WebElement getoriginatinglead() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(detailsTab));
+		Thread.sleep(5000);
+		return driver.findElement(detailsTab);
+	}
+	public WebElement getcontactpreferences() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactpreferences));
+		Thread.sleep(5000);
+		return driver.findElement(contactpreferences);
+	}
+	public WebElement getconprefoptions() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(conprefoptions));
+		Thread.sleep(5000);
+		return driver.findElement(conprefoptions);
+	}
+	
+	public WebElement getdetailsTab() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(detailsTab));
+		return driver.findElement(detailsTab);
 	}
 }
 

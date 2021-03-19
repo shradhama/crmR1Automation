@@ -10,9 +10,13 @@
 			<class name="crmframework.crmAutomation.OtherTest" />
 			<methods>
 				<include name="TS001_VerifyHomePageTest"/>
-				<include name="TS029_VerifyCountryAutocomplete"/>
+				<include name="TS019_VerifyDetailsTabOnAccountTest"/>
 			</methods>
-		<!-- 	<class name="crmframework.crmAutomation.ContactPageTest" /> -->
+		<!-- <class name="crmframework.crmAutomation.ContactPageTest" />
+			<methods>
+				<include name="TS001_VerifyHomePageTest" />
+				<include name="TS019_VerifyDetailsTabOnContactTest" />
+			</methods> -->
 		</classes>
 	</test>
 </suite>
