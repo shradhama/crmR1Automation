@@ -1001,10 +1001,9 @@ public class CRMAccountsPage {
 		return driver.findElement(phoneRequiredIcon);
 	}
 
-	public WebElement getsearchaccounttextbox()
+	public WebElement getsearchaccounttextbox() throws InterruptedException
 	{
-		wait = new WebDriverWait (driver,20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(searchaccounttextbox));
+		Thread.sleep(5000);
 		return driver.findElement(searchaccounttextbox);
 	}
 	public WebElement getclicksearchbutton()

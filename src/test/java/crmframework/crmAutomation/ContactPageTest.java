@@ -1486,7 +1486,7 @@ public class ContactPageTest extends base{
 		ap.getCLetterFilterLink().click();
 		ap.getAccountName().click();
 		ap.getAccNaviagteBtn().click();
-		
+
 		//click on Details Tab
 		ap.getdetailsTab().click();
 
@@ -1515,7 +1515,242 @@ public class ContactPageTest extends base{
 		//Navigate back to Active Contacts list
 		Thread.sleep(15000);
 		ap.getPageBackBtn().click();
+	}
 
+	@Test(priority=21)
+	public void TS021_VerifyGridFiltersContactTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify that:-
+		//CRM-T304- user should be able to sort contacts using the following columns in the view:
+		//Full Name, Business Phone, Email, Account Name, State/Province and Region
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Open Contacts page and open existing contact
+		hp.getContactsTab().click();
+		ap.getCLetterFilterLink().click();
+
+		//Click funnel for Full Name column
+		cp.getclickcontactfullnamegrid().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ap.getselectoperatorone().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Full Name value selected on accounts grid
+		WebElement confullname = null;
+		for (int i=0;i<7;i++)
+		{
+			confullname = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']/label"));
+			System.out.println(confullname.getText());
+			Assert.assertTrue(confullname.getText().contains(prop.getProperty("name")));
+			//Assert.assertEquals(confullname.getAttribute(arg0), expected);
+		}
+		System.out.println("Full Name matches expected criteria");
+
+		//Clear Filter for Full Name
+		cp.getclickcontactfullnamegrid().click();
+		ap.getclearfiltergrid().click();
+
+		//Click funnel for Business Phone column
+		cp.getclickcontactphonegrid().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ap.getselectoperatorone().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("phone"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Business phone value selected on accounts grid
+		WebElement conphonevaluesongrid = null;
+		for (int i=0;i<7;i++)
+		{
+			conphonevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-4']"));
+			Assert.assertTrue(conphonevaluesongrid.getText().contains(prop.getProperty("phone")));
+		}
+		System.out.println("Phone matches expected criteria");
+
+		//Clear Filter for Phone
+		cp.getclickcontactphonegrid().click();
+		ap.getclearfiltergrid().click();
+
+		//Click funnel for email column
+		cp.getclickcontactemailgrid().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ap.getselectoperatorone().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("emailtext"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify email value selected on accounts grid
+		WebElement conemailongrid = null;
+		for (int i=0;i<7;i++)
+		{
+			conemailongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-5']"));
+			Assert.assertTrue(conemailongrid.getText().contains(prop.getProperty("emailtext")));
+		}
+		System.out.println("Email matches expected criteria");
+
+		//Clear Filter for Account Name
+		cp.getclickcontactemailgrid().click();
+		ap.getclearfiltergrid().click();
+
+		//Click funnel for Account Name column
+		cp.getclickcontactaccnamegrid().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ap.getselectoperatorone().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Account Name value selected on accounts grid
+		WebElement conaccname = null;
+		for (int i=0;i<3;i++)
+		{
+			conaccname = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
+			Assert.assertTrue(conaccname.getText().contains(prop.getProperty("name")));
+		}
+		System.out.println("Account DBA Name matches expected criteria");
+
+		//Clear Filter for Account Name
+		cp.getclickcontactaccnamegrid().click();
+		ap.getclearfiltergrid().click();
+
+		//Click funnel for state column
+		cp.getclickcontactstategrid().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ap.getselectoperator().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("gridstatefilter"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify state value selected on accounts grid
+		WebElement constatevaluesongrid = null;
+		for (int i=0;i<7;i++)
+		{
+			constatevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-8']"));
+			Assert.assertTrue(constatevaluesongrid.getText().contains(prop.getProperty("gridstatefilter")));
+		}
+		System.out.println("State matches expected criteria");	
+
+		//Clear selected filter
+		cp.getclickcontactstategrid().click();
+		ap.getclearfiltergrid().click();
+
+		//Click funnel for Region column
+		cp.getclickcontactregiongrid().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ap.getselectoperator().click();
+		ap.getsclickvaluetextbox().click();
+		String ExpectedRegion = ap.getselectregionvalue().getText();
+		ap.getselectregionvalue().click();
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify region value selected on accounts grid
+		WebElement conregionvaluesongrid = null;
+		for (int i=0;i<7;i++)
+		{
+			conregionvaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-9']"));
+			Assert.assertTrue(conregionvaluesongrid.getText().contains(ExpectedRegion));
+		}
+		System.out.println("Region matches expected criteria");
+
+		//Clear filter
+		cp.getclickcontactregiongrid().click();
+		ap.getclearfiltergrid().click();
+	}
+
+	@Test(priority=22)
+	public void TS022_VerifyUpdateContactDetailsTest() throws InterruptedException
+	{
+		//The purpose of this test case to:-
+		//CRM-T302- Verify user is able to update contact details with appropriate user access
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Open Contacts page and open existing contact
+		hp.getContactsTab().click();
+		cp.getBLetterFilterLink().click();
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+
+		//Delete existing data and enter new data in mandatory fields
+		cp.getfirstname().click();
+		cp.getfirstname().sendKeys(Keys.CONTROL + "a");
+		cp.getfirstname().sendKeys(Keys.DELETE);
+		String ContactFirstName = "QA"+ genData.generateRandomString(3);
+		cp.getfirstname().sendKeys(ContactFirstName);
+		String FirstName = cp.getfirstname().getAttribute("value");
+		System.out.println("First Name: " +FirstName);
+
+		cp.getlastname().click();
+		cp.getlastname().sendKeys(Keys.CONTROL + "a");
+		cp.getlastname().sendKeys(Keys.DELETE);
+		String ContactLastName = genData.generateRandomString(5);
+		cp.getlastname().sendKeys(ContactLastName);
+		String LastName = cp.getlastname().getAttribute("value");
+		System.out.println("Last Name: " +LastName);
+
+		act = new Actions(driver);
+		act.moveToElement(ap.getmovetotype()).perform();
+		ap.getdeletetype().click();
+		cp.getContactTypeExpandbtn().click();
+		cp.getContactTypeBuyer().click();
+		cp.getContactFirstNameLabel().click();
+
+		utl.scrollToElement(ap.getEnteraNoteLabel());
+
+		cp.getemail().sendKeys(Keys.CONTROL + "a");
+		cp.getemail().sendKeys(Keys.DELETE);
+		String contactemail = genData.generateEmail(15);
+		cp.getemail().sendKeys(contactemail);
+
+		//Click on Save button in header
+		cp.getsavecontact().click();
+
+		String contactname = cp.getverifycontact().getText();
+		System.out.println("Contact Name: "+contactname);
+		cp.getContactSavenCloseBtn().click();
+
+		//Get back to Contacts grid and search updated contact
+		cp.getQLetterFilterLink().click();
+		ap.getsearchaccounttextbox().click();
+		Thread.sleep(5000);
+		ap.getsearchaccounttextbox().sendKeys(contactname);
+		ap.getclicksearchbutton().click();
+
+		//Verification for updated contact name and Email on Search results page
+		Assert.assertTrue(hp.getSearchResultContactFullName().getText().contains(contactname));
+		Assert.assertTrue(hp.getSearchResultContactEmail().getText().contains(contactemail));
+		System.out.println("Contact updated successfully");
+		
+		hp.getClearSearch().click();
 	}
 	//	@AfterTest
 	//	public void closeDriver()

@@ -5,8 +5,9 @@
     <classes>
       <class name="crmframework.crmAutomation.ContactPageTest">
         <methods>
-          <include name="TS019_VerifyDetailsTabOnContactTest"/>
+          <include name="TS022_VerifyUpdateContactDetailsTest"/>
           <include name="initialize"/>
+          <include name="TS021_VerifyGridFiltersContactTest"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.ContactPageTest -->
     </classes>
