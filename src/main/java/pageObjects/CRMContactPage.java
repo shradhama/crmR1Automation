@@ -171,7 +171,9 @@ public class CRMContactPage {
 	By audithistorygrid = By.xpath("//div[@class = 'ms-crm-Form-AssociatedGrid-Layout-Lite']/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]");//Locator for audit history grid
 	By clickrelatedtab = By.xpath("ul[@aria-label = 'Contact Form']/li[7]");
 	By openaudithistory = By.xpath("//div[@id = 'navAudit']");
-	By noaudithistory = By.xpath("//img[@id='emptyButtonImage']");
+	By noaudithistory = By.xpath("//div[@title='No Audits found for this Contact. Select Add (+).']");
+	By dletterfilterlink = By.xpath("//a[@id='D_link']"); //Locator for D' letter filter link for contacts
+	By audithistoryrecord = By.xpath("//table[@id='gridBodyTable']/tbody/tr[1]"); //Locator for Audit history record
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -1067,5 +1069,16 @@ public class CRMContactPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(noaudithistory));
 		return driver.findElement(noaudithistory);
+	}
+	
+	public WebElement getDLetterFilterLink() throws InterruptedException {
+
+		Thread.sleep(10000);
+		return driver.findElement(dletterfilterlink);
+	}
+	
+	public WebElement getAuditHistoryRecord() throws InterruptedException {
+		Thread.sleep(6000);
+		return driver.findElement(audithistoryrecord);
 	}
 }

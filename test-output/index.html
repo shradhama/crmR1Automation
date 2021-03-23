@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -106,12 +106,7 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS021_VerifyGridFiltersContactTest">TS021_VerifyGridFiltersContactTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS022_VerifyUpdateContactDetailsTest">TS022_VerifyUpdateContactDetailsTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS024_VerifyAuditHistoryTabOnContactTest">TS024_VerifyAuditHistoryTabOnContactTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -141,16 +136,9 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="TS021_VerifyGridFiltersContactTest">
-                  </a> <!-- TS021_VerifyGridFiltersContactTest -->
-                  <span class="method-name">TS021_VerifyGridFiltersContactTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TS022_VerifyUpdateContactDetailsTest">
-                  </a> <!-- TS022_VerifyUpdateContactDetailsTest -->
-                  <span class="method-name">TS022_VerifyUpdateContactDetailsTest</span>
+                  <a name="TS024_VerifyAuditHistoryTabOnContactTest">
+                  </a> <!-- TS024_VerifyAuditHistoryTabOnContactTest -->
+                  <span class="method-name">TS024_VerifyAuditHistoryTabOnContactTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -170,8 +158,7 @@
       &lt;class name=&quot;crmframework.crmAutomation.ContactPageTest&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
-          &lt;include name=&quot;TS021_VerifyGridFiltersContactTest&quot;/&gt;
-          &lt;include name=&quot;TS022_VerifyUpdateContactDetailsTest&quot;/&gt;
+          &lt;include name=&quot;TS024_VerifyAuditHistoryTabOnContactTest&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- crmframework.crmAutomation.ContactPageTest --&gt;
     &lt;/classes&gt;
@@ -213,24 +200,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TS021_VerifyGridFiltersContactTest')
+data.setCell(0, 1, 'TS001_VerifyHomePageTest')
 data.setCell(0, 2, 'crmframework.crmAutomation.ContactPageTest')
-data.setCell(0, 3, 152735);
+data.setCell(0, 3, 94207);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TS001_VerifyHomePageTest')
+data.setCell(1, 1, 'TS024_VerifyAuditHistoryTabOnContactTest')
 data.setCell(1, 2, 'crmframework.crmAutomation.ContactPageTest')
-data.setCell(1, 3, 106506);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'TS022_VerifyUpdateContactDetailsTest')
-data.setCell(2, 2, 'crmframework.crmAutomation.ContactPageTest')
-data.setCell(2, 3, 94803);
+data.setCell(1, 3, 72138);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -245,12 +228,14 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">19 ignored methods</span>
+            <span class="header-content">22 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">crmframework.crmAutomation.ContactPageTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">TS022_VerifySearchContactsUsingFullNameEmailPhoneTest</span>
+                <br/>
                 <span class="ignored-method-name">TS006_VerifyContactStatusToActivateContactTest</span>
                 <br/>
                 <span class="ignored-method-name">TS020_VerifyPhoneCallOnContactTest</span>
@@ -262,6 +247,8 @@ return data;
                 <span class="ignored-method-name">TS017_VerifyMandatoryFieldsOnContactFormTest</span>
                 <br/>
                 <span class="ignored-method-name">TS011_VerifyAssociatedListsSectionContactTest</span>
+                <br/>
+                <span class="ignored-method-name">TS021_VerifyGridFiltersContactTest</span>
                 <br/>
                 <span class="ignored-method-name">TS004_VerifyMarketingRelationshipOwnerContactTest</span>
                 <br/>
@@ -275,11 +262,13 @@ return data;
                 <br/>
                 <span class="ignored-method-name">TS015_VerifyAddNewNoteToContactTest</span>
                 <br/>
+                <span class="ignored-method-name">TS023_VerifyUpdateContactDetailsTest</span>
+                <br/>
                 <span class="ignored-method-name">TS013_ManualFail_VerifyContactMarketRecordProfile_Declined</span>
                 <br/>
-                <span class="ignored-method-name">TS005_ManualFail_VerifyJobFunctionFieldTest</span>
-                <br/>
                 <span class="ignored-method-name">TS014_VerifyGroupByOptionsContactTest</span>
+                <br/>
+                <span class="ignored-method-name">TS005_ManualFail_VerifyJobFunctionFieldTest</span>
                 <br/>
                 <span class="ignored-method-name">TS019_VerifyDetailsTabOnContactTest</span>
                 <br/>
@@ -306,15 +295,11 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">TS001_VerifyHomePageTest</span>
-                <span class="method-start">8332 ms</span>
+                <span class="method-start">4590 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">TS021_VerifyGridFiltersContactTest</span>
-                <span class="method-start">114891 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">TS022_VerifyUpdateContactDetailsTest</span>
-                <span class="method-start">267637 ms</span>
+                <span class="method-name">TS024_VerifyAuditHistoryTabOnContactTest</span>
+                <span class="method-start">98817 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
