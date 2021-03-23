@@ -1683,8 +1683,8 @@ public class ContactPageTest extends base{
 		ap.getclearfiltergrid().click();
 	}
 
-	@Test(priority=22)
-	public void TS022_VerifyUpdateContactDetailsTest() throws InterruptedException
+	@Test(priority=23)
+	public void TS023_VerifyUpdateContactDetailsTest() throws InterruptedException
 	{
 		//The purpose of this test case to:-
 		//CRM-T302- Verify user is able to update contact details with appropriate user access
@@ -1751,6 +1751,151 @@ public class ContactPageTest extends base{
 		System.out.println("Contact updated successfully");
 		
 		hp.getClearSearch().click();
+	}
+	
+	@Test(priority=22)
+	public void TS022_VerifySearchContactsUsingFullNameEmailPhoneTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T50- CRM User is having ability to search Contact entity 
+		//using account name, phone, Email, First name, Last name
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Contacts Tab at left menu
+		hp.getContactsTab().click();
+
+		//Click on 'Search' view and enter any account name
+		String searchaccountname = prop.getProperty("contactaccountname");
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(searchaccountname);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+
+		//Verify that all accounts that have a Account Name  'Cyb' get appeared in the Search results page
+		WebElement accinsearchresults = null;
+		for (int i=0;i<7;i++)
+		{
+			accinsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
+			if (accinsearchresults.getText().contains(searchaccountname))
+			{
+				System.out.println(accinsearchresults.getText());
+			}
+			else {
+				continue;
+			}
+		}
+		//Clear the search term to navigate to active contacts page
+		hp.getClearSearch().click();
+
+		//Click on 'Search' view and enter partial business phone
+		String searchbusinessphone = prop.getProperty("searchPhoneNo");
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(searchbusinessphone);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+
+		//Verify that all contacts that have a business phone  '98765' get appeared in the Search results page
+		WebElement businessphoneinsearchresults = null;
+		for (int i=0;i<6;i++)
+		{
+			businessphoneinsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-4']"));
+			if (businessphoneinsearchresults.getText().contains(searchbusinessphone))
+			{
+				System.out.println(businessphoneinsearchresults.getText());
+			}
+			else {
+				continue;
+			}
+		}
+		//Clear the search term to navigate to active contacts page
+		hp.getClearSearch().click();
+
+		//Click on 'Search' view and enter contact email
+		String searchcontactemail = prop.getProperty("contactemail");
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(searchcontactemail);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+
+		//Verify that all contacts that have an email 'egayin@me.com' get appeared in the Search results page
+		WebElement emailinsearchresults = null;
+		for (int i=0;i<3;i++)
+		{
+			emailinsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-5']"));
+			if (emailinsearchresults.getText().contains(searchcontactemail))
+			{
+				System.out.println(emailinsearchresults.getText());
+			}
+			else {
+				continue;
+			}
+		}
+		//Clear the search term to navigate to active contacts page
+		hp.getClearSearch().click();
+
+		//Click on 'Search' view and enter contact full name
+		String searchcontactfullname = prop.getProperty("contactfullname");
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(searchcontactfullname);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+
+		//Verify that all contacts that have a full name 'Test' get appeared in the Search results page
+		WebElement fullnameinsearchresults = null;
+		for (int i=0;i<7;i++)
+		{
+			fullnameinsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			if (fullnameinsearchresults.getText().contains(searchcontactfullname))
+			{
+				System.out.println(fullnameinsearchresults.getText());
+			}
+			else {
+				continue;
+			}
+		}
+		//Clear the search term to navigate to active contacts page
+		hp.getClearSearch().click();
+	}
+	
+	@Test(priority=24)
+	public void TS024_VerifyAuditHistoryTabOnContactTest() throws InterruptedException {
+
+		//The purpose of this test case to verify :-
+		//T300: Select any existing contact and click on Audit History Tab and verify details 
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Open Contacts page and open existing contact
+		hp.getContactsTab().click();
+		cp.getDLetterFilterLink().click();
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+		
+		//click on Related Tab and select Activities option from list. 
+		ap.getRelatedTab().click();
+		ap.getAuditHistoryRelatedTab().click();
+		Assert.assertEquals(ap.getAuditHistoryTab().getText(), "Audit History");
+		System.out.println("Audit History Tab Opened successfully");
+		Thread.sleep(6000);
+		// Verify if audit history grid is available or not
+		driver.switchTo().frame("audit_iframe");
+
+		Boolean result = cp.getAuditHistoryRecord().isDisplayed();
+		if (result == true) {
+			System.out.println("Audit History record is available for the contact");
+		}
+		else {
+			System.out.println("Audit History is not available for the contact");
+		}
+
 	}
 	//	@AfterTest
 	//	public void closeDriver()

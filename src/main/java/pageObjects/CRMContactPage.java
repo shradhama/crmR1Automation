@@ -138,17 +138,17 @@ public class CRMContactPage {
 	By contactpostcancelbtn = By.xpath("//button[@id='create_post_cancel_btn']"); //Locator for Post Cancel btn
 	By contactviewcreatedpost = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[2]/div[2]/div[1]/div[1]"); //Locator to view newly created post
 	By contactdeletepost = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[3]/span");  //Locator for Delete Post btn
-	By requiredfieldfirstname = By.xpath("//div[@aria-label='Required field First Name']");
-	By requiredfieldtype = By.xpath("//div[@aria-label='Required field Type']");
-	By requiredfieldaccountname = By.xpath("//div[@aria-label='Required field Account Name']");
-	By requiredfieldemail = By.xpath("//div[@aria-label='Required field Email']");
-	By requiredfieldbusinessphone = By.xpath("//div[@aria-label='Required field Business Phone']");
-	By requiredfieldmobilephone = By.xpath("//div[@aria-label='Required field Mobile Phone']");
-	By requiredfieldstreet1 = By.xpath("//div[@aria-label='Required field Street 1']");
-	By requiredfieldcity = By.xpath("//div[@aria-label='Required field City']");
-	By requiredfieldzipcode = By.xpath("//div[@aria-label='Required field ZIP/Postal Code']");
-	By requiredfieldcountry = By.xpath("//div[@aria-label='Required field Country']");
-	By requiredfieldstate = By.xpath("//div[@aria-label='Required field State/Province']");
+	By requiredfieldfirstname = By.xpath("//div[@aria-label='Required field First Name']"); //Locator for required field icon of firstname
+	By requiredfieldtype = By.xpath("//div[@aria-label='Required field Type']"); //Locator for required field icon of type
+	By requiredfieldaccountname = By.xpath("//div[@aria-label='Required field Account Name']"); //Locator for required field icon of account name
+	By requiredfieldemail = By.xpath("//div[@aria-label='Required field Email']"); ////Locator for required field icon of email
+	By requiredfieldbusinessphone = By.xpath("//div[@aria-label='Required field Business Phone']"); //Locator for required field icon of Business phone
+	By requiredfieldmobilephone = By.xpath("//div[@aria-label='Required field Mobile Phone']"); //Locator for required field icon of Mobile phone
+	By requiredfieldstreet1 = By.xpath("//div[@aria-label='Required field Street 1']"); //Locator for required field icon of street1
+	By requiredfieldcity = By.xpath("//div[@aria-label='Required field City']"); //Locator for required field icon of city
+	By requiredfieldzipcode = By.xpath("//div[@aria-label='Required field ZIP/Postal Code']"); //Locator for required field icon of zip code
+	By requiredfieldcountry = By.xpath("//div[@aria-label='Required field Country']"); //Locator for required field icon of country
+	By requiredfieldstate = By.xpath("//div[@aria-label='Required field State/Province']"); //Locator for required field icon of state
 	By countryautocompletelist = By.xpath("//div[@class='wj-listbox-item']"); //Locator for Country autocomplete list
 	By selectcountry = By.xpath("//div[@class = 'wj-listbox-item'][2]"); //Locator of Country name from picklist
 	By personalsection = By.xpath("//h2[@data-id = 'form-sectionHeader-PERSONAL_NOTES_SECTION']");//Locator for Personal section
@@ -168,10 +168,11 @@ public class CRMContactPage {
 	By selectaccountname = By.xpath("//ul[@aria-label = 'Lookup recently used results']/li[1]");//Locator for selecting account name
 	By accountnamelookup = By.xpath("//div[@data-id = 'parentcustomerid-FieldSectionItemContainer']/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/button[1]");//Locator for account name lookup search
 	By clickaccnamelookup = By.xpath("//input[@aria-label = 'Account Name, Lookup']");//Locator for Account Name field
-	By audithistorygrid = By.xpath("//div[@class = 'ms-crm-Form-AssociatedGrid-Layout-Lite']/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]");//Locator for audit history grid
-	By clickrelatedtab = By.xpath("ul[@aria-label = 'Contact Form']/li[7]");
-	By openaudithistory = By.xpath("//div[@id = 'navAudit']");
-	By noaudithistory = By.xpath("//img[@id='emptyButtonImage']");
+	By clickrelatedtab = By.xpath("ul[@aria-label = 'Contact Form']/li[7]"); //Locator for Related tab
+	By openaudithistory = By.xpath("//div[@id = 'navAudit']"); //Locator for Audit History tab
+	By noaudithistory = By.xpath("//div[@title='No Audits found for this Contact. Select Add (+).']"); //Locator for No audits found text
+	By dletterfilterlink = By.xpath("//a[@id='D_link']"); //Locator for D' letter filter link for contacts
+	By audithistoryrecord = By.xpath("//table[@id='gridBodyTable']/tbody/tr[1]"); //Locator for Audit history record
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -1058,14 +1059,21 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(clickaccnamelookup));
 		return driver.findElement(clickaccnamelookup);
 	}
-	public WebElement getaudithistorygrid() {
-		wait = new WebDriverWait (driver,20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(audithistorygrid));
-		return driver.findElement(audithistorygrid);
-	}
+
 	public WebElement getnoaudithistory() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(noaudithistory));
 		return driver.findElement(noaudithistory);
+	}
+	
+	public WebElement getDLetterFilterLink() throws InterruptedException {
+
+		Thread.sleep(10000);
+		return driver.findElement(dletterfilterlink);
+	}
+	
+	public WebElement getAuditHistoryRecord() throws InterruptedException {
+		Thread.sleep(6000);
+		return driver.findElement(audithistoryrecord);
 	}
 }

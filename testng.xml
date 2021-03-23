@@ -15,8 +15,7 @@
 			</methods> -->
 			<methods>
 				<include name="TS001_VerifyHomePageTest" />
-				<include name="TS021_VerifyGridFiltersContactTest" />
-				<include name="TS022_VerifyUpdateContactDetailsTest" />
+				<include name="TS024_VerifyAuditHistoryTabOnContactTest" />
 			</methods>
 		</classes>
 	</test>
