@@ -26,6 +26,7 @@ public class CRMHomePage {
 	By searchresultcontactfullname = By.xpath("//div[@data-id = 'cell-0-2']");
 	By inactivecontactstitle = By.xpath("//h1[@aria-label='Inactive Contacts']");
 	By searchresultcontactemail = By.xpath("//div[@data-id = 'cell-0-5']");
+	By peopletab = By.xpath("//span[contains(text(),'People')]");//Locator to open People tab
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -112,5 +113,11 @@ public class CRMHomePage {
 	public WebElement getSearchResultContactEmail() throws InterruptedException {
 		Thread.sleep(3000);
 		return driver.findElement(searchresultcontactemail);	
+	}
+	public WebElement getpeopletab() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(peopletab));
+		return driver.findElement(peopletab);
 	}
 }
