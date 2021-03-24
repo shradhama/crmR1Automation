@@ -695,6 +695,8 @@ public class CRMAccountsPage {
 	}
 
 	public WebElement getclickfunnelfilter() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(clickoperatordd));
 		return driver.findElement(clickfunnelfilter);
 	}
 
