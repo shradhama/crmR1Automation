@@ -30,6 +30,15 @@ public class CRMPeoplePage {
 	By selectdynamicexportoptionschk1 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_personstatecode']");//Locator for Status checkbox
 	By selectdynamicexportoptionschk2 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_personstatuscode']");//Locator for Status Reason checkbox
 	By onlineexportverification = By.xpath("//div[@data-id = 'cell-0-3']");//Locator for Status for Export to Excel online
+	By aletterfilterlink = By.xpath("//a[@id='A_link']"); //Locator for 'A' letter filter link for People
+	By selectpersonname = By.xpath("//div[@data-id='cell-2-2']"); //Locator to select person name in Grid
+	By fullnamecolmntextincontactssectn = By.xpath("//div[contains(text(),'Full Name')]"); //Locator for Full name column in Contact section on Person form
+	By emailcolmntextincontactssectn = By.xpath("//div[contains(text(),'Email')]"); //Locator for Email column in Contact section on Person form
+	By accountnamecolmntextincontactssectn = By.xpath("//div[contains(text(),'Account Name')]"); //Locator for Account name column in Contact section on Person form
+	By businessphonecolmntextincontactssectn = By.xpath("//div[contains(text(),'Business Phone')]"); //Locator for Business Phone column in Contact section on Person form
+	By statuscolmntextincontactssectn = By.xpath("//div[contains(text(),'Status')]"); //Locator for Status column in Contacts section on Person form
+	By newcontactbtnincontactssectn = By.xpath("//button[@aria-label='New Contact']"); //Locator for 'New Contact'button in Contacts section on Person form
+	By fullnamesortztoafilter = By.xpath("//span[contains(text(),'Sort Z to A')]"); //Locator for Z to A filter option of Full name
 	
 	public CRMPeoplePage(WebDriver driver) {
 
@@ -100,7 +109,8 @@ public class CRMPeoplePage {
 	}
 
 	public WebElement getContactFullNameInContactsSection() {
-
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactssectionlabelonpersonform));
 		return driver.findElement(contactfullnameincontactssection);
 	}
 	public WebElement getexporttoexcel() {
@@ -122,6 +132,45 @@ public class CRMPeoplePage {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(onlineexportverification));
 		return driver.findElement(onlineexportverification);
+	}
+	
+	public WebElement getALetterFilterLink() throws InterruptedException {
+
+		Thread.sleep(10000);
+		return driver.findElement(aletterfilterlink);
+	}
+	public WebElement selectPersonName() throws InterruptedException
+	{
+		Thread.sleep(10000);
+		return driver.findElement(selectpersonname);
+	}
+	public WebElement getFullNameColmnTextInContactsSectn()
+	{
+		return driver.findElement(fullnamecolmntextincontactssectn);
+	}
+	public WebElement getEmailColmnTextInContactsSectn()
+	{
+		return driver.findElement(emailcolmntextincontactssectn);
+	}
+	public WebElement getAccountNameColmnTextInContactsSectn()
+	{
+		return driver.findElement(accountnamecolmntextincontactssectn);
+	}
+	public WebElement getBusinessPhoneColmnTextInContactsSectn()
+	{
+		return driver.findElement(businessphonecolmntextincontactssectn);
+	}
+	public WebElement getStatusColmnTextInContactsSectn()
+	{
+		return driver.findElement(statuscolmntextincontactssectn);
+	}
+	public WebElement getNewContactBtnInContactsSectn()
+	{
+		return driver.findElement(newcontactbtnincontactssectn);
+	}
+	public WebElement getFullNameSortZtoAFilter()
+	{
+		return driver.findElement(fullnamesortztoafilter);
 	}
 }
 

@@ -173,7 +173,8 @@ public class CRMContactPage {
 	By noaudithistory = By.xpath("//div[@title='No Audits found for this Contact. Select Add (+).']"); //Locator for No audits found text
 	By dletterfilterlink = By.xpath("//a[@id='D_link']"); //Locator for D' letter filter link for contacts
 	By audithistoryrecord = By.xpath("//table[@id='gridBodyTable']/tbody/tr[1]"); //Locator for Audit history record
-	
+	By newcontactheaderoncontactform = By.xpath("//h1[contains(text(),'New Contact')]"); //Locator for New contact header of create contact form
+
 	public CRMContactPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -1075,5 +1076,10 @@ public class CRMContactPage {
 	public WebElement getAuditHistoryRecord() throws InterruptedException {
 		Thread.sleep(6000);
 		return driver.findElement(audithistoryrecord);
+	}
+	public WebElement getNewContactHeaderOnContactForm() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(newcontactheaderoncontactform));
+		return driver.findElement(newcontactheaderoncontactform);
 	}
 }

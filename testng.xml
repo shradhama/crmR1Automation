@@ -12,7 +12,7 @@
 			<class name="crmframework.crmAutomation.PeoplePageTest" />
 			<methods>
 				<include name="TS001_VerifyHomePageTest" />
-				<include name="TS002_VerifyCreatePeopleRecordTest" />
+				<include name="TS004_VerifyRelatedContactsForPeopleRecordTest" />
 			</methods> 
 		</classes>
 	</test>

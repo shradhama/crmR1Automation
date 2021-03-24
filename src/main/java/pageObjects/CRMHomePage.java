@@ -114,7 +114,7 @@ public class CRMHomePage {
 		Thread.sleep(3000);
 		return driver.findElement(searchresultcontactemail);	
 	}
-	public WebElement getpeopletab() {
+	public WebElement getPeopleTab() {
 
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(peopletab));

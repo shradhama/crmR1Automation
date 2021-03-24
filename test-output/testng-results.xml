@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="264372" started-at="2021-03-24T06:15:29Z" finished-at="2021-03-24T06:19:53Z">
+  <suite name="Suite" duration-ms="213475" started-at="2021-03-24T11:12:40Z" finished-at="2021-03-24T11:16:13Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="264372" started-at="2021-03-24T06:15:29Z" finished-at="2021-03-24T06:19:53Z">
+    <test name="Test" duration-ms="213475" started-at="2021-03-24T11:12:40Z" finished-at="2021-03-24T11:16:13Z">
       <class name="crmframework.crmAutomation.PeoplePageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.PeoplePageTest@4501b7af]" name="initialize" is-config="true" duration-ms="5862" started-at="2021-03-24T11:45:29Z" finished-at="2021-03-24T11:45:34Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.PeoplePageTest@4501b7af]" name="initialize" is-config="true" duration-ms="6292" started-at="2021-03-24T16:42:40Z" finished-at="2021-03-24T16:42:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.PeoplePageTest@4501b7af]" name="TS001_VerifyHomePageTest" duration-ms="164804" started-at="2021-03-24T11:45:34Z" finished-at="2021-03-24T11:48:19Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.PeoplePageTest@4501b7af]" name="TS001_VerifyHomePageTest" duration-ms="112098" started-at="2021-03-24T16:42:46Z" finished-at="2021-03-24T16:44:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS002_VerifyCreatePeopleRecordTest()[pri:0, instance:crmframework.crmAutomation.PeoplePageTest@4501b7af]" name="TS002_VerifyCreatePeopleRecordTest" duration-ms="93657" started-at="2021-03-24T11:48:19Z" finished-at="2021-03-24T11:49:53Z">
+        <test-method status="PASS" signature="TS004_VerifyRelatedContactsForPeopleRecordTest()[pri:0, instance:crmframework.crmAutomation.PeoplePageTest@4501b7af]" name="TS004_VerifyRelatedContactsForPeopleRecordTest" duration-ms="95033" started-at="2021-03-24T16:44:38Z" finished-at="2021-03-24T16:46:13Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS002_VerifyCreatePeopleRecordTest -->
+        </test-method> <!-- TS004_VerifyRelatedContactsForPeopleRecordTest -->
       </class> <!-- crmframework.crmAutomation.PeoplePageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

@@ -25,6 +25,7 @@ import pageObjects.CRMLandingPage;
 import pageObjects.CRMLoginPage;
 import pageObjects.CRMPeoplePage;
 import resources.GenerateData;
+import resources.Utility;
 import resources.base;
 
 @Listeners({TestListeners.class})
@@ -47,6 +48,7 @@ public class PeoplePageTest extends base {
 	Actions act;
 	CRMContactPage cp;
 	CRMPeoplePage pl;
+	Utility utl;
 
 
 	@BeforeTest
@@ -54,6 +56,7 @@ public class PeoplePageTest extends base {
 	{
 		driver = initializeDriver();
 		genData=new GenerateData();
+		utl=new Utility(driver);
 	}
 
 	@Test(priority=1)
@@ -192,7 +195,7 @@ public class PeoplePageTest extends base {
 		Assert.assertTrue(pl.getContactsSectionLabelOnPersonForm().isDisplayed());
 		Assert.assertTrue(pl.getContactFullNameInContactsSection().getText().contains(contactnameinheader));
 		System.out.println("Contact's Person record is created successfully");
-		
+
 		//Navigate back to Active contacts page
 		ap.getPageBackBtn().click();
 		ap.getPageBackBtn().click();
@@ -209,8 +212,8 @@ public class PeoplePageTest extends base {
 		cp = new CRMContactPage(driver);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-		//Click on Accounts Tab at left menu and search accounts containing Cyb
-		hp.getpeopletab().click();
+		//Click on People Tab at left menu and search people containing Cyb
+		hp.getPeopleTab().click();
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
 		ap.getclicksearchbutton().click();
 
@@ -228,7 +231,7 @@ public class PeoplePageTest extends base {
 
 		//Click Track Progress button
 		cp.getexporttrackprogressbtn().click();
-				
+
 		//Switch to new My Imports tab
 		Set<String> windows1 = driver.getWindowHandles();
 		Iterator<String>it = windows1.iterator();
@@ -236,7 +239,7 @@ public class PeoplePageTest extends base {
 		String childId = it.next();
 		driver.switchTo().window(childId);
 		Thread.sleep(10000);
-		
+
 		//Verify export to excel online
 		//pl.getclickonlineexcel().click();
 		//Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
@@ -244,7 +247,7 @@ public class PeoplePageTest extends base {
 		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
 		System.out.println("Excel exported online successfully.");
 		Thread.sleep(10000);
-		
+
 		//Switch to previous browser tab
 		Set<String> windows = driver.getWindowHandles();
 		Iterator<String>it1 = windows.iterator();
@@ -295,7 +298,101 @@ public class PeoplePageTest extends base {
 		ap.getexportworksheetpopup().click();
 	}
 
+	@Test(priority=4)
+	public void TS004_VerifyRelatedContactsForPeopleRecordTest() throws InterruptedException
+	{
+		//The purpose of this test case:-
+		//CRM-T231- Verify CRM User is able to open any person record available on Active 
+		//people list grid view and see contacts associated to it.
+		//Add existing contact or create new contact from person record.
 
+		ap = new CRMAccountsPage(driver);
+		hp = new CRMHomePage(driver);
+		cp = new CRMContactPage(driver);
+		pl = new CRMPeoplePage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on People Tab at left menu
+		hp.getPeopleTab().click();
+
+		//Select and open any Active person record
+		pl.getALetterFilterLink().click();
+		String expectedperosnname = pl.selectPersonName().getText();
+		pl.selectPersonName().click();
+
+		//Verify Contacts Sub section with grid columns on Person form
+		Assert.assertTrue(pl.getContactsSectionLabelOnPersonForm().isDisplayed());
+		Assert.assertTrue(pl.getFullNameColmnTextInContactsSectn().isDisplayed());
+		Assert.assertTrue(pl.getEmailColmnTextInContactsSectn().isDisplayed());
+		Assert.assertTrue(pl.getAccountNameColmnTextInContactsSectn().isDisplayed());
+		Assert.assertTrue(pl.getBusinessPhoneColmnTextInContactsSectn().isDisplayed());
+		Assert.assertTrue(pl.getStatusColmnTextInContactsSectn().isDisplayed());
+
+		//In contacts section, Click on 'New Contact', to create a new contact for person
+		pl.getNewContactBtnInContactsSectn().click();
+		Assert.assertTrue(cp.getNewContactHeaderOnContactForm().isDisplayed());
+
+		//Enter required details and click on Save and close in header
+		//Enter First Name
+		cp.getfirstname().click();
+		String ContactFirstName = prop.getProperty("contactfirstname");
+		cp.getfirstname().click();
+		cp.getfirstname().sendKeys(ContactFirstName);
+
+		//Select Contact type
+		cp.getContactTypetxtbx().click();
+		cp.getContactTypeExpandbtn().click();
+		cp.getContactTypeBuyer().click();
+		cp.getContactFirstNameLabel().click();
+
+		//Thread.sleep(5000);
+		WebElement scrollText = cp.getScrollTextOnContactForm();	
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView(true);",scrollText);
+		Thread.sleep(3000);
+
+		//Enter Account Name
+		cp.getContactAccountNameTxtbx().click();
+		cp.getSearchRecordsBtn().click();
+		cp.getAccountNameTitle().click();
+
+		cp.getemail().click();
+		cp.getemail().sendKeys(genData.generateEmail(15));
+
+		//Click on Save button in header
+		cp.getsavecontact().click();
+		Thread.sleep(5000);
+		//Save the contact name in string variable
+		String contactnameinheader = cp.getContactNameinHeader().getText();
+		System.out.println("Contact Name: "+contactnameinheader);
+		//Click on Save & Close button in header
+		cp.getContactSavenCloseBtn().click();
+
+		//Scroll to Contacts section
+		utl.scrollToElement(pl.getContactsSectionLabelOnPersonForm());		
+		pl.getFullNameColmnTextInContactsSectn().click();
+		pl.getFullNameSortZtoAFilter().click();
+		Thread.sleep(3000);
+
+		//Verify that newly created contact should be displayed in Contacts section on person record
+		Assert.assertTrue(pl.getContactFullNameInContactsSection().getText().contains(contactnameinheader));
+
+		//Select and open a contact available in contacts grid section
+		pl.getContactFullNameInContactsSection().click();
+		Thread.sleep(5000);
+
+		//Click on the 'More Header fields' button in front of Status Reason field
+		pl.getMoreHeaderFieldsBtn().click();
+
+		//Verify that Person name of the person record should be displayed, from which we navigated to contact record
+		String perosnname = pl.getPersonNameInHeader().getText();
+		System.out.println("Person name in header:" +perosnname);
+		Assert.assertTrue(perosnname.contains(expectedperosnname));
+
+		//Navigate back to Active People list
+		ap.getPageBackBtn().click();
+		ap.getPageBackBtn().click();
+	}
 }
 
 
