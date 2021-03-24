@@ -5,8 +5,8 @@
     <classes>
       <class name="crmframework.crmAutomation.PeoplePageTest">
         <methods>
+          <include name="TS002_VerifyCreatePeopleRecordTest"/>
           <include name="initialize"/>
-          <include name="TS002_VerifyFullNameandEIHKeyFilterForPeople"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.PeoplePageTest -->
     </classes>

@@ -11,8 +11,8 @@
 			<!--<class name="crmframework.crmAutomation.ContactPageTest" />-->
 			<class name="crmframework.crmAutomation.PeoplePageTest" />
 			<methods>
-				<!--<include name="TS001_VerifyHomePageTest"/>-->
-	
+				<include name="TS001_VerifyHomePageTest" />
+				<include name="TS002_VerifyCreatePeopleRecordTest" />
 			</methods> 
 		</classes>
 	</test>
