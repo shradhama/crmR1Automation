@@ -1,6 +1,8 @@
 package crmframework.crmAutomation;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -87,7 +89,6 @@ public class PeoplePageTest extends base {
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
 	}
-
 	@Test(priority=2)
 	public void TS002_VerifyCreatePeopleRecordTest() throws InterruptedException
 	{
@@ -196,6 +197,104 @@ public class PeoplePageTest extends base {
 		ap.getPageBackBtn().click();
 		ap.getPageBackBtn().click();
 	}
+	@Test(priority=3)
+	public void TS003_VerifyExportToExcelPeopleTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T268- Verify Export To Excel functionality for People
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		pl = new CRMPeoplePage(driver);
+		cp = new CRMContactPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Accounts Tab at left menu and search accounts containing Cyb
+		hp.getpeopletab().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
+		ap.getclicksearchbutton().click();
+
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+
+		//Click Export To Excel option under it
+		pl.getexporttoexcel().click();
+
+		//Export file to online excel
+		ap.getopenexcelonline().click();
+
+		//ap.getsaveexcelonline().click();
+		ap.getsaveexcelonline().click();   
+
+		//Click Track Progress button
+		cp.getexporttrackprogressbtn().click();
+				
+		//Switch to new My Imports tab
+		Set<String> windows1 = driver.getWindowHandles();
+		Iterator<String>it = windows1.iterator();
+		String parentId = it.next();
+		String childId = it.next();
+		driver.switchTo().window(childId);
+		Thread.sleep(10000);
+		
+		//Verify export to excel online
+		//pl.getclickonlineexcel().click();
+		//Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
+		System.out.println(pl.getonlineexportverification().getText());
+		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
+		System.out.println("Excel exported online successfully.");
+		Thread.sleep(10000);
+		
+		//Switch to previous browser tab
+		Set<String> windows = driver.getWindowHandles();
+		Iterator<String>it1 = windows.iterator();
+		String parentId1 = it1.next();
+		String childId1 = it1.next();
+		driver.switchTo().window(parentId1);
+
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+
+		//Click Export To Excel option under it
+		pl.getexporttoexcel().click();
+
+		//Export Excel to Static Worksheet
+		ap.getexporttostaticworksheet().click();
+
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+
+		//Click Export To Excel option under it
+		pl.getexporttoexcel().click();
+
+		//Export Excel to Static Worksheet Page Only
+		ap.getexporttostaticworksheetpageonly().click();
+
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+
+		//Click Export To Excel dropdown arrow option under it
+		pl.getexporttoexcel().click();
+
+		//Export to Dynamic Worksheet
+		ap.getexporttodynamicworksheet().click();
+		pl.getselectdynamicexportoptionschk1().click();
+		pl.getselectdynamicexportoptionschk2().click();
+		ap.getexportworksheetpopup().click();
+
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+
+		//Click Export To Excel option under it
+		pl.getexporttoexcel().click();
+
+		//Export to Dynamic Pivot Table
+		ap.getexporttodynamicpivottable().click();
+		pl.getselectdynamicexportoptionschk1().click();
+		pl.getselectdynamicexportoptionschk2().click();
+		ap.getexportworksheetpopup().click();
+	}
+
 
 }
 

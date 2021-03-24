@@ -26,7 +26,11 @@ public class CRMPeoplePage {
 	By personformtitle = By.xpath("//h1[@data-id='header_title']"); //Locator for Person form title
 	By contactssectionlabelonpersonform = By.xpath("//h2[@title='Contacts']"); //Locator for Contacts section label on Person form
 	By contactfullnameincontactssection = By.xpath("//div[@data-id='cell-0-2']"); //Locator for Contact's full name field in Contacts section on Person form
-
+	By exporttoexcel = By.xpath("//button[@data-id = 'xxc_person|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_person.ExportToExcel.Menu$splitButtonId']");//Locator for Export to Excel options arrow
+	By selectdynamicexportoptionschk1 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_personstatecode']");//Locator for Status checkbox
+	By selectdynamicexportoptionschk2 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_personstatuscode']");//Locator for Status Reason checkbox
+	By onlineexportverification = By.xpath("//div[@data-id = 'cell-0-3']");//Locator for Status for Export to Excel online
+	
 	public CRMPeoplePage(WebDriver driver) {
 
 		this.driver = driver;
@@ -98,6 +102,26 @@ public class CRMPeoplePage {
 	public WebElement getContactFullNameInContactsSection() {
 
 		return driver.findElement(contactfullnameincontactssection);
+	}
+	public WebElement getexporttoexcel() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(exporttoexcel));
+		return driver.findElement(exporttoexcel);
+	}
+	public WebElement getselectdynamicexportoptionschk1() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(selectdynamicexportoptionschk1));
+		return driver.findElement(selectdynamicexportoptionschk1);
+	}
+	public WebElement getselectdynamicexportoptionschk2() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(selectdynamicexportoptionschk2));
+		return driver.findElement(selectdynamicexportoptionschk2);
+	}
+	public WebElement getonlineexportverification() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(onlineexportverification));
+		return driver.findElement(onlineexportverification);
 	}
 }
 
