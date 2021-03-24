@@ -25,7 +25,7 @@ public class CRMPeoplePage {
 	By personnameinheader = By.xpath("//div[@data-id='header_xxc_personid.fieldControl-LookupResultsDropdown_xxc_personid_selected_tag_text']"); //Locator for Person name in header
 	By personformtitle = By.xpath("//h1[@data-id='header_title']"); //Locator for Person form title
 	By contactssectionlabelonpersonform = By.xpath("//h2[@title='Contacts']"); //Locator for Contacts section label on Person form
-	By contactfullnameincontactssection = By.xpath("//div[@data-id='cell-0-2']");
+	By contactfullnameincontactssection = By.xpath("//div[@data-id='cell-0-2']"); //Locator for Contact's full name field in Contacts section on Person form
 
 	public CRMPeoplePage(WebDriver driver) {
 
