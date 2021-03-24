@@ -26,6 +26,7 @@ import pageObjects.CRMHomePage;
 import pageObjects.CRMIncentiveTab;
 import pageObjects.CRMLandingPage;
 import pageObjects.CRMLoginPage;
+import pageObjects.CRMPeoplePage;
 import resources.GenerateData;
 import resources.Utility;
 import resources.base;
@@ -51,6 +52,7 @@ public class OtherTest extends base{
 	Actions act;
 	CRMContactPage cp;
 	JavascriptExecutor jse;
+	CRMPeoplePage pl;
 
 	@BeforeTest
 	public void initialize() throws IOException
@@ -267,6 +269,8 @@ public class OtherTest extends base{
 
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
+		pl = new CRMPeoplePage(driver);
+		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		//Click on Accounts Tab at left menu and search accounts containing Cyb
@@ -288,13 +292,27 @@ public class OtherTest extends base{
 
 		//Click Track Progress button
 		ap.gettrackprogressexportbtn().click();
+		
+		//Switch to new My Imports tab
+		Set<String> windows1 = driver.getWindowHandles();
+		Iterator<String>it = windows1.iterator();
+		String parentId = it.next();
+		String childId = it.next();
+		driver.switchTo().window(childId);
+		Thread.sleep(15000);
+				
+		//Verify export to excel online
+		System.out.println(pl.getonlineexportverification().getText());
+		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
+		System.out.println("Excel exported online successfully.");
+		Thread.sleep(10000);
 
 		//Switch to previous browser tab
 		Set<String> windows = driver.getWindowHandles();
-		Iterator<String>it = windows.iterator();
-		String parentId = it.next();
-		String childId = it.next();
-		driver.switchTo().window(parentId);
+		Iterator<String>it1 = windows.iterator();
+		String parentId1 = it1.next();
+		String childId1 = it1.next();
+		driver.switchTo().window(parentId1);
 
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();

@@ -27,6 +27,7 @@ public class CRMHomePage {
 	By inactivecontactstitle = By.xpath("//h1[@aria-label='Inactive Contacts']");
 	By searchresultcontactemail = By.xpath("//div[@data-id = 'cell-0-5']");
 	By peopletab = By.xpath("//span[contains(text(),'People')]");//Locator to open People tab
+	By incentivestab = By.xpath("//span[contains(text(),'Incentives')]");//Locator to open Incentives tab
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -119,5 +120,11 @@ public class CRMHomePage {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(peopletab));
 		return driver.findElement(peopletab);
+	}
+	public WebElement getincentivestab() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(incentivestab));
+		return driver.findElement(incentivestab);
 	}
 }
