@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="213475" started-at="2021-03-24T11:12:40Z" finished-at="2021-03-24T11:16:13Z">
+  <suite name="Suite" duration-ms="232194" started-at="2021-03-24T12:30:49Z" finished-at="2021-03-24T12:34:41Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="213475" started-at="2021-03-24T11:12:40Z" finished-at="2021-03-24T11:16:13Z">
-      <class name="crmframework.crmAutomation.PeoplePageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.PeoplePageTest@4501b7af]" name="initialize" is-config="true" duration-ms="6292" started-at="2021-03-24T16:42:40Z" finished-at="2021-03-24T16:42:46Z">
+    <test name="Test" duration-ms="232194" started-at="2021-03-24T12:30:49Z" finished-at="2021-03-24T12:34:41Z">
+      <class name="crmframework.crmAutomation.IncentivesPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="initialize" is-config="true" duration-ms="2510" started-at="2021-03-24T18:00:49Z" finished-at="2021-03-24T18:00:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.PeoplePageTest@4501b7af]" name="TS001_VerifyHomePageTest" duration-ms="112098" started-at="2021-03-24T16:42:46Z" finished-at="2021-03-24T16:44:38Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="TS001_VerifyHomePageTest" duration-ms="88097" started-at="2021-03-24T18:00:52Z" finished-at="2021-03-24T18:02:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS004_VerifyRelatedContactsForPeopleRecordTest()[pri:0, instance:crmframework.crmAutomation.PeoplePageTest@4501b7af]" name="TS004_VerifyRelatedContactsForPeopleRecordTest" duration-ms="95033" started-at="2021-03-24T16:44:38Z" finished-at="2021-03-24T16:46:13Z">
+        <test-method status="PASS" signature="TS002_VerifyExportToExcelIncentivesTest()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="TS002_VerifyExportToExcelIncentivesTest" duration-ms="141562" started-at="2021-03-24T18:02:20Z" finished-at="2021-03-24T18:04:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS004_VerifyRelatedContactsForPeopleRecordTest -->
-      </class> <!-- crmframework.crmAutomation.PeoplePageTest -->
+        </test-method> <!-- TS002_VerifyExportToExcelIncentivesTest -->
+      </class> <!-- crmframework.crmAutomation.IncentivesPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
