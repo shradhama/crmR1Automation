@@ -9,11 +9,11 @@
 			<!--<class name="crmframework.crmAutomation.AccountPageTest" />-->
 			<!-- <class name="crmframework.crmAutomation.OtherTest" />-->
 			<!--<class name="crmframework.crmAutomation.ContactPageTest" />-->
-			<class name="crmframework.crmAutomation.PeoplePageTest" />
-			<!--<class name="crmframework.crmAutomation.IncentivesPageTest" />-->
+			<!-- <class name="crmframework.crmAutomation.PeoplePageTest" /> -->
+			<class name="crmframework.crmAutomation.IncentivesPageTest" />
 			<methods>
 				<include name="TS001_VerifyHomePageTest" />
-				<include name="TS006_VerifyGridFiltersPeopleTest" />
+				<include name="TS002_VerifyCreateIncentiveFromAccountTest" />
 			</methods> 
 		</classes>
 	</test>

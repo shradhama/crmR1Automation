@@ -45,7 +45,7 @@ public class IncentivesPageTest extends base {
 	Actions act;
 	CRMContactPage cp;
 	CRMPeoplePage pl;
-	CRMIncentivesPage In;
+	CRMIncentivesPage in;
 
 
 	@BeforeTest
@@ -88,18 +88,85 @@ public class IncentivesPageTest extends base {
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
 	}
+
 	@Test(priority=2)
-	public void TS002_VerifyExportToExcelIncentivesTest() throws InterruptedException
+	public void TS002_VerifyCreateIncentiveFromAccountTest() throws InterruptedException 
+	{
+		//The purpose of this test case to:-
+		//T104- Verify that user is able to create incentive from account form
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		in = new CRMIncentivesPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Accounts tab
+		hp.getAccountTab().click();
+
+		//Open any active account
+		ap.getAllFilterLink().click();
+		String accountname = ap.getAccountName().getText();
+		ap.getAccountName().click();
+		ap.getAccNaviagteBtn().click();
+
+		// Click Incentives tab of an existing account
+		in.getIncentiveTab().click();
+
+		//Click on New Incentive button
+		in.getNewIncentiveBtn().click();
+
+		//Select Contact at New Incentive Form
+		in.getContactTextBox().click();
+		in.getContactSearchRecordsBtn().click();
+		in.SelectContactName().click();
+		in.getContactFieldLabel().click();
+		String contactname = in.getSelectedContactNameField().getText();
+
+		// Select Market at New Incentive Form
+		in.getMarketTextBox().click();
+		in.getMarketSearchRecordsBtn().click();
+		in.SelectMarketName().click();
+		in.getMarketFieldLabel().click();
+		String marketname = in.getSelectedMarketNameField().getText();
+
+		// Select Referral Source at New Incentive Form
+		in.getReferralSourceTxtBx().click();
+		in.getReferralSourceSearchRecordsBtn().click();
+		in.SelectReferralSourceName().click();
+		in.getReferralSourceFieldLabel().click();
+
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		Thread.sleep(15000);
+
+		//Verify that Incentive should be created and should now be displayed in the incentives section 
+		//under incentive tab on account form
+		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
+		Assert.assertTrue(in.getContactNameInIncentivesTab().getText().contains(contactname));
+		Assert.assertTrue(in.getMarketNameInIncentivesTab().getText().contains(marketname));
+		System.out.println("Incentive is created from Account successfully");
+		
+		in.selectIncentiveRecord().click();
+		in.getIncDeactivateBtn().click();
+		in.getDeactivationPopupDeactivateBtn().click();
+		Thread.sleep(5000);
+
+		//Navigate back to Active accounts list
+		ap.getPageBackBtn().click();
+	}
+
+	@Test(priority=3)
+	public void TS003_VerifyExportToExcelIncentivesTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//CRM-T54- Verify Export To Excel functionality for Incentives
 
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
-		In = new CRMIncentivesPage(driver);
+		in = new CRMIncentivesPage(driver);
 		cp = new CRMContactPage(driver);
 		pl = new CRMPeoplePage(driver);
-		
+
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		//Click on Accounts Tab at left menu and search accounts containing Cyb
@@ -111,7 +178,7 @@ public class IncentivesPageTest extends base {
 		ap.getclickoverflowbutton().click();
 
 		//Click Export To Excel option under it
-		In.getclickexportoptionarrow().click();
+		in.getclickexportoptionarrow().click();
 
 		//Export file to online excel
 		ap.getopenexcelonline().click();
@@ -121,7 +188,7 @@ public class IncentivesPageTest extends base {
 
 		//Click Track Progress button
 		cp.getexporttrackprogressbtn().click();
-				
+
 		//Switch to new My Imports tab
 		Set<String> windows1 = driver.getWindowHandles();
 		Iterator<String>it = windows1.iterator();
@@ -129,13 +196,13 @@ public class IncentivesPageTest extends base {
 		String childId = it.next();
 		driver.switchTo().window(childId);
 		Thread.sleep(15000);
-		
+
 		//Verify export to excel online
 		System.out.println(pl.getonlineexportverification().getText());
 		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
 		System.out.println("Excel exported online successfully.");
 		Thread.sleep(10000);
-		
+
 		//Switch to previous browser tab
 		Set<String> windows = driver.getWindowHandles();
 		Iterator<String>it1 = windows.iterator();
@@ -147,7 +214,7 @@ public class IncentivesPageTest extends base {
 		ap.getclickoverflowbutton().click();
 
 		//Click Export To Excel option under it
-		In.getclickexportoptionarrow().click();
+		in.getclickexportoptionarrow().click();
 
 		//Export Excel to Static Worksheet
 		ap.getexporttostaticworksheet().click();
@@ -156,7 +223,7 @@ public class IncentivesPageTest extends base {
 		ap.getclickoverflowbutton().click();
 
 		//Click Export To Excel option under it
-		In.getclickexportoptionarrow().click();
+		in.getclickexportoptionarrow().click();
 
 		//Export Excel to Static Worksheet Page Only
 		ap.getexporttostaticworksheetpageonly().click();
@@ -165,24 +232,24 @@ public class IncentivesPageTest extends base {
 		ap.getclickoverflowbutton().click();
 
 		//Click Export To Excel dropdown arrow option under it
-		In.getclickexportoptionarrow().click();
+		in.getclickexportoptionarrow().click();
 
 		//Export to Dynamic Worksheet
 		ap.getexporttodynamicworksheet().click();
-		In.getselectcheckbox1().click();
-		In.getselectcheckbox2().click();
+		in.getselectcheckbox1().click();
+		in.getselectcheckbox2().click();
 		ap.getexportworksheetpopup().click();
 
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
 
 		//Click Export To Excel option under it
-		In.getclickexportoptionarrow().click();
+		in.getclickexportoptionarrow().click();
 
 		//Export to Dynamic Pivot Table
 		ap.getexporttodynamicpivottable().click();
-		In.getselectcheckbox1().click();
-		In.getselectcheckbox2().click();
+		in.getselectcheckbox1().click();
+		in.getselectcheckbox2().click();
 		ap.getexportworksheetpopup().click();
 	}
 
