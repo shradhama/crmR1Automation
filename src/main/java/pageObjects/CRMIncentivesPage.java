@@ -41,6 +41,12 @@ public class CRMIncentivesPage {
 	By deactivationpopupdeactivatebtn = By.xpath("//button[@data-id='ok_id']"); //Locator for Deactivate button on confirmation popup
 	By selectedaccountnamefield = By.xpath("//div[@data-id='xxc_accountid.fieldControl-LookupResultsDropdown_xxc_accountid_selected_tag_text']"); //Locator for selected Account name on incentive form
 	By marketnameinincentivestabofcontact  = By.xpath("//div[@data-id='cell-0-3']"); //Locator for Market name in Incentives tab for a contact
+	By incentiveeditbtn = By.xpath("//button[@data-id='xxc_incentive|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_incentive.Edit']"); //Locator for Edit button for a selected Incentive
+	By deactivatebtnonincentiveform = By.xpath("//button[@data-id='xxc_incentive|NoRelationship|Form|Mscrm.Form.xxc_incentive.Deactivate']"); //Locator for Deactivate button on Incentive form
+	By increadonlytext = By.xpath("//span[contains(text(),'Read-only  This record’s status: Inactive')]"); //Locator for Read Only text for inactive incentive
+	By activeincdropdownbtn = By.xpath("//span[@class='symbolFont ChevronDownMed-symbol  ']"); //Locator for drop down button for Active incentives
+	By inactiveincoptn = By.xpath("//*[text()='Inactive Incentives']"); //Locator for 'Inactive Incentives' item
+	By validateInactiveInc = By.xpath("//div[@data-id='cell-0-2']"); //Locator to validate inactive incentive in search results
 	
 	public CRMIncentivesPage(WebDriver driver) {
 
@@ -156,6 +162,32 @@ public class CRMIncentivesPage {
 	}
 	public WebElement getMarketNameInIncentivesTabOfContact(){
 		return driver.findElement(marketnameinincentivestabofcontact);
+	}
+	public WebElement getIncentiveEditButton(){
+		return driver.findElement(incentiveeditbtn);
+	}
+	public WebElement getDeactivateBtnOnIncentiveForm(){
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(deactivatebtnonincentiveform));
+		return driver.findElement(deactivatebtnonincentiveform);
+	}
+	public WebElement getIncentiveReadOnlyText(){
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(increadonlytext));
+		return driver.findElement(increadonlytext);
+	}
+	public WebElement getActiveIncDropDownBtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(activeincdropdownbtn));
+		return driver.findElement(activeincdropdownbtn);
+	}
+	public WebElement getInactiveIncOptn() {
+		return driver.findElement(inactiveincoptn);
+	}
+	public WebElement getValidateInactiveIncName() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(validateInactiveInc));
+		return driver.findElement(validateInactiveInc);
 	}
 }
 

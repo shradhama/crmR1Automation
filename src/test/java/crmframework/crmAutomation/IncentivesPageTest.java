@@ -2,9 +2,12 @@ package crmframework.crmAutomation;
 
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -310,6 +313,100 @@ public class IncentivesPageTest extends base {
 
 		//Navigate back to Active accounts list
 		ap.getPageBackBtn().click();
+	}
+
+	@Test(priority=5)
+	public void TS005_VerifyDeactivateIncentiveFromContactTest() throws InterruptedException 
+	{
+		//The purpose of this test case to:-
+		//T52- Verify the user is able to deactivate an active incentive as per the security access
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Contacts tab
+		hp.getContactsTab().click();
+
+		//Open any active contact
+		cp.getQLetterFilterLink().click();
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+
+		// Click Incentives tab of an existing contact
+		in.getIncentiveTab().click();
+
+		//Click on New Incentive button to create new incentive
+		in.getNewIncentiveBtn().click();
+
+		String accountname = in.getSelectedAccountNameField().getText();
+		System.out.println("Account Name: "+accountname);
+
+		// Select Market at New Incentive Form
+		in.getMarketTextBox().click();
+		in.getMarketSearchRecordsBtn().click();
+		in.SelectMarketName().click();
+		in.getMarketFieldLabel().click();
+
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		Thread.sleep(15000);
+
+		//Deactivate the incentive using Deactivate option
+		in.selectIncentiveRecord().click();
+		in.getIncDeactivateBtn().click();
+		in.getDeactivationPopupDeactivateBtn().click();
+		Thread.sleep(5000);
+
+		//Verify that the Incentive should be deactivated and removed from the incentives section
+		List<WebElement> validateIncentive = driver.findElements(By.xpath("//div[@title='"+accountname+"']"));
+		Assert.assertTrue(validateIncentive.size()== 0);
+
+		//Click on New Incentive button to create new incentive
+		in.getNewIncentiveBtn().click();
+		// Select Market at New Incentive Form
+		in.getMarketTextBox().click();
+		in.getMarketSearchRecordsBtn().click();
+		in.SelectMarketName().click();
+		in.getMarketFieldLabel().click();
+
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		Thread.sleep(15000);
+
+		//Deactivate the incentive using Edit option
+		in.selectIncentiveRecord().click();
+		in.getIncentiveEditButton().click();
+		in.getDeactivateBtnOnIncentiveForm().click();
+		in.getDeactivationPopupDeactivateBtn().click();
+
+		//Verify that Incentive should become Read Only
+		Assert.assertTrue(in.getIncentiveReadOnlyText().isDisplayed());
+		ap.getPageBackBtn().click();
+
+		//Verify that the Incentive should be deactivated and removed from the incentives section
+		List<WebElement> validateIncentive1 = driver.findElements(By.xpath("//div[@title='"+accountname+"']"));
+		Assert.assertTrue(validateIncentive1.size()== 0);
+
+		//Click on Incentives tab from left menu
+		hp.getincentivestab().click();
+
+		//Click on 'Active Incentives' drop-down view button
+		in.getActiveIncDropDownBtn().click();
+
+		//Select 'Inactive Incentives' option
+		in.getInactiveIncOptn().click();
+
+		//Validate deactivated incentive
+		hp.getSearchInactiveIncField().click();
+		hp.getSearchInactiveIncField().sendKeys(accountname);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getValidateInactiveIncName().getText().contains(accountname));
+
+		hp.getClearSearch().click();
 	}
 
 

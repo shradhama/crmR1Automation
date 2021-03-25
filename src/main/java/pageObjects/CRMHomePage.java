@@ -28,7 +28,8 @@ public class CRMHomePage {
 	By searchresultcontactemail = By.xpath("//div[@data-id = 'cell-0-5']");
 	By peopletab = By.xpath("//span[contains(text(),'People')]");//Locator to open People tab
 	By incentivestab = By.xpath("//span[contains(text(),'Incentives')]");//Locator to open Incentives tab
-	
+	By inactiveincentivestitle = By.xpath("//h1[@aria-label='Inactive Incentives']"); //Locator for Inactive Incentives title
+
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
@@ -127,4 +128,10 @@ public class CRMHomePage {
 		wait.until(ExpectedConditions.elementToBeClickable(incentivestab));
 		return driver.findElement(incentivestab);
 	}
+	public WebElement getSearchInactiveIncField() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(inactiveincentivestitle));
+		return driver.findElement(searchaccount);	
+	}
+	
 }
