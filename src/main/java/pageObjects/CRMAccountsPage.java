@@ -694,9 +694,10 @@ public class CRMAccountsPage {
 		return driver.findElement(clickregiongridfunnel);
 	}
 
-	public WebElement getclickfunnelfilter() {
+	public WebElement getclickfunnelfilter() throws InterruptedException {
 		wait = new WebDriverWait (driver,20);
-		wait.until(ExpectedConditions.elementToBeClickable(clickoperatordd));
+		wait.until(ExpectedConditions.elementToBeClickable(clickfunnelfilter));
+		Thread.sleep(5000);
 		return driver.findElement(clickfunnelfilter);
 	}
 

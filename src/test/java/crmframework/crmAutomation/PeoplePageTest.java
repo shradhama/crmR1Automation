@@ -393,6 +393,70 @@ public class PeoplePageTest extends base {
 		ap.getPageBackBtn().click();
 		ap.getPageBackBtn().click();
 	}
+	@Test(priority=5)
+	public void TS006_VerifyGridFiltersPeopleTest() throws InterruptedException
+	{
+		//The purpose of this test case:-
+		//CRM-T269- Verify Full Name and EIH Match Key filters on People Grid
+		
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		pl = new CRMPeoplePage(driver);
+		cp = new CRMContactPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on People Tab at left menu and search people containing Cyb
+		hp.getPeopleTab().click();
+		
+		//Click funnel for Full Name column
+		pl.getfullname().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ap.getselectoperatorone().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+			
+		//Verify Full Name value selected on accounts grid
+		WebElement accnamevaluesongrid = null;
+		for (int i=0;i<7;i++)
+		{
+			accnamevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			Assert.assertTrue(accnamevaluesongrid.getText().contains(prop.getProperty("name")));
+		}
+		System.out.println("Full Name matches expected criteria");
+
+		//Clear Filter for Full Name
+		pl.getfullname().click();
+		ap.getclearfiltergrid().click();
+
+		//Click funnel for EIH Match Key column
+		pl.geteihmatchkey().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ap.getselectoperatorone().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("phone"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify EIH Match Key value selected on accounts grid
+		WebElement phonevaluesongrid = null;
+		for (int i=0;i<7;i++)
+		{
+			phonevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
+			Assert.assertTrue(phonevaluesongrid.getText().contains(prop.getProperty("phone")));
+		}
+		System.out.println("EIH Match Key matches expected criteria");
+
+		//Clear Filter for EIH Match Key
+		pl.geteihmatchkey().click();
+		ap.getclearfiltergrid().click();
+			
+	}
 }
 
 
