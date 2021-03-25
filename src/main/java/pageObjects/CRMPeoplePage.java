@@ -15,11 +15,6 @@ public class CRMPeoplePage {
 
 	By fullname = By.xpath("//div[@data-id = 'xxc_fullname']");//Locator to click Full Name column
 	By eihmatchkey = By.xpath("//div[@data-id = 'xxc_eihmatchkey']");//Locator to click EIH Match Key column 
-	By selectoperatoroption = By.xpath("//button[@data-index = '4']");//Locator for Begins With option
-	By enterfullname = By.xpath("//input[@aria-label = 'Filter by value']");//Locator for enter full name text box
-	By filterclick = By.xpath("//button[@aria-label = 'Filter by']");//Locator for filter by option
-	By clickoperator = By.xpath("//div[@aria-label = 'Filter by operator']");//Locator for operator
-	By clickapplybtn = By.xpath("//button[@type = 'submit']");//Locator for Apply button in filters
 	By moreheaderfieldsbtn = By.xpath("//button[@data-id = 'header_overflowButton']"); //Locator for More Header field button
 	By personfieldlabel = By.xpath("//label[contains(text(),'Person')]"); //Locator for Person field label
 	By personnameinheader = By.xpath("//div[@data-id='header_xxc_personid.fieldControl-LookupResultsDropdown_xxc_personid_selected_tag_text']"); //Locator for Person name in header
@@ -50,36 +45,12 @@ public class CRMPeoplePage {
 		wait.until(ExpectedConditions.elementToBeClickable(fullname));
 		return driver.findElement(fullname);
 	}
-	public WebElement geteihmatchkey() {
+	public WebElement geteihmatchkey() throws InterruptedException {
 
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(eihmatchkey));
+		Thread.sleep(5000);
 		return driver.findElement(eihmatchkey);
-	}
-	public WebElement getselectoperatoroption() {
-		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(selectoperatoroption));
-		return driver.findElement(selectoperatoroption);
-	}
-	public WebElement getenterfullname() {
-		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(enterfullname));
-		return driver.findElement(enterfullname);
-	}
-	public WebElement getfilterclick() {
-		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(filterclick));
-		return driver.findElement(filterclick);
-	}
-	public WebElement getclickoperator() {
-		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(clickoperator));
-		return driver.findElement(clickoperator);
-	}
-	public WebElement getclickapplybtn() {
-		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(clickapplybtn));
-		return driver.findElement(clickapplybtn);
 	}
 	public WebElement getMoreHeaderFieldsBtn() {
 
