@@ -39,7 +39,9 @@ public class CRMIncentivesPage {
 	By selectincentiverecord = By.xpath("//div[@data-id='cell-0-1']"); //Locator to select an incentive record
 	By incdeactivatebtn = By.xpath("//button[@data-id='xxc_incentive|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_incentive.Deactivate']"); //Locator for Deactivate button for incentive record
 	By deactivationpopupdeactivatebtn = By.xpath("//button[@data-id='ok_id']"); //Locator for Deactivate button on confirmation popup
-
+	By selectedaccountnamefield = By.xpath("//div[@data-id='xxc_accountid.fieldControl-LookupResultsDropdown_xxc_accountid_selected_tag_text']"); //Locator for selected Account name on incentive form
+	By marketnameinincentivestabofcontact  = By.xpath("//div[@data-id='cell-0-3']"); //Locator for Market name in Incentives tab for a contact
+	
 	public CRMIncentivesPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -148,6 +150,12 @@ public class CRMIncentivesPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.elementToBeClickable(deactivationpopupdeactivatebtn));
 		return driver.findElement(deactivationpopupdeactivatebtn);
+	}
+	public WebElement getSelectedAccountNameField(){
+		return driver.findElement(selectedaccountnamefield);
+	}
+	public WebElement getMarketNameInIncentivesTabOfContact(){
+		return driver.findElement(marketnameinincentivestabofcontact);
 	}
 }
 
