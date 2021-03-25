@@ -145,7 +145,7 @@ public class IncentivesPageTest extends base {
 		Assert.assertTrue(in.getContactNameInIncentivesTab().getText().contains(contactname));
 		Assert.assertTrue(in.getMarketNameInIncentivesTab().getText().contains(marketname));
 		System.out.println("Incentive is created from Account successfully");
-		
+
 		in.selectIncentiveRecord().click();
 		in.getIncDeactivateBtn().click();
 		in.getDeactivationPopupDeactivateBtn().click();
@@ -251,6 +251,65 @@ public class IncentivesPageTest extends base {
 		in.getselectcheckbox1().click();
 		in.getselectcheckbox2().click();
 		ap.getexportworksheetpopup().click();
+	}
+
+	@Test(priority=4)
+	public void TS004_VerifyCreateIncentiveFromContactTest() throws InterruptedException 
+	{
+		//The purpose of this test case to:-
+		//T36- Verify that user is able to create incentive from contact form
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Contacts tab
+		hp.getContactsTab().click();
+
+		//Open any active contact
+		cp.getBLetterFilterLink().click();
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+
+		// Click Incentives tab of an existing contact
+		in.getIncentiveTab().click();
+
+		//Click on New Incentive button
+		in.getNewIncentiveBtn().click();
+
+		String accountname = in.getSelectedAccountNameField().getText();
+
+		// Select Market at New Incentive Form
+		in.getMarketTextBox().click();
+		in.getMarketSearchRecordsBtn().click();
+		in.SelectMarketName().click();
+		in.getMarketFieldLabel().click();
+		String marketname = in.getSelectedMarketNameField().getText();
+
+		// Select Referral Source at New Incentive Form
+		in.getReferralSourceTxtBx().click();
+		in.getReferralSourceSearchRecordsBtn().click();
+		in.SelectReferralSourceName().click();
+		in.getReferralSourceFieldLabel().click();
+
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		Thread.sleep(15000);
+
+		//Verify that Incentive should be created and should now be displayed in the incentives section 
+		//under incentive tab on account form
+		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
+		Assert.assertTrue(in.getMarketNameInIncentivesTabOfContact().getText().contains(marketname));
+
+		in.selectIncentiveRecord().click();
+		in.getIncDeactivateBtn().click();
+		in.getDeactivationPopupDeactivateBtn().click();
+		Thread.sleep(5000);
+
+		//Navigate back to Active accounts list
+		ap.getPageBackBtn().click();
 	}
 
 
