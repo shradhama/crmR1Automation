@@ -394,7 +394,7 @@ public class PeoplePageTest extends base {
 		ap.getPageBackBtn().click();
 	}
 	@Test(priority=5)
-	public void TS006_VerifyGridFiltersPeopleTest() throws InterruptedException
+	public void TS005_VerifyGridFiltersPeopleTest() throws InterruptedException
 	{
 		//The purpose of this test case:-
 		//CRM-T269- Verify Full Name and EIH Match Key filters on People Grid
