@@ -46,11 +46,17 @@ public class CRMIncentivesPage {
 	By increadonlytext = By.xpath("//span[contains(text(),'Read-only  This record’s status: Inactive')]"); //Locator for Read Only text for inactive incentive
 	By activeincdropdownbtn = By.xpath("//span[@class='symbolFont ChevronDownMed-symbol  ']"); //Locator for drop down button for Active incentives
 	By inactiveincoptn = By.xpath("//*[text()='Inactive Incentives']"); //Locator for 'Inactive Incentives' item
-	By validateInactiveInc = By.xpath("//div[@data-id='cell-0-2']"); //Locator to validate inactive incentive in search results
+	By validateincinsearchresults = By.xpath("//div[@data-id='cell-0-2']"); //Locator to validate inactive incentive in search results
 	By accountcolumn = By.xpath("//div[@data-id = 'xxc_accountid']");//Locator for Account column
 	By contactcolumn = By.xpath("//div[@data-id = 'xxc_contactid']");//Locator for Contact column		
 	By marketcolumn = By.xpath("//div[@data-id = 'xxc_marketid']");//Locator for Market column
 	By gridoperator = By.xpath("//button[@data-index = '6']");//Locator for operator
+	By selectactiveincentive = By.xpath("//div[@data-id='cell-0-2']"); //Locator to select an active incentive from grid
+	By activatebtnonincform = By.xpath("//button[@data-id='xxc_incentive|NoRelationship|Form|Mscrm.Form.xxc_incentive.Activate']"); //Locator for Activate button on Incentive form
+	By incentivenameonincform = By.xpath("//h1[@data-id='header_title']"); //Locator for Incentive name on Incentive form
+	By nodataavailabletxt = By.xpath("//span[contains(text(),'No data available.')]"); //Locator for No data available text
+	By activationpopupactivatebtn = By.xpath("//button[@data-id='ok_id']"); //Locator for Activate button on confirmation popup
+	By activeincoptn = By.xpath("//*[text()='Active Incentives']"); //Locator for 'Active Incentives' item
 	
 	public CRMIncentivesPage(WebDriver driver) {
 
@@ -188,10 +194,10 @@ public class CRMIncentivesPage {
 	public WebElement getInactiveIncOptn() {
 		return driver.findElement(inactiveincoptn);
 	}
-	public WebElement getValidateInactiveIncName() {
+	public WebElement getValidateIncInSearchResults() {
 		wait = new WebDriverWait (driver,20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(validateInactiveInc));
-		return driver.findElement(validateInactiveInc);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(validateincinsearchresults));
+		return driver.findElement(validateincinsearchresults);
 	}
 	public WebElement getaccountcolumn() {
 		wait = new WebDriverWait (driver,20);
@@ -215,6 +221,34 @@ public class CRMIncentivesPage {
 		wait.until(ExpectedConditions.elementToBeClickable(gridoperator));
 		Thread.sleep(3000);
 		return driver.findElement(gridoperator);
+	}
+	public WebElement selectActiveIncentive() throws InterruptedException
+	{
+		Thread.sleep(7000);
+		return driver.findElement(selectactiveincentive);
+	}
+	public WebElement getActivateBtnOnIncentiveForm() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(activatebtnonincform));
+		return driver.findElement(activatebtnonincform);
+	}
+	public WebElement getIncentiveNameOnIncForm() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(incentivenameonincform));
+		return driver.findElement(incentivenameonincform);
+	}
+	public WebElement getNoDataAvailableText() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(nodataavailabletxt));
+		return driver.findElement(nodataavailabletxt);
+	}
+	public WebElement getActivationPopupActivateBtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(activationpopupactivatebtn));
+		return driver.findElement(activationpopupactivatebtn);
+	}
+	public WebElement getActiveIncOptn() {
+		return driver.findElement(activeincoptn);
 	}
 }
 

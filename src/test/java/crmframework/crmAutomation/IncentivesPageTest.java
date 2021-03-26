@@ -403,7 +403,7 @@ public class IncentivesPageTest extends base {
 		hp.getSearchInactiveIncField().sendKeys(accountname);
 		hp.getstartsearch().click();
 		Thread.sleep(5000);
-		Assert.assertTrue(in.getValidateInactiveIncName().getText().contains(accountname));
+		Assert.assertTrue(in.getValidateIncInSearchResults().getText().contains(accountname));
 
 		hp.getClearSearch().click();
 	}
@@ -412,7 +412,7 @@ public class IncentivesPageTest extends base {
 	{
 		//The purpose of this test case:-
 		//CRM-T87- Verify Account, Contact and Market filters on People Grid
-		
+
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
 		pl = new CRMPeoplePage(driver);
@@ -422,7 +422,7 @@ public class IncentivesPageTest extends base {
 
 		//Click on Incentives Tab at left menu 
 		hp.getincentivestab().click();
-		
+
 		//Click funnel for Account column
 		in.getaccountcolumn().click();
 		ap.getclickfunnelfilter().click();
@@ -433,7 +433,7 @@ public class IncentivesPageTest extends base {
 		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
-			
+
 		//Verify Account value selected on accounts grid
 		WebElement Account = null;
 		for (int i=0;i<3;i++)
@@ -470,7 +470,7 @@ public class IncentivesPageTest extends base {
 		//Clear Filter for Contact
 		in.getcontactcolumn().click();
 		ap.getclearfiltergrid().click();
-		
+
 		//Click funnel for Market column
 		in.getmarketcolumn().click();
 		ap.getclickfunnelfilter().click();
@@ -494,7 +494,141 @@ public class IncentivesPageTest extends base {
 		//Clear Filter for Market
 		in.getmarketcolumn().click();
 		ap.getclearfiltergrid().click();
-			
+	}
+	
+	@Test(priority=7)
+	public void TS007_VerifyActivateInactiveIncentiveTest() throws InterruptedException 
+	{
+		//The purpose of this test case to:-
+		//T53- Verify user is able to activate an incentive as per security access
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Incentives tab
+		hp.getincentivestab().click();
+
+		cp.getBLetterFilterLink().click();
+		Thread.sleep(4000);
+		//Select active incentive from grid
+		act = new Actions(driver);
+		act.doubleClick(in.selectIncentiveRecord()).perform();
+
+		//Get the incentive name from header
+		String incentivenameonincform = in.getIncentiveNameOnIncForm().getText();
+		System.out.println("Incentive name: "+incentivenameonincform);
+
+		String accountname = in.getSelectedAccountNameField().getText();
+		System.out.println("Account Name: "+accountname);
+
+		String contactname = in.getSelectedContactNameField().getText();
+		System.out.println("Contact Name: "+contactname);
+
+		String marketname = in.getSelectedMarketNameField().getText();
+		System.out.println("Market Name: "+marketname);
+
+		//Click on Deactivate button in header
+		in.getDeactivateBtnOnIncentiveForm().click();
+
+		//Click on Deactivate button in the dialog box
+		in.getDeactivationPopupDeactivateBtn().click();
+
+		//Verify that an Incentive should be deactivated
+		Assert.assertTrue(in.getActivateBtnOnIncentiveForm().isDisplayed());
+		Assert.assertTrue(in.getIncentiveReadOnlyText().isDisplayed());
+		ap.getPageBackBtn().click();
+
+		//Verify that inactive should not be displayed under Active Incentives
+		hp.getSearchActiveIncField().click();
+		hp.getSearchActiveIncField().sendKeys(incentivenameonincform);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
+		hp.getClearSearch().click();
+
+		//Click on 'Active Incentives' drop-down view button
+		in.getActiveIncDropDownBtn().click();
+
+		//Select 'Inactive Incentives' option
+		in.getInactiveIncOptn().click();
+		Thread.sleep(3000);
+		//Verify that deactivated incentive should be displayed under Inactive Incentives
+		hp.getSearchInactiveIncField().click();
+		hp.getSearchInactiveIncField().sendKeys(accountname);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getValidateIncInSearchResults().getText().contains(accountname));
+
+		//Select that incentive
+		act = new Actions(driver);
+		act.doubleClick(in.selectIncentiveRecord()).perform();
+
+		//Click on Activate button in header
+		in.getActivateBtnOnIncentiveForm().click();
+		in.getActivationPopupActivateBtn().click();
+
+		//The Incentive should be activated
+		Assert.assertTrue(in.getDeactivateBtnOnIncentiveForm().isDisplayed());
+		ap.getPageBackBtn().click();
+
+		//Verify that incentive should no more be displayed under Inactive Incentives
+		hp.getClearSearch().click();
+		hp.getSearchInactiveIncField().click();
+		hp.getSearchInactiveIncField().sendKeys(incentivenameonincform);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
+		hp.getClearSearch().click();
+
+		//Click on 'Inactive Incentives' drop-down view button
+		in.getActiveIncDropDownBtn().click();
+
+		//Select 'Active Incentives' option
+		in.getActiveIncOptn().click();
+		Thread.sleep(3000);
+
+		//Verify that inactive should be displayed under Active Incentives
+		hp.getSearchActiveIncField().click();
+		hp.getSearchActiveIncField().sendKeys(accountname);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getValidateIncInSearchResults().getText().contains(accountname));
+
+		//Open the incentive
+		act = new Actions(driver);
+		act.doubleClick(in.selectIncentiveRecord()).perform();
+
+		//Navigate to the Account form by click on the account link in account field
+		in.getSelectedAccountNameField().click();
+		Thread.sleep(5000);
+
+		//Navigate to the Incentives tab
+		in.getIncentiveTab().click();
+		Thread.sleep(6000);
+		//Verify that the activated incentive should be displayed in incentives section
+		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
+		Assert.assertTrue(in.getContactNameInIncentivesTab().getText().contains(contactname));
+		Assert.assertTrue(in.getMarketNameInIncentivesTab().getText().contains(marketname));
+
+		ap.getPageBackBtn().click();
+
+		//Navigate to the Contact form by click on the contact link in contact field
+		in.getSelectedContactNameField().click();
+		Thread.sleep(5000);
+
+		//Navigate to the Incentives tab
+		in.getIncentiveTab().click();
+		Thread.sleep(6000);
+
+		//Verify that the activated incentive should be displayed in incentives section
+		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
+		Assert.assertTrue(in.getMarketNameInIncentivesTabOfContact().getText().contains(marketname));
+		ap.getPageBackBtn().click();
+		ap.getPageBackBtn().click();
+		hp.getClearSearch().click();
 	}
 
 }
