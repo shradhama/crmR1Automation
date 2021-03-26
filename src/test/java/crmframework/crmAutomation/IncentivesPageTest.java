@@ -630,5 +630,75 @@ public class IncentivesPageTest extends base {
 		ap.getPageBackBtn().click();
 		hp.getClearSearch().click();
 	}
+	@Test(priority=8)
+	public void TS008_VerifySearchFunctionalityIncentivesTest() throws InterruptedException
+	{
+		//The purpose of this test case:-
+		//CRM-T87- Verify Account, Contact and Market filters on People Grid
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		pl = new CRMPeoplePage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Incentives Tab at left menu 
+		hp.getincentivestab().click();
+		
+		//Click search text box and search for account name
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
+		ap.getclicksearchbutton().click();
+		Thread.sleep(5000);
+		
+		//Verify Account value selected on accounts grid
+		WebElement Account = null;
+		for (int i=0;i<3;i++)
+		{
+			Account = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			Assert.assertTrue(Account.getText().contains(prop.getProperty("name")));
+		}
+		System.out.println("Incentives exist for searched account name.");
+		
+		//Remove searched account name
+		in.getclearsearch().click();
+		
+		//Click search text box and search for Contact name
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("searchcontactinc"));
+		ap.getclicksearchbutton().click();
+		Thread.sleep(5000);	
+		
+		//Verify Contact value selected on accounts grid
+		WebElement Contact = null;
+		for (int i=0;i<1;i++)
+		{
+			Contact = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
+			Assert.assertTrue(Contact.getText().contains(prop.getProperty("searchcontactinc")));
+		}
+		System.out.println("Incentives exist for searched contact name.");
+			
+		//Remove searched account name
+		in.getclearsearch().click();
+		
+		//Click search text box and search for Market name
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("searchmarketinc"));
+		ap.getclicksearchbutton().click();
+		Thread.sleep(5000);		
+		
+		//Verify Contact value selected on accounts grid
+		WebElement Market = null;
+		for (int i=0;i<7;i++)
+		{
+			Market = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-4']"));
+			Assert.assertTrue(Market.getText().contains(prop.getProperty("searchmarketinc")));
+		}
+		System.out.println("Incentives exist for searched market name.");
+				
+		//Remove searched account name
+		in.getclearsearch().click();
+	}
 
 }

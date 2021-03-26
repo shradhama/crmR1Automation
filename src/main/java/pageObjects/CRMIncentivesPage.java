@@ -57,6 +57,7 @@ public class CRMIncentivesPage {
 	By nodataavailabletxt = By.xpath("//span[contains(text(),'No data available.')]"); //Locator for No data available text
 	By activationpopupactivatebtn = By.xpath("//button[@data-id='ok_id']"); //Locator for Activate button on confirmation popup
 	By activeincoptn = By.xpath("//*[text()='Active Incentives']"); //Locator for 'Active Incentives' item
+	By clearsearch = By.xpath("//button[@aria-label = 'Clear search']");//Locator for clear search in the grid
 	
 	public CRMIncentivesPage(WebDriver driver) {
 
@@ -249,6 +250,11 @@ public class CRMIncentivesPage {
 	}
 	public WebElement getActiveIncOptn() {
 		return driver.findElement(activeincoptn);
+	}
+	public WebElement getclearsearch() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(clearsearch));
+		return driver.findElement(clearsearch);
 	}
 }
 
