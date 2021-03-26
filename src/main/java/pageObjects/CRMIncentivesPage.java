@@ -47,6 +47,10 @@ public class CRMIncentivesPage {
 	By activeincdropdownbtn = By.xpath("//span[@class='symbolFont ChevronDownMed-symbol  ']"); //Locator for drop down button for Active incentives
 	By inactiveincoptn = By.xpath("//*[text()='Inactive Incentives']"); //Locator for 'Inactive Incentives' item
 	By validateInactiveInc = By.xpath("//div[@data-id='cell-0-2']"); //Locator to validate inactive incentive in search results
+	By accountcolumn = By.xpath("//div[@data-id = 'xxc_accountid']");//Locator for Account column
+	By contactcolumn = By.xpath("//div[@data-id = 'xxc_contactid']");//Locator for Contact column		
+	By marketcolumn = By.xpath("//div[@data-id = 'xxc_marketid']");//Locator for Market column
+	By gridoperator = By.xpath("//button[@data-index = '6']");//Locator for operator
 	
 	public CRMIncentivesPage(WebDriver driver) {
 
@@ -188,6 +192,29 @@ public class CRMIncentivesPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(validateInactiveInc));
 		return driver.findElement(validateInactiveInc);
+	}
+	public WebElement getaccountcolumn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(accountcolumn));
+		return driver.findElement(accountcolumn);
+	}
+	public WebElement getcontactcolumn() throws InterruptedException {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(contactcolumn));
+		Thread.sleep(3000);
+		return driver.findElement(contactcolumn);
+	}
+	public WebElement getmarketcolumn() throws InterruptedException {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(marketcolumn));
+		Thread.sleep(3000);
+		return driver.findElement(marketcolumn);
+	}
+	public WebElement getgridoperator() throws InterruptedException {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.elementToBeClickable(gridoperator));
+		Thread.sleep(3000);
+		return driver.findElement(gridoperator);
 	}
 }
 
