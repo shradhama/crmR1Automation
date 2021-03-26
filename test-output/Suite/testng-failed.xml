@@ -3,12 +3,12 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.PeoplePageTest">
+      <class name="crmframework.crmAutomation.IncentivesPageTest">
         <methods>
           <include name="initialize"/>
-          <include name="TS006_VerifyGridFiltersPeopleTest"/>
+          <include name="TS006_VerifyGridFiltersIncentivesTest"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.PeoplePageTest -->
+      </class> <!-- crmframework.crmAutomation.IncentivesPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

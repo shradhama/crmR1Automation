@@ -314,7 +314,6 @@ public class IncentivesPageTest extends base {
 		//Navigate back to Active accounts list
 		ap.getPageBackBtn().click();
 	}
-
 	@Test(priority=5)
 	public void TS005_VerifyDeactivateIncentiveFromContactTest() throws InterruptedException 
 	{
@@ -408,6 +407,94 @@ public class IncentivesPageTest extends base {
 
 		hp.getClearSearch().click();
 	}
+	@Test(priority=6)
+	public void TS006_VerifyGridFiltersIncentivesTest() throws InterruptedException
+	{
+		//The purpose of this test case:-
+		//CRM-T87- Verify Account, Contact and Market filters on People Grid
+		
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		pl = new CRMPeoplePage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
+		//Click on Incentives Tab at left menu 
+		hp.getincentivestab().click();
+		
+		//Click funnel for Account column
+		in.getaccountcolumn().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		in.getgridoperator().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+			
+		//Verify Account value selected on accounts grid
+		WebElement Account = null;
+		for (int i=0;i<3;i++)
+		{
+			Account = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			Assert.assertTrue(Account.getText().contains(prop.getProperty("name")));
+		}
+		System.out.println("Account matches expected criteria");
+
+		//Clear Filter for Account
+		in.getaccountcolumn().click();
+		ap.getclearfiltergrid().click();
+
+		//Click funnel for Contact column
+		in.getcontactcolumn().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		in.getgridoperator().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("contact"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Contact value selected on accounts grid
+		WebElement Contact = null;
+		for (int i=0;i<7;i++)
+		{
+			Contact = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
+			Assert.assertTrue(Contact.getText().contains(prop.getProperty("contact")));
+		}
+		System.out.println("Contact matches expected criteria");
+
+		//Clear Filter for Contact
+		in.getcontactcolumn().click();
+		ap.getclearfiltergrid().click();
+		
+		//Click funnel for Market column
+		in.getmarketcolumn().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		in.getgridoperator().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("market"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Market value selected on accounts grid
+		WebElement Market = null;
+		for (int i=0;i<7;i++)
+		{
+			Market = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-4']"));
+			Assert.assertTrue(Market.getText().contains(prop.getProperty("market")));
+		}
+		System.out.println("Market matches expected criteria");
+
+		//Clear Filter for Market
+		in.getmarketcolumn().click();
+		ap.getclearfiltergrid().click();
+			
+	}
 
 }

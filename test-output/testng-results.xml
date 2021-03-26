@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="283618" started-at="2021-03-25T12:50:16Z" finished-at="2021-03-25T12:55:00Z">
+  <suite name="Suite" duration-ms="165171" started-at="2021-03-26T06:28:57Z" finished-at="2021-03-26T06:31:42Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="283618" started-at="2021-03-25T12:50:16Z" finished-at="2021-03-25T12:55:00Z">
+    <test name="Test" duration-ms="165171" started-at="2021-03-26T06:28:57Z" finished-at="2021-03-26T06:31:42Z">
       <class name="crmframework.crmAutomation.IncentivesPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@4501b7af]" name="initialize" is-config="true" duration-ms="5830" started-at="2021-03-25T18:20:16Z" finished-at="2021-03-25T18:20:22Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="initialize" is-config="true" duration-ms="3867" started-at="2021-03-26T11:58:57Z" finished-at="2021-03-26T11:59:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@4501b7af]" name="TS001_VerifyHomePageTest" duration-ms="102713" started-at="2021-03-25T18:20:22Z" finished-at="2021-03-25T18:22:05Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="TS001_VerifyHomePageTest" duration-ms="92668" started-at="2021-03-26T11:59:01Z" finished-at="2021-03-26T12:00:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS005_VerifyDeactivateIncentiveFromContactTest()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@4501b7af]" name="TS005_VerifyDeactivateIncentiveFromContactTest" duration-ms="175027" started-at="2021-03-25T18:22:05Z" finished-at="2021-03-25T18:25:00Z">
+        <test-method status="PASS" signature="TS006_VerifyGridFiltersIncentivesTest()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="TS006_VerifyGridFiltersIncentivesTest" duration-ms="68613" started-at="2021-03-26T12:00:34Z" finished-at="2021-03-26T12:01:42Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS005_VerifyDeactivateIncentiveFromContactTest -->
+        </test-method> <!-- TS006_VerifyGridFiltersIncentivesTest -->
       </class> <!-- crmframework.crmAutomation.IncentivesPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
