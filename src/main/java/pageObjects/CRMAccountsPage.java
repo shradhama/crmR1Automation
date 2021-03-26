@@ -1214,10 +1214,9 @@ public class CRMAccountsPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(nolist));
 		return driver.findElement(nolist);
 	}
-	public WebElement getlist()
+	public WebElement getlist() throws InterruptedException
 	{
-		wait = new WebDriverWait (driver,5);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(list));
+		Thread.sleep(7000);
 		return driver.findElement(list);
 	}
 	public WebElement getlistmember()

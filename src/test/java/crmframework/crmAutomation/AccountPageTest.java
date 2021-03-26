@@ -25,6 +25,7 @@ import pageObjects.CRMIncentiveTab;
 import pageObjects.CRMLandingPage;
 import pageObjects.CRMLoginPage;
 import resources.GenerateData;
+import resources.Utility;
 import resources.base;
 
 @Listeners({TestListeners.class})
@@ -46,6 +47,8 @@ public class AccountPageTest extends base {
 	CRMAddMarketingRelationshipOwner amro;
 	Actions act;
 	CRMContactPage cp;
+	JavascriptExecutor jse;
+	Utility utl;
 
 
 	@BeforeTest
@@ -53,6 +56,7 @@ public class AccountPageTest extends base {
 	{
 		driver = initializeDriver();
 		genData=new GenerateData();
+		utl=new Utility(driver);
 	}
 
 	@Test(priority=1)
@@ -1421,6 +1425,266 @@ public class AccountPageTest extends base {
 		ap.getPageBackBtn().click();
 	}
 
+	@Test(priority=25)
+	public void TS025_VerifyBusinessRuleForAddressTest() throws InterruptedException {
+
+		//The purpose of this test case to verify :-
+		//T308: Select any existing account and click on Details Tab Functionality 
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		hp.getAccountTab().click();
+
+		ap = new CRMAccountsPage(driver);
+		Thread.sleep(10000);
+		//Click on 'New' button
+		ap.getAccountNewbtn().click();
+
+		ap.getAccountnametxtbx().click();
+		ap.getAccountnametxtbx().sendKeys(genData.generateRandomAlphaNumeric(10));
+		ap.getAccSaveBtn().click();
+
+		ap.getNotificationExpandIcon().click();
+		ap.getNotificationExpandIcon().click();
+		ap.getAccountnametxtbx().sendKeys(Keys.TAB);
+		ap.getPhone().click();	
+		String totalwarningmessage= ap.getNotificationWrapperMsg().getText();
+		Assert.assertEquals(totalwarningmessage, "You have 7 notifications. Select to view.");
+		System.out.println("Warning message displayed.");
+		Thread.sleep(5000);
+		ap.getAddress().click();
+
+		//Scroll down on the page		
+		WebElement acctypelabel = ap.getAccTypeLabel();
+		jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView(true);",acctypelabel);
+
+		//Enter Street1 address
+		ap.getStreet1().sendKeys(prop.getProperty("street1"));
+
+		//Enter City
+		ap.getCity().click();
+		ap.getCity().sendKeys(prop.getProperty("city"));
+
+		//Scroll down on the page		
+		WebElement accstreet3label = ap.getAccStreet3Label();
+		jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView(true);",accstreet3label);
+
+		//Enter state
+		ap.getState().click();
+		ap.getState().sendKeys(prop.getProperty("state"));
+
+		//Enter zipcode
+		ap.getZipcode().click();
+		ap.getZipcode().sendKeys(prop.getProperty("zipcode"));
+
+		//Enter country
+		ap.getCountrytxbx().click();
+		ap.getCountrydrpbtn().click();
+		ap.getCountryName().click();
+		ap.getAccSaveBtn().click();
+
+		String typewarningmessage=ap.getTypeNotificationWrapperMsg().getText();
+		Assert.assertEquals(typewarningmessage, "Type : Required fields must be filled in.");
+		System.out.println("Displayed only Type warning message displayed.");
+		ap.getPageBackBtn().click();
+		ap.getDiscardChangesBtn().click();
+	}
+
+	@Test(priority=26)
+	public void TS026_VerifyAssociatedListsSectionTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T288- Verify lists are available or not for an Account
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Accounts Tab at left menu.
+		hp.getAccountTab().click();
+
+		//Open an existing account
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("listaccount"));
+		ap.getclicksearchbutton().click();
+		hp.getSearchResultAcc().click();
+		ap.getAccNaviagteBtn().click();
+
+		//Scroll to Associated Lists section
+		WebElement contacts = ap.getscrolltocontacts();
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView(true);",contacts);
+
+		WebElement associatedlists = ap.getscrolltoassociatedlists();
+		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+		jse1.executeScript("arguments[0].scrollIntoView(true);",associatedlists);
+
+		// Verify if Lists are available in Lists section
+		WebElement NoList = ap.getnolist();
+		Assert.assertFalse(NoList.getText().equalsIgnoreCase(""));
+		System.out.println("List is available for the account");
+
+		// Verify for List Members
+		WebElement List = ap.getlist();
+		List.click();
+
+		ap.getSelectedListName().click();
+
+		//Scroll till Members section	
+		WebElement listmemremovedlabel = ap.getListMemRemovedLabel();	
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",listmemremovedlabel);
+		Thread.sleep(3000);
+
+		WebElement memberslabel = ap.getMembersLabel();	
+		JavascriptExecutor jse3 = (JavascriptExecutor)driver;
+		jse3.executeScript("arguments[0].scrollIntoView(true);",memberslabel);
+		Thread.sleep(5000);
+
+		WebElement ListMember = ap.getlistmember();
+		Assert.assertFalse(ListMember.getText().equalsIgnoreCase(""));
+		System.out.println("List memeber is available");
+		ap.getPageBackBtn().click();
+		ap.getPageBackBtn().click();
+	}
+
+	@Test(priority=27)
+	public void TS027_VerifyAddNewTaskFromTimelineToAccountTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify that:-
+		//TS296- User is able to add a new Task from Timeline section on account form
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		hp.getAccountTab().click();
+
+		ap = new CRMAccountsPage(driver);
+		//Click on 'A' link to sort accounts starts with 'A'
+		ap.getCLetterFilterLink().click();	
+
+		//Select the account name in list
+		ap.getAccountName().click();
+		ap.getAccNaviagteBtn().click();
+
+		//Click on create a timeline button
+		ap.getAddTimelineBtn().click();
+		ap.getTaskBtnOnTimeline().click();
+
+		ap.getTaskSujecttxbx().click();
+		String subtext = "Cyb_TestTask";
+		ap.getTaskSujecttxbx().sendKeys(subtext);
+
+		ap.getTaskSavenClosebtn().click();
+
+		//Verify that added Task is reflected correctly
+		WebElement task = driver.findElement(By.xpath("//*[text()='"+subtext+"']"));
+		Assert.assertEquals(task.getText(), subtext);
+
+		//Verify that expected Success message displayed
+		Assert.assertEquals("Your changes were saved.", ap.getSuccessMsg().getText());
+
+		//Navigate back to Active accounts list
+		ap.getPageBackBtn().click();
+	}
+
+	@Test(priority=28)
+	public void TS028_VerifyCountryAutocomplete() throws InterruptedException
+	{
+		//The purpose of this test case to:-
+		//CRM-T132- Verify a picklist should be displayed after user starts typing country name 
+		//in country field
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Accounts Tab at left menu.
+		hp.getAccountTab().click();
+
+		//Open active account
+		ap.getAccountName().click();
+		ap.getAccNaviagteBtn().click();
+
+		//Scroll to Address section
+		utl.scrollToElement(ap.getAddress());
+
+		//Delete data already selected in country field
+		WebElement country = ap.getCountrytxbx();
+		country.sendKeys(Keys.CONTROL + "a");
+		country.sendKeys(Keys.DELETE);
+
+		//Enter some characters to search country name
+		ap.getCountrytxbx().sendKeys(prop.getProperty("country"));
+		Thread.sleep(5000);
+
+		List<WebElement> list = ap.getCountryAutocompleteList();
+		for(int i=0; i<list.size(); i++)
+		{
+			System.out.println(list.get(i).getText());
+			Assert.assertTrue(list.get(i).getText().contains(prop.getProperty("country")));
+		}
+
+		String ExpectedCountry = ap.getclickcountry().getText();
+		System.out.println("Expected Country: " + ExpectedCountry);
+
+		//Select searched country from drop down list
+		ap.getclickcountry().click();
+
+		//Save country for an existing account
+		ap.getAccSaveBtn().click();
+		Thread.sleep(5000);
+
+		//Validate selected country
+		String UpdatedCountryOnAccountForm = ap.getCountrytxbx().getAttribute("value").toString();
+		System.out.println("Updated country: " + UpdatedCountryOnAccountForm);
+
+		Assert.assertEquals(UpdatedCountryOnAccountForm, ExpectedCountry);
+
+		//Click Back button
+		ap.getPageBackBtn().click();
+	}
+
+	@Test(priority=23)
+	public void TS023_VerifyDetailsTabOnAccountTest() throws InterruptedException {
+
+		//The purpose of this test case to verify :-
+		//T300: Select any existing contact and click on Details and verify details
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		hp.getAccountTab().click();
+
+		ap = new CRMAccountsPage(driver);
+		//Click on 'C' link to sort accounts starts with 'C'
+		ap.getCLetterFilterLink().click();
+
+		//Select the account name in list
+		ap.getAccountName().click();
+		ap.getAccNaviagteBtn().click();
+
+		//click on Details Tab
+		ap.getdetailsTab().click();
+
+		//Verify if two sections are displayed on Details tab
+		Assert.assertTrue(ap.getoriginatinglead().isDisplayed());
+		System.out.println("Personal originating leads section is available on Details tab.");
+		WebElement scrollsection = ap.getcontactpreferences();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",scrollsection);
+		Assert.assertTrue(ap.getcontactpreferences().isDisplayed());
+		System.out.println("Contact Preferences section is available on Details tab.");
+
+		//Verify details under Contact Preferences section
+		Assert.assertTrue(ap.getconprefoptions().isDisplayed());
+		System.out.println("Contact preference options available on Details tab.");
+
+		//Navigate back to Active Contacts list
+		Thread.sleep(15000);
+		ap.getPageBackBtn().click();
+	}
+	
 	@AfterTest
 	public void closeDriver()
 	{
