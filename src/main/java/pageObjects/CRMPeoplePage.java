@@ -34,6 +34,7 @@ public class CRMPeoplePage {
 	By statuscolmntextincontactssectn = By.xpath("//div[contains(text(),'Status')]"); //Locator for Status column in Contacts section on Person form
 	By newcontactbtnincontactssectn = By.xpath("//button[@aria-label='New Contact']"); //Locator for 'New Contact'button in Contacts section on Person form
 	By fullnamesortztoafilter = By.xpath("//span[contains(text(),'Sort Z to A')]"); //Locator for Z to A filter option of Full name
+	By selectaccountnamedd = By.xpath("//ul[@data-id = 'parentcustomerid.fieldControl-LookupResultsDropdown_parentcustomerid_tab']/li");//Lookup for Account drop down at Contact form
 	
 	public CRMPeoplePage(WebDriver driver) {
 
@@ -142,6 +143,11 @@ public class CRMPeoplePage {
 	public WebElement getFullNameSortZtoAFilter()
 	{
 		return driver.findElement(fullnamesortztoafilter);
+	}
+	public WebElement getselectaccountnamedd() throws InterruptedException {
+
+		Thread.sleep(10000);
+		return driver.findElement(selectaccountnamedd);
 	}
 }
 

@@ -1,7 +1,9 @@
 package crmframework.crmAutomation;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
@@ -24,6 +26,7 @@ import pageObjects.CRMHomePage;
 import pageObjects.CRMIncentiveTab;
 import pageObjects.CRMLandingPage;
 import pageObjects.CRMLoginPage;
+import pageObjects.CRMPeoplePage;
 import resources.GenerateData;
 import resources.Utility;
 import resources.base;
@@ -49,6 +52,7 @@ public class AccountPageTest extends base {
 	CRMContactPage cp;
 	JavascriptExecutor jse;
 	Utility utl;
+	CRMPeoplePage pl;
 
 
 	@BeforeTest
@@ -1346,10 +1350,6 @@ public class AccountPageTest extends base {
 		ap.getPageBackBtn().click();
 		ap.getDiscardChangesBtn().click();
 	}
-
-
-
-
 	//Manual Fail_Caught By Automation	
 	@Test(priority=24)
 	public void TS024_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest() throws InterruptedException
@@ -1424,7 +1424,6 @@ public class AccountPageTest extends base {
 
 		ap.getPageBackBtn().click();
 	}
-
 	@Test(priority=25)
 	public void TS025_VerifyBusinessRuleForAddressTest() throws InterruptedException {
 
@@ -1491,7 +1490,196 @@ public class AccountPageTest extends base {
 		ap.getPageBackBtn().click();
 		ap.getDiscardChangesBtn().click();
 	}
+	@Test(priority=29)
+	public void TS029_VerifyCountryAutocomplete() throws InterruptedException
+	{
+		//The purpose of this test case to:-
+		//CRM-T132- Verify a picklist should be displayed after user starts typing country name 
+		//in country field
 
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Accounts Tab at left menu.
+		hp.getAccountTab().click();
+
+		//Open active account
+		ap.getAccountName().click();
+		ap.getAccNaviagteBtn().click();
+
+		//Scroll to Address section
+		utl.scrollToElement(ap.getAddress());
+
+		//Delete data already selected in country field
+		WebElement country = ap.getCountrytxbx();
+		country.sendKeys(Keys.CONTROL + "a");
+		country.sendKeys(Keys.DELETE);
+
+		//Enter some characters to search country name
+		ap.getCountrytxbx().sendKeys(prop.getProperty("country"));
+		Thread.sleep(5000);
+
+		List<WebElement> list = ap.getCountryAutocompleteList();
+		for(int i=0; i<list.size(); i++)
+		{
+			System.out.println(list.get(i).getText());
+			Assert.assertTrue(list.get(i).getText().contains(prop.getProperty("country")));
+		}
+
+		String ExpectedCountry = ap.getclickcountry().getText();
+		System.out.println("Expected Country: " + ExpectedCountry);
+
+		//Select searched country from drop down list
+		ap.getclickcountry().click();
+
+		//Save country for an existing account
+		ap.getAccSaveBtn().click();
+		Thread.sleep(5000);
+
+		//Validate selected country
+		String UpdatedCountryOnAccountForm = ap.getCountrytxbx().getAttribute("value").toString();
+		System.out.println("Updated country: " + UpdatedCountryOnAccountForm);
+
+		Assert.assertEquals(UpdatedCountryOnAccountForm, ExpectedCountry);
+
+		//Click Back button
+		ap.getPageBackBtn().click();
+	}
+	@Test(priority=23)
+	public void TS023_VerifyDetailsTabOnAccountTest() throws InterruptedException {
+
+		//The purpose of this test case to verify :-
+		//T300: Select any existing contact and click on Details and verify details
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		hp.getAccountTab().click();
+
+		ap = new CRMAccountsPage(driver);
+		//Click on 'C' link to sort accounts starts with 'C'
+		ap.getCLetterFilterLink().click();
+
+		//Select the account name in list
+		ap.getAccountName().click();
+		ap.getAccNaviagteBtn().click();
+
+		//click on Details Tab
+		ap.getdetailsTab().click();
+
+		//Verify if two sections are displayed on Details tab
+		Assert.assertTrue(ap.getoriginatinglead().isDisplayed());
+		System.out.println("Personal originating leads section is available on Details tab.");
+		WebElement scrollsection = ap.getcontactpreferences();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",scrollsection);
+		Assert.assertTrue(ap.getcontactpreferences().isDisplayed());
+		System.out.println("Contact Preferences section is available on Details tab.");
+
+		//Verify details under Contact Preferences section
+		Assert.assertTrue(ap.getconprefoptions().isDisplayed());
+		System.out.println("Contact preference options available on Details tab.");
+
+		//Navigate back to Active Contacts list
+		Thread.sleep(15000);
+		ap.getPageBackBtn().click();
+	}
+	@Test(priority=24)
+	public void TS024_VerifyExportToExcelTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T293- Verify Export To Excel functionality for Accounts
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		pl = new CRMPeoplePage(driver);
+		cp = new CRMContactPage(driver);
+		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Accounts Tab at left menu and search accounts containing Cyb
+		hp.getAccountTab().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
+		ap.getclicksearchbutton().click();
+
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+
+		//Click Export To Excel option under it
+		ap.getclickexporttoexcelbutton().click();
+
+		//Export file to online excel
+		ap.getopenexcelonline().click();
+
+		//ap.getsaveexcelonline().click();
+		ap.getsaveexcelonline().click();   
+
+		//Click Track Progress button
+		cp.getexporttrackprogressbtn().click();
+		
+		//Switch to new My Imports tab
+		Set<String> windows1 = driver.getWindowHandles();
+		Iterator<String>it = windows1.iterator();
+		String parentId = it.next();
+		String childId = it.next();
+		driver.switchTo().window(childId);
+		Thread.sleep(15000);
+				
+		//Verify export to excel online
+		System.out.println(pl.getonlineexportverification().getText());
+		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
+		System.out.println("Excel exported online successfully.");
+		Thread.sleep(10000);
+
+		//Switch to previous browser tab
+		Set<String> windows = driver.getWindowHandles();
+		Iterator<String>it1 = windows.iterator();
+		String parentId1 = it1.next();
+		String childId1 = it1.next();
+		driver.switchTo().window(parentId1);
+
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+
+		//Click Export To Excel option under it
+		ap.getclickexporttoexcelbutton().click();
+
+		//Export Excel to Static Worksheet
+		ap.getexporttostaticworksheet().click();
+
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+
+		//Click Export To Excel option under it
+		ap.getclickexporttoexcelbutton().click();
+
+		//Export Excel to Static Worksheet Page Only
+		ap.getexporttostaticworksheetpageonly().click();
+
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+
+		//Click Export To Excel dropdown arrow option under it
+		ap.getclickexporttoexcelbutton().click();
+
+		//Export to Dynamic Worksheet
+		ap.getexporttodynamicworksheet().click();
+		ap.getselectcheckbox1().click();
+		ap.getselectcheckbox2().click();
+		ap.getexportworksheetpopup().click();
+
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+
+		//Click Export To Excel option under it
+		ap.getclickexporttoexcelbutton().click();
+
+		//Export to Dynamic Pivot Table
+		ap.getexporttodynamicpivottable().click();
+		ap.getselectcheckbox1().click();
+		ap.getselectcheckbox2().click();
+		ap.getexportworksheetpopup().click();
+	}
 	@Test(priority=26)
 	public void TS026_VerifyAssociatedListsSectionTest() throws InterruptedException
 	{
@@ -1549,7 +1737,6 @@ public class AccountPageTest extends base {
 		ap.getPageBackBtn().click();
 		ap.getPageBackBtn().click();
 	}
-
 	@Test(priority=27)
 	public void TS027_VerifyAddNewTaskFromTimelineToAccountTest() throws InterruptedException
 	{
@@ -1588,103 +1775,6 @@ public class AccountPageTest extends base {
 		//Navigate back to Active accounts list
 		ap.getPageBackBtn().click();
 	}
-
-	@Test(priority=28)
-	public void TS028_VerifyCountryAutocomplete() throws InterruptedException
-	{
-		//The purpose of this test case to:-
-		//CRM-T132- Verify a picklist should be displayed after user starts typing country name 
-		//in country field
-
-		hp = new CRMHomePage(driver);
-		ap = new CRMAccountsPage(driver);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-		//Click on Accounts Tab at left menu.
-		hp.getAccountTab().click();
-
-		//Open active account
-		ap.getAccountName().click();
-		ap.getAccNaviagteBtn().click();
-
-		//Scroll to Address section
-		utl.scrollToElement(ap.getAddress());
-
-		//Delete data already selected in country field
-		WebElement country = ap.getCountrytxbx();
-		country.sendKeys(Keys.CONTROL + "a");
-		country.sendKeys(Keys.DELETE);
-
-		//Enter some characters to search country name
-		ap.getCountrytxbx().sendKeys(prop.getProperty("country"));
-		Thread.sleep(5000);
-
-		List<WebElement> list = ap.getCountryAutocompleteList();
-		for(int i=0; i<list.size(); i++)
-		{
-			System.out.println(list.get(i).getText());
-			Assert.assertTrue(list.get(i).getText().contains(prop.getProperty("country")));
-		}
-
-		String ExpectedCountry = ap.getclickcountry().getText();
-		System.out.println("Expected Country: " + ExpectedCountry);
-
-		//Select searched country from drop down list
-		ap.getclickcountry().click();
-
-		//Save country for an existing account
-		ap.getAccSaveBtn().click();
-		Thread.sleep(5000);
-
-		//Validate selected country
-		String UpdatedCountryOnAccountForm = ap.getCountrytxbx().getAttribute("value").toString();
-		System.out.println("Updated country: " + UpdatedCountryOnAccountForm);
-
-		Assert.assertEquals(UpdatedCountryOnAccountForm, ExpectedCountry);
-
-		//Click Back button
-		ap.getPageBackBtn().click();
-	}
-
-	@Test(priority=23)
-	public void TS023_VerifyDetailsTabOnAccountTest() throws InterruptedException {
-
-		//The purpose of this test case to verify :-
-		//T300: Select any existing contact and click on Details and verify details
-
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
-		hp = new CRMHomePage(driver);
-		hp.getAccountTab().click();
-
-		ap = new CRMAccountsPage(driver);
-		//Click on 'C' link to sort accounts starts with 'C'
-		ap.getCLetterFilterLink().click();
-
-		//Select the account name in list
-		ap.getAccountName().click();
-		ap.getAccNaviagteBtn().click();
-
-		//click on Details Tab
-		ap.getdetailsTab().click();
-
-		//Verify if two sections are displayed on Details tab
-		Assert.assertTrue(ap.getoriginatinglead().isDisplayed());
-		System.out.println("Personal originating leads section is available on Details tab.");
-		WebElement scrollsection = ap.getcontactpreferences();
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView(true);",scrollsection);
-		Assert.assertTrue(ap.getcontactpreferences().isDisplayed());
-		System.out.println("Contact Preferences section is available on Details tab.");
-
-		//Verify details under Contact Preferences section
-		Assert.assertTrue(ap.getconprefoptions().isDisplayed());
-		System.out.println("Contact preference options available on Details tab.");
-
-		//Navigate back to Active Contacts list
-		Thread.sleep(15000);
-		ap.getPageBackBtn().click();
-	}
-	
 	@AfterTest
 	public void closeDriver()
 	{

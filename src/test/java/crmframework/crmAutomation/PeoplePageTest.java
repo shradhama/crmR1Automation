@@ -133,8 +133,9 @@ public class PeoplePageTest extends base {
 
 		//Enter Account Name
 		cp.getContactAccountNameTxtbx().click();
-		cp.getSearchRecordsBtn().click();
-		cp.getAccountNameTitle().click();
+		//cp.getSearchRecordsBtn().click();
+		//cp.getAccountNameTitle().click();
+		pl.getselectaccountnamedd().click();
 
 		cp.getemail().click();
 		cp.getemail().sendKeys(genData.generateEmail(15));
@@ -151,10 +152,10 @@ public class PeoplePageTest extends base {
 		cp.getstreet1().sendKeys(genData.generateStringWithAllobedSplChars(20, "@,!Q#@$%#%"));
 		cp.getcity().click();
 		cp.getcity().sendKeys(prop.getProperty("city"));
-		WebElement scrollText2 = cp.getCityLabel();	
-		JavascriptExecutor js1 = (JavascriptExecutor)driver;
-		js1.executeScript("arguments[0].scrollIntoView(true);",scrollText2);
-		Thread.sleep(3000);
+		//WebElement scrollText2 = cp.getCityLabel();	
+		//JavascriptExecutor js1 = (JavascriptExecutor)driver;
+		//js1.executeScript("arguments[0].scrollIntoView(true);",scrollText2);
+		//Thread.sleep(3000);
 
 		cp.getstateorprovince().sendKeys(prop.getProperty("state"));
 		cp.getziporpostalcode().click();
@@ -168,7 +169,7 @@ public class PeoplePageTest extends base {
 		//Click on Save button in header
 		cp.getsavecontact().click();
 		//cp.getContactFormRefreshBtn().click();
-		Thread.sleep(4000);
+		Thread.sleep(10000);
 		driver.navigate().refresh();
 		Thread.sleep(5000);
 
@@ -179,6 +180,7 @@ public class PeoplePageTest extends base {
 		Thread.sleep(5000);
 		//Click on the 'More Header fields' button in front of Status Reason field
 		pl.getMoreHeaderFieldsBtn().click();
+		Thread.sleep(5000);
 
 		//Verify that Person field is displayed with the newly created contact name
 		Assert.assertTrue(pl.getPersonFieldLabel().isDisplayed());
@@ -238,7 +240,7 @@ public class PeoplePageTest extends base {
 		String parentId = it.next();
 		String childId = it.next();
 		driver.switchTo().window(childId);
-		Thread.sleep(10000);
+		Thread.sleep(30000);
 
 		//Verify export to excel online
 		//pl.getclickonlineexcel().click();
@@ -415,7 +417,7 @@ public class PeoplePageTest extends base {
 		//Select filter options
 		ap.getclickoperatordd().click();
 		ap.getselectoperatorone().click();
-		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("peoplename"));
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
 			
@@ -424,7 +426,7 @@ public class PeoplePageTest extends base {
 		for (int i=0;i<7;i++)
 		{
 			accnamevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
-			Assert.assertTrue(accnamevaluesongrid.getText().contains(prop.getProperty("name")));
+			Assert.assertTrue(accnamevaluesongrid.getText().contains(prop.getProperty("peoplename")));
 		}
 		System.out.println("Full Name matches expected criteria");
 

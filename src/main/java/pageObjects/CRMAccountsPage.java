@@ -210,7 +210,7 @@ public class CRMAccountsPage {
 	By acctypelabel = By.xpath("//label[contains(text(),'Type')]");
 	By accstreet3label = By.xpath("//label[contains(text(),'Street 3')]");
 	By verifyaccountppointment = By.xpath("//div[@id = 'TimelineMainContainerSection']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/label[1]");//Locator for getting text of subject for an appointment
-	By trackprogressexportbtn = By.xpath("//div[@data-id = 'alertdialog']div[1]/div[3]/button[1]/span[1]"); //Locator for track progress for export online option for accounts
+	//By trackprogressexportbtn = By.xpath("//div[@data-id = 'alertdialog']div[1]/div[3]/button[1]/span[1]"); //Locator for track progress for export online option for accounts
 	By clickcountry = By.xpath("//div[@class = 'wj-listbox-item'][2]"); 
 	By summarytab = By.xpath("//h2[@data-id = 'form-sectionHeader-SUMMARY_TAB_column_3_section_1']");
 	By accountinfosection = By.xpath("//h2[@data-id = 'form-sectionHeader-ACCOUNT_INFORMATION']");
@@ -1281,13 +1281,13 @@ public class CRMAccountsPage {
 		Thread.sleep(10000);
 		return driver.findElement(verifyaccountppointment);
 	}
-	public WebElement gettrackprogressexportbtn() throws InterruptedException
+	/*public WebElement gettrackprogressexportbtn() throws InterruptedException
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(trackprogressexportbtn));
 		Thread.sleep(20000);
 		return driver.findElement(trackprogressexportbtn);
-	}
+	}*/
 
 	public WebElement getclickcountry()
 	{
