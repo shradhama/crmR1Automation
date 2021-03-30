@@ -44,7 +44,7 @@ public class CRMContactPage {
 	By contactaccountnametxtbx = By.xpath("//input[@aria-label='Account Name, Lookup']");
 	By searchrecordsbtn = By.xpath("//button[@aria-label='Search records for Account Name, Lookup field']");
 	By accountnametitle = By.xpath("//span[@data-id='parentcustomerid.fieldControl-name0_0_0']");
-	By scrolltextoncontactform = By.xpath("//div[text()='Select Save to see your timeline.']");
+	By scrolltextoncontactform = By.xpath("//h2[@data-id = 'form-sectionHeader-CONTACT_INFORMATION']");
 	By accountincentivedetailslabel = By.xpath("//div[text()='Account Incentive Details']");
 	By mobilephonelabel = By.xpath("//label[text()='Mobile Phone']");
 	By citylabel = By.xpath("//label[text()='City']");

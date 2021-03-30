@@ -97,76 +97,7 @@ public class OtherTest extends base{
 		System.out.println("Login to CRM successfully");
 	}
 
-	@Test(priority=3)
-	public void TS003_VerifyAddIncentiveToAccountTest() throws InterruptedException {
-
-		//The purpose of this test case to verify:-
-		//TS4-Select any existing Account and add Incentive
-
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
-		hp = new CRMHomePage(driver);
-		hp.getAccountTab().click();
-
-		ap = new CRMAccountsPage(driver);
-		ap.getAllFilterLink().click();
-		//Thread.sleep(3000);
-
-		// Search Account Name
-		hp.getSearchAccountField().sendKeys("Cyb_QATest");
-		hp.getstartsearch().click();
-		//Thread.sleep(10000);
-
-		inc = new CRMIncentiveTab(driver);
-		// Open Account
-		inc.accname().click();
-		ap.getAccNaviagteBtn().click();
-		//Thread.sleep(10000);
-
-		// Click Incentives tab at existing account
-		inc.getinctab().click();
-
-		// Open New Incentive Form
-		inc.getnewinc().click();
-
-		// Select Contact at New Incentive Form
-		inc.getconclick().click();
-		inc.getconsearch().click();
-		inc.getconselect().click();
-
-		// Select Market at New Incentive Form
-		inc.getmarclick().click();
-		inc.getmarsearch().click();
-		inc.getmarselect().click();
-
-		// Select Referral Source at New Incentive Form
-		inc.getrefclick().click();
-		inc.getrefsearch().click();
-		inc.getrefselect().click();
-
-		// Enter Other Incentive Source at New Incentive Form
-		inc.getosclick().click();
-		inc.getosvalue().sendKeys("None");
-
-		// Save and Close Incentive
-		inc.getincsave().click();
-		Thread.sleep(15000);
-		// Incentive Verification
-		if (inc.accname().getText().contains("Cyb") && inc.conname().getText().contains("Test") && inc.marname().getText().contains("Jan"))
-		{
-			System.out.println ("Incentive added successfully.");
-		}
-		else
-		{
-			System.out.println ("Incentive not added.");
-		}
-
-		//Navigate back to Active accounts list
-		ap.getAccPageBackBtn().click();
-		//Thread.sleep(3000);
-
-		//Clear the search term
-		hp.getClearSearch().click();
-	}
+	
 
 	@Test(priority=2)
 	public void TS002_VerifyAddIncentiveDetailsToAccountTest() throws InterruptedException
@@ -270,6 +201,7 @@ public class OtherTest extends base{
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
 		pl = new CRMPeoplePage(driver);
+		cp = new CRMContactPage(driver);
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
@@ -291,7 +223,7 @@ public class OtherTest extends base{
 		ap.getsaveexcelonline().click();   
 
 		//Click Track Progress button
-		ap.gettrackprogressexportbtn().click();
+		cp.getexporttrackprogressbtn().click();
 		
 		//Switch to new My Imports tab
 		Set<String> windows1 = driver.getWindowHandles();
