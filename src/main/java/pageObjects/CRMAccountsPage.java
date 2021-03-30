@@ -116,7 +116,7 @@ public class CRMAccountsPage {
 	By clickaddressgridfunnel = By.xpath("//div[@data-id = 'address1_stateorprovince']");
 	By clickaddressvaluefield = By.xpath("//div[@class = 'ms-TextField-wrapper']/div/input");
 	By clickdbanamegridfunnel = By.xpath("//div[@data-id = 'name']");
-	By selectoperatorone = By.xpath("//button[@data-index = '4']");
+	By selectoperatorone = By.xpath("//button[@data-index = '2']");
 	By clearfiltergrid = By.xpath("//button[@aria-label = 'Clear filter']");
 	By clickdbaphonegridfunnel = By.xpath("//div[@data-id = 'telephone1']");
 	By clickdbacitygridfunnel = By.xpath("//div[@data-id = 'address1_city']");

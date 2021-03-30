@@ -7,14 +7,14 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<!--<class name="crmframework.crmAutomation.AccountPageTest" />-->
-			<class name="crmframework.crmAutomation.OtherTest" />
+			<!-- <class name="crmframework.crmAutomation.OtherTest" /> -->
 			<!--<class name="crmframework.crmAutomation.ContactPageTest" />-->
-			<!--<class name="crmframework.crmAutomation.PeoplePageTest" />-->
-			<!--<class name="crmframework.crmAutomation.IncentivesPageTest" />-->
+			<class name="crmframework.crmAutomation.PeoplePageTest" />
 			<methods>
-				<!--<include name="TS001_VerifyHomePageTest" />-->
-				<!--<include name="TS007_VerifyActivateInactiveIncentiveTest" />-->
-			</methods> 
+			<exclude name="TS002_VerifyCreatePeopleRecordTest"/>
+			<exclude name="TS003_VerifyExportToExcelPeopleTest"/>
+			</methods>
+			<!--<class name="crmframework.crmAutomation.IncentivesPageTest" />-->
 		</classes>
 	</test>
 </suite>
