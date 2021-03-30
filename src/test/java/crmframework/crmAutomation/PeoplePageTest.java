@@ -92,8 +92,10 @@ public class PeoplePageTest extends base {
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
 	}
+	
+	//Manual Fail_Caught By Automation
 	@Test(priority=2)
-	public void TS002_VerifyCreatePeopleRecordTest() throws InterruptedException
+	public void TS002_ManualFail_VerifyCreatePeopleRecordTest() throws InterruptedException
 	{
 		//The purpose of this test case:-
 		//CRM-T150- Verify with creation of a new contact record, an associated person record 
@@ -182,6 +184,7 @@ public class PeoplePageTest extends base {
 		pl.getMoreHeaderFieldsBtn().click();
 		Thread.sleep(5000);
 
+		//Failed to reflect Person in header_Manual fail
 		//Verify that Person field is displayed with the newly created contact name
 		Assert.assertTrue(pl.getPersonFieldLabel().isDisplayed());
 		String perosnname = pl.getPersonNameInHeader().getText();
@@ -320,6 +323,7 @@ public class PeoplePageTest extends base {
 		//Select and open any Active person record
 		pl.getALetterFilterLink().click();
 		String expectedperosnname = pl.selectPersonName().getText();
+		System.out.println("Expeted Person name: "+expectedperosnname);
 		pl.selectPersonName().click();
 
 		//Verify Contacts Sub section with grid columns on Person form
@@ -423,7 +427,7 @@ public class PeoplePageTest extends base {
 			
 		//Verify Full Name value selected on accounts grid
 		WebElement accnamevaluesongrid = null;
-		for (int i=0;i<7;i++)
+		for (int i=0;i<2;i++)
 		{
 			accnamevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
 			Assert.assertTrue(accnamevaluesongrid.getText().contains(prop.getProperty("peoplename")));

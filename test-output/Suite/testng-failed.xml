@@ -3,14 +3,13 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.OtherTest">
+      <class name="crmframework.crmAutomation.PeoplePageTest">
         <methods>
-          <include name="TS025_VerifyBusinessRuleForAddressTest"/>
-          <include name="TS026_VerifyAssociatedListsSectionTest"/>
+          <include name="TS005_VerifyGridFiltersPeopleTest"/>
           <include name="initialize"/>
-          <include name="TS002_VerifyAddIncentiveDetailsToAccountTest"/>
+          <include name="TS004_VerifyRelatedContactsForPeopleRecordTest"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.OtherTest -->
+      </class> <!-- crmframework.crmAutomation.PeoplePageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
