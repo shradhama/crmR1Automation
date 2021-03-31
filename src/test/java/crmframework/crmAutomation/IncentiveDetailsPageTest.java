@@ -20,7 +20,9 @@ import pageObjects.CRMAccountsPage;
 import pageObjects.CRMAddMarketingRelationshipOwner;
 import pageObjects.CRMContactPage;
 import pageObjects.CRMHomePage;
+import pageObjects.CRMIncentiveDetailsPage;
 import pageObjects.CRMIncentiveTab;
+import pageObjects.CRMIncentivesPage;
 import pageObjects.CRMLandingPage;
 import pageObjects.CRMLoginPage;
 import pageObjects.CRMPeoplePage;
@@ -49,6 +51,8 @@ public class IncentiveDetailsPageTest extends base {
 	CRMContactPage cp;
 	CRMPeoplePage pl;
 	Utility utl;
+	CRMIncentivesPage in;
+	CRMIncentiveDetailsPage ind;
 
 
 	@BeforeTest
@@ -92,4 +96,52 @@ public class IncentiveDetailsPageTest extends base {
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
 	}
+	@Test(priority=2)
+	public void TS002_VerifyCreateIncentiveDetailsFromExistingIncentiveTest() throws InterruptedException 
+	{
+		//The purpose of this test case to:-
+		//T105- Verify that user is able to create incentive detail in existing incentive
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		in = new CRMIncentivesPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+		cp = new CRMContactPage(driver);
+		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Incentives Tab at left menu and search incentives containing Cyb
+		hp.getincentivestab().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
+		ap.getclicksearchbutton().click();
+
+		//Open existing incentive
+		Actions action = new Actions(driver);
+		WebElement OpenIncentive = cp.getopencontact();
+		action.doubleClick(OpenIncentive).perform();
+		
+		//Open new Incentive Detail page
+		ind.getopenincdetoptions().click();
+		ind.getclicknewincdet().click();
+		
+		//Select Incentive Category
+		Thread.sleep(5000);
+		ind.getinccatdd().click();
+		Thread.sleep(2000);
+		ind.getinccatsearch().click();
+		Thread.sleep(3000);
+		ind.getselectinccat().click();
+		Thread.sleep(2000);
+		
+		//Click on Save and Close button
+		ind.getsaveincdet().click();
+		Thread.sleep(15000);
+
+		//Verify if Incentive Details are properly added
+		Assert.assertTrue(ind.getverifyincdet().getText().contains(prop.getProperty("incentive")));
+		
+		//Navigate back to Active accounts list
+		ap.getPageBackBtn().click();
+	}
+
 }
