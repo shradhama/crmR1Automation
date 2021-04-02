@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>C:\Users\nilamma\crmR1Automation\testng.xml</span>
+                    <span>C:\Users\shradhama\crmR1Automation\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,17 +101,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.PeoplePageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.IncentiveDetailsPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.PeoplePageTest" hash-for-method="TS004_VerifyRelatedContactsForPeopleRecordTest">TS004_VerifyRelatedContactsForPeopleRecordTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.PeoplePageTest" hash-for-method="TS005_VerifyGridFiltersPeopleTest">TS005_VerifyGridFiltersPeopleTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.IncentiveDetailsPageTest" hash-for-method="TS003_VerifyGroupByOptionsIncentiveDetailsTest">TS003_VerifyGroupByOptionsIncentiveDetailsTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -129,7 +124,7 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">crmframework.crmAutomation.PeoplePageTest</span>
+              <span class="class-name">crmframework.crmAutomation.IncentiveDetailsPageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -141,16 +136,9 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="TS004_VerifyRelatedContactsForPeopleRecordTest">
-                  </a> <!-- TS004_VerifyRelatedContactsForPeopleRecordTest -->
-                  <span class="method-name">TS004_VerifyRelatedContactsForPeopleRecordTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TS005_VerifyGridFiltersPeopleTest">
-                  </a> <!-- TS005_VerifyGridFiltersPeopleTest -->
-                  <span class="method-name">TS005_VerifyGridFiltersPeopleTest</span>
+                  <a name="TS003_VerifyGroupByOptionsIncentiveDetailsTest">
+                  </a> <!-- TS003_VerifyGroupByOptionsIncentiveDetailsTest -->
+                  <span class="method-name">TS003_VerifyGroupByOptionsIncentiveDetailsTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -158,7 +146,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\nilamma\crmR1Automation\testng.xml</span>
+            <span class="header-content">C:\Users\shradhama\crmR1Automation\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -167,12 +155,12 @@
 &lt;suite name=&quot;Suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;crmframework.crmAutomation.PeoplePageTest&quot;&gt;
+      &lt;class name=&quot;crmframework.crmAutomation.IncentiveDetailsPageTest&quot;&gt;
         &lt;methods&gt;
-          &lt;exclude name=&quot;TS002_VerifyCreatePeopleRecordTest&quot;/&gt;
-          &lt;exclude name=&quot;TS003_VerifyExportToExcelPeopleTest&quot;/&gt;
+          &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
+          &lt;include name=&quot;TS003_VerifyGroupByOptionsIncentiveDetailsTest&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- crmframework.crmAutomation.PeoplePageTest --&gt;
+      &lt;/class&gt; &lt;!-- crmframework.crmAutomation.IncentiveDetailsPageTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -212,24 +200,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TS001_VerifyHomePageTest')
-data.setCell(0, 2, 'crmframework.crmAutomation.PeoplePageTest')
-data.setCell(0, 3, 112049);
+data.setCell(0, 1, 'TS003_VerifyGroupByOptionsIncentiveDetailsTest')
+data.setCell(0, 2, 'crmframework.crmAutomation.IncentiveDetailsPageTest')
+data.setCell(0, 3, 125834);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TS004_VerifyRelatedContactsForPeopleRecordTest')
-data.setCell(1, 2, 'crmframework.crmAutomation.PeoplePageTest')
-data.setCell(1, 3, 94972);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'TS005_VerifyGridFiltersPeopleTest')
-data.setCell(2, 2, 'crmframework.crmAutomation.PeoplePageTest')
-data.setCell(2, 3, 38920);
+data.setCell(1, 1, 'TS001_VerifyHomePageTest')
+data.setCell(1, 2, 'crmframework.crmAutomation.IncentiveDetailsPageTest')
+data.setCell(1, 3, 106854);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -244,15 +228,13 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">crmframework.crmAutomation.PeoplePageTest</span>
+              <span class="ignored-class-name">crmframework.crmAutomation.IncentiveDetailsPageTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">TS002_VerifyCreatePeopleRecordTest</span>
-                <br/>
-                <span class="ignored-method-name">TS003_VerifyExportToExcelPeopleTest</span>
+                <span class="ignored-method-name">TS002_VerifyCreateIncentiveDetailsFromExistingIncentiveTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -264,22 +246,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">crmframework.crmAutomation.PeoplePageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">crmframework.crmAutomation.IncentiveDetailsPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">initialize</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">TS001_VerifyHomePageTest</span>
-                <span class="method-start">6518 ms</span>
+                <span class="method-start">5400 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">TS004_VerifyRelatedContactsForPeopleRecordTest</span>
-                <span class="method-start">118611 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">TS005_VerifyGridFiltersPeopleTest</span>
-                <span class="method-start">213586 ms</span>
+                <span class="method-name">TS003_VerifyGroupByOptionsIncentiveDetailsTest</span>
+                <span class="method-start">112338 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
