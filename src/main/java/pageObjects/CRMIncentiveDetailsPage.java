@@ -19,6 +19,10 @@ public class CRMIncentiveDetailsPage {
 	By selectinccat = By.xpath("//div[@aria-label = 'Incentive Category Lookup results']/ul[1]/li[1]");//Locator for incentive catrgory option in drop down list 
 	By verifyincdet = By.xpath("//div[@data-id = 'IncentiveDetails_container']/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div");//Locator for Incentive detail at General tab of incentive records
 	By saveincdet = By.xpath("//button[@id = 'quickCreateSaveAndCloseBtn']");//Locator for Save & Close button
+	By incentivedetailsexportdropdown= By.xpath("//button[@data-id = 'xxc_incentivedetail|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_incentivedetail.ExportToExcel.Menu$splitButtonId']");
+	By selectcheckbox1 = By.xpath("//input[@data-id ='entitySelector_id-entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_incentivedetailcreatedby']");//Locator for checkbox
+	By selectcheckbox2 = By.xpath("//input[@data-id ='entitySelector_id-entitySelector_id.fieldControl-displayNameLabelElementIdxxc_incentivedetailcreatedon']");//Locator for checkbox
+	
 	
 	public CRMIncentiveDetailsPage(WebDriver driver) {
 
@@ -66,4 +70,23 @@ public class CRMIncentiveDetailsPage {
 		wait.until(ExpectedConditions.elementToBeClickable(saveincdet));
 		return driver.findElement(saveincdet);
 	}
+	public WebElement getincentivedetailsexportdropdown() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(incentivedetailsexportdropdown));
+		return driver.findElement(incentivedetailsexportdropdown);
+	}
+	public WebElement getselectcheckbox1() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(selectcheckbox1));
+		return driver.findElement(selectcheckbox1);
+	}
+	public WebElement getselectcheckbox2() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(selectcheckbox2));
+		return driver.findElement(selectcheckbox2);
+	}
+	
 }

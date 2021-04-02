@@ -3,30 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.AccountPageTest">
+      <class name="crmframework.crmAutomation.IncentiveDetailsPageTest">
         <methods>
-          <include name="verifyAccountStatusToActivateAccount"/>
-          <include name="verifyAddNoteToAccount"/>
-          <include name="verifyAddMarketingRelationshipOwnerToAccount"/>
-          <include name="verifyDeactivateAccount"/>
-          <include name="verifyPhoneCallOnAccount"/>
-          <include name="verifyAddNewPostToAccount"/>
-          <include name="verifyRelatedTabOnAccount"/>
-          <include name="verifyCrmHomePage"/>
-          <include name="verifySearchAccount"/>
-          <include name="verifySateAndRegionInGrid"/>
-          <include name="verifyParentAccount"/>
           <include name="initialize"/>
-          <include name="verifyAddTimelineToAccount"/>
-          <include name="verifyCreateNewAccount"/>
-          <include name="verifyAddIncentiveToAccount"/>
-          <include name="closeDriver"/>
-          <include name="verifyAddIncentiveDetailsToAccount"/>
-          <include name="verifyAuditHistoryTabOnAccount"/>
-          <include name="verifyMediaSegmentationField"/>
-          <include name="verifyAccountStatusToDeactivateAccount"/>
+          <include name="TS003_VerifyExportToExcelIncentivesDetailsTest"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
+      </class> <!-- crmframework.crmAutomation.IncentiveDetailsPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

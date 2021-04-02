@@ -28,6 +28,7 @@ public class CRMHomePage {
 	By searchresultcontactemail = By.xpath("//div[@data-id = 'cell-0-5']");
 	By peopletab = By.xpath("//span[contains(text(),'People')]");//Locator to open People tab
 	By incentivestab = By.xpath("//span[contains(text(),'Incentives')]");//Locator to open Incentives tab
+	By incentivesdetailstab = By.xpath("//span[contains(text(),'Incentive Details')]");//Locator to open Incentives Details tab
 	By inactiveincentivestitle = By.xpath("//h1[@aria-label='Inactive Incentives']"); //Locator for Inactive Incentives title
 	By activeincentivestitle = By.xpath("//h1[@aria-label='Active Incentives']"); //Locator for Active Incentives title
 
@@ -128,6 +129,12 @@ public class CRMHomePage {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(incentivestab));
 		return driver.findElement(incentivestab);
+	}
+	public WebElement getincentivesdetailstab() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(incentivesdetailstab));
+		return driver.findElement(incentivesdetailstab);
 	}
 	public WebElement getSearchInactiveIncField() {
 		wait = new WebDriverWait (driver,20);
