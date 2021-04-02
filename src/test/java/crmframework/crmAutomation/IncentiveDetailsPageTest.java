@@ -111,7 +111,7 @@ public class IncentiveDetailsPageTest extends base {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
 
 		//Click on Incentives Tab at left menu and search incentives containing Cyb
-		hp.getincentivestab().click();
+		hp.getincentivedetailstab().click();
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
 		ap.getclicksearchbutton().click();
 
@@ -142,6 +142,92 @@ public class IncentiveDetailsPageTest extends base {
 		
 		//Navigate back to Active accounts list
 		ap.getPageBackBtn().click();
+	}
+	@Test(priority=3)
+	public void TS003_VerifyGroupByOptionsIncentiveDetailsTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T453- Verify Group By options for Contact
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		cp = new CRMContactPage(driver);
+		ap = new CRMAccountsPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+
+		//Click on Contacts tab from left menu and search contacts containing Cyb
+		hp.getincentivedetailstab().click();
+
+		//Open Group By drop down list options
+		cp.getclickgroupbydd().click();
+
+		//Select Name option from Group By drop down list
+		cp.getfullnameddopt().click();
+
+		//Verify if records are grouped by Full Name
+		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Name is not working.");
+		System.out.println("Group by Name is working properly.");
+
+		//Open Group By drop down list options
+		cp.getclickgroupbydd().click();
+
+		//Select Contact option from Group By drop down list
+		ind.getcontactddopt().click();
+
+		//Verify if records are grouped by Contact
+		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Contact is not successful.");
+		System.out.println("Group by Contact is working properly.");
+		
+		//Open Group By drop down list options
+		cp.getclickgroupbydd().click();
+
+		//Select Market option from Group By drop down list
+		ind.getmarketddopt().click();
+
+		//Verify if records are grouped by Market 
+		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Market is not successful.");
+		System.out.println("Group by Market is working properly.");
+		
+		//Open Group By drop down list options
+		cp.getclickgroupbydd().click();
+
+		//Select Account option from Group By drop down list
+		ind.getaccountddopt().click();
+
+		//Verify if records are grouped by Account
+		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Account is not successful.");
+		System.out.println("Group by Account is working properly.");
+				
+		//Open Group By drop down list options
+		cp.getclickgroupbydd().click();
+
+		//Select Incentive Category option from Group By drop down list
+		ind.getinccatddopt().click();
+
+		//Verify if records are grouped by Incentive Category
+		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Incentive Category is not successful.");
+		System.out.println("Group by Incentive Category is working properly.");
+		
+		//Open Group By drop down list options
+		cp.getclickgroupbydd().click();
+
+		//Select Estimated Value option from Group By drop down list
+		ind.getestvalddopt().click();
+
+		//Verify if records are grouped by Estimated Value
+		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Estimated Value is not successful.");
+		System.out.println("Group by Estimated Value is working properly.");
+		
+
+		//Open Group By drop down list options
+		cp.getclickgroupbydd().click();
+
+		//Select Incentive Detail Status option from Group By drop down list
+		ind.getstatusddopt().click();
+
+		//Verify if records are grouped by Incentive Detail Status
+		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Incentive Detail Status is not successful.");
+		System.out.println("Group by Incentive Detail Status is working properly.");
 	}
 
 }

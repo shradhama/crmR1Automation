@@ -19,6 +19,12 @@ public class CRMIncentiveDetailsPage {
 	By selectinccat = By.xpath("//div[@aria-label = 'Incentive Category Lookup results']/ul[1]/li[1]");//Locator for incentive catrgory option in drop down list 
 	By verifyincdet = By.xpath("//div[@data-id = 'IncentiveDetails_container']/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div");//Locator for Incentive detail at General tab of incentive records
 	By saveincdet = By.xpath("//button[@id = 'quickCreateSaveAndCloseBtn']");//Locator for Save & Close button
+	By contactddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[4]");//Locator for Contact group by option
+	By marketddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[5]");//Locator for Market group by option
+	By accountddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[9]");//Locator for Account group by option
+	By inccatddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[6]");//Locator for Incentive Category group by option
+	By estvalddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[7]");//Locator for Estimated Value group by option
+	By statusddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[8]");//Locator for Incentive Detail Status group by option
 	
 	public CRMIncentiveDetailsPage(WebDriver driver) {
 
@@ -65,5 +71,35 @@ public class CRMIncentiveDetailsPage {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(saveincdet));
 		return driver.findElement(saveincdet);
+	}
+	public WebElement getcontactddopt() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(contactddopt));
+		return driver.findElement(contactddopt);
+	}
+	public WebElement getmarketddopt() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(marketddopt));
+		return driver.findElement(marketddopt);
+	}
+	public WebElement getaccountddopt() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(accountddopt));
+		return driver.findElement(accountddopt);
+	}
+	public WebElement getinccatddopt() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(inccatddopt));
+		return driver.findElement(inccatddopt);
+	}
+	public WebElement getestvalddopt() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(estvalddopt));
+		return driver.findElement(estvalddopt);
+	}
+	public WebElement getstatusddopt() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(statusddopt));
+		return driver.findElement(statusddopt);
 	}
 }
