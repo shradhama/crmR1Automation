@@ -111,7 +111,7 @@ public class IncentiveDetailsPageTest extends base {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
 
 		//Click on Incentives Tab at left menu and search incentives containing Cyb
-		hp.getincentivedetailstab().click();
+		hp.getincentivestab().click();
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
 		ap.getclicksearchbutton().click();
 
@@ -139,7 +139,7 @@ public class IncentiveDetailsPageTest extends base {
 
 		//Verify if Incentive Details are properly added
 		Assert.assertTrue(ind.getverifyincdet().getText().contains(prop.getProperty("incentive")));
-		
+		System.out.println("Incentive Details added successfully.");
 		//Navigate back to Active accounts list
 		ap.getPageBackBtn().click();
 	}

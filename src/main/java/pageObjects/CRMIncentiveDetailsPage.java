@@ -16,8 +16,8 @@ public class CRMIncentiveDetailsPage {
 	By clicknewincdet = By.xpath("//button[@aria-label = 'New Incentive Detail']");//Locator for new incentive detail
 	By inccatdd = By.xpath("//input[@aria-label = 'Incentive Category, Lookup']");//Locator for incentive category drop down list
 	By inccatsearch = By.xpath("//button[@aria-label = 'Search records for Incentive Category, Lookup field']");//Locator for Search button for incentive category drop down
-	By selectinccat = By.xpath("//div[@aria-label = 'Incentive Category Lookup results']/ul[1]/li[1]");//Locator for incentive catrgory option in drop down list 
-	By verifyincdet = By.xpath("//div[@data-id = 'IncentiveDetails_container']/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div");//Locator for Incentive detail at General tab of incentive records
+	By selectinccat = By.xpath("//div[@aria-label = 'Incentive Category Lookup results']/ul[1]/li[1]");//Locator for incentive category option in drop down list 
+	By verifyincdet = By.xpath("//div[@data-id = 'IncentiveDetails_container']/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]");//Locator for Incentive detail at General tab of incentive records
 	By saveincdet = By.xpath("//button[@id = 'quickCreateSaveAndCloseBtn']");//Locator for Save & Close button
 	By contactddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[4]");//Locator for Contact group by option
 	By marketddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[5]");//Locator for Market group by option
