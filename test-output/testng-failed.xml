@@ -5,8 +5,8 @@
     <classes>
       <class name="crmframework.crmAutomation.IncentiveDetailsPageTest">
         <methods>
-          <include name="TS002_VerifyCreateIncentiveDetailsFromExistingIncentiveTest"/>
           <include name="initialize"/>
+          <include name="TS005_VerifyUpdateIncentiveDetailsTest"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.IncentiveDetailsPageTest -->
     </classes>
