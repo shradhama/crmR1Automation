@@ -13,7 +13,7 @@
 			<class name="crmframework.crmAutomation.IncentiveDetailsPageTest" />
 			<methods>
 			<include name="TS001_VerifyHomePageTest"/>
-			<include name="TS002_VerifyCreateIncentiveDetailsFromExistingIncentiveTest"/>
+			<include name="TS005_VerifyUpdateIncentiveDetailsTest"/>
 			</methods>
 		</classes>
 	</test>

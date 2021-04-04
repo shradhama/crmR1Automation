@@ -140,7 +140,8 @@ public class IncentiveDetailsPageTest extends base {
 		//Verify if Incentive Details are properly added
 		Assert.assertTrue(ind.getverifyincdet().getText().contains(prop.getProperty("incentive")));
 		System.out.println("Incentive Details added successfully.");
-		//Navigate back to Active accounts list
+		
+		//Navigate back to Incentive Details list
 		ap.getPageBackBtn().click();
 	}
 	@Test(priority=3)
@@ -229,5 +230,248 @@ public class IncentiveDetailsPageTest extends base {
 		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Incentive Detail Status is not successful.");
 		System.out.println("Group by Incentive Detail Status is working properly.");
 	}
+	@Test(priority=4)
+	public void TS004_VerifyGridFiltersIncentiveDetailsTest() throws InterruptedException
+	{
+		//The purpose of this test case:-
+		//CRM-T452- Verify filters on Incentive Details Grid
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		pl = new CRMPeoplePage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Incentives Tab at left menu 
+		hp.getincentivedetailstab().click();
+		Thread.sleep(3000);
+		
+		//Select Active Incentive Details option
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(3000);
+		ind.getselectactivetype().click();
+
+		//Click funnel for Account column
+		in.getaccountcolumn().click();
+		ap.getclickfunnelfilter().click();
+		Thread.sleep(3000);
+		
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ind.getfilterop().click();
+		ind.getfiltervalue().sendKeys(prop.getProperty("incdetacc"));
+		ap.getselectregionvalue().click();
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Account value selected on grid
+		WebElement Account = null;
+		for (int i=0;i<1;i++)
+		{
+			Account = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-7']"));
+			Assert.assertTrue(Account.getText().contains(prop.getProperty("incdetacc")));
+		}
+		System.out.println("Account matches expected criteria");
+
+		//Clear Filter for Account
+		in.getaccountcolumn().click();
+		ap.getclearfiltergrid().click();
+
+		//Click funnel for Contact column
+		in.getcontactcolumn().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ind.getfilterop().click();
+		ind.getfiltervalue().sendKeys(prop.getProperty("incdetcon"));
+		ap.getselectregionvalue().click();
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Contact value selected on accounts grid
+		WebElement Contact = null;
+		for (int i=0;i<3;i++)
+		{
+			Contact = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			Assert.assertTrue(Contact.getText().contains(prop.getProperty("incdetcon")));
+		}
+		System.out.println("Contact matches expected criteria");
+
+		//Clear Filter for Contact
+		in.getcontactcolumn().click();
+		ap.getclearfiltergrid().click();
+		
+		//Click funnel for Market column
+		in.getmarketcolumn().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ind.getfilterop().click();
+		ind.getfiltervalue().sendKeys(prop.getProperty("searchmarketinc"));
+		ap.getselectregionvalue().click();
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Market value selected on accounts grid
+		WebElement Market = null;
+		for (int i=0;i<7;i++)
+		{
+			Market = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
+			Assert.assertTrue(Market.getText().contains(prop.getProperty("searchmarketinc")));
+		}
+		System.out.println("Market matches expected criteria");
+
+		//Clear Filter for Market
+		in.getmarketcolumn().click();
+		ap.getclearfiltergrid().click();
+		Thread.sleep(3000);
+		
+		//Click funnel for Incentive Category column
+		ind.getinccat().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ind.getfilterop().click();
+		ind.getfiltervalue().sendKeys(prop.getProperty("incdetcat"));
+		ap.getselectregionvalue().click();
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Incentive Category value selected on grid
+		WebElement IncCat = null;
+		for (int i=0;i<7;i++)
+		{
+			IncCat = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-4']"));
+			Assert.assertTrue(IncCat.getText().contains(prop.getProperty("incdetcat")));
+		}
+		System.out.println("Incentive Category matches expected criteria");
+		Thread.sleep(3000);
+		
+		//Clear Filter for Incentive Category
+		ind.getinccat().click();
+		ap.getclearfiltergrid().click();
+		Thread.sleep(3000);
+				
+		//Click funnel for Estimated Value column
+		ind.getincestval().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ind.getfilterop().click();
+		Thread.sleep(2000);
+		ind.getfiltervalue().click();
+		Thread.sleep(2000);
+		ind.getfiltervalue().sendKeys(prop.getProperty("incdetestval"));
+		ap.getselectregionvalue().click();
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Estimated Value value selected on accounts grid
+		WebElement EstVal = null;
+		for (int i=0;i<7;i++)
+		{
+			EstVal = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-5']"));
+			Assert.assertTrue(EstVal.getText().contains(prop.getProperty("incdetestval")));
+		}
+		System.out.println("Estimated Value matches expected criteria");
+		Thread.sleep(3000);
+		
+		//Clear Filter for Estimated Value
+		ind.getincestval().click();
+		ap.getclearfiltergrid().click();
+		Thread.sleep(3000);
+		
+		//Click funnel for Status column
+		ind.getincstatus().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		ind.getfilterop().click();
+		ind.getfiltervalue().sendKeys(prop.getProperty("incdetstatus"));
+		ap.getselectregionvalue().click();
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Status value selected on grid
+		WebElement Status = null;
+		for (int i=0;i<7;i++)
+		{
+			Status = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-6']"));
+			Assert.assertTrue(Status.getText().contains(prop.getProperty("incdetstatus")));
+		}
+		System.out.println("Status matches expected criteria");
+		Thread.sleep(3000);
+		
+		//Clear Filter for Status
+		ind.getincstatus().click();
+		ap.getclearfiltergrid().click();
+
+	}
+	@Test(priority=5)
+	public void TS005_VerifyUpdateIncentiveDetailsTest() throws InterruptedException
+	{
+		//The purpose of this test case:-
+		//CRM-T452- Verify filters on Incentive Details Grid
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		pl = new CRMPeoplePage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Incentives Tab at left menu 
+		hp.getincentivedetailstab().click();
+		Thread.sleep(5000);
+		
+		//Select Active Incentive Details option
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(3000);
+		ind.getselectactivetype().click();
+		Thread.sleep(5000);
+		
+		//Open existing incentive
+		Actions action = new Actions(driver);
+		WebElement OpenIncentive = in.selectIncentiveRecord();
+		action.doubleClick(OpenIncentive).perform();
+		
+		//Update already selected incentive
+		Actions inc = new Actions(driver);
+		inc.moveToElement(ind.getselectedincentive()).perform();
+		ind.getdeleteinc().click();
+		ind.getsearchinc().click();
+		ind.getselectinc().click();
+		Thread.sleep(3000);
+		
+		//Update already selected incentive category
+		Actions inccat = new Actions(driver);
+		inccat.moveToElement(ind.getselectedinccat()).build().perform();
+		ind.getdeleteinccat().click();
+		ind.getsearchinccat().click();
+		ind.getselinccat().click();
+		Thread.sleep(5000);
+		
+		//Save incentive details
+		ap.getAccSaveBtn().click();;
+		Thread.sleep(3000);
+		
+		//Refresh record and verify if incentive details are updated properly
+		ap.getAccRefreshBtn().click();
+		Assert.assertEquals(in.getIncentiveNameOnIncForm().getText(), ind.getselectedincentive().getText()+" - "+ind.getselectedinccat().getText());
+		System.out.println("Incentive Details are updated successfully.");
+		
+		//Navigate back to Incentive Details list
+		ap.getPageBackBtn().click();
+		
+	}
+		
 
 }
