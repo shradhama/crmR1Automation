@@ -472,6 +472,116 @@ public class IncentiveDetailsPageTest extends base {
 		ap.getPageBackBtn().click();
 		
 	}
+	
+	@Test(priority=3)
+	public void TS006_VerifyExportToExcelIncentivesDetailsTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T54- Verify Export To Excel functionality for Incentive Details
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+		cp = new CRMContactPage(driver);
+		pl = new CRMPeoplePage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Incentives Tab at left menu and search incentives containing Cyb
+		hp.getincentivedetailstab().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("incentivedetailsearch"));
+		ap.getclicksearchbutton().click();
+
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+	    Thread.sleep(8000);
+		//Click Export To Excel option under it
+		ind.getincentivedetailsexportdropdown().click();
+
+		//Export file to online excel
+		ap.getopenexcelonline().click();
+
+		//ap.getsaveexcelonline().click();
+		ap.getsaveexcelonline().click();   
+
+		//Click Track Progress button
+		cp.getexporttrackprogressbtn().click();
+		
+		//Switch to new My Imports tab
+		Set<String> windows1 = driver.getWindowHandles();
+		Iterator<String>it = windows1.iterator();
+		String parentId = it.next();
+		String childId = it.next();
+		driver.switchTo().window(childId);
+		
+		Thread.sleep(50000);
+		driver.navigate().refresh();
+		//Verify export to excel online
+		System.out.println(pl.getonlineexportverification().getText());
+		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
+		System.out.println("Excel exported online successfully.");
+		Thread.sleep(10000);
+
+		//Switch to previous browser tab
+		Set<String> windows = driver.getWindowHandles();
+		Iterator<String>it1 = windows.iterator();
+		String parentId1 = it1.next();
+		String childId1 = it1.next();
+		driver.switchTo().window(parentId1);
+		
+/*
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		Thread.sleep(3000);
+		//Click Export To Excel option under it
+		ind.getincentivedetailsexportdropdown().click();
+
+		//Export Excel to Static Worksheet
+		ap.getexporttostaticworksheet().click();
+
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		
+		Thread.sleep(3000);
+		//Click Export To Excel option under it
+		ind.getincentivedetailsexportdropdown().click();
+
+		//Export Excel to Static Worksheet Page Only
+		ap.getexporttostaticworksheetpageonly().click();
+
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		Thread.sleep(3000);
+		//Click Export To Excel dropdown arrow option under it
+		ind.getincentivedetailsexportdropdown().click();
+
+		//Export to Dynamic Worksheet
+		ap.getexporttodynamicworksheet().click();
+		Thread.sleep(3000);
+		ind.getselectcheckbox1().click();
+		ind.getselectcheckbox2().click();
+		ap.getexportworksheetpopup().click();
+		
+		
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		Thread.sleep(3000);
+		//Click Export To Excel option under it
+		ind.getincentivedetailsexportdropdown().click();
+
+		//Export to Dynamic Pivot Table
+		ap.getexporttodynamicpivottable().click();
+		ind.getselectcheckbox1().click();
+		ind.getselectcheckbox2().click();
+		ap.getexportworksheetpopup().click();
+	}
+
+	
 		
 
 }
