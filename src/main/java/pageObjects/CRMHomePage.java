@@ -32,6 +32,7 @@ public class CRMHomePage {
 	By activeincentivestitle = By.xpath("//h1[@aria-label='Active Incentives']"); //Locator for Active Incentives title
 	By incentivedetailstab = By.xpath("//span[contains(text(),'Incentive Details')]");//Locator for incentive details
 	
+	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
