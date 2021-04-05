@@ -43,7 +43,7 @@ public class CRMIncentiveDetailsPage {
 	By selinccat = By.xpath("//li[@data-id = 'xxc_incentivecategory.fieldControl-LookupResultsDropdown_xxc_incentivecategory_resultsContainer']");//Locator incentive category option
 	By saveincdet = By.xpath("//button[@data-id = 'xxc_incentivedetail|NoRelationship|Form|Mscrm.Form.xxc_incentivedetail.Save']");//Locator for Save button in incentive details page
 	By refincdet = By.xpath("//button[@data-id = 'xxc_incentivedetail|NoRelationship|Form|Mscrm.Form.xxc_incentivedetail.RefreshModernButton']");//Locator for Refresh button
-	By incentivedetailsexportdropdown= By.xpath("//button[@data-id = 'xxc_incentivedetail|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_incentivedetail.ExportToExcel.Menu$splitButtonId']");
+	By incentivedetailsexportdropdown= By.xpath("//button[@data-id = 'xxc_incentivedetail|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_incentivedetail.ExportToExcel.Menu$splitButtonId']");//Locator for export to excel dropdown
 	By selectcheckbox1 = By.xpath("//input[@data-id='entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_incentivedetailcreatedby']");//Locator for checkbox
 	By selectcheckbox2 = By.xpath("//input[@data-id='entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_incentivedetailcreatedon']");//Locator for checkbox
 
