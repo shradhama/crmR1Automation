@@ -46,7 +46,20 @@ public class CRMIncentiveDetailsPage {
 	By incentivedetailsexportdropdown= By.xpath("//button[@data-id = 'xxc_incentivedetail|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_incentivedetail.ExportToExcel.Menu$splitButtonId']");//Locator for export to excel dropdown
 	By selectcheckbox1 = By.xpath("//input[@data-id='entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_incentivedetailcreatedby']");//Locator for checkbox
 	By selectcheckbox2 = By.xpath("//input[@data-id='entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_incentivedetailcreatedon']");//Locator for checkbox
-
+	By deactivateincdet = By.xpath("//button[@data-id = 'xxc_incentivedetail|NoRelationship|Form|Mscrm.Form.xxc_incentivedetail.Deactivate']");//Locator for deactivate button for incentive details
+	By activateincdet = By.xpath("//button[@data-id = 'xxc_incentivedetail|NoRelationship|Form|Mscrm.Form.xxc_incentivedetail.Activate']");//Locator for Activate button for inactive incentive details
+	By incdetreadonlytext = By.xpath("//div[@data-id = 'form-header']/div[1]/div[1]/div[1]/span[2]");//Locator for Read Only title when incentive details are deactivated
+	By gridmarket = By.xpath("//div[@data-id = 'cell-0-7']");//Locator for Market column in the grid
+	By incetivecategory = By.xpath("//ul[@data-id = 'xxc_incentivecategory.fieldControl-LookupResultsDropdown_xxc_incentivecategory_SelectedRecordList']");//Locator for incentive category when incentive details record is opened
+	By openincentive = By.xpath("//div[@data-id = 'xxc_incentiveid.fieldControl-LookupResultsDropdown_xxc_incentiveid_selected_tag_text']");//Locator for incentive at incentive details page
+	By contact = By.xpath("//ul[@data-id = 'xxc_contactid.fieldControl-LookupResultsDropdown_xxc_contactid_SelectedRecordList']");//Locator for contact at incentives form
+	By market = By.xpath("//ul[@data-id = 'xxc_marketid.fieldControl-LookupResultsDropdown_xxc_marketid_SelectedRecordList']");//Locator for market at incentives form
+	By account = By.xpath("//ul[@data-id = 'xxc_accountid.fieldControl-LookupResultsDropdown_xxc_accountid_SelectedRecordList']");//Locator for Account at incentives form
+	By accountnameindetgrid = By.xpath("//div[@aria-label = 'Active Incentive Details Account Subgrid']");//Locator for Contact in incentive details grid at account page
+	By contactnameindetgrid = By.xpath("//div[@aria-label = 'Active Incentive Details Contact Subgrid']");//Locator for Market in incentive details grid at account page
+	By inccatindetgrid = By.xpath("//div[@aria-label = 'Active Incentive Details Account Subgrid']/div[2]/div[4]");//Locator for Incentive Category in incentive details grid at account page
+	By inactiveincdetgrid = By.xpath("//div[@aria-label = 'Inactive Incentive Details']");//Locator for inactive Incentive Details grid
+	
 	
 	
 	public CRMIncentiveDetailsPage(WebDriver driver) {
@@ -246,5 +259,72 @@ public class CRMIncentiveDetailsPage {
 		wait.until(ExpectedConditions.elementToBeClickable(selectcheckbox2));
 		return driver.findElement(selectcheckbox2);
 	}
-	
+	public WebElement getincetivecategory() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(incetivecategory));
+		return driver.findElement(incetivecategory);
+	}
+	public WebElement getdeactivateincdet() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(deactivateincdet));
+		return driver.findElement(deactivateincdet);
+	}
+	public WebElement getactivateincdet() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(activateincdet));
+		return driver.findElement(activateincdet);
+	}
+	public WebElement getincdetreadonlytext() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(incdetreadonlytext));
+		return driver.findElement(incdetreadonlytext);
+	}
+	public WebElement getgridmarket() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(gridmarket));
+		return driver.findElement(gridmarket);
+	}
+	public WebElement getopenincentive() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(openincentive));
+		return driver.findElement(openincentive);
+	}
+	public WebElement getcontact() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(contact));
+		return driver.findElement(contact);
+	}
+	public WebElement getmarket() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(market));
+		return driver.findElement(market);
+	}
+	public WebElement getaccount() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(account));
+		return driver.findElement(account);
+	}
+	public WebElement getaccountnameindetgrid() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(accountnameindetgrid));
+		return driver.findElement(accountnameindetgrid);
+	}
+	public WebElement getcontactnameindetgrid() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(contactnameindetgrid));
+		return driver.findElement(contactnameindetgrid);
+	}
+	public WebElement getinccatindetgrid() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(inccatindetgrid));
+		return driver.findElement(inccatindetgrid);
+	}
+	public WebElement getinactiveincdetgrid() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(inactiveincdetgrid));
+		return driver.findElement(inactiveincdetgrid);
+	}
 }
