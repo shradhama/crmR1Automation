@@ -10,10 +10,10 @@
 			<!-- <class name="crmframework.crmAutomation.OtherTest" /> -->
 			<!--<class name="crmframework.crmAutomation.ContactPageTest" />-->
 			<!--<class name="crmframework.crmAutomation.PeoplePageTest" />-->
-			<class name="crmframework.crmAutomation.IncentiveDetailsPageTest" />
+			<class name="crmframework.crmAutomation.IncentivesPageTest" />
 			<methods>
-			<include name="TS001_VerifyHomePageTest"/>
-			<include name="TS006_VerifyExportToExcelIncentivesDetailsTest"/>
+			<!-- <include name="TS001_VerifyHomePageTest"/> -->
+			<exclude name="TS003_VerifyExportToExcelIncentivesTest"/>
 			</methods>
 		</classes>
 	</test>

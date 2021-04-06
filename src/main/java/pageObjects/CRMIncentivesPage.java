@@ -22,7 +22,7 @@ public class CRMIncentivesPage {
 	By selectcontactname = By.xpath("//span[@data-id = 'xxc_contactid.fieldControl-emailaddress11_0_0']"); //Locator of Contact name from lookup list
 	By marckettxtbx = By.xpath("//input[@aria-label = 'Market, Lookup']"); //Locator for Market text field on incentive form
 	By marketssearchrecordsbtn = By.xpath("//button[@aria-label = 'Search records for Market, Lookup field']"); //Locator for Search records button of Market field
-	By selectmarketname = By.xpath("//span[@data-id = 'xxc_marketid.fieldControl-xxc_channelid1_0_0']"); //Locator of Market name from lookup list
+	By selectmarketname = By.xpath("//span[@data-id='xxc_marketid.fieldControl-xxc_name0_0_0']"); //Locator of Market name from lookup list
 	By referralsourcetxtbx = By.xpath("//input[@aria-label = 'Referral Source, Lookup']"); //Locator for Referral source text field on incentive form
 	By referralsourcesearchrecordsbtn = By.xpath("//button[@aria-label = 'Search records for Referral Source, Lookup field']"); //Locator for Search records button of Referral Source field
 	By selectreferralsourcename = By.xpath("//span[@data-id = 'xxc_referralsourceid.fieldControl-xxc_type1_0_0']"); //Locator of Referral source name from lookup list
@@ -58,6 +58,20 @@ public class CRMIncentivesPage {
 	By activationpopupactivatebtn = By.xpath("//button[@data-id='ok_id']"); //Locator for Activate button on confirmation popup
 	By activeincoptn = By.xpath("//*[text()='Active Incentives']"); //Locator for 'Active Incentives' item
 	By clearsearch = By.xpath("//button[@aria-label = 'Clear search']");//Locator for clear search in the grid
+	By selectedmarketnametxtbx = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.SimpleLookupControl|xxc_marketid.fieldControl|xxc_incentive']"); //Locator for Selected Market name text box
+	By selectedmarketnamedeletebtn = By.xpath("//button[@data-id='xxc_marketid.fieldControl-LookupResultsDropdown_xxc_marketid_selected_tag_delete']"); //Locator for Delete button for Selected Market name text box
+	By updatemarketname = By.xpath("//span[@data-id='xxc_marketid.fieldControl-xxc_name0_0_1']"); //Locator of 2nd Market name from lookup list
+	By selectedaccountnametxtbx = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.SimpleLookupControl|xxc_accountid.fieldControl|xxc_incentive']"); //Locator for Selected Account name text box
+	By selectedaccountnamedeletebtn = By.xpath("//button[@data-id='xxc_accountid.fieldControl-LookupResultsDropdown_xxc_accountid_selected_tag_delete']"); //Locator for Delete button for Selected Account name text box
+	By updateaccountname = By.xpath("//span[@data-id='xxc_accountid.fieldControl-name0_0_1']"); //Locator for 2nd Account name
+	By accountsearchrecordsbtn = By.xpath("//button[@aria-label = 'Search records for Account, Lookup field']"); //Locator for Search records button of Account field
+	By accountfieldlabel = By.xpath("//label[contains(text(),'Account')]"); //Locator for Account field label
+	By selectedcontacttxtbx = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.SimpleLookupControl|xxc_contactid.fieldControl|xxc_incentive']"); //Locator for Selected Contact text box
+	By selectedcontactdeletebtn = By.xpath("//button[@data-id='xxc_contactid.fieldControl-LookupResultsDropdown_xxc_contactid_selected_tag_delete']"); //Locator for Delete button for Selected Contact name text box
+	By updatecontactname = By.xpath("//span[@data-id='xxc_contactid.fieldControl-fullname0_0_2']"); //Locator for 2nd Contact name
+	By accountlinkinincentivestab = By.xpath("//a[@href='https://imcqa.crm.dynamics.com/main.aspx?appid=9a772693-4e17-4119-97de-fede005ac172&pagetype=entityrecord&etn=account&id=18237dad-9781-ea11-a811-000d3a1bb158']"); //Locator for Account name in Incentives tab
+	By selectincentiverecordonaccform = By.xpath("//div[@aria-label='Readonly Grid']/div/div/div/div[2]/div[1]"); //Locator for select incentive record on account form
+	
 	
 	public CRMIncentivesPage(WebDriver driver) {
 
@@ -82,6 +96,8 @@ public class CRMIncentivesPage {
 		return driver.findElement(selectcheckbox2);
 	}
 	public WebElement getIncentiveTab() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(incentivetab));
 		return driver.findElement(incentivetab);
 	}
 
@@ -94,6 +110,8 @@ public class CRMIncentivesPage {
 	}
 
 	public WebElement getContactSearchRecordsBtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactsearchrecordsbtn));
 		return driver.findElement(contactsearchrecordsbtn);
 	}
 
@@ -106,6 +124,8 @@ public class CRMIncentivesPage {
 	}
 
 	public WebElement getMarketSearchRecordsBtn() {	
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(marketssearchrecordsbtn));
 		return driver.findElement(marketssearchrecordsbtn);
 	}
 
@@ -157,7 +177,8 @@ public class CRMIncentivesPage {
 	public WebElement getReferralSourceFieldLabel(){
 		return driver.findElement(referralsourcefieldlabel);
 	}
-	public WebElement selectIncentiveRecord(){
+	public WebElement selectIncentiveRecord() throws InterruptedException{
+		Thread.sleep(4000);
 		return driver.findElement(selectincentiverecord);
 	}
 	public WebElement getIncDeactivateBtn(){
@@ -255,6 +276,60 @@ public class CRMIncentivesPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.elementToBeClickable(clearsearch));
 		return driver.findElement(clearsearch);
+	}
+	public WebElement getSelectedMarketNameTxtbx() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectedmarketnametxtbx));
+		return driver.findElement(selectedmarketnametxtbx);
+	}
+	public WebElement getSelectedMarketNameDeleteBtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectedmarketnamedeletebtn));
+		return driver.findElement(selectedmarketnamedeletebtn);
+	}
+	
+	public WebElement UpdateMarketName() {
+		return driver.findElement(updatemarketname);
+	}
+	
+	public WebElement getSelectedAccountNameTxtbx() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectedaccountnametxtbx));
+		return driver.findElement(selectedaccountnametxtbx);
+	}
+	public WebElement getSelectedAccountNameDeleteBtn() {
+		return driver.findElement(selectedaccountnamedeletebtn);
+	}
+	public WebElement UpdateAccountName() {
+		return driver.findElement(updateaccountname);
+	}
+	public WebElement getAccountSearchRecordsBtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accountsearchrecordsbtn));
+		return driver.findElement(accountsearchrecordsbtn);
+	}
+	public WebElement getAccountFieldLabel(){
+		return driver.findElement(accountfieldlabel);
+	}
+	public WebElement getSelectedContactNameTxtbx() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectedcontacttxtbx));
+		return driver.findElement(selectedcontacttxtbx);
+	}
+	public WebElement getSelectedContactNameDeleteBtn() {
+		return driver.findElement(selectedcontactdeletebtn);
+	}
+	
+	public WebElement UpdateContactName() {
+		return driver.findElement(updatecontactname);
+	}
+	public WebElement getAccountLinkInIncentivesTab() {
+		return driver.findElement(accountlinkinincentivestab);
+	}
+	
+	public WebElement selectIncentiveRecordonAccForm() throws InterruptedException {
+		Thread.sleep(4000);
+		return driver.findElement(selectincentiverecordonaccform);
 	}
 }
 
