@@ -1351,8 +1351,8 @@ public class AccountPageTest extends base {
 		ap.getDiscardChangesBtn().click();
 	}
 	//Manual Fail_Caught By Automation	
-	@Test(priority=24)
-	public void TS024_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest() throws InterruptedException
+	@Test(priority=29)
+	public void TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//CRM-T63- Verify if an account is deactivated with reason 'Out of Business', all 
@@ -1490,8 +1490,8 @@ public class AccountPageTest extends base {
 		ap.getPageBackBtn().click();
 		ap.getDiscardChangesBtn().click();
 	}
-	@Test(priority=29)
-	public void TS029_VerifyCountryAutocomplete() throws InterruptedException
+	@Test(priority=28)
+	public void TS028_VerifyCountryAutocomplete() throws InterruptedException
 	{
 		//The purpose of this test case to:-
 		//CRM-T132- Verify a picklist should be displayed after user starts typing country name 

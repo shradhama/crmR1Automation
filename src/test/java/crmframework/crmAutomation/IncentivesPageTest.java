@@ -300,7 +300,8 @@ public class IncentivesPageTest extends base {
 		//Click on Save and Close button
 		in.getSavenCloseBtn().click();
 		Thread.sleep(15000);
-
+		ap.getDuplicateRecordsPopupIgnorenSavebtn().click(); //newly added
+		
 		//Verify that Incentive should be created and should now be displayed in the incentives section 
 		//under incentive tab on account form
 		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
@@ -495,7 +496,7 @@ public class IncentivesPageTest extends base {
 		in.getmarketcolumn().click();
 		ap.getclearfiltergrid().click();
 	}
-	
+
 	@Test(priority=7)
 	public void TS007_VerifyActivateInactiveIncentiveTest() throws InterruptedException 
 	{
@@ -645,13 +646,13 @@ public class IncentivesPageTest extends base {
 
 		//Click on Incentives Tab at left menu 
 		hp.getincentivestab().click();
-		
+
 		//Click search text box and search for account name
 		ap.getsearchaccounttextbox().click();
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
 		ap.getclicksearchbutton().click();
 		Thread.sleep(5000);
-		
+
 		//Verify Account value selected on accounts grid
 		WebElement Account = null;
 		for (int i=0;i<3;i++)
@@ -660,16 +661,16 @@ public class IncentivesPageTest extends base {
 			Assert.assertTrue(Account.getText().contains(prop.getProperty("name")));
 		}
 		System.out.println("Incentives exist for searched account name.");
-		
+
 		//Remove searched account name
 		in.getclearsearch().click();
-		
+
 		//Click search text box and search for Contact name
 		ap.getsearchaccounttextbox().click();
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("searchcontactinc"));
 		ap.getclicksearchbutton().click();
 		Thread.sleep(5000);	
-		
+
 		//Verify Contact value selected on accounts grid
 		WebElement Contact = null;
 		for (int i=0;i<1;i++)
@@ -678,16 +679,16 @@ public class IncentivesPageTest extends base {
 			Assert.assertTrue(Contact.getText().contains(prop.getProperty("searchcontactinc")));
 		}
 		System.out.println("Incentives exist for searched contact name.");
-			
+
 		//Remove searched account name
 		in.getclearsearch().click();
-		
+
 		//Click search text box and search for Market name
 		ap.getsearchaccounttextbox().click();
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("searchmarketinc"));
 		ap.getclicksearchbutton().click();
 		Thread.sleep(5000);		
-		
+
 		//Verify Contact value selected on accounts grid
 		WebElement Market = null;
 		for (int i=0;i<7;i++)
@@ -696,9 +697,156 @@ public class IncentivesPageTest extends base {
 			Assert.assertTrue(Market.getText().contains(prop.getProperty("searchmarketinc")));
 		}
 		System.out.println("Incentives exist for searched market name.");
-				
+
 		//Remove searched account name
 		in.getclearsearch().click();
+	}
+
+	@Test(priority=9)
+	public void TS009_VerifyUpdateiIncentiveFromContactTest() throws InterruptedException 
+	{
+		//The purpose of this test case to:-
+		//T36- Verify that user is able to update incentive from contact form
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Contacts tab
+		hp.getContactsTab().click();
+
+		//Open any active contact
+		cp.getQLetterFilterLink().click();
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+
+		// Click Incentives tab of an existing contact
+		in.getIncentiveTab().click();
+
+		//Click on New Incentive button
+		in.getNewIncentiveBtn().click();
+
+		// Select Market at New Incentive Form
+		in.getMarketTextBox().click();
+		in.getMarketSearchRecordsBtn().click();
+		in.SelectMarketName().click();
+		in.getMarketFieldLabel().click();
+
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		Thread.sleep(15000);
+
+		ap.getDuplicateRecordsPopupIgnorenSavebtn().click(); //newly added
+		
+		//Select an incentive from incentives tab
+		in.selectIncentiveRecord().click();
+
+		//Click on Edit option
+		in.getIncentiveEditButton().click();
+
+		act= new Actions(driver);
+		act.moveToElement(in.getSelectedMarketNameField()).perform();
+
+		//Delete existing market name value and Update with new one
+		in.getSelectedMarketNameDeleteBtn().click();
+
+		in.getMarketSearchRecordsBtn().click();
+		in.UpdateMarketName().click();
+		in.getMarketFieldLabel().click();
+		String updatedmarketname = in.getSelectedMarketNameField().getText();
+		System.out.println("Updated Market name: "+updatedmarketname);
+
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		Thread.sleep(15000);
+
+		//Verify that the Market should be updated in the incentive section under incentive tab
+		Assert.assertTrue(in.getMarketNameInIncentivesTabOfContact().getText().contains(updatedmarketname));
+
+		//Click on the Account link in accounts column to navigate to the account form	
+		act= new Actions(driver);
+		act.moveToElement(in.getAccountLinkInIncentivesTab()).perform();
+
+		in.getAccountLinkInIncentivesTab().click();
+
+		// Click Incentives tab on account form
+		in.getIncentiveTab().click();
+
+		//Select the incentive
+		in.selectIncentiveRecordonAccForm().click();
+
+		//Click on Edit option
+		in.getIncentiveEditButton().click();
+
+		act= new Actions(driver);
+		act.moveToElement(in.getSelectedAccountNameField()).perform();
+
+		//Delete existing market name value and Update with new one
+		in.getSelectedAccountNameDeleteBtn().click();
+
+		//Update Account on the Incentive form
+		in.getAccountSearchRecordsBtn().click();
+		in.UpdateAccountName().click();
+		in.getAccountFieldLabel().click();
+
+		String updatedaccountname = in.getSelectedAccountNameField().getText();
+		System.out.println("Account Name: "+updatedaccountname);
+
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		Thread.sleep(15000);
+
+		//Verify that Incentive should not be displayed in the incentives section as the account is changed
+		List<WebElement> validateIncentive = driver.findElements(By.xpath("//div[@title='"+updatedaccountname+"']"));
+		Assert.assertTrue(validateIncentive.size()== 0);
+
+		//Navigate to the contacts under demand driver in left menu
+		hp.getContactsTab().click();
+		cp.getBLetterFilterLink().click();
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+
+		// Click Incentives tab of an existing contact
+		in.getIncentiveTab().click();
+
+		//Click on New Incentive button
+		in.getNewIncentiveBtn().click();
+
+		// Select Market at New Incentive Form
+		in.getMarketTextBox().click();
+		in.getMarketSearchRecordsBtn().click();
+		in.SelectMarketName().click();
+		in.getMarketFieldLabel().click();
+
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		ap.getDuplicateRecordsPopupIgnorenSavebtn().click();
+		Thread.sleep(15000);
+
+		//Select the incentive
+		in.selectIncentiveRecord().click();
+
+		//Click on Edit option
+		in.getIncentiveEditButton().click();
+
+		//Update Contact on the Incentive form
+		act= new Actions(driver);
+		act.moveToElement(in.getSelectedContactNameField()).perform();
+
+		in.getSelectedContactNameDeleteBtn().click();
+		in.getContactSearchRecordsBtn().click();
+		in.UpdateContactName().click();
+		in.getContactFieldLabel().click();
+
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		ap.getDuplicateRecordsPopupIgnorenSavebtn().click();
+		Thread.sleep(15000);
+
+		//Verify that Incentive should not be displayed in the incentives section as the contact is changed
+		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
 	}
 
 }
