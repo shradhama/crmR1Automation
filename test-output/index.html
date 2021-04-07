@@ -90,7 +90,11 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
+
+                    <span class="method-stats">3 methods,   3 passed</span>
+
                     <span class="method-stats">2 methods,   2 passed</span>
+
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,12 +105,25 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
+
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.AccountPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
+
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.IncentiveDetailsPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
+
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
+
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.AccountPageTest" hash-for-method="TS014_VerifyStateAndRegionInGridTest">TS014_VerifyStateAndRegionInGridTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.AccountPageTest" hash-for-method="TS024_VerifyExportToExcelTest">TS024_VerifyExportToExcelTest</a> <!-- method navigator-link -->
+
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.IncentiveDetailsPageTest" hash-for-method="TS008_VerifyActivateInactiveIncentiveDetailsTest">TS008_VerifyActivateInactiveIncentiveDetailsTest</a> <!-- method navigator-link -->
+
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -124,7 +141,11 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
+
+              <span class="class-name">crmframework.crmAutomation.AccountPageTest</span>
+
               <span class="class-name">crmframework.crmAutomation.IncentiveDetailsPageTest</span>
+
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -136,9 +157,22 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+
+                  <a name="TS014_VerifyStateAndRegionInGridTest">
+                  </a> <!-- TS014_VerifyStateAndRegionInGridTest -->
+                  <span class="method-name">TS014_VerifyStateAndRegionInGridTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS024_VerifyExportToExcelTest">
+                  </a> <!-- TS024_VerifyExportToExcelTest -->
+                  <span class="method-name">TS024_VerifyExportToExcelTest</span>
+
                   <a name="TS008_VerifyActivateInactiveIncentiveDetailsTest">
                   </a> <!-- TS008_VerifyActivateInactiveIncentiveDetailsTest -->
                   <span class="method-name">TS008_VerifyActivateInactiveIncentiveDetailsTest</span>
+
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -155,12 +189,22 @@
 &lt;suite name=&quot;Suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
+
+      &lt;class name=&quot;crmframework.crmAutomation.AccountPageTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
+          &lt;include name=&quot;TS014_VerifyStateAndRegionInGridTest&quot;/&gt;
+          &lt;include name=&quot;TS024_VerifyExportToExcelTest&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- crmframework.crmAutomation.AccountPageTest --&gt;
+
       &lt;class name=&quot;crmframework.crmAutomation.IncentiveDetailsPageTest&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
           &lt;include name=&quot;TS008_VerifyActivateInactiveIncentiveDetailsTest&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- crmframework.crmAutomation.IncentiveDetailsPageTest --&gt;
+
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -200,6 +244,21 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
+
+data.addRows(3);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'TS024_VerifyExportToExcelTest')
+data.setCell(0, 2, 'crmframework.crmAutomation.AccountPageTest')
+data.setCell(0, 3, 165314);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'TS001_VerifyHomePageTest')
+data.setCell(1, 2, 'crmframework.crmAutomation.AccountPageTest')
+data.setCell(1, 3, 114526);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'TS014_VerifyStateAndRegionInGridTest')
+data.setCell(2, 2, 'crmframework.crmAutomation.AccountPageTest')
+data.setCell(2, 3, 66243);
+
 data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TS001_VerifyHomePageTest')
@@ -209,11 +268,16 @@ data.setCell(1, 0, 1)
 data.setCell(1, 1, 'TS008_VerifyActivateInactiveIncentiveDetailsTest')
 data.setCell(1, 2, 'crmframework.crmAutomation.IncentiveDetailsPageTest')
 data.setCell(1, 3, 69512);
+
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
+
+              <span class="suite-total-time">Total running time: 5 minutes</span>
+
               <span class="suite-total-time">Total running time: 2 minutes</span>
+
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -228,6 +292,65 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+
+            <span class="header-content">26 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">crmframework.crmAutomation.AccountPageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">TS017_VerifyDuplicateAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS022_VerifyMediaSegmentationFieldTest</span>
+                <br/>
+                <span class="ignored-method-name">TS003_VerifyAddAppointmentToAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS025_VerifyBusinessRuleForAddressTest</span>
+                <br/>
+                <span class="ignored-method-name">TS027_VerifyAddNewTaskFromTimelineToAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS015_VerifyNamePhoneCityInGridTest</span>
+                <br/>
+                <span class="ignored-method-name">TS012_VerifyAddNewPostToAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS019_VerifyUpdateAccountInformation</span>
+                <br/>
+                <span class="ignored-method-name">TS016_VerifySearchusingAccountNameandPhoneTest</span>
+                <br/>
+                <span class="ignored-method-name">TS028_VerifyCountryAutocomplete</span>
+                <br/>
+                <span class="ignored-method-name">TS005_VerifySearchAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS023_VerifyDetailsTabOnAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS006_VerifyAuditHistoryTabOnAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS020_VerifyAddContactTest</span>
+                <br/>
+                <span class="ignored-method-name">TS010_VerifyBusinessRuleForPhoneNumberTest</span>
+                <br/>
+                <span class="ignored-method-name">TS026_VerifyAssociatedListsSectionTest</span>
+                <br/>
+                <span class="ignored-method-name">TS009_VerifyAccountStatusToDeactivateAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS004_VerifyAddMarketingRelationshipOwnerToAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS013_VerifyPhoneCallOnAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS021_VerifyUpdateContactsFromAccountFormTest</span>
+                <br/>
+                <span class="ignored-method-name">TS018_VerifyDeactivateAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS011_VerifyAddNoteToAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS008_VerifyAccountStatusToActivateAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS007_VerifyParentAccountTest</span>
+                <br/>
+                <span class="ignored-method-name">TS002_VerifyCreateNewAccountTest</span>
+
             <span class="header-content">6 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
@@ -245,6 +368,7 @@ return data;
                 <span class="ignored-method-name">TS003_VerifyGroupByOptionsIncentiveDetailsTest</span>
                 <br/>
                 <span class="ignored-method-name">TS007_VerifyDeactivateInactiveIncentiveDetailsTest</span>
+
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -256,18 +380,34 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+
+              <div class="chronological-class-name">crmframework.crmAutomation.AccountPageTest</div> <!-- chronological-class-name -->
+
               <div class="chronological-class-name">crmframework.crmAutomation.IncentiveDetailsPageTest</div> <!-- chronological-class-name -->
+
               <div class="configuration-test before">
                 <span class="method-name">initialize</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">TS001_VerifyHomePageTest</span>
+
+                <span class="method-start">7732 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS014_VerifyStateAndRegionInGridTest</span>
+                <span class="method-start">122272 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS024_VerifyExportToExcelTest</span>
+                <span class="method-start">188518 ms</span>
+
                 <span class="method-start">5931 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TS008_VerifyActivateInactiveIncentiveDetailsTest</span>
                 <span class="method-start">114940 ms</span>
+
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="353845" started-at="2021-04-07T05:22:22Z" finished-at="2021-04-07T05:28:16Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="353845" started-at="2021-04-07T05:22:22Z" finished-at="2021-04-07T05:28:16Z">
+      <class name="crmframework.crmAutomation.AccountPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3ffc5af1]" name="initialize" is-config="true" duration-ms="7717" started-at="2021-04-07T10:52:22Z" finished-at="2021-04-07T10:52:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3ffc5af1]" name="TS001_VerifyHomePageTest" duration-ms="114526" started-at="2021-04-07T10:52:30Z" finished-at="2021-04-07T10:54:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS001_VerifyHomePageTest -->
+        <test-method status="PASS" signature="TS014_VerifyStateAndRegionInGridTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3ffc5af1]" name="TS014_VerifyStateAndRegionInGridTest" duration-ms="66243" started-at="2021-04-07T10:54:25Z" finished-at="2021-04-07T10:55:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS014_VerifyStateAndRegionInGridTest -->
+        <test-method status="PASS" signature="TS024_VerifyExportToExcelTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3ffc5af1]" name="TS024_VerifyExportToExcelTest" duration-ms="165314" started-at="2021-04-07T10:55:31Z" finished-at="2021-04-07T10:58:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS024_VerifyExportToExcelTest -->
+      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
+
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
@@ -20,6 +47,7 @@
           </reporter-output>
         </test-method> <!-- TS008_VerifyActivateInactiveIncentiveDetailsTest -->
       </class> <!-- crmframework.crmAutomation.IncentiveDetailsPageTest -->
+
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
