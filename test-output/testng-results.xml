@@ -1,53 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<testng-results skipped="0" failed="0" total="3" passed="3">
-  <reporter-output>
-  </reporter-output>
-  <suite name="Suite" duration-ms="353845" started-at="2021-04-07T05:22:22Z" finished-at="2021-04-07T05:28:16Z">
-    <groups>
-    </groups>
-    <test name="Test" duration-ms="353845" started-at="2021-04-07T05:22:22Z" finished-at="2021-04-07T05:28:16Z">
-      <class name="crmframework.crmAutomation.AccountPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3ffc5af1]" name="initialize" is-config="true" duration-ms="7717" started-at="2021-04-07T10:52:22Z" finished-at="2021-04-07T10:52:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3ffc5af1]" name="TS001_VerifyHomePageTest" duration-ms="114526" started-at="2021-04-07T10:52:30Z" finished-at="2021-04-07T10:54:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS014_VerifyStateAndRegionInGridTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3ffc5af1]" name="TS014_VerifyStateAndRegionInGridTest" duration-ms="66243" started-at="2021-04-07T10:54:25Z" finished-at="2021-04-07T10:55:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS014_VerifyStateAndRegionInGridTest -->
-        <test-method status="PASS" signature="TS024_VerifyExportToExcelTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@3ffc5af1]" name="TS024_VerifyExportToExcelTest" duration-ms="165314" started-at="2021-04-07T10:55:31Z" finished-at="2021-04-07T10:58:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS024_VerifyExportToExcelTest -->
-      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
-
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="184458" started-at="2021-04-06T13:46:05Z" finished-at="2021-04-06T13:49:09Z">
+  <suite name="Suite" duration-ms="281180" started-at="2021-04-07T08:47:04Z" finished-at="2021-04-07T08:51:45Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="184458" started-at="2021-04-06T13:46:05Z" finished-at="2021-04-06T13:49:09Z">
-      <class name="crmframework.crmAutomation.IncentiveDetailsPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.IncentiveDetailsPageTest@28d25987]" name="initialize" is-config="true" duration-ms="5809" started-at="2021-04-06T19:16:05Z" finished-at="2021-04-06T19:16:11Z">
+    <test name="Test" duration-ms="281180" started-at="2021-04-07T08:47:04Z" finished-at="2021-04-07T08:51:45Z">
+      <class name="crmframework.crmAutomation.ListManagementPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@59fa1d9b]" name="initialize" is-config="true" duration-ms="8343" started-at="2021-04-07T14:17:04Z" finished-at="2021-04-07T14:17:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.IncentiveDetailsPageTest@28d25987]" name="TS001_VerifyHomePageTest" duration-ms="108925" started-at="2021-04-06T19:16:11Z" finished-at="2021-04-06T19:18:00Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@59fa1d9b]" name="TS001_VerifyHomePageTest" duration-ms="113355" started-at="2021-04-07T14:17:12Z" finished-at="2021-04-07T14:19:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS008_VerifyActivateInactiveIncentiveDetailsTest()[pri:0, instance:crmframework.crmAutomation.IncentiveDetailsPageTest@28d25987]" name="TS008_VerifyActivateInactiveIncentiveDetailsTest" duration-ms="69512" started-at="2021-04-06T19:18:00Z" finished-at="2021-04-06T19:19:09Z">
+        <test-method status="PASS" signature="TS002_VerifyExportToExcelListsTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@59fa1d9b]" name="TS002_VerifyExportToExcelListsTest" duration-ms="159415" started-at="2021-04-07T14:19:06Z" finished-at="2021-04-07T14:21:45Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS008_VerifyActivateInactiveIncentiveDetailsTest -->
-      </class> <!-- crmframework.crmAutomation.IncentiveDetailsPageTest -->
-
+        </test-method> <!-- TS002_VerifyExportToExcelListsTest -->
+      </class> <!-- crmframework.crmAutomation.ListManagementPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
