@@ -709,7 +709,7 @@ public class IncentiveDetailsPageTest extends base {
 		ap.getPageBackBtn().click();
 	}	
 	
-	@Test(priority=3)
+	@Test(priority=8)
 	public void TS008_VerifyActivateInactiveIncentiveDetailsTest() throws InterruptedException 
 	{
 		//The purpose of this test case to:-
