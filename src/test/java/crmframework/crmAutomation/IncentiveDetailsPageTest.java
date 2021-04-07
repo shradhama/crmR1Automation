@@ -472,12 +472,11 @@ public class IncentiveDetailsPageTest extends base {
 		ap.getPageBackBtn().click();
 		
 	}
-	
-	@Test(priority=3)
+	@Test(priority=6)
 	public void TS006_VerifyExportToExcelIncentivesDetailsTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
-		//CRM-T54- Verify Export To Excel functionality for Incentive Details
+		//CRM-T130- Verify Export To Excel functionality for Incentive Details
 
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
@@ -580,8 +579,202 @@ public class IncentiveDetailsPageTest extends base {
 		ind.getselectcheckbox2().click();
 		ap.getexportworksheetpopup().click();
 	}
+	@Test(priority=7)
+	public void TS007_VerifyDeactivateInactiveIncentiveDetailsTest() throws InterruptedException 
+	{
+		//The purpose of this test case to:-
+		//T126- Verify user is able to deactivate incentive details as per security access
 
-	
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Incentives tab
+		hp.getincentivedetailstab().click();
+		Thread.sleep(5000);
 		
+		//Select Active Incentive Details option
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(3000);
+		ind.getselectactivetype().click();
+		Thread.sleep(5000);
+		ap.getCLetterFilterLink().click();
+		Thread.sleep(3000);
+		
+		//Select active incentive from grid
+		act = new Actions(driver);
+		act.doubleClick(in.selectIncentiveRecord()).perform();
+		Thread.sleep(5000);
+		
+		//Get the incentive name from header
+		String IncentiveDetails = in.getIncentiveNameOnIncForm().getText();
+		System.out.println("Incentive Details name: "+IncentiveDetails);
+		
+		//Get Incentive Category
+		String IncentiveCategory = ind.getincetivecategory().getText();
+		System.out.println("Incentive Category name: "+IncentiveCategory);
+		
+		//Click on Deactivate button in header
+		ind.getdeactivateincdet().click();
+
+		//Click on Activate button in the dialog box
+		in.getDeactivationPopupDeactivateBtn().click();
+		Thread.sleep(5000);
+
+		//Verify that an Incentive Details should be deactivated
+		Assert.assertTrue(ind.getactivateincdet().isDisplayed());
+		Assert.assertTrue(ind.getincdetreadonlytext().isDisplayed());
+		System.out.println("Incentive Details deactivated successfully.");
+		Thread.sleep(3000);
+		
+		//Get back to Incentive Details grid
+		ap.getPageBackBtn().click();
+
+		//Verify that deactivated incentive detail should not be displayed in active incentive details
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(3000);
+		ind.getselectactivetype().click();
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(IncentiveDetails);
+		ap.getclicksearchbutton().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
+		System .out.println("Deactivated Incentive details are not displayed under Active Incentive Details.");
+		
+		//Verify that deactivated incentive details are available in inactive incentive details section
+		hp.getincentivedetailstab().click();
+		Thread.sleep(3000);
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(IncentiveDetails);
+		ap.getclicksearchbutton().click();
+		Thread.sleep(3000);
+		Assert.assertTrue(in.getValidateIncInSearchResults().getText().contains(IncentiveCategory));
+		System.out.println("Incentive Details are displayed in Inactive Incentive Details.");
+		Thread.sleep(5000);
+		
+		//Open same deactivated incentive detail again
+		act = new Actions(driver);
+		act.doubleClick(in.selectIncentiveRecord()).perform();
+		Thread.sleep(5000);
+				
+		//Open Incentive 
+		ind.getopenincentive().click();
+		String Contact = ind.getcontact().getText();
+		String Market = ind.getmarket().getText();
+		String Account = ind.getaccount().getText();		
+		
+		//Open Account from Incentive form and verify for deactivated incentive
+		in.getSelectedAccountNameField().click();
+		Thread.sleep(5000);
+		in.getIncentiveTab().click();
+		Thread.sleep(6000);
+		//utl.scrollToElement(ind.getscrollincdetsectionfromacc());
+		if(ind.getaccountnameindetgrid().isDisplayed()) {
+			
+			Assert.assertFalse(ind.getaccountnameindetgrid().getText().contains(Contact+Market+IncentiveCategory));
+			System.out.println("Incentive Details: "+Contact+Market+IncentiveCategory);
+			System.out.println("Account: Incentive Details deactivated successfully.");
+			
+		}
+		else  {
+			
+			Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
+			System.out.println("Account: Incentive Details deactivated successfully.");
+		}
+		
+		//Get back to Incentives Record
+		ap.getPageBackBtn().click();
+		
+		//Open Contact from Incentive form
+		in.getSelectedContactNameField().click();
+		Thread.sleep(5000);
+		in.getIncentiveTab().click();
+		Thread.sleep(6000);
+		if(ind.getcontactnameindetgrid().isDisplayed()) {
+			
+			Assert.assertFalse(ind.getcontactnameindetgrid().getText().contains(Contact+Market+IncentiveCategory));
+			System.out.println("Incentive Details: "+Contact+Market+IncentiveCategory);
+			System.out.println("Contact: Incentive Details deactivated successfully.");
+		}
+		else  {
+			
+			Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
+			System.out.println("Contact: Incentive Details deactivated successfully.");
+		}
+		ap.getPageBackBtn().click();
+		ap.getPageBackBtn().click();
+		ap.getPageBackBtn().click();
+	}	
+	
+	@Test(priority=8)
+	public void TS008_VerifyActivateInactiveIncentiveDetailsTest() throws InterruptedException 
+	{
+		//The purpose of this test case to:-
+		//T126- Verify user is able to activate incentive details as per security access
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Incentives tab
+		hp.getincentivedetailstab().click();
+		
+		Thread.sleep(5000);
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(3000);
+		ind.getinactiveincentivedetails().click();
+		
+		//Select inactive incentive from grid
+		act = new Actions(driver);
+		act.doubleClick(in.selectIncentiveRecord()).perform();
+		Thread.sleep(5000);
+		
+		//Get the incentive name from header
+		String IncentiveDetails = in.getIncentiveNameOnIncForm().getText();
+		System.out.println("Incentive Details name: "+IncentiveDetails);
+
+		//Click on Activate button in header
+		ind.getactivateincdet().click();
+
+		//Click on Activate button in the dialog box
+		in.getDeactivationPopupDeactivateBtn().click();
+
+		//Verify that an Incentive Details should be activated
+		Assert.assertTrue(ind.getdeactivateincdet().isDisplayed());
+		System.out.println("Incentive is activated successfully.");
+		Thread.sleep(5000);
+		
+		//Get back to Incentive Details grid
+		ap.getPageBackBtn().click();
+
+		//Verify that Activated incentive detail should not be displayed in inactive incentive details
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(3000);
+		ind.getselectactivetype().click();
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(IncentiveDetails);
+		ap.getclicksearchbutton().click();
+				
+		Thread.sleep(5000);
+		WebElement GridContact = ap.getAccountNameSearchTable();
+		WebElement GridMarket = ap.getPhoneinSearchTable();
+		WebElement GridIncentiveCategory =  cp.getContactMarketProfileDeclinedReasonField();
+//		WebElement GridAccount = ind.getverifygridacc();
+		WebElement GridAccountName = ind.getverifygridaccname();
+		
+		//String VerifyIncDet = GridContact+GridMarket+GridIncentiveCategory;
+		
+		//Assert.assertTrue(GridContact.getText()+" - "+GridMarket.getText()+" - "+GridIncentiveCategory.getText().contains(IncentiveDetails));
+//		Assert.assertEquals(IncentiveDetails, GridContact.getText()+" - "+GridAccount.getText()+" - "+GridMarket.getText()+" - "+GridIncentiveCategory.getText());
+		Assert.assertEquals(IncentiveDetails, GridContact.getText()+" - "+GridAccountName.getText()+" - "+GridMarket.getText()+" - "+GridIncentiveCategory.getText());
+		System.out.println("Activated Incentive Details is displayed properly in the grid.");
+		
+	}
 
 }
