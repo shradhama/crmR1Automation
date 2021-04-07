@@ -24,6 +24,7 @@ import pageObjects.CRMIncentiveDetailsPage;
 import pageObjects.CRMIncentiveTab;
 import pageObjects.CRMIncentivesPage;
 import pageObjects.CRMLandingPage;
+import pageObjects.CRMListManagementPage;
 import pageObjects.CRMLoginPage;
 import pageObjects.CRMPeoplePage;
 import resources.GenerateData;
@@ -53,8 +54,9 @@ public class ListManagementPageTest extends base {
 	Utility utl;
 	CRMIncentivesPage in;
 	CRMIncentiveDetailsPage ind;
+	CRMListManagementPage lmp;
 
-
+	
 	@BeforeTest
 	public void initialize() throws IOException
 	{
@@ -97,4 +99,114 @@ public class ListManagementPageTest extends base {
 		System.out.println("Login to CRM successfully");
 	}
 	
+	
+	@Test(priority=2)
+	public void TS002_VerifyExportToExcelListsTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T456- Verify Export To Excel functionality for Lists
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+		cp = new CRMContactPage(driver);
+		pl = new CRMPeoplePage(driver);
+		lmp = new CRMListManagementPage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Lists Tab at left menu and search lists containing LV
+		hp.getliststab().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("listssearch"));
+		ap.getclicksearchbutton().click();
+
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+	    Thread.sleep(8000);
+		//Click Export To Excel option under it
+		lmp.getlistsexportdropdown().click();
+
+		//Export file to online excel
+		ap.getopenexcelonline().click();
+
+		//ap.getsaveexcelonline().click();
+		ap.getsaveexcelonline().click();   
+
+		//Click Track Progress button
+		cp.getexporttrackprogressbtn().click();
+		
+		//Switch to new My Imports tab
+		Set<String> windows1 = driver.getWindowHandles();
+		Iterator<String>it = windows1.iterator();
+		String parentId = it.next();
+		String childId = it.next();
+		driver.switchTo().window(childId);
+		
+		Thread.sleep(50000);
+		driver.navigate().refresh();
+		//Verify export to excel online
+		System.out.println(pl.getonlineexportverification().getText());
+		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
+		System.out.println("Excel exported online successfully.");
+		Thread.sleep(10000);
+
+		//Switch to previous browser tab
+		Set<String> windows = driver.getWindowHandles();
+		Iterator<String>it1 = windows.iterator();
+		String parentId1 = it1.next();
+		String childId1 = it1.next();
+		driver.switchTo().window(parentId1);
+		
+/*
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		Thread.sleep(3000);
+		//Click Export To Excel option under it
+		lmp.getlistsexportdropdown().click();
+
+		//Export Excel to Static Worksheet
+		ap.getexporttostaticworksheet().click();
+
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		
+		Thread.sleep(3000);
+		//Click Export To Excel option under it
+		lmp.getlistsexportdropdown().click();
+
+		//Export Excel to Static Worksheet Page Only
+		ap.getexporttostaticworksheetpageonly().click();
+
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		Thread.sleep(3000);
+		//Click Export To Excel dropdown arrow option under it
+		lmp.getlistsexportdropdown().click();
+
+		//Export to Dynamic Worksheet
+		ap.getexporttodynamicworksheet().click();
+		Thread.sleep(3000);
+		lmp.getselectcheckbox1().click();
+		lmp.getselectcheckbox2().click();
+		ap.getexportworksheetpopup().click();
+		
+		
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		Thread.sleep(3000);
+		//Click Export To Excel option under it
+		lmp.getlistsexportdropdown().click();
+
+		//Export to Dynamic Pivot Table
+		ap.getexporttodynamicpivottable().click();
+		lmp.getselectcheckbox1().click();
+		lmp.getselectcheckbox2().click();
+		ap.getexportworksheetpopup().click();
+	}
+
 }
