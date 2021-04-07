@@ -516,10 +516,10 @@ public class AccountPageTest extends base {
 		ap.getAccountnametxtbx().sendKeys(genData.generateRandomAlphaNumeric(10));
 		ap.getAccSaveBtn().click();
 
-		ap.getNotificationExpandIcon().click();
-		ap.getNotificationExpandIcon().click();
-		ap.getAccountnametxtbx().sendKeys(Keys.TAB);
-		ap.getPhone().click();	
+//		ap.getNotificationExpandIcon().click();
+//		ap.getNotificationExpandIcon().click();
+//		ap.getAccountnametxtbx().sendKeys(Keys.TAB);
+//		ap.getPhone().click();
 		String totalwarningmessage= ap.getNotificationWrapperMsg().getText();
 		Assert.assertEquals(totalwarningmessage, "You have 7 notifications. Select to view.");
 		System.out.println("Warning message displayed.");
@@ -570,15 +570,18 @@ public class AccountPageTest extends base {
 		ap.getNoteTextEnter().sendKeys(genData.generateRandomString(25));*/
 		ap.getAddNoteButton().click();
 
-		//to scroll down
+		/*//to scroll down
 		act = new Actions(driver);
 		act.moveToElement(ap.getViewCreatedNote()).perform();
-
+*/
 		String validateNoteSubject = ap.getViewCreatedNote().getText();
 		Assert.assertEquals(validateNoteSubject, subjectnote);
 		System.out.println("Note title is: "+ validateNoteSubject);
-		Thread.sleep(10000);
-		ap.getTimelineDetails().click();
+		//Thread.sleep(10000);
+		act = new Actions(driver);
+		act.moveToElement(ap.getViewCreatedNote()).perform();
+		
+		//ap.getTimelineDetails().click();
 		ap.getDeleteNote().click();
 		ap.getOkConfirmBtn().click();
 		System.out.println("Note Deleted");
@@ -615,7 +618,11 @@ public class AccountPageTest extends base {
 		String validatePostText = ap.getViewCreatedPost().getText();
 		System.out.println("Viewed Post is: "+ validatePostText);
 		Assert.assertEquals(validatePostText, postText);
-		ap.getTimelineDetails().click();
+		
+		act = new Actions(driver);
+		act.moveToElement(ap.getViewCreatedPost()).perform();
+		
+		//ap.getTimelineDetails().click();
 		ap.getDeletePost().click();
 		ap.getOkConfirmBtn().click();
 		System.out.println("Post Deleted.");
@@ -634,7 +641,7 @@ public class AccountPageTest extends base {
 
 		ap = new CRMAccountsPage(driver);
 		//Click on 'A' link to sort accounts starts with 'A'
-		ap.getCLetterFilterLink().click();
+		ap.getBLetterFilterLink().click();
 		//Thread.sleep(4000);	
 
 		//Select the account name in list
@@ -646,7 +653,7 @@ public class AccountPageTest extends base {
 		ap.getphonecalloption().click();
 
 		//Enter Phone Call details
-		String phonesubject = "CybSubject";
+		String phonesubject = "Cyb_PhoneCall";
 		ap.getphonecallsubject().click();
 		ap.getphonecallsubject().clear();
 		ap.getphonecallsubject().sendKeys(phonesubject);
@@ -767,13 +774,14 @@ public class AccountPageTest extends base {
 		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
-
+		
 		//Verify Account DBA Name value selected on accounts grid
 		WebElement accnamevaluesongrid = null;
-		for (int i=0;i<7;i++)
+		for (int i=0; i<8; i++)
 		{
 			accnamevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
-			Assert.assertTrue(accnamevaluesongrid.getText().contains(prop.getProperty("name")));
+			String accnameingrid = accnamevaluesongrid.getText().toLowerCase();
+			Assert.assertTrue(accnameingrid.contains(prop.getProperty("name")));
 		}
 		System.out.println("Account DBA Name matches expected criteria");
 
@@ -818,7 +826,7 @@ public class AccountPageTest extends base {
 
 		//Verify city value selected on accounts grid
 		WebElement cityvaluesongrid = null;
-		for (int i=0;i<7;i++)
+		for (int i=0;i<6;i++)
 		{
 			cityvaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-4']"));
 			Assert.assertTrue(cityvaluesongrid.getText().contains(prop.getProperty("city")));
@@ -894,7 +902,7 @@ public class AccountPageTest extends base {
 		ap.getPageBackBtn().click();
 	}
 
-	@Test(priority=24)
+	@Test(priority=27)
 	public void TS017_VerifyDuplicateAccountTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
@@ -1019,7 +1027,7 @@ public class AccountPageTest extends base {
 		hp.getClearSearch().click();
 	}
 
-	@Test(priority=25)
+	@Test(priority=28)
 	public void TS018_VerifyDeactivateAccountTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
@@ -1443,10 +1451,10 @@ public class AccountPageTest extends base {
 		ap.getAccountnametxtbx().sendKeys(genData.generateRandomAlphaNumeric(10));
 		ap.getAccSaveBtn().click();
 
-		ap.getNotificationExpandIcon().click();
+		/*ap.getNotificationExpandIcon().click();
 		ap.getNotificationExpandIcon().click();
 		ap.getAccountnametxtbx().sendKeys(Keys.TAB);
-		ap.getPhone().click();	
+		ap.getPhone().click();*/	
 		String totalwarningmessage= ap.getNotificationWrapperMsg().getText();
 		Assert.assertEquals(totalwarningmessage, "You have 7 notifications. Select to view.");
 		System.out.println("Warning message displayed.");
@@ -1490,7 +1498,7 @@ public class AccountPageTest extends base {
 		ap.getPageBackBtn().click();
 		ap.getDiscardChangesBtn().click();
 	}
-	@Test(priority=28)
+	@Test(priority=18)
 	public void TS028_VerifyCountryAutocomplete() throws InterruptedException
 	{
 		//The purpose of this test case to:-
@@ -1704,10 +1712,10 @@ public class AccountPageTest extends base {
 		WebElement contacts = ap.getscrolltocontacts();
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].scrollIntoView(true);",contacts);
-
+/*
 		WebElement associatedlists = ap.getscrolltoassociatedlists();
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
-		jse1.executeScript("arguments[0].scrollIntoView(true);",associatedlists);
+		jse1.executeScript("arguments[0].scrollIntoView(true);",associatedlists);*/
 
 		// Verify if Lists are available in Lists section
 		WebElement NoList = ap.getnolist();
@@ -1737,7 +1745,7 @@ public class AccountPageTest extends base {
 		ap.getPageBackBtn().click();
 		ap.getPageBackBtn().click();
 	}
-	@Test(priority=27)
+	@Test(priority=17)
 	public void TS027_VerifyAddNewTaskFromTimelineToAccountTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify that:-
@@ -1775,9 +1783,9 @@ public class AccountPageTest extends base {
 		//Navigate back to Active accounts list
 		ap.getPageBackBtn().click();
 	}
-	@AfterTest
+/*	@AfterTest
 	public void closeDriver()
 	{
 		driver.close();
-	}
+	}*/
 }

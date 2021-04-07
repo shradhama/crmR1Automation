@@ -31,152 +31,18 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">4</td><td class="numi">4</td><td class="numi">0</td><td class="numi_attn">5</td><td class="numi">532.4 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">3</td><td class="numi">3</td><td class="numi">0</td><td class="numi">0</td><td class="numi">353.8 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr><th colspan="4">Test &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="5">crmframework.crmAutomation.IncentivesPageTest</td><td><a href="#m1"><b>TS005_VerifyDeactivateIncentiveFromContactTest</b>  </a></td><td class="numi">1</td><td>1617629996418</td><td class="numi">80242</td></tr><tr class="failedodd"><td><a href="#m2"><b>TS006_VerifyGridFiltersIncentivesTest</b>  </a></td><td class="numi">1</td><td>1617630076678</td><td class="numi">1221</td></tr><tr class="failedodd"><td><a href="#m3"><b>TS007_VerifyActivateInactiveIncentiveTest</b>  </a></td><td class="numi">1</td><td>1617630077908</td><td class="numi">1168</td></tr><tr class="failedodd"><td><a href="#m4"><b>TS008_VerifySearchFunctionalityIncentivesTest</b>  </a></td><td class="numi">1</td><td>1617630079093</td><td class="numi">1201</td></tr><tr class="failedodd"><td><a href="#m5"><b>TS009_VerifyUpdateiIncentiveFromContactTest</b>  </a></td><td class="numi">1</td><td>1617630080304</td><td class="numi">1122</td></tr>
 <tr><th colspan="4">Test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="4">crmframework.crmAutomation.IncentivesPageTest</td><td><a href="#m6"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1617629555436</td><td class="numi">113719</td></tr><tr class="passedodd"><td><a href="#m7"><b>TS002_VerifyCreateIncentiveFromAccountTest</b>  </a></td><td class="numi">1</td><td>1617629669173</td><td class="numi">111671</td></tr><tr class="passedodd"><td><a href="#m8"><b>TS003_VerifyExportToExcelIncentivesTest</b>  </a></td><td class="numi">1</td><td>1617629780846</td><td class="numi">143840</td></tr><tr class="passedodd"><td><a href="#m9"><b>TS004_VerifyCreateIncentiveFromContactTest</b>  </a></td><td class="numi">1</td><td>1617629924688</td><td class="numi">71725</td></tr>
+<tr class="passedodd"><td rowspan="3">crmframework.crmAutomation.AccountPageTest</td><td><a href="#m1"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1617772950522</td><td class="numi">114526</td></tr><tr class="passedodd"><td><a href="#m2"><b>TS014_VerifyStateAndRegionInGridTest</b>  </a></td><td class="numi">1</td><td>1617773065062</td><td class="numi">66243</td></tr><tr class="passedodd"><td><a href="#m3"><b>TS024_VerifyExportToExcelTest</b>  </a></td><td class="numi">1</td><td>1617773131308</td><td class="numi">165314</td></tr>
 </table>
 <h1>Test</h1>
-<h2 id="m1">crmframework.crmAutomation.IncentivesPageTest:TS008_VerifySearchFunctionalityIncentivesTest</h2>
-<div style="padding-left:3em">
-<p>element click intercepted: Element &lt;span class=&quot;pa-br pa-at pa-ci pa-cj pa-ck pa-cl pa-v pa-ay pa-cm &quot;&gt;...&lt;/span&gt; is not clickable at point (74, 547). Other element would receive the click: &lt;div id=&quot;dialogRoot_22&quot; tabindex=&quot;-1&quot; class=&quot;pa-f pa-ah pa-a pa-at pa-as flexbox&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=89.0.4389.90)
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=88.0.4324.96 (68dba2d8a0b149a1d3afac56fa74648032bcf46b-refs/branch-heads/4324@{#1784}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir21152_1367195010}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:52221}, acceptInsecureCerts=false, browserVersion=89.0.4389.90, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 4ea461a606a81e27134cd8aa1f909a94</p>
-sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-<br/>at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
-<br/>at crmframework.crmAutomation.IncentivesPageTest.TS008_VerifySearchFunctionalityIncentivesTest(IncentivesPageTest.java:648)
-<br/>25 lines not shown
-</div>
+<h2 id="m1">crmframework.crmAutomation.AccountPageTest:TS024_VerifyExportToExcelTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">crmframework.crmAutomation.IncentivesPageTest:TS007_VerifyActivateInactiveIncentiveTest</h2>
-<div style="padding-left:3em">
-<p>element click intercepted: Element &lt;span class=&quot;pa-br pa-at pa-ci pa-cj pa-ck pa-cl pa-v pa-ay pa-cm &quot;&gt;...&lt;/span&gt; is not clickable at point (74, 547). Other element would receive the click: &lt;div id=&quot;dialogRoot_22&quot; tabindex=&quot;-1&quot; class=&quot;pa-f pa-ah pa-a pa-at pa-as flexbox&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=89.0.4389.90)
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=88.0.4324.96 (68dba2d8a0b149a1d3afac56fa74648032bcf46b-refs/branch-heads/4324@{#1784}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir21152_1367195010}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:52221}, acceptInsecureCerts=false, browserVersion=89.0.4389.90, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 4ea461a606a81e27134cd8aa1f909a94</p>
-sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-<br/>at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
-<br/>at crmframework.crmAutomation.IncentivesPageTest.TS007_VerifyActivateInactiveIncentiveTest(IncentivesPageTest.java:513)
-<br/>25 lines not shown
-</div>
+<h2 id="m2">crmframework.crmAutomation.AccountPageTest:TS014_VerifyStateAndRegionInGridTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">crmframework.crmAutomation.IncentivesPageTest:TS006_VerifyGridFiltersIncentivesTest</h2>
-<div style="padding-left:3em">
-<p>element click intercepted: Element &lt;span class=&quot;pa-br pa-at pa-ci pa-cj pa-ck pa-cl pa-v pa-ay pa-cm &quot;&gt;...&lt;/span&gt; is not clickable at point (74, 547). Other element would receive the click: &lt;div id=&quot;dialogRoot_22&quot; tabindex=&quot;-1&quot; class=&quot;pa-f pa-ah pa-a pa-at pa-as flexbox&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=89.0.4389.90)
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=88.0.4324.96 (68dba2d8a0b149a1d3afac56fa74648032bcf46b-refs/branch-heads/4324@{#1784}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir21152_1367195010}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:52221}, acceptInsecureCerts=false, browserVersion=89.0.4389.90, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 4ea461a606a81e27134cd8aa1f909a94</p>
-sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-<br/>at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
-<br/>at crmframework.crmAutomation.IncentivesPageTest.TS006_VerifyGridFiltersIncentivesTest(IncentivesPageTest.java:425)
-<br/>25 lines not shown
-</div>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m4">crmframework.crmAutomation.IncentivesPageTest:TS005_VerifyDeactivateIncentiveFromContactTest</h2>
-<div style="padding-left:3em">
-<p>no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@data-id=&apos;xxc_incentive|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_incentive.Deactivate&apos;]&quot;}
-  (Session info: chrome=89.0.4389.90)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=88.0.4324.96 (68dba2d8a0b149a1d3afac56fa74648032bcf46b-refs/branch-heads/4324@{#1784}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir21152_1367195010}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:52221}, acceptInsecureCerts=false, browserVersion=89.0.4389.90, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 4ea461a606a81e27134cd8aa1f909a94
-*** Element info: {Using=xpath, value=//button[@data-id=&apos;xxc_incentive|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_incentive.Deactivate&apos;]}</p>
-sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
-<br/>at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-<br/>at pageObjects.CRMIncentivesPage.getIncDeactivateBtn(CRMIncentivesPage.java:185)
-<br/>at crmframework.crmAutomation.IncentivesPageTest.TS005_VerifyDeactivateIncentiveFromContactTest(IncentivesPageTest.java:359)
-<br/>25 lines not shown
-</div>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m5">crmframework.crmAutomation.IncentivesPageTest:TS009_VerifyUpdateiIncentiveFromContactTest</h2>
-<div style="padding-left:3em">
-<p>element click intercepted: Element &lt;span class=&quot;pa-br pa-at pa-ci pa-cj pa-ck pa-cl pa-v pa-ay pa-cm &quot;&gt;...&lt;/span&gt; is not clickable at point (71, 420). Other element would receive the click: &lt;div id=&quot;dialogRoot_22&quot; tabindex=&quot;-1&quot; class=&quot;pa-f pa-ah pa-a pa-at pa-as flexbox&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=89.0.4389.90)
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=88.0.4324.96 (68dba2d8a0b149a1d3afac56fa74648032bcf46b-refs/branch-heads/4324@{#1784}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir21152_1367195010}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:52221}, acceptInsecureCerts=false, browserVersion=89.0.4389.90, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 4ea461a606a81e27134cd8aa1f909a94</p>
-sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-<br/>at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
-<br/>at crmframework.crmAutomation.IncentivesPageTest.TS009_VerifyUpdateiIncentiveFromContactTest(IncentivesPageTest.java:718)
-<br/>25 lines not shown
-</div>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m6">crmframework.crmAutomation.IncentivesPageTest:TS003_VerifyExportToExcelIncentivesTest</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m7">crmframework.crmAutomation.IncentivesPageTest:TS001_VerifyHomePageTest</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m8">crmframework.crmAutomation.IncentivesPageTest:TS002_VerifyCreateIncentiveFromAccountTest</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m9">crmframework.crmAutomation.IncentivesPageTest:TS004_VerifyCreateIncentiveFromContactTest</h2>
+<h2 id="m3">crmframework.crmAutomation.AccountPageTest:TS001_VerifyHomePageTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

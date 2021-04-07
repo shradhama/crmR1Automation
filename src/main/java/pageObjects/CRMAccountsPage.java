@@ -86,18 +86,18 @@ public class CRMAccountsPage {
 	By addnotebutton = By.xpath("//button[@id='create_note_add_btn']");
 	By cancelnotebutton = By.xpath("//button[@id='create_note_cancel_btn']");
 	By notesubject = By.xpath("//div[@id='timeline_record_title_text520480cb-f222-56a8-9dcb-c78e97e2bce7']");
-	By viewcreatednote = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]");
+	By viewcreatednote = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div/div[1]/div/div[2]/div[2]/div[1]/div"); //Locator for newly created Note name on timeline
 	By posttimelineoptn =By.xpath("//li[@data-id='notescontrol-createNewRecord_flyoutMenuItem_post']");
 	By posttextenter = By.xpath("//textarea[@id='create_post_postText']");
 	By postAddButton = By.xpath("//button[@id='create_post_add_btn']");
 	By postCancelButton = By.xpath("//button[@id='create_post_cancel_btn']");
-	By viewCreatedPost = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[2]/div[2]/div[1]/div[1]");
+	By viewCreatedPost = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div/div[1]/div/div[2]/div[2]/div[1]/div"); //Locator for newly created Post name on timeline
 	By auditHistoryRelatedTab = By.xpath("//span[@id='navAudit_Related']"); //xpath added for AuditHistory option from Related Dropdown list
 	By auditHistoryTab = By.xpath("//li[@title='Audit History']"); // xpath for Activity History Tab
-	By deleteNote = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[2]/span");
+	By deleteNote = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[2]"); //Locator for Delete Note button
 	By timelineDetails = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]");
 	By okConfirmBtn = By.xpath("//span[@id='confirmButtonText']");
-	By deletePost = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[3]/span");
+	By deletePost = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[3]"); //Locator for Delete Post button
 	By validateaccnameinsearchresults = By.xpath("//div[@data-id='cell-0-2']");
 	By applocation = By.xpath("//input[@data-id = 'location.fieldControl-text-box-text']");
 	By phonecalloption = By.xpath("//li[@aria-label = 'Phone Call Activity']");
@@ -197,7 +197,7 @@ public class CRMAccountsPage {
 	By exporttostaticworksheetpageonly = By.xpath("//button[@aria-label = 'Static Worksheet (Page only)']");
 	By exporttodynamicworksheet = By.xpath("//button[@aria-label = 'Dynamic Worksheet']");
 	By exporttodynamicpivottable = By.xpath("//button[@aria-label = 'Dynamic PivotTable']");
-	By phoneCallTimelineSubject= By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div/div[2]/div[2]/label[1]");
+	By phoneCallTimelineSubject= By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div/div[1]/div/div[2]/div[2]/label"); //Locator for newly created Phone call on Timeline
 	By accrefreshbtn = By.xpath("//button[@aria-label='Refresh']");
 	By duplicaterecordspopupcancelbtn = By.xpath("//button[@aria-label = 'Cancel']");
 	By phonecallduedatecurrent = By.xpath("//div[@aria-label = 'Calendar']/div[1]/div[2]/div[2]/div[2]/table[1]/tbody[1]/tr[3]/td[3]/button[1]");
@@ -224,7 +224,8 @@ public class CRMAccountsPage {
 		this.driver = driver;
 	}
 
-	public WebElement getPhoneCallTimelineSubject() {
+	public WebElement getPhoneCallTimelineSubject() throws InterruptedException {
+		Thread.sleep(5000);
 		return driver.findElement(phoneCallTimelineSubject);
 	}
 
@@ -300,6 +301,8 @@ public class CRMAccountsPage {
 
 	public WebElement getCountryName()
 	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(countryname));
 		return driver.findElement(countryname);
 	}
 
@@ -594,8 +597,9 @@ public class CRMAccountsPage {
 	{
 		return driver.findElement(notesubject);
 	}
-	public WebElement getViewCreatedNote()
+	public WebElement getViewCreatedNote() throws InterruptedException
 	{
+		Thread.sleep(5000);
 		return driver.findElement(viewcreatednote);
 	}
 	public WebElement getPostTimelineOptn()
@@ -615,8 +619,9 @@ public class CRMAccountsPage {
 		return driver.findElement(postCancelButton);
 	}
 
-	public WebElement getViewCreatedPost()
+	public WebElement getViewCreatedPost() throws InterruptedException
 	{
+		Thread.sleep(5000);
 		return driver.findElement(viewCreatedPost);
 	}
 	public WebElement getAuditHistoryRelatedTab()
@@ -995,8 +1000,9 @@ public class CRMAccountsPage {
 	{
 		return driver.findElement(phoneErrorMsg);
 	}
-	public WebElement getTypeNotificationWrapperMsg()
+	public WebElement getTypeNotificationWrapperMsg() throws InterruptedException
 	{
+		Thread.sleep(5000);
 		return driver.findElement(typeNotificationWrapperMsg);	
 	}
 	public WebElement getPhoneRequiredIcon()
@@ -1216,7 +1222,7 @@ public class CRMAccountsPage {
 	}
 	public WebElement getlist() throws InterruptedException
 	{
-		Thread.sleep(7000);
+		Thread.sleep(10000);
 		return driver.findElement(list);
 	}
 	public WebElement getlistmember()
