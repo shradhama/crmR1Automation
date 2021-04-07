@@ -59,7 +59,10 @@ public class CRMIncentiveDetailsPage {
 	By contactnameindetgrid = By.xpath("//div[@aria-label = 'Active Incentive Details Contact Subgrid']");//Locator for Market in incentive details grid at account page
 	By inccatindetgrid = By.xpath("//div[@aria-label = 'Active Incentive Details Account Subgrid']/div[2]/div[4]");//Locator for Incentive Category in incentive details grid at account page
 	By inactiveincdetgrid = By.xpath("//div[@aria-label = 'Inactive Incentive Details']");//Locator for inactive Incentive Details grid
-	
+	By verifygridacc = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[2]/div[5]");//Locator for Grid Market data
+	By inactiveincentivedetails= By.xpath("//li[@aria-label= 'Inactive Incentive Details']"); //Locator to select Inactive Incentive Details option for Activate button
+	By verifygridaccname = By.xpath("//div[@data-id='cell-0-7']");//Locator for Grid account name data
+
 	
 	
 	public CRMIncentiveDetailsPage(WebDriver driver) {
@@ -327,4 +330,24 @@ public class CRMIncentiveDetailsPage {
 		wait.until(ExpectedConditions.elementToBeClickable(inactiveincdetgrid));
 		return driver.findElement(inactiveincdetgrid);
 	}
+	public WebElement getverifygridacc() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(verifygridacc));
+		return driver.findElement(verifygridacc);
+	}
+	public WebElement getinactiveincentivedetails() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(inactiveincentivedetails));
+		return driver.findElement(inactiveincentivedetails);
+	}
+
+	public WebElement getverifygridaccname() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(verifygridaccname));
+		return driver.findElement(verifygridaccname);
+	}
+
 }
