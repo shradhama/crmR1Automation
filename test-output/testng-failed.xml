@@ -3,27 +3,12 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-
-      <class name="crmframework.crmAutomation.AccountPageTest">
-
-      <class name="crmframework.crmAutomation.IncentiveDetailsPageTest">
-
+      <class name="crmframework.crmAutomation.ListManagementPageTest">
         <methods>
-          <include name="TS002_VerifyCreateIncentiveDetailsFromExistingIncentiveTest"/>
           <include name="initialize"/>
-
-          <include name="TS014_VerifyStateAndRegionInGridTest"/>
-          <include name="TS024_VerifyExportToExcelTest"/>
+          <include name="TS002_VerifyExportToExcelListsTest"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
-
-          <include name="TS004_VerifyGridFiltersIncentiveDetailsTest"/>
-          <include name="TS005_VerifyUpdateIncentiveDetailsTest"/>
-          <include name="TS003_VerifyGroupByOptionsIncentiveDetailsTest"/>
-          <include name="TS006_VerifyExportToExcelIncentivesDetailsTest"/>
-        </methods>
-      </class> <!-- crmframework.crmAutomation.IncentiveDetailsPageTest -->
-
+      </class> <!-- crmframework.crmAutomation.ListManagementPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
