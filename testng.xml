@@ -15,11 +15,8 @@
 
 			<!--<class name="crmframework.crmAutomation.ContactPageTest" />-->
 			<!--<class name="crmframework.crmAutomation.PeoplePageTest" />-->
-			<class name="crmframework.crmAutomation.ListManagementPageTest" />
-			<methods>
-			<include name="TS001_VerifyHomePageTest"/>
-			<include name="TS002_VerifyExportToExcelListsTest"/>
-			</methods>
+			<!-- <class name="crmframework.crmAutomation.ListManagementPageTest" /> -->
+			<class name="crmframework.crmAutomation.IncentiveCategoriesPageTest" />
 
 		</classes>
 	</test>
