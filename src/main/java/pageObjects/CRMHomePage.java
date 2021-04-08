@@ -32,7 +32,10 @@ public class CRMHomePage {
 	By activeincentivestitle = By.xpath("//h1[@aria-label='Active Incentives']"); //Locator for Active Incentives title
 	By incentivedetailstab = By.xpath("//span[contains(text(),'Incentive Details')]");//Locator for incentive details
 	By liststab= By.xpath("//span[contains(text(),'Lists')]"); //Locator for Lists tab
-	
+	By incentivecategoriestab = By.xpath("//span[contains(text(),'Incentive Categories')]");//Locator to open Incentive Categories tab
+	By transactionalsectnlabel = By.xpath("//li[@aria-label='Transactional']"); //Locator for Transactional section label on left menu
+	By activeinccategorieslabel = By.xpath("//h1[@aria-label='Active Incentive Categories']"); //Locator for Active Incentive Categories Label
+	By searchresultinccatname = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for incentive category name in search result
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -152,6 +155,26 @@ public class CRMHomePage {
 		wait = new WebDriverWait (driver,15);
 		wait.until(ExpectedConditions.elementToBeClickable(liststab));
 		return driver.findElement(liststab);
+	}
+	public WebElement getIncCategoriesTab() {
+		// web element for the Incentive Categories tab at left find side pane.
+		return driver.findElement(incentivecategoriestab);
+	}
+	public WebElement getTransactionalSectnLabel() {
+		
+		return driver.findElement(transactionalsectnlabel);
+	}
+	public WebElement getSearchIncCategoriesField() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(activeinccategorieslabel));
+		return driver.findElement(searchaccount);	
+	}
+	public WebElement getActiveIncCategoriesLabel() {
+		return driver.findElement(activeinccategorieslabel);
+	}
+	public WebElement getSearchResultIncCatName() throws InterruptedException {
+		Thread.sleep(3000);
+		return driver.findElement(searchresultinccatname);
 	}
 
 
