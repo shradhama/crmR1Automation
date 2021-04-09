@@ -98,8 +98,6 @@ public class ListManagementPageTest extends base {
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
 	}
-	
-	
 	@Test(priority=2)
 	public void TS002_VerifyExportToExcelListsTest() throws InterruptedException
 	{
@@ -207,6 +205,37 @@ public class ListManagementPageTest extends base {
 		lmp.getselectcheckbox1().click();
 		lmp.getselectcheckbox2().click();
 		ap.getexportworksheetpopup().click();
+	}
+	@Test(priority=3)
+	public void TS003_VerifyCooperativeListsAccountsViewTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T456- Verify Export To Excel functionality for Lists
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+		cp = new CRMContactPage(driver);
+		pl = new CRMPeoplePage(driver);
+		lmp = new CRMListManagementPage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Lists Tab at left menu 
+		hp.getAccountTab().click();
+		
+		//Select Co-Op List Query for Uncontacted Accounts option in Views
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(5000);
+		lmp.getpinuncontacted().click();
+		Thread.sleep(15000);
+				
+		//Verification if report data is displayed properly
+		Assert.assertTrue(lmp.getpagegrid().isDisplayed());
+		System.out.println("Report is diplayed properly."); 
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(5000);
+		lmp.getunpin().click();
 	}
 
 }
