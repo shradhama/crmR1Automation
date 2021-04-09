@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="147450" started-at="2021-04-09T02:33:49Z" finished-at="2021-04-09T02:36:16Z">
+  <suite name="Suite" duration-ms="243005" started-at="2021-04-09T14:00:23Z" finished-at="2021-04-09T14:04:26Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="147450" started-at="2021-04-09T02:33:49Z" finished-at="2021-04-09T02:36:16Z">
+    <test name="Test" duration-ms="243005" started-at="2021-04-09T14:00:23Z" finished-at="2021-04-09T14:04:26Z">
       <class name="crmframework.crmAutomation.ListManagementPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@523884b2]" name="initialize" is-config="true" duration-ms="4842" started-at="2021-04-09T08:03:49Z" finished-at="2021-04-09T08:03:53Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@59fa1d9b]" name="initialize" is-config="true" duration-ms="3930" started-at="2021-04-09T19:30:23Z" finished-at="2021-04-09T19:30:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@523884b2]" name="TS001_VerifyHomePageTest" duration-ms="99606" started-at="2021-04-09T08:03:53Z" finished-at="2021-04-09T08:05:33Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@59fa1d9b]" name="TS001_VerifyHomePageTest" duration-ms="192046" started-at="2021-04-09T19:30:27Z" finished-at="2021-04-09T19:33:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS003_VerifyCooperativeListsAccountsViewTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@523884b2]" name="TS003_VerifyCooperativeListsAccountsViewTest" duration-ms="42885" started-at="2021-04-09T08:05:33Z" finished-at="2021-04-09T08:06:16Z">
+        <test-method status="PASS" signature="TS004_VerifyCreateNewListTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@59fa1d9b]" name="TS004_VerifyCreateNewListTest" duration-ms="47002" started-at="2021-04-09T19:33:39Z" finished-at="2021-04-09T19:34:26Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS003_VerifyCooperativeListsAccountsViewTest -->
+        </test-method> <!-- TS004_VerifyCreateNewListTest -->
       </class> <!-- crmframework.crmAutomation.ListManagementPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
