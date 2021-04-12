@@ -8,16 +8,17 @@
 		<classes>
 			<!-- <class name="crmframework.crmAutomation.AccountPageTest" /> -->
 			<!-- <class name="crmframework.crmAutomation.OtherTest" /> -->
-
 			<!--<class name="crmframework.crmAutomation.ContactPageTest" /> -->
 			<!--<class name="crmframework.crmAutomation.PeoplePageTest" /> -->
 			<!-- <class name="crmframework.crmAutomation.IncentivesPageTest" /> -->
-
 			<!--<class name="crmframework.crmAutomation.ContactPageTest" />-->
 			<!--<class name="crmframework.crmAutomation.PeoplePageTest" />-->
-			<!-- <class name="crmframework.crmAutomation.ListManagementPageTest" /> -->
-			<class name="crmframework.crmAutomation.IncentiveCategoriesPageTest" />
-
+			 <class name="crmframework.crmAutomation.ListManagementPageTest" />
+			<!--<class name="crmframework.crmAutomation.IncentiveCategoriesPageTest" />-->
 		</classes>
+		<methods>
+			<include name="TS001_VerifyHomePageTest" />
+			<include name="TS004_VerifyCreateNewListTest" />
+		</methods>
 	</test>
 </suite>

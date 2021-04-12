@@ -21,6 +21,19 @@ public class CRMListManagementPage {
 	By unpin = By.xpath("//div[@title = 'Default view for this list']");//Locator for unpining default view
 	By listmembersremoved = By.xpath("//div[@aria-label = 'List Members Removed']");//Locator for LIst Members Removed view
 	By openlist = By.xpath("//div[@data-id = 'xxc_list.fieldControl-LookupResultsDropdown_xxc_list_selected_tag_text']");//Locator for List at List Member page
+	By selectview = By.xpath("li[contain (text(),'Co-Op List Query for Un-contacted Accounts')");//Locator for view in drop down for 'Co-Op List Query for Un-contacted Accounts'
+	By pagegrid = By.xpath("//div[@aria-label = 'Editable Grid']");//Locator for entity grid
+	By pinuncontacted = By.xpath("//div[@aria-label = 'Pin Co-Op List Query for Un-contacted Accounts']");//Locator for pin button for 'Co-Op List Query for Un-contacted Accounts'
+	By unpin = By.xpath("//div[@title = 'Default view for this list']");//Locator for unpining default view
+	By listname= By.xpath("//input[@id='id-7ff65c21-4d68-426f-8735-20aa96d791b0-1-xxc_name8-xxc_name.fieldControl-text-box-text']"); //Locator to enter the name
+	By listtype= By.xpath("//select[@id='id-7ff65c21-4d68-426f-8735-20aa96d791b0-4-xxc_type8-xxc_type.fieldControl-option-set-select']"); //Locator to select list type
+	By listtypeoption= By.xpath("//option[@value='272970001']"); //Locator to select list type option
+	By listsaveclosebtn= By.xpath("//button[@aria-label='Save & Close']"); //Locator to click on save and close button
+	By listnewbtn = By.xpath("//span[contains(text(),'New')]"); //Locator to click on list add new button
+	By listnamesearchtable= By.xpath("//div[@data-id='cell-0-2']"); //Locator to validate list entry from search table
+	By searchlistrecord= By.xpath("//input[@aria-label='Search this view']"); //Locator to search field for lists
+
+
 	
 	public CRMListManagementPage(WebDriver driver) {
 
@@ -58,6 +71,7 @@ public class CRMListManagementPage {
 		wait.until(ExpectedConditions.elementToBeClickable(pinuncontacted));
 		return driver.findElement(pinuncontacted);
 	}
+
 	public WebElement getlistmembersremoved() {
 
 		wait = new WebDriverWait (driver,15);
@@ -76,4 +90,52 @@ public class CRMListManagementPage {
 		wait.until(ExpectedConditions.elementToBeClickable(unpin));
 		return driver.findElement(unpin);
 	}
+
+	public WebElement getunpin() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(unpin));
+		return driver.findElement(unpin);
+	}
+	public WebElement getlistname() {
+
+		return driver.findElement(listname);
+	}
+	public WebElement getlisttype() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(listtype));
+		return driver.findElement(listtype);
+	}
+	public WebElement getlisttypeoption() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(listtypeoption));
+		return driver.findElement(listtypeoption);
+	}
+
+	public WebElement getlistsaveclosebtn() {
+
+		return driver.findElement(listsaveclosebtn);
+	}
+
+	public WebElement getlistnewbtn() throws InterruptedException
+	{
+		Thread.sleep(10000);
+		return driver.findElement(listnewbtn);
+	}
+
+	public WebElement getlistnamesearchtable() throws InterruptedException
+	{
+		Thread.sleep(6000);
+		return driver.findElement(listnamesearchtable);
+	}
+	
+	public WebElement getsearchlistrecord() throws InterruptedException
+	{
+		Thread.sleep(10000);
+		return driver.findElement(searchlistrecord);
+	}
+
+
 }

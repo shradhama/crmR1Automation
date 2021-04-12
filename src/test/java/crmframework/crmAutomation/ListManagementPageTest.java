@@ -55,7 +55,7 @@ public class ListManagementPageTest extends base {
 	CRMIncentivesPage in;
 	CRMIncentiveDetailsPage ind;
 	CRMListManagementPage lmp;
-
+	public String listNameText;
 	
 	@BeforeTest
 	public void initialize() throws IOException
@@ -98,8 +98,6 @@ public class ListManagementPageTest extends base {
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
 	}
-	
-	
 	@Test(priority=2)
 	public void TS002_VerifyExportToExcelListsTest() throws InterruptedException
 	{
@@ -208,5 +206,89 @@ public class ListManagementPageTest extends base {
 		lmp.getselectcheckbox2().click();
 		ap.getexportworksheetpopup().click();
 	}
+	@Test(priority=3)
+	public void TS003_VerifyCooperativeListsAccountsViewTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T456- Verify Export To Excel functionality for Lists
 
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+		cp = new CRMContactPage(driver);
+		pl = new CRMPeoplePage(driver);
+		lmp = new CRMListManagementPage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Lists Tab at left menu 
+		hp.getAccountTab().click();
+		
+		//Select Co-Op List Query for Uncontacted Accounts option in Views
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(5000);
+		lmp.getpinuncontacted().click();
+		Thread.sleep(15000);
+				
+		//Verification if report data is displayed properly
+		Assert.assertTrue(lmp.getpagegrid().isDisplayed());
+		System.out.println("Report is diplayed properly."); 
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(5000);
+		lmp.getunpin().click();
+	}
+	
+	@Test(priority=4)
+	public void TS004_VerifyCreateNewListTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//TS235- Create Lists and List Members
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		pl = new CRMPeoplePage(driver);
+		lmp = new CRMListManagementPage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		//Click on Lists Tab at left menu
+		hp.getliststab().click();
+
+		//Click on 'New' button
+		lmp.getlistnewbtn().click();
+		
+		Thread.sleep(3000);
+
+		//Fill all the mandatory fields to create new List entry
+		
+		//Enter List Name
+		lmp.getlistname().click();
+		
+		//to create random generated list name
+		lmp.getlistname().sendKeys(genData.generateRandomAlphaNumeric(10));
+		listNameText= lmp.getlistname().getAttribute("Value");
+		System.out.println("Created List Name: "+listNameText);
+		
+		//select list name from dropdown
+		lmp.getlisttype().click();
+		lmp.getlisttypeoption().click();
+		
+		//Click on Save and Close button
+		lmp.getlistsaveclosebtn().click();
+
+		//Verify the newly created account
+		lmp.getsearchlistrecord().click();
+		lmp.getsearchlistrecord().sendKeys(listNameText);
+		hp.getstartsearch().click();
+
+		String validateListName = lmp.getlistnamesearchtable().getText();
+		Assert.assertEquals(validateListName, listNameText);
+		System.out.println("Searched Account:"+ validateListName);
+
+		System.out.println("New List record is created successfully");
+
+		//Clear the search term
+		hp.getClearSearch().click();
+	}
 }
