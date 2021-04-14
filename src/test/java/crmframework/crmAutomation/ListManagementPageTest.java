@@ -291,4 +291,177 @@ public class ListManagementPageTest extends base {
 		//Clear the search term
 		hp.getClearSearch().click();
 	}
+	
+	@Test(priority=5)
+	public void TS005_ManualFail_VerifyListMemberLastAddedRemovedUpdatedTest() throws IOException, InterruptedException {
+
+		//The purpose of this test case to verify that:-
+		//CRM-T206:- VP Buyer Services is able to identify list has been refreshed last time by reviewing below fields :
+		//Last list member was added, Last list member was removed, List last updated
+		//with respect to date Added and Date removed fields of list members 
+		//associated with list which are available in members subgrid
+			
+		hp = new CRMHomePage(driver);
+		lmp = new CRMListManagementPage(driver);
+		cp = new CRMContactPage(driver);
+		ap = new CRMAccountsPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+
+		//Open Lists tab
+		hp.getliststab().click();
+		Thread.sleep(3000);
+
+		//Open exiting active list
+		Actions action = new Actions(driver);
+		WebElement OpenList = cp.getopencontact();
+		action.doubleClick(OpenList).perform();
+		Thread.sleep(5000);
+
+		//Verify fields on General Tab
+		utl.scrollToElement(lmp.getscrollexpdate());
+		Assert.assertTrue(lmp.getlastmemadded().isDisplayed());
+		Assert.assertTrue(lmp.getlastmemremoved().isDisplayed());
+		Assert.assertTrue(lmp.getlistlastupdated().isDisplayed());
+		System.out.println("Fields are available on List page at General tab.");
+
+		//Verify added and removed date are equal to Last updated date
+		Assert.assertEquals(lmp.getlastmemadded().getText(), lmp.getlastupdatedmemberadded().getText());
+		System.out.println("List Member Added Date matches with the Updated Date.");
+		Assert.assertEquals(lmp.getlastmemremoved().getText(), lmp.getlastupdatedmemberaremoved().getText());
+		System.out.println("List Member Removed Date matches with the Updated Date.");
+
+		//Verification for Date Added and Date Removed columns in list members section
+		utl.scrollToElement(ap.getMembersLabel());
+		Assert.assertTrue(lmp.getgriddateadded().isDisplayed());
+		System.out.println("Date Added is properly displayed in Members Grid.");
+		Assert.assertTrue(lmp.getgriddateremoved().isDisplayed());
+		System.out.println("Date Removed is properly displayed in Members Grid.");
+
+		//Click on filter button for Date Added column
+		lmp.getListMemAddedFilterBtn().click();
+		lmp.getNewToOldFilterOptn().click();
+		String latestdateadded = ap.getContactsSectionMobilePhoneField().getText();
+		System.out.println("Latest Date Added: " +latestdateadded);
+		
+		//Click on filter button for Date Removed column
+		lmp.getListMemRemovedFilterBtn().click();
+		lmp.getNewToOldFilterOptn().click();
+		String latestdateremoved = ap.getContactsSectionEmailField().getText();
+		System.out.println("Latest Date Removed: " +latestdateremoved);
+
+		//Click on Refresh button
+		lmp.getListRefreshBtn().click();
+		Thread.sleep(5000);
+		
+		String lastmemadded = lmp.getlastmemadded().getAttribute("Value");
+		System.out.println("Last Member added: "+lastmemadded);
+		
+		String lastmemremoved = lmp.getlastmemremoved().getAttribute("Value");
+		System.out.println("Last Member removed: "+lastmemremoved);
+		
+		utl.scrollToElement(ap.getMembersLabel());
+		
+		//Verification for Date Added
+		if(lmp.getlistmembersgrid().getText().equalsIgnoreCase("")) {
+			Assert.assertTrue(lastmemadded.equalsIgnoreCase(""));
+			System.out.println("Members are not available for List and Last List Member Added is blank.");
+		}
+		else {
+			Assert.assertEquals(latestdateadded, lastmemadded);
+			System.out.println("Date Added matches.");
+		}
+
+		//Verification for Date Removed
+		if(lmp.getlistmembersgrid().getText().equalsIgnoreCase("")) {
+			Assert.assertTrue(lastmemremoved.contains(""));
+			System.out.println("Members are not available for List.");
+		}
+		else {
+			Assert.assertEquals(latestdateremoved, lastmemremoved);
+			System.out.println("Date Removed matches.");
+		}
+
+		/*//Verify Date Added matches with List Last Updated Date
+		Thread.sleep(3000);
+		li.getgriddateadded().click();
+		li.getsortnewtooldmemgrid().click();
+		Assert.assertEquals(li.getgriddateadded().getText(), li.getlastupdatedmemberadded().getText());
+		System.out.println("Date Added in grid matches with Member added Last Updated date.");
+
+		//Verify Date Removed matches with List Last Updated Date
+		Thread.sleep(3000);
+		li.getgriddateremoved().click();
+		li.getsortnewtooldmemgrid().click();
+		Assert.assertEquals(li.getgriddateadded().getText(), li.getlastupdatedmemberadded().getText());
+		System.out.println("Date Added in grid matches with Member added Last Updated date.");*/
+
+		//Open list member and add Date Removed for a list member
+		//utl.scrollToElement(ap.getMembersLabel());
+		Actions action1 = new Actions(driver);
+		WebElement OpenListMember = lmp.getopenlistmenmber();
+		action1.doubleClick(OpenListMember).perform();
+		Thread.sleep(5000);
+		lmp.getdatremovedonlistmember().click();
+		Thread.sleep(3000);
+		lmp.getselectdateremoved().click();
+		Thread.sleep(3000);
+		String DateRemoved = lmp.getdatremovedonlistmember().getAttribute("Value");
+		Thread.sleep(3000);
+		lmp.getcompanyid().click();
+		ap.getAccSaveBtn().click();
+		Thread.sleep(3000);
+		
+		//Verify Date Removed at members grid
+		ap.getPageBackBtn().click();
+		Thread.sleep(3000);
+		utl.scrollToElement(ap.getMembersLabel());
+		Assert.assertEquals(ap.getContactsSectionEmailField().getText(), DateRemoved);
+		System.out.println("Date Removed is reflected properly in members grid.");
+		Thread.sleep(3000);
+
+		//Verify addition of new List Member and verification in member grid
+		lmp.getnewlistmember().click();
+		Thread.sleep(3000);
+		lmp.getaccountlistmember().click();
+
+		//Create a new account
+		lmp.getNewAccountBtnOnListMemForm().click();
+		ap.getDiscardChangesBtn().click();
+		Thread.sleep(4000);
+		ap.getAccDBANametxbox().click();
+		ap.getAccDBANametxbox().sendKeys(genData.generateRandomAlphaNumeric(10));
+		accnameText= ap.getAccDBANametxbox().getAttribute("Value");
+		System.out.println("Created Account: "+accnameText);
+		
+		ap.getPhone().click();
+		ap.getPhone().sendKeys(genData.generateRandomNumber(10));
+		//Scroll up the page till Address field
+		act = new Actions(driver);
+		act.moveToElement(ap.getAddress()).perform();
+
+		//Select account type
+		ap.getAccTypetxtbx().click();
+		ap.getAcctypeExpandbtn().click();
+		ap.getAccTypeBuyer().click();
+		ap.getAddress().click();
+		//Click on Save and Close button
+		ap.getAccSaveCloseBtn().click();
+		
+		lmp.getaccountlistmember().click();
+		lmp.getaccountlistmember().sendKeys(accnameText);
+		lmp.getselectaccountlistmember().click();
+		ap.getAccSaveBtn();
+		ap.getPageBackBtn().click();
+		lmp.getUnsavedChngsSavenContBtn().click();
+		utl.scrollToElement(ap.getMembersLabel());
+		lmp.getgriddateadded().click();
+		lmp.getNewToOldFilterOptn().click();
+		String latestdateaddedingrid = lmp.getgriddateadded().getAttribute("title");
+		
+		//Click on Refresh button
+		lmp.getListRefreshBtn().click();
+		
+		Assert.assertEquals(latestdateaddedingrid, lmp.getListLastUpdatedDate().getAttribute("Value"));
+		System.out.println("Date Added in grid matches with Member added Last Updated date.");
+	}
 }
