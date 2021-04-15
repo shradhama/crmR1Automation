@@ -291,6 +291,41 @@ public class ListManagementPageTest extends base {
 		//Clear the search term
 		hp.getClearSearch().click();
 	}
+	@Test(priority=4)
+	public void TS004_VerifyListMembersRemovedViewTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T317- Verify Buyer accounts that are no longer associated with a list with which they once were
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+		cp = new CRMContactPage(driver);
+		pl = new CRMPeoplePage(driver);
+		lmp = new CRMListManagementPage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on List Members Tab at left menu 
+		hp.getlistmemberstab().click();
+		
+		//Select List Members Removed in Views
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(5000);
+		lmp.getlistmembersremoved().click();
+		Thread.sleep(10000);
+		String DateRemovedGrid = ap.getContactsSectionMobilePhoneField().getText();
+		
+		//Open list and verify Date Removed in member grid
+		ap.getsearchaccounttextbox().click();
+		Thread.sleep(5000);
+		lmp.getopenlist().click();
+		Thread.sleep(5000);
+		utl.scrollToElement(ap.getMembersLabel());
+		Assert.assertEquals(ap.getContactsSectionEmailField().getText(), DateRemovedGrid);
+		System.out.println("Report is displayed properly.");
+			
+			}
 	
 	@Test(priority=5)
 	public void TS005_ManualFail_VerifyListMemberLastAddedRemovedUpdatedTest() throws IOException, InterruptedException {

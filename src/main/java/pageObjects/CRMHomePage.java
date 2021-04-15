@@ -36,6 +36,7 @@ public class CRMHomePage {
 	By transactionalsectnlabel = By.xpath("//li[@aria-label='Transactional']"); //Locator for Transactional section label on left menu
 	By activeinccategorieslabel = By.xpath("//h1[@aria-label='Active Incentive Categories']"); //Locator for Active Incentive Categories Label
 	By searchresultinccatname = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for incentive category name in search result
+	By listmemberstab= By.xpath("//span[contains(text(),'List Members')]"); //Locator for List Members tab
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -177,5 +178,10 @@ public class CRMHomePage {
 		return driver.findElement(searchresultinccatname);
 	}
 
+	public WebElement getlistmemberstab() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(listmemberstab));
+		return driver.findElement(listmemberstab);	
+	}
 
 }
