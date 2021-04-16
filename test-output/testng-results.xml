@@ -1,24 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="243005" started-at="2021-04-09T14:00:23Z" finished-at="2021-04-09T14:04:26Z">
+  <suite name="Suite" duration-ms="178873" started-at="2021-04-15T02:11:04Z" finished-at="2021-04-15T02:14:03Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="243005" started-at="2021-04-09T14:00:23Z" finished-at="2021-04-09T14:04:26Z">
+    <test name="Test" duration-ms="178873" started-at="2021-04-15T02:11:04Z" finished-at="2021-04-15T02:14:03Z">
       <class name="crmframework.crmAutomation.ListManagementPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@59fa1d9b]" name="initialize" is-config="true" duration-ms="3930" started-at="2021-04-09T19:30:23Z" finished-at="2021-04-09T19:30:27Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@523884b2]" name="initialize" is-config="true" duration-ms="21178" started-at="2021-04-15T07:41:04Z" finished-at="2021-04-15T07:41:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@59fa1d9b]" name="TS001_VerifyHomePageTest" duration-ms="192046" started-at="2021-04-09T19:30:27Z" finished-at="2021-04-09T19:33:39Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@523884b2]" name="TS001_VerifyHomePageTest" duration-ms="126107" started-at="2021-04-15T07:41:25Z" finished-at="2021-04-15T07:43:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS004_VerifyCreateNewListTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@59fa1d9b]" name="TS004_VerifyCreateNewListTest" duration-ms="47002" started-at="2021-04-09T19:33:39Z" finished-at="2021-04-09T19:34:26Z">
+        <test-method status="FAIL" signature="TS004_VerifyListMembersRemovedViewTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@523884b2]" name="TS004_VerifyListMembersRemovedViewTest" duration-ms="31278" started-at="2021-04-15T07:43:31Z" finished-at="2021-04-15T07:44:03Z">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/h1[1] (tried for 15 second(s) with 500 MILLISECONDS interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/h1[1] (tried for 15 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMIncentiveDetailsPage.getclickarrowforactiveincentive(CRMIncentiveDetailsPage.java:172)
+	at crmframework.crmAutomation.ListManagementPageTest.TS004_VerifyListMembersRemovedViewTest(ListManagementPageTest.java:313)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/h1[1]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'SHRADHAMA-W10', ip: '172.27.182.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:644)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS004_VerifyCreateNewListTest -->
+        </test-method> <!-- TS004_VerifyListMembersRemovedViewTest -->
       </class> <!-- crmframework.crmAutomation.ListManagementPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

@@ -291,8 +291,8 @@ public class ListManagementPageTest extends base {
 		//Clear the search term
 		hp.getClearSearch().click();
 	}
-	@Test(priority=4)
-	public void TS004_VerifyListMembersRemovedViewTest() throws InterruptedException
+	@Test(priority=5)
+	public void TS005_VerifyListMembersRemovedViewTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//CRM-T317- Verify Buyer accounts that are no longer associated with a list with which they once were
@@ -327,8 +327,8 @@ public class ListManagementPageTest extends base {
 			
 			}
 	
-	@Test(priority=5)
-	public void TS005_ManualFail_VerifyListMemberLastAddedRemovedUpdatedTest() throws IOException, InterruptedException {
+	@Test(priority=6)
+	public void TS006_ManualFail_VerifyListMemberLastAddedRemovedUpdatedTest() throws IOException, InterruptedException {
 
 		//The purpose of this test case to verify that:-
 		//CRM-T206:- VP Buyer Services is able to identify list has been refreshed last time by reviewing below fields :
