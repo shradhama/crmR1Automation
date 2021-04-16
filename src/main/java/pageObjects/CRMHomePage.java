@@ -37,6 +37,7 @@ public class CRMHomePage {
 	By activeinccategorieslabel = By.xpath("//h1[@aria-label='Active Incentive Categories']"); //Locator for Active Incentive Categories Label
 	By searchresultinccatname = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for incentive category name in search result
 	By listmemberstab= By.xpath("//span[contains(text(),'List Members')]"); //Locator for List Members tab
+	By dashboardstab= By.xpath("//span[contains(text(),'Dashboards')]"); //Locator for Dashboards tab
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -177,11 +178,14 @@ public class CRMHomePage {
 		Thread.sleep(3000);
 		return driver.findElement(searchresultinccatname);
 	}
-
 	public WebElement getlistmemberstab() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(listmemberstab));
 		return driver.findElement(listmemberstab);	
 	}
-
+	public WebElement getdashboardstab() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardstab));
+		return driver.findElement(dashboardstab);	
+	}
 }
