@@ -211,7 +211,7 @@ public class ActivitiesPageTest extends base {
 		actp.getValidateApptName().click();
 		actp.openRegardingFieldText().click();
 		Thread.sleep(5000);
-		utl.scrollToElement(ap.getDescriptionLabel());
+		//utl.scrollToElement(ap.getDescriptionLabel());
 		
 		//Verify that task name is displayed on Account/Contact page
 		Assert.assertTrue(ap.getverifyaccountppointment().getText().contains(taskname));	

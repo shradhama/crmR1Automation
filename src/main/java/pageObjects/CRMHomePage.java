@@ -38,6 +38,7 @@ public class CRMHomePage {
 	By searchresultinccatname = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for incentive category name in search result
 	By listmemberstab= By.xpath("//span[contains(text(),'List Members')]"); //Locator for List Members tab
 	By dashboardstab= By.xpath("//span[contains(text(),'Dashboards')]"); //Locator for Dashboards tab
+	By activitiestab= By.xpath("//span[contains(text(),'Activities')]"); //Locator for Activities tab
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -187,5 +188,10 @@ public class CRMHomePage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardstab));
 		return driver.findElement(dashboardstab);	
+	}
+	
+	public WebElement getActivitiesTab() {
+		
+		return driver.findElement(activitiestab);
 	}
 }
