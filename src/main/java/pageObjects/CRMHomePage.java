@@ -39,6 +39,8 @@ public class CRMHomePage {
 	By listmemberstab= By.xpath("//span[contains(text(),'List Members')]"); //Locator for List Members tab
 	By dashboardstab= By.xpath("//span[contains(text(),'Dashboards')]"); //Locator for Dashboards tab
 	By activitiestab= By.xpath("//span[contains(text(),'Activities')]"); //Locator for Activities tab
+	By campusestab = By.xpath("//span[contains(text(),'Campuses')]"); //Locator for Campuses tab
+	By campusinsearchresult = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for Campus name in search result
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -193,5 +195,17 @@ public class CRMHomePage {
 	public WebElement getActivitiesTab() {
 		
 		return driver.findElement(activitiestab);
+	}
+	
+	public WebElement getCampusesTab() {
+		return driver.findElement(campusestab);
+	}
+	public WebElement getSearchCampusField() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(searchaccount);	
+	}
+	public WebElement getCampusInSearchResult() throws InterruptedException {
+		Thread.sleep(3000);
+		return driver.findElement(campusinsearchresult);
 	}
 }

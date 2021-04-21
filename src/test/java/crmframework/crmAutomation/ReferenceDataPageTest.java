@@ -2,6 +2,7 @@ package crmframework.crmAutomation;
 
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -61,7 +62,7 @@ public class ReferenceDataPageTest extends base {
 	CRMActivitiesPage actp;
 	CRMReferenceDataPage refdp;
 	public String listNameText;
-	
+
 	@BeforeTest
 	public void initialize() throws IOException
 	{
@@ -103,6 +104,132 @@ public class ReferenceDataPageTest extends base {
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
 	}
-	
-	
+
+	@Test(priority=2)
+	public void TS002_VerifyCampusesTest() throws IOException, InterruptedException {
+
+		//The purpose of this test case:-
+		//T458- To verify the Campuses
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		refdp = new CRMReferenceDataPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Navigate to Campuses under Reference Data in left menu.
+		utl.scrollToElement(hp.getTransactionalSectnLabel());
+		hp.getCampusesTab().click();
+
+		//Verify that by default Active Campuses should be displayed
+		Assert.assertTrue(refdp.getActiveCampusesLabel().isDisplayed());
+
+		//Verify that Campuses names which should be displayed are: Atlanta, Digital, High Point, Las Vegas
+		Assert.assertTrue(refdp.getAtlantaCampusCell().isDisplayed());
+		Assert.assertTrue(refdp.getDigitalCampusCell().isDisplayed());
+		Assert.assertTrue(refdp.getHighPointCampusCell().isDisplayed());
+		Assert.assertTrue(refdp.getLasVegasCampusCell().isDisplayed());
+
+		//Open any Active Campus
+		String campusname = refdp.getAtlantaCampusCell().getAttribute("title");
+		System.out.println("Selected Campus name: "+campusname);
+		refdp.getAtlantaCampusCell().click();
+
+		//Verify that selected Campus page should be displayed
+		Assert.assertTrue(refdp.getCampusPageHeaderTitle().getText().contains(campusname));
+
+		//Verify that it is Read Only page
+		Assert.assertTrue(refdp.getReadOnlyTxtOnCampusPage().isDisplayed());
+
+		//Verify that Name with selected campus should be displayed
+		Assert.assertTrue(refdp.getNameTextBox().getAttribute("value").contains(campusname));
+
+		//Verify that List with below fields should be displayed
+		List<WebElement> nodataavailtxt = refdp.getNoDataAvailTxt();
+		if(nodataavailtxt.size()==0) {
+			System.out.println("List is available for Campus");
+		}
+		else {
+			Assert.assertTrue(refdp.getListsSectnNameColmn().isDisplayed());
+			Assert.assertTrue(refdp.getListsSectnTypeColmn().isDisplayed());
+			Assert.assertTrue(refdp.getListsSectnBuyerGroupColmn().isDisplayed());
+			Assert.assertTrue(refdp.getListsSectnExpirationDateColmn().isDisplayed());
+		}
+
+		Assert.assertTrue(refdp.getListsSectnRefreshBtn().isDisplayed());
+		Assert.assertTrue(refdp.getListsSectnExistingListsBtn().isDisplayed());
+		Assert.assertTrue(refdp.getMoreCmndsForListsBtn().isDisplayed());
+
+		//Click on the Related tab besides General
+		refdp.getRelatedTab().click();
+
+		Assert.assertTrue(refdp.getAuditHistoryOptn().isDisplayed());
+		Assert.assertTrue(refdp.getChannelsOptn().isDisplayed());
+		Assert.assertTrue(refdp.getAccountCampusProfileOptn().isDisplayed());
+
+		//Verify that owner name should be displayed
+		Assert.assertTrue(refdp.getOwnerName().isDisplayed());
+		refdp.getMoreHeaderFieldsBtn().click();
+		Assert.assertTrue(refdp.getOwnerInHeader().getText().contains(refdp.getOwnerName().getText()));
+
+		//Click on Back button
+		ap.getPageBackBtn().click();
+
+		//Click on the dropdown which is beside the Active Campuses
+		refdp.getActiveCampusesDDBtn().click();
+		refdp.getInactiveCampusesOptn().click();
+
+		//Verify that Inactive Campuses page should be displayed
+		Assert.assertTrue(refdp.getInactiveCampusesLabel().isDisplayed());
+
+		//Verify that if no Campuses are inactive then No data available should be displayed.
+		Assert.assertTrue(refdp.getNoDataAvailMsg().isDisplayed());
+	}
+
+	@Test(priority=3)
+	public void TS003_VerifySearchCampusesTest() throws IOException, InterruptedException {
+
+		//The purpose of this test case:-
+		//T459- To verify that CRM user is having ability to search Campuses using 
+		//searchable fields: Name
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		refdp = new CRMReferenceDataPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Navigate to Campuses under Reference Data in left menu.
+		utl.scrollToElement(hp.getTransactionalSectnLabel());
+		hp.getCampusesTab().click();
+
+		//Go to search box on right top corner of page and enter Name
+		hp.getSearchCampusField().click();
+		hp.getSearchCampusField().sendKeys(prop.getProperty("searchcampus"));
+		hp.getstartsearch().click();
+		Thread.sleep(4000);
+
+		//Verify that All Campuses that are beginning with 'At' should get displayed in the search results
+		Assert.assertTrue(hp.getCampusInSearchResult().getAttribute("title").contains(prop.getProperty("searchcampus")));
+
+		//Clear Search results
+		hp.getClearSearch().click();
+
+		//Go to search box on right top corner of page and enter Name
+		hp.getSearchCampusField().click();
+		String searchcampusrecords = "*" + prop.getProperty("searchcampusrecords");
+		hp.getSearchCampusField().sendKeys(searchcampusrecords);
+		hp.getstartsearch().click();
+		Thread.sleep(4000);
+
+		//Verify that All Campuses that contains 'A' should get displayed in the search results
+		WebElement campusnameinsearchresults = null;
+		for (int i=0;i<3;i++)
+		{
+			campusnameinsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			String campusinsearchrslt = campusnameinsearchresults.getText().toLowerCase();
+			Assert.assertTrue(campusinsearchrslt.contains(prop.getProperty("searchcampusrecords")));
+		}
+		//Clear Search results
+		hp.getClearSearch().click();
+	}
 }
+
