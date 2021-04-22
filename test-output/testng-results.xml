@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="298179" started-at="2021-04-21T09:09:49Z" finished-at="2021-04-21T09:14:47Z">
+  <suite name="Suite" duration-ms="330463" started-at="2021-04-22T06:15:54Z" finished-at="2021-04-22T06:21:25Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="298179" started-at="2021-04-21T09:09:49Z" finished-at="2021-04-21T09:14:47Z">
+    <test name="Test" duration-ms="330463" started-at="2021-04-22T06:15:54Z" finished-at="2021-04-22T06:21:25Z">
       <class name="crmframework.crmAutomation.ReferenceDataPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@46d56d67]" name="initialize" is-config="true" duration-ms="47864" started-at="2021-04-21T14:39:49Z" finished-at="2021-04-21T14:40:37Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@46d56d67]" name="initialize" is-config="true" duration-ms="11208" started-at="2021-04-22T11:45:54Z" finished-at="2021-04-22T11:46:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@46d56d67]" name="TS001_VerifyHomePageTest" duration-ms="133742" started-at="2021-04-21T14:40:37Z" finished-at="2021-04-21T14:42:51Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@46d56d67]" name="TS001_VerifyHomePageTest" duration-ms="131664" started-at="2021-04-22T11:46:06Z" finished-at="2021-04-22T11:48:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS002_VerifyCampusesTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@46d56d67]" name="TS002_VerifyCampusesTest" duration-ms="79350" started-at="2021-04-21T14:42:51Z" finished-at="2021-04-21T14:44:10Z">
+        <test-method status="PASS" signature="TS002_VerifyCampusesTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@46d56d67]" name="TS002_VerifyCampusesTest" duration-ms="69735" started-at="2021-04-22T11:48:17Z" finished-at="2021-04-22T11:49:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS002_VerifyCampusesTest -->
-        <test-method status="PASS" signature="TS003_VerifySearchCampusesTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@46d56d67]" name="TS003_VerifySearchCampusesTest" duration-ms="37105" started-at="2021-04-21T14:44:10Z" finished-at="2021-04-21T14:44:47Z">
+        <test-method status="PASS" signature="TS003_VerifySearchCampusesTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@46d56d67]" name="TS003_VerifySearchCampusesTest" duration-ms="40850" started-at="2021-04-22T11:49:27Z" finished-at="2021-04-22T11:50:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS003_VerifySearchCampusesTest -->
+        <test-method status="PASS" signature="TS004_VerifyDemandDriverProductCategoriesTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@46d56d67]" name="TS004_VerifyDemandDriverProductCategoriesTest" duration-ms="26149" started-at="2021-04-22T11:50:08Z" finished-at="2021-04-22T11:50:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS004_VerifyDemandDriverProductCategoriesTest -->
+        <test-method status="PASS" signature="TS005_VerifySearchDDProductCategoriesTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@46d56d67]" name="TS005_VerifySearchDDProductCategoriesTest" duration-ms="50795" started-at="2021-04-22T11:50:34Z" finished-at="2021-04-22T11:51:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS005_VerifySearchDDProductCategoriesTest -->
       </class> <!-- crmframework.crmAutomation.ReferenceDataPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
