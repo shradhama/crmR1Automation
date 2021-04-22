@@ -42,7 +42,21 @@ public class CRMReferenceDataPage {
 	By inactivecampusesoptn = By.xpath("//span[contains(text(),'Inactive Campuses')]"); //Locator for Inactive Campuses optn
 	By inactivecampuseslabel = By.xpath("//span[contains(text(),'Inactive Campuses')]"); //Locator for Inactive Campuses label
 	By nodataavailmsg = By.xpath("//span[contains(text(),'No data available.')]"); //Locator for No Data Available msg
-
+	By activeddproductcateglabel = By.xpath("//span[contains(text(),'Active Demand Driver Product Categories')]"); //Locator for Active Deman driver Product Categories label
+	By namecolumn = By.xpath("//div[contains(text(),'Name')]"); //Locator for Name column
+	By parentddcategorycolumn = By.xpath("//div[contains(text(),'Parent Demand Driver Category')]"); //Locator for Parent Demand Driver Category column
+	By selectddproductcatgname = By.xpath("//div[@data-id='cell-0-2']"); //Locator to select DD Product Category name
+	By parentddproductcatgname = By.xpath("//div[@data-id='cell-0-3']"); //Locator to get Parent DD Product Category name
+	By ddproductcatgpageheadertitle = By.xpath("//h1[@data-id='header_title']"); //Locator for DD Product Category page header title
+	By parentddproductcatgtxtbx = By.xpath("//div[@data-id='xxc_parentdemanddrivercategory.fieldControl-LookupResultsDropdown_xxc_parentdemanddrivercategory_selected_tag_text']"); //Locator for Parent DD Product Categ text box
+	By leadsoptn = By.xpath("//div[@aria-label='Leads Related - Common']"); //Locator for Leads optn
+	By contactchannelsprofileoptn = By.xpath("//div[@aria-label='Contact Channel Profiles Related - Common']"); //Locator for Contact Channels Profiles optn
+	By ddproductcatgoptn = By.xpath("//div[@aria-label='Demand Driver Product Categories Related - Common']"); //Locator for Demand Driver Product Categories optn
+	By registrationsoptn = By.xpath("//div[@aria-label='Registrations Related - Common']"); //Locator for Registrations optn
+	By activeddprodcatgddbtn = By.xpath("//span[@class='symbolFont ChevronDownMed-symbol  ']"); //Locator for Active DD Product Categories dropdown btn
+	By inactiveddprodcatgoptn = By.xpath("//span[contains(text(),'Inactive Demand Driver Product Categories')]"); //Locator for Inactive Demand Driver Product Categories optn
+	By inactiveddprodcatglabel = By.xpath("//span[contains(text(),'Inactive Demand Driver Product Categories')]"); //Locator for Inactive Demand Driver Product Categories label
+	
 	public CRMReferenceDataPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -136,6 +150,56 @@ public class CRMReferenceDataPage {
 	public WebElement getNoDataAvailMsg() {
 		return driver.findElement(nodataavailmsg);		
 	}
-
+	public WebElement getActiveDDProductCategLabel() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(activeddproductcateglabel));
+		return driver.findElement(activeddproductcateglabel);	
+	}
+	public WebElement getNameColumn() {
+		return driver.findElement(namecolumn);		
+	}
+	public WebElement getParentDDCategoryColumn() {
+		return driver.findElement(parentddcategorycolumn);		
+	}
+	public WebElement selectDDProductCatgName() {
+		return driver.findElement(selectddproductcatgname);		
+	}
+	public WebElement getParentDDProductCatgName() {
+		return driver.findElement(parentddproductcatgname);		
+	}
+	public WebElement getDDProductCatgPageHeaderTitle() throws InterruptedException {
+		Thread.sleep(7000);
+		return driver.findElement(ddproductcatgpageheadertitle);		
+	}
+	public WebElement getParentDDProductCatgTxtbx() {
+		return driver.findElement(parentddproductcatgtxtbx);		
+	}
+	public WebElement getLeadsOptn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(leadsoptn));
+		return driver.findElement(leadsoptn);		
+	}
+	public WebElement getContactChannelsProfileOptn() {
+		return driver.findElement(contactchannelsprofileoptn);		
+	}
+	public WebElement getDDProductCatgOptn() {
+		return driver.findElement(ddproductcatgoptn);		
+	}
+	public WebElement getRegistrationsOptn() {
+		return driver.findElement(registrationsoptn);		
+	}
+	public WebElement getActiveDDProdCatgDDBtn() {
+		return driver.findElement(activeddprodcatgddbtn);		
+	}
+	public WebElement getInactiveDDProdCatgOptn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(inactiveddprodcatgoptn));
+		return driver.findElement(inactiveddprodcatgoptn);	
+	}
+	public WebElement getInactiveDDProdCatgLabel() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(inactiveddprodcatglabel));
+		return driver.findElement(inactiveddprodcatglabel);	
+	}
 }
 

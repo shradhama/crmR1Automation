@@ -231,5 +231,152 @@ public class ReferenceDataPageTest extends base {
 		//Clear Search results
 		hp.getClearSearch().click();
 	}
+
+	@Test(priority=4)
+	public void TS004_VerifyDemandDriverProductCategoriesTest() throws IOException, InterruptedException {
+
+		//The purpose of this test case:-
+		//T474- To verify the Demand Driver Product Categories
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		refdp = new CRMReferenceDataPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Navigate to Demad Driver Product Categories under Reference Data in left menu
+		utl.scrollToElement(hp.getTransactionalSectnLabel());
+		hp.getDDProductCatgTab().click();
+
+		//Verify that by default Active Demand Driver Product Categories should be displayed
+		Assert.assertTrue(refdp.getActiveDDProductCategLabel().isDisplayed());
+
+		//Verify that Active Demand Driver Product Categories should be displayed with the below fields:
+		//Name, Parent Demand Driver Category
+		Assert.assertTrue(refdp.getNameColumn().isDisplayed());
+		Assert.assertTrue(refdp.getParentDDCategoryColumn().isDisplayed());
+
+		//Open any Active Demand Driver Product Category
+		String ddproductcatgname = refdp.selectDDProductCatgName().getAttribute("title");
+		System.out.println("Selected DD Product Category: "+ddproductcatgname);
+
+		//Get Parent DD Product Categ name
+		String parentprductcatgname = refdp.getParentDDProductCatgName().getAttribute("title");
+		System.out.println("Selected Parent DD Product Category: "+parentprductcatgname);
+		refdp.selectDDProductCatgName().click();
+
+		//Verify that selected Demand Driver Product Categories page should be displayed
+		Assert.assertTrue(refdp.getDDProductCatgPageHeaderTitle().getText().contains(ddproductcatgname));
+
+		//Verify that it is Read Only page
+		Assert.assertTrue(refdp.getReadOnlyTxtOnCampusPage().isDisplayed());
+
+		//Verify the sections and their values under General tab
+		Assert.assertTrue(refdp.getNameTextBox().getAttribute("value").contains(ddproductcatgname));
+		Assert.assertTrue(refdp.getParentDDProductCatgTxtbx().getText().contains(parentprductcatgname));
+
+		//Click on the Related tab
+		refdp.getRelatedTab().click();
+
+		//Verify that Related-Common with below options should be displayed
+		Assert.assertTrue(refdp.getAuditHistoryOptn().isDisplayed());
+		Assert.assertTrue(refdp.getLeadsOptn().isDisplayed());
+		Assert.assertTrue(refdp.getContactChannelsProfileOptn().isDisplayed());
+		Assert.assertTrue(refdp.getDDProductCatgOptn().isDisplayed());
+		Assert.assertTrue(refdp.getRegistrationsOptn().isDisplayed());
+
+		//Click on Back button
+		ap.getPageBackBtn().click();
+
+		//Click on the dropdown which is beside the Active Demand Driver Product Categories
+		refdp.getActiveDDProdCatgDDBtn().click();
+
+		//Click on Inactive Demand Driver Product Categories option from the dropdown
+		refdp.getInactiveDDProdCatgOptn().click();
+
+		//Verify that Demand Driver Product Categories page should be displayed
+		Assert.assertTrue(refdp.getInactiveDDProdCatgLabel().isDisplayed());
+
+		//Verify that if no Demand Driver Product Categories are inactive then No data available should be displayed
+		Assert.assertTrue(refdp.getNoDataAvailMsg().isDisplayed());
+	}
+
+	@Test(priority=5)
+	public void TS005_VerifySearchDDProductCategoriesTest() throws IOException, InterruptedException {
+
+		//The purpose of this test case:-
+		//T475- To To verify that CRM user is having ability to search Demand Driver Product 
+		//Categories using searchable fields: Name and Parent Demand Driver Category
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		refdp = new CRMReferenceDataPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Navigate to Campuses under Reference Data in left menu.
+		utl.scrollToElement(hp.getTransactionalSectnLabel());
+		hp.getDDProductCatgTab().click();
+
+		//Go to search box on right top corner of page and enter Name
+		hp.getSearchDDProdCatgField().click();
+		hp.getSearchDDProdCatgField().sendKeys(prop.getProperty("searchddprodcatg"));
+		hp.getstartsearch().click();
+		Thread.sleep(4000);
+
+		//Verify that All Demad Driver Product Categories that are beginning with Acc should get displayed in the search results.
+		WebElement ddprodcatginsearchresults = null;
+		for (int i=0;i<2;i++)
+		{
+			ddprodcatginsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			String prodcatginsearchrslt = ddprodcatginsearchresults.getAttribute("title");
+			Assert.assertTrue(prodcatginsearchrslt.contains(prop.getProperty("searchddprodcatg")));
+		}
+		//Clear Search results
+		hp.getClearSearch().click();
+
+		//Go to the search box on top right corner of the page and enter Parent category Driver Category
+		hp.getSearchDDProdCatgField().click();
+		hp.getSearchDDProdCatgField().sendKeys(prop.getProperty("searchparentcatg"));
+		hp.getstartsearch().click();
+		Thread.sleep(4000);
+
+		//Verify that all the records that contains 'Ho' keyword should display 
+		WebElement parentcatginsearchresults = null;
+		for (int i=0;i<7;i++)
+		{
+			parentcatginsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
+			String parentcatginsearchrslt = parentcatginsearchresults.getAttribute("title");
+			Assert.assertTrue(parentcatginsearchrslt.contains(prop.getProperty("searchparentcatg")));
+		}
+		//Clear Search results
+		hp.getClearSearch().click();
+
+		//Go to search box on right top corner of page and enter Name
+		hp.getSearchDDProdCatgField().click();
+		String searchddprodcatg = "*" + prop.getProperty("searchprodcatgrecords");
+		hp.getSearchDDProdCatgField().sendKeys(searchddprodcatg);
+		hp.getstartsearch().click();
+		Thread.sleep(4000);
+
+		//Verify that All the records which have 'me' in the searchable fields will be displayed
+		WebElement parentcatginsearchrslt = null;
+		WebElement prodcatginsearchrslt = null;
+		for (int i=0;i<8;i++)
+		{
+			parentcatginsearchrslt = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
+			if (parentcatginsearchrslt.getAttribute("title").contains(prop.getProperty("searchprodcatgrecords")))
+			{
+				System.out.println(parentcatginsearchrslt.getAttribute("title"));
+			}
+			else {
+				prodcatginsearchrslt = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+				Assert.assertTrue(prodcatginsearchrslt.getAttribute("title").contains(prop.getProperty("searchprodcatgrecords")));
+				System.out.println(prodcatginsearchrslt.getAttribute("title"));
+				continue;
+			}
+		}
+
+		//Clear Search results
+		hp.getClearSearch().click();
+	}
 }
 
