@@ -43,6 +43,7 @@ public class CRMHomePage {
 	By campusinsearchresult = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for Campus name in search result
 	By ddproductcatgtab = By.xpath("//span[contains(text(),'Demand Driver Product Categories')]"); //Locator for Demand Driver Product Categories tab
 	By ddprodcatginsearchresult = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for DD Product Catg name in search result
+	By phonecallmarketoutcometab = By.xpath("//span[contains(text(),'Phone Call Market Outcomes')]"); //Locator for Phone Call Market Outcomes tab
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -220,5 +221,8 @@ public class CRMHomePage {
 	public WebElement getDDProdCatgInSearchResult() throws InterruptedException {
 		Thread.sleep(3000);
 		return driver.findElement(ddprodcatginsearchresult);
+	}
+	public WebElement getPhoneCallMarketOutcomeTab() {
+		return driver.findElement(phonecallmarketoutcometab);
 	}
 }

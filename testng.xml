@@ -13,9 +13,10 @@
 			<!-- <class name="crmframework.crmAutomation.IncentivesPageTest" /> -->
 			<!--<class name="crmframework.crmAutomation.ContactPageTest" />-->
 			<!--<class name="crmframework.crmAutomation.PeoplePageTest" />-->
-			<!--  <class name="crmframework.crmAutomation.DashboardPageTest" /> -->
+			<!-- <class name="crmframework.crmAutomation.DashboardPageTest" /> -->
 			<!--<class name="crmframework.crmAutomation.IncentiveCategoriesPageTest" />-->
-			<class name="crmframework.crmAutomation.ReferenceDataPageTest"/>
+			<!-- <class name="crmframework.crmAutomation.ReferenceDataPageTest"/> -->
+			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest"/>
 		</classes>
 		
 	</test>

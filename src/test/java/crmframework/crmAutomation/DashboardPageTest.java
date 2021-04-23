@@ -1,12 +1,16 @@
 package crmframework.crmAutomation;
 
+import static org.junit.Assert.assertTrue;
+
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -247,4 +251,73 @@ public class DashboardPageTest extends base {
 		System.out.println("Name of the columns for Hotel Incentive Section are getting displayed: Account, Contact, Market");		
 	}
 
+	@Test(priority=3)
+	public void TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest() throws IOException, InterruptedException {
+
+		//The purpose of this test case:-
+		//T155- To verify Retail Relations Manager can view daily report of hotel usage and 
+		//total incentives offered
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		dp = new CRMDashboardPage(driver);
+ 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+ 		
+ 		//Navigate to Dashboard under Home in left menu
+ 		dp.getDashboard().click();
+ 		
+ 		//Click on the dashboard selector to view system dashboard
+ 		dp.selectdashboardExpandButton().click();
+		
+ 		//click on Retail Relations Manager Dashboard
+		dp.selectRetailRelationsManagerDashboard().click();
+ 		
+		//Verify that Retail ReLAtions Manager Dashboard should be displayed
+		Assert.assertTrue(dp.getRetailRealtionManagerDashboardLabel().isDisplayed());
+		
+		//Scroll down on the page
+		utl.scrollToElement(dp.getPhoneCallsOwnerLabel());
+		utl.scrollToElement(dp.getIncByOwnerByCatgLabel());
+				
+		//Verify the 'Incentives Details created last week by Owner by Category' section(4th Section)
+		List<WebElement> nodataavailtxt = dp.getNoDataAvailText();
+		if (nodataavailtxt.size()!= 0) {
+			System.out.println("Incentive Details are not available");
+		}
+		else {
+			String Incentivedetails_X= dp.getIncentiveDetailsXaxislabel().getText();
+        	String actualIncDec_X= prop.getProperty("Incentivedetails_Xaxis");
+        	String Incentivedetails_Y= dp.getIncentiveDetailsYaxislabel().getText();
+        	String actualIncDec_Y= prop.getProperty("Incentivedetails_Yaxis");
+			Assert.assertEquals(Incentivedetails_X,actualIncDec_X);
+			Assert.assertEquals(Incentivedetails_Y,actualIncDec_Y);
+		    System.out.println("Values of X and Y axis label for Incentive Details Created Last Week are: " +Incentivedetails_X + " & " + Incentivedetails_Y);
+		}
+		
+		//Verify the below in Active Incentive Details by Est. Value by Category section(5th Section)
+		//Verify values of X and Y axis label for Active Incentive Details
+		
+		String ActiveiIncentivedetails_X= dp.getActiveIncentiveDetailsXaxisLabel().getText();
+		String actualActInc_X= prop.getProperty("Activeincentivedetails_Xaxis");
+		Assert.assertEquals(ActiveiIncentivedetails_X,actualActInc_X);
+		String ActiveiIncentivedetails_Y= dp.getActiveIncentiveDetailsYaxisLabel().getText();
+		String actualActInc_Y= prop.getProperty("Activeincentivedetails_Yaxis");
+		Assert.assertEquals(ActiveiIncentivedetails_Y,actualActInc_Y);
+		System.out.println("Values of X and Y axis label for Active Incentive Details are: " +ActiveiIncentivedetails_X + " & " + ActiveiIncentivedetails_Y);
+		
+		//Verify values of X and Y axis values for Active Incentive Details
+		Assert.assertEquals(true, dp.getActiveIncentiveDetailsXaxisValue().isDisplayed());
+		Assert.assertEquals(true, dp.getActiveIncentiveDetailsYaxisValue().isDisplayed());
+		System.out.println("Values of X and Y axis for Active Incentive Details are displaying");
+		
+		//Verify the details getting displayed for Hotel Incentive Section
+		String Hotelinsentive_account= dp.getHotelIncentiveAccount().getText();
+		Assert.assertEquals(Hotelinsentive_account,prop.getProperty("HotelIncentive_Account"));
+		String Hotelinsentive_contact= dp.getHotelIncentiveCount().getText();
+		Assert.assertEquals(Hotelinsentive_contact,prop.getProperty("HotelIncentive_Contact"));
+		String Hotelinsentive_market= dp.getHotelIncentiveMarket().getText();
+		Assert.assertEquals(Hotelinsentive_market,prop.getProperty("HotelIncentive_Market"));
+		System.out.println("Name of the columns for Hotel Incentive Section are getting displayed: Account, Contact, Market");	
+
+	}
 }
