@@ -3,12 +3,12 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.ReferenceDataPageTest">
+      <class name="crmframework.crmAutomation.ChannelsPageTest">
         <methods>
+          <include name="TS002_VerifyChannelsTest"/>
           <include name="initialize"/>
-          <include name="TS005_VerifySearchDDProductCategoriesTest"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.ReferenceDataPageTest -->
+      </class> <!-- crmframework.crmAutomation.ChannelsPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
