@@ -4,11 +4,15 @@
   <test name="Test(failed)">
     <classes>
       <class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest">
+      <class name="crmframework.crmAutomation.ChannelsPageTest">
         <methods>
+          <include name="TS002_VerifyChannelsTest"/>
           <include name="initialize"/>
           <include name="TS002_VerifyAllPhoneCallsByOwnerTest"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.PhoneCallMarketOutcomePageTest -->
+        </methods>
+      </class> <!-- crmframework.crmAutomation.ChannelsPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

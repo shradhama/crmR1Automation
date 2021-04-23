@@ -17,7 +17,12 @@
 			<!--<class name="crmframework.crmAutomation.IncentiveCategoriesPageTest" />-->
 			<!-- <class name="crmframework.crmAutomation.ReferenceDataPageTest"/> -->
 			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest"/>
+			<class name="crmframework.crmAutomation.ChannelsPageTest" />
 		</classes>
+		<methods>
+			<include name="TS001_VerifyHomePageTest" />
+			<include name="TS002_VerifyChannelsTest" />
+		</methods>
 		
 	</test>
 </suite>
