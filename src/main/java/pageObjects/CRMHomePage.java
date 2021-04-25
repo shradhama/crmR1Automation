@@ -38,6 +38,12 @@ public class CRMHomePage {
 	By searchresultinccatname = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for incentive category name in search result
 	By listmemberstab= By.xpath("//span[contains(text(),'List Members')]"); //Locator for List Members tab
 	By dashboardstab= By.xpath("//span[contains(text(),'Dashboards')]"); //Locator for Dashboards tab
+	By activitiestab= By.xpath("//span[contains(text(),'Activities')]"); //Locator for Activities tab
+	By campusestab = By.xpath("//span[contains(text(),'Campuses')]"); //Locator for Campuses tab
+	By campusinsearchresult = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for Campus name in search result
+	By ddproductcatgtab = By.xpath("//span[contains(text(),'Demand Driver Product Categories')]"); //Locator for Demand Driver Product Categories tab
+	By ddprodcatginsearchresult = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for DD Product Catg name in search result
+	By phonecallmarketoutcometab = By.xpath("//span[contains(text(),'Phone Call Market Outcomes')]"); //Locator for Phone Call Market Outcomes tab
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -187,5 +193,36 @@ public class CRMHomePage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardstab));
 		return driver.findElement(dashboardstab);	
+	}
+	
+	public WebElement getActivitiesTab() {
+		
+		return driver.findElement(activitiestab);
+	}
+	
+	public WebElement getCampusesTab() {
+		return driver.findElement(campusestab);
+	}
+	public WebElement getSearchCampusField() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(searchaccount);	
+	}
+	public WebElement getCampusInSearchResult() throws InterruptedException {
+		Thread.sleep(3000);
+		return driver.findElement(campusinsearchresult);
+	}
+	public WebElement getDDProductCatgTab() {
+		return driver.findElement(ddproductcatgtab);
+	}
+	public WebElement getSearchDDProdCatgField() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(searchaccount);	
+	}
+	public WebElement getDDProdCatgInSearchResult() throws InterruptedException {
+		Thread.sleep(3000);
+		return driver.findElement(ddprodcatginsearchresult);
+	}
+	public WebElement getPhoneCallMarketOutcomeTab() {
+		return driver.findElement(phonecallmarketoutcometab);
 	}
 }

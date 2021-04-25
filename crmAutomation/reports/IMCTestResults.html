@@ -35,7 +35,10 @@
 <a href="#"><span class="badge badge-primary">CRM Automation Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Apr 15, 2021 07:41:04 AM</span></a>
+<a href="#"><span class="badge badge-primary">Apr 23, 2021 03:44:37 PM</span></a>
+
+<a href="#"><span class="badge badge-primary">Apr 22, 2021 08:08:49 PM</span></a>
+
 </li>
 </ul>
 </div>
@@ -87,7 +90,11 @@
           <div class="test-detail">
             <p class="name">TS001_VerifyHomePageTest</p>
             <p class="text-sm">
-              <span>07:41:25 AM</span> / <span>00:02:06:104</span>
+
+              <span>15:44:50 PM</span> / <span>00:02:13:531</span>
+
+              <span>20:08:53 PM</span> / <span>00:01:57:313</span>
+
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -96,9 +103,15 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">TS001_VerifyHomePageTest</h5>
-<span class='badge badge-success'>04.15.2021 07:41:25</span>
-<span class='badge badge-danger'>04.15.2021 07:43:31</span>
-<span class='badge badge-default'>00:02:06:104</span>
+
+<span class='badge badge-success'>04.23.2021 15:44:50</span>
+<span class='badge badge-danger'>04.23.2021 15:47:03</span>
+<span class='badge badge-default'>00:02:13:531</span>
+
+<span class='badge badge-success'>04.22.2021 20:08:53</span>
+<span class='badge badge-danger'>04.22.2021 20:10:50</span>
+<span class='badge badge-default'>00:01:57:313</span>
+
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 </div>
@@ -108,7 +121,11 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:43:31 AM</td>
+
+        <td>3:47:03 PM</td>
+
+        <td>8:10:50 PM</td>
+
         <td>
           Test Passed
         </td>
@@ -123,20 +140,34 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">TS004_VerifyListMembersRemovedViewTest</p>
+
+            <p class="name">TS002_VerifyAllPhoneCallsByOwnerTest</p>
             <p class="text-sm">
-              <span>07:43:31 AM</span> / <span>00:00:31:453</span>
+              <span>15:47:03 PM</span> / <span>00:00:42:862</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+
+            <p class="name">TS002_VerifyChannelsTest</p>
+            <p class="text-sm">
+              <span>20:10:50 PM</span> / <span>00:00:29:029</span>
               <span class="badge fail-bg log float-right">Fail</span>
+
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">TS004_VerifyListMembersRemovedViewTest</h5>
-<span class='badge badge-success'>04.15.2021 07:43:31</span>
-<span class='badge badge-danger'>04.15.2021 07:44:03</span>
-<span class='badge badge-default'>00:00:31:453</span>
+
+<h5 class="test-status text-pass">TS002_VerifyAllPhoneCallsByOwnerTest</h5>
+<span class='badge badge-success'>04.23.2021 15:47:03</span>
+<span class='badge badge-danger'>04.23.2021 15:47:46</span>
+<span class='badge badge-default'>00:00:42:862</span>
+
+<h5 class="test-status text-fail">TS002_VerifyChannelsTest</h5>
+<span class='badge badge-success'>04.22.2021 20:10:50</span>
+<span class='badge badge-danger'>04.22.2021 20:11:19</span>
+<span class='badge badge-default'>00:00:29:029</span>
+
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 </div>
 </div>
@@ -145,14 +176,35 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:47:46 PM</td>
+
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>7:44:03 AM</td>
+        <td>8:11:19 PM</td>
+
         <td>
-          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/h1[1] (tried for 15 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMIncentiveDetailsPage.getclickarrowforactiveincentive(CRMIncentiveDetailsPage.java:172)
-	at crmframework.crmAutomation.ListManagementPageTest.TS004_VerifyListMembersRemovedViewTest(ListManagementPageTest.java:313)
+          <textarea readonly class="code-block">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=89.0.4389.128)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'AIDTYAUN-W10', ip: '172.27.182.51', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=88.0.4324.96 (68dba2d8a0b149a1d3afac56fa74648032bcf46b-refs/branch-heads/4324@{#1784}), userDataDir=C:\Users\adityaun\AppData\Local\Temp\scoped_dir9736_1457391273}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:59595}, acceptInsecureCerts=false, browserVersion=89.0.4389.128, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 0748c2e88ae4f4ff50ebc0a468166af9
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:313)
+	at crmframework.crmAutomation.ChannelsPageTest.TS002_VerifyChannelsTest(ChannelsPageTest.java:157)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -174,24 +226,9 @@
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
 	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/h1[1]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'SHRADHAMA-W10', ip: '172.27.182.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:644)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 26 more
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
 </textarea>
           
         </td>
@@ -223,12 +260,12 @@ Driver info: driver.version: unknown
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="name">org.openqa.selenium.StaleElementReferenceException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.TimeoutException</h4>
+<h4>org.openqa.selenium.StaleElementReferenceException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -242,9 +279,9 @@ Driver info: driver.version: unknown
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>07:43:31 AM</td>
+<td>20:10:50 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>TS004_VerifyListMembersRemovedViewTest</a>
+<a href="#" class="linked" test-id='2' id='2'>TS002_VerifyChannelsTest</a>
 </td>
 </tr>
 </tbody>
@@ -264,19 +301,31 @@ Driver info: driver.version: unknown
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Apr 15, 2021 07:41:04 AM</h3>
+
+<h3>Apr 23, 2021 03:44:37 PM</h3>
+
+<h3>Apr 22, 2021 08:08:49 PM</h3>
+
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Apr 15, 2021 07:44:03 AM</h3>
+
+<h3>Apr 23, 2021 03:47:46 PM</h3>
+
+<h3>Apr 22, 2021 08:11:20 PM</h3>
+
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
+
+<h3>2</h3>
+
 <h3>1</h3>
+
 </div></div>
 </div>
 <div class="col-md-3">
@@ -298,8 +347,13 @@ Driver info: driver.version: unknown
 </div>
 </div>
 <div class="card-footer">
+
+<div><small data-tooltip='100%'>
+<b>2</b> tests passed
+
 <div><small data-tooltip='50%'>
 <b>1</b> tests passed
+
 </small>
 </div>
 <div>
@@ -321,7 +375,11 @@ Driver info: driver.version: unknown
 </div>
 </div>
 <div class="card-footer">
+
+<div><small data-tooltip='100%'><b>2</b> events passed</small></div>
+
 <div><small data-tooltip='50%'><b>1</b> events passed</small></div>
+
 <div>
 <small data-tooltip='50%'><b>1</b> events failed,
 <b data-tooltip='%'>0</b> others
@@ -340,7 +398,11 @@ Driver info: driver.version: unknown
 </div></div>
 <script>
 var timeline = {
-"TS001_VerifyHomePageTest":126.104,"TS004_VerifyListMembersRemovedViewTest":31.453
+
+"TS001_VerifyHomePageTest":133.531,"TS002_VerifyAllPhoneCallsByOwnerTest":42.862
+
+"TS001_VerifyHomePageTest":117.313,"TS002_VerifyChannelsTest":29.029
+
 };
 </script>
 <div class="row">
@@ -363,8 +425,13 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
+
+passParent: 2,
+failParent: 0,
+
 passParent: 1,
 failParent: 1,
+
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -380,8 +447,13 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
+
+passEvents: 2,
+failEvents: 0,
+
 passEvents: 1,
 failEvents: 1,
+
 warningEvents: 0,
 skipEvents: 0,
 infoEvents: 0
