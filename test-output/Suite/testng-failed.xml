@@ -3,16 +3,12 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest">
-      <class name="crmframework.crmAutomation.ChannelsPageTest">
+      <class name="crmframework.crmAutomation.ListManagementPageTest">
         <methods>
-          <include name="TS002_VerifyChannelsTest"/>
+          <include name="TS007_VerifyExportToExcelListMembersTest"/>
           <include name="initialize"/>
-          <include name="TS002_VerifyAllPhoneCallsByOwnerTest"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.PhoneCallMarketOutcomePageTest -->
-        </methods>
-      </class> <!-- crmframework.crmAutomation.ChannelsPageTest -->
+      </class> <!-- crmframework.crmAutomation.ListManagementPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

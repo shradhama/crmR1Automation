@@ -53,8 +53,10 @@ public class CRMListManagementPage {
 	By listrefreshbtn = By.xpath("//button[@aria-label='Refresh']"); //Locator for Refresh button for List page
 	By newaccountbtnonlistmemform = By.xpath("//button[@aria-label='New Account']"); //Locator for New Account btn on List Member form
 	By unsavedchngssavencontbtn = By.xpath("//button[@aria-label='Save and continue']"); //Locator for Save and continue btn on Unsaved changes pop-up
-
-
+	By exportlistmembers = By.xpath("//button[@data-id = 'xxc_listmember|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_listmember.ExportToExcel.Menu$splitButtonId']");//Locator for Export List Members button
+	By listmembercreatedby = By.xpath("//input[@aria-label = 'Created By']");//Locator for check box Created By
+	By listmembercreatedon = By.xpath("//input[@aria-label = 'Created On']");//Locator for check box Created On
+	
 	public CRMListManagementPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -261,6 +263,19 @@ public class CRMListManagementPage {
 	public WebElement getListLastUpdatedDate() {
 		return driver.findElement(listlastupdateddate);
 	}
-	
-
+	public WebElement getexportlistmembers() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(exportlistmembers));
+		return driver.findElement(exportlistmembers);
+	}
+	public WebElement getlistmembercreatedby() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(listmembercreatedby));
+		return driver.findElement(listmembercreatedby);
+	}
+	public WebElement getlistmembercreatedon() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(listmembercreatedon));
+		return driver.findElement(listmembercreatedon);
+	}
 }
