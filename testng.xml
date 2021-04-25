@@ -16,12 +16,13 @@
 			<!-- <class name="crmframework.crmAutomation.DashboardPageTest" /> -->
 			<!--<class name="crmframework.crmAutomation.IncentiveCategoriesPageTest" />-->
 			<!-- <class name="crmframework.crmAutomation.ReferenceDataPageTest"/> -->
-			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest"/>
-			<class name="crmframework.crmAutomation.ChannelsPageTest" />
+			<!--<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest"/>-->
+			<!--<class name="crmframework.crmAutomation.ChannelsPageTest" />-->
+			<class name="crmframework.crmAutomation.ListManagementPageTest" />
 		</classes>
 		<methods>
 			<include name="TS001_VerifyHomePageTest" />
-			<include name="TS002_VerifyChannelsTest" />
+			<include name="TS007_VerifyExportToExcelListMembersTest" />
 		</methods>
 		
 	</test>
