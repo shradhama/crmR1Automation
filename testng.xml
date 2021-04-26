@@ -18,11 +18,12 @@
 			<!-- <class name="crmframework.crmAutomation.ReferenceDataPageTest"/> -->
 			<!--<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest"/>-->
 			<!--<class name="crmframework.crmAutomation.ChannelsPageTest" />-->
-			<class name="crmframework.crmAutomation.ListManagementPageTest" />
+			<!--<class name="crmframework.crmAutomation.ListManagementPageTest" />-->
+			<class name="crmframework.crmAutomation.RegistrationsPageTest" />
 		</classes>
 		<methods>
 			<include name="TS001_VerifyHomePageTest" />
-			<include name="TS007_VerifyExportToExcelListMembersTest" />
+			<include name="TS004_VerifyExportToExcelRegistrationsPageTest" />
 		</methods>
 		
 	</test>
