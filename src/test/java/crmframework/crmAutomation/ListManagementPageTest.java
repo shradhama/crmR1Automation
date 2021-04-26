@@ -503,7 +503,7 @@ public class ListManagementPageTest extends base {
 	public void TS007_VerifyExportToExcelListMembersTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
-		//CRM-T130- Verify Export To Excel functionality for Incentive Details
+		//CRM-T457- Verify Export To Excel functionality for List Members
 
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
