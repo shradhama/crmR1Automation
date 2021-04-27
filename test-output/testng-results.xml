@@ -1,76 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="2" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="187877" started-at="2021-04-23T10:14:38Z" finished-at="2021-04-23T10:17:46Z">
+  <suite name="Suite" duration-ms="116211" started-at="2021-04-26T11:44:28Z" finished-at="2021-04-26T11:46:25Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="187877" started-at="2021-04-23T10:14:38Z" finished-at="2021-04-23T10:17:46Z">
-      <class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.PhoneCallMarketOutcomePageTest@46d56d67]" name="initialize" is-config="true" duration-ms="11421" started-at="2021-04-23T15:44:38Z" finished-at="2021-04-23T15:44:50Z">
+    <test name="Test" duration-ms="116211" started-at="2021-04-26T11:44:28Z" finished-at="2021-04-26T11:46:25Z">
+      <class name="crmframework.crmAutomation.DashboardPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.DashboardPageTest@4501b7af]" name="initialize" is-config="true" duration-ms="10218" started-at="2021-04-26T17:14:28Z" finished-at="2021-04-26T17:14:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.PhoneCallMarketOutcomePageTest@46d56d67]" name="TS001_VerifyHomePageTest" duration-ms="133534" started-at="2021-04-23T15:44:50Z" finished-at="2021-04-23T15:47:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS002_VerifyAllPhoneCallsByOwnerTest()[pri:0, instance:crmframework.crmAutomation.PhoneCallMarketOutcomePageTest@46d56d67]" name="TS002_VerifyAllPhoneCallsByOwnerTest" duration-ms="42862" started-at="2021-04-23T15:47:03Z" finished-at="2021-04-23T15:47:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS002_VerifyAllPhoneCallsByOwnerTest -->
-      </class> <!-- crmframework.crmAutomation.PhoneCallMarketOutcomePageTest -->
-
-<testng-results skipped="0" failed="1" total="2" passed="1">
-  <reporter-output>
-  </reporter-output>
-  <suite name="Suite" duration-ms="149912" started-at="2021-04-22T14:38:50Z" finished-at="2021-04-22T14:41:20Z">
-    <groups>
-    </groups>
-    <test name="Test" duration-ms="149912" started-at="2021-04-22T14:38:50Z" finished-at="2021-04-22T14:41:20Z">
-      <class name="crmframework.crmAutomation.ChannelsPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ChannelsPageTest@59fa1d9b]" name="initialize" is-config="true" duration-ms="3553" started-at="2021-04-22T20:08:50Z" finished-at="2021-04-22T20:08:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ChannelsPageTest@59fa1d9b]" name="TS001_VerifyHomePageTest" duration-ms="117311" started-at="2021-04-22T20:08:53Z" finished-at="2021-04-22T20:10:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="FAIL" signature="TS002_VerifyChannelsTest()[pri:0, instance:crmframework.crmAutomation.ChannelsPageTest@59fa1d9b]" name="TS002_VerifyChannelsTest" duration-ms="29024" started-at="2021-04-22T20:10:50Z" finished-at="2021-04-22T20:11:19Z">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
+        <test-method status="FAIL" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.DashboardPageTest@4501b7af]" name="TS001_VerifyHomePageTest" duration-ms="75509" started-at="2021-04-26T17:14:39Z" finished-at="2021-04-26T17:15:54Z">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[stale element reference: element is not attached to the page document
-  (Session info: chrome=89.0.4389.128)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'AIDTYAUN-W10', ip: '172.27.182.51', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=88.0.4324.96 (68dba2d8a0b149a1d3afac56fa74648032bcf46b-refs/branch-heads/4324@{#1784}), userDataDir=C:\Users\adityaun\AppData\Local\Temp\scoped_dir9736_1457391273}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:59595}, acceptInsecureCerts=false, browserVersion=89.0.4389.128, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 0748c2e88ae4f4ff50ebc0a468166af9]]>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //input[@id='KmsiCheckboxField'] (tried for 10 second(s) with 500 MILLISECONDS interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=89.0.4389.128)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'AIDTYAUN-W10', ip: '172.27.182.51', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=88.0.4324.96 (68dba2d8a0b149a1d3afac56fa74648032bcf46b-refs/branch-heads/4324@{#1784}), userDataDir=C:\Users\adityaun\AppData\Local\Temp\scoped_dir9736_1457391273}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:59595}, acceptInsecureCerts=false, browserVersion=89.0.4389.128, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 0748c2e88ae4f4ff50ebc0a468166af9
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:313)
-	at crmframework.crmAutomation.ChannelsPageTest.TS002_VerifyChannelsTest(ChannelsPageTest.java:157)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@id='KmsiCheckboxField'] (tried for 10 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMLoginPage.getdontshowcheckbox(CRMLoginPage.java:55)
+	at crmframework.crmAutomation.DashboardPageTest.TS001_VerifyHomePageTest(DashboardPageTest.java:93)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -92,17 +43,85 @@ Session ID: 0748c2e88ae4f4ff50ebc0a468166af9
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
 	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //input[@id='KmsiCheckboxField']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:644)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS002_VerifyChannelsTest -->
-      </class> <!-- crmframework.crmAutomation.ChannelsPageTest -->
-
+        </test-method> <!-- TS001_VerifyHomePageTest -->
+        <test-method status="FAIL" signature="TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest()[pri:0, instance:crmframework.crmAutomation.DashboardPageTest@4501b7af]" name="TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest" duration-ms="30162" started-at="2021-04-26T17:15:54Z" finished-at="2021-04-26T17:16:25Z">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //span[contains(text(), 'Dashboards')] (tried for 20 second(s) with 500 MILLISECONDS interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[contains(text(), 'Dashboards')] (tried for 20 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMDashboardPage.getDashboard(CRMDashboardPage.java:71)
+	at crmframework.crmAutomation.DashboardPageTest.TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest(DashboardPageTest.java:267)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //span[contains(text(), 'Dashboards')]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest -->
+      </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

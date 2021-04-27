@@ -88,7 +88,7 @@ public class DashboardPageTest extends base {
 		Thread.sleep(15000);
 		lp.getsignin().click();
 		//Wait to enter the verification code from Mobile
-		Thread.sleep(30000);
+		Thread.sleep(50000);
 		lp.getVerify().click();
 		lp.getdontshowcheckbox().click();
 		lp.getsigninYes().click();
