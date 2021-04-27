@@ -122,6 +122,24 @@ Driver info: driver.version: unknown
           </reporter-output>
         </test-method> <!-- TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest -->
       </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
+  <suite name="Suite" duration-ms="145832" started-at="2021-04-26T04:20:14Z" finished-at="2021-04-26T04:22:40Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="145832" started-at="2021-04-26T04:20:14Z" finished-at="2021-04-26T04:22:40Z">
+      <class name="crmframework.crmAutomation.RegistrationsPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.RegistrationsPageTest@523884b2]" name="initialize" is-config="true" duration-ms="3076" started-at="2021-04-26T09:50:14Z" finished-at="2021-04-26T09:50:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.RegistrationsPageTest@523884b2]" name="TS001_VerifyHomePageTest" duration-ms="97731" started-at="2021-04-26T09:50:17Z" finished-at="2021-04-26T09:51:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS001_VerifyHomePageTest -->
+        <test-method status="PASS" signature="TS004_VerifyExportToExcelRegistrationsPageTest()[pri:0, instance:crmframework.crmAutomation.RegistrationsPageTest@523884b2]" name="TS004_VerifyExportToExcelRegistrationsPageTest" duration-ms="45002" started-at="2021-04-26T09:51:55Z" finished-at="2021-04-26T09:52:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS004_VerifyExportToExcelRegistrationsPageTest -->
+      </class> <!-- crmframework.crmAutomation.RegistrationsPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

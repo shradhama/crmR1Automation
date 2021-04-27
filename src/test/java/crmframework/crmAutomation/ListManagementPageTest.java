@@ -102,7 +102,7 @@ public class ListManagementPageTest extends base {
 	public void TS002_VerifyExportToExcelListsTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
-		//CRM-T456- Verify Export To Excel functionality for Lists
+		//CRM-T457- Verify Export To Excel functionality for Lists
 
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
@@ -499,4 +499,112 @@ public class ListManagementPageTest extends base {
 		Assert.assertEquals(latestdateaddedingrid, lmp.getListLastUpdatedDate().getAttribute("Value"));
 		System.out.println("Date Added in grid matches with Member added Last Updated date.");
 	}
+	@Test(priority=7)
+	public void TS007_VerifyExportToExcelListMembersTest() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//CRM-T457- Verify Export To Excel functionality for List Members
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		ind = new CRMIncentiveDetailsPage(driver);
+		cp = new CRMContactPage(driver);
+		pl = new CRMPeoplePage(driver);
+		lmp = new CRMListManagementPage(driver);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Incentives Tab at left menu and search incentives containing Cyb
+		hp.getlistmemberstab().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
+		ap.getclicksearchbutton().click();
+
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+	    Thread.sleep(8000);
+		//Click Export To Excel option under it
+		lmp.getexportlistmembers().click();
+
+		//Export file to online excel
+		ap.getopenexcelonline().click();
+
+		//ap.getsaveexcelonline().click();
+		ap.getsaveexcelonline().click();   
+
+		//Click Track Progress button
+		cp.getexporttrackprogressbtn().click();
+		
+		//Switch to new My Imports tab
+		Set<String> windows1 = driver.getWindowHandles();
+		Iterator<String>it = windows1.iterator();
+		String parentId = it.next();
+		String childId = it.next();
+		driver.switchTo().window(childId);
+		
+		Thread.sleep(30000);
+		driver.navigate().refresh();
+		//Verify export to excel online
+		System.out.println(pl.getonlineexportverification().getText());
+		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
+		System.out.println("Excel exported online successfully.");
+		Thread.sleep(10000);
+
+		//Switch to previous browser tab
+		Set<String> windows = driver.getWindowHandles();
+		Iterator<String>it1 = windows.iterator();
+		String parentId1 = it1.next();
+		String childId1 = it1.next();
+		driver.switchTo().window(parentId1);
+		
+/*
+		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		Thread.sleep(10000);
+		//Click Export To Excel option under it
+		lmp.getexportlistmembers().click();
+
+		//Export Excel to Static Worksheet
+		ap.getexporttostaticworksheet().click();
+
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		Thread.sleep(3000);
+		//Click Export To Excel option under it
+		lmp.getexportlistmembers().click();
+
+		//Export Excel to Static Worksheet Page Only
+		Thread.sleep(3000);
+		ap.getexporttostaticworksheetpageonly().click();
+
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		Thread.sleep(3000);
+		//Click Export To Excel dropdown arrow option under it
+		lmp.getexportlistmembers().click();
+
+		//Export to Dynamic Worksheet
+		ap.getexporttodynamicworksheet().click();
+		Thread.sleep(3000);
+		lmp.getlistmembercreatedby().click();
+		lmp.getlistmembercreatedon().click();
+		ap.getexportworksheetpopup().click();
+			
+/*		//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click();
+*/
+		Thread.sleep(3000);
+		//Click Export To Excel option under it
+		lmp.getexportlistmembers().click();
+
+		//Export to Dynamic Pivot Table
+		ap.getexporttodynamicpivottable().click();
+		lmp.getlistmembercreatedby().click();
+		lmp.getlistmembercreatedon().click();
+		ap.getexportworksheetpopup().click();
+	}
+
 }
