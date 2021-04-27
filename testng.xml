@@ -13,7 +13,12 @@
 			<!-- <class name="crmframework.crmAutomation.IncentivesPageTest" /> -->
 			<!--<class name="crmframework.crmAutomation.ContactPageTest" />-->
 			<!--<class name="crmframework.crmAutomation.PeoplePageTest" />-->
-			<class name="crmframework.crmAutomation.DashboardPageTest" />
+			<!-- <class name="crmframework.crmAutomation.DashboardPageTest" /> -->
+			<class name="crmframework.crmAutomation.ReferenceDataPageTest"/>
+			<methods>
+			<include name="TS001_VerifyHomePageTest"/>
+			<include name="TS007_VerifySearchMarketsTest"/>
+			</methods>
 		</classes>
 	</test>
 </suite>

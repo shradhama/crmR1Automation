@@ -378,5 +378,145 @@ public class ReferenceDataPageTest extends base {
 		//Clear Search results
 		hp.getClearSearch().click();
 	}
+	@Test(priority=6)
+	public void TS006_VerifyMarketsTest() throws IOException, InterruptedException {
+
+		//The purpose of this test case:-
+		//T466- To verify the Markets
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		refdp = new CRMReferenceDataPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Navigate to Markets under Reference Data in left menu
+		utl.scrollToElement(hp.getTransactionalSectnLabel());
+		hp.getMarketsTab().click();
+
+		//Verify that by default Active Markets should be displayed
+		Assert.assertTrue(refdp.getActiveMarketsLabel().isDisplayed());
+		Assert.assertTrue(refdp.getNameColumn().isDisplayed());
+		Assert.assertTrue(refdp.getChannelColumn().isDisplayed());
+
+		//Open any Active Market
+		String marketname = refdp.selectMarketName().getAttribute("title");
+		System.out.println("Selected Market Name: "+marketname);
+
+		String channelname = refdp.getChannelName().getText();
+		System.out.println("Selected Channel Name: "+channelname);
+
+		refdp.selectMarketName().click();
+
+		//Verify that selected market's page should be displayed
+		Assert.assertTrue(refdp.getMarketPageHeaderTitle().getText().contains(marketname));
+
+		//Verify that it is Read Only page
+		Assert.assertTrue(refdp.getReadOnlyTxtOnCampusPage().isDisplayed());
+
+		//Verify the sections under General
+		Assert.assertTrue(refdp.getNameTextBox().getAttribute("value").contains(marketname));
+		Assert.assertTrue(refdp.getChannelTxtBx().getText().contains(channelname));
+		Assert.assertTrue(refdp.getStartDateColmn().isDisplayed());
+		Assert.assertTrue(refdp.getEndDateColmn().isDisplayed());
+
+		//Click on the Related tab
+		refdp.getRelatedTab().click();
+
+		//Related-Common tab with expected options should be displayed
+		Assert.assertTrue(refdp.getAuditHistoryOptn().isDisplayed());
+		Assert.assertTrue(refdp.getContactMarketProfilesOptn().isDisplayed());
+		Assert.assertTrue(refdp.getIncentivesOptn().isDisplayed());
+		Assert.assertTrue(refdp.getIncentiveDetailsOptn().isDisplayed());
+		Assert.assertTrue(refdp.getPhoneCallMarketOutcomeOptn().isDisplayed());
+
+		//Verify header displaying owner name
+		Assert.assertTrue(refdp.getOwnerName().isDisplayed());
+		refdp.getMoreHeaderFieldsBtn().click();
+		Assert.assertTrue(refdp.getOwnerInHeader().getText().contains(refdp.getOwnerName().getText()));
+
+		//Click on Back button
+		ap.getPageBackBtn().click();
+
+		//Click on the drop-down which is beside the Active Markets
+		refdp.getActiveMarketsDDBtn().click();
+		refdp.getInactiveMarketsOptn().click();
+		Assert.assertTrue(refdp.getInactiveMarketsLabel().isDisplayed());
+		if (refdp.getInactiveMarketsResults().isDisplayed()) {
+			System.out.println("Inactive Markets Data is available");
+		}
+		else {
+			//Verify that if no Markets are inactive then No data available should be displayed
+			Assert.assertTrue(refdp.getNoDataAvailMsg().isDisplayed());
+		}
+	}
+
+	@Test(priority=7)
+	public void TS007_VerifySearchMarketsTest() throws IOException, InterruptedException {
+
+		//The purpose of this test case:-
+		//T467- To verify that CRM user is having ability to search Markets using 
+		//searchable fields: Name and Channel
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		refdp = new CRMReferenceDataPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Navigate to Markets under Reference Data in left menu
+		utl.scrollToElement(hp.getTransactionalSectnLabel());
+		hp.getMarketsTab().click();
+
+		//Go to the search box on top right corner of the page and enter market name keyword
+		hp.getSearchMarketField().click();
+		hp.getSearchMarketField().sendKeys(prop.getProperty("searchmarket"));
+		hp.getstartsearch().click();
+		Thread.sleep(4000);
+
+		//Verify that all the records that contains '2011' keyword should display 
+		WebElement marketsinsearchresults = null;
+		for (int i=0;i<7;i++)
+		{
+			marketsinsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			String mrktinsearchrslt = marketsinsearchresults.getAttribute("title");
+			Assert.assertTrue(mrktinsearchrslt.contains(prop.getProperty("searchmarket")));
+		}
+		//Clear Search results
+		hp.getClearSearch().click();
+
+		//Go to the search box on top right corner of the page and enter channel name keyword
+		hp.getSearchMarketField().click();
+		hp.getSearchMarketField().sendKeys(prop.getProperty("searchchannelrecords"));
+		hp.getstartsearch().click();
+		Thread.sleep(4000);
+
+		//Verify that all the records that contains 'Am' keyword should display 
+		WebElement channelinsearchresults = null;
+		for (int i=0;i<7;i++)
+		{
+			channelinsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
+			String channelinsearchrslt = channelinsearchresults.getAttribute("title");
+			Assert.assertTrue(channelinsearchrslt.contains(prop.getProperty("searchchannelrecords")));
+		}
+		//Clear Search results
+		hp.getClearSearch().click();
+
+		//Go to search box on right top corner of page and enter Name
+		hp.getSearchMarketField().click();
+		String searchmarketrecords = "*" + prop.getProperty("searchmarketrecords");
+		hp.getSearchMarketField().sendKeys(searchmarketrecords);
+		hp.getstartsearch().click();
+		Thread.sleep(4000);
+
+		//Verify that All records that contains 'ab' should get displayed in the search results
+		WebElement mrktnameinsearchresults = null;
+		for (int i=0;i<4;i++)
+		{
+			mrktnameinsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			String marketinsearchrslt = mrktnameinsearchresults.getText().toLowerCase();
+			Assert.assertTrue(marketinsearchrslt.contains(prop.getProperty("searchmarketrecords")));
+		}
+		//Clear Search results
+		hp.getClearSearch().click();
+	}
 }
 

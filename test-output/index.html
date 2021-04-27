@@ -23,7 +23,6 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
       <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
@@ -50,7 +49,6 @@
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
                     <span>C:\Users\nilamma\crmR1Automation\testng.xml</span>
-                    <span>C:\Users\shradhama\crmR1Automation\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,24 +90,6 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 2 failed,   </span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.DashboardPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.DashboardPageTest" hash-for-method="TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest">TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest</a> <!-- method navigator-link -->
-
                     <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
@@ -121,16 +101,15 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.RegistrationsPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ReferenceDataPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.RegistrationsPageTest" hash-for-method="TS004_VerifyExportToExcelRegistrationsPageTest">TS004_VerifyExportToExcelRegistrationsPageTest</a> <!-- method navigator-link -->
-
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ReferenceDataPageTest" hash-for-method="TS007_VerifySearchMarketsTest">TS007_VerifySearchMarketsTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -142,15 +121,10 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">crmframework.crmAutomation.DashboardPageTest</span>
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">crmframework.crmAutomation.RegistrationsPageTest</span>
+              <span class="class-name">crmframework.crmAutomation.ReferenceDataPageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -158,153 +132,21 @@
                   <a name="TS001_VerifyHomePageTest">
                   </a> <!-- TS001_VerifyHomePageTest -->
                   <span class="method-name">TS001_VerifyHomePageTest</span>
-                  <div class="stack-trace"><b>"org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@id=&apos;KmsiCheckboxField&apos;] (tried for 10 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMLoginPage.getdontshowcheckbox(CRMLoginPage.java:55)
-	at crmframework.crmAutomation.DashboardPageTest.TS001_VerifyHomePageTest(DashboardPageTest.java:93)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //input[@id=&apos;KmsiCheckboxField&apos;]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:644)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 26 more
-... Removed 24 stack frames<br/> org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@id=&apos;KmsiCheckboxField&apos;] (tried for 10 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMLoginPage.getdontshowcheckbox(CRMLoginPage.java:55)
-	at crmframework.crmAutomation.DashboardPageTest.TS001_VerifyHomePageTest(DashboardPageTest.java:93)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //input[@id=&apos;KmsiCheckboxField&apos;]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:644)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 26 more
-"</b><br>org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)<br>org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)<br>pageObjects.CRMLoginPage.getdontshowcheckbox(CRMLoginPage.java:55)<br>crmframework.crmAutomation.DashboardPageTest.TS001_VerifyHomePageTest(DashboardPageTest.java:93)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)<br>
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest">
-                  </a> <!-- TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest -->
-                  <span class="method-name">TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest</span>
-                  <div class="stack-trace"><b>"org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[contains(text(), &apos;Dashboards&apos;)] (tried for 20 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMDashboardPage.getDashboard(CRMDashboardPage.java:71)
-	at crmframework.crmAutomation.DashboardPageTest.TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest(DashboardPageTest.java:267)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //span[contains(text(), &apos;Dashboards&apos;)]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 26 more
-... Removed 24 stack frames<br/> org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[contains(text(), &apos;Dashboards&apos;)] (tried for 20 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMDashboardPage.getDashboard(CRMDashboardPage.java:71)
-	at crmframework.crmAutomation.DashboardPageTest.TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest(DashboardPageTest.java:267)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //span[contains(text(), &apos;Dashboards&apos;)]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 26 more
-"</b><br>org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)<br>org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)<br>pageObjects.CRMDashboardPage.getDashboard(CRMDashboardPage.java:71)<br>crmframework.crmAutomation.DashboardPageTest.TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest(DashboardPageTest.java:267)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)<br>
-</div> <!-- stack-trace -->
-                  <a name="TS004_VerifyExportToExcelRegistrationsPageTest">
-                  </a> <!-- TS004_VerifyExportToExcelRegistrationsPageTest -->
-                  <span class="method-name">TS004_VerifyExportToExcelRegistrationsPageTest</span>
+                  <a name="TS007_VerifySearchMarketsTest">
+                  </a> <!-- TS007_VerifySearchMarketsTest -->
+                  <span class="method-name">TS007_VerifySearchMarketsTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">C:\Users\nilamma\crmR1Automation\testng.xml</span>
-            <span class="header-content">C:\Users\shradhama\crmR1Automation\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -313,18 +155,12 @@ Driver info: driver.version: unknown
 &lt;suite name=&quot;Suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;crmframework.crmAutomation.DashboardPageTest&quot;&gt;
+      &lt;class name=&quot;crmframework.crmAutomation.ReferenceDataPageTest&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
-          &lt;include name=&quot;TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest&quot;/&gt;
+          &lt;include name=&quot;TS007_VerifySearchMarketsTest&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- crmframework.crmAutomation.DashboardPageTest --&gt;
-      &lt;class name=&quot;crmframework.crmAutomation.RegistrationsPageTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
-          &lt;include name=&quot;TS004_VerifyExportToExcelRegistrationsPageTest&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- crmframework.crmAutomation.RegistrationsPageTest --&gt;
+      &lt;/class&gt; &lt;!-- crmframework.crmAutomation.ReferenceDataPageTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -367,23 +203,17 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TS001_VerifyHomePageTest')
-data.setCell(0, 2, 'crmframework.crmAutomation.DashboardPageTest')
-data.setCell(0, 3, 75509);
+data.setCell(0, 2, 'crmframework.crmAutomation.ReferenceDataPageTest')
+data.setCell(0, 3, 121907);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest')
-data.setCell(1, 2, 'crmframework.crmAutomation.DashboardPageTest')
-data.setCell(1, 3, 30162);
-data.setCell(0, 2, 'crmframework.crmAutomation.RegistrationsPageTest')
-data.setCell(0, 3, 97731);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TS004_VerifyExportToExcelRegistrationsPageTest')
-data.setCell(1, 2, 'crmframework.crmAutomation.RegistrationsPageTest')
-data.setCell(1, 3, 45002);
+data.setCell(1, 1, 'TS007_VerifySearchMarketsTest')
+data.setCell(1, 2, 'crmframework.crmAutomation.ReferenceDataPageTest')
+data.setCell(1, 3, 66000);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -398,18 +228,21 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">5 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">crmframework.crmAutomation.DashboardPageTest</span>
+              <span class="ignored-class-name">crmframework.crmAutomation.ReferenceDataPageTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">TS002_VerifyRetailRelationManagerDashboardView</span>
-              <span class="ignored-class-name">crmframework.crmAutomation.RegistrationsPageTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">TS002_VerifySearchableFieldsPageTest</span>
+                <span class="ignored-method-name">TS005_VerifySearchDDProductCategoriesTest</span>
                 <br/>
-                <span class="ignored-method-name">TS003_VerifyDisabledRegistrationsPageTest</span>
+                <span class="ignored-method-name">TS004_VerifyDemandDriverProductCategoriesTest</span>
+                <br/>
+                <span class="ignored-method-name">TS006_VerifyMarketsTest</span>
+                <br/>
+                <span class="ignored-method-name">TS002_VerifyCampusesTest</span>
+                <br/>
+                <span class="ignored-method-name">TS003_VerifySearchCampusesTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -421,30 +254,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-
-              <div class="chronological-class-name">crmframework.crmAutomation.DashboardPageTest</div> <!-- chronological-class-name -->
-
-              <div class="chronological-class-name">crmframework.crmAutomation.RegistrationsPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">crmframework.crmAutomation.ReferenceDataPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">initialize</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">TS001_VerifyHomePageTest</span>
-                <span class="method-start">10248 ms</span>
+                <span class="method-start">7690 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest</span>
-                <span class="method-start">86031 ms</span>
-                <span class="method-start">3080 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">TS004_VerifyExportToExcelRegistrationsPageTest</span>
-                <span class="method-start">100823 ms</span>
+                <span class="method-name">TS007_VerifySearchMarketsTest</span>
+                <span class="method-start">129614 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
