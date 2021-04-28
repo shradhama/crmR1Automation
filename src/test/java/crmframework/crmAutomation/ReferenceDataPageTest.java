@@ -31,6 +31,7 @@ import pageObjects.CRMListManagementPage;
 import pageObjects.CRMLoginPage;
 import pageObjects.CRMPeoplePage;
 import pageObjects.CRMReferenceDataPage;
+import pageObjects.CRMRegistrationsPage;
 import resources.GenerateData;
 import resources.Utility;
 import resources.base;
@@ -61,6 +62,7 @@ public class ReferenceDataPageTest extends base {
 	CRMListManagementPage lmp;
 	CRMActivitiesPage actp;
 	CRMReferenceDataPage refdp;
+	CRMRegistrationsPage reg;
 	public String listNameText;
 
 	@BeforeTest
@@ -518,5 +520,101 @@ public class ReferenceDataPageTest extends base {
 		//Clear Search results
 		hp.getClearSearch().click();
 	}
+	@Test(priority=6)
+	public void TS006_VerifyRegionsTest() throws IOException, InterruptedException {
+
+		//The purpose of this test case:-
+		//T471- To verify Regions
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		refdp = new CRMReferenceDataPage(driver);
+		reg = new CRMRegistrationsPage(driver);
+		in = new CRMIncentivesPage(driver);
+		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Navigate to Regions under Reference Data in left menu.
+		utl.scrollToElement(hp.getTransactionalSectnLabel());
+		hp.getregionstab().click();
+		Thread.sleep(5000);
+		
+		//Open Region record and verify read only message
+		ap.getAccountNameSearchTable().click();
+		Assert.assertTrue(reg.getreadonlynotification().isDisplayed());
+		System.out.println("Region record is disabled.");
+		Thread.sleep(5000);
+		
+		//Verify details on general tab
+		Assert.assertTrue(refdp.getregionname().isDisplayed());
+		Assert.assertTrue(refdp.getworldregion().isDisplayed());
+		System.out.println("Region and World Region are displayed properly.");
+		Thread.sleep(5000);
+		
+		//Verify Related Tab
+		ap.getRelatedTab().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(refdp.getcommonrelated().isDisplayed());
+		Assert.assertTrue(refdp.getaudithistory().isDisplayed());
+		Assert.assertTrue(refdp.getaccounts().isDisplayed());
+		Assert.assertTrue(refdp.getcontacts().isDisplayed());
+		Assert.assertTrue(refdp.getcountries().isDisplayed());
+		Assert.assertTrue(refdp.getstates().isDisplayed());
+		Assert.assertTrue(refdp.getregions().isDisplayed());
+		System.out.println("Related tab options are displayed properly.");
+		Thread.sleep(3000);
+		
+		//Verify Regions grid
+		ap.getPageBackBtn().click();
+		Thread.sleep(5000);
+		refdp.getregiontypedd().click();
+		Assert.assertTrue(refdp.getddoption1().isDisplayed());
+		Assert.assertTrue(refdp.getddoption2().isDisplayed());
+		Assert.assertTrue(refdp.getddoption3().isDisplayed());
+		System.out.println("Region drop down options are displayed properly.");
+		Thread.sleep(3000);
+		refdp.getddoption3().click();
+		Thread.sleep(3000);
+		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
+		System.out.println("Inactive Regions are not available.");
+		
+	}
+	@Test(priority=7)
+	public void TS007_VerifySearchRegionsTest() throws IOException, InterruptedException {
+
+		//The purpose of this test case:-
+		//T471- To verify Search Regions functionality
+		
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		refdp = new CRMReferenceDataPage(driver);
+		reg = new CRMRegistrationsPage(driver);
+		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Navigate to Regions under Reference Data in left menu.
+		utl.scrollToElement(hp.getTransactionalSectnLabel());
+		hp.getregionstab().click();
+		Thread.sleep(5000);
+		
+		//Search Region
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("regionsearch"));
+		ap.getclicksearchbutton().click();
+		Thread.sleep(3000);
+		
+		//Verify that All Campuses that contains 'M' should get displayed in the search results
+		WebElement regionnameinsearchresults = null;
+		for (int i=0;i<3;i++)
+		{
+			regionnameinsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			String regioninsearchrslt = regionnameinsearchresults.getText().toLowerCase();
+			Assert.assertTrue(regioninsearchrslt.contains(prop.getProperty("regionsearch")));
+			
+		}
+		System.out.println("Regions searched successfully.");		
+	}
+
+	
 }
 
