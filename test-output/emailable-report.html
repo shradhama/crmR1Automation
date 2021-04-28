@@ -31,75 +31,16 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">2</td><td class="numi">116.2 seconds</td><td class="numi"></td><td class="numi"></td></tr>
-</table>
-<table cellspacing="0" cellpadding="0" class="passed" id="summary">
-<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr><th colspan="4">Test &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="2">crmframework.crmAutomation.DashboardPageTest</td><td><a href="#m1"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1619437479113</td><td class="numi">75509</td></tr><tr class="failedodd"><td><a href="#m2"><b>TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest</b>  </a></td><td class="numi">1</td><td>1619437554896</td><td class="numi">30162</td></tr>
-</table>
-<h1>Test</h1>
-<h2 id="m1">crmframework.crmAutomation.DashboardPageTest:TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest</h2>
-<div style="padding-left:3em">
-<p>Expected condition failed: waiting for visibility of element located by By.xpath: //span[contains(text(), &apos;Dashboards&apos;)] (tried for 20 second(s) with 500 MILLISECONDS interval)</p>
-org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-<br/>at pageObjects.CRMDashboardPage.getDashboard(CRMDashboardPage.java:71)
-<br/>at crmframework.crmAutomation.DashboardPageTest.TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest(DashboardPageTest.java:267)
-<br/>25 lines not shown
-<p>Caused by Cannot locate an element using By.xpath: //span[contains(text(), &apos;Dashboards&apos;)]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: driver.version: unknown</p>
-org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-<br/>at java.util.Optional.orElseThrow(Unknown Source)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-<br/>at pageObjects.CRMDashboardPage.getDashboard(CRMDashboardPage.java:71)
-<br/>at crmframework.crmAutomation.DashboardPageTest.TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest(DashboardPageTest.java:267)
-<br/>25 lines not shown
-</div>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">crmframework.crmAutomation.DashboardPageTest:TS001_VerifyHomePageTest</h2>
-<div style="padding-left:3em">
-<p>Expected condition failed: waiting for element to be clickable: By.xpath: //input[@id=&apos;KmsiCheckboxField&apos;] (tried for 10 second(s) with 500 MILLISECONDS interval)</p>
-org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-<br/>at pageObjects.CRMLoginPage.getdontshowcheckbox(CRMLoginPage.java:55)
-<br/>at crmframework.crmAutomation.DashboardPageTest.TS001_VerifyHomePageTest(DashboardPageTest.java:93)
-<br/>25 lines not shown
-<p>Caused by Cannot locate an element using By.xpath: //input[@id=&apos;KmsiCheckboxField&apos;]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: driver.version: unknown</p>
-org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-<br/>at java.util.Optional.orElseThrow(Unknown Source)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:644)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-<br/>at pageObjects.CRMLoginPage.getdontshowcheckbox(CRMLoginPage.java:55)
-<br/>at crmframework.crmAutomation.DashboardPageTest.TS001_VerifyHomePageTest(DashboardPageTest.java:93)
-<br/>25 lines not shown
-</div>
-<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">2</td><td class="numi">2</td><td class="numi">0</td><td class="numi">0</td><td class="numi">145.8 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">2</td><td class="numi">2</td><td class="numi">0</td><td class="numi">0</td><td class="numi">195.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
 <tr><th colspan="4">Test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="2">crmframework.crmAutomation.RegistrationsPageTest</td><td><a href="#m1"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1619410817760</td><td class="numi">97731</td></tr><tr class="passedodd"><td><a href="#m2"><b>TS004_VerifyExportToExcelRegistrationsPageTest</b>  </a></td><td class="numi">1</td><td>1619410915503</td><td class="numi">45002</td></tr>
+<tr class="passedodd"><td rowspan="2">crmframework.crmAutomation.ReferenceDataPageTest</td><td><a href="#m1"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1619528575912</td><td class="numi">121907</td></tr><tr class="passedodd"><td><a href="#m2"><b>TS007_VerifySearchMarketsTest</b>  </a></td><td class="numi">1</td><td>1619528697836</td><td class="numi">66000</td></tr>
 </table>
 <h1>Test</h1>
-<h2 id="m1">crmframework.crmAutomation.RegistrationsPageTest:TS004_VerifyExportToExcelRegistrationsPageTest</h2>
+<h2 id="m1">crmframework.crmAutomation.ReferenceDataPageTest:TS001_VerifyHomePageTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">crmframework.crmAutomation.RegistrationsPageTest:TS001_VerifyHomePageTest</h2>
+<h2 id="m2">crmframework.crmAutomation.ReferenceDataPageTest:TS007_VerifySearchMarketsTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

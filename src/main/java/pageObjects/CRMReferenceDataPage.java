@@ -56,6 +56,22 @@ public class CRMReferenceDataPage {
 	By activeddprodcatgddbtn = By.xpath("//span[@class='symbolFont ChevronDownMed-symbol  ']"); //Locator for Active DD Product Categories dropdown btn
 	By inactiveddprodcatgoptn = By.xpath("//span[contains(text(),'Inactive Demand Driver Product Categories')]"); //Locator for Inactive Demand Driver Product Categories optn
 	By inactiveddprodcatglabel = By.xpath("//span[contains(text(),'Inactive Demand Driver Product Categories')]"); //Locator for Inactive Demand Driver Product Categories label
+	By activemarketslabel = By.xpath("//span[contains(text(),'Active Markets')]"); //Locator for Active Markets label
+	By channelcolumn = By.xpath("//div[contains(text(),'Channel')]"); //Locator for Name column
+	By selectmarketname = By.xpath("//div[@data-id='cell-0-2']"); //Locator to select market name
+	By selectchannelname = By.xpath("//div[@data-id='cell-0-3']"); //Locator to select channel name
+	By marketpageheadertitle = By.xpath("//h1[@data-id='header_title']"); //Locator for Market page header title
+	By channeltextbox = By.xpath("//div[@data-id='xxc_channelid.fieldControl-LookupResultsDropdown_xxc_channelid_selected_tag_text']"); //Locator for Channel text box
+	By startdatecolmn = By.xpath("//label[contains(text(),'Start Date')]"); //Locator for Start Date column
+	By enddatecolmn = By.xpath("//label[contains(text(),'End Date')]"); //Locator for End Date column
+	By contactmarketprofileoptn = By.xpath("//div[@aria-label='Contact Market Profile Related - Common']"); //Locator for Contact Market Profile Option
+	By incentivesoptn = By.xpath("//div[@aria-label='Incentives Related - Common']"); //Locator for Incentives option
+	By incentivedetailsoptn = By.xpath("//div[@aria-label='Incentive Details Related - Common']"); //Locator for Incentive Details option
+	By phonecallmarketoutcomeoptn = By.xpath("//div[@aria-label='Phone Call Market Outcomes Related - Common']"); //Locator for Phone Call Market Outcome option
+	By activemarketsddbtn = By.xpath("//span[@class='symbolFont ChevronDownMed-symbol  ']"); //Locator for Active Markets dropdown btn
+	By inactivemarketsoptn = By.xpath("//span[contains(text(),'Inactive Markets')]"); //Locator for Inactive Markets option
+	By inactivemarketslabel = By.xpath("//span[contains(text(),'Inactive Markets')]"); //Locator for Inactive Markets label
+	By inactivemarketsresults = By.xpath("//div[@aria-label='Data']"); //Locator for inactive markets results
 	
 	public CRMReferenceDataPage(WebDriver driver) {
 		this.driver = driver;
@@ -200,6 +216,63 @@ public class CRMReferenceDataPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(inactiveddprodcatglabel));
 		return driver.findElement(inactiveddprodcatglabel);	
+	}
+	public WebElement getActiveMarketsLabel() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(activemarketslabel));
+		return driver.findElement(activemarketslabel);	
+	}
+	public WebElement getChannelColumn() {
+		return driver.findElement(channelcolumn);		
+	}
+	public WebElement selectMarketName() {
+		return driver.findElement(selectmarketname);		
+	}
+	public WebElement getChannelName() {
+		return driver.findElement(selectchannelname);		
+	}
+	public WebElement getMarketPageHeaderTitle() throws InterruptedException {
+		Thread.sleep(7000);
+		return driver.findElement(marketpageheadertitle);		
+	}
+	public WebElement getChannelTxtBx() {
+		return driver.findElement(channeltextbox);		
+	}
+	public WebElement getStartDateColmn() {
+		return driver.findElement(startdatecolmn);		
+	}
+	public WebElement getEndDateColmn() {
+		return driver.findElement(enddatecolmn);		
+	}
+	public WebElement getContactMarketProfilesOptn() {
+		return driver.findElement(contactmarketprofileoptn);		
+	}
+	public WebElement getIncentivesOptn() {
+		return driver.findElement(incentivesoptn);		
+	}
+	public WebElement getIncentiveDetailsOptn() {
+		return driver.findElement(incentivedetailsoptn);		
+	}
+	public WebElement getPhoneCallMarketOutcomeOptn() {
+		return driver.findElement(phonecallmarketoutcomeoptn);		
+	}
+	public WebElement getActiveMarketsDDBtn() {
+		return driver.findElement(activemarketsddbtn);		
+	}
+	public WebElement getInactiveMarketsOptn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(inactivemarketsoptn));
+		return driver.findElement(inactivemarketsoptn);	
+	}
+	public WebElement getInactiveMarketsLabel() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(inactivemarketslabel));
+		return driver.findElement(inactivemarketslabel);	
+	}
+	public WebElement getInactiveMarketsResults() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(inactivemarketsresults));
+		return driver.findElement(inactivemarketsresults);		
 	}
 }
 
