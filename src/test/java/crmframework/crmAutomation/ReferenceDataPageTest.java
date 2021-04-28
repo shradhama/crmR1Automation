@@ -524,7 +524,7 @@ public class ReferenceDataPageTest extends base {
 	public void TS006_VerifyRegionsTest() throws IOException, InterruptedException {
 
 		//The purpose of this test case:-
-		//T458- To verify the Campuses
+		//T471- To verify Regions
 
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
