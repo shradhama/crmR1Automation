@@ -539,8 +539,11 @@ public class ReferenceDataPageTest extends base {
 		hp.getregionstab().click();
 		Thread.sleep(5000);
 		
-		//Open Region record and verify read only message
+		//Open Region record and verify tabs and read only message
 		ap.getAccountNameSearchTable().click();
+		Assert.assertTrue(refdp.getgeneraltab().isDisplayed());
+		Assert.assertTrue(refdp.getRelatedTab().isDisplayed());
+		System.out.println("General and Related tabs are displayed properly.");
 		Assert.assertTrue(reg.getreadonlynotification().isDisplayed());
 		System.out.println("Region record is disabled.");
 		Thread.sleep(5000);
@@ -589,6 +592,7 @@ public class ReferenceDataPageTest extends base {
 		ap = new CRMAccountsPage(driver);
 		refdp = new CRMReferenceDataPage(driver);
 		reg = new CRMRegistrationsPage(driver);
+		in = new CRMIncentivesPage(driver);
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
@@ -612,7 +616,16 @@ public class ReferenceDataPageTest extends base {
 			Assert.assertTrue(regioninsearchrslt.contains(prop.getProperty("regionsearch")));
 			
 		}
-		System.out.println("Regions searched successfully.");		
+		System.out.println("Regions searched successfully.");	
+		
+		//Verify for no data available
+		in.getclearsearch().click();
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("regionnotavailable"));
+		ap.getclicksearchbutton().click();
+		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
+		System.out.println("No matching records are available.");
+		
 	}
 
 	

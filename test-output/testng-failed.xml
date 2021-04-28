@@ -3,19 +3,12 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.DashboardPageTest">
-        <methods>
-          <include name="TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest"/>
-          <include name="TS001_VerifyHomePageTest"/>
-          <include name="initialize"/>
-        </methods>
-      </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
-      <class name="crmframework.crmAutomation.RegistrationsPageTest">
+      <class name="crmframework.crmAutomation.ReferenceDataPageTest">
         <methods>
           <include name="initialize"/>
-          <include name="TS004_VerifyExportToExcelRegistrationsPageTest"/>
+          <include name="TS007_VerifySearchRegionsTest"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.RegistrationsPageTest -->
+      </class> <!-- crmframework.crmAutomation.ReferenceDataPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

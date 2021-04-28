@@ -17,7 +17,7 @@
 			<class name="crmframework.crmAutomation.ReferenceDataPageTest"/>
 			<methods>
 			<include name="TS001_VerifyHomePageTest"/>
-			<include name="TS007_VerifySearchMarketsTest"/>
+			<include name="TS007_VerifySearchRegionsTest"/>
 			</methods>
 		</classes>
 	</test>

@@ -86,6 +86,8 @@ public class CRMReferenceDataPage {
 	By ddoption2 = By.xpath("//ul[@title = 'Select a view.']/div[1]/div[1]/li[2]");//Locator for drop down list option
 	By ddoption3 = By.xpath("//ul[@title = 'Select a view.']/div[1]/div[1]/li[3]");//Locator for drop down list option
 	By worldregioncolumntitle = By.xpath("//div[@data-id = 'xxc_worldregionid']");//Locator for World Region column title
+	By generaltab = By.xpath("//li[@aria-label = 'General']");//Locator for General tab on Region Form
+	
 	
 	public CRMReferenceDataPage(WebDriver driver) {
 		this.driver = driver;
@@ -358,8 +360,11 @@ public class CRMReferenceDataPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(worldregioncolumntitle));
 		return driver.findElement(worldregioncolumntitle);	
 	}
-
-
+	public WebElement getgeneraltab() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(generaltab));
+		return driver.findElement(generaltab);	
+	}
 	
 }
 
