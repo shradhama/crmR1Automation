@@ -47,6 +47,7 @@ public class CRMHomePage {
 	By registrationstab = By.xpath("//span[contains(text(),'Registrations')]"); //Locator for Registrations tab
 	By marketstab = By.xpath("//span[contains(text(),'Markets')]"); //Locator for Markets tab
 	By marketsinsearchresult = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for Market name in search result
+	By regionstab = By.xpath("//span[contains(text(),'Regions')]");//Locator for Regions tab
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -242,5 +243,9 @@ public class CRMHomePage {
 	public WebElement getMarketsInSearchResult() throws InterruptedException {
 		Thread.sleep(3000);
 		return driver.findElement(marketsinsearchresult);
+	}
+	public WebElement getregionstab() throws InterruptedException {
+		Thread.sleep(3000);
+		return driver.findElement(regionstab);
 	}
 }
