@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>C:\Users\nilamma\crmR1Automation\testng.xml</span>
+                    <span>C:\Users\shradhama\crmR1Automation\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -106,7 +106,11 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
+
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.DashboardPageTest" hash-for-method="TS005_VerifyMyActivitiesTest">TS005_VerifyMyActivitiesTest</a> <!-- method navigator-link -->
+
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ReferenceDataPageTest" hash-for-method="TS007_VerifySearchRegionsTest">TS007_VerifySearchRegionsTest</a> <!-- method navigator-link -->
+
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -136,9 +140,15 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+
                   <a name="TS005_VerifyMyActivitiesTest">
                   </a> <!-- TS005_VerifyMyActivitiesTest -->
                   <span class="method-name">TS005_VerifyMyActivitiesTest</span>
+
+                  <a name="TS007_VerifySearchRegionsTest">
+                  </a> <!-- TS007_VerifySearchRegionsTest -->
+                  <span class="method-name">TS007_VerifySearchRegionsTest</span>
+
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -146,7 +156,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\nilamma\crmR1Automation\testng.xml</span>
+            <span class="header-content">C:\Users\shradhama\crmR1Automation\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -158,7 +168,11 @@
       &lt;class name=&quot;crmframework.crmAutomation.DashboardPageTest&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
+
           &lt;include name=&quot;TS005_VerifyMyActivitiesTest&quot;/&gt;
+
+          &lt;include name=&quot;TS007_VerifySearchRegionsTest&quot;/&gt;
+
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- crmframework.crmAutomation.DashboardPageTest --&gt;
     &lt;/classes&gt;
@@ -203,17 +217,30 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TS001_VerifyHomePageTest')
+
 data.setCell(0, 2, 'crmframework.crmAutomation.DashboardPageTest')
 data.setCell(0, 3, 135273);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'TS005_VerifyMyActivitiesTest')
 data.setCell(1, 2, 'crmframework.crmAutomation.DashboardPageTest')
 data.setCell(1, 3, 112812);
+
+data.setCell(0, 2, 'crmframework.crmAutomation.ReferenceDataPageTest')
+data.setCell(0, 3, 98357);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'TS007_VerifySearchRegionsTest')
+data.setCell(1, 2, 'crmframework.crmAutomation.ReferenceDataPageTest')
+data.setCell(1, 3, 37156);
+
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
+
               <span class="suite-total-time">Total running time: 4 minutes</span>
+
+              <span class="suite-total-time">Total running time: 2 minutes</span>
+
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -228,7 +255,11 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+
             <span class="header-content">3 ignored methods</span>
+
+            <span class="header-content">7 ignored methods</span>
+
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -239,6 +270,10 @@ return data;
                 <span class="ignored-method-name">TS004_VerifyCallCenterDashboardRepTest</span>
                 <br/>
                 <span class="ignored-method-name">TS002_VerifyRetailRelationManagerDashboardView</span>
+                <br/>
+                <span class="ignored-method-name">TS006_VerifyRegionsTest</span>
+                <br/>
+                <span class="ignored-method-name">TS007_VerifySearchMarketsTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -257,11 +292,19 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">TS001_VerifyHomePageTest</span>
+
                 <span class="method-start">8345 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TS005_VerifyMyActivitiesTest</span>
                 <span class="method-start">143651 ms</span>
+
+                <span class="method-start">3352 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS007_VerifySearchRegionsTest</span>
+                <span class="method-start">101719 ms</span>
+
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

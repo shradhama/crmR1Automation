@@ -72,6 +72,22 @@ public class CRMReferenceDataPage {
 	By inactivemarketsoptn = By.xpath("//span[contains(text(),'Inactive Markets')]"); //Locator for Inactive Markets option
 	By inactivemarketslabel = By.xpath("//span[contains(text(),'Inactive Markets')]"); //Locator for Inactive Markets label
 	By inactivemarketsresults = By.xpath("//div[@aria-label='Data']"); //Locator for inactive markets results
+	By regionname = By.xpath("//div[@data-id = 'xxc_name-FieldSectionItemContainer']");//Locator for name field with its value
+	By worldregion = By.xpath("//div[@data-id = 'xxc_worldregionid-FieldSectionItemContainer']");//Locator for World Region field with its value
+	By commonrelated = By.xpath("//span[@aria-label = 'Related - Common']");//Locator for Common-Related in Related tab
+	By audithistory = By.xpath("//div[@aria-label = 'Audit History Related - Common']");//Locator for Audit History in Related tab
+	By accounts = By.xpath("//div[@aria-label = 'Accounts Related - Common']");//Locator for Accounts in Related tab
+	By contacts = By.xpath("//div[@aria-label = 'Contacts Related - Common']");//Locator for Contacts in Related tab
+	By countries = By.xpath("//div[@aria-label = 'Countries Related - Common']");//Locator for Countries in Related tab
+	By regions = By.xpath("//div[@aria-label = 'Regions Related - Common']");//Locator for Regions in Related tab
+	By states = By.xpath("//div[@aria-label = 'States/Provinces Related - Common']");//Locator for States and Provinces in Related tab
+	By regiontypedd = By.xpath("//div[@title = 'Select a view']");//Locator for Region Type drop down list
+	By ddoption1 = By.xpath("//ul[@title = 'Select a view.']/div[1]/div[1]/li[1]");//Locator for drop down list option
+	By ddoption2 = By.xpath("//ul[@title = 'Select a view.']/div[1]/div[1]/li[2]");//Locator for drop down list option
+	By ddoption3 = By.xpath("//ul[@title = 'Select a view.']/div[1]/div[1]/li[3]");//Locator for drop down list option
+	By worldregioncolumntitle = By.xpath("//div[@data-id = 'xxc_worldregionid']");//Locator for World Region column title
+	By generaltab = By.xpath("//li[@aria-label = 'General']");//Locator for General tab on Region Form
+	
 	
 	public CRMReferenceDataPage(WebDriver driver) {
 		this.driver = driver;
@@ -274,5 +290,81 @@ public class CRMReferenceDataPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(inactivemarketsresults));
 		return driver.findElement(inactivemarketsresults);		
 	}
+	public WebElement getregionname() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(regionname));
+		return driver.findElement(regionname);	
+	}
+	public WebElement getworldregion() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(worldregion));
+		return driver.findElement(worldregion);	
+	}
+	public WebElement getcommonrelated() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(commonrelated));
+		return driver.findElement(commonrelated);
+	}
+	public WebElement getaudithistory() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(audithistory));
+		return driver.findElement(audithistory);
+	}
+	public WebElement getaccounts() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accounts));
+		return driver.findElement(accounts);
+	}
+	public WebElement getcontacts() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contacts));
+		return driver.findElement(contacts);
+	}
+	public WebElement getcountries() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(countries));
+		return driver.findElement(countries);	
+	}
+	public WebElement getstates() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(states));
+		return driver.findElement(states);	
+	}
+	public WebElement getregions() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(regions));
+		return driver.findElement(regions);	
+	}   
+	public WebElement getregiontypedd() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(regiontypedd));
+		return driver.findElement(regiontypedd);	
+	}
+	public WebElement getddoption1() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ddoption1));
+		return driver.findElement(ddoption1);	
+	}  
+	public WebElement getddoption2() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ddoption2));
+		return driver.findElement(ddoption2);	
+	}  
+	public WebElement getddoption3() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ddoption3));
+		return driver.findElement(ddoption3);	
+	}
+	public WebElement getworldregioncolumntitle() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(worldregioncolumntitle));
+		return driver.findElement(worldregioncolumntitle);	
+	}
+	public WebElement getgeneraltab() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(generaltab));
+		return driver.findElement(generaltab);	
+	}
+	
 }
 
