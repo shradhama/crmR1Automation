@@ -3,6 +3,13 @@ package crmframework.crmAutomation;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -21,6 +28,7 @@ import org.testng.annotations.Test;
 
 import pageObjects.AppLandingPage;
 import pageObjects.CRMAccountsPage;
+import pageObjects.CRMActivitiesPage;
 import pageObjects.CRMAddMarketingRelationshipOwner;
 import pageObjects.CRMContactPage;
 import pageObjects.CRMDashboardPage;
@@ -61,6 +69,7 @@ public class DashboardPageTest extends base {
 	CRMIncentiveDetailsPage ind;
 	CRMListManagementPage lmp;
 	CRMDashboardPage dp;
+	CRMActivitiesPage actp;
 	public String listNameText;
 	
 	@BeforeTest
@@ -318,6 +327,234 @@ public class DashboardPageTest extends base {
 		String Hotelinsentive_market= dp.getHotelIncentiveMarket().getText();
 		Assert.assertEquals(Hotelinsentive_market,prop.getProperty("HotelIncentive_Market"));
 		System.out.println("Name of the columns for Hotel Incentive Section are getting displayed: Account, Contact, Market");	
+	}
+	
+	@Test(priority=4)
+	public void TS004_VerifyCallCenterDashboardRepTest() throws IOException, InterruptedException {
 
+		//The purpose of this test case to verify:-
+		//TS140- Verify Call Center Dashboard Rep 
+
+		dp = new CRMDashboardPage(driver);
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		actp = new CRMActivitiesPage(driver);
+		
+		//Navigate to Activities under Home in left menu
+		hp.getActivitiesTab().click();
+		Thread.sleep(10000);
+				
+		//Click on Phone Call available in the header section
+		actp.getPhoneCallOptnInHeader().click();
+		Thread.sleep(5000);
+		
+		//Enter the required details
+		actp.getSubjectTextBox().click();
+		actp.getSubjectTextBox().sendKeys("CybPhoneCall_" +genData.generateRandomString(3));
+						
+		actp.getCallToFieldTxtBox().click();
+		actp.selectRecordInCallToField().click();
+		actp.getCallToFieldLabel().click();
+				
+		actp.getRegardingFieldTxtBox().click();
+		Thread.sleep(3000);
+		actp.selectRecordInRegardingField().click();
+		actp.getRegardingFieldLabel().click();
+		ap.getclickphonecallduedatecalendor().click();
+		ap.getphonecallduedatecurrent().click();
+		Thread.sleep(3000);
+				
+		//Click on Save button
+		ap.getAccSaveBtn().click();
+		ap.getAccPageBackBtn();
+		//actp.getSavenCloseBtnOnApptForm().click();
+		
+		//Save Subject and Regarding values in a string
+		String phonecallname = actp.getSubjectTextBox().getAttribute("Value");
+		System.out.println("Newly created Phone Call name: "+ phonecallname);
+		String regardingvalue = actp.getregardingvalue().getText();
+		System.out.println("Newly created Phone Call name: "+ regardingvalue);
+		
+		//Open Dashboards tab from left menu
+		hp.getdashboardstab().click();
+		Thread.sleep(5000);
+		
+		//Click arrow for System Dashboard and select Call Center Rep Dashboard
+		dp.getselectdashbaord().click();
+		Thread.sleep(3000);
+		dp.getselectcallcenrepdashbaord().click();
+		Thread.sleep(3000);
+		dp.getclickdropdownfirstsection().click();
+		Thread.sleep(3000);
+		dp.getselectoption().click();
+		Thread.sleep(5000);
+		
+		//Verify results in first section
+		/*if (dp.getnodatasymbolfirstsection().isDisplayed()) {
+			Assert.assertTrue(dp.getnodataavailable().isDisplayed());
+			System.out.println("Data is not available.");
+		}
+		else {
+			Assert.assertTrue(dp.getphcallsubject().equals(phonecallname));
+			Assert.assertTrue(dp.getphcallregarding().equals(regardingvalue));
+			System.out.println("Phone Call is displayed properly in first section.");
+		}*/
+		
+		Assert.assertTrue(dp.getphcallsubject().getText().contains(phonecallname));
+		//Assert.assertTrue(dp.getphcallsubject().getText().contains(regardingvalue));
+		System.out.println("Phone Call is displayed properly in first section.");
+		Thread.sleep(5000);
+		
+		//Open drop down for second section
+		dp.getclickdropdownsecondection().click();
+		Thread.sleep(5000);
+		dp.getselectoption().click();
+		Thread.sleep(5000);
+		
+		//Verify results in second section
+		/*if (dp.getnodatasymbolsecondsection().isDisplayed()) {
+			Assert.assertTrue(dp.getnodataavailable().isDisplayed());
+			System.out.println("Data is not available.");
+		}
+		else {
+			
+			Assert.assertTrue(dp.getchartspace().isDisplayed());
+			System.out.println("Phone Call is displayed properly in second section.");
+		}*/
+		
+		Assert.assertTrue(dp.getchartspace().isDisplayed());
+		System.out.println("Phone Call is displayed properly in second section.");
+		Thread.sleep(3000);
+		
+		//Click More commands button
+		ap.getclickoverflowbutton().click();
+		
+		//Click View Records button
+		dp.getviewrecordsbtn().click();
+		
+		//Verify if phone call records are displayed on the page
+		Assert.assertTrue(dp.getgrid().isDisplayed());
+		System.out.println("Phone Call records are displayed in the grid.");
+		
+		//Verify sorting for each column in grid
+		dp.getcalltocol().click();
+		Assert.assertFalse(dp.getsortatozbtn().isEnabled());
+		Assert.assertFalse(dp.getsortztoabtn().isEnabled());
+		System.out.println("Sort option is disabled.");
+		
+		dp.getphnocol().click();
+		dp.getsortatozbtn().click();
+	}
+	@Test(priority=5)
+	public void TS005_VerifyMyActivitiesTest() throws IOException, InterruptedException {
+
+		//The purpose of this test case to verify:-
+		//TS140- Verify My Open Tasks in My Activity Dahboard 
+
+		dp = new CRMDashboardPage(driver);
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		actp = new CRMActivitiesPage(driver);
+		in = new CRMIncentivesPage(driver);
+		
+		//Navigate to Activities under Home in left menu
+		hp.getActivitiesTab().click();
+		Thread.sleep(10000);
+		
+		//Click on Task in the header to create new Task
+		actp.getTaskOptnInHeader().click();
+		
+		//Enter required data
+		actp.getSubjectTextBox().click();
+		actp.getSubjectTextBox().sendKeys("CybTask_" + genData.generateRandomString(3));
+		String taskname = actp.getSubjectTextBox().getAttribute("Value");
+		System.out.println("Newly created task name: "+ taskname);
+				
+		actp.getRegardingFieldTxtBox().click();
+		dp.gettaskregardingsearch().click();
+		dp.getselectregardingfortask().click();
+		actp.getRegardingFieldLabel().click();
+		dp.getheaderoverflow().click();
+		//ap.getclickphonecallduedatecalendor().click();
+		
+		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DATE, 7);
+		Date duedate = cal.getTime();
+		String newdate = dateFormat.format(duedate);
+		System.out.println("Due Date = "+ newdate);
+		
+		actp.getDueDateTextBox().click();
+		actp.getDueDateTextBox().click();
+		actp.getDueDateTextBox().sendKeys(newdate.toString());
+		Thread.sleep(3000);
+		//dp.getselecttaskdudate().click();
+		//dp.getheaderoverflow().click();
+				
+		//Click on Save & Close button
+		ap.getAccSaveCloseBtn().click();
+		
+		//Open Dashboards tab from left menu
+		hp.getdashboardstab().click();
+		//Thread.sleep(5000);
+				
+		//Click arrow for System Dashboard and select My Activities Dashboard
+		dp.getselectdashbaord().click();
+		//Thread.sleep(3000);
+		dp.getactivitydashboard().click();
+		Thread.sleep(5000);
+		
+		//Scroll to My Tasks view
+		utl.scrollToElement(dp.getnodataavailable());
+		//utl.scrollToElement(dp.getmytaskview());
+		Thread.sleep(3000);
+		
+		//Search subject for newly added task
+		dp.getSearchFieldOpentTasks().click();
+		dp.getSearchFieldOpentTasks().sendKeys(taskname);
+		dp.getOpenTasksStartSearchBtn().click();
+		Thread.sleep(4000);
+		
+		//Verify if task name is displayed in the grid
+		Assert.assertTrue(dp.getValidateOpenTaskInSearchRslts().getAttribute("title").contains(taskname));
+		System.out.println("Task added succefully.");
+		Thread.sleep(3000);
+		
+		//Verify chart for My tasks is displayed properly
+		Assert.assertTrue(dp.getmytasktitleforchart().isDisplayed());
+		Assert.assertTrue(dp.getchartspace().isDisplayed());
+		System.out.println("Chart is properly displayed for tasks.");
+		
+		//Open Task and verify details on dashboard		
+		dp.getValidateOpenTaskInSearchRslts().click();
+		Thread.sleep(4000);
+		//Store Values for task details 
+		String TaskSubject = actp.getSubjectTextBox().getAttribute("value");
+		String TaskDescription = dp.gettaskdesc().getText();
+		String TaskRegarding = actp.openRegardingFieldText().getText();
+		String TaskDueDate = dp.gettaskduedate().getText();
+		Thread.sleep(10000);
+		
+		ap.getPageBackBtn().click();
+		//Verify task details with task in dashboard grid
+		utl.scrollToElement(dp.getnodataavailable());
+		Thread.sleep(3000);
+		dp.getSearchFieldOpentTasks().click();
+		dp.getSearchFieldOpentTasks().sendKeys(taskname);
+		dp.getOpenTasksStartSearchBtn().click();
+		Thread.sleep(3000);
+		Assert.assertEquals(ap.getAccountNameSearchTable().getAttribute("title"), TaskDueDate);
+		Assert.assertEquals(ap.getPhoneinSearchTable().getAttribute("title"), TaskRegarding);
+		Assert.assertEquals(dp.getValidateOpenTaskInSearchRslts().getAttribute("title"), TaskSubject);
+		Assert.assertEquals(ap.getContactsSectionMobilePhoneField().getAttribute("title"), TaskDescription);
+		System.out.println("Task Details are properly displayed at Dashboard.");
+		
+		utl.scrollToElement(dp.getOpenTasksNext7DaysLabel());
+		utl.scrollToElement(dp.getCountAllTaskLabel());
+		
+		//Verify Due Date in Charts section
+		Assert.assertTrue(dp.getduedateinchartfortask().isDisplayed());
+		System.out.println("Due Date is properly displayed in Charts section for My Tasks at Dashboard.");
 	}
 }

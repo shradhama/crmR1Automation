@@ -20,11 +20,11 @@ public class CRMHomePage {
 	By searchresultaccname = By.xpath("//div[@data-id = 'cell-0-2']");
 	By activeaccountstitle = By.xpath("//h1[@aria-label='Active Accounts']");
 	By contacttab = By.xpath("//span[contains(text(),'Contacts')]");
-	By activecontactstitle = By.xpath("//h1[@aria-label='Active Contacts']");
+	By activecontactstitle = By.xpath("//span[contains(text(),'Active Contacts')]");
 	By searchresultcontactbusinessphone = By.xpath("//div[@data-id = 'cell-0-4']");
 	By inactiveaccountstitle = By.xpath("//h1[@aria-label='Inactive Accounts']");
 	By searchresultcontactfullname = By.xpath("//div[@data-id = 'cell-0-2']");
-	By inactivecontactstitle = By.xpath("//h1[@aria-label='Inactive Contacts']");
+	By inactivecontactstitle = By.xpath("//span[contains(text(),'Inactive Contacts')]");
 	By searchresultcontactemail = By.xpath("//div[@data-id = 'cell-0-5']");
 	By peopletab = By.xpath("//span[contains(text(),'People')]");//Locator to open People tab
 	By incentivestab = By.xpath("//span[contains(text(),'Incentives')]");//Locator to open Incentives tab
@@ -119,7 +119,7 @@ public class CRMHomePage {
 	}
 	
 	public WebElement getSearchResultContactFullName() throws InterruptedException {
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		return driver.findElement(searchresultcontactfullname);	
 	}
 	

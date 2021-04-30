@@ -29,7 +29,8 @@ public class CRMAddMarketingRelationshipOwner {
 	}
 	
 	public WebElement gethdbtn() {
-		
+		wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(hdbtn));
 		return driver.findElement(hdbtn);
 	}
 	

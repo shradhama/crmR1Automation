@@ -47,6 +47,8 @@ public class CRMActivitiesPage {
 	By selectemailactivity = By.xpath("//div[@id='activityTypeFilterBox-list']/div[9]"); //Locator for Email checkbox
 	By validateemailname = By.xpath("//div[@data-id='cell-0-3']"); //Locator to validate new email name in Search results
 	By fonttext = By.xpath("//span[contains(text(),'Font')]"); //Locator for Font text
+	By regardingvalue = By.xpath("//div[@data-id = 'regardingobjectid.fieldControl-LookupResultsDropdown_regardingobjectid_selected_tag_text']"); //Locator for Regarding field value
+	By duedatetxtbox = By.xpath("//input[@data-id='scheduledend.fieldControl-date-time-input']"); //Locator for Due Date text field
 	
 	public CRMActivitiesPage(WebDriver driver) {
 		this.driver = driver;
@@ -189,5 +191,11 @@ public class CRMActivitiesPage {
 	public WebElement getFontText() throws InterruptedException {
 		Thread.sleep(4000);
 		return driver.findElement(fonttext);
+	}
+	public WebElement getregardingvalue() {
+		return driver.findElement(regardingvalue);
+	}
+	public WebElement getDueDateTextBox() {
+		return driver.findElement(duedatetxtbox);
 	}
 }

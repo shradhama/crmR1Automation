@@ -28,7 +28,46 @@ public class CRMDashboardPage {
 	By activeincentivedetails= By.xpath("//span[@aria-label='Active Incentive Details']");  //Locator for Active Incentive Details label
 	By hotelincentives= By.xpath("//span[@aria-label='Hotels Incentives (Booked)']");  //Locator for Hotel Incentive label
 	By retailrealtionmanagerdashboardlabel = By.xpath("//span[contains(text(), 'Retail Relations Manager Dashboard')]"); //Locator for Retail Relations Manager Dashboard label
-			
+	By selectdashbaord = By.xpath("//div[@title = 'Dashboard Selector']");//Locator arrow for system dashboard options
+	By selectcallcenrepdashbaord = By.xpath("//ul[@title = 'Select a view.']/div[1]/div[1]/li[2]");//Locator for dashboard options
+	By clickdropdownfirstsection = By.xpath("//span[@title = 'Select a view']");//Locator for drop down list for first section 
+	By selectoption = By.xpath("//li[@title = 'My Scheduled Calls next 7 days']");//Locator for My Scheduled Phone Call Next 7 days option in drop down
+	By verifyphonecallfirtsection = By.xpath("//div[@data-type = 'List']/div[1]/ul[1]/li[1]/div[1]");//Locator for phone call verification in first section
+	By clickdropdownsecondection = By.xpath("//div[@class = 'chartheader-cell-leftfloat suiter-chart']");//Locator for drop down list for second section
+	By nodataavailable = By.xpath("//span[contains(text(),'No data available.')]");//Locator for No Data Available
+	By chartspace = By.xpath("//div[@class = 'highcharts-container ']");//Locator for graph available in second section
+	By readonlygrid = By.xpath("//div[@aria-label = 'Readonly Grid']");//Locator for grid first section
+	By nodatasymbolfirstsection = By.xpath("//span[@class = 'symbolFont InsertKbArticle-symbol pa-jd pa-ce pa-xw pa-mq ']");//Locator for no data available image
+	By phcallsubject = By.xpath("//div[@data-id = 'MscrmControls.Containers.DashboardControl-DashboardContainer']/div[2]/div[1]");//Locator for phone call subject
+	By phcallregarding = By.xpath("//ul[@aria-label = 'My Scheduled Calls next 7 days']/li[1]/div[1]/div[1]/label[2]");//Locator for phone call regarding
+	By nodatasymbolsecondsection = By.xpath("//span[@class = 'symbolFont InsertKbArticle-symbol pa-jd pa-ce pa-xw pa-mq ']");//Locator for no data available image
+	By viewrecordsbtn = By.xpath("//button[@data-id = 'ViewRecordButton']");//Locator for View Records button
+	By grid = By.xpath("//div[@aria-label = 'Readonly Grid']");//Locator for grid 
+	By calltocol = By.xpath("//div[@data-id = 'to']");//Locator for call to column in grid
+	By phnocol = By.xpath("//div[@data-id = 'phonenumber']");//Locator for phone number column in grid
+	By subcol = By.xpath("//div[@data-id = 'subject']");//Locator for subject column in grid
+	By regardingcol = By.xpath("//div[@data-id = 'regardingobjectid']");//Locator for regarding column in grid
+	By prioritycol = By.xpath("//div[@data-id = 'prioritycode']");//Locator for priority column in grid
+	By duecol = By.xpath("//div[@data-id = 'scheduledend']");//Locator for due column in grid
+	By sortatozbtn = By.xpath("//button[@aria-label = 'Sort A to Z']");//Locator for sort A to Z button
+	By sortztoabtn = By.xpath("//button[@aria-label = 'Sort Z to A']");//Locator for sort Z to A button
+	By gridsorting = By.xpath("//div[@data-id = 'grid-cell-container']");//Locator for grid sorting
+	By headeroverflow = By.xpath("//button[@data-id = 'header_overflowButton']");//Locator for arrow button in header
+	By activitydashboard = By.xpath("//li[@title = 'My Activity Dashboard']");//Locator for My Activity Dashborad view
+	By mytaskview = By.xpath("//*[contains (text(),'My Open Tasks Next 7 Days']");//Locator for My open tasks section under My Activities Dashboard 
+	By mytasktitleforchart = By.xpath("//h2[@title = 'My Open Tasks Next 7 Days']");//Locator for My Open task title for chart
+	By taskdesc = By.xpath("//textarea[@aria-label = 'Description']");//Locator for Description field for tasks
+	By taskduedate = By.xpath("//div[@data-id = 'form-header']/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]");//Locator for Due Date for task
+	By duedateinchartfortask = By.xpath("//div[@data-id='MscrmControls.Containers.DashboardControl-Component85d0e9a']/div/div[2]/div/div[3]/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][7]//*[ text() ]");//Locator for My Open Tasks chart
+	By taskregardingsearch = By.xpath("//button[@aria-label = 'Search records for Regarding, Lookup field']");//Locator for serach Regarding for task
+	By selectregardingfortask = By.xpath("//ul[@aria-label = 'Lookup Search Results']");//Locator for regarding option
+	By selecttaskdudate = By.xpath("//button[@aria-label = 'April 24, 2021']");//Locator for due date for task
+	By searchfieldopenttasks = By.xpath("(//input[@aria-label = 'Search this view'])[position()=2]"); //Locator for Search field of My Open Tasks
+	By opentasksstartsearchbtn = By.xpath("(//button[@aria-label = 'Start search'])[position()=2]"); //Locator for Start Search btn of My Open Tasks
+	By validateopentaskinsearchrslts = By.xpath("//div[@data-id='cell-0-4']"); //Locator to validate Open task
+	By opentasksnext7dayslabel = By.xpath("//span[contains(text(),'My Open Tasks Next 7 Days')]"); //Locator for My Open Tasks next 7 days label
+	By countalltasklabel = By.xpath("//span[contains(text(),'Count:All (Task)')]"); //Locator for Count All(Task) label
+	
 	//Locators for X-Y axis labels
 	By completedcallsXaxislabel= By.xpath("//span[contains(text(),'Count:All (Subject)')]"); //Locator for Completed calls last week_X axis label
 	By completedcallsYaxislabel= By.xpath("//div[@class='customControl MscrmControls Chart.ChartControl MscrmControls.Chart.ChartControl general-container']/div[3]/div[2]/div[1]/span[1]"); //Locator for Completed calls last week_Y axis label 
@@ -245,6 +284,194 @@ public class CRMDashboardPage {
 	public WebElement getIncByOwnerByCatgLabel() {
 		return driver.findElement(incbyownerbycatglabel);	
 	}
+	
+	public WebElement getselectdashbaord() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectdashbaord));
+		return driver.findElement(selectdashbaord);
+	}
+	public WebElement getselectcallcenrepdashbaord() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectcallcenrepdashbaord));
+		return driver.findElement(selectcallcenrepdashbaord);
+	}
+	public WebElement getselectoption() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectoption));
+		return driver.findElement(selectoption);
+	}
+	public WebElement getverifyphonecallfirtsection() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(verifyphonecallfirtsection));
+		return driver.findElement(verifyphonecallfirtsection);
+	}
+	public WebElement getclickdropdownfirstsection() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(clickdropdownfirstsection));
+		return driver.findElement(clickdropdownfirstsection);
+	}
+	public WebElement getclickdropdownsecondection() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(clickdropdownsecondection));
+		return driver.findElement(clickdropdownsecondection);
+	}
+	public WebElement getnodataavailable() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(nodataavailable));
+		return driver.findElement(nodataavailable);
+	}
+	public WebElement getchartspace() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(chartspace));
+		return driver.findElement(chartspace);
+	}
+	public WebElement getreadonlygrid() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(readonlygrid));
+		return driver.findElement(readonlygrid);
+	}
+	public WebElement getphcallsubject() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(phcallsubject));
+		return driver.findElement(phcallsubject);
+	}
+	
+	public WebElement getphcallregarding() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(phcallregarding));
+		return driver.findElement(phcallregarding);
+	}
+	public WebElement getnodatasymbolfirstsection() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(nodatasymbolfirstsection));
+		return driver.findElement(nodatasymbolfirstsection);
+	}
+	public WebElement getnodatasymbolsecondsection() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(nodatasymbolsecondsection));
+		return driver.findElement(nodatasymbolsecondsection);
+	}
+	public WebElement getviewrecordsbtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(viewrecordsbtn));
+		return driver.findElement(viewrecordsbtn);
+	}
+	public WebElement getgrid() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(grid));
+		return driver.findElement(grid);
+	}
+	public WebElement getcalltocol() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(calltocol));
+		return driver.findElement(calltocol);
+	}
+	public WebElement getphnocol() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(phnocol));
+		return driver.findElement(phnocol);
+	}
+	public WebElement getsubcol() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(subcol));
+		return driver.findElement(subcol);
+	}
+	public WebElement getregardingcol() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(regardingcol));
+		return driver.findElement(regardingcol);
+	}
+	public WebElement getprioritycol() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(prioritycol));
+		return driver.findElement(prioritycol);
+	}
+	public WebElement getduecol() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(duecol));
+		return driver.findElement(duecol);
+	}
+	public WebElement getsortatozbtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(sortatozbtn));
+		return driver.findElement(sortatozbtn);
+	}
+	public WebElement getsortztoabtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(sortztoabtn));
+		return driver.findElement(sortztoabtn);
+	}
+	public WebElement getgridsorting() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(gridsorting));
+		return driver.findElement(gridsorting);
+	}
+	public WebElement getheaderoverflow() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(headeroverflow));
+		return driver.findElement(headeroverflow);
+	}
+	public WebElement getactivitydashboard() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(activitydashboard));
+		return driver.findElement(activitydashboard);
+	}
+	public WebElement getmytaskview() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(mytaskview));
+		return driver.findElement(mytaskview);
+	}
+	public WebElement getmytasktitleforchart() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(mytasktitleforchart));
+		return driver.findElement(mytasktitleforchart);
+	}
+	public WebElement gettaskdesc() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(taskdesc));
+		return driver.findElement(taskdesc);
+	}
+	public WebElement gettaskduedate() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(taskduedate));
+		return driver.findElement(taskduedate);
+	}
+	public WebElement getduedateinchartfortask() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(duedateinchartfortask));
+		return driver.findElement(duedateinchartfortask);
+	}
+	public WebElement gettaskregardingsearch() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(taskregardingsearch));
+		return driver.findElement(taskregardingsearch);
+	}
+	public WebElement getselectregardingfortask() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectregardingfortask));
+		return driver.findElement(selectregardingfortask);
+	}
+	public WebElement getselecttaskdudate() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selecttaskdudate));
+		return driver.findElement(selecttaskdudate);
+	}
+	public WebElement getSearchFieldOpentTasks() {
+		return driver.findElement(searchfieldopenttasks);
+	}
+	public WebElement getOpenTasksStartSearchBtn() {
+		return driver.findElement(opentasksstartsearchbtn);
+	}
+	public WebElement getValidateOpenTaskInSearchRslts() {
+		return driver.findElement(validateopentaskinsearchrslts);
+	}
+	public WebElement getOpenTasksNext7DaysLabel() {
+		return driver.findElement(opentasksnext7dayslabel);
+	}
+	public WebElement getCountAllTaskLabel() {
+		return driver.findElement(countalltasklabel);
+	}
+	
 	
 	
 	

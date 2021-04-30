@@ -36,7 +36,7 @@ public class CRMContactPage {
 	By contactnameinheader = By.xpath("//h1[@data-id='header_title']");
 	By activecontactslabel = By.xpath("//h1[@aria-label='Active Contacts']");
 	//By createnewcontactbtn = By.xpath("//button[@aria-label='New']");
-	By createnewcontactbtn = By.xpath("//button[@id='contact|NoRelationship|HomePageGrid|Mscrm.NewRecordFromGrid11-button']");
+	By createnewcontactbtn = By.xpath("//button[@aria-label='New']");
 	By contactfirstnamelabel = By.xpath("//label[text()='First Name']");
 	By contacttypetxtbx = By.xpath("//input[@id='xxc_typecode_ledit']");
 	By contacttypeexpandbtn = By.xpath("//div[@data-lp-id='MscrmControls.MultiSelectPicklist.UpdMSPicklistControl|xxc_typecode.fieldControl|contact']/div/div[6]/div[1]/div[2]/button[1]/span[1]");
@@ -175,7 +175,8 @@ public class CRMContactPage {
 	By dletterfilterlink = By.xpath("//a[@id='D_link']"); //Locator for D' letter filter link for contacts
 	By audithistoryrecord = By.xpath("//table[@id='gridBodyTable']/tbody/tr[1]"); //Locator for Audit history record
 	By newcontactheaderoncontactform = By.xpath("//h1[contains(text(),'New Contact')]"); //Locator for New contact header of create contact form
-
+	By exporttoexcelmorecmndsbtn = By.xpath("//button[@aria-label='Export to Excel More Commands']"); //Locator for Export to excel more commands btn
+	
 	public CRMContactPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -304,7 +305,7 @@ public class CRMContactPage {
 
 	public WebElement getContactNameinHeader() throws InterruptedException {
 
-		Thread.sleep(7000);
+		Thread.sleep(10000);
 		return driver.findElement(contactnameinheader);
 	}
 
@@ -493,6 +494,7 @@ public class CRMContactPage {
 	public WebElement getContactFormRefreshBtn() throws InterruptedException
 	{
 		Thread.sleep(5000);
+		System.out.println("Clicked on Refresh button");
 		return driver.findElement(contactrefreshbtn);
 	}
 
@@ -1083,4 +1085,9 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(newcontactheaderoncontactform));
 		return driver.findElement(newcontactheaderoncontactform);
 	}
+	public WebElement getExportToExcelMoreCmndsBtn() {
+		return driver.findElement(exporttoexcelmorecmndsbtn);
+	}
+	
+	
 }

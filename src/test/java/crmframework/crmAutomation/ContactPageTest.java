@@ -243,7 +243,7 @@ public class ContactPageTest extends base{
 		//Click on 'Q' link to sort contacts starts with 'Q'
 		try {
 			cp.getQLetterFilterLink().click();
-
+			Thread.sleep(5000);
 			//Validate deactivated account
 			hp.getSearchInactiveContactField().click();
 			hp.getSearchInactiveContactField().sendKeys(newcontactname);
@@ -276,6 +276,7 @@ public class ContactPageTest extends base{
 
 		//Open Contacts page and open existing contact
 		hp.getContactsTab().click();
+		cp.getCLetterFilterLink().click();
 		Actions action = new Actions(driver);
 		WebElement OpenContact = cp.getopencontact();
 		action.doubleClick(OpenContact).perform();
@@ -307,6 +308,7 @@ public class ContactPageTest extends base{
 
 		//Navigate back to Active accounts list
 		ap.getPageBackBtn().click();
+		ap.getDiscardChangesBtn().click();
 	}
 
 
@@ -323,6 +325,7 @@ public class ContactPageTest extends base{
 
 		//Open Contacts page and open existing contact
 		hp.getContactsTab().click();
+		cp.getDLetterFilterLink().click();
 		Actions action = new Actions(driver);
 		WebElement OpenContact = cp.getopencontact();
 		action.doubleClick(OpenContact).perform();
@@ -493,7 +496,7 @@ public class ContactPageTest extends base{
 		try {
 			while(staleElement){
 				//Open any Inactive contact from list
-				cp.getCLetterFilterLink().click();
+				cp.getBLetterFilterLink().click();
 				cp.selectContactName().click();
 				cp.getContactNaviagteBtn().click();
 
@@ -545,6 +548,7 @@ public class ContactPageTest extends base{
 
 		//Open Contacts page and open existing contact
 		hp.getContactsTab().click();
+		cp.getBLetterFilterLink().click();
 		Actions action = new Actions(driver);
 		WebElement OpenContact = cp.getopencontact();
 		action.doubleClick(OpenContact).perform();
@@ -731,11 +735,12 @@ public class ContactPageTest extends base{
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
 		ap.getclicksearchbutton().click();
 
+		cp.getExportToExcelMoreCmndsBtn().click();
 		//Click three dots for Export option in header
-		ap.getclickoverflowbutton().click();
+		//ap.getclickoverflowbutton().click();
 
 		//Click Export To Excel option under it
-		cp.getexporttoexcelbtn().click();
+		//cp.getexporttoexcelbtn().click();
 
 		//Export file to online excel
 		ap.getopenexcelonline().click();

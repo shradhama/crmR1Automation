@@ -5,17 +5,10 @@
     <classes>
       <class name="crmframework.crmAutomation.DashboardPageTest">
         <methods>
-          <include name="TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest"/>
-          <include name="TS001_VerifyHomePageTest"/>
+          <include name="TS005_VerifyMyActivitiesTest"/>
           <include name="initialize"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
-      <class name="crmframework.crmAutomation.RegistrationsPageTest">
-        <methods>
-          <include name="initialize"/>
-          <include name="TS004_VerifyExportToExcelRegistrationsPageTest"/>
-        </methods>
-      </class> <!-- crmframework.crmAutomation.RegistrationsPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

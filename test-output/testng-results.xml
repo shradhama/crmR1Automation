@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="195640" started-at="2021-04-27T13:02:48Z" finished-at="2021-04-27T13:06:03Z">
+  <suite name="Suite" duration-ms="256476" started-at="2021-04-30T09:00:16Z" finished-at="2021-04-30T09:04:33Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="195640" started-at="2021-04-27T13:02:48Z" finished-at="2021-04-27T13:06:03Z">
-      <class name="crmframework.crmAutomation.ReferenceDataPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@4501b7af]" name="initialize" is-config="true" duration-ms="7674" started-at="2021-04-27T18:32:48Z" finished-at="2021-04-27T18:32:55Z">
+    <test name="Test" duration-ms="256476" started-at="2021-04-30T09:00:16Z" finished-at="2021-04-30T09:04:33Z">
+      <class name="crmframework.crmAutomation.DashboardPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.DashboardPageTest@4501b7af]" name="initialize" is-config="true" duration-ms="8323" started-at="2021-04-30T14:30:16Z" finished-at="2021-04-30T14:30:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@4501b7af]" name="TS001_VerifyHomePageTest" duration-ms="121907" started-at="2021-04-27T18:32:55Z" finished-at="2021-04-27T18:34:57Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.DashboardPageTest@4501b7af]" name="TS001_VerifyHomePageTest" duration-ms="135273" started-at="2021-04-30T14:30:24Z" finished-at="2021-04-30T14:32:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS007_VerifySearchMarketsTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@4501b7af]" name="TS007_VerifySearchMarketsTest" duration-ms="66000" started-at="2021-04-27T18:34:57Z" finished-at="2021-04-27T18:36:03Z">
+        <test-method status="PASS" signature="TS005_VerifyMyActivitiesTest()[pri:0, instance:crmframework.crmAutomation.DashboardPageTest@4501b7af]" name="TS005_VerifyMyActivitiesTest" duration-ms="112812" started-at="2021-04-30T14:32:40Z" finished-at="2021-04-30T14:34:33Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS007_VerifySearchMarketsTest -->
-      </class> <!-- crmframework.crmAutomation.ReferenceDataPageTest -->
+        </test-method> <!-- TS005_VerifyMyActivitiesTest -->
+      </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

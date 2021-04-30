@@ -147,7 +147,7 @@ public class CRMAccountsPage {
 	By contactassociatedviewdropdownicon = By.xpath("//span[@class='symbolFont ChevronDownMed-symbol  ']");
 	By contactassociatedviewlabel = By.xpath("//span[contains(text(),'Contact Associated View')]");
 	By selectviewsallcontactsitem = By.xpath("//span[contains(text(),'All Contacts')]");
-	By enteranotelabel = By.xpath("//div[contains(text(),'Enter a note...')]");
+	By enteranotelabel = By.xpath("//span[contains(text(),'Enter a note...')]");
 	By detailsTab = By.xpath("//li[@title='Details']"); // xpath for Detail tab at Account Details page.
 	By originatingleadinput = By.xpath("//section[@id='DETAILS_TAB_section_2']//section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]");
 	By notificationExpandIcon = By.xpath("//span[@id='notificationExpandIcon']");
