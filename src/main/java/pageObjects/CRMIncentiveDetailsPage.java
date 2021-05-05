@@ -25,12 +25,12 @@ public class CRMIncentiveDetailsPage {
 	By inccatddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[6]");//Locator for Incentive Category group by option
 	By estvalddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[7]");//Locator for Estimated Value group by option
 	By statusddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[8]");//Locator for Incentive Detail Status group by option
-	By filterop = By.xpath("//button[@data-index = '0']");//Locator for Equals operator
+	By filterop = By.xpath("//button[@data-index = '6']");//Locator for Begins With operator
 	By inccat = By.xpath("//div[@data-id = 'xxc_incentivecategory']");//Locator for Incentive Category column in grid
 	By incestval = By.xpath("//div[@data-id = 'xxc_estimatedvalue']");//Locator for estimated value column in grid
 	By incstatus = By.xpath("//div[@data-id = 'xxc_incentivedetailstatuscode']");//Locator for Incentive Details Status column in grid
 	By filtervalue = By.xpath("//div[@class = 'ms-TextField-wrapper']/div[1]/input[1]");//Locator for filter by value text box
-	By clickarrowforactiveincentive = By.xpath("//div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/h1[1]");//Locator for incentive type drop down list
+	By clickarrowforactiveincentive = By.xpath("//div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h1[1]/div[1]");//Locator for incentive type drop down list
 	By selectactivetype = By.xpath("//li[@aria-label = 'Active Incentive Details']");//Locator for Active Incentive Details in drop down
 	By clearbtn = By.xpath("//button[@type = 'button']");//Locator for Clear button
 	By selectedincentive = By.xpath("//div[@data-id = 'xxc_incentiveid.fieldControl-LookupResultsDropdown_xxc_incentiveid_selected_tag']");//Locator for selected incentive 
@@ -41,7 +41,7 @@ public class CRMIncentiveDetailsPage {
 	By deleteinccat = By.xpath("//button[@data-id = 'xxc_incentivecategory.fieldControl-LookupResultsDropdown_xxc_incentivecategory_selected_tag_delete']");//Locator for delete button for incentive category
 	By searchinccat = By.xpath("//button[@data-id = 'xxc_incentivecategory.fieldControl-LookupResultsDropdown_xxc_incentivecategory_search']");//Locator for search incentive category button 
 	By selinccat = By.xpath("//li[@data-id = 'xxc_incentivecategory.fieldControl-LookupResultsDropdown_xxc_incentivecategory_resultsContainer']");//Locator incentive category option
-	By saveincdet = By.xpath("//button[@data-id = 'xxc_incentivedetail|NoRelationship|Form|Mscrm.Form.xxc_incentivedetail.Save']");//Locator for Save button in incentive details page
+	By saveincdet = By.xpath("//button[@data-id = 'quickCreateSaveAndCloseBtn']");//Locator for Save button in incentive details page
 	By refincdet = By.xpath("//button[@data-id = 'xxc_incentivedetail|NoRelationship|Form|Mscrm.Form.xxc_incentivedetail.RefreshModernButton']");//Locator for Refresh button
 	By incentivedetailsexportdropdown= By.xpath("//button[@data-id = 'xxc_incentivedetail|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_incentivedetail.ExportToExcel.Menu$splitButtonId']");//Locator for export to excel dropdown
 	By selectcheckbox1 = By.xpath("//input[@data-id='entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_incentivedetailcreatedby']");//Locator for checkbox
@@ -62,8 +62,8 @@ public class CRMIncentiveDetailsPage {
 	By verifygridacc = By.xpath("//div[@aria-label = 'Editable Grid']/div[1]/div[1]/div[1]/div[2]/div[5]");//Locator for Grid Market data
 	By inactiveincentivedetails= By.xpath("//li[@aria-label= 'Inactive Incentive Details']"); //Locator to select Inactive Incentive Details option for Activate button
 	By verifygridaccname = By.xpath("//div[@data-id='cell-0-7']");//Locator for Grid account name data
-
-	
+	By clickincentivetab = By.xpath("//ul[@aria-label = 'Account Form']/li[3]");//Locator for Incentives tab on Account form
+	By incdetgrid = By.xpath("//button[@data-id = 'dataSetRoot_IncentivesDetailTab']/div[1]/div[1]/h3[1]");//Locator for incentive details section on Account and COntact incentives tab
 	
 	public CRMIncentiveDetailsPage(WebDriver driver) {
 
@@ -349,5 +349,16 @@ public class CRMIncentiveDetailsPage {
 		wait.until(ExpectedConditions.elementToBeClickable(verifygridaccname));
 		return driver.findElement(verifygridaccname);
 	}
+	public WebElement getclickincentivetab() {
 
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(clickincentivetab));
+		return driver.findElement(clickincentivetab);
+	}
+	public WebElement getincdetgrid() {
+
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.elementToBeClickable(incdetgrid));
+		return driver.findElement(incdetgrid);
+	}
 }

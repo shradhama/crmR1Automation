@@ -123,6 +123,7 @@ public class IncentivesPageTest extends base {
 		in.getContactSearchRecordsBtn().click();
 		in.SelectContactName().click();
 		in.getContactFieldLabel().click();
+		Thread.sleep(5000);
 		String contactname = in.getSelectedContactNameField().getText();
 
 		// Select Market at New Incentive Form
@@ -130,6 +131,73 @@ public class IncentivesPageTest extends base {
 		in.getMarketSearchRecordsBtn().click();
 		in.SelectMarketName().click();
 		in.getMarketFieldLabel().click();
+		Thread.sleep(5000);
+		String marketname = in.getSelectedMarketNameField().getText();
+
+		// Select Referral Source at New Incentive Form
+		in.getReferralSourceTxtBx().click();
+		in.getReferralSourceSearchRecordsBtn().click();
+		in.SelectReferralSourceName().click();
+		in.getReferralSourceFieldLabel().click();
+		Thread.sleep(3000);
+		
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		Thread.sleep(10000);
+		//ap.getDuplicateRecordsPopupIgnorenSavebtn().click();
+		//Thread.sleep(10000);
+		
+		//Verify that Incentive should be created and should now be displayed in the incentives section 
+		//under incentive tab on account form
+		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
+		Assert.assertTrue(in.getContactNameInIncentivesTab().getText().contains(contactname));
+		Assert.assertTrue(in.getMarketNameInIncentivesTab().getText().contains(marketname));
+		System.out.println("Incentive is created from Account successfully");
+		
+		Thread.sleep(10000);
+		in.selectIncentiveRecord().click();
+		in.getIncDeactivateBtn().click();
+		in.getDeactivationPopupDeactivateBtn().click();
+		Thread.sleep(5000);
+		System.out.println("Incentive deactivated from Account successfully");
+		
+		//Navigate back to Active accounts list
+		ap.getPageBackBtn().click();
+	}
+	@Test(priority=3)
+	public void TS003_VerifyCreateIncentiveFromContactTest() throws InterruptedException 
+	{
+		//The purpose of this test case to:-
+		//T36- Verify that user is able to create incentive from contact form
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Contacts tab
+		hp.getContactsTab().click();
+
+		//Open any active contact
+		cp.getBLetterFilterLink().click();
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+
+		// Click Incentives tab of an existing contact
+		in.getIncentiveTab().click();
+
+		//Click on New Incentive button
+		in.getNewIncentiveBtn().click();
+
+		String accountname = in.getSelectedAccountNameField().getText();
+
+		// Select Market at New Incentive Form
+		in.getMarketTextBox().click();
+		in.getMarketSearchRecordsBtn().click();
+		in.SelectMarketName().click();
+		in.getMarketFieldLabel().click();
+		Thread.sleep(3000);
 		String marketname = in.getSelectedMarketNameField().getText();
 
 		// Select Referral Source at New Incentive Form
@@ -140,26 +208,349 @@ public class IncentivesPageTest extends base {
 
 		//Click on Save and Close button
 		in.getSavenCloseBtn().click();
-		Thread.sleep(15000);
-
+		Thread.sleep(10000);
+		//ap.getDuplicateRecordsPopupIgnorenSavebtn().click(); //newly added
+		//Thread.sleep(5000);
+		
 		//Verify that Incentive should be created and should now be displayed in the incentives section 
 		//under incentive tab on account form
 		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
-		Assert.assertTrue(in.getContactNameInIncentivesTab().getText().contains(contactname));
-		Assert.assertTrue(in.getMarketNameInIncentivesTab().getText().contains(marketname));
-		System.out.println("Incentive is created from Account successfully");
+		Assert.assertTrue(in.getMarketNameInIncentivesTabOfContact().getText().contains(marketname));
+		System.out.println("Incentive added to contact succesfully.");
+		in.selectIncentiveRecord().click();
+		in.getIncDeactivateBtn().click();
+		in.getDeactivationPopupDeactivateBtn().click();
+		Thread.sleep(5000);
+		System.out.println("Incentive deactivated from contact succesfully.");
+		
+		//Navigate back to Active accounts list
+		ap.getPageBackBtn().click();
+	}
+	@Test(priority=4)
+	public void TS004_VerifyDeactivateIncentiveFromContactTest() throws InterruptedException 
+	{
+		//The purpose of this test case to:-
+		//T52- Verify the user is able to deactivate an active incentive as per the security access
 
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Contacts tab
+		hp.getContactsTab().click();
+
+		//Open any active contact
+		cp.getQLetterFilterLink().click();
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
+
+		// Click Incentives tab of an existing contact
+		in.getIncentiveTab().click();
+
+		//Click on New Incentive button to create new incentive
+		in.getNewIncentiveBtn().click();
+
+		String accountname = in.getSelectedAccountNameField().getText();
+		System.out.println("Account Name: "+accountname);
+
+		// Select Market at New Incentive Form
+		in.getMarketTextBox().click();
+		in.getMarketSearchRecordsBtn().click();
+		in.SelectMarketName().click();
+		in.getMarketFieldLabel().click();
+		Thread.sleep(3000);
+
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		Thread.sleep(15000);
+
+		//Deactivate the incentive using Deactivate option
 		in.selectIncentiveRecord().click();
 		in.getIncDeactivateBtn().click();
 		in.getDeactivationPopupDeactivateBtn().click();
 		Thread.sleep(5000);
 
-		//Navigate back to Active accounts list
+		//Verify that the Incentive should be deactivated and removed from the incentives section
+		List<WebElement> validateIncentive = driver.findElements(By.xpath("//div[@title='"+accountname+"']"));
+		Assert.assertTrue(validateIncentive.size()== 0);
+
+		//Click on New Incentive button to create new incentive
+		in.getNewIncentiveBtn().click();
+		// Select Market at New Incentive Form
+		in.getMarketTextBox().click();
+		in.getMarketSearchRecordsBtn().click();
+		in.SelectMarketName().click();
+		in.getMarketFieldLabel().click();
+
+		//Click on Save and Close button
+		in.getSavenCloseBtn().click();
+		Thread.sleep(15000);
+
+		//Deactivate the incentive using Edit option
+		in.selectIncentiveRecord().click();
+		in.getIncentiveEditButton().click();
+		in.getDeactivateBtnOnIncentiveForm().click();
+		in.getDeactivationPopupDeactivateBtn().click();
+		Thread.sleep(5000);
+		//Verify that Incentive should become Read Only
+		Assert.assertTrue(in.getIncentiveReadOnlyText().isDisplayed());
+		System.out.println("Incentive is disabled successfully.");
 		ap.getPageBackBtn().click();
+
+		//Verify that the Incentive should be deactivated and removed from the incentives section
+		List<WebElement> validateIncentive1 = driver.findElements(By.xpath("//div[@title='"+accountname+"']"));
+		Assert.assertTrue(validateIncentive1.size()== 0);
+
+		//Click on Incentives tab from left menu
+		hp.getincentivestab().click();
+
+		//Click on 'Active Incentives' drop-down view button
+		in.getActiveIncDropDownBtn().click();
+		Thread.sleep(3000);
+		
+		//Select 'Inactive Incentives' option
+		in.getInactiveIncOptn().click();
+		Thread.sleep(3000);
+		
+		//Validate deactivated incentive
+		hp.getSearchInactiveIncField().click();
+		hp.getSearchInactiveIncField().sendKeys(accountname);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getValidateIncInSearchResults().getText().contains(accountname));
+		System.out.println("Inactive Incentives are diplayed properly.");
+		hp.getClearSearch().click();
+	}
+	@Test(priority=5)
+	public void TS005_VerifyGridFiltersIncentivesTest() throws InterruptedException
+	{
+		//The purpose of this test case:-
+		//CRM-T87- Verify Account, Contact and Market filters on People Grid
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		pl = new CRMPeoplePage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//Click on Incentives Tab at left menu 
+		hp.getincentivestab().click();
+
+		//Click funnel for Account column
+		in.getaccountcolumn().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		in.getgridoperator().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Account value selected on accounts grid
+		WebElement Account = null;
+		for (int i=0;i<3;i++)
+		{
+			Account = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			Assert.assertTrue(Account.getText().toLowerCase().contains(prop.getProperty("name")));
+		}
+		System.out.println("Account matches expected criteria");
+
+		//Clear Filter for Account
+		in.getaccountcolumn().click();
+		ap.getclearfiltergrid().click();
+
+		//Click funnel for Contact column
+		in.getcontactcolumn().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		in.getgridoperator().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("contact"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Contact value selected on accounts grid
+		WebElement Contact = null;
+		for (int i=0;i<7;i++)
+		{
+			Contact = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
+			Assert.assertTrue(Contact.getText().toLowerCase().contains(prop.getProperty("contact")));
+		}
+		System.out.println("Contact matches expected criteria");
+
+		//Clear Filter for Contact
+		in.getcontactcolumn().click();
+		ap.getclearfiltergrid().click();
+
+		//Click funnel for Market column
+		in.getmarketcolumn().click();
+		ap.getclickfunnelfilter().click();
+
+		//Select filter options
+		ap.getclickoperatordd().click();
+		in.getgridoperator().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("market"));
+		ap.getclickapplybutton().click();
+		Thread.sleep(5000);
+
+		//Verify Market value selected on accounts grid
+		WebElement Market = null;
+		for (int i=0;i<7;i++)
+		{
+			Market = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-4']"));
+			Assert.assertTrue(Market.getText().toLowerCase().contains(prop.getProperty("market")));
+		}
+		System.out.println("Market matches expected criteria");
+
+		//Clear Filter for Market
+		in.getmarketcolumn().click();
+		ap.getclearfiltergrid().click();
 	}
 
-	@Test(priority=3)
-	public void TS003_VerifyExportToExcelIncentivesTest() throws InterruptedException
+	@Test(priority=6)
+	public void TS006_VerifyActivateInactiveIncentiveTest() throws InterruptedException 
+	{
+		//The purpose of this test case to:-
+		//T53- Verify user is able to activate an incentive as per security access
+
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+
+		//Click on Incentives tab
+		hp.getincentivestab().click();
+
+		cp.getBLetterFilterLink().click();
+		Thread.sleep(4000);
+		//Select active incentive from grid
+		act = new Actions(driver);
+		act.doubleClick(in.selectIncentiveRecord()).perform();
+		Thread.sleep(5000);
+		
+		//Get the incentive name from header
+		String incentivenameonincform = in.getIncentiveNameOnIncForm().getText();
+		System.out.println("Incentive name: "+incentivenameonincform);
+
+		String accountname = in.getSelectedAccountNameField().getText();
+		System.out.println("Account Name: "+accountname);
+
+		String contactname = in.getSelectedContactNameField().getText();
+		System.out.println("Contact Name: "+contactname);
+
+		String marketname = in.getSelectedMarketNameField().getText();
+		System.out.println("Market Name: "+marketname);
+
+		//Click on Deactivate button in header
+		in.getDeactivateBtnOnIncentiveForm().click();
+
+		//Click on Deactivate button in the dialog box
+		in.getDeactivationPopupDeactivateBtn().click();
+		Thread.sleep(5000);
+		
+		//Verify that an Incentive should be deactivated
+		Assert.assertTrue(in.getActivateBtnOnIncentiveForm().isDisplayed());
+		Assert.assertTrue(in.getIncentiveReadOnlyText().isDisplayed());
+		ap.getPageBackBtn().click();
+		Thread.sleep(5000);
+		
+		//Verify that inactive should not be displayed under Active Incentives
+		hp.getSearchActiveIncField().click();
+		hp.getSearchActiveIncField().sendKeys(incentivenameonincform);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
+		hp.getClearSearch().click();
+
+		//Click on 'Active Incentives' drop-down view button
+		in.getActiveIncDropDownBtn().click();
+
+		//Select 'Inactive Incentives' option
+		in.getInactiveIncOptn().click();
+		Thread.sleep(3000);
+		//Verify that deactivated incentive should be displayed under Inactive Incentives
+		hp.getSearchInactiveIncField().click();
+		hp.getSearchInactiveIncField().sendKeys(accountname);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getValidateIncInSearchResults().getText().contains(accountname));
+
+		//Select that incentive
+		act = new Actions(driver);
+		act.doubleClick(in.selectIncentiveRecord()).perform();
+
+		//Click on Activate button in header
+		in.getActivateBtnOnIncentiveForm().click();
+		in.getActivationPopupActivateBtn().click();
+
+		//The Incentive should be activated
+		Assert.assertTrue(in.getDeactivateBtnOnIncentiveForm().isDisplayed());
+		ap.getPageBackBtn().click();
+
+		//Verify that incentive should no more be displayed under Inactive Incentives
+		hp.getClearSearch().click();
+		hp.getSearchInactiveIncField().click();
+		hp.getSearchInactiveIncField().sendKeys(incentivenameonincform);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
+		hp.getClearSearch().click();
+
+		//Click on 'Inactive Incentives' drop-down view button
+		in.getActiveIncDropDownBtn().click();
+
+		//Select 'Active Incentives' option
+		in.getActiveIncOptn().click();
+		Thread.sleep(3000);
+
+		//Verify that inactive should be displayed under Active Incentives
+		hp.getSearchActiveIncField().click();
+		hp.getSearchActiveIncField().sendKeys(accountname);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getValidateIncInSearchResults().getText().contains(accountname));
+
+		//Open the incentive
+		act = new Actions(driver);
+		act.doubleClick(in.selectIncentiveRecord()).perform();
+
+		//Navigate to the Account form by click on the account link in account field
+		in.getSelectedAccountNameField().click();
+		Thread.sleep(5000);
+
+		//Navigate to the Incentives tab
+		in.getIncentiveTab().click();
+		Thread.sleep(6000);
+		//Verify that the activated incentive should be displayed in incentives section
+		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
+		Assert.assertTrue(in.getContactNameInIncentivesTab().getText().contains(contactname));
+		Assert.assertTrue(in.getMarketNameInIncentivesTab().getText().contains(marketname));
+
+		ap.getPageBackBtn().click();
+
+		//Navigate to the Contact form by click on the contact link in contact field
+		in.getSelectedContactNameField().click();
+		Thread.sleep(5000);
+
+		//Navigate to the Incentives tab
+		in.getIncentiveTab().click();
+		Thread.sleep(6000);
+
+		//Verify that the activated incentive should be displayed in incentives section
+		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
+		Assert.assertTrue(in.getMarketNameInIncentivesTabOfContact().getText().contains(marketname));
+		ap.getPageBackBtn().click();
+		ap.getPageBackBtn().click();
+		hp.getClearSearch().click();
+	}
+	@Test(priority=7)
+	public void TS007_VerifyExportToExcelIncentivesTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//CRM-T54- Verify Export To Excel functionality for Incentives
@@ -256,386 +647,11 @@ public class IncentivesPageTest extends base {
 		ap.getexportworksheetpopup().click();
 	}
 
-	@Test(priority=4)
-	public void TS004_VerifyCreateIncentiveFromContactTest() throws InterruptedException 
-	{
-		//The purpose of this test case to:-
-		//T36- Verify that user is able to create incentive from contact form
-
-		hp = new CRMHomePage(driver);
-		ap = new CRMAccountsPage(driver);
-		cp = new CRMContactPage(driver);
-		in = new CRMIncentivesPage(driver);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
-
-		//Click on Contacts tab
-		hp.getContactsTab().click();
-
-		//Open any active contact
-		cp.getBLetterFilterLink().click();
-		cp.selectContactName().click();
-		ap.getAccNaviagteBtn().click();
-
-		// Click Incentives tab of an existing contact
-		in.getIncentiveTab().click();
-
-		//Click on New Incentive button
-		in.getNewIncentiveBtn().click();
-
-		String accountname = in.getSelectedAccountNameField().getText();
-
-		// Select Market at New Incentive Form
-		in.getMarketTextBox().click();
-		in.getMarketSearchRecordsBtn().click();
-		in.SelectMarketName().click();
-		in.getMarketFieldLabel().click();
-		String marketname = in.getSelectedMarketNameField().getText();
-
-		// Select Referral Source at New Incentive Form
-		in.getReferralSourceTxtBx().click();
-		in.getReferralSourceSearchRecordsBtn().click();
-		in.SelectReferralSourceName().click();
-		in.getReferralSourceFieldLabel().click();
-
-		//Click on Save and Close button
-		in.getSavenCloseBtn().click();
-		Thread.sleep(15000);
-		ap.getDuplicateRecordsPopupIgnorenSavebtn().click(); //newly added
-		
-		//Verify that Incentive should be created and should now be displayed in the incentives section 
-		//under incentive tab on account form
-		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
-		Assert.assertTrue(in.getMarketNameInIncentivesTabOfContact().getText().contains(marketname));
-
-		in.selectIncentiveRecord().click();
-		in.getIncDeactivateBtn().click();
-		in.getDeactivationPopupDeactivateBtn().click();
-		Thread.sleep(5000);
-
-		//Navigate back to Active accounts list
-		ap.getPageBackBtn().click();
-	}
-	@Test(priority=5)
-	public void TS005_VerifyDeactivateIncentiveFromContactTest() throws InterruptedException 
-	{
-		//The purpose of this test case to:-
-		//T52- Verify the user is able to deactivate an active incentive as per the security access
-
-		hp = new CRMHomePage(driver);
-		ap = new CRMAccountsPage(driver);
-		cp = new CRMContactPage(driver);
-		in = new CRMIncentivesPage(driver);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
-
-		//Click on Contacts tab
-		hp.getContactsTab().click();
-
-		//Open any active contact
-		cp.getQLetterFilterLink().click();
-		cp.selectContactName().click();
-		ap.getAccNaviagteBtn().click();
-
-		// Click Incentives tab of an existing contact
-		in.getIncentiveTab().click();
-
-		//Click on New Incentive button to create new incentive
-		in.getNewIncentiveBtn().click();
-
-		String accountname = in.getSelectedAccountNameField().getText();
-		System.out.println("Account Name: "+accountname);
-
-		// Select Market at New Incentive Form
-		in.getMarketTextBox().click();
-		in.getMarketSearchRecordsBtn().click();
-		in.SelectMarketName().click();
-		in.getMarketFieldLabel().click();
-
-		//Click on Save and Close button
-		in.getSavenCloseBtn().click();
-		Thread.sleep(15000);
-
-		//Deactivate the incentive using Deactivate option
-		in.selectIncentiveRecord().click();
-		in.getIncDeactivateBtn().click();
-		in.getDeactivationPopupDeactivateBtn().click();
-		Thread.sleep(5000);
-
-		//Verify that the Incentive should be deactivated and removed from the incentives section
-		List<WebElement> validateIncentive = driver.findElements(By.xpath("//div[@title='"+accountname+"']"));
-		Assert.assertTrue(validateIncentive.size()== 0);
-
-		//Click on New Incentive button to create new incentive
-		in.getNewIncentiveBtn().click();
-		// Select Market at New Incentive Form
-		in.getMarketTextBox().click();
-		in.getMarketSearchRecordsBtn().click();
-		in.SelectMarketName().click();
-		in.getMarketFieldLabel().click();
-
-		//Click on Save and Close button
-		in.getSavenCloseBtn().click();
-		Thread.sleep(15000);
-
-		//Deactivate the incentive using Edit option
-		in.selectIncentiveRecord().click();
-		in.getIncentiveEditButton().click();
-		in.getDeactivateBtnOnIncentiveForm().click();
-		in.getDeactivationPopupDeactivateBtn().click();
-
-		//Verify that Incentive should become Read Only
-		Assert.assertTrue(in.getIncentiveReadOnlyText().isDisplayed());
-		ap.getPageBackBtn().click();
-
-		//Verify that the Incentive should be deactivated and removed from the incentives section
-		List<WebElement> validateIncentive1 = driver.findElements(By.xpath("//div[@title='"+accountname+"']"));
-		Assert.assertTrue(validateIncentive1.size()== 0);
-
-		//Click on Incentives tab from left menu
-		hp.getincentivestab().click();
-
-		//Click on 'Active Incentives' drop-down view button
-		in.getActiveIncDropDownBtn().click();
-
-		//Select 'Inactive Incentives' option
-		in.getInactiveIncOptn().click();
-
-		//Validate deactivated incentive
-		hp.getSearchInactiveIncField().click();
-		hp.getSearchInactiveIncField().sendKeys(accountname);
-		hp.getstartsearch().click();
-		Thread.sleep(5000);
-		Assert.assertTrue(in.getValidateIncInSearchResults().getText().contains(accountname));
-
-		hp.getClearSearch().click();
-	}
-	@Test(priority=6)
-	public void TS006_VerifyGridFiltersIncentivesTest() throws InterruptedException
-	{
-		//The purpose of this test case:-
-		//CRM-T87- Verify Account, Contact and Market filters on People Grid
-
-		hp = new CRMHomePage(driver);
-		ap = new CRMAccountsPage(driver);
-		pl = new CRMPeoplePage(driver);
-		cp = new CRMContactPage(driver);
-		in = new CRMIncentivesPage(driver);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-		//Click on Incentives Tab at left menu 
-		hp.getincentivestab().click();
-
-		//Click funnel for Account column
-		in.getaccountcolumn().click();
-		ap.getclickfunnelfilter().click();
-
-		//Select filter options
-		ap.getclickoperatordd().click();
-		in.getgridoperator().click();
-		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
-		ap.getclickapplybutton().click();
-		Thread.sleep(5000);
-
-		//Verify Account value selected on accounts grid
-		WebElement Account = null;
-		for (int i=0;i<3;i++)
-		{
-			Account = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
-			Assert.assertTrue(Account.getText().contains(prop.getProperty("name")));
-		}
-		System.out.println("Account matches expected criteria");
-
-		//Clear Filter for Account
-		in.getaccountcolumn().click();
-		ap.getclearfiltergrid().click();
-
-		//Click funnel for Contact column
-		in.getcontactcolumn().click();
-		ap.getclickfunnelfilter().click();
-
-		//Select filter options
-		ap.getclickoperatordd().click();
-		in.getgridoperator().click();
-		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("contact"));
-		ap.getclickapplybutton().click();
-		Thread.sleep(5000);
-
-		//Verify Contact value selected on accounts grid
-		WebElement Contact = null;
-		for (int i=0;i<7;i++)
-		{
-			Contact = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
-			Assert.assertTrue(Contact.getText().contains(prop.getProperty("contact")));
-		}
-		System.out.println("Contact matches expected criteria");
-
-		//Clear Filter for Contact
-		in.getcontactcolumn().click();
-		ap.getclearfiltergrid().click();
-
-		//Click funnel for Market column
-		in.getmarketcolumn().click();
-		ap.getclickfunnelfilter().click();
-
-		//Select filter options
-		ap.getclickoperatordd().click();
-		in.getgridoperator().click();
-		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("market"));
-		ap.getclickapplybutton().click();
-		Thread.sleep(5000);
-
-		//Verify Market value selected on accounts grid
-		WebElement Market = null;
-		for (int i=0;i<7;i++)
-		{
-			Market = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-4']"));
-			Assert.assertTrue(Market.getText().contains(prop.getProperty("market")));
-		}
-		System.out.println("Market matches expected criteria");
-
-		//Clear Filter for Market
-		in.getmarketcolumn().click();
-		ap.getclearfiltergrid().click();
-	}
-
-	@Test(priority=7)
-	public void TS007_VerifyActivateInactiveIncentiveTest() throws InterruptedException 
-	{
-		//The purpose of this test case to:-
-		//T53- Verify user is able to activate an incentive as per security access
-
-		hp = new CRMHomePage(driver);
-		ap = new CRMAccountsPage(driver);
-		cp = new CRMContactPage(driver);
-		in = new CRMIncentivesPage(driver);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
-
-		//Click on Incentives tab
-		hp.getincentivestab().click();
-
-		cp.getBLetterFilterLink().click();
-		Thread.sleep(4000);
-		//Select active incentive from grid
-		act = new Actions(driver);
-		act.doubleClick(in.selectIncentiveRecord()).perform();
-
-		//Get the incentive name from header
-		String incentivenameonincform = in.getIncentiveNameOnIncForm().getText();
-		System.out.println("Incentive name: "+incentivenameonincform);
-
-		String accountname = in.getSelectedAccountNameField().getText();
-		System.out.println("Account Name: "+accountname);
-
-		String contactname = in.getSelectedContactNameField().getText();
-		System.out.println("Contact Name: "+contactname);
-
-		String marketname = in.getSelectedMarketNameField().getText();
-		System.out.println("Market Name: "+marketname);
-
-		//Click on Deactivate button in header
-		in.getDeactivateBtnOnIncentiveForm().click();
-
-		//Click on Deactivate button in the dialog box
-		in.getDeactivationPopupDeactivateBtn().click();
-
-		//Verify that an Incentive should be deactivated
-		Assert.assertTrue(in.getActivateBtnOnIncentiveForm().isDisplayed());
-		Assert.assertTrue(in.getIncentiveReadOnlyText().isDisplayed());
-		ap.getPageBackBtn().click();
-
-		//Verify that inactive should not be displayed under Active Incentives
-		hp.getSearchActiveIncField().click();
-		hp.getSearchActiveIncField().sendKeys(incentivenameonincform);
-		hp.getstartsearch().click();
-		Thread.sleep(5000);
-		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
-		hp.getClearSearch().click();
-
-		//Click on 'Active Incentives' drop-down view button
-		in.getActiveIncDropDownBtn().click();
-
-		//Select 'Inactive Incentives' option
-		in.getInactiveIncOptn().click();
-		Thread.sleep(3000);
-		//Verify that deactivated incentive should be displayed under Inactive Incentives
-		hp.getSearchInactiveIncField().click();
-		hp.getSearchInactiveIncField().sendKeys(accountname);
-		hp.getstartsearch().click();
-		Thread.sleep(5000);
-		Assert.assertTrue(in.getValidateIncInSearchResults().getText().contains(accountname));
-
-		//Select that incentive
-		act = new Actions(driver);
-		act.doubleClick(in.selectIncentiveRecord()).perform();
-
-		//Click on Activate button in header
-		in.getActivateBtnOnIncentiveForm().click();
-		in.getActivationPopupActivateBtn().click();
-
-		//The Incentive should be activated
-		Assert.assertTrue(in.getDeactivateBtnOnIncentiveForm().isDisplayed());
-		ap.getPageBackBtn().click();
-
-		//Verify that incentive should no more be displayed under Inactive Incentives
-		hp.getClearSearch().click();
-		hp.getSearchInactiveIncField().click();
-		hp.getSearchInactiveIncField().sendKeys(incentivenameonincform);
-		hp.getstartsearch().click();
-		Thread.sleep(5000);
-		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
-		hp.getClearSearch().click();
-
-		//Click on 'Inactive Incentives' drop-down view button
-		in.getActiveIncDropDownBtn().click();
-
-		//Select 'Active Incentives' option
-		in.getActiveIncOptn().click();
-		Thread.sleep(3000);
-
-		//Verify that inactive should be displayed under Active Incentives
-		hp.getSearchActiveIncField().click();
-		hp.getSearchActiveIncField().sendKeys(accountname);
-		hp.getstartsearch().click();
-		Thread.sleep(5000);
-		Assert.assertTrue(in.getValidateIncInSearchResults().getText().contains(accountname));
-
-		//Open the incentive
-		act = new Actions(driver);
-		act.doubleClick(in.selectIncentiveRecord()).perform();
-
-		//Navigate to the Account form by click on the account link in account field
-		in.getSelectedAccountNameField().click();
-		Thread.sleep(5000);
-
-		//Navigate to the Incentives tab
-		in.getIncentiveTab().click();
-		Thread.sleep(6000);
-		//Verify that the activated incentive should be displayed in incentives section
-		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
-		Assert.assertTrue(in.getContactNameInIncentivesTab().getText().contains(contactname));
-		Assert.assertTrue(in.getMarketNameInIncentivesTab().getText().contains(marketname));
-
-		ap.getPageBackBtn().click();
-
-		//Navigate to the Contact form by click on the contact link in contact field
-		in.getSelectedContactNameField().click();
-		Thread.sleep(5000);
-
-		//Navigate to the Incentives tab
-		in.getIncentiveTab().click();
-		Thread.sleep(6000);
-
-		//Verify that the activated incentive should be displayed in incentives section
-		Assert.assertTrue(in.getAccNameInIncentivesTab().getText().contains(accountname));
-		Assert.assertTrue(in.getMarketNameInIncentivesTabOfContact().getText().contains(marketname));
-		ap.getPageBackBtn().click();
-		ap.getPageBackBtn().click();
-		hp.getClearSearch().click();
-	}
 	@Test(priority=8)
 	public void TS008_VerifySearchFunctionalityIncentivesTest() throws InterruptedException
 	{
 		//The purpose of this test case:-
-		//CRM-T87- Verify Account, Contact and Market filters on People Grid
+		//CRM-T84- Verify Search Incentives functionality
 
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
@@ -646,7 +662,8 @@ public class IncentivesPageTest extends base {
 
 		//Click on Incentives Tab at left menu 
 		hp.getincentivestab().click();
-
+		Thread.sleep(5000);
+		
 		//Click search text box and search for account name
 		ap.getsearchaccounttextbox().click();
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
@@ -732,13 +749,14 @@ public class IncentivesPageTest extends base {
 		in.getMarketTextBox().click();
 		in.getMarketSearchRecordsBtn().click();
 		in.SelectMarketName().click();
+		Thread.sleep(3000);
 		in.getMarketFieldLabel().click();
 
 		//Click on Save and Close button
 		in.getSavenCloseBtn().click();
 		Thread.sleep(15000);
 
-		ap.getDuplicateRecordsPopupIgnorenSavebtn().click(); //newly added
+		//ap.getDuplicateRecordsPopupIgnorenSavebtn().click(); //newly added
 		
 		//Select an incentive from incentives tab
 		in.selectIncentiveRecord().click();
@@ -848,5 +866,7 @@ public class IncentivesPageTest extends base {
 		//Verify that Incentive should not be displayed in the incentives section as the contact is changed
 		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
 	}
-
+	
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

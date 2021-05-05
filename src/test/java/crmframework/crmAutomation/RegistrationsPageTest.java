@@ -197,7 +197,7 @@ public class RegistrationsPageTest extends base {
 		System.out.println("Registration Details are disabled.");
 	}
 	@Test(priority=4)
-	public void TS004_ManualFail_VerifyExportToExcelRegistrationsPageTest() throws InterruptedException
+	public void TS004_VerifyExportToExcelRegistrationsPageTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//CRM-T130- Verify Export To Excel functionality for Incentive Details
@@ -226,11 +226,11 @@ public class RegistrationsPageTest extends base {
 
 		//Export file to online excel
 		ap.getopenexcelonline().click();
-		Thread.sleep(20000);
+		Thread.sleep(15000);
 		
 		//ap.getsaveexcelonline().click();
 		ap.getsaveexcelonline().click();
-		Thread.sleep(60000);
+		Thread.sleep(10000);
 
 		//Click Track Progress button
 		cp.getexporttrackprogressbtn().click();
@@ -242,7 +242,7 @@ public class RegistrationsPageTest extends base {
 		String childId = it.next();
 		driver.switchTo().window(childId);
 		
-		Thread.sleep(30000);
+		Thread.sleep(15000);
 		driver.navigate().refresh();
 		//Verify export to excel online
 		System.out.println(pl.getonlineexportverification().getText());
