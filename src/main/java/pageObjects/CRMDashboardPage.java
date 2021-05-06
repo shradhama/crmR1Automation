@@ -66,6 +66,7 @@ public class CRMDashboardPage {
 	By opentasksstartsearchbtn = By.xpath("(//button[@aria-label = 'Start search'])[position()=2]"); //Locator for Start Search btn of My Open Tasks
 	By validateopentaskinsearchrslts = By.xpath("//div[@data-id='cell-0-4']"); //Locator to validate Open task
 	By opentasksnext7dayslabel = By.xpath("//span[contains(text(),'My Open Tasks Next 7 Days')]"); //Locator for My Open Tasks next 7 days label
+	
 	By countalltasklabel = By.xpath("//span[contains(text(),'Count:All (Task)')]"); //Locator for Count All(Task) label
 	
 	//Locators for X-Y axis labels

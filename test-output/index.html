@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 6 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>C:\Users\shradhama\crmR1Automation\testng.xml</span>
+                    <span>C:\Users\nilamma\crmR1Automation\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,46 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">24 methods, 6 failed,   18 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS005_ManualFail_VerifyJobFunctionFieldTest">TS005_ManualFail_VerifyJobFunctionFieldTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS006_VerifyContactStatusToActivateContactTest">TS006_VerifyContactStatusToActivateContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS009_ManualFail_VerifyDuplicateContactTest">TS009_ManualFail_VerifyDuplicateContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS012_ManualFail_VerifyContactMarketRecordProfile_Registered">TS012_ManualFail_VerifyContactMarketRecordProfile_Registered</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined">TS013_ManualFail_VerifyContactMarketRecordProfile_Declined</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS024_VerifyExportToExcelTest">TS024_VerifyExportToExcelTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,16 +140,92 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.DashboardPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.DashboardPageTest" hash-for-method="TS005_VerifyMyActivitiesTest">TS005_VerifyMyActivitiesTest</a> <!-- method navigator-link -->
-
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ReferenceDataPageTest" hash-for-method="TS007_VerifySearchRegionsTest">TS007_VerifySearchRegionsTest</a> <!-- method navigator-link -->
-
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS002_VerifyCreateNewContactTest">TS002_VerifyCreateNewContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS003_VerifySearchContactsUsingFullNameEmailPhoneTest">TS003_VerifySearchContactsUsingFullNameEmailPhoneTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS004_VerifyMarketingRelationshipOwnerContactTest">TS004_VerifyMarketingRelationshipOwnerContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS007_VerifyAddAppointmentToContactTest">TS007_VerifyAddAppointmentToContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS008_VerifyAddNewTaskFromTimelineToContactTest">TS008_VerifyAddNewTaskFromTimelineToContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS010_VerifyAuditHistoryTabOnContactTest">TS010_VerifyAuditHistoryTabOnContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS011_VerifyAssociatedListsSectionContactTest">TS011_VerifyAssociatedListsSectionContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS014_VerifyGroupByOptionsContactTest">TS014_VerifyGroupByOptionsContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS015_VerifyAddNewNoteToContactTest">TS015_VerifyAddNewNoteToContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS016_VerifyAddNewPostToContactTest">TS016_VerifyAddNewPostToContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS017_VerifyMandatoryFieldsOnContactFormTest">TS017_VerifyMandatoryFieldsOnContactFormTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS018_VerifyCountryAutocompletePicklist">TS018_VerifyCountryAutocompletePicklist</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS019_VerifyDetailsTabOnContactTest">TS019_VerifyDetailsTabOnContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS020_VerifyPhoneCallOnContactTest">TS020_VerifyPhoneCallOnContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS021_VerifyGridFiltersContactTest">TS021_VerifyGridFiltersContactTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS022_VerifyUpdateContactDetailsTest">TS022_VerifyUpdateContactDetailsTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ContactPageTest" hash-for-method="TS023_VerifyToDeactivateBuyerContactTest">TS023_VerifyToDeactivateBuyerContactTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -125,10 +240,414 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">crmframework.crmAutomation.ContactPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS005_ManualFail_VerifyJobFunctionFieldTest">
+                  </a> <!-- TS005_ManualFail_VerifyJobFunctionFieldTest -->
+                  <span class="method-name">TS005_ManualFail_VerifyJobFunctionFieldTest</span>
+                  <div class="stack-trace"><b>"java.lang.AssertionError: List is not in alphabetical sorting order: Lists differ at element [0]: Editorial != Blogger expected [Editorial] but found [Blogger]
+	at crmframework.crmAutomation.ContactPageTest.TS005_ManualFail_VerifyJobFunctionFieldTest(ContactPageTest.java:428)
+... Removed 28 stack frames<br/> java.lang.AssertionError: List is not in alphabetical sorting order: Lists differ at element [0]: Editorial != Blogger expected [Editorial] but found [Blogger]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:549)
+	at crmframework.crmAutomation.ContactPageTest.TS005_ManualFail_VerifyJobFunctionFieldTest(ContactPageTest.java:428)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+"</b><br>org.testng.Assert.fail(Assert.java:94)<br>org.testng.Assert.failNotEquals(Assert.java:494)<br>org.testng.Assert.assertEquals(Assert.java:123)<br>org.testng.Assert.assertEquals(Assert.java:549)<br>crmframework.crmAutomation.ContactPageTest.TS005_ManualFail_VerifyJobFunctionFieldTest(ContactPageTest.java:428)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS006_VerifyContactStatusToActivateContactTest">
+                  </a> <!-- TS006_VerifyContactStatusToActivateContactTest -->
+                  <span class="method-name">TS006_VerifyContactStatusToActivateContactTest</span>
+                  <div class="stack-trace"><b>"org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@title=&apos;Do Not Call&apos;] (tried for 20 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMContactPage.getContactStatusResonForActiveContact(CRMContactPage.java:561)
+	at crmframework.crmAutomation.ContactPageTest.TS006_VerifyContactStatusToActivateContactTest(ContactPageTest.java:526)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@title=&apos;Do Not Call&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+... Removed 24 stack frames<br/> org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@title=&apos;Do Not Call&apos;] (tried for 20 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMContactPage.getContactStatusResonForActiveContact(CRMContactPage.java:561)
+	at crmframework.crmAutomation.ContactPageTest.TS006_VerifyContactStatusToActivateContactTest(ContactPageTest.java:526)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@title=&apos;Do Not Call&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+"</b><br>org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)<br>org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)<br>pageObjects.CRMContactPage.getContactStatusResonForActiveContact(CRMContactPage.java:561)<br>crmframework.crmAutomation.ContactPageTest.TS006_VerifyContactStatusToActivateContactTest(ContactPageTest.java:526)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS009_ManualFail_VerifyDuplicateContactTest">
+                  </a> <!-- TS009_ManualFail_VerifyDuplicateContactTest -->
+                  <span class="method-name">TS009_ManualFail_VerifyDuplicateContactTest</span>
+                  <div class="stack-trace"><b>"org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h1[@aria-label=&apos;Duplicate records found&apos;]&quot;}
+  (Session info: chrome=90.0.4430.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir26568_1864351010}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:65299}, acceptInsecureCerts=false, browserVersion=90.0.4430.93, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: e5aa1b3aa80d372ffc7183a65d3eab0e
+*** Element info: {Using=xpath, value=//h1[@aria-label=&apos;Duplicate records found&apos;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
+	at pageObjects.CRMContactPage.getDuplicateRecordsPopupTitle(CRMContactPage.java:1101)
+	at crmframework.crmAutomation.ContactPageTest.TS009_ManualFail_VerifyDuplicateContactTest(ContactPageTest.java:680)
+... Removed 28 stack frames<br/> org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h1[@aria-label=&apos;Duplicate records found&apos;]&quot;}
+  (Session info: chrome=90.0.4430.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir26568_1864351010}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:65299}, acceptInsecureCerts=false, browserVersion=90.0.4430.93, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: e5aa1b3aa80d372ffc7183a65d3eab0e
+*** Element info: {Using=xpath, value=//h1[@aria-label=&apos;Duplicate records found&apos;]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
+	at pageObjects.CRMContactPage.getDuplicateRecordsPopupTitle(CRMContactPage.java:1101)
+	at crmframework.crmAutomation.ContactPageTest.TS009_ManualFail_VerifyDuplicateContactTest(ContactPageTest.java:680)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+"</b><br>sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br>sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)<br>sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)<br>java.lang.reflect.Constructor.newInstance(Unknown Source)<br>org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)<br>org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)<br>org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)<br>org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)<br>org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)<br>org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)<br>org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)<br>org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)<br>org.openqa.selenium.By$ByXPath.findElement(By.java:361)<br>org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)<br>pageObjects.CRMContactPage.getDuplicateRecordsPopupTitle(CRMContactPage.java:1101)<br>crmframework.crmAutomation.ContactPageTest.TS009_ManualFail_VerifyDuplicateContactTest(ContactPageTest.java:680)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS012_ManualFail_VerifyContactMarketRecordProfile_Registered">
+                  </a> <!-- TS012_ManualFail_VerifyContactMarketRecordProfile_Registered -->
+                  <span class="method-name">TS012_ManualFail_VerifyContactMarketRecordProfile_Registered</span>
+                  <div class="stack-trace"><b>"org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;] (tried for 15 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)
+	at crmframework.crmAutomation.ContactPageTest.TS012_ManualFail_VerifyContactMarketRecordProfile_Registered(ContactPageTest.java:900)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+... Removed 24 stack frames<br/> org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;] (tried for 15 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)
+	at crmframework.crmAutomation.ContactPageTest.TS012_ManualFail_VerifyContactMarketRecordProfile_Registered(ContactPageTest.java:900)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+"</b><br>org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)<br>org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)<br>pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)<br>crmframework.crmAutomation.ContactPageTest.TS012_ManualFail_VerifyContactMarketRecordProfile_Registered(ContactPageTest.java:900)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined">
+                  </a> <!-- TS013_ManualFail_VerifyContactMarketRecordProfile_Declined -->
+                  <span class="method-name">TS013_ManualFail_VerifyContactMarketRecordProfile_Declined</span>
+                  <div class="stack-trace"><b>"org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;] (tried for 15 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)
+	at crmframework.crmAutomation.ContactPageTest.TS013_ManualFail_VerifyContactMarketRecordProfile_Declined(ContactPageTest.java:1027)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+... Removed 24 stack frames<br/> org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;] (tried for 15 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)
+	at crmframework.crmAutomation.ContactPageTest.TS013_ManualFail_VerifyContactMarketRecordProfile_Declined(ContactPageTest.java:1027)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+"</b><br>org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)<br>org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)<br>pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)<br>crmframework.crmAutomation.ContactPageTest.TS013_ManualFail_VerifyContactMarketRecordProfile_Declined(ContactPageTest.java:1027)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS024_VerifyExportToExcelTest">
+                  </a> <!-- TS024_VerifyExportToExcelTest -->
+                  <span class="method-name">TS024_VerifyExportToExcelTest</span>
+                  <div class="stack-trace"><b>"org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[@id =&apos;contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.ExportToExcel.Menu$splitButtonId_button1$button&apos;] (tried for 20 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMContactPage.getexporttoexcelbtn(CRMContactPage.java:599)
+	at crmframework.crmAutomation.ContactPageTest.TS024_VerifyExportToExcelTest(ContactPageTest.java:782)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //button[@id =&apos;contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.ExportToExcel.Menu$splitButtonId_button1$button&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+... Removed 24 stack frames<br/> org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[@id =&apos;contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.ExportToExcel.Menu$splitButtonId_button1$button&apos;] (tried for 20 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMContactPage.getexporttoexcelbtn(CRMContactPage.java:599)
+	at crmframework.crmAutomation.ContactPageTest.TS024_VerifyExportToExcelTest(ContactPageTest.java:782)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //button[@id =&apos;contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.ExportToExcel.Menu$splitButtonId_button1$button&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+"</b><br>org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)<br>org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)<br>pageObjects.CRMContactPage.getexporttoexcelbtn(CRMContactPage.java:599)<br>crmframework.crmAutomation.ContactPageTest.TS024_VerifyExportToExcelTest(ContactPageTest.java:782)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">crmframework.crmAutomation.DashboardPageTest</span>
+              <span class="class-name">crmframework.crmAutomation.ContactPageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -140,15 +659,121 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-
-                  <a name="TS005_VerifyMyActivitiesTest">
-                  </a> <!-- TS005_VerifyMyActivitiesTest -->
-                  <span class="method-name">TS005_VerifyMyActivitiesTest</span>
-
-                  <a name="TS007_VerifySearchRegionsTest">
-                  </a> <!-- TS007_VerifySearchRegionsTest -->
-                  <span class="method-name">TS007_VerifySearchRegionsTest</span>
-
+                  <a name="TS002_VerifyCreateNewContactTest">
+                  </a> <!-- TS002_VerifyCreateNewContactTest -->
+                  <span class="method-name">TS002_VerifyCreateNewContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS003_VerifySearchContactsUsingFullNameEmailPhoneTest">
+                  </a> <!-- TS003_VerifySearchContactsUsingFullNameEmailPhoneTest -->
+                  <span class="method-name">TS003_VerifySearchContactsUsingFullNameEmailPhoneTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS004_VerifyMarketingRelationshipOwnerContactTest">
+                  </a> <!-- TS004_VerifyMarketingRelationshipOwnerContactTest -->
+                  <span class="method-name">TS004_VerifyMarketingRelationshipOwnerContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS007_VerifyAddAppointmentToContactTest">
+                  </a> <!-- TS007_VerifyAddAppointmentToContactTest -->
+                  <span class="method-name">TS007_VerifyAddAppointmentToContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS008_VerifyAddNewTaskFromTimelineToContactTest">
+                  </a> <!-- TS008_VerifyAddNewTaskFromTimelineToContactTest -->
+                  <span class="method-name">TS008_VerifyAddNewTaskFromTimelineToContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS010_VerifyAuditHistoryTabOnContactTest">
+                  </a> <!-- TS010_VerifyAuditHistoryTabOnContactTest -->
+                  <span class="method-name">TS010_VerifyAuditHistoryTabOnContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS011_VerifyAssociatedListsSectionContactTest">
+                  </a> <!-- TS011_VerifyAssociatedListsSectionContactTest -->
+                  <span class="method-name">TS011_VerifyAssociatedListsSectionContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS014_VerifyGroupByOptionsContactTest">
+                  </a> <!-- TS014_VerifyGroupByOptionsContactTest -->
+                  <span class="method-name">TS014_VerifyGroupByOptionsContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS015_VerifyAddNewNoteToContactTest">
+                  </a> <!-- TS015_VerifyAddNewNoteToContactTest -->
+                  <span class="method-name">TS015_VerifyAddNewNoteToContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS016_VerifyAddNewPostToContactTest">
+                  </a> <!-- TS016_VerifyAddNewPostToContactTest -->
+                  <span class="method-name">TS016_VerifyAddNewPostToContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS017_VerifyMandatoryFieldsOnContactFormTest">
+                  </a> <!-- TS017_VerifyMandatoryFieldsOnContactFormTest -->
+                  <span class="method-name">TS017_VerifyMandatoryFieldsOnContactFormTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS018_VerifyCountryAutocompletePicklist">
+                  </a> <!-- TS018_VerifyCountryAutocompletePicklist -->
+                  <span class="method-name">TS018_VerifyCountryAutocompletePicklist</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS019_VerifyDetailsTabOnContactTest">
+                  </a> <!-- TS019_VerifyDetailsTabOnContactTest -->
+                  <span class="method-name">TS019_VerifyDetailsTabOnContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS020_VerifyPhoneCallOnContactTest">
+                  </a> <!-- TS020_VerifyPhoneCallOnContactTest -->
+                  <span class="method-name">TS020_VerifyPhoneCallOnContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS021_VerifyGridFiltersContactTest">
+                  </a> <!-- TS021_VerifyGridFiltersContactTest -->
+                  <span class="method-name">TS021_VerifyGridFiltersContactTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS022_VerifyUpdateContactDetailsTest">
+                  </a> <!-- TS022_VerifyUpdateContactDetailsTest -->
+                  <span class="method-name">TS022_VerifyUpdateContactDetailsTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS023_VerifyToDeactivateBuyerContactTest">
+                  </a> <!-- TS023_VerifyToDeactivateBuyerContactTest -->
+                  <span class="method-name">TS023_VerifyToDeactivateBuyerContactTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -156,7 +781,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\shradhama\crmR1Automation\testng.xml</span>
+            <span class="header-content">C:\Users\nilamma\crmR1Automation\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -165,16 +790,7 @@
 &lt;suite name=&quot;Suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;crmframework.crmAutomation.DashboardPageTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
-
-          &lt;include name=&quot;TS005_VerifyMyActivitiesTest&quot;/&gt;
-
-          &lt;include name=&quot;TS007_VerifySearchRegionsTest&quot;/&gt;
-
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- crmframework.crmAutomation.DashboardPageTest --&gt;
+      &lt;class name=&quot;crmframework.crmAutomation.ContactPageTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -214,33 +830,108 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(24);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TS001_VerifyHomePageTest')
-
-data.setCell(0, 2, 'crmframework.crmAutomation.DashboardPageTest')
-data.setCell(0, 3, 135273);
+data.setCell(0, 1, 'TS017_VerifyMandatoryFieldsOnContactFormTest')
+data.setCell(0, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(0, 3, 375235);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TS005_VerifyMyActivitiesTest')
-data.setCell(1, 2, 'crmframework.crmAutomation.DashboardPageTest')
-data.setCell(1, 3, 112812);
-
-data.setCell(0, 2, 'crmframework.crmAutomation.ReferenceDataPageTest')
-data.setCell(0, 3, 98357);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TS007_VerifySearchRegionsTest')
-data.setCell(1, 2, 'crmframework.crmAutomation.ReferenceDataPageTest')
-data.setCell(1, 3, 37156);
-
+data.setCell(1, 1, 'TS021_VerifyGridFiltersContactTest')
+data.setCell(1, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(1, 3, 165677);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'TS024_VerifyExportToExcelTest')
+data.setCell(2, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(2, 3, 143855);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'TS013_ManualFail_VerifyContactMarketRecordProfile_Declined')
+data.setCell(3, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(3, 3, 121874);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'TS012_ManualFail_VerifyContactMarketRecordProfile_Registered')
+data.setCell(4, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(4, 3, 117491);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'TS001_VerifyHomePageTest')
+data.setCell(5, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(5, 3, 103613);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'TS022_VerifyUpdateContactDetailsTest')
+data.setCell(6, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(6, 3, 89675);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'TS011_VerifyAssociatedListsSectionContactTest')
+data.setCell(7, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(7, 3, 85989);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'TS010_VerifyAuditHistoryTabOnContactTest')
+data.setCell(8, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(8, 3, 78820);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'TS020_VerifyPhoneCallOnContactTest')
+data.setCell(9, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(9, 3, 76074);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'TS002_VerifyCreateNewContactTest')
+data.setCell(10, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(10, 3, 71398);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'TS006_VerifyContactStatusToActivateContactTest')
+data.setCell(11, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(11, 3, 61424);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'TS015_VerifyAddNewNoteToContactTest')
+data.setCell(12, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(12, 3, 61386);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'TS007_VerifyAddAppointmentToContactTest')
+data.setCell(13, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(13, 3, 56476);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'TS019_VerifyDetailsTabOnContactTest')
+data.setCell(14, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(14, 3, 55015);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'TS018_VerifyCountryAutocompletePicklist')
+data.setCell(15, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(15, 3, 53164);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'TS023_VerifyToDeactivateBuyerContactTest')
+data.setCell(16, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(16, 3, 52543);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'TS009_ManualFail_VerifyDuplicateContactTest')
+data.setCell(17, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(17, 3, 51284);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'TS014_VerifyGroupByOptionsContactTest')
+data.setCell(18, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(18, 3, 49419);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'TS008_VerifyAddNewTaskFromTimelineToContactTest')
+data.setCell(19, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(19, 3, 44594);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'TS016_VerifyAddNewPostToContactTest')
+data.setCell(20, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(20, 3, 42566);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'TS004_VerifyMarketingRelationshipOwnerContactTest')
+data.setCell(21, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(21, 3, 36345);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'TS003_VerifySearchContactsUsingFullNameEmailPhoneTest')
+data.setCell(22, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(22, 3, 29541);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'TS005_ManualFail_VerifyJobFunctionFieldTest')
+data.setCell(23, 2, 'crmframework.crmAutomation.ContactPageTest')
+data.setCell(23, 3, 12156);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-
-              <span class="suite-total-time">Total running time: 4 minutes</span>
-
-              <span class="suite-total-time">Total running time: 2 minutes</span>
-
+              <span class="suite-total-time">Total running time: 33 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -255,28 +946,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-
-            <span class="header-content">3 ignored methods</span>
-
-            <span class="header-content">7 ignored methods</span>
-
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">crmframework.crmAutomation.DashboardPageTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest</span>
-                <br/>
-                <span class="ignored-method-name">TS004_VerifyCallCenterDashboardRepTest</span>
-                <br/>
-                <span class="ignored-method-name">TS002_VerifyRetailRelationManagerDashboardView</span>
-                <br/>
-                <span class="ignored-method-name">TS006_VerifyRegionsTest</span>
-                <br/>
-                <span class="ignored-method-name">TS007_VerifySearchMarketsTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -285,26 +957,118 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">crmframework.crmAutomation.DashboardPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">crmframework.crmAutomation.ContactPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">initialize</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">TS001_VerifyHomePageTest</span>
-
-                <span class="method-start">8345 ms</span>
+                <span class="method-start">7881 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">TS005_VerifyMyActivitiesTest</span>
-                <span class="method-start">143651 ms</span>
-
-                <span class="method-start">3352 ms</span>
+                <span class="method-name">TS002_VerifyCreateNewContactTest</span>
+                <span class="method-start">111515 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">TS007_VerifySearchRegionsTest</span>
-                <span class="method-start">101719 ms</span>
-
+                <span class="method-name">TS003_VerifySearchContactsUsingFullNameEmailPhoneTest</span>
+                <span class="method-start">182915 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS004_VerifyMarketingRelationshipOwnerContactTest</span>
+                <span class="method-start">212461 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TS006_VerifyContactStatusToActivateContactTest</span>
+                <span class="method-start">248810 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS007_VerifyAddAppointmentToContactTest</span>
+                <span class="method-start">310281 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS008_VerifyAddNewTaskFromTimelineToContactTest</span>
+                <span class="method-start">366758 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TS009_ManualFail_VerifyDuplicateContactTest</span>
+                <span class="method-start">411361 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS010_VerifyAuditHistoryTabOnContactTest</span>
+                <span class="method-start">462650 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS014_VerifyGroupByOptionsContactTest</span>
+                <span class="method-start">541478 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TS012_ManualFail_VerifyContactMarketRecordProfile_Registered</span>
+                <span class="method-start">590899 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TS013_ManualFail_VerifyContactMarketRecordProfile_Declined</span>
+                <span class="method-start">708400 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS011_VerifyAssociatedListsSectionContactTest</span>
+                <span class="method-start">830281 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS015_VerifyAddNewNoteToContactTest</span>
+                <span class="method-start">916272 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS016_VerifyAddNewPostToContactTest</span>
+                <span class="method-start">977661 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS017_VerifyMandatoryFieldsOnContactFormTest</span>
+                <span class="method-start">1020229 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS018_VerifyCountryAutocompletePicklist</span>
+                <span class="method-start">1395467 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS019_VerifyDetailsTabOnContactTest</span>
+                <span class="method-start">1448634 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS020_VerifyPhoneCallOnContactTest</span>
+                <span class="method-start">1503651 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS021_VerifyGridFiltersContactTest</span>
+                <span class="method-start">1579727 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS022_VerifyUpdateContactDetailsTest</span>
+                <span class="method-start">1745407 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS023_VerifyToDeactivateBuyerContactTest</span>
+                <span class="method-start">1835083 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TS005_ManualFail_VerifyJobFunctionFieldTest</span>
+                <span class="method-start">1887628 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TS024_VerifyExportToExcelTest</span>
+                <span class="method-start">1899787 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

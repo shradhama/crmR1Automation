@@ -83,13 +83,13 @@ public class CRMAccountsPage {
 	By notetitletimeline =By.xpath("//input[@id='create_note_medium_title']");
 	By noteiframe = By.xpath("//body[@aria-label='Enter text...']");
 	By notetextenter = By.xpath("//body[@aria-label='Enter text...']");		
-	By addnotebutton = By.xpath("//button[@id='create_note_add_btn']");
+	By addnotebutton = By.xpath("//button[@aria-label='Add note']");
 	By cancelnotebutton = By.xpath("//button[@id='create_note_cancel_btn']");
 	By notesubject = By.xpath("//div[@id='timeline_record_title_text520480cb-f222-56a8-9dcb-c78e97e2bce7']");
 	By viewcreatednote = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div/div[1]/div/div[2]/div[2]/div[1]/div"); //Locator for newly created Note name on timeline
 	By posttimelineoptn =By.xpath("//li[@data-id='notescontrol-createNewRecord_flyoutMenuItem_post']");
 	By posttextenter = By.xpath("//textarea[@id='create_post_postText']");
-	By postAddButton = By.xpath("//button[@id='create_post_add_btn']");
+	By postAddButton = By.xpath("//button[@aria-label='Add post']");
 	By postCancelButton = By.xpath("//button[@id='create_post_cancel_btn']");
 	By viewCreatedPost = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div/div[1]/div/div[2]/div[2]/div[1]/div"); //Locator for newly created Post name on timeline
 	By auditHistoryRelatedTab = By.xpath("//span[@id='navAudit_Related']"); //xpath added for AuditHistory option from Related Dropdown list
@@ -666,8 +666,8 @@ public class CRMAccountsPage {
 		return driver.findElement(phonecalloption);
 	}
 
-	public WebElement getphonecallsubject() {
-
+	public WebElement getphonecallsubject() throws InterruptedException {
+		Thread.sleep(5000);
 		return driver.findElement(phonecallsubject);
 	}
 

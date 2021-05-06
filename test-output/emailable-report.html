@@ -31,28 +31,191 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-
-<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">2</td><td class="numi">2</td><td class="numi">0</td><td class="numi">0</td><td class="numi">256.5 seconds</td><td class="numi"></td><td class="numi"></td></tr>
-
-<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">2</td><td class="numi">2</td><td class="numi">0</td><td class="numi">0</td><td class="numi">138.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
-
+<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">18</td><td class="numi">18</td><td class="numi">0</td><td class="numi_attn">6</td><td class="numi">2,043.7 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="6">crmframework.crmAutomation.ContactPageTest</td><td><a href="#m1"><b>TS006_VerifyContactStatusToActivateContactTest</b>  </a></td><td class="numi">1</td><td>1620285502604</td><td class="numi">61424</td></tr><tr class="failedodd"><td><a href="#m2"><b>TS009_ManualFail_VerifyDuplicateContactTest</b>  </a></td><td class="numi">1</td><td>1620285665155</td><td class="numi">51284</td></tr><tr class="failedodd"><td><a href="#m3"><b>TS012_ManualFail_VerifyContactMarketRecordProfile_Registered</b>  </a></td><td class="numi">1</td><td>1620285844693</td><td class="numi">117491</td></tr><tr class="failedodd"><td><a href="#m4"><b>TS013_ManualFail_VerifyContactMarketRecordProfile_Declined</b>  </a></td><td class="numi">1</td><td>1620285962194</td><td class="numi">121874</td></tr><tr class="failedodd"><td><a href="#m5"><b>TS005_ManualFail_VerifyJobFunctionFieldTest</b>  </a></td><td class="numi">1</td><td>1620287141422</td><td class="numi">12156</td></tr><tr class="failedodd"><td><a href="#m6"><b>TS024_VerifyExportToExcelTest</b>  </a></td><td class="numi">1</td><td>1620287153581</td><td class="numi">143855</td></tr>
 <tr><th colspan="4">Test &#8212; passed</th></tr>
-
-<tr class="passedodd"><td rowspan="2">crmframework.crmAutomation.DashboardPageTest</td><td><a href="#m1"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1619773224934</td><td class="numi">135273</td></tr><tr class="passedodd"><td><a href="#m2"><b>TS005_VerifyMyActivitiesTest</b>  </a></td><td class="numi">1</td><td>1619773360240</td><td class="numi">112812</td></tr>
-
-<tr class="passedodd"><td rowspan="2">crmframework.crmAutomation.ReferenceDataPageTest</td><td><a href="#m1"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1619610181228</td><td class="numi">98357</td></tr><tr class="passedodd"><td><a href="#m2"><b>TS007_VerifySearchRegionsTest</b>  </a></td><td class="numi">1</td><td>1619610279595</td><td class="numi">37156</td></tr>
-
+<tr class="passedodd"><td rowspan="18">crmframework.crmAutomation.ContactPageTest</td><td><a href="#m7"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1620285261675</td><td class="numi">103613</td></tr><tr class="passedodd"><td><a href="#m8"><b>TS002_VerifyCreateNewContactTest</b>  </a></td><td class="numi">1</td><td>1620285365309</td><td class="numi">71398</td></tr><tr class="passedodd"><td><a href="#m9"><b>TS003_VerifySearchContactsUsingFullNameEmailPhoneTest</b>  </a></td><td class="numi">1</td><td>1620285436709</td><td class="numi">29541</td></tr><tr class="passedodd"><td><a href="#m10"><b>TS004_VerifyMarketingRelationshipOwnerContactTest</b>  </a></td><td class="numi">1</td><td>1620285466255</td><td class="numi">36345</td></tr><tr class="passedodd"><td><a href="#m11"><b>TS007_VerifyAddAppointmentToContactTest</b>  </a></td><td class="numi">1</td><td>1620285564075</td><td class="numi">56476</td></tr><tr class="passedodd"><td><a href="#m12"><b>TS008_VerifyAddNewTaskFromTimelineToContactTest</b>  </a></td><td class="numi">1</td><td>1620285620552</td><td class="numi">44594</td></tr><tr class="passedodd"><td><a href="#m13"><b>TS010_VerifyAuditHistoryTabOnContactTest</b>  </a></td><td class="numi">1</td><td>1620285716444</td><td class="numi">78820</td></tr><tr class="passedodd"><td><a href="#m14"><b>TS014_VerifyGroupByOptionsContactTest</b>  </a></td><td class="numi">1</td><td>1620285795272</td><td class="numi">49419</td></tr><tr class="passedodd"><td><a href="#m15"><b>TS011_VerifyAssociatedListsSectionContactTest</b>  </a></td><td class="numi">1</td><td>1620286084075</td><td class="numi">85989</td></tr><tr class="passedodd"><td><a href="#m16"><b>TS015_VerifyAddNewNoteToContactTest</b>  </a></td><td class="numi">1</td><td>1620286170066</td><td class="numi">61386</td></tr><tr class="passedodd"><td><a href="#m17"><b>TS016_VerifyAddNewPostToContactTest</b>  </a></td><td class="numi">1</td><td>1620286231455</td><td class="numi">42566</td></tr><tr class="passedodd"><td><a href="#m18"><b>TS017_VerifyMandatoryFieldsOnContactFormTest</b>  </a></td><td class="numi">1</td><td>1620286274023</td><td class="numi">375235</td></tr><tr class="passedodd"><td><a href="#m19"><b>TS018_VerifyCountryAutocompletePicklist</b>  </a></td><td class="numi">1</td><td>1620286649261</td><td class="numi">53164</td></tr><tr class="passedodd"><td><a href="#m20"><b>TS019_VerifyDetailsTabOnContactTest</b>  </a></td><td class="numi">1</td><td>1620286702428</td><td class="numi">55015</td></tr><tr class="passedodd"><td><a href="#m21"><b>TS020_VerifyPhoneCallOnContactTest</b>  </a></td><td class="numi">1</td><td>1620286757445</td><td class="numi">76074</td></tr><tr class="passedodd"><td><a href="#m22"><b>TS021_VerifyGridFiltersContactTest</b>  </a></td><td class="numi">1</td><td>1620286833521</td><td class="numi">165677</td></tr><tr class="passedodd"><td><a href="#m23"><b>TS022_VerifyUpdateContactDetailsTest</b>  </a></td><td class="numi">1</td><td>1620286999201</td><td class="numi">89675</td></tr><tr class="passedodd"><td><a href="#m24"><b>TS023_VerifyToDeactivateBuyerContactTest</b>  </a></td><td class="numi">1</td><td>1620287088877</td><td class="numi">52543</td></tr>
 </table>
 <h1>Test</h1>
-<h2 id="m1">crmframework.crmAutomation.DashboardPageTest:TS001_VerifyHomePageTest</h2>
+<h2 id="m1">crmframework.crmAutomation.ContactPageTest:TS009_ManualFail_VerifyDuplicateContactTest</h2>
+<div style="padding-left:3em">
+<p>no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h1[@aria-label=&apos;Duplicate records found&apos;]&quot;}
+  (Session info: chrome=90.0.4430.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir26568_1864351010}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:65299}, acceptInsecureCerts=false, browserVersion=90.0.4430.93, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: e5aa1b3aa80d372ffc7183a65d3eab0e
+*** Element info: {Using=xpath, value=//h1[@aria-label=&apos;Duplicate records found&apos;]}</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
+<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
+<br/>at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
+<br/>at pageObjects.CRMContactPage.getDuplicateRecordsPopupTitle(CRMContactPage.java:1101)
+<br/>at crmframework.crmAutomation.ContactPageTest.TS009_ManualFail_VerifyDuplicateContactTest(ContactPageTest.java:680)
+<br/>25 lines not shown
+</div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-
-<h2 id="m2">crmframework.crmAutomation.DashboardPageTest:TS005_VerifyMyActivitiesTest</h2>
-
-<h2 id="m2">crmframework.crmAutomation.ReferenceDataPageTest:TS007_VerifySearchRegionsTest</h2>
-
+<h2 id="m2">crmframework.crmAutomation.ContactPageTest:TS013_ManualFail_VerifyContactMarketRecordProfile_Declined</h2>
+<div style="padding-left:3em">
+<p>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;] (tried for 15 second(s) with 500 MILLISECONDS interval)</p>
+org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+<br/>at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)
+<br/>at crmframework.crmAutomation.ContactPageTest.TS013_ManualFail_VerifyContactMarketRecordProfile_Declined(ContactPageTest.java:1027)
+<br/>25 lines not shown
+<p>Caused by Cannot locate an element using By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown</p>
+org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+<br/>at java.util.Optional.orElseThrow(Unknown Source)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+<br/>at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)
+<br/>at crmframework.crmAutomation.ContactPageTest.TS013_ManualFail_VerifyContactMarketRecordProfile_Declined(ContactPageTest.java:1027)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">crmframework.crmAutomation.ContactPageTest:TS012_ManualFail_VerifyContactMarketRecordProfile_Registered</h2>
+<div style="padding-left:3em">
+<p>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;] (tried for 15 second(s) with 500 MILLISECONDS interval)</p>
+org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+<br/>at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)
+<br/>at crmframework.crmAutomation.ContactPageTest.TS012_ManualFail_VerifyContactMarketRecordProfile_Registered(ContactPageTest.java:900)
+<br/>25 lines not shown
+<p>Caused by Cannot locate an element using By.xpath: //div[@data-lp-id=&apos;MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown</p>
+org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+<br/>at java.util.Optional.orElseThrow(Unknown Source)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+<br/>at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)
+<br/>at crmframework.crmAutomation.ContactPageTest.TS012_ManualFail_VerifyContactMarketRecordProfile_Registered(ContactPageTest.java:900)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">crmframework.crmAutomation.ContactPageTest:TS005_ManualFail_VerifyJobFunctionFieldTest</h2>
+<div style="padding-left:3em">
+<p>List is not in alphabetical sorting order: Lists differ at element [0]: Editorial != Blogger expected [Editorial] but found [Blogger]</p>
+org.testng.Assert.fail(Assert.java:94)
+<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
+<br/>at org.testng.Assert.assertEquals(Assert.java:123)
+<br/>at org.testng.Assert.assertEquals(Assert.java:549)
+<br/>at crmframework.crmAutomation.ContactPageTest.TS005_ManualFail_VerifyJobFunctionFieldTest(ContactPageTest.java:428)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">crmframework.crmAutomation.ContactPageTest:TS024_VerifyExportToExcelTest</h2>
+<div style="padding-left:3em">
+<p>Expected condition failed: waiting for visibility of element located by By.xpath: //button[@id =&apos;contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.ExportToExcel.Menu$splitButtonId_button1$button&apos;] (tried for 20 second(s) with 500 MILLISECONDS interval)</p>
+org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+<br/>at pageObjects.CRMContactPage.getexporttoexcelbtn(CRMContactPage.java:599)
+<br/>at crmframework.crmAutomation.ContactPageTest.TS024_VerifyExportToExcelTest(ContactPageTest.java:782)
+<br/>25 lines not shown
+<p>Caused by Cannot locate an element using By.xpath: //button[@id =&apos;contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.ExportToExcel.Menu$splitButtonId_button1$button&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown</p>
+org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+<br/>at java.util.Optional.orElseThrow(Unknown Source)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+<br/>at pageObjects.CRMContactPage.getexporttoexcelbtn(CRMContactPage.java:599)
+<br/>at crmframework.crmAutomation.ContactPageTest.TS024_VerifyExportToExcelTest(ContactPageTest.java:782)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">crmframework.crmAutomation.ContactPageTest:TS006_VerifyContactStatusToActivateContactTest</h2>
+<div style="padding-left:3em">
+<p>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@title=&apos;Do Not Call&apos;] (tried for 20 second(s) with 500 MILLISECONDS interval)</p>
+org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+<br/>at pageObjects.CRMContactPage.getContactStatusResonForActiveContact(CRMContactPage.java:561)
+<br/>at crmframework.crmAutomation.ContactPageTest.TS006_VerifyContactStatusToActivateContactTest(ContactPageTest.java:526)
+<br/>25 lines not shown
+<p>Caused by Cannot locate an element using By.xpath: //div[@title=&apos;Do Not Call&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;NILAMMA-W10&apos;, ip: &apos;192.168.68.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown</p>
+org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+<br/>at java.util.Optional.orElseThrow(Unknown Source)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+<br/>at pageObjects.CRMContactPage.getContactStatusResonForActiveContact(CRMContactPage.java:561)
+<br/>at crmframework.crmAutomation.ContactPageTest.TS006_VerifyContactStatusToActivateContactTest(ContactPageTest.java:526)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m7">crmframework.crmAutomation.ContactPageTest:TS011_VerifyAssociatedListsSectionContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m8">crmframework.crmAutomation.ContactPageTest:TS017_VerifyMandatoryFieldsOnContactFormTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m9">crmframework.crmAutomation.ContactPageTest:TS019_VerifyDetailsTabOnContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m10">crmframework.crmAutomation.ContactPageTest:TS001_VerifyHomePageTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m11">crmframework.crmAutomation.ContactPageTest:TS015_VerifyAddNewNoteToContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m12">crmframework.crmAutomation.ContactPageTest:TS023_VerifyToDeactivateBuyerContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m13">crmframework.crmAutomation.ContactPageTest:TS002_VerifyCreateNewContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m14">crmframework.crmAutomation.ContactPageTest:TS007_VerifyAddAppointmentToContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m15">crmframework.crmAutomation.ContactPageTest:TS004_VerifyMarketingRelationshipOwnerContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m16">crmframework.crmAutomation.ContactPageTest:TS016_VerifyAddNewPostToContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m17">crmframework.crmAutomation.ContactPageTest:TS008_VerifyAddNewTaskFromTimelineToContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m18">crmframework.crmAutomation.ContactPageTest:TS014_VerifyGroupByOptionsContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m19">crmframework.crmAutomation.ContactPageTest:TS010_VerifyAuditHistoryTabOnContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m20">crmframework.crmAutomation.ContactPageTest:TS018_VerifyCountryAutocompletePicklist</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m21">crmframework.crmAutomation.ContactPageTest:TS022_VerifyUpdateContactDetailsTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m22">crmframework.crmAutomation.ContactPageTest:TS020_VerifyPhoneCallOnContactTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m23">crmframework.crmAutomation.ContactPageTest:TS003_VerifySearchContactsUsingFullNameEmailPhoneTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m24">crmframework.crmAutomation.ContactPageTest:TS021_VerifyGridFiltersContactTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>
