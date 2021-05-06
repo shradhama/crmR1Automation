@@ -8,30 +8,19 @@
 		<classes>
 			<!-- <class name="crmframework.crmAutomation.AccountPageTest" /> -->
 			<!-- <class name="crmframework.crmAutomation.OtherTest" /> -->
-			<!-- <class name="crmframework.crmAutomation.ContactPageTest" />
-			<methods>
-			<include name="TS001_VerifyHomePageTest"/>
-			<include name="TS002_VerifyCreateNewContactTest"/>
-			<include name="TS003_VerifyToDeactivateBuyerContactTest"/>
-			<include name="TS004_VerifyMarketingRelationshipOwnerContactTest"/>
-			<include name="TS005_ManualFail_VerifyJobFunctionFieldTest"/>
-			<include name="TS006_VerifyContactStatusToActivateContactTest"/>
-			<include name="TS007_VerifyAddAppointmentToContactTest"/>
-			<include name="TS008_VerifyAddNewTaskFromTimelineToContactTest"/>
-			<include name="TS009_ManualFail_VerifyDuplicateContactTest"/>
-			<include name="TS010_VerifyExportToExcelTest"/>
-			</methods> -->
+			<!--<class name="crmframework.crmAutomation.ContactPageTest" /> -->
 			<!--<class name="crmframework.crmAutomation.PeoplePageTest" /> -->
-			<!-- <class name="crmframework.crmAutomation.IncentivesPageTest" /> -->
+			<!--<class name="crmframework.crmAutomation.IncentivesPageTest" />-->
+			<!--<class name="crmframework.crmAutomation.ContactPageTest" />-->
 			<!--<class name="crmframework.crmAutomation.PeoplePageTest" />-->
-			<class name="crmframework.crmAutomation.DashboardPageTest" />
+			<!-- <class name="crmframework.crmAutomation.DashboardPageTest" /> -->
+			<!--<class name="crmframework.crmAutomation.ReferenceDataPageTest"/>-->
+			<!--<class name="crmframework.crmAutomation.IncentiveDetailsPageTest" />-->
+			<class name="crmframework.crmAutomation.RegistrationsPageTest" />
 			<methods>
-			<include name="TS001_VerifyHomePageTest"/>
-			<include name="TS005_VerifyMyActivitiesTest"/>
-			<include name="TS007_VerifySearchRegionsTest"/>
+			<!--<include name="TS001_VerifyHomePageTest"/>-->
+			<!--<include name="TS007_VerifyDeactivateInactiveIncentiveDetailsTest"/>-->
 			</methods>
-			<!-- <class name="crmframework.crmAutomation.ReferenceDataPageTest"/> -->
-			
 		</classes>
 	</test>
 </suite>

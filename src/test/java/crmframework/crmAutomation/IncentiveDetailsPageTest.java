@@ -131,7 +131,7 @@ public class IncentiveDetailsPageTest extends base {
 		ind.getinccatsearch().click();
 		Thread.sleep(3000);
 		ind.getselectinccat().click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		//Click on Save and Close button
 		ind.getsaveincdet().click();
@@ -174,7 +174,8 @@ public class IncentiveDetailsPageTest extends base {
 
 		//Select Contact option from Group By drop down list
 		ind.getcontactddopt().click();
-
+		Thread.sleep(3000);
+		
 		//Verify if records are grouped by Contact
 		Assert.assertTrue(cp.getgroupbyverification().isDisplayed(), "Group by Contact is not successful.");
 		System.out.println("Group by Contact is working properly.");
@@ -246,7 +247,7 @@ public class IncentiveDetailsPageTest extends base {
 
 		//Click on Incentives Tab at left menu 
 		hp.getincentivedetailstab().click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		
 		//Select Active Incentive Details option
 		ind.getclickarrowforactiveincentive().click();
@@ -256,13 +257,17 @@ public class IncentiveDetailsPageTest extends base {
 		//Click funnel for Account column
 		in.getaccountcolumn().click();
 		ap.getclickfunnelfilter().click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		
 		//Select filter options
-		ap.getclickoperatordd().click();
-		ind.getfilterop().click();
-		ind.getfiltervalue().sendKeys(prop.getProperty("incdetacc"));
 		ap.getselectregionvalue().click();
+		Thread.sleep(3000);
+		ap.getclickoperatordd().click();
+		Thread.sleep(5000);
+		ind.getfilterop().click();
+		Thread.sleep(3000);
+		ind.getfiltervalue().sendKeys(prop.getProperty("incdetacc"));
+		//ap.getselectregionvalue().click();
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
 
@@ -282,12 +287,17 @@ public class IncentiveDetailsPageTest extends base {
 		//Click funnel for Contact column
 		in.getcontactcolumn().click();
 		ap.getclickfunnelfilter().click();
+		Thread.sleep(5000);
 
 		//Select filter options
-		ap.getclickoperatordd().click();
-		ind.getfilterop().click();
-		ind.getfiltervalue().sendKeys(prop.getProperty("incdetcon"));
 		ap.getselectregionvalue().click();
+		Thread.sleep(3000);
+		ap.getclickoperatordd().click();
+		Thread.sleep(3000);
+		ind.getfilterop().click();
+		Thread.sleep(3000);
+		ind.getfiltervalue().sendKeys(prop.getProperty("incdetcon"));
+		//ap.getselectregionvalue().click();
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
 
@@ -307,12 +317,17 @@ public class IncentiveDetailsPageTest extends base {
 		//Click funnel for Market column
 		in.getmarketcolumn().click();
 		ap.getclickfunnelfilter().click();
+		Thread.sleep(5000);
 
 		//Select filter options
-		ap.getclickoperatordd().click();
-		ind.getfilterop().click();
-		ind.getfiltervalue().sendKeys(prop.getProperty("searchmarketinc"));
 		ap.getselectregionvalue().click();
+		Thread.sleep(3000);
+		ap.getclickoperatordd().click();
+		Thread.sleep(3000);
+		ind.getfilterop().click();
+		Thread.sleep(3000);
+		ind.getfiltervalue().sendKeys(prop.getProperty("searchmarketinc"));
+		//ap.getselectregionvalue().click();
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
 
@@ -333,12 +348,15 @@ public class IncentiveDetailsPageTest extends base {
 		//Click funnel for Incentive Category column
 		ind.getinccat().click();
 		ap.getclickfunnelfilter().click();
-
+		Thread.sleep(5000);
+		
 		//Select filter options
+		ap.getselectregionvalue().click();
+		Thread.sleep(2000);
 		ap.getclickoperatordd().click();
 		ind.getfilterop().click();
 		ind.getfiltervalue().sendKeys(prop.getProperty("incdetcat"));
-		ap.getselectregionvalue().click();
+		//ap.getselectregionvalue().click();
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
 
@@ -359,16 +377,18 @@ public class IncentiveDetailsPageTest extends base {
 				
 		//Click funnel for Estimated Value column
 		ind.getincestval().click();
+		Thread.sleep(3000);
 		ap.getclickfunnelfilter().click();
-
+		Thread.sleep(3000);
+		
 		//Select filter options
-		ap.getclickoperatordd().click();
+		/*ap.getclickoperatordd().click();
 		ind.getfilterop().click();
-		Thread.sleep(2000);
+		Thread.sleep(2000);*/
 		ind.getfiltervalue().click();
 		Thread.sleep(2000);
 		ind.getfiltervalue().sendKeys(prop.getProperty("incdetestval"));
-		ap.getselectregionvalue().click();
+		//ap.getselectregionvalue().click();
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
 
@@ -390,12 +410,17 @@ public class IncentiveDetailsPageTest extends base {
 		//Click funnel for Status column
 		ind.getincstatus().click();
 		ap.getclickfunnelfilter().click();
-
+		Thread.sleep(5000);
+		
 		//Select filter options
+		/*ap.getselectregionvalue().click();
+		Thread.sleep(3000);*/
 		ap.getclickoperatordd().click();
+		Thread.sleep(3000);
 		ind.getfilterop().click();
+		Thread.sleep(3000);
 		ind.getfiltervalue().sendKeys(prop.getProperty("incdetstatus"));
-		ap.getselectregionvalue().click();
+		//ap.getselectregionvalue().click();
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
 
@@ -465,6 +490,7 @@ public class IncentiveDetailsPageTest extends base {
 		
 		//Refresh record and verify if incentive details are updated properly
 		ap.getAccRefreshBtn().click();
+		Thread.sleep(3000);
 		Assert.assertEquals(in.getIncentiveNameOnIncForm().getText(), ind.getselectedincentive().getText()+" - "+ind.getselectedinccat().getText());
 		System.out.println("Incentive Details are updated successfully.");
 		
@@ -488,6 +514,12 @@ public class IncentiveDetailsPageTest extends base {
 
 		//Click on Incentives Tab at left menu and search incentives containing Cyb
 		hp.getincentivedetailstab().click();
+		Thread.sleep(3000);
+		ind.getclickarrowforactiveincentive().click();
+		Thread.sleep(3000);
+		ind.getselectactivetype().click();
+		Thread.sleep(3000);
+		ap.getsearchaccounttextbox().click();
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("incentivedetailsearch"));
 		ap.getclicksearchbutton().click();
 
@@ -514,7 +546,8 @@ public class IncentiveDetailsPageTest extends base {
 		String childId = it.next();
 		driver.switchTo().window(childId);
 		
-		Thread.sleep(50000);
+		Thread.sleep(15000);
+		//ap.getAccRefreshBtn().click();
 		driver.navigate().refresh();
 		//Verify export to excel online
 		System.out.println(pl.getonlineexportverification().getText());
@@ -601,7 +634,7 @@ public class IncentiveDetailsPageTest extends base {
 		Thread.sleep(3000);
 		ind.getselectactivetype().click();
 		Thread.sleep(5000);
-		ap.getCLetterFilterLink().click();
+		ap.getBLetterFilterLink().click();
 		Thread.sleep(3000);
 		
 		//Select active incentive from grid
@@ -620,7 +653,7 @@ public class IncentiveDetailsPageTest extends base {
 		//Click on Deactivate button in header
 		ind.getdeactivateincdet().click();
 
-		//Click on Activate button in the dialog box
+		//Click on DeActivate button in the dialog box
 		in.getDeactivationPopupDeactivateBtn().click();
 		Thread.sleep(5000);
 
@@ -658,10 +691,11 @@ public class IncentiveDetailsPageTest extends base {
 		//Open same deactivated incentive detail again
 		act = new Actions(driver);
 		act.doubleClick(in.selectIncentiveRecord()).perform();
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 				
 		//Open Incentive 
 		ind.getopenincentive().click();
+		Thread.sleep(5000);
 		String Contact = ind.getcontact().getText();
 		String Market = ind.getmarket().getText();
 		String Account = ind.getaccount().getText();		
@@ -669,9 +703,9 @@ public class IncentiveDetailsPageTest extends base {
 		//Open Account from Incentive form and verify for deactivated incentive
 		in.getSelectedAccountNameField().click();
 		Thread.sleep(5000);
-		in.getIncentiveTab().click();
-		Thread.sleep(6000);
-		//utl.scrollToElement(ind.getscrollincdetsectionfromacc());
+		ind.getclickincentivetab().click();
+		Thread.sleep(10000);
+		utl.scrollToElement(ind.getclicknewincdet());
 		if(ind.getaccountnameindetgrid().isDisplayed()) {
 			
 			Assert.assertFalse(ind.getaccountnameindetgrid().getText().contains(Contact+Market+IncentiveCategory));
@@ -693,6 +727,7 @@ public class IncentiveDetailsPageTest extends base {
 		Thread.sleep(5000);
 		in.getIncentiveTab().click();
 		Thread.sleep(6000);
+		utl.scrollToElement(ind.getclicknewincdet());
 		if(ind.getcontactnameindetgrid().isDisplayed()) {
 			
 			Assert.assertFalse(ind.getcontactnameindetgrid().getText().contains(Contact+Market+IncentiveCategory));
@@ -724,21 +759,17 @@ public class IncentiveDetailsPageTest extends base {
 
 		//Click on Incentives tab
 		hp.getincentivedetailstab().click();
-		
 		Thread.sleep(5000);
-		ind.getclickarrowforactiveincentive().click();
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("actincdet"));
+		ap.getclicksearchbutton().click();
 		Thread.sleep(3000);
-		ind.getinactiveincentivedetails().click();
 		
 		//Select inactive incentive from grid
 		act = new Actions(driver);
 		act.doubleClick(in.selectIncentiveRecord()).perform();
 		Thread.sleep(5000);
 		
-		//Get the incentive name from header
-		String IncentiveDetails = in.getIncentiveNameOnIncForm().getText();
-		System.out.println("Incentive Details name: "+IncentiveDetails);
-
 		//Click on Activate button in header
 		ind.getactivateincdet().click();
 
@@ -749,6 +780,10 @@ public class IncentiveDetailsPageTest extends base {
 		Assert.assertTrue(ind.getdeactivateincdet().isDisplayed());
 		System.out.println("Incentive is activated successfully.");
 		Thread.sleep(5000);
+		
+		//Get the incentive name from header
+		String IncentiveDetails = in.getIncentiveNameOnIncForm().getText();
+		System.out.println("Incentive Details name: "+IncentiveDetails);
 		
 		//Get back to Incentive Details grid
 		ap.getPageBackBtn().click();
@@ -762,19 +797,17 @@ public class IncentiveDetailsPageTest extends base {
 		ap.getclicksearchbutton().click();
 				
 		Thread.sleep(5000);
-		WebElement GridContact = ap.getAccountNameSearchTable();
-		WebElement GridMarket = ap.getPhoneinSearchTable();
-		WebElement GridIncentiveCategory =  cp.getContactMarketProfileDeclinedReasonField();
-//		WebElement GridAccount = ind.getverifygridacc();
-		WebElement GridAccountName = ind.getverifygridaccname();
-		
-		//String VerifyIncDet = GridContact+GridMarket+GridIncentiveCategory;
-		
-		//Assert.assertTrue(GridContact.getText()+" - "+GridMarket.getText()+" - "+GridIncentiveCategory.getText().contains(IncentiveDetails));
-//		Assert.assertEquals(IncentiveDetails, GridContact.getText()+" - "+GridAccount.getText()+" - "+GridMarket.getText()+" - "+GridIncentiveCategory.getText());
-		Assert.assertEquals(IncentiveDetails, GridContact.getText()+" - "+GridAccountName.getText()+" - "+GridMarket.getText()+" - "+GridIncentiveCategory.getText());
+		String GridContact = ap.getAccountNameSearchTable().getText();
+		Assert.assertTrue(IncentiveDetails.contains(GridContact));
 		System.out.println("Activated Incentive Details is displayed properly in the grid.");
-		
+			
+		//Deactivate activated incentive details again so as  maintain data for next runs
+		act = new Actions(driver);
+		act.doubleClick(in.selectIncentiveRecord()).perform();
+		Thread.sleep(5000);
+		ap.getDeactivateBtn().click();
+		in.getDeactivationPopupDeactivateBtn().click();
+		ap.getAccPageBackBtn().click();
 	}
 
 }
