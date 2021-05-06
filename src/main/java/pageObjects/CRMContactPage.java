@@ -36,7 +36,7 @@ public class CRMContactPage {
 	By contactnameinheader = By.xpath("//h1[@data-id='header_title']");
 	By activecontactslabel = By.xpath("//h1[@aria-label='Active Contacts']");
 	//By createnewcontactbtn = By.xpath("//button[@aria-label='New']");
-	By createnewcontactbtn = By.xpath("//button[@aria-label='New']");
+	By createnewcontactbtn = By.xpath("//button[@data-lp-id='HomePageGrid:contact-contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.NewRecord']");
 	By contactfirstnamelabel = By.xpath("//label[text()='First Name']");
 	By contacttypetxtbx = By.xpath("//input[@id='xxc_typecode_ledit']");
 	By contacttypeexpandbtn = By.xpath("//div[@data-lp-id='MscrmControls.MultiSelectPicklist.UpdMSPicklistControl|xxc_typecode.fieldControl|contact']/div/div[6]/div[1]/div[2]/button[1]/span[1]");
@@ -121,24 +121,24 @@ public class CRMContactPage {
 	By selectdeclinedreasonname = By.xpath("//select[@aria-label='Declined Reason']/option[2]"); //Locator for Declined Reason value from Call reason field
 	By contactmarketprofiledeclinedreasonfield = By.xpath("//div[@data-id='cell-0-4']"); //Locator for Declined reason value on Contact market profile tab
 	By scrolltoaccountdetails = By.xpath("//h2[@data-id = 'form-sectionHeader-CUSTOMER_DETAILS_TAB']");//Locator for Account Details section on Contact page
-	By scrolltoregdetails = By.xpath("//div[@data-id = 'dataSetRoot_Registrations']");//Locator for Registration details section
+	By scrolltoregdetails = By.xpath("//div[contains(text(),'Account Registrations')]");//Locator for Registration details section
 	By scrolltolistdetails = By.xpath("//div[@data-id = 'contactquickform-QuickFormSectionContainer']");//Locator for Associated Lists
 	By contactlistsgrid = By.xpath("//div[@data-id = 'contactquickform.AccountAssociatedLists_container']");//Locator for lists grid on contact form
-	By clickcontactlist = By.xpath("//div[@aria-label = 'Active Account Sub Grid']/div[2]/div[2]/a[1]");//Locator to click List Name
+	By clickcontactlist = By.xpath("//ul[@aria-label='Active Account Sub Grid']/li[1]");//Locator to click List Name
 	By bletterfilterlink = By.xpath("//a[@id='B_link']"); //Locator for 'B' letter filter link for contacts
 	By contactnotetimelineoptn = By.xpath("//li[@data-id='notescontrol-createNewRecord_flyoutMenuItem_notes']"); //Locator for 'Note' option on Timeline pop-up on Contact form
 	By contactnotetitletxtbox = By.xpath("//input[@id='create_note_medium_title']"); //Locator for Nite Title text box
-	By viewcreatednotetocontact = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]"); //Locator to view newly created note for Contact
-	By contactdeletenote = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[2]/span"); //Locator for Delete note btn
+	By viewcreatednotetocontact = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div/div[1]/div/div[2]/div[2]/div[1]/div"); //Locator to view newly created note for Contact
+	By contactdeletenote = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[2]"); //Locator for Delete note btn
 	By contacttimelinedetails = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]"); //Locator for Timeline details
 	By okconfirmbtn = By.xpath("//span[@id='confirmButtonText']"); //Locator for OK btn on delete note confirmation pop-up
-	By contactaddnotebutton = By.xpath("//button[@id='create_note_add_btn']"); //Locator for Add note btn
+	By contactaddnotebutton = By.xpath("//button[@aria-label='Add note']"); //Locator for Add note btn
 	By contactposttimelineoptn =By.xpath("//li[@data-id='notescontrol-createNewRecord_flyoutMenuItem_post']"); //Locator for Post option on Timeline pop-up
 	By contactpostentertext = By.xpath("//textarea[@id='create_post_postText']"); //Locator Post text box
-	By contactpostaddbtn = By.xpath("//button[@id='create_post_add_btn']"); //Locator for Add Post btn
+	By contactpostaddbtn = By.xpath("//button[@aria-label='Add post']"); //Locator for Add Post btn
 	By contactpostcancelbtn = By.xpath("//button[@id='create_post_cancel_btn']"); //Locator for Post Cancel btn
-	By contactviewcreatedpost = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[2]/div[2]/div[1]/div[1]"); //Locator to view newly created post
-	By contactdeletepost = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[3]/span");  //Locator for Delete Post btn
+	By contactviewcreatedpost = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div/div[1]/div/div[2]/div[2]/div[1]/div"); //Locator to view newly created post
+	By contactdeletepost = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[3]");  //Locator for Delete Post btn
 	By requiredfieldfirstname = By.xpath("//div[@aria-label='Required field First Name']"); //Locator for required field icon of firstname
 	By requiredfieldtype = By.xpath("//div[@aria-label='Required field Type']"); //Locator for required field icon of type
 	By requiredfieldaccountname = By.xpath("//div[@aria-label='Required field Account Name']"); //Locator for required field icon of account name
@@ -176,6 +176,11 @@ public class CRMContactPage {
 	By audithistoryrecord = By.xpath("//table[@id='gridBodyTable']/tbody/tr[1]"); //Locator for Audit history record
 	By newcontactheaderoncontactform = By.xpath("//h1[contains(text(),'New Contact')]"); //Locator for New contact header of create contact form
 	By exporttoexcelmorecmndsbtn = By.xpath("//button[@aria-label='Export to Excel More Commands']"); //Locator for Export to excel more commands btn
+	By duplicaterecordspopuptitle = By.xpath("//h1[@aria-label='Duplicate records found']"); //Locator for Duplicate Records found popup
+	By duplicaterecordspopupignorensavebtn = By.xpath("//button[@aria-label='Ignore and save']"); //Locator for Ignore & Save btn on Duplicate records popup
+	By duplicaterecordspopupcancelbtn = By.xpath("//button[@aria-label = 'Cancel']"); //Locator for Cancel btn on Duplicate records popup
+	By selectbeginswithoptr = By.xpath("//button[@data-index = '4']"); //Locator for Begins With operator
+	By selectbeginswithoptrforaccname = By.xpath("//button[@data-index = '6']"); //Locator for Begins With operator for Account name
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -282,7 +287,7 @@ public class CRMContactPage {
 
 	public WebElement getverifycontact() throws InterruptedException {
 
-		Thread.sleep(7000);
+		Thread.sleep(10000);
 		return driver.findElement(verifycontact);
 	}
 	public WebElement getContactFormEmailField() {
@@ -788,7 +793,6 @@ public class CRMContactPage {
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(clickcontactlist));
-		Thread.sleep(5000);
 		return driver.findElement(clickcontactlist);
 	}
 
@@ -808,8 +812,9 @@ public class CRMContactPage {
 		return driver.findElement(contactnotetitletxtbox);	
 	}
 
-	public WebElement getViewCreatedNoteToContact()
+	public WebElement getViewCreatedNoteToContact() throws InterruptedException
 	{
+		Thread.sleep(5000);
 		return driver.findElement(viewcreatednotetocontact);
 	}
 
@@ -852,8 +857,9 @@ public class CRMContactPage {
 		return driver.findElement(contactpostcancelbtn);
 	}
 
-	public WebElement getContactViewCreatedPost()
+	public WebElement getContactViewCreatedPost() throws InterruptedException
 	{
+		Thread.sleep(5000);
 		return driver.findElement(contactviewcreatedpost);
 	}
 
@@ -1069,15 +1075,15 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(noaudithistory));
 		return driver.findElement(noaudithistory);
 	}
-	
+
 	public WebElement getDLetterFilterLink() throws InterruptedException {
 
 		Thread.sleep(10000);
 		return driver.findElement(dletterfilterlink);
 	}
-	
+
 	public WebElement getAuditHistoryRecord() throws InterruptedException {
-		Thread.sleep(6000);
+		Thread.sleep(10000);
 		return driver.findElement(audithistoryrecord);
 	}
 	public WebElement getNewContactHeaderOnContactForm() {
@@ -1085,9 +1091,32 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(newcontactheaderoncontactform));
 		return driver.findElement(newcontactheaderoncontactform);
 	}
-	public WebElement getExportToExcelMoreCmndsBtn() {
+	public WebElement getExportToExcelMoreCmndsBtn() throws InterruptedException {
+		Thread.sleep(5000);
 		return driver.findElement(exporttoexcelmorecmndsbtn);
 	}
-	
+	public WebElement getDuplicateRecordsPopupTitle() throws InterruptedException
+	{
+		Thread.sleep(5000);
+		return driver.findElement(duplicaterecordspopuptitle);
+	}
+
+	public WebElement getDuplicateRecordsPopupIgnorenSavebtn()
+	{
+		return driver.findElement(duplicaterecordspopupignorensavebtn);
+	}
+
+	public WebElement getDuplicateRecordsPopupCancelbtn()
+	{
+		return driver.findElement(duplicaterecordspopupcancelbtn);
+	}
+	public WebElement selectbBeginsWithOptr()
+	{
+		return driver.findElement(selectbeginswithoptr);
+	}
+	public WebElement selectbBeginsWithOptrForAccName()
+	{
+		return driver.findElement(selectbeginswithoptrforaccname);
+	}
 	
 }
