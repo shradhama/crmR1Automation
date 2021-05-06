@@ -190,8 +190,8 @@ public class ContactPageTest extends base{
 		hp.getClearSearch().click();
 	}
 
-	@Test(priority=3)
-	public void TS003_VerifyToDeactivateBuyerContactTest() throws InterruptedException
+	@Test(priority=23)
+	public void TS023_VerifyToDeactivateBuyerContactTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//TS28- Select any existing Buyer Contact and deactivate it
@@ -326,9 +326,8 @@ public class ContactPageTest extends base{
 		//Open Contacts page and open existing contact
 		hp.getContactsTab().click();
 		cp.getDLetterFilterLink().click();
-		Actions action = new Actions(driver);
-		WebElement OpenContact = cp.getopencontact();
-		action.doubleClick(OpenContact).perform();
+		cp.selectContactName().click();
+		ap.getAccNaviagteBtn().click();
 
 		//Select Phone Call option under Timeline section
 		ap.getAddTimelineBtn().click();
@@ -369,7 +368,7 @@ public class ContactPageTest extends base{
 	}
 
 	//Manual Fail_Caught By Automation	
-	@Test(priority=5)
+	@Test(priority=25)
 	public void TS005_ManualFail_VerifyJobFunctionFieldTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
@@ -426,8 +425,8 @@ public class ContactPageTest extends base{
 		System.out.println("Job Function values after Sorting: " + tempList);
 
 		//Manual Fail for Alphabetical order
-		//Assert.assertEquals(tempList, originalList, "List is not in alphabetical sorting order");
-
+		Assert.assertEquals(tempList, originalList, "List is not in alphabetical sorting order");
+		
 		//Select a value in Job Function field
 		cp.getJobFunctionValue().click();
 		cp.getScrollTextOnContactForm().click();
@@ -482,7 +481,7 @@ public class ContactPageTest extends base{
 		ap = new CRMAccountsPage(driver);
 		cp = new CRMContactPage(driver);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
-
+		
 		//Click on Contacts Tab at left menu.
 		hp.getContactsTab().click();
 
@@ -677,7 +676,7 @@ public class ContactPageTest extends base{
 		cp.getsavecontact().click();
 
 		//** Manual execution is FAIL-> Fails to get 'Duplicate Records' pop-up
-		/*//Verify that 'Duplicate records found' pop-up is displayed
+		//Verify that 'Duplicate records found' pop-up is displayed
 		Assert.assertTrue(cp.getDuplicateRecordsPopupTitle().isDisplayed());
 
 		//Click on 'Cancel' button
@@ -716,10 +715,11 @@ public class ContactPageTest extends base{
 		Assert.assertTrue(contactnameinsearch.getText().contains(newcontactname));
 
 		//Clear the search term to navigate to active accounts page
-		hp.getClearSearch().click();*/
+		hp.getClearSearch().click();
 	}
-	@Test(priority=10)
-	public void TS010_VerifyExportToExcelTest() throws InterruptedException
+	
+	@Test(priority=24)
+	public void TS024_VerifyExportToExcelTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//CRM-T293- Verify Export To Excel functionality for Accounts
@@ -758,6 +758,8 @@ public class ContactPageTest extends base{
 		String childId = it.next();
 		driver.switchTo().window(childId);
 		Thread.sleep(15000);
+		
+		driver.navigate().refresh();
 				
 		//Verify export to excel online
 		System.out.println(pl.getonlineexportverification().getText());
@@ -833,7 +835,7 @@ public class ContactPageTest extends base{
 		hp.getContactsTab().click();
 
 		//In Active Contacts system view, select and open an active contact
-		cp.getCLetterFilterLink().click();
+		cp.getBLetterFilterLink().click();
 		cp.selectContactName().click();
 		ap.getAccNaviagteBtn().click();
 
@@ -906,7 +908,7 @@ public class ContactPageTest extends base{
 		//Click on 'Back' button
 		ap.getPageBackBtn().click();
 	}
-	@Test(priority=14)
+	@Test(priority=11)
 	public void TS014_VerifyGroupByOptionsContactTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
@@ -958,7 +960,7 @@ public class ContactPageTest extends base{
 		hp.getContactsTab().click();
 
 		//In Active Contacts system view, select and open an active contact
-		cp.getCLetterFilterLink().click();
+		cp.getDLetterFilterLink().click();
 		cp.selectContactName().click();
 		ap.getAccNaviagteBtn().click();
 
@@ -1036,7 +1038,7 @@ public class ContactPageTest extends base{
 		//Click on 'Back' button
 		ap.getPageBackBtn().click();
 	}
-	@Test(priority=11)
+	@Test(priority=14)
 	public void TS011_VerifyAssociatedListsSectionContactTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
@@ -1057,13 +1059,13 @@ public class ContactPageTest extends base{
 		action.doubleClick(OpenContact).perform();
 
 		//Scroll to Associated Lists section
-		WebElement accounts = cp.getscrolltoaccountdetails();
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("arguments[0].scrollIntoView(true);",accounts);
+		utl.scrollToElement(cp.getscrolltoaccountdetails());
+//		JavascriptExecutor jse = (JavascriptExecutor)driver;
+//		jse.executeScript("arguments[0].scrollIntoView(true);",accounts);
 
-		WebElement registrations = cp.getscrolltoregdetails();
-		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
-		jse1.executeScript("arguments[0].scrollIntoView(true);",registrations);
+		utl.scrollToElement(cp.getscrolltoregdetails());
+//		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+//		jse1.executeScript("arguments[0].scrollIntoView(true);",registrations);
 
 		/*	WebElement associatedlists = cp.getscrolltolistdetails();
 		JavascriptExecutor jse2 = (JavascriptExecutor)driver;
@@ -1077,17 +1079,11 @@ public class ContactPageTest extends base{
 		// Verify for List Members
 		WebElement List = cp.getclickcontactlist();
 		List.click();
-		//System.out.println("List opened is "+List.getText());
-		//ap.getSelectedListName().click();
+		ap.getSelectedListName().click();
 
 		//Scroll till Members section	
-		/*WebElement listmemremovedlabel = ap.getListMemRemovedLabel();	
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView(true);",listmemremovedlabel);*/
-
-		WebElement memberslabel = ap.getMembersLabel();	
-		JavascriptExecutor jse3 = (JavascriptExecutor)driver;
-		jse3.executeScript("arguments[0].scrollIntoView(true);",memberslabel);
+		utl.scrollToElement(ap.getListMemRemovedLabel());	
+		utl.scrollToElement(ap.getMembersLabel());	
 
 		WebElement ListMember = ap.getlistmember();
 		Assert.assertFalse(ListMember.getText().equalsIgnoreCase(""));
@@ -1135,7 +1131,10 @@ public class ContactPageTest extends base{
 		Assert.assertEquals(validateNoteSubject, subjectnote);
 		System.out.println("Note title is: "+ validateNoteSubject);
 		Thread.sleep(10000);
-		cp.getContactTimelineDetails().click();
+		act = new Actions(driver);
+		act.moveToElement(cp.getViewCreatedNoteToContact()).perform();
+		
+		//cp.getContactTimelineDetails().click();
 		cp.getContactDeleteNote().click();
 		cp.getOkConfirmBtn().click();
 
@@ -1175,7 +1174,11 @@ public class ContactPageTest extends base{
 		String validatePostText = cp.getContactViewCreatedPost().getText();
 		System.out.println("Viewed Post is: "+ validatePostText);
 		Assert.assertEquals(validatePostText, postText);
-		cp.getContactTimelineDetails().click();
+		
+		act = new Actions(driver);
+		act.moveToElement(cp.getContactViewCreatedPost()).perform();
+		
+		//cp.getContactTimelineDetails().click();
 		cp.getContactDeletePost().click();
 		cp.getOkConfirmBtn().click();
 		ap.getPageBackBtn().click();
@@ -1219,7 +1222,7 @@ public class ContactPageTest extends base{
 		Assert.assertTrue(cp.getRequiredFieldState().isDisplayed());
 		Assert.assertTrue(cp.getRequiredFieldZipCode().isDisplayed());
 		Assert.assertTrue(cp.getRequiredFieldCountry().isDisplayed());
-
+		/*
 		cp.getContactMarketProfilesTab().click();
 		cp.getContactSummaryTab().click();
 
@@ -1321,7 +1324,7 @@ public class ContactPageTest extends base{
 
 		List<WebElement> NotRequiredFieldCountry1 = cp.getNotRequiredFieldCountry();
 		Assert.assertTrue(NotRequiredFieldCountry1.size()== 0);
-
+*/
 		cp.getContactMarketProfilesTab().click();
 		cp.getContactSummaryTab().click();
 
@@ -1554,7 +1557,7 @@ public class ContactPageTest extends base{
 
 		//Open Contacts page and open existing contact
 		hp.getContactsTab().click();
-		ap.getCLetterFilterLink().click();
+		//ap.getCLetterFilterLink().click();
 
 		//Click funnel for Full Name column
 		cp.getclickcontactfullnamegrid().click();
@@ -1562,7 +1565,7 @@ public class ContactPageTest extends base{
 
 		//Select filter options
 		ap.getclickoperatordd().click();
-		ap.getselectoperatorone().click();
+		cp.selectbBeginsWithOptr().click();
 		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
@@ -1573,7 +1576,7 @@ public class ContactPageTest extends base{
 		{
 			confullname = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']/label"));
 			System.out.println(confullname.getText());
-			Assert.assertTrue(confullname.getText().contains(prop.getProperty("name")));
+			Assert.assertTrue(confullname.getText().toLowerCase().contains(prop.getProperty("name")));
 			//Assert.assertEquals(confullname.getAttribute(arg0), expected);
 		}
 		System.out.println("Full Name matches expected criteria");
@@ -1588,7 +1591,7 @@ public class ContactPageTest extends base{
 
 		//Select filter options
 		ap.getclickoperatordd().click();
-		ap.getselectoperatorone().click();
+		cp.selectbBeginsWithOptr().click();
 		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("phone"));
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
@@ -1612,7 +1615,7 @@ public class ContactPageTest extends base{
 
 		//Select filter options
 		ap.getclickoperatordd().click();
-		ap.getselectoperatorone().click();
+		cp.selectbBeginsWithOptr().click();
 		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("emailtext"));
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
@@ -1622,7 +1625,7 @@ public class ContactPageTest extends base{
 		for (int i=0;i<7;i++)
 		{
 			conemailongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-5']"));
-			Assert.assertTrue(conemailongrid.getText().contains(prop.getProperty("emailtext")));
+			Assert.assertTrue(conemailongrid.getText().toLowerCase().contains(prop.getProperty("emailtext")));
 		}
 		System.out.println("Email matches expected criteria");
 
@@ -1636,7 +1639,7 @@ public class ContactPageTest extends base{
 
 		//Select filter options
 		ap.getclickoperatordd().click();
-		ap.getselectoperatorone().click();
+		cp.selectbBeginsWithOptrForAccName().click();
 		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
@@ -1646,7 +1649,7 @@ public class ContactPageTest extends base{
 		for (int i=0;i<3;i++)
 		{
 			conaccname = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
-			Assert.assertTrue(conaccname.getText().contains(prop.getProperty("name")));
+			Assert.assertTrue(conaccname.getText().toLowerCase().contains(prop.getProperty("name")));
 		}
 		System.out.println("Account DBA Name matches expected criteria");
 
@@ -1705,8 +1708,8 @@ public class ContactPageTest extends base{
 		ap.getclearfiltergrid().click();
 	}
 
-	@Test(priority=23)
-	public void TS023_VerifyUpdateContactDetailsTest() throws InterruptedException
+	@Test(priority=22)
+	public void TS022_VerifyUpdateContactDetailsTest() throws InterruptedException
 	{
 		//The purpose of this test case to:-
 		//CRM-T302- Verify user is able to update contact details with appropriate user access
@@ -1775,8 +1778,8 @@ public class ContactPageTest extends base{
 		hp.getClearSearch().click();
 	}
 	
-	@Test(priority=22)
-	public void TS022_VerifySearchContactsUsingFullNameEmailPhoneTest() throws InterruptedException
+	@Test(priority=03)
+	public void TS003_VerifySearchContactsUsingFullNameEmailPhoneTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
 		//CRM-T50- CRM User is having ability to search Contact entity 
@@ -1883,8 +1886,8 @@ public class ContactPageTest extends base{
 		hp.getClearSearch().click();
 	}
 	
-	@Test(priority=24)
-	public void TS024_VerifyAuditHistoryTabOnContactTest() throws InterruptedException {
+	@Test(priority=10)
+	public void TS010_VerifyAuditHistoryTabOnContactTest() throws InterruptedException {
 
 		//The purpose of this test case to verify :-
 		//T300: Select any existing contact and click on Audit History Tab and verify details 
@@ -1910,14 +1913,10 @@ public class ContactPageTest extends base{
 		// Verify if audit history grid is available or not
 		driver.switchTo().frame("audit_iframe");
 
-		Boolean result = cp.getAuditHistoryRecord().isDisplayed();
-		if (result == true) {
-			System.out.println("Audit History record is available for the contact");
-		}
-		else {
-			System.out.println("Audit History is not available for the contact");
-		}
-
+		Assert.assertTrue(cp.getAuditHistoryRecord().isDisplayed());
+		System.out.println("Audit History record is available for the contact");
+		driver.navigate().refresh();
+		Thread.sleep(5000);
 	}
 	//	@AfterTest
 	//	public void closeDriver()
