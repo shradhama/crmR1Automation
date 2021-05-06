@@ -344,6 +344,8 @@ public class IncentivesPageTest extends base {
 		ap.getclickfunnelfilter().click();
 
 		//Select filter options
+		ap.getselectregionvalue().click();
+		Thread.sleep(3000);
 		ap.getclickoperatordd().click();
 		in.getgridoperator().click();
 		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
@@ -368,6 +370,8 @@ public class IncentivesPageTest extends base {
 		ap.getclickfunnelfilter().click();
 
 		//Select filter options
+		ap.getselectregionvalue().click();
+		Thread.sleep(3000);
 		ap.getclickoperatordd().click();
 		in.getgridoperator().click();
 		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("contact"));
@@ -392,6 +396,8 @@ public class IncentivesPageTest extends base {
 		ap.getclickfunnelfilter().click();
 
 		//Select filter options
+		ap.getselectregionvalue().click();
+		Thread.sleep(3000);
 		ap.getclickoperatordd().click();
 		in.getgridoperator().click();
 		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("market"));
@@ -590,7 +596,8 @@ public class IncentivesPageTest extends base {
 		String childId = it.next();
 		driver.switchTo().window(childId);
 		Thread.sleep(15000);
-
+		driver.navigate().refresh();
+		
 		//Verify export to excel online
 		System.out.println(pl.getonlineexportverification().getText());
 		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
