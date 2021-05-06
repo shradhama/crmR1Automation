@@ -1,331 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="6" total="24" passed="18">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="2043655" started-at="2021-05-06T07:14:13Z" finished-at="2021-05-06T07:48:17Z">
+  <suite name="Suite" duration-ms="152883" started-at="2021-05-06T13:53:23Z" finished-at="2021-05-06T13:55:56Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="2043655" started-at="2021-05-06T07:14:13Z" finished-at="2021-05-06T07:48:17Z">
-      <class name="crmframework.crmAutomation.ContactPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="initialize" is-config="true" duration-ms="7860" started-at="2021-05-06T12:44:13Z" finished-at="2021-05-06T12:44:21Z">
+    <test name="Test" duration-ms="152883" started-at="2021-05-06T13:53:23Z" finished-at="2021-05-06T13:55:56Z">
+      <class name="crmframework.crmAutomation.ReferenceDataPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@28d25987]" name="initialize" is-config="true" duration-ms="3632" started-at="2021-05-06T19:23:23Z" finished-at="2021-05-06T19:23:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS001_VerifyHomePageTest" duration-ms="103613" started-at="2021-05-06T12:44:21Z" finished-at="2021-05-06T12:46:05Z">
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@28d25987]" name="TS001_VerifyHomePageTest" duration-ms="112787" started-at="2021-05-06T19:23:27Z" finished-at="2021-05-06T19:25:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TS001_VerifyHomePageTest -->
-        <test-method status="PASS" signature="TS002_VerifyCreateNewContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS002_VerifyCreateNewContactTest" duration-ms="71398" started-at="2021-05-06T12:46:05Z" finished-at="2021-05-06T12:47:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS002_VerifyCreateNewContactTest -->
-        <test-method status="PASS" signature="TS003_VerifySearchContactsUsingFullNameEmailPhoneTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS003_VerifySearchContactsUsingFullNameEmailPhoneTest" duration-ms="29541" started-at="2021-05-06T12:47:16Z" finished-at="2021-05-06T12:47:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS003_VerifySearchContactsUsingFullNameEmailPhoneTest -->
-        <test-method status="PASS" signature="TS004_VerifyMarketingRelationshipOwnerContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS004_VerifyMarketingRelationshipOwnerContactTest" duration-ms="36345" started-at="2021-05-06T12:47:46Z" finished-at="2021-05-06T12:48:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS004_VerifyMarketingRelationshipOwnerContactTest -->
-        <test-method status="FAIL" signature="TS006_VerifyContactStatusToActivateContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS006_VerifyContactStatusToActivateContactTest" duration-ms="61424" started-at="2021-05-06T12:48:22Z" finished-at="2021-05-06T12:49:24Z">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[@title='Do Not Call'] (tried for 20 second(s) with 500 MILLISECONDS interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@title='Do Not Call'] (tried for 20 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMContactPage.getContactStatusResonForActiveContact(CRMContactPage.java:561)
-	at crmframework.crmAutomation.ContactPageTest.TS006_VerifyContactStatusToActivateContactTest(ContactPageTest.java:526)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@title='Do Not Call']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 26 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS006_VerifyContactStatusToActivateContactTest -->
-        <test-method status="PASS" signature="TS007_VerifyAddAppointmentToContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS007_VerifyAddAppointmentToContactTest" duration-ms="56476" started-at="2021-05-06T12:49:24Z" finished-at="2021-05-06T12:50:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS007_VerifyAddAppointmentToContactTest -->
-        <test-method status="PASS" signature="TS008_VerifyAddNewTaskFromTimelineToContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS008_VerifyAddNewTaskFromTimelineToContactTest" duration-ms="44594" started-at="2021-05-06T12:50:20Z" finished-at="2021-05-06T12:51:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS008_VerifyAddNewTaskFromTimelineToContactTest -->
-        <test-method status="FAIL" signature="TS009_ManualFail_VerifyDuplicateContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS009_ManualFail_VerifyDuplicateContactTest" duration-ms="51284" started-at="2021-05-06T12:51:05Z" finished-at="2021-05-06T12:51:56Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@aria-label='Duplicate records found']"}
-  (Session info: chrome=90.0.4430.93)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir26568_1864351010}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:65299}, acceptInsecureCerts=false, browserVersion=90.0.4430.93, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: e5aa1b3aa80d372ffc7183a65d3eab0e
-*** Element info: {Using=xpath, value=//h1[@aria-label='Duplicate records found']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@aria-label='Duplicate records found']"}
-  (Session info: chrome=90.0.4430.93)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir26568_1864351010}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:65299}, acceptInsecureCerts=false, browserVersion=90.0.4430.93, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: e5aa1b3aa80d372ffc7183a65d3eab0e
-*** Element info: {Using=xpath, value=//h1[@aria-label='Duplicate records found']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-	at pageObjects.CRMContactPage.getDuplicateRecordsPopupTitle(CRMContactPage.java:1101)
-	at crmframework.crmAutomation.ContactPageTest.TS009_ManualFail_VerifyDuplicateContactTest(ContactPageTest.java:680)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS009_ManualFail_VerifyDuplicateContactTest -->
-        <test-method status="PASS" signature="TS010_VerifyAuditHistoryTabOnContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS010_VerifyAuditHistoryTabOnContactTest" duration-ms="78820" started-at="2021-05-06T12:51:56Z" finished-at="2021-05-06T12:53:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS010_VerifyAuditHistoryTabOnContactTest -->
-        <test-method status="PASS" signature="TS014_VerifyGroupByOptionsContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS014_VerifyGroupByOptionsContactTest" duration-ms="49419" started-at="2021-05-06T12:53:15Z" finished-at="2021-05-06T12:54:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS014_VerifyGroupByOptionsContactTest -->
-        <test-method status="FAIL" signature="TS012_ManualFail_VerifyContactMarketRecordProfile_Registered()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS012_ManualFail_VerifyContactMarketRecordProfile_Registered" duration-ms="117491" started-at="2021-05-06T12:54:04Z" finished-at="2021-05-06T12:56:02Z">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2'] (tried for 15 second(s) with 500 MILLISECONDS interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2'] (tried for 15 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)
-	at crmframework.crmAutomation.ContactPageTest.TS012_ManualFail_VerifyContactMarketRecordProfile_Registered(ContactPageTest.java:900)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 26 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS012_ManualFail_VerifyContactMarketRecordProfile_Registered -->
-        <test-method status="FAIL" signature="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined" duration-ms="121874" started-at="2021-05-06T12:56:02Z" finished-at="2021-05-06T12:58:04Z">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2'] (tried for 15 second(s) with 500 MILLISECONDS interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2'] (tried for 15 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMContactPage.getNewlyCreatedContactMarketProfileField(CRMContactPage.java:696)
-	at crmframework.crmAutomation.ContactPageTest.TS013_ManualFail_VerifyContactMarketRecordProfile_Declined(ContactPageTest.java:1027)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-lp-id='MscrmControls.Grid.ReadOnlyGrid|ContactMarketProfile|contact|3f6c1e66-6002-ea11-a811-000d3a36886f|xxc_contactmarketprofile|xxc_contact_xxc_contactmarketprofile_Contactid|cc-grid|cc-grid-cell|cell-0-2']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 26 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS013_ManualFail_VerifyContactMarketRecordProfile_Declined -->
-        <test-method status="PASS" signature="TS011_VerifyAssociatedListsSectionContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS011_VerifyAssociatedListsSectionContactTest" duration-ms="85989" started-at="2021-05-06T12:58:04Z" finished-at="2021-05-06T12:59:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS011_VerifyAssociatedListsSectionContactTest -->
-        <test-method status="PASS" signature="TS015_VerifyAddNewNoteToContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS015_VerifyAddNewNoteToContactTest" duration-ms="61386" started-at="2021-05-06T12:59:30Z" finished-at="2021-05-06T13:00:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS015_VerifyAddNewNoteToContactTest -->
-        <test-method status="PASS" signature="TS016_VerifyAddNewPostToContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS016_VerifyAddNewPostToContactTest" duration-ms="42566" started-at="2021-05-06T13:00:31Z" finished-at="2021-05-06T13:01:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS016_VerifyAddNewPostToContactTest -->
-        <test-method status="PASS" signature="TS017_VerifyMandatoryFieldsOnContactFormTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS017_VerifyMandatoryFieldsOnContactFormTest" duration-ms="375235" started-at="2021-05-06T13:01:14Z" finished-at="2021-05-06T13:07:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS017_VerifyMandatoryFieldsOnContactFormTest -->
-        <test-method status="PASS" signature="TS018_VerifyCountryAutocompletePicklist()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS018_VerifyCountryAutocompletePicklist" duration-ms="53164" started-at="2021-05-06T13:07:29Z" finished-at="2021-05-06T13:08:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS018_VerifyCountryAutocompletePicklist -->
-        <test-method status="PASS" signature="TS019_VerifyDetailsTabOnContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS019_VerifyDetailsTabOnContactTest" duration-ms="55015" started-at="2021-05-06T13:08:22Z" finished-at="2021-05-06T13:09:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS019_VerifyDetailsTabOnContactTest -->
-        <test-method status="PASS" signature="TS020_VerifyPhoneCallOnContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS020_VerifyPhoneCallOnContactTest" duration-ms="76074" started-at="2021-05-06T13:09:17Z" finished-at="2021-05-06T13:10:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS020_VerifyPhoneCallOnContactTest -->
-        <test-method status="PASS" signature="TS021_VerifyGridFiltersContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS021_VerifyGridFiltersContactTest" duration-ms="165677" started-at="2021-05-06T13:10:33Z" finished-at="2021-05-06T13:13:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS021_VerifyGridFiltersContactTest -->
-        <test-method status="PASS" signature="TS022_VerifyUpdateContactDetailsTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS022_VerifyUpdateContactDetailsTest" duration-ms="89675" started-at="2021-05-06T13:13:19Z" finished-at="2021-05-06T13:14:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS022_VerifyUpdateContactDetailsTest -->
-        <test-method status="PASS" signature="TS023_VerifyToDeactivateBuyerContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS023_VerifyToDeactivateBuyerContactTest" duration-ms="52543" started-at="2021-05-06T13:14:48Z" finished-at="2021-05-06T13:15:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS023_VerifyToDeactivateBuyerContactTest -->
-        <test-method status="FAIL" signature="TS005_ManualFail_VerifyJobFunctionFieldTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS005_ManualFail_VerifyJobFunctionFieldTest" duration-ms="12156" started-at="2021-05-06T13:15:41Z" finished-at="2021-05-06T13:15:53Z">
+        <test-method status="FAIL" signature="TS009_VerifySearchChannelsTest()[pri:0, instance:crmframework.crmAutomation.ReferenceDataPageTest@28d25987]" name="TS009_VerifySearchChannelsTest" duration-ms="36441" started-at="2021-05-06T19:25:20Z" finished-at="2021-05-06T19:25:56Z">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[List is not in alphabetical sorting order: Lists differ at element [0]: Editorial != Blogger expected [Editorial] but found [Blogger]]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: List is not in alphabetical sorting order: Lists differ at element [0]: Editorial != Blogger expected [Editorial] but found [Blogger]
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:549)
-	at crmframework.crmAutomation.ContactPageTest.TS005_ManualFail_VerifyJobFunctionFieldTest(ContactPageTest.java:428)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at crmframework.crmAutomation.ReferenceDataPageTest.TS009_VerifySearchChannelsTest(ReferenceDataPageTest.java:762)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -347,70 +48,16 @@ Driver info: driver.version: unknown
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
 	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS005_ManualFail_VerifyJobFunctionFieldTest -->
-        <test-method status="FAIL" signature="TS024_VerifyExportToExcelTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@523884b2]" name="TS024_VerifyExportToExcelTest" duration-ms="143855" started-at="2021-05-06T13:15:53Z" finished-at="2021-05-06T13:18:17Z">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //button[@id ='contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.ExportToExcel.Menu$splitButtonId_button1$button'] (tried for 20 second(s) with 500 MILLISECONDS interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[@id ='contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.ExportToExcel.Menu$splitButtonId_button1$button'] (tried for 20 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at pageObjects.CRMContactPage.getexporttoexcelbtn(CRMContactPage.java:599)
-	at crmframework.crmAutomation.ContactPageTest.TS024_VerifyExportToExcelTest(ContactPageTest.java:782)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //button[@id ='contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.ExportToExcel.Menu$splitButtonId_button1$button']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-	at java.util.Optional.orElseThrow(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 26 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS024_VerifyExportToExcelTest -->
-      </class> <!-- crmframework.crmAutomation.ContactPageTest -->
+        </test-method> <!-- TS009_VerifySearchChannelsTest -->
+      </class> <!-- crmframework.crmAutomation.ReferenceDataPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
