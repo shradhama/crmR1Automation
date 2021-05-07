@@ -178,6 +178,7 @@ public class ChannelsPageTest extends base {
 		
 		//Click on dropdown and select Inactive Channels
 		chp.sletectActiveChannelDropdown().click();
+		Thread.sleep(3000);
 		chp.selectInactiveChannelOption().click();
 		
 		//Verify No data available message as there is no inactive record present
