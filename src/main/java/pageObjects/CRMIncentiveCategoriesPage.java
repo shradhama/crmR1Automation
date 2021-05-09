@@ -13,7 +13,7 @@ public class CRMIncentiveCategoriesPage {
 	public WebDriver driver;
 	public FluentWait<WebDriver> wait;
 
-	By activeinccategorieslabel = By.xpath("//h1[@aria-label='Active Incentive Categories']"); //Locator for Active Incentive Categories Label
+	By activeinccategorieslabel = By.xpath("//div[@aria-label='Active Incentive Categories']"); //Locator for Active Incentive Categories Label
 	By namecolmnlabel = By.xpath("//div[contains(text(),'Name')]"); //Locator for name column label
 	By estimatedvaluecolmnlabel = By.xpath("//div[contains(text(),'Estimated Value')]"); //Locator for Estimated Value column label
 	By selectinccategory = By.xpath("//div[@data-id = 'cell-3-2']"); //Locator to select Incentive Category name
@@ -26,19 +26,19 @@ public class CRMIncentiveCategoriesPage {
 	By relatedaudithistoryitem = By.xpath("//div[@aria-label='Audit History Related - Common']"); //Locator for Audit History Related-Common item
 	By relatedincdetailsitem = By.xpath("//div[@aria-label='Incentive Details Related - Common']"); //Locator for Incentive Details Related-Common item
 	By inccatformheadertitle = By.xpath("//h1[@data-id='header_title']"); //Locator for Incentive Category form Header title
-	By inccategoryowner = By.xpath("//a[@aria-label='Demand Driver Ownership Team']"); //Locator for Incentive Category Owner in header
+	By inccategoryowner = By.xpath("//div[@data-id = 'form-header']/div[2]/div[1]/div[1]/div[1]/div[2]"); //Locator for Incentive Category Owner in header
 	By moreheaderfieldsbtn = By.xpath("//button[@aria-label='More Header Fields']"); //Locator for More Header fields button
 	By inccatownernameindd = By.xpath("//div[@data-id='header_ownerid.fieldControl-LookupResultsDropdown_ownerid_selected_tag_text']"); //Locator for Incentive Category Owner in drop down
 	By activeinccatdropdownbtn = By.xpath("//span[@class='symbolFont ChevronDownMed-symbol  ']"); //Locator for drop down button for Active incentive Categories
 	By inactiveinccatoptn = By.xpath("//*[text()='Inactive Incentive Categories']"); //Locator for 'Inactive Incentive Categories' item
-	By inactiveinccategorieslabel = By.xpath("//h1[@aria-label='Inactive Incentive Categories']"); //Locator for 'Inactive Incentive Categories' label
+	By inactiveinccategorieslabel = By.xpath("//div[@aria-label='Inactive Incentive Categories']"); //Locator for 'Inactive Incentive Categories' label
 	By inccatnewbtn = By.xpath("//span[contains(text(),'New')]"); //Locator for New button to create new incentive category
 	By inccatformheader = By.xpath("//h1[contains(text(),'New Incentive Category')]"); //Locator for 'New Incentive Category' page title
 	By nametextbox = By.xpath("//input[@aria-label='Name']"); //Locator for Name Text field
 	By typetextbox = By.xpath("//select[@aria-label='Type']"); //Locator for Type text field
 	By typenamefmdd = By.xpath("//option[contains(text(),'Airfare')]"); //Locator for Type name
 	By inccatsavenclosebtn = By.xpath("//button[@aria-label='Save & Close']"); //Locator for Save n Close button on inc category form
-
+	By dddownername = By.xpath("//div[@data-id = 'form-header']/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]");//Locator for Demand Driver Ownership Team
 
 	public CRMIncentiveCategoriesPage(WebDriver driver) {
 
@@ -154,5 +154,9 @@ public class CRMIncentiveCategoriesPage {
 	public WebElement getIncCatSavenCloseBtn()
 	{
 		return driver.findElement(inccatsavenclosebtn);
+	}
+	public WebElement getdddownername()
+	{
+		return driver.findElement(dddownername);
 	}
 }
