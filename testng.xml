@@ -17,10 +17,10 @@
 			<!--<class name="crmframework.crmAutomation.ReferenceDataPageTest"/>-->
 			<!--<class name="crmframework.crmAutomation.IncentiveDetailsPageTest" />-->
 			<!--<class name="crmframework.crmAutomation.RegistrationsPageTest" />-->
-			<class name="crmframework.crmAutomation.IncentiveCategoriesPageTest" />
+			<class name="crmframework.crmAutomation.DashboardPageTest" />
 			<methods>
-			<!--<include name="TS001_VerifyHomePageTest"/>-->
-			<!--<include name="TS009_VerifySearchChannelsTest"/>-->
+			<include name="TS001_VerifyHomePageTest"/>
+			<include name="TS002_VerifyRetailRelationManagerDashboardView"/>
 			<!-- <exclude name="TS004_VerifyDeactivateIncentiveFromContactTest"/>-->
 			</methods>
 		</classes>

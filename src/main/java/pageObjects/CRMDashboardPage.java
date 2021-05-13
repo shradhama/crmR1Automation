@@ -88,18 +88,20 @@ public class CRMDashboardPage {
 	By incbyownerbycatglabel = By.xpath("//h2[contains(text(),'Incentives by Owner by Category')]"); //Locator for Incentives by Owner by Category label of Incentive details section
 			
 	//Locators for X-Y axis values
-	By completedcallsXaxisvalue= By.xpath("//div[@aria-label='bar chart for PHONE CALLS BY OWNER, Completed Calls Last Week has 1 bars']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][8]");//Locator for Completed calls last week_X axis value
-	By completedcallsYaxisvalue= By.xpath("//div[@aria-label='bar chart for PHONE CALLS BY OWNER, Completed Calls Last Week has 1 bars']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][7]"); //Locator for Completed calls last week_Y axis value
-	By registrationsXaxisvalue= By.xpath("//div[@aria-label='column chart for REGISTRATION BY OWNER AND MARKET, Registrations (3 Month Prior - Next 3 Months) has 21 columns']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][7]");//Locator for Registrations(3 months prior-3months next)_X axis value
-	By registrationsYaxisvalue= By.xpath("//div[@aria-label='column chart for REGISTRATION BY OWNER AND MARKET, Registrations (3 Month Prior - Next 3 Months) has 21 columns']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][8]");//Locator for Registrations(3 months prior-3months next)_Y axis value
-	By declinecallsXaxisvalue= By.xpath("//div[@aria-label='column chart for OUTCOME BY DECLINED REASON & MARKET, Declined Calls has 770 columns']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][7]"); //Locator for Declined Calls_X axis value
-	By declinecallsYaxisvalue= By.xpath("//div[@aria-label='column chart for OUTCOME BY DECLINED REASON & MARKET, Declined Calls has 770 columns']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][30]"); //Locator for Declined Calls_Y axis value
-	By incentivedetailsXaxisvalue= By.xpath("//div[@aria-label='column chart for INCENTIVES BY OWNER BY CATEGORY, Active Incentive Details has 600 columns']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][31]"); //Locator for Incentive Details Created Last Week_X axis value
-	By incentivedetailsYaxisvalue= By.xpath("//div[@aria-label='column chart for INCENTIVES BY OWNER BY CATEGORY, Active Incentive Details has 600 columns']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][32]"); //Locator for Incentive Details Created Last Week_Y axis value
+	By completedcallsXaxisvalue= By.xpath("//div[@data-id='Component2669287_container']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][8]");//Locator for Completed calls last week_X axis value
+	By completedcallsYaxisvalue= By.xpath("//div[@data-id='Component2669287_container']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][7]"); //Locator for Completed calls last week_Y axis value
+	By registrationsXaxisvalue= By.xpath("//div[@data-id='Component8697706_container']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][7]");//Locator for Registrations(3 months prior-3months next)_X axis value
+	By registrationsYaxisvalue= By.xpath("//div[@data-id='Component8697706_container']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][8]");//Locator for Registrations(3 months prior-3months next)_Y axis value
+	By declinecallsXaxisvalue= By.xpath("//div[@data-id='Component428227_container']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][7]"); //Locator for Declined Calls_X axis value
+	By declinecallsYaxisvalue= By.xpath("//div[@data-id='Component428227_container']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][30]"); //Locator for Declined Calls_Y axis value
+	By incentivedetailsXaxisvalue= By.xpath("//div[@data-id='Component1970579_container']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][8]"); //Locator for Incentive Details Created Last Week_X axis value
+	By incentivedetailsYaxisvalue= By.xpath("//div[@data-id='Component1970579_container']/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][9]"); //Locator for Incentive Details Created Last Week_Y axis value
 	By activeincentivedetailsXaxisvalue= By.xpath("//div[@data-id='MscrmControls.Containers.DashboardControl-Component5453290']/div/div[2]/div/div[3]/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][7]"); //Locator for Active Incentive Details_X axis value
 	By activeincentivedetailsYaxisvalue= By.xpath("//div[@data-id='MscrmControls.Containers.DashboardControl-Component5453290']/div/div[2]/div/div[3]/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][8]"); //Locator for Active Incentive Details_Y axis value
 	By incentivedetailsnodataavailablemsg= By.xpath("//div[@data-id='Component1970579_container']/div[3]/div[1]/span[2]"); //Locator for No data available message for Incentive Details Created Last Week
+    By incentivedetailsvaluecheck= By.xpath("//div[@data-id='Component1970579_container']"); //Locator to check Incentive Details
 
+	
 	public CRMDashboardPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -471,6 +473,9 @@ public class CRMDashboardPage {
 	}
 	public WebElement getCountAllTaskLabel() {
 		return driver.findElement(countalltasklabel);
+	}
+	public WebElement getIncentiveDetailsValueCheck() {
+		return driver.findElement(incentivedetailsvaluecheck);	
 	}
 	
 	
