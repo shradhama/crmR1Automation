@@ -321,6 +321,7 @@ public class ReferenceDataPageTest extends base {
 		//Navigate to Campuses under Reference Data in left menu.
 		utl.scrollToElement(hp.getTransactionalSectnLabel());
 		hp.getDDProductCatgTab().click();
+		Thread.sleep(4000);
 
 		//Go to search box on right top corner of page and enter Name
 		hp.getSearchDDProdCatgField().click();
@@ -456,8 +457,8 @@ public class ReferenceDataPageTest extends base {
 		}
 	}
 
-	@Test(priority=7)
-	public void TS007_VerifySearchMarketsTest() throws IOException, InterruptedException {
+	@Test(priority=10)
+	public void TS010_VerifySearchMarketsTest() throws IOException, InterruptedException {
 
 		//The purpose of this test case:-
 		//T467- To verify that CRM user is having ability to search Markets using 
@@ -524,8 +525,8 @@ public class ReferenceDataPageTest extends base {
 		//Clear Search results
 		hp.getClearSearch().click();
 	}
-	@Test(priority=6)
-	public void TS006_VerifyRegionsTest() throws IOException, InterruptedException {
+	@Test(priority=7)
+	public void TS007_VerifyRegionsTest() throws IOException, InterruptedException {
 
 		//The purpose of this test case:-
 		//T471- To verify Regions
@@ -586,8 +587,8 @@ public class ReferenceDataPageTest extends base {
 		System.out.println("Inactive Regions are not available.");
 		
 	}
-	@Test(priority=7)
-	public void TS007_VerifySearchRegionsTest() throws IOException, InterruptedException {
+	@Test(priority=11)
+	public void TS011_VerifySearchRegionsTest() throws IOException, InterruptedException {
 
 		//The purpose of this test case:-
 		//T471- To verify Search Regions functionality
@@ -727,30 +728,30 @@ public class ReferenceDataPageTest extends base {
 
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
-		chp = new CRMChannelsPage(driver);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		//Navigate to Channels menu
 		utl.scrollToElement(hp.getTransactionalSectnLabel());
-		chp.getChannelsTab().click();
+		hp.getChannelsTab().click();
 
 		//Go to search box on right top corner of page and enter channel to be searched
-		chp.getSearchChannelField().click();
-		chp.getSearchChannelField().sendKeys(prop.getProperty("searchchannel"));
-		chp.getStartSearch().click();
+		hp.getSearchChannelField().click();
+		hp.getSearchChannelField().sendKeys(prop.getProperty("searchchannel"));
+		hp.getstartsearchbutton().click();
 		Thread.sleep(4000);
 
 		//Verify that all Channels that are beginning with 'Las' should get displayed in the search results
-		Assert.assertTrue(chp.getChannelSearchResult().getAttribute("title").contains(prop.getProperty("searchchannel")));
+		//Assert.assertTrue(hp.getChannelSearchResult().getAttribute("title").contains(prop.getProperty("searchchannel")));
+		Assert.assertEquals(true, hp.getChannelSearchResult().getAttribute("title").contains(prop.getProperty("searchchannel")));
 
 		//Clear Search results
-		chp.getClearSearch().click();
+		hp.getClearSearch().click();
 		
 		//Go to search box on right top corner of page and enter data to be searched
-		chp.getSearchChannelField().click();
+		hp.getSearchChannelField().click();
 		String searchchannelrecords = "*" + prop.getProperty("searchchannelrecords");
-		chp.getSearchChannelField().sendKeys(searchchannelrecords);
-		chp.getStartSearch().click();
+		hp.getSearchChannelField().sendKeys(searchchannelrecords);
+		hp.getstartsearchbutton().click();
 		Thread.sleep(4000);
 
 		//Verify that all channels that contains 'A' should get displayed in the search results
@@ -758,12 +759,13 @@ public class ReferenceDataPageTest extends base {
 		for (int i=0;i<3;i++)
 		{
 			channelnameinsearchresults = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
-			String channelinsearchrslt = channelnameinsearchresults.getText().toLowerCase();
-			Assert.assertTrue(channelinsearchrslt.contains(prop.getProperty("searchchannelrecords")));
+			String channelinsearchrslt = channelnameinsearchresults.getText();
+			//Assert.assertTrue(channelinsearchrslt.contains(prop.getProperty("searchchannelrecords")));
+			Assert.assertEquals(true, channelinsearchrslt.contains(prop.getProperty("searchchannelrecords")));
 		}
 		
 		//Clear Search results
-		chp.getClearSearch().click();
+		hp.getClearSearch().click();
 	}
 }
 
