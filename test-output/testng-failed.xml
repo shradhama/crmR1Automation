@@ -3,17 +3,13 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.ContactPageTest">
+      <class name="crmframework.crmAutomation.IncentivesPageTest">
         <methods>
-          <include name="TS005_ManualFail_VerifyJobFunctionFieldTest"/>
-          <include name="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined"/>
-          <include name="TS006_VerifyContactStatusToActivateContactTest"/>
           <include name="initialize"/>
-          <include name="TS012_ManualFail_VerifyContactMarketRecordProfile_Registered"/>
-          <include name="TS024_VerifyExportToExcelTest"/>
-          <include name="TS009_ManualFail_VerifyDuplicateContactTest"/>
+          <include name="TS001_VerifyHomePageTest"/>
+          <include name="TS009_VerifyUpdateiIncentiveFromContactTest"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.ContactPageTest -->
+      </class> <!-- crmframework.crmAutomation.IncentivesPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

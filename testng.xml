@@ -18,8 +18,8 @@
 			<!--<class name="crmframework.crmAutomation.IncentiveDetailsPageTest" />-->
 			<!--<class name="crmframework.crmAutomation.RegistrationsPageTest" />-->
 			<methods>
-			<!--<include name="TS001_VerifyHomePageTest"/>-->
-			<exclude name="TS004_VerifyDeactivateIncentiveFromContactTest"/>
+			<include name="TS001_VerifyHomePageTest"/>
+			<include name="TS009_VerifyUpdateiIncentiveFromContactTest"/>
 			</methods>
 		</classes>
 	</test>

@@ -69,7 +69,7 @@ public class CRMIncentivesPage {
 	By selectedcontacttxtbx = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.SimpleLookupControl|xxc_contactid.fieldControl|xxc_incentive']"); //Locator for Selected Contact text box
 	By selectedcontactdeletebtn = By.xpath("//button[@data-id='xxc_contactid.fieldControl-LookupResultsDropdown_xxc_contactid_selected_tag_delete']"); //Locator for Delete button for Selected Contact name text box
 	By updatecontactname = By.xpath("//span[@data-id='xxc_contactid.fieldControl-fullname0_0_2']"); //Locator for 2nd Contact name
-	By accountlinkinincentivestab = By.xpath("//a[@href='https://imcqa.crm.dynamics.com/main.aspx?appid=9a772693-4e17-4119-97de-fede005ac172&pagetype=entityrecord&etn=account&id=18237dad-9781-ea11-a811-000d3a1bb158']"); //Locator for Account name in Incentives tab
+	By accountlinkinincentivestab = By.xpath("//div[@data-id='cell-0-2']/a"); //Locator for Account name in Incentives tab
 	By selectincentiverecordonaccform = By.xpath("//div[@aria-label='Readonly Grid']/div/div/div/div[2]/div[1]"); //Locator for select incentive record on account form
 	
 	
@@ -179,7 +179,7 @@ public class CRMIncentivesPage {
 		return driver.findElement(referralsourcefieldlabel);
 	}
 	public WebElement selectIncentiveRecord() throws InterruptedException{
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		return driver.findElement(selectincentiverecord);
 	}
 	public WebElement getIncDeactivateBtn(){
@@ -329,7 +329,7 @@ public class CRMIncentivesPage {
 	}
 	
 	public WebElement selectIncentiveRecordonAccForm() throws InterruptedException {
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		return driver.findElement(selectincentiverecordonaccform);
 	}
 }
