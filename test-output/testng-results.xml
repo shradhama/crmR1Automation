@@ -2,6 +2,25 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
+  <suite name="Suite" duration-ms="442423" started-at="2021-05-19T06:43:30Z" finished-at="2021-05-19T06:50:52Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="442423" started-at="2021-05-19T06:43:30Z" finished-at="2021-05-19T06:50:52Z">
+      <class name="crmframework.crmAutomation.IncentivesPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="initialize" is-config="true" duration-ms="9088" started-at="2021-05-19T12:13:30Z" finished-at="2021-05-19T12:13:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="TS001_VerifyHomePageTest" duration-ms="123751" started-at="2021-05-19T12:13:39Z" finished-at="2021-05-19T12:15:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS001_VerifyHomePageTest -->
+        <test-method status="PASS" signature="TS009_VerifyUpdateiIncentiveFromContactTest()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="TS009_VerifyUpdateiIncentiveFromContactTest" duration-ms="309534" started-at="2021-05-19T12:15:43Z" finished-at="2021-05-19T12:20:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS009_VerifyUpdateiIncentiveFromContactTest -->
+      </class> <!-- crmframework.crmAutomation.IncentivesPageTest -->
+
   <suite name="Suite" duration-ms="195104" started-at="2021-05-13T09:15:27Z" finished-at="2021-05-13T09:18:42Z">
     <groups>
     </groups>
@@ -20,6 +39,7 @@
           </reporter-output>
         </test-method> <!-- TS002_VerifyRetailRelationManagerDashboardView -->
       </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
+r
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
