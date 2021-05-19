@@ -16,7 +16,7 @@ public class CRMAccountsPage {
 
 	By accountnewbtn = By.xpath("//span[contains(text(),'New')]");
 	By accountNametxtbx = By.xpath("//input[@id='id-276390f9-8bbf-4452-8f24-636b0ccaee2c-1-name8-name.fieldControl-text-box-text']");
-	By accountnamesearchtable= By.xpath("//div[@data-id='cell-0-2']");
+	By accountnamesearchtable= By.xpath("(//div[@data-id='cell-0-2'])[position()=2]");
 	By phn = By.xpath("//input[@aria-label='Phone']");		
 	By address = By.xpath("//h2[contains(text(),'Address')]");
 	By acctypetxtbx = By.xpath("//input[@id='xxc_typecode_ledit']");
@@ -123,11 +123,11 @@ public class CRMAccountsPage {
 	By accdbanametxtbx = By.xpath("//input[@aria-label='Account DBA Name']");
 	By duplicaterecordspopuptitle = By.xpath("//h1[@aria-label='Duplicate records found']");
 	By unsavedchangespopuptitle = By.xpath("//h1[@aria-label='Unsaved changes']");
-	By phoneinsearchtable = By.xpath("//div[@data-id='cell-0-3']");
+	By phoneinsearchtable = By.xpath("(//div[@data-id='cell-0-3'])[position()=2]");
 	By phonetxboxlabel = By.xpath("//label[contains(text(),'Phone')]");
 	By hletterfilterlink = By.xpath("//li[@aria-label='Filter table by h']");
 	By duplicaterecordspopupignorensavebtn = By.xpath("//button[@aria-label='Ignore and save']");
-	By clickoverflowbutton = By.xpath("//button[@data-id = 'OverflowButton']");
+	By clickoverflowbutton = By.xpath("(//button[@data-id = 'OverflowButton'])[position()=2]");
 	By clickexporttoexcelbutton = By.xpath("//button[@data-id = 'account|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.account.ExportToExcel.Menu$splitButtonId']");
 	By saveexcelonline = By.xpath("//button[@data-id = 'export_to_excelonline_save']");
 	By selectcheckbox1 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeyaccountxxc_accountactivecontactcount']");

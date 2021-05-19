@@ -3,12 +3,13 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.DashboardPageTest">
+      <class name="crmframework.crmAutomation.ActivitiesPageTest">
         <methods>
-          <include name="TS002_VerifyRetailRelationManagerDashboardView"/>
+          <include name="TS005_VerifyCreateEmailTest"/>
+          <include name="TS002_VerifyCreateAppointmentTest"/>
           <include name="initialize"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
+      </class> <!-- crmframework.crmAutomation.ActivitiesPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

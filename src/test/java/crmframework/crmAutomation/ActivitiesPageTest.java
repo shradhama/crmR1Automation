@@ -1,6 +1,10 @@
 package crmframework.crmAutomation;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -116,10 +120,11 @@ public class ActivitiesPageTest extends base {
 
 		//Navigate to Activities under Home in left menu
 		hp.getActivitiesTab().click();
+		Thread.sleep(5000);
 		
 		//Verify that be default My Activities page is displayed
 		Assert.assertTrue(actp.getMyActivitiesLabel().isDisplayed());
-		
+				
 		//Click on Appointment option from the header
 		actp.getAppointmentOptnInHeader().click();
 		
@@ -136,6 +141,22 @@ public class ActivitiesPageTest extends base {
 		String apptname = actp.getSubjectTextBox().getAttribute("Value");
 		System.out.println("Newly created appointment name: "+ apptname);
 		
+		//Select/enter Start Date/End Date
+		DateFormat dateFormat = new SimpleDateFormat("M/dd/yyyy");
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DATE,2);
+		Date duedate = cal.getTime();
+		String newdate = dateFormat.format(duedate);
+		System.out.println("Due Date = "+ newdate);
+		
+		actp.selectStartTime().click();
+		actp.selectStartTime().click();
+		actp.selectStartTime().sendKeys(Keys.CONTROL + "a");
+		actp.selectStartTime().sendKeys(Keys.DELETE);
+		Thread.sleep(3000);
+		actp.selectStartTime().sendKeys(newdate.toString());
+		Thread.sleep(5000);
+		
 		//Click on Save&Close button from the header.
 		actp.getSavenCloseBtnOnApptForm().click();
 		
@@ -148,8 +169,10 @@ public class ActivitiesPageTest extends base {
 		actp.getActivitySearchField().click();
 		actp.getActivitySearchField().sendKeys(apptname);
 		hp.getstartsearch().click();
+		Thread.sleep(5000);
 		
 		Assert.assertTrue(actp.getValidateApptName().getAttribute("title").contains(apptname));
+		//Assert.assertEquals(true, actp.getValidateApptName().getAttribute("title").contains(apptname));
 		
 		//Open the appointment and navigate to the regarding Account/Contact
 		actp.getValidateApptName().click();
@@ -159,6 +182,7 @@ public class ActivitiesPageTest extends base {
 		//Verify that appointment name is displayed on Account/Contact page
 		Assert.assertTrue(ap.getverifyaccountppointment().getText().contains(apptname));	
 		ap.getPageBackBtn().click();
+	
 	}
 	
 	@Test(priority=3)
@@ -175,13 +199,14 @@ public class ActivitiesPageTest extends base {
 
 		//Navigate to Activities under Home in left menu
 		hp.getActivitiesTab().click();
+		Thread.sleep(3000);
 		
 		//Click on Task in the header to create new Task
 		actp.getTaskOptnInHeader().click();
 		
 		//Verify that New Task form should be displayed
 		Assert.assertTrue(actp.getNewTaskFormTitle().isDisplayed());
-		
+				
 		//Enter required data
 		actp.getSubjectTextBox().click();
 		actp.getSubjectTextBox().sendKeys("CybTask_" + genData.generateRandomString(3));
@@ -204,8 +229,10 @@ public class ActivitiesPageTest extends base {
 		actp.getActivitySearchField().click();
 		actp.getActivitySearchField().sendKeys(taskname);
 		hp.getstartsearch().click();
+		Thread.sleep(3000);
 		
 		Assert.assertTrue(actp.getValidateTaskName().getAttribute("title").contains(taskname));
+		//Assert.assertEquals(true, actp.getValidateTaskName().getAttribute("title").contains(taskname));
 		
 		//Open the appointment and navigate to the regarding Account/Contact
 		actp.getValidateApptName().click();
@@ -323,6 +350,7 @@ public class ActivitiesPageTest extends base {
 		actp.getActivitySearchField().click();
 		actp.getActivitySearchField().sendKeys(emailname);
 		hp.getstartsearch().click();
+		Thread.sleep(3000);
 		
 		Assert.assertTrue(actp.getValidateEmailName().getAttribute("title").contains(emailname));
 		
