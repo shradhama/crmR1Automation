@@ -10,6 +10,14 @@
           <include name="TS009_VerifyUpdateiIncentiveFromContactTest"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.IncentivesPageTest -->
+
+      <class name="crmframework.crmAutomation.DashboardPageTest">
+        <methods>
+          <include name="TS002_VerifyRetailRelationManagerDashboardView"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
+
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

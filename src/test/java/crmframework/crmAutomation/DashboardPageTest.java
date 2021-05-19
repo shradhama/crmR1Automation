@@ -208,7 +208,39 @@ public class DashboardPageTest extends base {
 		act = new Actions(driver);
 		act.moveToElement(dp.getActiveIncentiveDetailsXaxisLabel()).perform();
 		
-		//Verify values of X and Y axis label for Incentive Details Created Last Week		
+		//Verify values of X and Y axis label for Incentive Details Created Last Week
+        if(dp.getIncentiveDetailsValueCheck().isDisplayed())
+        {
+        	String Incentivedetails_X= dp.getIncentiveDetailsXaxislabel().getText();
+        	String actualIncDec_X= prop.getProperty("Incentivedetails_Xaxis");
+        	String Incentivedetails_Y= dp.getIncentiveDetailsYaxislabel().getText();
+        	String actualIncDec_Y= prop.getProperty("Incentivedetails_Yaxis");
+			Assert.assertEquals(Incentivedetails_X,actualIncDec_X);
+			Assert.assertEquals(Incentivedetails_Y,actualIncDec_Y);
+		    System.out.println("Values of X and Y axis label for Incentive Details Created Last Week are: " +Incentivedetails_X + " & " + Incentivedetails_Y);
+        }
+        else	
+        {   
+        	Assert.assertTrue(dp.getIncentiveDetailsNoDataAvailableMsg().isDisplayed());
+            System.out.println("Incentive Details Created Last Week: No data available to display");
+        	
+		}
+		
+        //Verify values of X and Y axis values for Incentive Details Created Last Week
+        if(dp.getIncentiveDetailsValueCheck().isDisplayed())
+        {
+        	Assert.assertEquals(true, dp.getIncentiveDetailsXaxisValue().isDisplayed());
+      		Assert.assertEquals(true, dp.getIncentiveDetailsYaxisValue().isDisplayed());
+      		System.out.println("Values of X and Y axis for Incentive Details Created Last Week are displaying");
+        }
+        else
+        {
+        	Assert.assertTrue(dp.getIncentiveDetailsNoDataAvailableMsg().isDisplayed());
+        	System.out.println("Incentive Details Created Last Week: No data available to display");
+      		
+        }		
+		
+/*		
         if(dp.getIncentiveDetailsNoDataAvailableMsg().isDisplayed())
         {
         	System.out.println("Incentive Details Created Last Week: No data available to display");
@@ -235,6 +267,7 @@ public class DashboardPageTest extends base {
       		Assert.assertEquals(true, dp.getIncentiveDetailsYaxisValue().isDisplayed());
       		System.out.println("Values of X and Y axis for Incentive Details Created Last Week are displaying");
         }
+ */       
         
         //Verify values of X and Y axis label for Active Incentive Details
 		String ActiveiIncentivedetails_X= dp.getActiveIncentiveDetailsXaxisLabel().getText();

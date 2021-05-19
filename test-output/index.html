@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>C:\Users\nilamma\crmR1Automation\testng.xml</span>
+                    <span>C:\Users\adityaun\crmR1Automation\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -101,12 +101,19 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
+
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.IncentivesPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
+
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.DashboardPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
+
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.IncentivesPageTest" hash-for-method="TS009_VerifyUpdateiIncentiveFromContactTest">TS009_VerifyUpdateiIncentiveFromContactTest</a> <!-- method navigator-link -->
+
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.DashboardPageTest" hash-for-method="TS002_VerifyRetailRelationManagerDashboardView">TS002_VerifyRetailRelationManagerDashboardView</a> <!-- method navigator-link -->
+
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -125,6 +132,9 @@
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">crmframework.crmAutomation.IncentivesPageTest</span>
+
+              <span class="class-name">crmframework.crmAutomation.DashboardPageTest</span>
+
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -139,6 +149,10 @@
                   <a name="TS009_VerifyUpdateiIncentiveFromContactTest">
                   </a> <!-- TS009_VerifyUpdateiIncentiveFromContactTest -->
                   <span class="method-name">TS009_VerifyUpdateiIncentiveFromContactTest</span>
+                  <a name="TS002_VerifyRetailRelationManagerDashboardView">
+                  </a> <!-- TS002_VerifyRetailRelationManagerDashboardView -->
+                  <span class="method-name">TS002_VerifyRetailRelationManagerDashboardView</span>
+
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -146,7 +160,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\nilamma\crmR1Automation\testng.xml</span>
+            <span class="header-content">C:\Users\adityaun\crmR1Automation\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -161,6 +175,14 @@
           &lt;include name=&quot;TS009_VerifyUpdateiIncentiveFromContactTest&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- crmframework.crmAutomation.IncentivesPageTest --&gt;
+
+      &lt;class name=&quot;crmframework.crmAutomation.DashboardPageTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
+          &lt;include name=&quot;TS002_VerifyRetailRelationManagerDashboardView&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- crmframework.crmAutomation.DashboardPageTest --&gt;
+
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -202,6 +224,7 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
+
 data.setCell(0, 1, 'TS009_VerifyUpdateiIncentiveFromContactTest')
 data.setCell(0, 2, 'crmframework.crmAutomation.IncentivesPageTest')
 data.setCell(0, 3, 309534);
@@ -209,11 +232,22 @@ data.setCell(1, 0, 1)
 data.setCell(1, 1, 'TS001_VerifyHomePageTest')
 data.setCell(1, 2, 'crmframework.crmAutomation.IncentivesPageTest')
 data.setCell(1, 3, 123751);
+data.setCell(0, 1, 'TS001_VerifyHomePageTest')
+data.setCell(0, 2, 'crmframework.crmAutomation.DashboardPageTest')
+data.setCell(0, 3, 152941);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'TS002_VerifyRetailRelationManagerDashboardView')
+data.setCell(1, 2, 'crmframework.crmAutomation.DashboardPageTest')
+data.setCell(1, 3, 36173);
+
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
               <span class="suite-total-time">Total running time: 7 minutes</span>
+
+              <span class="suite-total-time">Total running time: 3 minutes</span>
+
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -247,6 +281,18 @@ return data;
                 <span class="ignored-method-name">TS002_VerifyCreateIncentiveFromAccountTest</span>
                 <br/>
                 <span class="ignored-method-name">TS008_VerifySearchFunctionalityIncentivesTest</span>
+            <span class="header-content">3 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">crmframework.crmAutomation.DashboardPageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">TS005_VerifyMyActivitiesTest</span>
+                <br/>
+                <span class="ignored-method-name">TS003_VerifyRetailRelationsMrktMngrIncnHotelBookedViewTest</span>
+                <br/>
+                <span class="ignored-method-name">TS004_VerifyCallCenterDashboardRepTest</span>
+
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -258,18 +304,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+
               <div class="chronological-class-name">crmframework.crmAutomation.IncentivesPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">crmframework.crmAutomation.DashboardPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">initialize</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">TS001_VerifyHomePageTest</span>
+
                 <span class="method-start">9105 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TS009_VerifyUpdateiIncentiveFromContactTest</span>
                 <span class="method-start">132876 ms</span>
+
+                <span class="method-start">5969 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS002_VerifyRetailRelationManagerDashboardView</span>
+                <span class="method-start">158927 ms</span>
+
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

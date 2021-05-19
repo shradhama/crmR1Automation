@@ -10,16 +10,24 @@
 			<!-- <class name="crmframework.crmAutomation.OtherTest" /> -->
 			<!--<class name="crmframework.crmAutomation.ContactPageTest" /> -->
 			<!--<class name="crmframework.crmAutomation.PeoplePageTest" /> -->
-			<class name="crmframework.crmAutomation.IncentivesPageTest" />
+			<!--<class name="crmframework.crmAutomation.ReferenceDataPageTest" />-->
 			<!--<class name="crmframework.crmAutomation.ContactPageTest" />-->
 			<!--<class name="crmframework.crmAutomation.PeoplePageTest" />-->
 			<!-- <class name="crmframework.crmAutomation.DashboardPageTest" /> -->
 			<!--<class name="crmframework.crmAutomation.ReferenceDataPageTest"/>-->
 			<!--<class name="crmframework.crmAutomation.IncentiveDetailsPageTest" />-->
 			<!--<class name="crmframework.crmAutomation.RegistrationsPageTest" />-->
+			<!--<class name="crmframework.crmAutomation.IncentiveCategoriesPageTest" />-->
+			<class name="crmframework.crmAutomation.ListManagementPageTest" />
 			<methods>
+
 			<include name="TS001_VerifyHomePageTest"/>
 			<include name="TS009_VerifyUpdateiIncentiveFromContactTest"/>
+
+			<!--<include name="TS001_VerifyHomePageTest"/>-->
+			<!--<include name="TS009_VerifySearchChannelsTest"/>-->
+			<!-- <exclude name="TS004_VerifyDeactivateIncentiveFromContactTest"/>-->
+
 			</methods>
 		</classes>
 	</test>

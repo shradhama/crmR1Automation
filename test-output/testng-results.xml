@@ -20,6 +20,26 @@
           </reporter-output>
         </test-method> <!-- TS009_VerifyUpdateiIncentiveFromContactTest -->
       </class> <!-- crmframework.crmAutomation.IncentivesPageTest -->
+
+  <suite name="Suite" duration-ms="195104" started-at="2021-05-13T09:15:27Z" finished-at="2021-05-13T09:18:42Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="195104" started-at="2021-05-13T09:15:27Z" finished-at="2021-05-13T09:18:42Z">
+      <class name="crmframework.crmAutomation.DashboardPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.DashboardPageTest@59fa1d9b]" name="initialize" is-config="true" duration-ms="5969" started-at="2021-05-13T14:45:27Z" finished-at="2021-05-13T14:45:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.DashboardPageTest@59fa1d9b]" name="TS001_VerifyHomePageTest" duration-ms="152941" started-at="2021-05-13T14:45:33Z" finished-at="2021-05-13T14:48:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS001_VerifyHomePageTest -->
+        <test-method status="PASS" signature="TS002_VerifyRetailRelationManagerDashboardView()[pri:0, instance:crmframework.crmAutomation.DashboardPageTest@59fa1d9b]" name="TS002_VerifyRetailRelationManagerDashboardView" duration-ms="36173" started-at="2021-05-13T14:48:06Z" finished-at="2021-05-13T14:48:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS002_VerifyRetailRelationManagerDashboardView -->
+      </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
+r
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
