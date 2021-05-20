@@ -25,7 +25,8 @@ public class CRMActivitiesPage {
 	By activitysearchfield = By.xpath("//input[@aria-label='Search this view']"); //Locator for Activity Search field
 	By validateapptname = By.xpath("//div[@data-id='cell-0-3']"); //Locator to validate new appointment name in Search results
 	By openrequiredfieldtext = By.xpath("//div[@data-id='requiredattendees.fieldControl-LookupResultsDropdown_requiredattendees_selected_tag_text']"); //Locator to open the Required field text
-	By taskoptninheader = By.xpath("//button[@aria-label='Task']"); //Locator for Task option in header
+	//By taskoptninheader = By.xpath("//button[@aria-label='Task']"); //Locator for Task option in header
+	By taskoptninheader = By.xpath("//li[@title='Task']"); //Locator for Task option in header
 	By newtaskformtitle = By.xpath("//h1[contains(text(),'New Task')]"); //Locator for New Task form title
 	By regardingtextbox = By.xpath("//input[@aria-label='Regarding, Lookup']"); //Locator for Regarding text box
 	By regardingfieldlabel = By.xpath("//label[contains(text(),'Regarding')]"); //Locator for Regarding field label
@@ -49,6 +50,7 @@ public class CRMActivitiesPage {
 	By fonttext = By.xpath("//span[contains(text(),'Font')]"); //Locator for Font text
 	By regardingvalue = By.xpath("//div[@data-id = 'regardingobjectid.fieldControl-LookupResultsDropdown_regardingobjectid_selected_tag_text']"); //Locator for Regarding field value
 	By duedatetxtbox = By.xpath("//input[@data-id='scheduledend.fieldControl-date-time-input']"); //Locator for Due Date text field
+	By starttimedatepicker= By.xpath("//input[@data-id='scheduledstart.fieldControl-date-time-input']"); //Locator to select Start Time date picker
 	
 	public CRMActivitiesPage(WebDriver driver) {
 		this.driver = driver;
@@ -197,5 +199,10 @@ public class CRMActivitiesPage {
 	}
 	public WebElement getDueDateTextBox() {
 		return driver.findElement(duedatetxtbox);
+	}
+	public WebElement selectStartTime() {
+		wait = new WebDriverWait (driver,25);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(starttimedatepicker));
+		return driver.findElement(starttimedatepicker);		
 	}
 }

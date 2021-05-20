@@ -21,7 +21,6 @@ import pageObjects.AppLandingPage;
 import pageObjects.CRMAccountsPage;
 import pageObjects.CRMActivitiesPage;
 import pageObjects.CRMAddMarketingRelationshipOwner;
-import pageObjects.CRMChannelsPage;
 import pageObjects.CRMContactPage;
 import pageObjects.CRMHomePage;
 import pageObjects.CRMIncentiveCategoriesPage;
@@ -67,7 +66,6 @@ public class ReferenceDataPageTest extends base {
 	CRMRegistrationsPage reg;
 	public String listNameText;
 	CRMIncentiveCategoriesPage incat;
-	CRMChannelsPage chp;
 
 	@BeforeTest
 	public void initialize() throws IOException
@@ -641,82 +639,82 @@ public class ReferenceDataPageTest extends base {
 
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
-		chp = new CRMChannelsPage(driver);
+		refdp = new CRMReferenceDataPage(driver);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
 
 		//Navigate to Channels menu
 		utl.scrollToElement(hp.getTransactionalSectnLabel());
-		chp.getChannelsTab().click();
+		refdp.getChannelsTab().click();
 
 		//Verify that Active Channels should be displayed by default
-		Assert.assertTrue(chp.getActiveChannelsLabel().isDisplayed());
+		Assert.assertTrue(refdp.getActiveChannelsLabel().isDisplayed());
 		System.out.println("By default Active Channels got displayed");
 
 		//Verify that Active CHannels should be displayed with fields: Name, Campus
-		Assert.assertTrue(chp.getNameColumnLabel().isDisplayed());
-		Assert.assertTrue(chp.getCampusColumnLabel().isDisplayed());
+		Assert.assertTrue(refdp.getNameColumnLabel().isDisplayed());
+		Assert.assertTrue(refdp.getCampusColumnLabel().isDisplayed());
 		System.out.println("Active Channels got displayed with fields: Name, Campus");
 
 		//Select and double click on any active Channel record
-		String incchname = chp.selectChannel().getText();
+		String incchname = refdp.selectChannel().getText();
 		System.out.println("Channel: "+incchname);
 		act = new Actions(driver);
-		act.doubleClick(chp.selectChannel()).perform();
+		act.doubleClick(refdp.selectChannel()).perform();
 		
 		//Verify that the Channel page should be read only
-		Assert.assertTrue(chp.verifyDisableField().isDisplayed());
+		Assert.assertTrue(refdp.verifyDisableField().isDisplayed());
 		System.out.println("The Channel page is read only");
 
 		//Verify that Channels page with General, Contact CHannel Profiles and Related tabs should be displayed
-		Assert.assertTrue(chp.getGeneralTabLabel().isDisplayed());
-		Assert.assertTrue(chp.getContactChannelProfileLabel().isDisplayed());
-		Assert.assertTrue(chp.getRelatedTabLabel().isDisplayed());
+		Assert.assertTrue(refdp.getGeneralTabLabel().isDisplayed());
+		Assert.assertTrue(refdp.getContactChannelProfileLabel().isDisplayed());
+		Assert.assertTrue(refdp.getRelatedTabLabel().isDisplayed());
 		System.out.println("Channels page with General, Contact Channel Profiles and Related tabs got displayed");
 
 		//Verify the sections under General: Name, Campus, Owner
-		Assert.assertTrue(chp.getNameTxtFieldLabel().isDisplayed());
-		Assert.assertTrue(chp.getCampusTxtFieldLabel().isDisplayed());
-		Assert.assertTrue(chp.getOwnerTxtFieldLabel().isDisplayed());
+		Assert.assertTrue(refdp.getNameTxtFieldLabel().isDisplayed());
+		Assert.assertTrue(refdp.getCampusTxtFieldLabel().isDisplayed());
+		Assert.assertTrue(refdp.getOwnerTxtFieldLabel().isDisplayed());
 		System.out.println("General Tab: Name, Campus and Owner values got displayed in first section.");
 		
 		//Verify the sections under General: Markets section with below fields: Name, Channel
-		Assert.assertTrue(chp.getMarketFieldLabel().isDisplayed());
-		Assert.assertTrue(chp.getMarketFieldNameLabel().isDisplayed());
-		Assert.assertTrue(chp.getMarketFieldChannelLabel().isDisplayed());
+		Assert.assertTrue(refdp.getMarketFieldLabel().isDisplayed());
+		Assert.assertTrue(refdp.getMarketFieldNameLabel().isDisplayed());
+		Assert.assertTrue(refdp.getMarketFieldChannelLabel().isDisplayed());
 		System.out.println("General Tab: Name and Channel fields got display in Markets section.");
 		
 		//Click on Contact Channel Profile
-		chp.getContactChannelProfileLabel().click();
+		refdp.getContactChannelProfileLabel().click();
 				
 		//Verify sections under Contact Channel Profile: Contact, Channel, Demand Driver Product Category
-		Assert.assertTrue(chp.getContactFieldLabel().isDisplayed());
-		Assert.assertTrue(chp.getChannelFieldLabel().isDisplayed());
-		Assert.assertTrue(chp.getDemardDriverProductCategoryFieldLabel().isDisplayed());
+		Assert.assertTrue(refdp.getContactFieldLabel().isDisplayed());
+		Assert.assertTrue(refdp.getChannelFieldLabel().isDisplayed());
+		Assert.assertTrue(refdp.getDemardDriverProductCategoryFieldLabel().isDisplayed());
 		System.out.println("Contact Channel Profile: Contact, Channel, Demand Driver Product Category fields got display in the section ");
 		
 		//Click on the Related tab
-		chp.getRelatedTabLabel().click();
+		refdp.getRelatedTabLabel().click();
 		Thread.sleep(3000);
 		
 		//Verify sections under Related: Related-Common with below option- Audit History, Contact Channel profiles, Markets
-		Assert.assertTrue(chp.getRelatedCommonLabel().isDisplayed());
-		Assert.assertTrue(chp.getAudioHistoryLabel().isDisplayed());
-		Assert.assertTrue(chp.getContactChannelProfilesLabel().isDisplayed());
-		Assert.assertTrue(chp.getMarketsLabel().isDisplayed());
+		Assert.assertTrue(refdp.getRelatedCommonLabel().isDisplayed());
+		Assert.assertTrue(refdp.getAudioHistoryLabel().isDisplayed());
+		Assert.assertTrue(refdp.getContactChannelProfilesLabel().isDisplayed());
+		Assert.assertTrue(refdp.getMarketsLabel().isDisplayed());
 		System.out.println("Related: Related-Common with below option- Audit History, Contact Channel profiles, Markets fields got display in the section");
 		
 		//Click on Back button and verify active channels page should get displayed
-		chp.getBackButton().click();;
+		refdp.getBackButton().click();;
 		Thread.sleep(5000);
-		Assert.assertTrue(chp.getActiveChannelsLabel().isDisplayed());
+		Assert.assertTrue(refdp.getActiveChannelsLabel().isDisplayed());
 		System.out.println("After click on Back button, Active Channels got displayed");
 		
 		//Click on dropdown and select Inactive Channels
-		chp.sletectActiveChannelDropdown().click();
-		chp.selectInactiveChannelOption().click();
+		refdp.sletectActiveChannelDropdown().click();
+		refdp.selectInactiveChannelOption().click();
 		
 		//Verify No data available message as there is no inactive record present
-		Assert.assertTrue(chp.getNoDataMsg().isDisplayed());
+		Assert.assertTrue(refdp.getNoDataMsg().isDisplayed());
 		System.out.println("No data available message as there is no inactive record present");
    }
 	

@@ -54,7 +54,7 @@ public class CRMDashboardPage {
 	By gridsorting = By.xpath("//div[@data-id = 'grid-cell-container']");//Locator for grid sorting
 	By headeroverflow = By.xpath("//button[@data-id = 'header_overflowButton']");//Locator for arrow button in header
 	By activitydashboard = By.xpath("//li[@title = 'My Activity Dashboard']");//Locator for My Activity Dashborad view
-	By mytaskview = By.xpath("//*[contains (text(),'My Open Tasks Next 7 Days']");//Locator for My open tasks section under My Activities Dashboard 
+	By mytaskview = By.xpath("(//*[contains (text(),'My Open Tasks Next 7 Days')])[position()=1]");//Locator for My open tasks section under My Activities Dashboard 
 	By mytasktitleforchart = By.xpath("//h2[@title = 'My Open Tasks Next 7 Days']");//Locator for My Open task title for chart
 	By taskdesc = By.xpath("//textarea[@aria-label = 'Description']");//Locator for Description field for tasks
 	By taskduedate = By.xpath("//div[@data-id = 'form-header']/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]");//Locator for Due Date for task
@@ -64,9 +64,8 @@ public class CRMDashboardPage {
 	By selecttaskdudate = By.xpath("//button[@aria-label = 'April 24, 2021']");//Locator for due date for task
 	By searchfieldopenttasks = By.xpath("(//input[@aria-label = 'Search this view'])[position()=2]"); //Locator for Search field of My Open Tasks
 	By opentasksstartsearchbtn = By.xpath("(//button[@aria-label = 'Start search'])[position()=2]"); //Locator for Start Search btn of My Open Tasks
-	By validateopentaskinsearchrslts = By.xpath("//div[@data-id='cell-0-4']"); //Locator to validate Open task
+	By validateopentaskinsearchrslts = By.xpath("(//div[@data-id='cell-0-4'])[position()=2]"); //Locator to validate Open task
 	By opentasksnext7dayslabel = By.xpath("//span[contains(text(),'My Open Tasks Next 7 Days')]"); //Locator for My Open Tasks next 7 days label
-	
 	By countalltasklabel = By.xpath("//span[contains(text(),'Count:All (Task)')]"); //Locator for Count All(Task) label
 	
 	//Locators for X-Y axis labels
@@ -100,8 +99,10 @@ public class CRMDashboardPage {
 	By activeincentivedetailsYaxisvalue= By.xpath("//div[@data-id='MscrmControls.Containers.DashboardControl-Component5453290']/div/div[2]/div/div[3]/div[3]/div[2]/*[name()='svg']/*[local-name() = 'g'][8]"); //Locator for Active Incentive Details_Y axis value
 	By incentivedetailsnodataavailablemsg= By.xpath("//div[@data-id='Component1970579_container']/div[3]/div[1]/span[2]"); //Locator for No data available message for Incentive Details Created Last Week
     By incentivedetailsvaluecheck= By.xpath("//div[@data-id='Component1970579_container']"); //Locator to check Incentive Details
-
-	
+    By phonecallsbyownernodataavailablemsg= By.xpath("//div[@data-id='Component2669287_container']/div[3]/div[1]/span[2]"); //Locator for No data available message for Phone Calls by Owner Last Week
+    By phonecallsbyownercheck= By.xpath("//div[@data-id='Component2669287_container']"); //Locator to check Phone Calls by Owner
+	By subjectlist= By.xpath("//div[starts-with(@data-id, 'cell-') and contains(@data-id, '-4') and (@aria-colindex=4) ]"); //Locator for list of Subjects from Dashboard
+    
 	public CRMDashboardPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -477,7 +478,16 @@ public class CRMDashboardPage {
 	public WebElement getIncentiveDetailsValueCheck() {
 		return driver.findElement(incentivedetailsvaluecheck);	
 	}
-	
+	public WebElement getPhoneCallsByOwnerNoDataAvailableMsg() {
+		return driver.findElement(phonecallsbyownernodataavailablemsg);
+	}
+	public WebElement getPhoneCallsByOwnerCheck() {
+		return driver.findElement(phonecallsbyownercheck);	
+	}
+	public List<WebElement> getSubjectList()
+	{
+		return driver.findElements(subjectlist);
+	}
 	
 	
 	

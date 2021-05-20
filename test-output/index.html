@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,7 +90,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">5 methods, 2 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ActivitiesPageTest" hash-for-method="TS002_VerifyCreateAppointmentTest">TS002_VerifyCreateAppointmentTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ActivitiesPageTest" hash-for-method="TS005_VerifyCreateEmailTest">TS005_VerifyCreateEmailTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,19 +120,32 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
+<<<<<<< HEAD
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ActivitiesPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
+=======
 
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.IncentivesPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
 
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.DashboardPageTest" hash-for-method="TS001_VerifyHomePageTest">TS001_VerifyHomePageTest</a> <!-- method navigator-link -->
 
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
+<<<<<<< HEAD
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ActivitiesPageTest" hash-for-method="TS003_VerifyCreateTaskTest">TS003_VerifyCreateTaskTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.ActivitiesPageTest" hash-for-method="TS004_VerifyCreatePhoneCallTest">TS004_VerifyCreatePhoneCallTest</a> <!-- method navigator-link -->
+=======
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.IncentivesPageTest" hash-for-method="TS009_VerifyUpdateiIncentiveFromContactTest">TS009_VerifyUpdateiIncentiveFromContactTest</a> <!-- method navigator-link -->
 
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="crmframework.crmAutomation.DashboardPageTest" hash-for-method="TS002_VerifyRetailRelationManagerDashboardView">TS002_VerifyRetailRelationManagerDashboardView</a> <!-- method navigator-link -->
 
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -128,13 +160,163 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">crmframework.crmAutomation.ActivitiesPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS002_VerifyCreateAppointmentTest">
+                  </a> <!-- TS002_VerifyCreateAppointmentTest -->
+                  <span class="method-name">TS002_VerifyCreateAppointmentTest</span>
+                  <div class="stack-trace"><b>"org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[contains(text(),&apos;My Activities&apos;)] (tried for 20 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMActivitiesPage.getMyActivitiesLabel(CRMActivitiesPage.java:60)
+	at crmframework.crmAutomation.ActivitiesPageTest.TS002_VerifyCreateAppointmentTest(ActivitiesPageTest.java:126)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //span[contains(text(),&apos;My Activities&apos;)]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;AIDTYAUN-W10&apos;, ip: &apos;172.27.182.51&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+... Removed 24 stack frames<br/> org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[contains(text(),&apos;My Activities&apos;)] (tried for 20 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMActivitiesPage.getMyActivitiesLabel(CRMActivitiesPage.java:60)
+	at crmframework.crmAutomation.ActivitiesPageTest.TS002_VerifyCreateAppointmentTest(ActivitiesPageTest.java:126)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //span[contains(text(),&apos;My Activities&apos;)]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;AIDTYAUN-W10&apos;, ip: &apos;172.27.182.51&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
+"</b><br>org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)<br>org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)<br>pageObjects.CRMActivitiesPage.getMyActivitiesLabel(CRMActivitiesPage.java:60)<br>crmframework.crmAutomation.ActivitiesPageTest.TS002_VerifyCreateAppointmentTest(ActivitiesPageTest.java:126)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS005_VerifyCreateEmailTest">
+                  </a> <!-- TS005_VerifyCreateEmailTest -->
+                  <span class="method-name">TS005_VerifyCreateEmailTest</span>
+                  <div class="stack-trace"><b>"org.openqa.selenium.WebDriverException: element click intercepted: Element &lt;input id=&quot;id-0d1e47ff-12b2-4f53-9090-bee951b98cb4-5-subject6-subject.fieldControl-text-box-text&quot; aria-label=&quot;Subject&quot; data-id=&quot;subject.fieldControl-text-box-text&quot; placeholder=&quot;&quot; maxlength=&quot;800&quot; autocomplete=&quot;off&quot; type=&quot;text&quot; class=&quot;pa-x pa-bv pa-ms pa-ar pa-da pa-dr pa-dq pa-pf pa-qa pa-qb pa-nq pa-py pa-ak pa-al pa-in pa-hi pa-sd pa-se pa-sf pa-sg pa-sh pa-si pa-sj pa-sk pa-sl pa-sm pa-sn pa-so pa-sp pa-sq pa-sr pa-ss pa-st pa-by pa-su pa-mx &quot; value=&quot;---&quot;&gt; is not clickable at point (861, 435). Other element would receive the click: &lt;section id=&quot;{DEEF1C18-D892-4A01-B737-B40B8A4675D9}&quot; role=&quot;presentation&quot; class=&quot;pa-as pa-go pa-dz pa-acs pa-pq &quot;&gt;...&lt;/section&gt;
+  (Session info: chrome=90.0.4430.212)
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;AIDTYAUN-W10&apos;, ip: &apos;172.27.182.51&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\adityaun\AppData\Local\Temp\scoped_dir9760_1698338012}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:54758}, acceptInsecureCerts=false, browserVersion=90.0.4430.212, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: fa4d4ec250961d4824232cc0d8d86ab5
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
+	at crmframework.crmAutomation.ActivitiesPageTest.TS005_VerifyCreateEmailTest(ActivitiesPageTest.java:330)
+... Removed 28 stack frames<br/> org.openqa.selenium.WebDriverException: element click intercepted: Element &lt;input id=&quot;id-0d1e47ff-12b2-4f53-9090-bee951b98cb4-5-subject6-subject.fieldControl-text-box-text&quot; aria-label=&quot;Subject&quot; data-id=&quot;subject.fieldControl-text-box-text&quot; placeholder=&quot;&quot; maxlength=&quot;800&quot; autocomplete=&quot;off&quot; type=&quot;text&quot; class=&quot;pa-x pa-bv pa-ms pa-ar pa-da pa-dr pa-dq pa-pf pa-qa pa-qb pa-nq pa-py pa-ak pa-al pa-in pa-hi pa-sd pa-se pa-sf pa-sg pa-sh pa-si pa-sj pa-sk pa-sl pa-sm pa-sn pa-so pa-sp pa-sq pa-sr pa-ss pa-st pa-by pa-su pa-mx &quot; value=&quot;---&quot;&gt; is not clickable at point (861, 435). Other element would receive the click: &lt;section id=&quot;{DEEF1C18-D892-4A01-B737-B40B8A4675D9}&quot; role=&quot;presentation&quot; class=&quot;pa-as pa-go pa-dz pa-acs pa-pq &quot;&gt;...&lt;/section&gt;
+  (Session info: chrome=90.0.4430.212)
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;AIDTYAUN-W10&apos;, ip: &apos;172.27.182.51&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\adityaun\AppData\Local\Temp\scoped_dir9760_1698338012}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:54758}, acceptInsecureCerts=false, browserVersion=90.0.4430.212, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: fa4d4ec250961d4824232cc0d8d86ab5
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
+	at crmframework.crmAutomation.ActivitiesPageTest.TS005_VerifyCreateEmailTest(ActivitiesPageTest.java:330)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+"</b><br>sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br>sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)<br>sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)<br>java.lang.reflect.Constructor.newInstance(Unknown Source)<br>org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)<br>org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)<br>org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)<br>org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)<br>org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)<br>org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)<br>org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)<br>org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)<br>crmframework.crmAutomation.ActivitiesPageTest.TS005_VerifyCreateEmailTest(ActivitiesPageTest.java:330)<br>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br>sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br>java.lang.reflect.Method.invoke(Unknown Source)<br>org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br>org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br>org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br>org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br>org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br>org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br>org.testng.TestRunner.privateRun(TestRunner.java:767)<br>org.testng.TestRunner.run(TestRunner.java:617)<br>org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br>org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br>org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br>org.testng.SuiteRunner.run(SuiteRunner.java:240)<br>org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br>org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br>org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br>org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br>org.testng.TestNG.run(TestNG.java:1031)<br>org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)<br>org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)<br>org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)<br>
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
+<<<<<<< HEAD
+              <span class="class-name">crmframework.crmAutomation.ActivitiesPageTest</span>
+=======
               <span class="class-name">crmframework.crmAutomation.IncentivesPageTest</span>
 
               <span class="class-name">crmframework.crmAutomation.DashboardPageTest</span>
 
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -146,6 +328,18 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+<<<<<<< HEAD
+                  <a name="TS003_VerifyCreateTaskTest">
+                  </a> <!-- TS003_VerifyCreateTaskTest -->
+                  <span class="method-name">TS003_VerifyCreateTaskTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TS004_VerifyCreatePhoneCallTest">
+                  </a> <!-- TS004_VerifyCreatePhoneCallTest -->
+                  <span class="method-name">TS004_VerifyCreatePhoneCallTest</span>
+=======
                   <a name="TS009_VerifyUpdateiIncentiveFromContactTest">
                   </a> <!-- TS009_VerifyUpdateiIncentiveFromContactTest -->
                   <span class="method-name">TS009_VerifyUpdateiIncentiveFromContactTest</span>
@@ -153,6 +347,7 @@
                   </a> <!-- TS002_VerifyRetailRelationManagerDashboardView -->
                   <span class="method-name">TS002_VerifyRetailRelationManagerDashboardView</span>
 
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -169,6 +364,9 @@
 &lt;suite name=&quot;Suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
+<<<<<<< HEAD
+      &lt;class name=&quot;crmframework.crmAutomation.ActivitiesPageTest&quot;/&gt;
+=======
       &lt;class name=&quot;crmframework.crmAutomation.IncentivesPageTest&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;TS001_VerifyHomePageTest&quot;/&gt;
@@ -183,6 +381,7 @@
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- crmframework.crmAutomation.DashboardPageTest --&gt;
 
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -222,7 +421,7 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(5);
 data.setCell(0, 0, 0)
 
 data.setCell(0, 1, 'TS009_VerifyUpdateiIncentiveFromContactTest')
@@ -233,21 +432,43 @@ data.setCell(1, 1, 'TS001_VerifyHomePageTest')
 data.setCell(1, 2, 'crmframework.crmAutomation.IncentivesPageTest')
 data.setCell(1, 3, 123751);
 data.setCell(0, 1, 'TS001_VerifyHomePageTest')
-data.setCell(0, 2, 'crmframework.crmAutomation.DashboardPageTest')
-data.setCell(0, 3, 152941);
+data.setCell(0, 2, 'crmframework.crmAutomation.ActivitiesPageTest')
+data.setCell(0, 3, 125564);
 data.setCell(1, 0, 1)
+<<<<<<< HEAD
+data.setCell(1, 1, 'TS003_VerifyCreateTaskTest')
+data.setCell(1, 2, 'crmframework.crmAutomation.ActivitiesPageTest')
+data.setCell(1, 3, 81944);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'TS004_VerifyCreatePhoneCallTest')
+data.setCell(2, 2, 'crmframework.crmAutomation.ActivitiesPageTest')
+data.setCell(2, 3, 67009);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'TS002_VerifyCreateAppointmentTest')
+data.setCell(3, 2, 'crmframework.crmAutomation.ActivitiesPageTest')
+data.setCell(3, 3, 37581);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'TS005_VerifyCreateEmailTest')
+data.setCell(4, 2, 'crmframework.crmAutomation.ActivitiesPageTest')
+data.setCell(4, 3, 10194);
+=======
 data.setCell(1, 1, 'TS002_VerifyRetailRelationManagerDashboardView')
 data.setCell(1, 2, 'crmframework.crmAutomation.DashboardPageTest')
 data.setCell(1, 3, 36173);
 
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
+<<<<<<< HEAD
+              <span class="suite-total-time">Total running time: 5 minutes</span>
+=======
               <span class="suite-total-time">Total running time: 7 minutes</span>
 
               <span class="suite-total-time">Total running time: 3 minutes</span>
 
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -262,6 +483,11 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+=======
             <span class="header-content">7 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
@@ -296,6 +522,7 @@ return data;
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -304,15 +531,42 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+<<<<<<< HEAD
+              <div class="chronological-class-name">crmframework.crmAutomation.ActivitiesPageTest</div> <!-- chronological-class-name -->
+=======
 
               <div class="chronological-class-name">crmframework.crmAutomation.IncentivesPageTest</div> <!-- chronological-class-name -->
               <div class="chronological-class-name">crmframework.crmAutomation.DashboardPageTest</div> <!-- chronological-class-name -->
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
               <div class="configuration-test before">
                 <span class="method-name">initialize</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">TS001_VerifyHomePageTest</span>
+<<<<<<< HEAD
+                <span class="method-start">12133 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TS002_VerifyCreateAppointmentTest</span>
+                <span class="method-start">137790 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS003_VerifyCreateTaskTest</span>
+                <span class="method-start">176418 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TS004_VerifyCreatePhoneCallTest</span>
+                <span class="method-start">258365 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TS005_VerifyCreateEmailTest</span>
+                <span class="method-start">325376 ms</span>
+=======
 
                 <span class="method-start">9105 ms</span>
               </div> <!-- test-method -->
@@ -326,6 +580,7 @@ return data;
                 <span class="method-name">TS002_VerifyRetailRelationManagerDashboardView</span>
                 <span class="method-start">158927 ms</span>
 
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
