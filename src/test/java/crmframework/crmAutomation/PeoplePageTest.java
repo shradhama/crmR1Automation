@@ -82,7 +82,7 @@ public class PeoplePageTest extends base {
 		lp.getdontshowcheckbox().click();
 		lp.getsigninYes().click();
 		//to wait on Published App Landing page
-		Thread.sleep(15000);
+		Thread.sleep(30000);
 		driver.switchTo().frame("AppLandingPage");
 		alp = new AppLandingPage(driver);
 		//select Demand Driver application on Landing Page
@@ -108,7 +108,8 @@ public class PeoplePageTest extends base {
 
 		//Click on Contacts Tab at left menu
 		hp.getContactsTab().click();
-
+		Thread.sleep(30000);
+		
 		//Click on New button in header to open new contact form
 		cp.getCreateNewContactBtn().click();
 
@@ -166,13 +167,16 @@ public class PeoplePageTest extends base {
 		//Enter country
 		cp.getCountrytxbx().click();
 		cp.getCountrydrpbtn().click();
+		Thread.sleep(2000);
 		cp.getCountryName().click();
-
+		Thread.sleep(3000);
+		
 		//Click on Save button in header
 		cp.getsavecontact().click();
-		//cp.getContactFormRefreshBtn().click();
-		Thread.sleep(10000);
-		driver.navigate().refresh();
+		Thread.sleep(15000);
+		pl.getcontactrefresh().click();
+		//Thread.sleep(10000);
+		//driver.navigate().refresh();
 		Thread.sleep(5000);
 
 		//Save the contact name in string variable
@@ -190,6 +194,7 @@ public class PeoplePageTest extends base {
 		String perosnname = pl.getPersonNameInHeader().getText();
 		System.out.println("Person name in header:" +perosnname);
 		Assert.assertTrue(perosnname.contains(contactnameinheader));
+		System.out.println("Contact Name is displayed as Person.");
 
 		//Click on Person hyperlink
 		pl.getPersonNameInHeader().click();
@@ -219,6 +224,7 @@ public class PeoplePageTest extends base {
 
 		//Click on People Tab at left menu and search people containing Cyb
 		hp.getPeopleTab().click();
+		Thread.sleep(5000);
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
 		ap.getclicksearchbutton().click();
 
@@ -243,8 +249,9 @@ public class PeoplePageTest extends base {
 		String parentId = it.next();
 		String childId = it.next();
 		driver.switchTo().window(childId);
-		Thread.sleep(30000);
-
+		Thread.sleep(15000);
+		driver.navigate().refresh();
+		
 		//Verify export to excel online
 		//pl.getclickonlineexcel().click();
 		//Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
@@ -301,6 +308,7 @@ public class PeoplePageTest extends base {
 		pl.getselectdynamicexportoptionschk1().click();
 		pl.getselectdynamicexportoptionschk2().click();
 		ap.getexportworksheetpopup().click();
+		Thread.sleep(5000);
 	}
 
 	@Test(priority=4)
@@ -319,13 +327,14 @@ public class PeoplePageTest extends base {
 
 		//Click on People Tab at left menu
 		hp.getPeopleTab().click();
-
+		Thread.sleep(5000);
 		//Select and open any Active person record
 		pl.getALetterFilterLink().click();
 		String expectedperosnname = pl.selectPersonName().getText();
 		System.out.println("Expeted Person name: "+expectedperosnname);
 		pl.selectPersonName().click();
-
+		Thread.sleep(5000);
+		
 		//Verify Contacts Sub section with grid columns on Person form
 		Assert.assertTrue(pl.getContactsSectionLabelOnPersonForm().isDisplayed());
 		Assert.assertTrue(pl.getFullNameColmnTextInContactsSectn().isDisplayed());
@@ -372,7 +381,7 @@ public class PeoplePageTest extends base {
 		String contactnameinheader = cp.getContactNameinHeader().getText();
 		System.out.println("Contact Name: "+contactnameinheader);
 		//Click on Save & Close button in header
-		cp.getContactSavenCloseBtn().click();
+		ap.getAccSaveCloseBtn().click();
 
 		//Scroll to Contacts section
 		utl.scrollToElement(pl.getContactsSectionLabelOnPersonForm());		
@@ -381,8 +390,9 @@ public class PeoplePageTest extends base {
 		Thread.sleep(3000);
 
 		//Verify that newly created contact should be displayed in Contacts section on person record
-		Assert.assertTrue(pl.getContactFullNameInContactsSection().getText().contains(contactnameinheader));
-
+		Assert.assertTrue(ap.getContactsSectionContactName().getText().contains(contactnameinheader));
+		System.out.println("Contact is displayed in the grid successfully.");
+		
 		//Select and open a contact available in contacts grid section
 		pl.getContactFullNameInContactsSection().click();
 		Thread.sleep(5000);
@@ -413,6 +423,7 @@ public class PeoplePageTest extends base {
 
 		//Click on People Tab at left menu and search people containing Cyb
 		hp.getPeopleTab().click();
+		Thread.sleep(5000);
 		
 		//Click funnel for Full Name column
 		pl.getfullname().click();
@@ -420,20 +431,20 @@ public class PeoplePageTest extends base {
 
 		//Select filter options
 		ap.getclickoperatordd().click();
-		ap.getselectoperatorone().click();
-		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("peoplename"));
+		cp.selectbBeginsWithOptr().click();
+		ap.getclickaddressvaluefield().sendKeys(prop.getProperty("name"));
 		ap.getclickapplybutton().click();
 		Thread.sleep(5000);
 			
 		//Verify Full Name value selected on accounts grid
-		WebElement accnamevaluesongrid = null;
-		for (int i=0;i<2;i++)
+		WebElement fullnamevaluesongrid = null;
+		for (int i=0;i<7;i++)
 		{
-			accnamevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
-			Assert.assertTrue(accnamevaluesongrid.getText().contains(prop.getProperty("peoplename")));
+			fullnamevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-2']"));
+			Assert.assertTrue(fullnamevaluesongrid.getText().toLowerCase().contains(prop.getProperty("name")));
 		}
 		System.out.println("Full Name matches expected criteria");
-
+		
 		//Clear Filter for Full Name
 		pl.getfullname().click();
 		ap.getclearfiltergrid().click();

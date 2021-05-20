@@ -2,7 +2,30 @@
 <testng-results skipped="0" failed="2" total="5" passed="3">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Suite" duration-ms="335582" started-at="2021-05-19T13:51:22Z" finished-at="2021-05-19T13:56:57Z">
+=======
+  <suite name="Suite" duration-ms="442423" started-at="2021-05-19T06:43:30Z" finished-at="2021-05-19T06:50:52Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="442423" started-at="2021-05-19T06:43:30Z" finished-at="2021-05-19T06:50:52Z">
+      <class name="crmframework.crmAutomation.IncentivesPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="initialize" is-config="true" duration-ms="9088" started-at="2021-05-19T12:13:30Z" finished-at="2021-05-19T12:13:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="TS001_VerifyHomePageTest" duration-ms="123751" started-at="2021-05-19T12:13:39Z" finished-at="2021-05-19T12:15:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS001_VerifyHomePageTest -->
+        <test-method status="PASS" signature="TS009_VerifyUpdateiIncentiveFromContactTest()[pri:0, instance:crmframework.crmAutomation.IncentivesPageTest@523884b2]" name="TS009_VerifyUpdateiIncentiveFromContactTest" duration-ms="309534" started-at="2021-05-19T12:15:43Z" finished-at="2021-05-19T12:20:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS009_VerifyUpdateiIncentiveFromContactTest -->
+      </class> <!-- crmframework.crmAutomation.IncentivesPageTest -->
+
+  <suite name="Suite" duration-ms="195104" started-at="2021-05-13T09:15:27Z" finished-at="2021-05-13T09:18:42Z">
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
     <groups>
     </groups>
     <test name="Test" duration-ms="335582" started-at="2021-05-19T13:51:22Z" finished-at="2021-05-19T13:56:57Z">
@@ -68,6 +91,7 @@ Driver info: driver.version: unknown
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- TS002_VerifyCreateAppointmentTest -->
         <test-method status="PASS" signature="TS003_VerifyCreateTaskTest()[pri:0, instance:crmframework.crmAutomation.ActivitiesPageTest@224edc67]" name="TS003_VerifyCreateTaskTest" duration-ms="81944" started-at="2021-05-19T19:24:18Z" finished-at="2021-05-19T19:25:40Z">
           <reporter-output>
@@ -140,6 +164,11 @@ Session ID: fa4d4ec250961d4824232cc0d8d86ab5
           </reporter-output>
         </test-method> <!-- TS005_VerifyCreateEmailTest -->
       </class> <!-- crmframework.crmAutomation.ActivitiesPageTest -->
+=======
+        </test-method> <!-- TS002_VerifyRetailRelationManagerDashboardView -->
+      </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
+r
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

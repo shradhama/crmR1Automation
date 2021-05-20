@@ -51,7 +51,7 @@ public class CRMLoginPage {
 	
 	public WebElement getdontshowcheckbox() {
 		//web element for the to click on dont show this message again checkbox
-		wait = new WebDriverWait (driver,10);
+		wait = new WebDriverWait (driver,30);
 		wait.until(ExpectedConditions.elementToBeClickable(dontshowcheckbox));
 		return driver.findElement(dontshowcheckbox);
 	}

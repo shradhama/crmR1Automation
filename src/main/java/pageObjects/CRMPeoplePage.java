@@ -35,7 +35,9 @@ public class CRMPeoplePage {
 	By newcontactbtnincontactssectn = By.xpath("//button[@aria-label='New Contact']"); //Locator for 'New Contact'button in Contacts section on Person form
 	By fullnamesortztoafilter = By.xpath("//span[contains(text(),'Sort Z to A')]"); //Locator for Z to A filter option of Full name
 	By selectaccountnamedd = By.xpath("//ul[@data-id = 'parentcustomerid.fieldControl-LookupResultsDropdown_parentcustomerid_tab']/li");//Lookup for Account drop down at Contact form
-	
+	By contactrefresh = By.xpath("//li[@title = 'Refresh']");//Locator for refresh button at Contact form
+	By allcontactsgrid = By.xpath("//div[@aria-label = 'All Contacts']");//Locator for contacts grid in person record
+			
 	public CRMPeoplePage(WebDriver driver) {
 
 		this.driver = driver;
@@ -149,5 +151,8 @@ public class CRMPeoplePage {
 		Thread.sleep(10000);
 		return driver.findElement(selectaccountnamedd);
 	}
+	public WebElement getcontactrefresh()
+	{
+		return driver.findElement(contactrefresh);
+	}
 }
-

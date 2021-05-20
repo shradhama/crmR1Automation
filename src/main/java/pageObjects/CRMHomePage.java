@@ -28,8 +28,8 @@ public class CRMHomePage {
 	By searchresultcontactemail = By.xpath("//div[@data-id = 'cell-0-5']");
 	By peopletab = By.xpath("//span[contains(text(),'People')]");//Locator to open People tab
 	By incentivestab = By.xpath("//span[contains(text(),'Incentives')]");//Locator to open Incentives tab
-	By inactiveincentivestitle = By.xpath("//h1[@aria-label='Inactive Incentives']"); //Locator for Inactive Incentives title
-	By activeincentivestitle = By.xpath("//h1[@aria-label='Active Incentives']"); //Locator for Active Incentives title
+	By inactiveincentivestitle = By.xpath("//span[contains(text(),'Inactive Incentives')]"); //Locator for Inactive Incentives title
+	By activeincentivestitle = By.xpath("//span[contains(text(),'Active Incentives')]"); //Locator for Active Incentives title
 	By incentivedetailstab = By.xpath("//span[contains(text(),'Incentive Details')]");//Locator for incentive details
 	By liststab= By.xpath("//span[contains(text(),'Lists')]"); //Locator for Lists tab
 	By incentivecategoriestab = By.xpath("//span[contains(text(),'Incentive Categories')]");//Locator to open Incentive Categories tab

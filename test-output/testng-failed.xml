@@ -3,13 +3,30 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="crmframework.crmAutomation.ActivitiesPageTest">
+=======
+      <class name="crmframework.crmAutomation.IncentivesPageTest">
+        <methods>
+          <include name="initialize"/>
+          <include name="TS001_VerifyHomePageTest"/>
+          <include name="TS009_VerifyUpdateiIncentiveFromContactTest"/>
+        </methods>
+      </class> <!-- crmframework.crmAutomation.IncentivesPageTest -->
+
+      <class name="crmframework.crmAutomation.DashboardPageTest">
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
         <methods>
           <include name="TS005_VerifyCreateEmailTest"/>
           <include name="TS002_VerifyCreateAppointmentTest"/>
           <include name="initialize"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- crmframework.crmAutomation.ActivitiesPageTest -->
+=======
+      </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
+
+>>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
