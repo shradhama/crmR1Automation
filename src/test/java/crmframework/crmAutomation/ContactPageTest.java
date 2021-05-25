@@ -56,14 +56,15 @@ public class ContactPageTest extends base{
 	CRMPeoplePage pl;
 	
 	@BeforeTest
-	public void initialize() throws IOException
+	public void initialize() throws IOException, InterruptedException
 	{
-		driver = initializeDriver();
+		//driver = initializeDriver(); //requires for Parallel text execution
 		genData=new GenerateData();
 		utl = new Utility(driver);
+		//utl.verifyLoginFunctionality(); //requires for Parallel text execution
 	}
 
-	@Test(priority=1)
+	/*@Test(priority=1)
 	public void TS001_VerifyHomePageTest() throws IOException, InterruptedException {
 
 		//The purpose of this test case to verify:-
@@ -94,7 +95,7 @@ public class ContactPageTest extends base{
 		hp = new CRMHomePage(driver);
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
-	}
+	}*/
 
 	@Test(priority=2)
 	public void TS002_VerifyCreateNewContactTest() throws InterruptedException

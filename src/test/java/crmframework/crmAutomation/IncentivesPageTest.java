@@ -27,6 +27,7 @@ import pageObjects.CRMLandingPage;
 import pageObjects.CRMLoginPage;
 import pageObjects.CRMPeoplePage;
 import resources.GenerateData;
+import resources.Utility;
 import resources.base;
 
 @Listeners({TestListeners.class})
@@ -50,16 +51,18 @@ public class IncentivesPageTest extends base {
 	CRMContactPage cp;
 	CRMPeoplePage pl;
 	CRMIncentivesPage in;
-
+	Utility utl;
 
 	@BeforeTest
 	public void initialize() throws IOException
 	{
-		driver = initializeDriver();
+		//driver = initializeDriver(); //requires for Parallel text execution
 		genData=new GenerateData();
+		utl=new Utility(driver);
+		//utl.verifyLoginFunctionality(); //requires for Parallel text execution
 	}
 
-	@Test(priority=1)
+	/*@Test(priority=1)
 	public void TS001_VerifyHomePageTest() throws IOException, InterruptedException {
 
 		//The purpose of this test case to verify:-
@@ -91,7 +94,7 @@ public class IncentivesPageTest extends base {
 		hp = new CRMHomePage(driver);
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
-	}
+	}*/
 
 	@Test(priority=2)
 	public void TS002_VerifyCreateIncentiveFromAccountTest() throws InterruptedException 

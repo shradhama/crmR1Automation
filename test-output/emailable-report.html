@@ -31,94 +31,78 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<<<<<<< HEAD
-<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">3</td><td class="numi">3</td><td class="numi">0</td><td class="numi_attn">2</td><td class="numi">335.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
-=======
-
-<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">2</td><td class="numi">2</td><td class="numi">0</td><td class="numi">0</td><td class="numi">442.4 seconds</td><td class="numi"></td><td class="numi"></td></tr>
-
-<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">2</td><td class="numi">2</td><td class="numi">0</td><td class="numi">0</td><td class="numi">195.1 seconds</td><td class="numi"></td><td class="numi"></td></tr>
-
->>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
+<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">28</td><td class="numi">0</td><td class="numi">9.1 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr><th colspan="4">Test &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="2">crmframework.crmAutomation.ActivitiesPageTest</td><td><a href="#m1"><b>TS002_VerifyCreateAppointmentTest</b>  </a></td><td class="numi">1</td><td>1621432420157</td><td class="numi">37581</td></tr><tr class="failedodd"><td><a href="#m2"><b>TS005_VerifyCreateEmailTest</b>  </a></td><td class="numi">1</td><td>1621432607743</td><td class="numi">10194</td></tr>
-<tr><th colspan="4">Test &#8212; passed</th></tr>
-<<<<<<< HEAD
-<tr class="passedodd"><td rowspan="3">crmframework.crmAutomation.ActivitiesPageTest</td><td><a href="#m3"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1621432294500</td><td class="numi">125564</td></tr><tr class="passedodd"><td><a href="#m4"><b>TS003_VerifyCreateTaskTest</b>  </a></td><td class="numi">1</td><td>1621432458785</td><td class="numi">81944</td></tr><tr class="passedodd"><td><a href="#m5"><b>TS004_VerifyCreatePhoneCallTest</b>  </a></td><td class="numi">1</td><td>1621432540732</td><td class="numi">67009</td></tr>
-=======
-<tr class="passedodd"><td rowspan="2">crmframework.crmAutomation.IncentivesPageTest</td><td><a href="#m1"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1621406619254</td><td class="numi">123751</td></tr><tr class="passedodd"><td><a href="#m2"><b>TS009_VerifyUpdateiIncentiveFromContactTest</b>  </a></td><td class="numi">1</td><td>1621406743025</td><td class="numi">309534</td></tr>
+<tr><th colspan="4">Test &#8212; failed (configuration methods)</th></tr>
+<tr class="failedodd"><td rowspan="1">crmframework.crmAutomation.AccountPageTest</td><td><a href="#m1"><b>initialize</b>  </a></td><td class="numi">1</td><td>1621944045462</td><td class="numi">0</td></tr>
+<tr><th colspan="4">Test &#8212; skipped</th></tr>
+<tr class="skippedodd"><td rowspan="28">crmframework.crmAutomation.AccountPageTest</td><td><a href="#m2"><b>TS002_VerifyCreateNewAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054233</td><td class="numi">16</td></tr><tr class="skippedodd"><td><a href="#m3"><b>TS003_VerifyAddAppointmentToAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054253</td><td class="numi">9</td></tr><tr class="skippedodd"><td><a href="#m4"><b>TS004_VerifyAddMarketingRelationshipOwnerToAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054271</td><td class="numi">3</td></tr><tr class="skippedodd"><td><a href="#m5"><b>TS005_VerifySearchAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054277</td><td class="numi">4</td></tr><tr class="skippedodd"><td><a href="#m6"><b>TS006_VerifyAuditHistoryTabOnAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054287</td><td class="numi">4</td></tr><tr class="skippedodd"><td><a href="#m7"><b>TS007_VerifyParentAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054296</td><td class="numi">3</td></tr><tr class="skippedodd"><td><a href="#m8"><b>TS008_VerifyAccountStatusToActivateAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054302</td><td class="numi">4</td></tr><tr class="skippedodd"><td><a href="#m9"><b>TS009_VerifyAccountStatusToDeactivateAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054309</td><td class="numi">3</td></tr><tr class="skippedodd"><td><a href="#m10"><b>TS010_VerifyBusinessRuleForPhoneNumberTest</b>  </a></td><td class="numi">1</td><td>1621944054315</td><td class="numi">10</td></tr><tr class="skippedodd"><td><a href="#m11"><b>TS011_VerifyAddNoteToAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054327</td><td class="numi">6</td></tr><tr class="skippedodd"><td><a href="#m12"><b>TS012_VerifyAddNewPostToAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054335</td><td class="numi">3</td></tr><tr class="skippedodd"><td><a href="#m13"><b>TS013_VerifyPhoneCallOnAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054346</td><td class="numi">3</td></tr><tr class="skippedodd"><td><a href="#m14"><b>TS014_VerifyStateAndRegionInGridTest</b>  </a></td><td class="numi">1</td><td>1621944054355</td><td class="numi">3</td></tr><tr class="skippedodd"><td><a href="#m15"><b>TS015_VerifyNamePhoneCityInGridTest</b>  </a></td><td class="numi">1</td><td>1621944054364</td><td class="numi">4</td></tr><tr class="skippedodd"><td><a href="#m16"><b>TS016_VerifySearchusingAccountNameandPhoneTest</b>  </a></td><td class="numi">1</td><td>1621944054376</td><td class="numi">3</td></tr><tr class="skippedodd"><td><a href="#m17"><b>TS027_VerifyAddNewTaskFromTimelineToAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054381</td><td class="numi">5</td></tr><tr class="skippedodd"><td><a href="#m18"><b>TS028_VerifyCountryAutocomplete</b>  </a></td><td class="numi">1</td><td>1621944054388</td><td class="numi">2</td></tr><tr class="skippedodd"><td><a href="#m19"><b>TS019_VerifyUpdateAccountInformation</b>  </a></td><td class="numi">1</td><td>1621944054422</td><td class="numi">1</td></tr><tr class="skippedodd"><td><a href="#m20"><b>TS020_VerifyAddContactTest</b>  </a></td><td class="numi">1</td><td>1621944054426</td><td class="numi">1</td></tr><tr class="skippedodd"><td><a href="#m21"><b>TS021_VerifyUpdateContactsFromAccountFormTest</b>  </a></td><td class="numi">1</td><td>1621944054429</td><td class="numi">5</td></tr><tr class="skippedodd"><td><a href="#m22"><b>TS022_VerifyMediaSegmentationFieldTest</b>  </a></td><td class="numi">1</td><td>1621944054445</td><td class="numi">3</td></tr><tr class="skippedodd"><td><a href="#m23"><b>TS023_VerifyDetailsTabOnAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054453</td><td class="numi">4</td></tr><tr class="skippedodd"><td><a href="#m24"><b>TS024_VerifyExportToExcelTest</b>  </a></td><td class="numi">1</td><td>1621944054464</td><td class="numi">2</td></tr><tr class="skippedodd"><td><a href="#m25"><b>TS025_VerifyBusinessRuleForAddressTest</b>  </a></td><td class="numi">1</td><td>1621944054473</td><td class="numi">3</td></tr><tr class="skippedodd"><td><a href="#m26"><b>TS026_VerifyAssociatedListsSectionTest</b>  </a></td><td class="numi">1</td><td>1621944054484</td><td class="numi">3</td></tr><tr class="skippedodd"><td><a href="#m27"><b>TS017_VerifyDuplicateAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054489</td><td class="numi">7</td></tr><tr class="skippedodd"><td><a href="#m28"><b>TS018_VerifyDeactivateAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054502</td><td class="numi">3</td></tr><tr class="skippedodd"><td><a href="#m29"><b>TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest</b>  </a></td><td class="numi">1</td><td>1621944054528</td><td class="numi">2</td></tr>
 </table>
 <h1>Test</h1>
-<h2 id="m1">crmframework.crmAutomation.IncentivesPageTest:TS001_VerifyHomePageTest</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">crmframework.crmAutomation.IncentivesPageTest:TS009_VerifyUpdateiIncentiveFromContactTest</h2>
-
-<tr class="passedodd"><td rowspan="2">crmframework.crmAutomation.DashboardPageTest</td><td><a href="#m1"><b>TS001_VerifyHomePageTest</b>  </a></td><td class="numi">1</td><td>1620897333211</td><td class="numi">152941</td></tr><tr class="passedodd"><td><a href="#m2"><b>TS002_VerifyRetailRelationManagerDashboardView</b>  </a></td><td class="numi">1</td><td>1620897486169</td><td class="numi">36173</td></tr>
->>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
-</table>
-<h1>Test</h1>
-<h2 id="m1">crmframework.crmAutomation.ActivitiesPageTest:TS005_VerifyCreateEmailTest</h2>
+<h2 id="m1">crmframework.crmAutomation.AccountPageTest:initialize</h2>
 <div style="padding-left:3em">
-<p>element click intercepted: Element &lt;input id=&quot;id-0d1e47ff-12b2-4f53-9090-bee951b98cb4-5-subject6-subject.fieldControl-text-box-text&quot; aria-label=&quot;Subject&quot; data-id=&quot;subject.fieldControl-text-box-text&quot; placeholder=&quot;&quot; maxlength=&quot;800&quot; autocomplete=&quot;off&quot; type=&quot;text&quot; class=&quot;pa-x pa-bv pa-ms pa-ar pa-da pa-dr pa-dq pa-pf pa-qa pa-qb pa-nq pa-py pa-ak pa-al pa-in pa-hi pa-sd pa-se pa-sf pa-sg pa-sh pa-si pa-sj pa-sk pa-sl pa-sm pa-sn pa-so pa-sp pa-sq pa-sr pa-ss pa-st pa-by pa-su pa-mx &quot; value=&quot;---&quot;&gt; is not clickable at point (861, 435). Other element would receive the click: &lt;section id=&quot;{DEEF1C18-D892-4A01-B737-B40B8A4675D9}&quot; role=&quot;presentation&quot; class=&quot;pa-as pa-go pa-dz pa-acs pa-pq &quot;&gt;...&lt;/section&gt;
-  (Session info: chrome=90.0.4430.212)
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;AIDTYAUN-W10&apos;, ip: &apos;172.27.182.51&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\adityaun\AppData\Local\Temp\scoped_dir9760_1698338012}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:54758}, acceptInsecureCerts=false, browserVersion=90.0.4430.212, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: fa4d4ec250961d4824232cc0d8d86ab5</p>
-sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-<br/>at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-<br/>at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
-<br/>at crmframework.crmAutomation.ActivitiesPageTest.TS005_VerifyCreateEmailTest(ActivitiesPageTest.java:330)
-<br/>25 lines not shown
+<p>null</p>
+resources.Utility.verifyLoginFunctionality(Utility.java:41)
+<br/>at crmframework.crmAutomation.AccountPageTest.initialize(AccountPageTest.java:64)
+<br/>23 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<<<<<<< HEAD
-<h2 id="m2">crmframework.crmAutomation.ActivitiesPageTest:TS002_VerifyCreateAppointmentTest</h2>
-<div style="padding-left:3em">
-<p>Expected condition failed: waiting for visibility of element located by By.xpath: //span[contains(text(),&apos;My Activities&apos;)] (tried for 20 second(s) with 500 MILLISECONDS interval)</p>
-org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-<br/>at pageObjects.CRMActivitiesPage.getMyActivitiesLabel(CRMActivitiesPage.java:60)
-<br/>at crmframework.crmAutomation.ActivitiesPageTest.TS002_VerifyCreateAppointmentTest(ActivitiesPageTest.java:126)
-<br/>25 lines not shown
-<p>Caused by Cannot locate an element using By.xpath: //span[contains(text(),&apos;My Activities&apos;)]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;AIDTYAUN-W10&apos;, ip: &apos;172.27.182.51&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: driver.version: unknown</p>
-org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
-<br/>at java.util.Optional.orElseThrow(Unknown Source)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-<br/>at pageObjects.CRMActivitiesPage.getMyActivitiesLabel(CRMActivitiesPage.java:60)
-<br/>at crmframework.crmAutomation.ActivitiesPageTest.TS002_VerifyCreateAppointmentTest(ActivitiesPageTest.java:126)
-<br/>25 lines not shown
-</div>
+<h2 id="m2">crmframework.crmAutomation.AccountPageTest:TS020_VerifyAddContactTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">crmframework.crmAutomation.ActivitiesPageTest:TS004_VerifyCreatePhoneCallTest</h2>
+<h2 id="m3">crmframework.crmAutomation.AccountPageTest:TS018_VerifyDeactivateAccountTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m4">crmframework.crmAutomation.ActivitiesPageTest:TS003_VerifyCreateTaskTest</h2>
+<h2 id="m4">crmframework.crmAutomation.AccountPageTest:TS017_VerifyDuplicateAccountTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m5">crmframework.crmAutomation.ActivitiesPageTest:TS001_VerifyHomePageTest</h2>
-=======
-<h2 id="m2">crmframework.crmAutomation.DashboardPageTest:TS002_VerifyRetailRelationManagerDashboardView</h2>
-
->>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
+<h2 id="m5">crmframework.crmAutomation.AccountPageTest:TS012_VerifyAddNewPostToAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">crmframework.crmAutomation.AccountPageTest:TS013_VerifyPhoneCallOnAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m7">crmframework.crmAutomation.AccountPageTest:TS007_VerifyParentAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m8">crmframework.crmAutomation.AccountPageTest:TS011_VerifyAddNoteToAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m9">crmframework.crmAutomation.AccountPageTest:TS016_VerifySearchusingAccountNameandPhoneTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m10">crmframework.crmAutomation.AccountPageTest:TS004_VerifyAddMarketingRelationshipOwnerToAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m11">crmframework.crmAutomation.AccountPageTest:TS022_VerifyMediaSegmentationFieldTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m12">crmframework.crmAutomation.AccountPageTest:TS019_VerifyUpdateAccountInformation</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m13">crmframework.crmAutomation.AccountPageTest:TS027_VerifyAddNewTaskFromTimelineToAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m14">crmframework.crmAutomation.AccountPageTest:TS015_VerifyNamePhoneCityInGridTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m15">crmframework.crmAutomation.AccountPageTest:TS026_VerifyAssociatedListsSectionTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m16">crmframework.crmAutomation.AccountPageTest:TS028_VerifyCountryAutocomplete</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m17">crmframework.crmAutomation.AccountPageTest:TS021_VerifyUpdateContactsFromAccountFormTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m18">crmframework.crmAutomation.AccountPageTest:TS025_VerifyBusinessRuleForAddressTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m19">crmframework.crmAutomation.AccountPageTest:TS008_VerifyAccountStatusToActivateAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m20">crmframework.crmAutomation.AccountPageTest:TS003_VerifyAddAppointmentToAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m21">crmframework.crmAutomation.AccountPageTest:TS002_VerifyCreateNewAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m22">crmframework.crmAutomation.AccountPageTest:TS006_VerifyAuditHistoryTabOnAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m23">crmframework.crmAutomation.AccountPageTest:TS024_VerifyExportToExcelTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m24">crmframework.crmAutomation.AccountPageTest:TS009_VerifyAccountStatusToDeactivateAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m25">crmframework.crmAutomation.AccountPageTest:TS014_VerifyStateAndRegionInGridTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m26">crmframework.crmAutomation.AccountPageTest:TS005_VerifySearchAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m27">crmframework.crmAutomation.AccountPageTest:TS023_VerifyDetailsTabOnAccountTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m28">crmframework.crmAutomation.AccountPageTest:TS010_VerifyBusinessRuleForPhoneNumberTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m29">crmframework.crmAutomation.AccountPageTest:TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>
