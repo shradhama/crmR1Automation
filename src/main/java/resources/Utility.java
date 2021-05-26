@@ -48,13 +48,13 @@ public class Utility extends base{
 		lp.getpwd().click();
 
 		lp.getpwd().sendKeys(System.getenv("password"));
-		Thread.sleep(15000);
 		lp.getsignin().click();
+		
 		//Wait to enter the verification code from Mobile
-		Thread.sleep(30000);
 		lp.getVerify().click();
 		lp.getdontshowcheckbox().click();
 		lp.getsigninYes().click();
+		
 		//to wait on Published App Landing page
 		Thread.sleep(15000);
 		driver.switchTo().frame("AppLandingPage");
