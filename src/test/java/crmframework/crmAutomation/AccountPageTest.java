@@ -56,19 +56,19 @@ public class AccountPageTest extends base {
 
 
 	@BeforeTest
-	public void initialize() throws IOException
+	public void initialize() throws IOException, InterruptedException
 	{
 		driver = initializeDriver();
 		genData=new GenerateData();
 		utl=new Utility(driver);
+		utl.verifyLoginFunctionality();
 	}
 
-	@Test(priority=1)
-	public void TS001_VerifyHomePageTest() throws IOException, InterruptedException {
+	/*@Test(priority=1)
+	public void TS001_VerifyHomePageTest() throws InterruptedException, IOException {
 
 		//The purpose of this test case to verify:-
 		//TS1- Login to CRM Application and  Select published Apps (Demand Driver Management)
-
 		driver.get(prop.getProperty("url")); //CRM App
 		driver.manage().window().maximize();
 		lap = new CRMLandingPage(driver);
@@ -77,9 +77,7 @@ public class AccountPageTest extends base {
 
 		lp= new CRMLoginPage(driver);
 		lp.getpwd().click();
-
 		lp.getpwd().sendKeys(System.getenv("password"));
-		Thread.sleep(15000);
 		lp.getsignin().click();
 		//Wait to enter the verification code from Mobile
 		Thread.sleep(30000);
@@ -96,7 +94,7 @@ public class AccountPageTest extends base {
 		hp = new CRMHomePage(driver);
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
-	}
+	}*/
 
 	@Test(priority=2)
 	public void TS002_VerifyCreateNewAccountTest() throws InterruptedException

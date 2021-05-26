@@ -3,30 +3,39 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="crmframework.crmAutomation.ActivitiesPageTest">
-=======
-      <class name="crmframework.crmAutomation.IncentivesPageTest">
+      <class name="crmframework.crmAutomation.AccountPageTest">
         <methods>
+          <include name="TS017_VerifyDuplicateAccountTest"/>
+          <include name="TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest"/>
+          <include name="TS022_VerifyMediaSegmentationFieldTest"/>
+          <include name="TS003_VerifyAddAppointmentToAccountTest"/>
+          <include name="TS025_VerifyBusinessRuleForAddressTest"/>
+          <include name="TS027_VerifyAddNewTaskFromTimelineToAccountTest"/>
+          <include name="TS015_VerifyNamePhoneCityInGridTest"/>
+          <include name="TS012_VerifyAddNewPostToAccountTest"/>
           <include name="initialize"/>
-          <include name="TS001_VerifyHomePageTest"/>
-          <include name="TS009_VerifyUpdateiIncentiveFromContactTest"/>
+          <include name="TS019_VerifyUpdateAccountInformation"/>
+          <include name="TS016_VerifySearchusingAccountNameandPhoneTest"/>
+          <include name="TS028_VerifyCountryAutocomplete"/>
+          <include name="TS005_VerifySearchAccountTest"/>
+          <include name="TS023_VerifyDetailsTabOnAccountTest"/>
+          <include name="TS006_VerifyAuditHistoryTabOnAccountTest"/>
+          <include name="TS010_VerifyBusinessRuleForPhoneNumberTest"/>
+          <include name="TS020_VerifyAddContactTest"/>
+          <include name="TS026_VerifyAssociatedListsSectionTest"/>
+          <include name="TS009_VerifyAccountStatusToDeactivateAccountTest"/>
+          <include name="TS004_VerifyAddMarketingRelationshipOwnerToAccountTest"/>
+          <include name="TS013_VerifyPhoneCallOnAccountTest"/>
+          <include name="TS021_VerifyUpdateContactsFromAccountFormTest"/>
+          <include name="TS014_VerifyStateAndRegionInGridTest"/>
+          <include name="TS018_VerifyDeactivateAccountTest"/>
+          <include name="TS011_VerifyAddNoteToAccountTest"/>
+          <include name="TS008_VerifyAccountStatusToActivateAccountTest"/>
+          <include name="TS024_VerifyExportToExcelTest"/>
+          <include name="TS007_VerifyParentAccountTest"/>
+          <include name="TS002_VerifyCreateNewAccountTest"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.IncentivesPageTest -->
-
-      <class name="crmframework.crmAutomation.DashboardPageTest">
->>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
-        <methods>
-          <include name="TS005_VerifyCreateEmailTest"/>
-          <include name="TS002_VerifyCreateAppointmentTest"/>
-          <include name="initialize"/>
-        </methods>
-<<<<<<< HEAD
-      </class> <!-- crmframework.crmAutomation.ActivitiesPageTest -->
-=======
-      </class> <!-- crmframework.crmAutomation.DashboardPageTest -->
-
->>>>>>> c122eb1fd017f2cde7f95447913b437c50f4b651
+      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

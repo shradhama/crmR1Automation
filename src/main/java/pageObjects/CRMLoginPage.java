@@ -31,13 +31,15 @@ public class CRMLoginPage {
 		
 	}
 	
-	public WebElement getsignin() {
+	public WebElement getsignin() throws InterruptedException {
 		//web element for the signin button
+		Thread.sleep(15000);
 		return driver.findElement(signin);
 	}
 
-	public WebElement getVerify() {
-		//web element for the mobile authenticate code verification button. 
+	public WebElement getVerify() throws InterruptedException {
+		//web element for the mobile authenticate code verification button.
+		Thread.sleep(30000);
 		return driver.findElement(verify);
 		
 	}

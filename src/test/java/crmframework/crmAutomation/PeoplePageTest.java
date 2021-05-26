@@ -54,11 +54,12 @@ public class PeoplePageTest extends base {
 	@BeforeTest
 	public void initialize() throws IOException
 	{
-		driver = initializeDriver();
+		//driver = initializeDriver(); //requires for Parallel text execution
 		genData=new GenerateData();
 		utl=new Utility(driver);
+		//utl.verifyLoginFunctionality(); //requires for Parallel text execution
 	}
-
+/*
 	@Test(priority=1)
 	public void TS001_VerifyHomePageTest() throws IOException, InterruptedException {
 
@@ -91,7 +92,7 @@ public class PeoplePageTest extends base {
 		hp = new CRMHomePage(driver);
 		hp.getHometitle().isDisplayed();
 		System.out.println("Login to CRM successfully");
-	}
+	}*/
 	
 	//Manual Fail_Caught By Automation
 	@Test(priority=2)
