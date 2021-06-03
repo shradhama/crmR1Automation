@@ -41,13 +41,15 @@ public class Utility extends base{
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
 		lap = new CRMLandingPage(driver);
-		lap.getLogin().sendKeys(System.getenv("username"));
+		//lap.getLogin().sendKeys(System.getenv("username"));
+		lap.getLogin().sendKeys(prop.getProperty("username")); //Using to run Maven project via Command line
 		lap.getnext().click();
 
 		lp= new CRMLoginPage(driver);
 		lp.getpwd().click();
 
-		lp.getpwd().sendKeys(System.getenv("password"));
+		//lp.getpwd().sendKeys(System.getenv("password"));
+		lp.getpwd().sendKeys(prop.getProperty("password")); //Using to run Maven project via Command line
 		lp.getsignin().click();
 		
 		//Wait to enter the verification code from Mobile

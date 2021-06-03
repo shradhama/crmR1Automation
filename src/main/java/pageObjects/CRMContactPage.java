@@ -40,7 +40,7 @@ public class CRMContactPage {
 	By contactfirstnamelabel = By.xpath("//label[text()='First Name']");
 	By contacttypetxtbx = By.xpath("//input[@id='xxc_typecode_ledit']");
 	By contacttypeexpandbtn = By.xpath("//div[@data-lp-id='MscrmControls.MultiSelectPicklist.UpdMSPicklistControl|xxc_typecode.fieldControl|contact']/div/div[6]/div[1]/div[2]/button[1]/span[1]");
-	By contacttypebuyer = By.xpath("//ul[@class='msos-selected-items msos-selection']/li[1]");
+	By contacttypebuyer = By.xpath("//div[contains(text(),'Buyer')]");
 	By contactaccountnametxtbx = By.xpath("//input[@aria-label='Account Name, Lookup']");
 	By searchrecordsbtn = By.xpath("//button[@aria-label='Search records for Account Name, Lookup field']");
 	By accountnametitle = By.xpath("//span[@data-id='parentcustomerid.fieldControl-name0_0_0']");
@@ -114,7 +114,7 @@ public class CRMContactPage {
 	By contactmarketprofileisregisteredfield = By.xpath("//div[@data-id='cell-0-3']"); //Locator for Contact market profile 'IsRegistered' field value
 	By clickgroupbydd = By.xpath("//div[@aria-label = 'Group By']/div[1]/div[1]/div[1]/span[1]/button[1]");//Locator for arrow for Group By drop down
 	By fullnameddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[2]");//Locator for Full Name group by option
-	By regionddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[9]");//Locator for region group by option
+	By regionddopt = By.xpath("//div[@class = 'wj-content wj-dropdown-panel wj-control wj-listbox wj-state-focus wj-state-focused']/div[7]");//Locator for region group by option
 	By groupbyverification = By.xpath("//button[@aria-label = 'Toggle Group']");//Locator for verification of grouping by options
 	By phonecalloutcomedeclinedoptn = By.xpath("//option[contains(text(),'Declined')]"); //Locator for Phone Call Outcome 'Declined' option
 	By declinedreasonselectdd = By.xpath("//select[@aria-label='Declined Reason']"); //Locator for Declined Reason drop down
@@ -337,8 +337,9 @@ public class CRMContactPage {
 		return driver.findElement(contacttypeexpandbtn);
 	}
 
-	public WebElement getContactTypeBuyer()
+	public WebElement getContactTypeBuyer() throws InterruptedException
 	{
+		Thread.sleep(6000);
 		return driver.findElement(contacttypebuyer);
 	}
 
@@ -404,7 +405,8 @@ public class CRMContactPage {
 		return driver.findElement(inactivecontactsoptn);
 	}
 
-	public WebElement getActiveContactDropDownBtn() {
+	public WebElement getActiveContactDropDownBtn() throws InterruptedException {
+		Thread.sleep(10000);
 		return driver.findElement(contactdropdownbtn);
 	}
 
@@ -723,14 +725,12 @@ public class CRMContactPage {
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(fullnameddopt));
-		Thread.sleep(5000);
 		return driver.findElement(fullnameddopt);
 	}
 	public WebElement getregionddopt() throws InterruptedException
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(regionddopt));
-		Thread.sleep(5000);
 		return driver.findElement(regionddopt);
 	}
 	public WebElement getgroupbyverification() throws InterruptedException

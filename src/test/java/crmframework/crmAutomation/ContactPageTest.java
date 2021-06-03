@@ -58,10 +58,10 @@ public class ContactPageTest extends base{
 	@BeforeTest
 	public void initialize() throws IOException, InterruptedException
 	{
-		//driver = initializeDriver(); //requires for Parallel text execution
+		driver = initializeDriver(); //requires for Parallel text execution
 		genData=new GenerateData();
 		utl = new Utility(driver);
-		//utl.verifyLoginFunctionality(); //requires for Parallel text execution
+		utl.verifyLoginFunctionality(); //requires for Parallel text execution
 	}
 
 	/*@Test(priority=1)
@@ -201,6 +201,7 @@ public class ContactPageTest extends base{
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
 		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
 
 		hp.getContactsTab().click();
 		hp.getSearchContactField().click();
@@ -225,6 +226,7 @@ public class ContactPageTest extends base{
 		cp.getDeactivateOkBtn().click();
 
 		//Verify that Contact is deactivated and selected contact status reason is displayed at the right side of the header.
+		amro.gethdbtn().click();
 		WebElement statusreasonforinactivecontactinheader = cp.getContactStatusResonForInactiveAcc();
 		System.out.println("Account Status Reason: " + (statusreasonforinactivecontactinheader.getText()));
 		Assert.assertTrue(statusreasonforinactivecontactinheader.getText().contains(outofbusiness));
@@ -427,7 +429,7 @@ public class ContactPageTest extends base{
 
 		//Manual Fail for Alphabetical order
 		Assert.assertEquals(tempList, originalList, "List is not in alphabetical sorting order");
-		
+
 		//Select a value in Job Function field
 		cp.getJobFunctionValue().click();
 		cp.getScrollTextOnContactForm().click();
@@ -454,7 +456,7 @@ public class ContactPageTest extends base{
 		WebElement enteranotelabel = ap.getEnteraNoteLabel();	
 		js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].scrollIntoView(true);",enteranotelabel);
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 
 		//Update the contact Type as 'Buyer' 
 		cp.getContactTypeSelectedValueTxtbx().click();
@@ -481,6 +483,7 @@ public class ContactPageTest extends base{
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
 		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
 		
 		//Click on Contacts Tab at left menu.
@@ -488,7 +491,7 @@ public class ContactPageTest extends base{
 
 		//Click on the select a view drop-down available below header
 		cp.getActiveContactDropDownBtn().click();
-
+		
 		//Select 'Inactive Contacts' option
 		cp.getInactiveContactOptn().click();
 
@@ -523,7 +526,8 @@ public class ContactPageTest extends base{
 			System.out.println(ex.getMessage());
 		}
 
-		//Verify that Contact is activated and selected contact Status Reason is displayed at the right side of the header.
+		/*//Verify that Contact is activated and selected contact Status Reason is displayed at the right side of the header.
+		amro.gethdbtn().click();
 		WebElement contactstatusreasoninheader = cp.getContactStatusResonForActiveContact();
 		System.out.println("Account Status Reason: " + (contactstatusreasoninheader.getText()));
 		Assert.assertTrue(contactstatusreasoninheader.getText().contains(donotcall));
@@ -533,7 +537,7 @@ public class ContactPageTest extends base{
 		System.out.println("Contact is activated with selected contact status reason");
 
 		//Click on Save & Close button
-		cp.getContactSavenCloseBtn().click();
+		cp.getContactSavenCloseBtn().click();*/
 	}
 	@Test(priority=7)
 	public void TS007_VerifyAddAppointmentToContactTest() throws InterruptedException
@@ -627,7 +631,7 @@ public class ContactPageTest extends base{
 	}
 
 	//Test script Fail_Caught By Automation	
-	@Test(priority=9)
+	@Test(priority=26)
 	public void TS009_ManualFail_VerifyDuplicateContactTest() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
@@ -1601,7 +1605,7 @@ public class ContactPageTest extends base{
 		WebElement conphonevaluesongrid = null;
 		for (int i=0;i<7;i++)
 		{
-			conphonevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-4']"));
+			conphonevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
 			Assert.assertTrue(conphonevaluesongrid.getText().contains(prop.getProperty("phone")));
 		}
 		System.out.println("Phone matches expected criteria");
@@ -1625,7 +1629,7 @@ public class ContactPageTest extends base{
 		WebElement conemailongrid = null;
 		for (int i=0;i<7;i++)
 		{
-			conemailongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-5']"));
+			conemailongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-4']"));
 			Assert.assertTrue(conemailongrid.getText().toLowerCase().contains(prop.getProperty("emailtext")));
 		}
 		System.out.println("Email matches expected criteria");
@@ -1649,7 +1653,7 @@ public class ContactPageTest extends base{
 		WebElement conaccname = null;
 		for (int i=0;i<3;i++)
 		{
-			conaccname = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-3']"));
+			conaccname = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-5']"));
 			Assert.assertTrue(conaccname.getText().toLowerCase().contains(prop.getProperty("name")));
 		}
 		System.out.println("Account DBA Name matches expected criteria");
@@ -1673,7 +1677,7 @@ public class ContactPageTest extends base{
 		WebElement constatevaluesongrid = null;
 		for (int i=0;i<7;i++)
 		{
-			constatevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-8']"));
+			constatevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-6']"));
 			Assert.assertTrue(constatevaluesongrid.getText().contains(prop.getProperty("gridstatefilter")));
 		}
 		System.out.println("State matches expected criteria");	
@@ -1699,7 +1703,7 @@ public class ContactPageTest extends base{
 		WebElement conregionvaluesongrid = null;
 		for (int i=0;i<7;i++)
 		{
-			conregionvaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-9']"));
+			conregionvaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-7']"));
 			Assert.assertTrue(conregionvaluesongrid.getText().contains(ExpectedRegion));
 		}
 		System.out.println("Region matches expected criteria");
@@ -1747,7 +1751,7 @@ public class ContactPageTest extends base{
 		act.moveToElement(ap.getmovetotype()).perform();
 		ap.getdeletetype().click();
 		cp.getContactTypeExpandbtn().click();
-		cp.getContactTypeBuyer().click();
+		cp.getContactTypeMedia().click();
 		cp.getContactFirstNameLabel().click();
 
 		utl.scrollToElement(ap.getEnteraNoteLabel());

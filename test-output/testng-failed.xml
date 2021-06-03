@@ -3,39 +3,17 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.AccountPageTest">
+      <class name="crmframework.crmAutomation.ContactPageTest">
         <methods>
-          <include name="TS017_VerifyDuplicateAccountTest"/>
-          <include name="TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest"/>
-          <include name="TS022_VerifyMediaSegmentationFieldTest"/>
-          <include name="TS003_VerifyAddAppointmentToAccountTest"/>
-          <include name="TS025_VerifyBusinessRuleForAddressTest"/>
-          <include name="TS027_VerifyAddNewTaskFromTimelineToAccountTest"/>
-          <include name="TS015_VerifyNamePhoneCityInGridTest"/>
-          <include name="TS012_VerifyAddNewPostToAccountTest"/>
+          <include name="TS005_ManualFail_VerifyJobFunctionFieldTest"/>
+          <include name="TS013_ManualFail_VerifyContactMarketRecordProfile_Declined"/>
+          <include name="TS019_VerifyDetailsTabOnContactTest"/>
           <include name="initialize"/>
-          <include name="TS019_VerifyUpdateAccountInformation"/>
-          <include name="TS016_VerifySearchusingAccountNameandPhoneTest"/>
-          <include name="TS028_VerifyCountryAutocomplete"/>
-          <include name="TS005_VerifySearchAccountTest"/>
-          <include name="TS023_VerifyDetailsTabOnAccountTest"/>
-          <include name="TS006_VerifyAuditHistoryTabOnAccountTest"/>
-          <include name="TS010_VerifyBusinessRuleForPhoneNumberTest"/>
-          <include name="TS020_VerifyAddContactTest"/>
-          <include name="TS026_VerifyAssociatedListsSectionTest"/>
-          <include name="TS009_VerifyAccountStatusToDeactivateAccountTest"/>
-          <include name="TS004_VerifyAddMarketingRelationshipOwnerToAccountTest"/>
-          <include name="TS013_VerifyPhoneCallOnAccountTest"/>
-          <include name="TS021_VerifyUpdateContactsFromAccountFormTest"/>
-          <include name="TS014_VerifyStateAndRegionInGridTest"/>
-          <include name="TS018_VerifyDeactivateAccountTest"/>
-          <include name="TS011_VerifyAddNoteToAccountTest"/>
-          <include name="TS008_VerifyAccountStatusToActivateAccountTest"/>
+          <include name="TS012_ManualFail_VerifyContactMarketRecordProfile_Registered"/>
           <include name="TS024_VerifyExportToExcelTest"/>
-          <include name="TS007_VerifyParentAccountTest"/>
-          <include name="TS002_VerifyCreateNewAccountTest"/>
+          <include name="TS009_ManualFail_VerifyDuplicateContactTest"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
+      </class> <!-- crmframework.crmAutomation.ContactPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
