@@ -182,6 +182,14 @@ public class CRMContactPage {
 	By selectbeginswithoptr = By.xpath("//button[@data-index = '4']"); //Locator for Begins With operator
 	By selectbeginswithoptrforaccname = By.xpath("//button[@data-index = '6']"); //Locator for Begins With operator for Account name
 	
+	
+	//CAB-256
+	By contactstatusnotavalidbuyingacc = By.xpath("//option[contains(text(),'Not a Valid Buying Account')]");
+	By gletterfilterlink = By.xpath("//a[@id='G_link']");
+	By statusreasonnotavalidbuyingaccinheader = By.xpath("//div[@title='Not a Valid Buying Account']");
+	By contactstatusnovalidaccinfo = By.xpath("//option[contains(text(),'No Valid Account Info')]");
+	By statusreasonnovalidaccinfoinheader = By.xpath("//div[@title='No Valid Account Info']");
+	
 	public CRMContactPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -1119,4 +1127,25 @@ public class CRMContactPage {
 		return driver.findElement(selectbeginswithoptrforaccname);
 	}
 	
+	//CAB-256
+	public WebElement getContactStatusNotaValidBuyingAcc() {
+		return driver.findElement(contactstatusnotavalidbuyingacc);
+	}
+	public WebElement getGLetterFilterLink() throws InterruptedException {
+		Thread.sleep(10000);
+		return driver.findElement(gletterfilterlink);
+	}
+	public WebElement getInactiveContactStatusNotAValidBuyingAcc() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasonnotavalidbuyingaccinheader));
+		return driver.findElement(contactstatusreason);
+	}
+	public WebElement getContactStatusNoValidAccInfo() {
+		return driver.findElement(contactstatusnovalidaccinfo);
+	}
+	public WebElement getInactiveContactStatusNoValidAccInfo() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasonnovalidaccinfoinheader));
+		return driver.findElement(contactstatusreason);
+	}
 }
