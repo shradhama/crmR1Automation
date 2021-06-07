@@ -170,22 +170,7 @@ public class CAB256PageTest extends base{
 		ap.getActivatePopupStatusField().click();
 		Thread.sleep(5000);
 		
-//		WebElement statuslist = driver.findElement(By.xpath("//div[@data-id='status_id.fieldControl-option-set-select-container']/select/option[2]"));
-//		System.out.println(statuslist.getText());
-		
-		WebElement statuslist = null;
-		for (int i=2;i<8;i++)
-		{
-			 //driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-6']"));
-			
-			 statuslist = driver.findElement(By.xpath("//div[@data-id='status_id.fieldControl-option-set-select-container']/select/option["+i+"]"));
-			System.out.println(statuslist.getText());
-			//Assert.assertTrue(statuslist.getText().contains(outofbusiness));
-		}
-		
-		
-		
-		/*WebElement novalidaccinfostatus = cp.getContactStatusNoValidAccInfo();
+		WebElement novalidaccinfostatus = cp.getContactStatusNoValidAccInfo();
 		novalidaccinfo = cp.getContactStatusNoValidAccInfo().getText();
 		System.out.println("Contact Status: " + novalidaccinfo);
 		novalidaccinfostatus.click();
@@ -230,7 +215,7 @@ public class CAB256PageTest extends base{
 		catch (IllegalArgumentException ex)
 		{
 			System.out.println(ex.getMessage());
-		}*/
+		}
 	}
 	
 	@Test(priority=3)
