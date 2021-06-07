@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="196881" started-at="2021-06-03T11:14:22Z" finished-at="2021-06-03T11:17:38Z">
+  <suite name="Suite" duration-ms="253946" started-at="2021-06-07T06:04:13Z" finished-at="2021-06-07T06:08:27Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="196881" started-at="2021-06-03T11:14:22Z" finished-at="2021-06-03T11:17:38Z">
-      <class name="crmframework.crmAutomation.ContactPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="initialize" is-config="true" duration-ms="123594" started-at="2021-06-03T16:44:22Z" finished-at="2021-06-03T16:46:25Z">
+    <test name="Test" duration-ms="253946" started-at="2021-06-07T06:04:13Z" finished-at="2021-06-07T06:08:27Z">
+      <class name="crmframework.crmAutomation.CAB256PageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.CAB256PageTest@29774679]" name="initialize" is-config="true" duration-ms="199303" started-at="2021-06-07T11:34:13Z" finished-at="2021-06-07T11:37:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS019_VerifyDetailsTabOnContactTest()[pri:0, instance:crmframework.crmAutomation.ContactPageTest@3ffc5af1]" name="TS019_VerifyDetailsTabOnContactTest" duration-ms="73231" started-at="2021-06-03T16:46:25Z" finished-at="2021-06-03T16:47:38Z">
+        <test-method status="PASS" signature="TS003_VerifySequenceOfInactiveContactStatusReasonCodesTest()[pri:0, instance:crmframework.crmAutomation.CAB256PageTest@29774679]" name="TS003_VerifySequenceOfInactiveContactStatusReasonCodesTest" duration-ms="54598" started-at="2021-06-07T11:37:33Z" finished-at="2021-06-07T11:38:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS019_VerifyDetailsTabOnContactTest -->
-      </class> <!-- crmframework.crmAutomation.ContactPageTest -->
+        </test-method> <!-- TS003_VerifySequenceOfInactiveContactStatusReasonCodesTest -->
+      </class> <!-- crmframework.crmAutomation.CAB256PageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

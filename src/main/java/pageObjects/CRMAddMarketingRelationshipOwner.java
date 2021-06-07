@@ -28,9 +28,8 @@ public class CRMAddMarketingRelationshipOwner {
 		this.driver = driver;
 	}
 	
-	public WebElement gethdbtn() {
-		wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(hdbtn));
+	public WebElement gethdbtn() throws InterruptedException {
+		Thread.sleep(10000);
 		return driver.findElement(hdbtn);
 	}
 	
