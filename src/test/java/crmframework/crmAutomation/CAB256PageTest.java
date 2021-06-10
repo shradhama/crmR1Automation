@@ -46,6 +46,10 @@ public class CAB256PageTest extends base{
 	public String newcontactemail;
 	public String notavalidbuyingacc;
 	public String novalidaccinfo;
+	public String mergedacc;
+	public String novalidaccinfoacc;
+	public String outofbusinessacc;
+	public String notvalidbuyingaccacc;
 	CRMLandingPage lap;
 	CRMLoginPage lp;
 	AppLandingPage alp;
@@ -270,6 +274,326 @@ public class CAB256PageTest extends base{
        	
         Assert.assertEquals(actualstatuscodes,expectedstatuscodes);
 	}
+	
+	@Test(priority=4)
+	public void TS004_VerifyInactiveAccountStatusReasonMergedTest() throws InterruptedException
+	{
+		//The purpose of this test case to:-
+		//CRM_T528_ For deactivated Account with reason 'Merged', no associated Contacts(s) get deactivated 
+		
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
+
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+		//Click on Account tab from left and select/view any account record
+		hp.getAccountTab().click();
+		cp.getGLetterFilterLink().click();
+		String accountname = ap.getAccountName().getText();
+		WebElement validateAccountName = driver.findElement(By.xpath("//label[contains(text(),'"+accountname+"')]"));
+		validateAccountName.click();
+		ap.getAccNaviagteBtn().click();
+
+		//Click on Deactivate button
+		ap.getDeactivateBtn().click();
+
+		//Select Reason Code: Merged in the confirm Account Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		WebElement mergedaccstatus = ap.getAccountStatusMerged();
+		mergedacc = ap.getAccountStatusMerged().getText();
+		mergedaccstatus.click();
+
+		//Click on 'Deactivate button of confirmation pop-up
+		ap.getDeactivateOkBtn().click();
+
+		//Verify status reason of Account
+		String verifyaccstatus= ap.getVerifyAccountStatusMerged().getText();
+		System.out.println("Account Status Reason: "+ verifyaccstatus);
+		Assert.assertEquals("Merged", verifyaccstatus);
+		
+		//Go to associate Contacts linked with Account
+		ap.getRelatedTab().click();
+		Thread.sleep(3000);
+		ap.getRelatedTabContactsItem().click();
+		Thread.sleep(5000);
+		ap.getContactAssociatedViewDropDownIcon().click();
+		ap.getSelectViewsAllContactsItem().click();
+		Thread.sleep(5000);
+		
+		//Verify status of associate Contact (when status of respective Account is Merged)
+		ap.getContactsSectionContactName().click();
+		WebElement contactstatus= ap.getContactsSectionContactNameStatusAsActive();
+		System.out.println("Contact Status: " + (contactstatus.getText()));
+		Assert.assertEquals(contactstatus.getText(), "Active");
+		
+		ap.getAccNaviagteBtn().click();
+		
+		//Verify status reason of associate Contact (when status of respective Account is Merged)
+		amro.gethdbtn().click();
+		Thread.sleep(3000);
+		WebElement statusforcontactasactive = ap.getContactStatusReasonActive();
+		System.out.println("Contact Status Reason: " + (statusforcontactasactive.getText()));
+		Assert.assertEquals(statusforcontactasactive.getText(), "Active");
+	}
+
+	
+	@Test(priority=5)
+	public void TS005_VerifyInactiveAccountStatusReasonNoValidInfoAvailableTest() throws InterruptedException
+	{
+		//The purpose of this test case to:-
+		//CRM_T529_For deactivated Account with reason 'No Valid Info Available', all associated Contacts(s) get deactivated
+		
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
+
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+		//Click on Account tab from left and select/view any account record
+		hp.getAccountTab().click();
+		cp.getGLetterFilterLink().click();
+		String accountname = ap.getAccountName().getText();
+		WebElement validateAccountName = driver.findElement(By.xpath("//label[contains(text(),'"+accountname+"')]"));
+		validateAccountName.click();
+		ap.getAccNaviagteBtn().click();
+
+		//Click on Deactivate button
+		ap.getDeactivateBtn().click();
+
+		//Select Reason Code: No Valid Info Available in the confirm Account Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		WebElement novalidaccinfoaccstatus = ap.getAccountStatusNoValidInfoAvailable();
+		novalidaccinfoacc = ap.getAccountStatusNoValidInfoAvailable().getText();
+		novalidaccinfoaccstatus.click();
+
+		//Click on 'Deactivate button of confirmation pop-up
+		ap.getDeactivateOkBtn().click();
+
+		//Verify status reason of Account
+		String verifyaccstatus= ap.getVerifyAccountStatusNoValidInfoAvailable().getText();
+		System.out.println("Account Status Reason: "+ verifyaccstatus);
+		Assert.assertEquals("No Valid Info Available", verifyaccstatus);
+		
+		//Go to associate Contacts linked with Account
+		ap.getRelatedTab().click();
+		Thread.sleep(3000);
+		ap.getRelatedTabContactsItem().click();
+		Thread.sleep(5000);
+		ap.getContactAssociatedViewDropDownIcon().click();
+		ap.getSelectViewsAllContactsItem().click();
+		Thread.sleep(5000);
+		
+		//Verify status of associate Contact (when status of respective Account is No Valid Info Available)
+		ap.getContactsSectionContactName().click();
+		WebElement contactstatus= ap.getContactsSectionContactNameStatusAsInactive();
+		System.out.println("Contact Status: " + (contactstatus.getText()));
+		Assert.assertEquals(contactstatus.getText(), "Inactive");
+				
+		ap.getAccNaviagteBtn().click();
+				
+		//Verify status reason of associate Contact (when status of respective Account is No Valid Info Available)
+		amro.gethdbtn().click();
+		Thread.sleep(3000);
+		WebElement statusforcontactasnovalidaccinfo = ap.getContactStatusReasonNoValidAccInfo();
+		System.out.println("Contact Status Reason: " + (statusforcontactasnovalidaccinfo.getText()));
+		Assert.assertEquals(statusforcontactasnovalidaccinfo.getText(), "No Valid Account Info");
+	}
+	
+	@Test(priority=6)
+	public void TS006_VerifyInactiveAccountStatusReasonOutOfBusinessTest() throws InterruptedException
+	{
+		//The purpose of this test case to:-
+		//CRM_T530_For deactivated Account with reason 'Out of Business', all associated Contacts(s) get deactivated
+				
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
+
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+		//Click on Account tab from left and select/view any account record
+		hp.getAccountTab().click();
+		cp.getGLetterFilterLink().click();
+		String accountname = ap.getAccountName().getText();
+		WebElement validateAccountName = driver.findElement(By.xpath("//label[contains(text(),'"+accountname+"')]"));
+		validateAccountName.click();
+		ap.getAccNaviagteBtn().click();
+
+		//Click on Deactivate button
+		ap.getDeactivateBtn().click();
+
+		//Select Reason Code: Out of Business in the confirm Account Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		WebElement outofbusinessaccstatus = ap.getAccountStatusOutOfBusiness();
+		outofbusinessacc = ap.getAccountStatusOutOfBusiness().getText();
+		outofbusinessaccstatus.click();
+
+		//Click on 'Deactivate button of confirmation pop-up
+		ap.getDeactivateOkBtn().click();
+
+		//Verify status reason of Account
+		String verifyaccstatus= ap.getVerifyAccountStatusOutOfBusiness().getText();
+		System.out.println("Account Status Reason: "+ verifyaccstatus);
+		Assert.assertEquals("Out of Business", verifyaccstatus);
+		
+		//Go to associate Contacts linked with Account
+		ap.getRelatedTab().click();
+		Thread.sleep(3000);
+		ap.getRelatedTabContactsItem().click();
+		Thread.sleep(5000);
+		ap.getContactAssociatedViewDropDownIcon().click();
+		ap.getSelectViewsAllContactsItem().click();
+		Thread.sleep(5000);
+		
+		//Verify status of associate Contact (when status of respective Account is Out of Business)
+		ap.getContactsSectionContactName().click();
+		WebElement contactstatus= ap.getContactsSectionContactNameStatusAsInactive();
+		System.out.println("Contact Status: " + (contactstatus.getText()));
+		Assert.assertEquals(contactstatus.getText(), "Inactive");
+				
+		ap.getAccNaviagteBtn().click();
+				
+		//Verify status reason of associate Contact (when status of respective Account is Out of Business)
+		amro.gethdbtn().click();
+		Thread.sleep(3000);
+		WebElement statusforcontactasoutofbusiness = ap.getContactStatusReasonOutOfBusiness();
+		System.out.println("Contact Status Reason: " + (statusforcontactasoutofbusiness.getText()));
+		Assert.assertEquals(statusforcontactasoutofbusiness.getText(), "Out of Business");
+	}
+	
+	
+	@Test(priority=7)
+	public void TS007_VerifyInactiveAccountStatusNotValidBuyingAccountTest() throws InterruptedException
+	{
+		//The purpose of this test case to:-
+		//CRM_T531_For deactivated Account with reason 'Not valid Buying Account', all associated Contacts(s) get deactivated
+				
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
+
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+		//Click on Account tab from left and select/view any account record
+		hp.getAccountTab().click();
+		cp.getGLetterFilterLink().click();
+		String accountname = ap.getAccountName().getText();
+		WebElement validateAccountName = driver.findElement(By.xpath("//label[contains(text(),'"+accountname+"')]"));
+		validateAccountName.click();
+		ap.getAccNaviagteBtn().click();
+
+		//Click on Deactivate button
+		ap.getDeactivateBtn().click();
+
+		//Select Reason Code: Not valid Buying Account in the confirm Account Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		WebElement notvalidbuyingaccaccstatus = ap.getAccountStatusNotValidBuyingAcc();
+		notvalidbuyingaccacc = ap.getAccountStatusNotValidBuyingAcc().getText();
+		notvalidbuyingaccaccstatus.click();
+
+		//Click on 'Deactivate button of confirmation pop-up
+		ap.getDeactivateOkBtn().click();
+
+		//Verify status reason of Account
+		String verifyaccstatus= ap.getVerifyAccountStatusNotValidBuyingAccount().getText();
+		System.out.println("Account Status Reason: "+ verifyaccstatus);
+		Assert.assertEquals("Not valid Buying account", verifyaccstatus);
+		
+		//Go to associate Contacts linked with Account
+		ap.getRelatedTab().click();
+		Thread.sleep(3000);
+		ap.getRelatedTabContactsItem().click();
+		Thread.sleep(5000);
+		ap.getContactAssociatedViewDropDownIcon().click();
+		ap.getSelectViewsAllContactsItem().click();
+		Thread.sleep(5000);
+		
+		//Verify status of associate Contact (when status of respective Account is Not valid Buying Account)
+		ap.getContactsSectionContactName().click();
+		WebElement contactstatus= ap.getContactsSectionContactNameStatusAsInactive();
+		System.out.println("Contact Status: " + (contactstatus.getText()));
+		Assert.assertEquals(contactstatus.getText(), "Inactive");
+				
+		ap.getAccNaviagteBtn().click();
+				
+		//Verify status reason of associate Contact (when status of respective Account is Not valid Buying Account)
+		amro.gethdbtn().click();
+		Thread.sleep(3000);
+		WebElement statusforcontactasnotvalidbuyingacc = ap.getContactStatusReasonNotValidBuyingAccount();
+		System.out.println("Contact Status Reason: " + (statusforcontactasnotvalidbuyingacc.getText()));
+		Assert.assertEquals(statusforcontactasnotvalidbuyingacc.getText(), "Not a Valid Buying Account");
+	}
+	
+	@Test(priority=8)
+	public void TS008_VerifyDeactiveAccInInactiveAccViewTest() throws InterruptedException
+	{
+		//The purpose of this test case to:-
+		//CRM_T534_Deactivated Account gets displayed in the Inactive Accounts view
+				
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
+
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+		//Click on Account tab from left and select/view any account record
+		hp.getAccountTab().click();
+		cp.getGLetterFilterLink().click();
+		String accountname = ap.getAccountName().getText();
+		System.out.println("Account name: "+accountname);
+		WebElement validateAccountName = driver.findElement(By.xpath("//label[contains(text(),'"+accountname+"')]"));
+		validateAccountName.click();
+		ap.getAccNaviagteBtn().click();
+
+		//Click on Deactivate button
+		ap.getDeactivateBtn().click();
+
+		//Select Reason Code: Not valid Buying Account in the confirm Account Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		WebElement notvalidbuyingaccaccstatus = ap.getAccountStatusNotValidBuyingAcc();
+		notvalidbuyingaccacc = ap.getAccountStatusNotValidBuyingAcc().getText();
+		notvalidbuyingaccaccstatus.click();
+
+		//Click on 'Deactivate button of confirmation pop-up
+		ap.getDeactivateOkBtn().click();
+
+		//Verify status reason of Account
+		String verifyaccstatus= ap.getVerifyAccountStatusNotValidBuyingAccount().getText();
+		System.out.println("Account Status Reason: "+ verifyaccstatus);
+		Assert.assertEquals("Not valid Buying account", verifyaccstatus);
+		
+		//Click on back button and go to inactive accounts
+		ap.getPageBackBtn().click();
+		Thread.sleep(3000);
+		ap.getActiveAccDropDownBtn().click();
+		ap.getInactiveAccOptn().click();
+		Thread.sleep(5000);
+		
+		//Search by the account name
+		cp.getGLetterFilterLink().click();
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(accountname);
+		ap.getclicksearchbutton().click();
+		Thread.sleep(5000);
+		ap.getValidateInactiveAccName().click();
+		ap.getAccNaviagteBtn().click();
+		
+		//Verify status reason of Account
+		String verifydeactivatedaccstatus= ap.getVerifyAccountStatusNotValidBuyingAccount().getText();
+		System.out.println("Status Reason of Deactivated Account: "+ verifydeactivatedaccstatus);
+		Assert.assertEquals("Not valid Buying account", verifydeactivatedaccstatus);
+	}
+
+
+
+
+	
 	
 	//	@AfterTest
 	//	public void closeDriver()

@@ -218,7 +218,24 @@ public class CRMAccountsPage {
 	By originatinglead = By.xpath("//input[@aria-label = 'Originating Lead, Lookup']");//Locator for originating lead on details tab
 	By contactpreferences = By.xpath("//section[@aria-label = 'Contact Preferences']");//Locator for Contact Preferences on details tab
 	By conprefoptions = By.xpath("//section[@data-id = 'CONTACT_PREFERENCES']");//Locator for Contact Preferences
-
+	By accountdropdownbtn = By.xpath("//span[@class='symbolFont ChevronDownMed-symbol  ']");
+	
+	//CAB-256
+	By accountstatusmerged = By.xpath("//option[contains(text(),'Merged')]");
+	By verifyaccstatusmerged= By.xpath("//span[contains(text(),'Merged')]");
+	By contactssectioncontactnamestatusactive= By.xpath("//label[contains(text(),'Active')]");
+	By contactstatusresonactive= By.xpath("//span[@title='Active']");
+	By accountstatusnovalidinfoavailable = By.xpath("//option[contains(text(),'No Valid Info Available')]");
+	By verifyaccstatusnovalidinfoavailable= By.xpath("//span[contains(text(),'No Valid Info Available')]");
+	By contactssectioncontactnamestatusinactive= By.xpath("//label[contains(text(),'Inactive')]");
+	By contactstatusreasonnovalidaccinfo= By.xpath("//span[@title='No Valid Account Info']");
+	By accountstatusoutofbusiness = By.xpath("//option[contains(text(),'Out of Business')]");
+	By verifyaccstatusoutofbusiness= By.xpath("//span[contains(text(),'Out of Business')]");
+	By contactstatusreasonoutofbusiness= By.xpath("//span[@title='Out of Business']");
+	By accountstatusnotvalidbuyingacc = By.xpath("//option[contains(text(),'Not valid Buying account')]");
+	By verifyaccstatusnotvalidbuyingacc= By.xpath("//span[contains(text(),'Not valid Buying account')]");
+	By contactstatusreasonnotvalidbuyingacc= By.xpath("//span[@title='Not a Valid Buying Account']");
+	
 	public CRMAccountsPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -1350,5 +1367,103 @@ public class CRMAccountsPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(detailsTab));
 		return driver.findElement(detailsTab);
 	}
+	
+	public WebElement getActiveAccountDropDownBtn() throws InterruptedException {
+		Thread.sleep(10000);
+		return driver.findElement(accountdropdownbtn);
+	}
+	
+	//CAB-256
+		public WebElement getAccountStatusMerged() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusmerged));
+			return driver.findElement(accountstatusmerged);
+		}
+		
+		public WebElement getVerifyAccountStatusMerged() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusmerged));
+			return driver.findElement(verifyaccstatusmerged);
+		}
+		
+		public WebElement getContactsSectionContactNameStatusAsActive() throws InterruptedException
+		{
+			Thread.sleep(4000);
+			return driver.findElement(contactssectioncontactnamestatusactive);
+		}
+		
+		public WebElement getContactStatusReasonActive() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusresonactive));
+			return driver.findElement(contactstatusresonactive);
+		}
+		
+		public WebElement getAccountStatusNoValidInfoAvailable() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusnovalidinfoavailable));
+			return driver.findElement(accountstatusnovalidinfoavailable);
+		}
+
+		public WebElement getVerifyAccountStatusNoValidInfoAvailable() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusnovalidinfoavailable));
+			return driver.findElement(verifyaccstatusnovalidinfoavailable);
+		}
+		
+		public WebElement getContactsSectionContactNameStatusAsInactive() throws InterruptedException
+		{
+			Thread.sleep(4000);
+			return driver.findElement(contactssectioncontactnamestatusinactive);
+		}
+		
+		public WebElement getContactStatusReasonNoValidAccInfo() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusreasonnovalidaccinfo));
+			return driver.findElement(contactstatusreasonnovalidaccinfo);
+		}
+		
+		public WebElement getAccountStatusOutOfBusiness() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusoutofbusiness));
+			return driver.findElement(accountstatusoutofbusiness);
+		}
+		
+		public WebElement getVerifyAccountStatusOutOfBusiness() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusoutofbusiness));
+			return driver.findElement(verifyaccstatusoutofbusiness);
+		}
+		
+		public WebElement getContactStatusReasonOutOfBusiness() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusreasonoutofbusiness));
+			return driver.findElement(contactstatusreasonoutofbusiness);
+		}
+		
+		public WebElement getAccountStatusNotValidBuyingAcc() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusnotvalidbuyingacc));
+			return driver.findElement(accountstatusnotvalidbuyingacc);
+		}
+		
+		public WebElement getVerifyAccountStatusNotValidBuyingAccount() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusnotvalidbuyingacc));
+			return driver.findElement(verifyaccstatusnotvalidbuyingacc);
+		}
+		
+		public WebElement getContactStatusReasonNotValidBuyingAccount() {
+			wait = new WebDriverWait (driver,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusreasonnotvalidbuyingacc));
+			return driver.findElement(contactstatusreasonnotvalidbuyingacc);
+		}
+
+
+
+
+
+
+		
+
 }
 
