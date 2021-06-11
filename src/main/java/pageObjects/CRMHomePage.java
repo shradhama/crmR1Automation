@@ -22,7 +22,8 @@ public class CRMHomePage {
 	By contacttab = By.xpath("//span[contains(text(),'Contacts')]");
 	By activecontactstitle = By.xpath("//span[contains(text(),'Active Contacts')]");
 	By searchresultcontactbusinessphone = By.xpath("//div[@data-id = 'cell-0-4']");
-	By inactiveaccountstitle = By.xpath("//h1[@aria-label='Inactive Accounts']");
+	//By inactiveaccountstitle = By.xpath("//h1[@aria-label='Inactive Accounts']");
+	By inactiveaccountstitle= By.xpath("//span[contains(text(),'Inactive Account')]");
 	By searchresultcontactfullname = By.xpath("//div[@data-id = 'cell-0-2']");
 	By inactivecontactstitle = By.xpath("//span[contains(text(),'Inactive Contacts')]");
 	By searchresultcontactemail = By.xpath("//div[@data-id = 'cell-0-4']");

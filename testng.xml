@@ -19,7 +19,7 @@
 			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> -->
 			<class name="crmframework.crmAutomation.CAB256PageTest"/>
 			<methods>
-			<include name="TS003_VerifySequenceOfInactiveContactStatusReasonCodesTest"/>
+			<include name="TS009_VerifyInactiveContactStatusReasonOnMainContactPageTest"/>
 			</methods>
 		</classes>
 	</test>
