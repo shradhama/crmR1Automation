@@ -221,20 +221,20 @@ public class CRMAccountsPage {
 	By accountdropdownbtn = By.xpath("//span[@class='symbolFont ChevronDownMed-symbol  ']");
 	
 	//CAB-256
-	By accountstatusmerged = By.xpath("//option[contains(text(),'Merged')]");
-	By verifyaccstatusmerged= By.xpath("//span[contains(text(),'Merged')]");
-	By contactssectioncontactnamestatusactive= By.xpath("//label[contains(text(),'Active')]");
-	By contactstatusresonactive= By.xpath("//span[@title='Active']");
-	By accountstatusnovalidinfoavailable = By.xpath("//option[contains(text(),'No Valid Info Available')]");
-	By verifyaccstatusnovalidinfoavailable= By.xpath("//span[contains(text(),'No Valid Info Available')]");
-	By contactssectioncontactnamestatusinactive= By.xpath("//label[contains(text(),'Inactive')]");
-	By contactstatusreasonnovalidaccinfo= By.xpath("//span[@title='No Valid Account Info']");
-	By accountstatusoutofbusiness = By.xpath("//option[contains(text(),'Out of Business')]");
-	By verifyaccstatusoutofbusiness= By.xpath("//span[contains(text(),'Out of Business')]");
-	By contactstatusreasonoutofbusiness= By.xpath("//span[@title='Out of Business']");
-	By accountstatusnotvalidbuyingacc = By.xpath("//option[contains(text(),'Not valid Buying account')]");
-	By verifyaccstatusnotvalidbuyingacc= By.xpath("//span[contains(text(),'Not valid Buying account')]");
-	By contactstatusreasonnotvalidbuyingacc= By.xpath("//span[@title='Not a Valid Buying Account']");
+	By accountstatusmerged = By.xpath("//option[contains(text(),'Merged')]"); //Locator for selecting Account status as merged
+	By verifyaccstatusmerged= By.xpath("//span[contains(text(),'Merged')]"); //Locator to verify Account status as merged
+	By contactssectioncontactnamestatusactive= By.xpath("//label[contains(text(),'Active')]"); //Locator for Contact section Contact name status as active
+	By contactstatusresonactive= By.xpath("//span[@title='Active']"); //Locator for Contact status as active
+	By accountstatusnovalidinfoavailable = By.xpath("//option[contains(text(),'No Valid Info Available')]"); //Locator for Account status No Valid Info Available
+	By verifyaccstatusnovalidinfoavailable= By.xpath("//span[contains(text(),'No Valid Info Available')]"); //Locator to verify Account status No Valid Info Available
+	By contactssectioncontactnamestatusinactive= By.xpath("//label[contains(text(),'Inactive')]"); //Locator for Contact section Contact name status as inactive 
+	By contactstatusreasonnovalidaccinfo= By.xpath("//span[@title='No Valid Account Info']"); //Locator for Contact Status reason No Valid Account Info
+	By accountstatusoutofbusiness = By.xpath("//option[contains(text(),'Out of Business')]"); //Locator for Account status Out of Business
+	By verifyaccstatusoutofbusiness= By.xpath("//span[contains(text(),'Out of Business')]"); //Locator to verify Account status Out of Business
+	By contactstatusreasonoutofbusiness= By.xpath("//span[@title='Out of Business']"); //Locator for Contact Status reason Out of Business
+	By accountstatusnotvalidbuyingacc = By.xpath("//option[contains(text(),'Not valid Buying account')]"); //Locator for Account status Not valid Buying account
+	By verifyaccstatusnotvalidbuyingacc= By.xpath("//span[contains(text(),'Not valid Buying account')]"); //Locator to verify Account status Not valid Buying account
+	By contactstatusreasonnotvalidbuyingacc= By.xpath("//span[@title='Not a Valid Buying Account']"); //Locator for Contact Status reason Not valid Buying account
 	
 	public CRMAccountsPage(WebDriver driver) {
 
