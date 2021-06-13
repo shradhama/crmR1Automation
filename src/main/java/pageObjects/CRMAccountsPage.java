@@ -28,7 +28,7 @@ public class CRMAccountsPage {
 	By city = By.xpath("//input[@aria-label='City']");
 	By zip = By.xpath("//input[@aria-label='ZIP/Postal Code']");
 	By cntryexpandbtn = By.xpath("//button[@aria-label='Toggle Dropdown']");
-	By countryname = By.xpath("//body/div[@id='_dropdown']/div[3]");
+	By countryname = By.xpath("//div[@id='_dropdown']/div[3]");
 	By accsavenclosebtn = By.xpath("//button[@aria-label='Save & Close']");
 	By cletterfilterlink = By.xpath("//a[@id='C_link']");
 	By accountname = By.xpath("//div[@data-id='cell-2-2']");
@@ -60,7 +60,7 @@ public class CRMAccountsPage {
 	By accstatusbuysatcorplevel = By.xpath("//option[contains(text(),'Buys at Corporate Level')]");
 	By activatepopupactivatebtn = By.xpath("//button[@data-id='ok_id']");
 	By accstatusreason = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.PicklistStatusControl|header_statuscode.fieldControl|account']");
-	By activeaccountslabel = By.xpath("//h1[@aria-label='Active Accounts']");
+	By activeaccountslabel = By.xpath("//div[@aria-label='Active Accounts']/h1[1]");
 	By inactiveaccountslabel = By.xpath("//h1[@aria-label='Inactive Accounts']");
 	By statusreasonbuysatcorplevelinheader = By.xpath("//div[@title='Buys at Corporate Level']");
 	By pageno = By.xpath("//span[@title='Current page']");
@@ -121,13 +121,13 @@ public class CRMAccountsPage {
 	By clickdbaphonegridfunnel = By.xpath("//div[@data-id = 'telephone1']");
 	By clickdbacitygridfunnel = By.xpath("//div[@data-id = 'address1_city']");
 	By accdbanametxtbx = By.xpath("//input[@aria-label='Account DBA Name']");
-	By duplicaterecordspopuptitle = By.xpath("//h1[@aria-label='Duplicate records found']");
+	By duplicaterecordspopuptitle = By.xpath("//h1[@data-id='manageDuplicatesTitle']");
 	By unsavedchangespopuptitle = By.xpath("//h1[@aria-label='Unsaved changes']");
 	By phoneinsearchtable = By.xpath("(//div[@data-id='cell-0-3'])[position()=2]");
 	By phonetxboxlabel = By.xpath("//label[contains(text(),'Phone')]");
 	By hletterfilterlink = By.xpath("//li[@aria-label='Filter table by h']");
 	By duplicaterecordspopupignorensavebtn = By.xpath("//button[@aria-label='Ignore and save']");
-	By clickoverflowbutton = By.xpath("(//button[@data-id = 'OverflowButton'])[position()=2]");
+	By clickoverflowbutton = By.xpath("(//button[@data-id = 'OverflowButton'])");
 	By clickexporttoexcelbutton = By.xpath("//button[@data-id = 'account|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.account.ExportToExcel.Menu$splitButtonId']");
 	By saveexcelonline = By.xpath("//button[@data-id = 'export_to_excelonline_save']");
 	By selectcheckbox1 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeyaccountxxc_accountactivecontactcount']");
@@ -185,12 +185,12 @@ public class CRMAccountsPage {
 	By selectcountry = By.xpath("//div[@id = '_dropdown']/div[1]");
 	By findupdatedaccount = By.xpath("//div[@data-id = 'data-set-quickFind-container']/button[1]");
 	By scrolltocontacts = By.xpath("//h2[@data-id = 'form-sectionHeader-SUMMARY_TAB_column_3_section_1']");
-	By scrolltoassociatedlists = By.xpath("//h2[@data-id = 'form-sectionHeader-SUMMARY_TAB_section_6']");
+	By scrolltoassociatedlists = By.xpath("//section[@aria-label = 'Associated Lists']");
 	By listgridcolumn1 = By.xpath("//div[@data-id = 'AssociatedLists_container']/div[1]/div[4]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]");
 	By listgridcolumn2 = By.xpath("//div[@data-id = 'AssociatedLists_container']/div[1]/div[4]/div[1]/div[1]/div[5]/div[1]/div[1]/div[3]");
 	By listgridcolumn3 = By.xpath("//div[@data-id = 'AssociatedLists_container']/div[1]/div[4]/div[1]/div[1]/div[5]/div[1]/div[1]/div[4]");
-	By nolist = By.xpath("//div[@class = 'cc-grid-noRecords-Container']");
-	By list = By.xpath("//ul[@aria-label= 'Active Account Sub Grid']/li[1]");
+	By nolist = By.xpath("//div[@data-id = 'AssociatedLists_container']");
+	By list = By.xpath("//div[@data-id = 'AssociatedLists-GridListContainer']");
 	By listmember = By.xpath("//div[@aria-label = 'Active List Members']");
 	By openexcelonline = By.xpath("//button[@aria-label = 'Open in Excel Online']");
 	By exporttostaticworksheet = By.xpath("//button[@aria-label = 'Static Worksheet']");
@@ -207,7 +207,7 @@ public class CRMAccountsPage {
 	By taskbtnontimeline = By.xpath("//div[text() = 'Task']");
 	By tasksubjecttxtbx = By.xpath("//input[@aria-label='Subject']");
 	By tasksavenclosebtn = By.xpath("//button[@data-id='quickCreateSaveAndCloseBtn']");
-	By acctypelabel = By.xpath("//label[contains(text(),'Type')]");
+	By acctypelabel = By.xpath("//div[@data-id = 'xxc_typecode-FieldSectionItemContainer']/div[2]/div[1]/div[1]/span[1]/label[1]");
 	By accstreet3label = By.xpath("//label[contains(text(),'Street 3')]");
 	By verifyaccountppointment = By.xpath("//div[@id = 'TimelineMainContainerSection']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/label[1]");//Locator for getting text of subject for an appointment
 	//By trackprogressexportbtn = By.xpath("//div[@data-id = 'alertdialog']div[1]/div[3]/button[1]/span[1]"); //Locator for track progress for export online option for accounts
@@ -218,23 +218,7 @@ public class CRMAccountsPage {
 	By originatinglead = By.xpath("//input[@aria-label = 'Originating Lead, Lookup']");//Locator for originating lead on details tab
 	By contactpreferences = By.xpath("//section[@aria-label = 'Contact Preferences']");//Locator for Contact Preferences on details tab
 	By conprefoptions = By.xpath("//section[@data-id = 'CONTACT_PREFERENCES']");//Locator for Contact Preferences
-	By accountdropdownbtn = By.xpath("//span[@class='symbolFont ChevronDownMed-symbol  ']");
-	
-	//CAB-256
-	By accountstatusmerged = By.xpath("//option[contains(text(),'Merged')]"); //Locator for selecting Account status as merged
-	By verifyaccstatusmerged= By.xpath("//span[contains(text(),'Merged')]"); //Locator to verify Account status as merged
-	By contactssectioncontactnamestatusactive= By.xpath("//label[contains(text(),'Active')]"); //Locator for Contact section Contact name status as active
-	By contactstatusresonactive= By.xpath("//span[@title='Active']"); //Locator for Contact status as active
-	By accountstatusnovalidinfoavailable = By.xpath("//option[contains(text(),'No Valid Info Available')]"); //Locator for Account status No Valid Info Available
-	By verifyaccstatusnovalidinfoavailable= By.xpath("//span[contains(text(),'No Valid Info Available')]"); //Locator to verify Account status No Valid Info Available
-	By contactssectioncontactnamestatusinactive= By.xpath("//label[contains(text(),'Inactive')]"); //Locator for Contact section Contact name status as inactive 
-	By contactstatusreasonnovalidaccinfo= By.xpath("//span[@title='No Valid Account Info']"); //Locator for Contact Status reason No Valid Account Info
-	By accountstatusoutofbusiness = By.xpath("//option[contains(text(),'Out of Business')]"); //Locator for Account status Out of Business
-	By verifyaccstatusoutofbusiness= By.xpath("//span[contains(text(),'Out of Business')]"); //Locator to verify Account status Out of Business
-	By contactstatusreasonoutofbusiness= By.xpath("//span[@title='Out of Business']"); //Locator for Contact Status reason Out of Business
-	By accountstatusnotvalidbuyingacc = By.xpath("//option[contains(text(),'Not valid Buying account')]"); //Locator for Account status Not valid Buying account
-	By verifyaccstatusnotvalidbuyingacc= By.xpath("//span[contains(text(),'Not valid Buying account')]"); //Locator to verify Account status Not valid Buying account
-	By contactstatusreasonnotvalidbuyingacc= By.xpath("//span[@title='Not a Valid Buying Account']"); //Locator for Contact Status reason Not valid Buying account
+	By listsection = By.xpath("//section[@aria-label = 'Associated Lists']");//Locator for Lists section
 	
 	public CRMAccountsPage(WebDriver driver) {
 
@@ -1360,110 +1344,17 @@ public class CRMAccountsPage {
 		Thread.sleep(5000);
 		return driver.findElement(conprefoptions);
 	}
-	
 	public WebElement getdetailsTab() throws InterruptedException
 	{
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(detailsTab));
 		return driver.findElement(detailsTab);
 	}
-	
-	public WebElement getActiveAccountDropDownBtn() throws InterruptedException {
-		Thread.sleep(10000);
-		return driver.findElement(accountdropdownbtn);
+	public WebElement getlistsection() throws InterruptedException
+	{
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(listsection));
+		return driver.findElement(listsection);
 	}
-	
-	//CAB-256
-		public WebElement getAccountStatusMerged() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusmerged));
-			return driver.findElement(accountstatusmerged);
-		}
-		
-		public WebElement getVerifyAccountStatusMerged() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusmerged));
-			return driver.findElement(verifyaccstatusmerged);
-		}
-		
-		public WebElement getContactsSectionContactNameStatusAsActive() throws InterruptedException
-		{
-			Thread.sleep(4000);
-			return driver.findElement(contactssectioncontactnamestatusactive);
-		}
-		
-		public WebElement getContactStatusReasonActive() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusresonactive));
-			return driver.findElement(contactstatusresonactive);
-		}
-		
-		public WebElement getAccountStatusNoValidInfoAvailable() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusnovalidinfoavailable));
-			return driver.findElement(accountstatusnovalidinfoavailable);
-		}
-
-		public WebElement getVerifyAccountStatusNoValidInfoAvailable() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusnovalidinfoavailable));
-			return driver.findElement(verifyaccstatusnovalidinfoavailable);
-		}
-		
-		public WebElement getContactsSectionContactNameStatusAsInactive() throws InterruptedException
-		{
-			Thread.sleep(4000);
-			return driver.findElement(contactssectioncontactnamestatusinactive);
-		}
-		
-		public WebElement getContactStatusReasonNoValidAccInfo() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusreasonnovalidaccinfo));
-			return driver.findElement(contactstatusreasonnovalidaccinfo);
-		}
-		
-		public WebElement getAccountStatusOutOfBusiness() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusoutofbusiness));
-			return driver.findElement(accountstatusoutofbusiness);
-		}
-		
-		public WebElement getVerifyAccountStatusOutOfBusiness() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusoutofbusiness));
-			return driver.findElement(verifyaccstatusoutofbusiness);
-		}
-		
-		public WebElement getContactStatusReasonOutOfBusiness() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusreasonoutofbusiness));
-			return driver.findElement(contactstatusreasonoutofbusiness);
-		}
-		
-		public WebElement getAccountStatusNotValidBuyingAcc() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusnotvalidbuyingacc));
-			return driver.findElement(accountstatusnotvalidbuyingacc);
-		}
-		
-		public WebElement getVerifyAccountStatusNotValidBuyingAccount() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusnotvalidbuyingacc));
-			return driver.findElement(verifyaccstatusnotvalidbuyingacc);
-		}
-		
-		public WebElement getContactStatusReasonNotValidBuyingAccount() {
-			wait = new WebDriverWait (driver,20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusreasonnotvalidbuyingacc));
-			return driver.findElement(contactstatusreasonnotvalidbuyingacc);
-		}
-
-
-
-
-
-
-		
-
 }
 

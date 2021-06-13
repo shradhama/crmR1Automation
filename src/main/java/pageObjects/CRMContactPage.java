@@ -31,7 +31,7 @@ public class CRMContactPage {
 	By verifycontact = By.xpath("//h1[@data-id='header_title']");
 	By contactformemailtxtfield = By.xpath("//input[@data-id='emailaddress1.fieldControl-mail-text-input']");
 	By contactformbusinessphonetxtfield = By.xpath("//input[@aria-label='Business Phone']");
-	By contactsectionmenubtn = By.xpath("//button[@data-lp-id='SubGridStandard:contact-OverflowButton']");
+	By contactsectionmenubtn = By.xpath("//button[@aria-label='More commands for Contact']");
 	By contactsavenclosebtn = By.xpath("//button[@aria-label='Save & Close']");
 	By contactnameinheader = By.xpath("//h1[@data-id='header_title']");
 	By activecontactslabel = By.xpath("//h1[@aria-label='Active Contacts']");

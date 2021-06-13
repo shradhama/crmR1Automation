@@ -18,7 +18,7 @@ public class CRMHomePage {
 	By accountTab = By.xpath("//span[contains(text(),'Accounts')]");
 	By clearsearch = By.xpath("//button[@title='Clear search']");
 	By searchresultaccname = By.xpath("//div[@data-id = 'cell-0-2']");
-	By activeaccountstitle = By.xpath("//h1[@aria-label='Active Accounts']");
+	By activeaccountstitle = By.xpath("//div[@aria-label='Active Accounts']/h1[1]");
 	By contacttab = By.xpath("//span[contains(text(),'Contacts')]");
 	By activecontactstitle = By.xpath("//span[contains(text(),'Active Contacts')]");
 	By searchresultcontactbusinessphone = By.xpath("//div[@data-id = 'cell-0-4']");
