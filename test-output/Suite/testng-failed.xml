@@ -6,7 +6,7 @@
       <class name="crmframework.crmAutomation.CAB256PageTest">
         <methods>
           <include name="initialize"/>
-          <include name="TS009_VerifyInactiveContactStatusReasonOnMainContactPageTest"/>
+          <include name="TS015_VerifyNoLongerWithAccountStatusReason"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.CAB256PageTest -->
     </classes>

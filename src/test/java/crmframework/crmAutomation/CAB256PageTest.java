@@ -27,6 +27,7 @@ import pageObjects.CRMAccountsPage;
 import pageObjects.CRMAddMarketingRelationshipOwner;
 import pageObjects.CRMContactPage;
 import pageObjects.CRMHomePage;
+import pageObjects.CRMIncentivesPage;
 import pageObjects.CRMLandingPage;
 import pageObjects.CRMLoginPage;
 import pageObjects.CRMPeoplePage;
@@ -60,6 +61,7 @@ public class CAB256PageTest extends base{
 	CRMAddMarketingRelationshipOwner amro;
 	JavascriptExecutor js;
 	CRMPeoplePage pl;
+	CRMIncentivesPage in;
 
 	@BeforeTest
 	public void initialize() throws IOException, InterruptedException
@@ -691,10 +693,288 @@ public class CAB256PageTest extends base{
 		System.out.println("Contact Status Reason: " + (statusforcontactasoutofbusiness.getText()));
 		Assert.assertEquals(statusforcontactasoutofbusiness.getText(), "Out of Business");
 	}
+	@Test(priority=11)
+	public void TS011_VerifyMergedStatusReason() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//TS538- Verify that contact is deactivated successfully with status reason as Merged
 
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
+		in = new CRMIncentivesPage(driver);
 
+		hp.getContactsTab().click();
+		Thread.sleep(15000);
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(prop.getProperty("name"));
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Actions action = new Actions(driver);
+		WebElement OpenContact = in.selectIncentiveRecord();
+		action.doubleClick(OpenContact).perform();
+		Thread.sleep(5000);
+		
+		//Click on Deactivate button
+		cp.getDeactivateBtn().click();
+		Thread.sleep(5000);
+		
+		//Select 'Contact Status: Merged' in the confirm Contact Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		Thread.sleep(5000);
+		ap.getAccountStatusMerged().click();
+		ap.getAccountStatusMerged().click();
+		Thread.sleep(3000);
+		
+		//Click on 'Deactivate button of confirmation pop-up
+		cp.getDeactivateOkBtn().click();
+		Thread.sleep(5000);
+		
+		//Verify if contact is deactivated and Contact Status Reason is Merged
+		Assert.assertTrue(cp.getreadonlynotification().isDisplayed());
+		System.out.println("Contact is deactivated successfully.");
+		Thread.sleep(5000);
+		Assert.assertTrue(cp.getmergedstatusreason().getText().equals("Merged"));
+		System.out.println("Contact Status Reason is updated successfully.");
 
+	}
+	@Test(priority=12)
+	public void TS012_VerifyOutOfBusinessStatusReason() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//TS539- Verify that contact is deactivated successfully with status reason as Out Of Business
 
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
+		in = new CRMIncentivesPage(driver);
+
+		hp.getContactsTab().click();
+		Thread.sleep(15000);
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(prop.getProperty("name"));
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Actions action = new Actions(driver);
+		WebElement OpenContact = in.selectIncentiveRecord();
+		action.doubleClick(OpenContact).perform();
+		Thread.sleep(5000);
+		
+		//Click on Deactivate button
+		cp.getDeactivateBtn().click();
+		Thread.sleep(5000);
+		
+		//Select 'Contact Status: Out of Business' in the confirm Contact Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		Thread.sleep(5000);
+		ap.getAccountStatusOutOfBusiness().click();
+		ap.getAccountStatusOutOfBusiness().click();
+		Thread.sleep(3000);
+		
+		//Click on 'Deactivate button of confirmation pop-up
+		cp.getDeactivateOkBtn().click();
+		Thread.sleep(5000);
+		
+		//Verify if contact is deactivated and Contact Status Reason is Out of Business
+		Assert.assertTrue(cp.getreadonlynotification().isDisplayed());
+		System.out.println("Contact is deactivated successfully.");
+		Thread.sleep(5000);
+		Assert.assertTrue(cp.getmergedstatusreason().getText().equals("Out of Business"));
+		System.out.println("Contact Status Reason is updated successfully.");
+
+	}
+	@Test(priority=13)
+	public void TS013_VerifyNoValidAccountInfoStatusReason() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//TS540- Verify that contact is deactivated successfully with status reason as No Valid Account Info
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
+		in = new CRMIncentivesPage(driver);
+
+		hp.getContactsTab().click();
+		Thread.sleep(15000);
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(prop.getProperty("name"));
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Actions action = new Actions(driver);
+		WebElement OpenContact = in.selectIncentiveRecord();
+		action.doubleClick(OpenContact).perform();
+		Thread.sleep(5000);
+		
+		//Click on Deactivate button
+		cp.getDeactivateBtn().click();
+		Thread.sleep(5000);
+		
+		//Select 'Contact Status: No Valid Account Info' in the confirm Contact Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		Thread.sleep(5000);
+		cp.getContactStatusNoValidAccInfo().click();
+		cp.getContactStatusNoValidAccInfo().click();
+		Thread.sleep(3000);
+		
+		//Click on 'Deactivate button of confirmation pop-up
+		cp.getDeactivateOkBtn().click();
+		Thread.sleep(5000);
+		
+		//Verify if contact is deactivated and Contact Status Reason is Out of Business
+		Assert.assertTrue(cp.getreadonlynotification().isDisplayed());
+		System.out.println("Contact is deactivated successfully.");
+		Thread.sleep(5000);
+		Assert.assertTrue(cp.getmergedstatusreason().getText().equals("No Valid Account Info"));
+		System.out.println("Contact Status Reason is updated successfully.");
+
+	}
+	@Test(priority=14)
+	public void TS014_VerifyNotValidBuyingAccountStatusReason() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//TS541- Verify that contact is deactivated successfully with status reason as Not a Valid Buying Account 
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
+		in = new CRMIncentivesPage(driver);
+
+		hp.getContactsTab().click();
+		Thread.sleep(15000);
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(prop.getProperty("name"));
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Actions action = new Actions(driver);
+		WebElement OpenContact = in.selectIncentiveRecord();
+		action.doubleClick(OpenContact).perform();
+		Thread.sleep(5000);
+		
+		//Click on Deactivate button
+		cp.getDeactivateBtn().click();
+		Thread.sleep(5000);
+		
+		//Select 'Contact Status: Not Valid Buying Account' in the confirm Contact Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		Thread.sleep(5000);
+		cp.getContactStatusNotaValidBuyingAcc().click();
+		cp.getContactStatusNotaValidBuyingAcc().click();
+		Thread.sleep(3000);
+		
+		//Click on 'Deactivate button of confirmation pop-up
+		cp.getDeactivateOkBtn().click();
+		Thread.sleep(5000);
+		
+		//Verify if contact is deactivated and Contact Status Reason is Not Valid Buying Account
+		Assert.assertTrue(cp.getreadonlynotification().isDisplayed());
+		System.out.println("Contact is deactivated successfully.");
+		Thread.sleep(5000);
+		Assert.assertTrue(cp.getmergedstatusreason().getText().equals("Not a Valid Buying Account"));
+		System.out.println("Contact Status Reason is updated successfully.");
+
+	}
+	@Test(priority=15)
+	public void TS015_VerifyNoLongerWithAccountStatusReason() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//TS542- Verify that contact is deactivated successfully with status reason as No Longer with Valid
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
+		in = new CRMIncentivesPage(driver);
+
+		hp.getContactsTab().click();
+		Thread.sleep(15000);
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(prop.getProperty("name"));
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Actions action = new Actions(driver);
+		WebElement OpenContact = in.selectIncentiveRecord();
+		action.doubleClick(OpenContact).perform();
+		Thread.sleep(5000);
+		
+		//Click on Deactivate button
+		cp.getDeactivateBtn().click();
+		Thread.sleep(5000);
+		
+		//Select 'Contact Status: No Longer With Account' in the confirm Contact Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		Thread.sleep(5000);
+		cp.getnolongeracc().click();
+		cp.getnolongeracc().click();
+		Thread.sleep(3000);
+		
+		//Click on 'Deactivate button of confirmation pop-up
+		cp.getDeactivateOkBtn().click();
+		Thread.sleep(5000);
+		
+		//Verify if contact is deactivated and Contact Status Reason is No Longer With Account
+		Assert.assertTrue(cp.getreadonlynotification().isDisplayed());
+		System.out.println("Contact is deactivated successfully.");
+		Thread.sleep(5000);
+		Assert.assertTrue(cp.getmergedstatusreason().getText().equals("No Longer with Account"));
+		System.out.println("Contact Status Reason is updated successfully.");
+
+	}
+	@Test(priority=16)
+	public void TS016_VerifyBadContactInfoStatusReason() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//TS543- Verify that contact is deactivated successfully with status reason as Bad Contact Info
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		amro = new CRMAddMarketingRelationshipOwner(driver);
+		in = new CRMIncentivesPage(driver);
+
+		hp.getContactsTab().click();
+		Thread.sleep(15000);
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(prop.getProperty("name"));
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Actions action = new Actions(driver);
+		WebElement OpenContact = in.selectIncentiveRecord();
+		action.doubleClick(OpenContact).perform();
+		Thread.sleep(5000);
+		
+		//Click on Deactivate button
+		cp.getDeactivateBtn().click();
+		Thread.sleep(5000);
+		
+		//Select 'Contact Status: Bad Contact Info' in the confirm Contact Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		Thread.sleep(5000);
+		cp.getbadconinfo().click();
+		cp.getbadconinfo().click();
+		Thread.sleep(3000);
+		
+		//Click on 'Deactivate button of confirmation pop-up
+		cp.getDeactivateOkBtn().click();
+		Thread.sleep(5000);
+		
+		//Verify if contact is deactivated and Contact Status Reason is No Longer With Account
+		Assert.assertTrue(cp.getreadonlynotification().isDisplayed());
+		System.out.println("Contact is deactivated successfully.");
+		Thread.sleep(5000);
+		Assert.assertTrue(cp.getmergedstatusreason().getText().equals("Bad Contact Info"));
+		System.out.println("Contact Status Reason is updated successfully.");
+
+	}
 	
 	
 	//	@AfterTest

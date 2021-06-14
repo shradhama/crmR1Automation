@@ -220,6 +220,23 @@ public class CRMAccountsPage {
 	By conprefoptions = By.xpath("//section[@data-id = 'CONTACT_PREFERENCES']");//Locator for Contact Preferences
 	By listsection = By.xpath("//section[@aria-label = 'Associated Lists']");//Locator for Lists section
 	
+	//CAB-256
+	By accountstatusmerged = By.xpath("//option[contains(text(),'Merged')]"); //Locator for selecting Account status as merged
+	By verifyaccstatusmerged= By.xpath("//span[contains(text(),'Merged')]"); //Locator to verify Account status as merged
+	By contactssectioncontactnamestatusactive= By.xpath("//label[contains(text(),'Active')]"); //Locator for Contact section Contact name status as active
+	By contactstatusresonactive= By.xpath("//span[@title='Active']"); //Locator for Contact status as active
+	By accountstatusnovalidinfoavailable = By.xpath("//option[contains(text(),'No Valid Info Available')]"); //Locator for Account status No Valid Info Available
+	By verifyaccstatusnovalidinfoavailable= By.xpath("//span[contains(text(),'No Valid Info Available')]"); //Locator to verify Account status No Valid Info Available
+	By contactssectioncontactnamestatusinactive= By.xpath("//label[contains(text(),'Inactive')]"); //Locator for Contact section Contact name status as inactive
+	By contactstatusreasonnovalidaccinfo= By.xpath("//span[@title='No Valid Account Info']"); //Locator for Contact Status reason No Valid Account Info
+	By accountstatusoutofbusiness = By.xpath("//option[contains(text(),'Out of Business')]"); //Locator for Account status Out of Business
+	By verifyaccstatusoutofbusiness= By.xpath("//span[contains(text(),'Out of Business')]"); //Locator to verify Account status Out of Business
+	By contactstatusreasonoutofbusiness= By.xpath("//span[@title='Out of Business']"); //Locator for Contact Status reason Out of Business
+	By accountstatusnotvalidbuyingacc = By.xpath("//option[contains(text(),'Not valid Buying account')]"); //Locator for Account status Not valid Buying account
+	By verifyaccstatusnotvalidbuyingacc= By.xpath("//span[contains(text(),'Not valid Buying account')]"); //Locator to verify Account status Not valid Buying account
+	By contactstatusreasonnotvalidbuyingacc= By.xpath("//span[@title='Not a Valid Buying Account']"); //Locator for Contact Status reason Not valid Buying account
+	
+	
 	public CRMAccountsPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -1355,6 +1372,89 @@ public class CRMAccountsPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(listsection));
 		return driver.findElement(listsection);
+	}
+	public WebElement getAccountStatusMerged() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusmerged));
+		return driver.findElement(accountstatusmerged);
+	}
+
+	public WebElement getVerifyAccountStatusMerged() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusmerged));
+		return driver.findElement(verifyaccstatusmerged);
+	}
+
+	public WebElement getContactsSectionContactNameStatusAsActive() throws InterruptedException
+	{
+		Thread.sleep(4000);
+		return driver.findElement(contactssectioncontactnamestatusactive);
+	}
+
+	public WebElement getContactStatusReasonActive() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusresonactive));
+		return driver.findElement(contactstatusresonactive);
+	}
+
+	public WebElement getAccountStatusNoValidInfoAvailable() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusnovalidinfoavailable));
+		return driver.findElement(accountstatusnovalidinfoavailable);
+	}
+
+	public WebElement getVerifyAccountStatusNoValidInfoAvailable() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusnovalidinfoavailable));
+		return driver.findElement(verifyaccstatusnovalidinfoavailable);
+	}
+
+	public WebElement getContactsSectionContactNameStatusAsInactive() throws InterruptedException
+	{
+		Thread.sleep(4000);
+		return driver.findElement(contactssectioncontactnamestatusinactive);
+	}
+
+	public WebElement getContactStatusReasonNoValidAccInfo() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusreasonnovalidaccinfo));
+		return driver.findElement(contactstatusreasonnovalidaccinfo);
+	}
+
+	public WebElement getAccountStatusOutOfBusiness() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusoutofbusiness));
+		return driver.findElement(accountstatusoutofbusiness);
+	}
+
+	public WebElement getVerifyAccountStatusOutOfBusiness() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusoutofbusiness));
+		return driver.findElement(verifyaccstatusoutofbusiness);
+	}
+
+	public WebElement getContactStatusReasonOutOfBusiness() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusreasonoutofbusiness));
+		return driver.findElement(contactstatusreasonoutofbusiness);
+	}
+
+	public WebElement getAccountStatusNotValidBuyingAcc() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accountstatusnotvalidbuyingacc));
+		return driver.findElement(accountstatusnotvalidbuyingacc);
+	}
+
+	public WebElement getVerifyAccountStatusNotValidBuyingAccount() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(verifyaccstatusnotvalidbuyingacc));
+		return driver.findElement(verifyaccstatusnotvalidbuyingacc);
+	}
+
+	public WebElement getContactStatusReasonNotValidBuyingAccount() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusreasonnotvalidbuyingacc));
+		return driver.findElement(contactstatusreasonnotvalidbuyingacc);
 	}
 }
 

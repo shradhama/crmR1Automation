@@ -547,10 +547,10 @@ public class IncentiveDetailsPageTest extends base {
 		String parentId = it.next();
 		String childId = it.next();
 		driver.switchTo().window(childId);
-		
+		driver.navigate().refresh(); 
 		Thread.sleep(15000);
 		//ap.getAccRefreshBtn().click();
-		driver.navigate().refresh();
+		
 		//Verify export to excel online
 		System.out.println(pl.getonlineexportverification().getText());
 		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));

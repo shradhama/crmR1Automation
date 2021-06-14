@@ -189,6 +189,10 @@ public class CRMContactPage {
 	By statusreasonnotavalidbuyingaccinheader = By.xpath("//div[@title='Not a Valid Buying Account']");
 	By contactstatusnovalidaccinfo = By.xpath("//option[contains(text(),'No Valid Account Info')]");
 	By statusreasonnovalidaccinfoinheader = By.xpath("//div[@title='No Valid Account Info']");
+	By readonlynotification = By.xpath("//span[@data-id = 'warningNotification']");//Locator for read only message
+	By nolongeracc = By.xpath("//option[contains(text(),'No Longer with Account')]");//Locator for Deactivate Contact No Longer With Account option
+	By mergedstatusreason = By.xpath("//div[@data-id = 'form-header']/div[2]/div[1]/div[1]/div[7]/div[1]/div[1]");//Locator for Status reason at Contact form
+	By badconinfo = By.xpath("//option[contains(text(),'Bad Contact Info')]");//Locator for Deactivate Contact No Longer With Account option
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -1147,5 +1151,25 @@ public class CRMContactPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasonnovalidaccinfoinheader));
 		return driver.findElement(contactstatusreason);
+	}
+	public WebElement getnolongeracc() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(nolongeracc));
+		return driver.findElement(nolongeracc);
+	}
+	public WebElement getreadonlynotification() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(readonlynotification));
+		return driver.findElement(readonlynotification);
+	}
+	public WebElement getmergedstatusreason() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(mergedstatusreason));
+		return driver.findElement(mergedstatusreason);
+	}
+	public WebElement getbadconinfo() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(badconinfo));
+		return driver.findElement(badconinfo);
 	}
 }
