@@ -60,8 +60,8 @@ public class CRMAccountsPage {
 	By accstatusbuysatcorplevel = By.xpath("//option[contains(text(),'Buys at Corporate Level')]");
 	By activatepopupactivatebtn = By.xpath("//button[@data-id='ok_id']");
 	By accstatusreason = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.PicklistStatusControl|header_statuscode.fieldControl|account']");
-	By activeaccountslabel = By.xpath("//div[@aria-label='Active Accounts']/h1[1]");
-	By inactiveaccountslabel = By.xpath("//h1[@aria-label='Inactive Accounts']");
+	By activeaccountslabel = By.xpath("//div[@aria-label='Active Accounts']");
+	By inactiveaccountslabel = By.xpath("//li[@aria-label='Inactive Accounts']");
 	By statusreasonbuysatcorplevelinheader = By.xpath("//div[@title='Buys at Corporate Level']");
 	By pageno = By.xpath("//span[@title='Current page']");
 	By accstatusoutofbusiness = By.xpath("//option[contains(text(),'Out of Business')]");

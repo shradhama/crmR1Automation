@@ -1,5 +1,7 @@
 package pageObjects;
 
+
+
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -34,7 +36,7 @@ public class CRMContactPage {
 	By contactsectionmenubtn = By.xpath("//button[@aria-label='More commands for Contact']");
 	By contactsavenclosebtn = By.xpath("//button[@aria-label='Save & Close']");
 	By contactnameinheader = By.xpath("//h1[@data-id='header_title']");
-	By activecontactslabel = By.xpath("//h1[@aria-label='Active Contacts']");
+	By activecontactslabel = By.xpath("//div[@aria-label='Active Contacts']");
 	//By createnewcontactbtn = By.xpath("//button[@aria-label='New']");
 	By createnewcontactbtn = By.xpath("//button[@data-lp-id='HomePageGrid:contact-contact|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.contact.NewRecord']");
 	By contactfirstnamelabel = By.xpath("//label[text()='First Name']");
@@ -193,6 +195,10 @@ public class CRMContactPage {
 	By nolongeracc = By.xpath("//option[contains(text(),'No Longer with Account')]");//Locator for Deactivate Contact No Longer With Account option
 	By mergedstatusreason = By.xpath("//div[@data-id = 'form-header']/div[2]/div[1]/div[1]/div[7]/div[1]/div[1]");//Locator for Status reason at Contact form
 	By badconinfo = By.xpath("//option[contains(text(),'Bad Contact Info')]");//Locator for Deactivate Contact No Longer With Account option
+	By statusreasonmainpage = By.xpath("//span[@aria-label = 'Status Reason']");//Locator for status reason on main contact page
+	By contactalternativeid = By.xpath("//div[@data-id = 'editFormRoot']/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]");//Locator for altenative contact id
+	By accountatcontact = By.xpath("//div[@data-id = 'parentcustomerid.fieldControl-LookupResultsDropdown_parentcustomerid_selected_tag_text']");//Locator for Account Name at Contact Page
+	By jobtitle = By.xpath("//label[contains(text(),'Job Title')]");//Locator for Job Title
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -1171,5 +1177,25 @@ public class CRMContactPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(badconinfo));
 		return driver.findElement(badconinfo);
+	}
+	public WebElement getstatusreasonmainpage() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasonmainpage));
+		return driver.findElement(statusreasonmainpage);
+	}
+	public WebElement getcontactalternativeid() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactalternativeid));
+		return driver.findElement(contactalternativeid);
+	}
+	public WebElement getaccountatcontact() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accountatcontact));
+		return driver.findElement(accountatcontact);
+	}
+	public WebElement getjobtitle() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(jobtitle));
+		return driver.findElement(jobtitle);
 	}
 }

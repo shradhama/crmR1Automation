@@ -975,7 +975,87 @@ public class CAB256PageTest extends base{
 		System.out.println("Contact Status Reason is updated successfully.");
 
 	}
-	
+	@Test(priority=17)
+	public void TS017_VerifyStatusReasonAtContactAndAccount() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//TS539- Verify that contact is deactivated successfully with status reason as Out Of Business
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		pl = new CRMPeoplePage(driver);
+
+		hp.getContactsTab().click();
+		Thread.sleep(15000);
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(prop.getProperty("name"));
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Actions action = new Actions(driver);
+		WebElement OpenContact = in.selectIncentiveRecord();
+		action.doubleClick(OpenContact).perform();
+		Thread.sleep(10000);
+		String alternativecontactid = cp.getcontactalternativeid().getText();
+		
+		//Click on Deactivate button
+		cp.getDeactivateBtn().click();
+		Thread.sleep(5000);
+		
+		//Select 'Contact Status: Out of Business' in the confirm Contact Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		Thread.sleep(5000);
+		ap.getAccountStatusOutOfBusiness().click();
+		ap.getAccountStatusOutOfBusiness().click();
+				
+		//Click on 'Deactivate button of confirmation pop-up
+		cp.getDeactivateOkBtn().click();
+		Thread.sleep(10000);
+		String StatusReason = cp.getmergedstatusreason().getText();
+		Thread.sleep(3000);
+			
+		//Search Contact and verify status reason
+		hp.getContactsTab().click();
+		Thread.sleep(15000);
+		cp.getActiveContactsLabel().click();
+		Thread.sleep(3000);
+		cp.getInactiveContactOptn().click();
+		Thread.sleep(5000);
+		ap.getsearchaccounttextbox().click();
+		Thread.sleep(3000);
+		ap.getsearchaccounttextbox().sendKeys(alternativecontactid);
+		ap.getclicksearchbutton().click();
+		Thread.sleep(5000);
+		Actions action1 = new Actions(driver);
+		WebElement OpenContact1 = in.selectIncentiveRecord();
+		action1.doubleClick(OpenContact1).perform();
+		Thread.sleep(5000);
+		utl.scrollToElement(cp.getjobtitle());
+		Thread.sleep(3000);
+		String AccountName = cp.getaccountatcontact().getText();
+		pl.getMoreHeaderFieldsBtn().click();
+		Assert.assertEquals(cp.getstatusreasonmainpage().getText(), StatusReason);
+		System.out.println("Status Reason is displayed properly at main Contact Page.");
+		
+		//Verify Status Reason at Account Main page
+		hp.getAccountTab().click();
+		Thread.sleep(15000);
+		ap.getsearchaccounttextbox().click();
+		Thread.sleep(3000);
+		ap.getsearchaccounttextbox().sendKeys(AccountName);
+		ap.getclicksearchbutton().click();
+		Thread.sleep(5000);
+		Actions action2 = new Actions(driver);
+		WebElement OpenAccount = in.selectIncentiveRecord();
+		action2.doubleClick(OpenAccount).perform();
+		Thread.sleep(5000);
+		pl.getMoreHeaderFieldsBtn().click();
+		Assert.assertEquals(cp.getstatusreasonmainpage().getText(), StatusReason);
+		System.out.println("Status Reason is displayed properly at main Account Page.");
+		
+	}
 	
 	//	@AfterTest
 	//	public void closeDriver()
