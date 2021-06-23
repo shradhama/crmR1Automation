@@ -979,7 +979,7 @@ public class CAB256PageTest extends base{
 	public void TS017_VerifyStatusReasonAtContactAndAccount() throws InterruptedException
 	{
 		//The purpose of this test case to verify:-
-		//TS539- Verify that contact is deactivated successfully with status reason as Out Of Business
+		//TS544- Verify that Status Reason for deactivated contact is properly displayed at Account and Contact main page
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
 		hp = new CRMHomePage(driver);
@@ -992,6 +992,7 @@ public class CAB256PageTest extends base{
 		Thread.sleep(15000);
 		hp.getSearchContactField().click();
 		hp.getSearchContactField().sendKeys(prop.getProperty("name"));
+		Thread.sleep(2000);
 		hp.getstartsearch().click();
 		Thread.sleep(5000);
 		Actions action = new Actions(driver);
@@ -1009,13 +1010,14 @@ public class CAB256PageTest extends base{
 		Thread.sleep(5000);
 		ap.getAccountStatusOutOfBusiness().click();
 		ap.getAccountStatusOutOfBusiness().click();
-				
+		Thread.sleep(5000);
+						
 		//Click on 'Deactivate button of confirmation pop-up
 		cp.getDeactivateOkBtn().click();
-		Thread.sleep(10000);
-		String StatusReason = cp.getmergedstatusreason().getText();
-		Thread.sleep(3000);
-			
+		Thread.sleep(5000);
+		ap.getAccRefreshBtn().click();
+		Thread.sleep(5000);
+		
 		//Search Contact and verify status reason
 		hp.getContactsTab().click();
 		Thread.sleep(15000);
@@ -1035,6 +1037,9 @@ public class CAB256PageTest extends base{
 		utl.scrollToElement(cp.getjobtitle());
 		Thread.sleep(3000);
 		String AccountName = cp.getaccountatcontact().getText();
+		String StatusReason = cp.getmergedstatusreason().getText();
+		Thread.sleep(2000);
+		System.out.println(AccountName);
 		pl.getMoreHeaderFieldsBtn().click();
 		Assert.assertEquals(cp.getstatusreasonmainpage().getText(), StatusReason);
 		System.out.println("Status Reason is displayed properly at main Contact Page.");
@@ -1042,9 +1047,16 @@ public class CAB256PageTest extends base{
 		//Verify Status Reason at Account Main page
 		hp.getAccountTab().click();
 		Thread.sleep(15000);
+		ap.getActiveAccountsLabel().click();
+		Thread.sleep(2000);
+		ap.getInactiveAccountsLabel().click();
+		Thread.sleep(5000);
 		ap.getsearchaccounttextbox().click();
 		Thread.sleep(3000);
 		ap.getsearchaccounttextbox().sendKeys(AccountName);
+		Thread.sleep(3000);
+		System.out.println(ap.getsearchaccounttextbox().getText());
+		Thread.sleep(2000);
 		ap.getclicksearchbutton().click();
 		Thread.sleep(5000);
 		Actions action2 = new Actions(driver);
@@ -1054,6 +1066,141 @@ public class CAB256PageTest extends base{
 		pl.getMoreHeaderFieldsBtn().click();
 		Assert.assertEquals(cp.getstatusreasonmainpage().getText(), StatusReason);
 		System.out.println("Status Reason is displayed properly at main Account Page.");
+		
+	}
+	@Test(priority=18)
+	public void TS018_VerifyDeactivatedContactAtAccountRelatedTab() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//TS545- Verify that deactivated contact is removed from Accounts Related Tab
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		pl = new CRMPeoplePage(driver);
+
+		hp.getContactsTab().click();
+		Thread.sleep(15000);
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(prop.getProperty("name"));
+		Thread.sleep(2000);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Actions action = new Actions(driver);
+		WebElement OpenContact = in.selectIncentiveRecord();
+		action.doubleClick(OpenContact).perform();
+		Thread.sleep(10000);
+		String alternativecontactid = cp.getcontactalternativeid().getText();
+		utl.scrollToElement(cp.getjobtitle());
+		Thread.sleep(3000);
+		String AccountName = cp.getaccountatcontact().getText();
+		
+		//Click on Deactivate button
+		cp.getDeactivateBtn().click();
+		Thread.sleep(5000);
+		
+		//Select 'Contact Status: Out of Business' in the confirm Contact Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		Thread.sleep(5000);
+		ap.getAccountStatusOutOfBusiness().click();
+		ap.getAccountStatusOutOfBusiness().click();
+		Thread.sleep(5000);
+						
+		//Click on 'Deactivate button of confirmation pop-up
+		cp.getDeactivateOkBtn().click();
+		Thread.sleep(5000);
+				
+		//Verify deactivated contact at Accounts Related tab
+		hp.getAccountTab().click();
+		Thread.sleep(15000);
+		ap.getsearchaccounttextbox().click();
+		Thread.sleep(3000);
+		ap.getsearchaccounttextbox().sendKeys(AccountName);
+		Thread.sleep(3000);
+		ap.getclicksearchbutton().click();
+		Thread.sleep(5000);
+		Actions action2 = new Actions(driver);
+		WebElement OpenAccount = in.selectIncentiveRecord();
+		action2.doubleClick(OpenAccount).perform();
+		Thread.sleep(5000);
+		ap.getRelatedTab().click();
+		ap.getRelatedTabContactsItem().click();
+		Thread.sleep(5000);
+		ap.getsearchaccounttextbox().click();
+		Thread.sleep(3000);
+		ap.getsearchaccounttextbox().sendKeys(alternativecontactid);
+		Thread.sleep(3000);
+		ap.getclicksearchbutton().click();
+		Thread.sleep(3000);
+		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
+		System.out.println("Contact Name is removed from Account successfully.");
+	}
+	@Test(priority=19)
+	public void TS019_VerifyDeactivatedContactAtActiveInactiveContactGrid() throws InterruptedException
+	{
+		//The purpose of this test case to verify:-
+		//TS546- Verify that deactivated contact is displayed under Inactive Contacts and not under Active Contacts
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS) ;
+		hp = new CRMHomePage(driver);
+		ap = new CRMAccountsPage(driver);
+		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
+		pl = new CRMPeoplePage(driver);
+
+		hp.getContactsTab().click();
+		Thread.sleep(15000);
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(prop.getProperty("name"));
+		Thread.sleep(2000);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Actions action = new Actions(driver);
+		WebElement OpenContact = in.selectIncentiveRecord();
+		action.doubleClick(OpenContact).perform();
+		Thread.sleep(10000);
+		String alternativecontactid = cp.getcontactalternativeid().getText();
+				
+		//Click on Deactivate button
+		cp.getDeactivateBtn().click();
+		Thread.sleep(5000);
+		
+		//Select 'Contact Status: Out of Business' in the confirm Contact Deactivation pop-up
+		ap.getActivatePopupStatusField().click();
+		Thread.sleep(5000);
+		ap.getAccountStatusOutOfBusiness().click();
+		ap.getAccountStatusOutOfBusiness().click();
+		Thread.sleep(5000);
+						
+		//Click on 'Deactivate button of confirmation pop-up
+		cp.getDeactivateOkBtn().click();
+		Thread.sleep(5000);
+				
+		//Verify deactivated contact under Active Contacts
+		ap.getAccPageBackBtn().click();
+		Thread.sleep(5000);
+		hp.getSearchContactField().click();
+		hp.getSearchContactField().sendKeys(alternativecontactid);
+		Thread.sleep(2000);
+		hp.getstartsearch().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(in.getNoDataAvailableText().isDisplayed());
+		System.out.println("Deactivated Contact is not displayed under Active Contacts.");
+		
+		//Verify deactivated contact under Inactive Contacts
+		cp.getActiveContactsLabel().click();
+		Thread.sleep(2000);
+		cp.getInactiveContactOptn().click();
+		Thread.sleep(5000);
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(alternativecontactid);
+		Thread.sleep(2000);
+		ap.getclicksearchbutton().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(ap.getValidateInactiveAccName().isDisplayed());
+		System.out.println("Deactivated Contact is displayed under Inactive Contacts.");
 		
 	}
 	
