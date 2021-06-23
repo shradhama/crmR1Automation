@@ -185,7 +185,7 @@ public class CRMContactPage {
 	By selectbeginswithoptrforaccname = By.xpath("//button[@data-index = '6']"); //Locator for Begins With operator for Account name
 	
 	
-	//CAB-256
+	//CCAB-256
 	By contactstatusnotavalidbuyingacc = By.xpath("//option[contains(text(),'Not a Valid Buying Account')]");
 	By gletterfilterlink = By.xpath("//a[@id='G_link']");
 	By statusreasonnotavalidbuyingaccinheader = By.xpath("//div[@title='Not a Valid Buying Account']");
@@ -193,7 +193,7 @@ public class CRMContactPage {
 	By statusreasonnovalidaccinfoinheader = By.xpath("//div[@title='No Valid Account Info']");
 	By readonlynotification = By.xpath("//span[@data-id = 'warningNotification']");//Locator for read only message
 	By nolongeracc = By.xpath("//option[contains(text(),'No Longer with Account')]");//Locator for Deactivate Contact No Longer With Account option
-	By mergedstatusreason = By.xpath("//div[@data-id = 'form-header']/div[2]/div[1]/div[1]/div[7]/div[1]/div[1]");//Locator for Status reason at Contact form
+	By mergedstatusreason = By.xpath("//div[@data-id = 'editFormRoot']/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[7]/div[1]/div[1]");//Locator for Status reason at Contact form
 	By badconinfo = By.xpath("//option[contains(text(),'Bad Contact Info')]");//Locator for Deactivate Contact No Longer With Account option
 	By statusreasonmainpage = By.xpath("//span[@aria-label = 'Status Reason']");//Locator for status reason on main contact page
 	By contactalternativeid = By.xpath("//div[@data-id = 'editFormRoot']/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]");//Locator for altenative contact id
