@@ -16,11 +16,9 @@
 			<class name="crmframework.crmAutomation.ReferenceDataPageTest" />
 			<class name="crmframework.crmAutomation.DashboardPageTest" />
 			<class name="crmframework.crmAutomation.ActivitiesPageTest"/>
-			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> -->
-			<class name="crmframework.crmAutomation.CAB256PageTest"/>
-			<methods>
-			<include name="TS019_VerifyDeactivatedContactAtActiveInactiveContactGrid"/>
-			</methods>
+			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> 
+			<class name="crmframework.crmAutomation.CAB256PageTest"/> -->
+			<class name="crmframework.crmAutomation.MarketsPageTest"/>
 		</classes>
 	</test>
 </suite>

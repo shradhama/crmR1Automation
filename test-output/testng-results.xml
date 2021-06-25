@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="202712" started-at="2021-06-23T08:37:07Z" finished-at="2021-06-23T08:40:29Z">
+  <suite name="Suite" duration-ms="199107" started-at="2021-06-25T11:40:45Z" finished-at="2021-06-25T11:44:04Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="202712" started-at="2021-06-23T08:37:07Z" finished-at="2021-06-23T08:40:29Z">
-      <class name="crmframework.crmAutomation.CAB256PageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.CAB256PageTest@5e5792a0]" name="initialize" is-config="true" duration-ms="102724" started-at="2021-06-23T14:07:07Z" finished-at="2021-06-23T14:08:49Z">
+    <test name="Test" duration-ms="199107" started-at="2021-06-25T11:40:45Z" finished-at="2021-06-25T11:44:04Z">
+      <class name="crmframework.crmAutomation.MarketsPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.MarketsPageTest@46d56d67]" name="initialize" is-config="true" duration-ms="129318" started-at="2021-06-25T17:10:45Z" finished-at="2021-06-25T17:12:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS019_VerifyDeactivatedContactAtActiveInactiveContactGrid()[pri:0, instance:crmframework.crmAutomation.CAB256PageTest@5e5792a0]" name="TS019_VerifyDeactivatedContactAtActiveInactiveContactGrid" duration-ms="99950" started-at="2021-06-23T14:08:49Z" finished-at="2021-06-23T14:10:29Z">
+        <test-method status="PASS" signature="TS002_VerifyJuniperMarketRecordTiedToJuniperMarketChannelTest()[pri:0, instance:crmframework.crmAutomation.MarketsPageTest@46d56d67]" name="TS002_VerifyJuniperMarketRecordTiedToJuniperMarketChannelTest" duration-ms="69740" started-at="2021-06-25T17:12:54Z" finished-at="2021-06-25T17:14:04Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS019_VerifyDeactivatedContactAtActiveInactiveContactGrid -->
-      </class> <!-- crmframework.crmAutomation.CAB256PageTest -->
+        </test-method> <!-- TS002_VerifyJuniperMarketRecordTiedToJuniperMarketChannelTest -->
+      </class> <!-- crmframework.crmAutomation.MarketsPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
