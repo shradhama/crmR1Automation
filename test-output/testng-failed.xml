@@ -3,12 +3,12 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.CAB256PageTest">
+      <class name="crmframework.crmAutomation.MarketsPageTest">
         <methods>
+          <include name="TS002_VerifyJuniperMarketRecordTiedToJuniperMarketChannelTest"/>
           <include name="initialize"/>
-          <include name="TS019_VerifyDeactivatedContactAtActiveInactiveContactGrid"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.CAB256PageTest -->
+      </class> <!-- crmframework.crmAutomation.MarketsPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
