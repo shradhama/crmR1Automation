@@ -17,9 +17,9 @@
 			<class name="crmframework.crmAutomation.DashboardPageTest" />
 			<class name="crmframework.crmAutomation.ActivitiesPageTest"/>
 			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> -->
-			<class name="crmframework.crmAutomation.CAB256PageTest"/>
+			<class name="crmframework.crmAutomation.CAB250PageTest"/>
 			<methods>
-			<include name="TS016_VerifyBadContactInfoStatusReason"/>
+			<include name="TS001_VerifyPreseneOfNewFieldsToMarketEntity"/>
 			</methods>
 		</classes>
 	</test>

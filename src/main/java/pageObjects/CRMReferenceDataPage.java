@@ -121,7 +121,16 @@ public class CRMReferenceDataPage {
 	By channelsearchresult = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for channel name in search result
 	By clearsearch= By.xpath("//button[@aria-label='Clear search']"); //Locator to clear search
 	
+	By chanelgrid= By.xpath("//div[@data-id='cell-0-3']/a[1]"); //Locator for Channel Grid
+	By contactchannelprofile= By.xpath("//li[@title='Contact Channel Profiles']"); //Locator for Contact Channel Profile
+	By selectjupitermarket= By.xpath("//div[@data-id='cell-0-3']/a[1]"); //Locator to select Juniper Market option
+	By registrationopenlabel= By.xpath("//label[contains(text(),'Registration Open')]"); //Locator for Registration Open label
+	By registrationcloselabel= By.xpath("//label[contains(text(),'Registration Close')]"); //Locator for Registration Close label
+	By CDSauthkaylabel= By.xpath("//label[contains(text(),'CDSAuthKey')]"); //Locator for CDSAuthKey label
+	By registrationopenvalue= By.xpath(""); //Locator for Registration Open value
 	
+	
+
 	public CRMReferenceDataPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -529,7 +538,43 @@ public class CRMReferenceDataPage {
 	public WebElement getClearSearch() {
 		return driver.findElement(clearsearch);
 	}
+	
+	public WebElement selecChannelFromGrid() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(chanelgrid);
+	}
 
+	public WebElement getContactChannelProfile() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(contactchannelprofile);
+	}
+	
+	public WebElement selectJupiterMarket() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(selectjupitermarket);
+	}
+	
+	public WebElement getRegistrationOpenLabel() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(registrationopenlabel);
+	}
+	
+	public WebElement getRegistrationCloseLabel() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(registrationcloselabel);
+	}
+	
+	public WebElement getCDSAuthKeyLabel() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(CDSauthkaylabel);
+	}
+	
+	public WebElement getRegistrationOpenValue() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(registrationopenvalue);
+	}
+	
+	
 	
 }
 

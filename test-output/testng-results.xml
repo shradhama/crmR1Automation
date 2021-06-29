@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="168005" started-at="2021-06-14T14:35:48Z" finished-at="2021-06-14T14:38:36Z">
+  <suite name="Suite" duration-ms="218407" started-at="2021-06-29T12:03:52Z" finished-at="2021-06-29T12:07:30Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="168005" started-at="2021-06-14T14:35:48Z" finished-at="2021-06-14T14:38:36Z">
-      <class name="crmframework.crmAutomation.CAB256PageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.CAB256PageTest@5e5792a0]" name="initialize" is-config="true" duration-ms="107222" started-at="2021-06-14T20:05:48Z" finished-at="2021-06-14T20:07:35Z">
+    <test name="Test" duration-ms="218407" started-at="2021-06-29T12:03:52Z" finished-at="2021-06-29T12:07:30Z">
+      <class name="crmframework.crmAutomation.CAB250PageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.CAB250PageTest@59fa1d9b]" name="initialize" is-config="true" duration-ms="130822" started-at="2021-06-29T17:33:52Z" finished-at="2021-06-29T17:36:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS016_VerifyBadContactInfoStatusReason()[pri:0, instance:crmframework.crmAutomation.CAB256PageTest@5e5792a0]" name="TS016_VerifyBadContactInfoStatusReason" duration-ms="60761" started-at="2021-06-14T20:07:35Z" finished-at="2021-06-14T20:08:36Z">
+        <test-method status="PASS" signature="TS001_VerifyPreseneOfNewFieldsToMarketEntity()[pri:0, instance:crmframework.crmAutomation.CAB250PageTest@59fa1d9b]" name="TS001_VerifyPreseneOfNewFieldsToMarketEntity" duration-ms="87512" started-at="2021-06-29T17:36:03Z" finished-at="2021-06-29T17:37:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS016_VerifyBadContactInfoStatusReason -->
-      </class> <!-- crmframework.crmAutomation.CAB256PageTest -->
+        </test-method> <!-- TS001_VerifyPreseneOfNewFieldsToMarketEntity -->
+      </class> <!-- crmframework.crmAutomation.CAB250PageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
