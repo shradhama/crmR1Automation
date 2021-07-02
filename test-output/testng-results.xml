@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="199107" started-at="2021-06-25T11:40:45Z" finished-at="2021-06-25T11:44:04Z">
+  <suite name="Suite" duration-ms="216762" started-at="2021-07-02T07:04:50Z" finished-at="2021-07-02T07:08:27Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="199107" started-at="2021-06-25T11:40:45Z" finished-at="2021-06-25T11:44:04Z">
-      <class name="crmframework.crmAutomation.MarketsPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.MarketsPageTest@46d56d67]" name="initialize" is-config="true" duration-ms="129318" started-at="2021-06-25T17:10:45Z" finished-at="2021-06-25T17:12:54Z">
+    <test name="Test" duration-ms="216762" started-at="2021-07-02T07:04:50Z" finished-at="2021-07-02T07:08:27Z">
+      <class name="crmframework.crmAutomation.CampaignsPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.CampaignsPageTest@29774679]" name="initialize" is-config="true" duration-ms="131084" started-at="2021-07-02T12:34:50Z" finished-at="2021-07-02T12:37:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS002_VerifyJuniperMarketRecordTiedToJuniperMarketChannelTest()[pri:0, instance:crmframework.crmAutomation.MarketsPageTest@46d56d67]" name="TS002_VerifyJuniperMarketRecordTiedToJuniperMarketChannelTest" duration-ms="69740" started-at="2021-06-25T17:12:54Z" finished-at="2021-06-25T17:14:04Z">
+        <test-method status="PASS" signature="TS003_VerifyCampaignLinkingToTheIncentivesTest()[pri:0, instance:crmframework.crmAutomation.CampaignsPageTest@29774679]" name="TS003_VerifyCampaignLinkingToTheIncentivesTest" duration-ms="85631" started-at="2021-07-02T12:37:01Z" finished-at="2021-07-02T12:38:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS002_VerifyJuniperMarketRecordTiedToJuniperMarketChannelTest -->
-      </class> <!-- crmframework.crmAutomation.MarketsPageTest -->
+        </test-method> <!-- TS003_VerifyCampaignLinkingToTheIncentivesTest -->
+      </class> <!-- crmframework.crmAutomation.CampaignsPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

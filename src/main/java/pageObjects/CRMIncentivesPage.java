@@ -12,6 +12,7 @@ public class CRMIncentivesPage {
 	public WebDriver driver;
 	public FluentWait<WebDriver> wait;
 
+	By createnewincentivebtn = By.xpath("//button[@data-id='xxc_incentive|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_incentive.NewRecord']"); //Locator for Create New incentive button
 	By clickexportoptionarrow = By.xpath("//button[@data-id = 'xxc_incentive|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_incentive.ExportToExcel.Menu$splitButtonId']");//Locator for export to excel arrow
 	By selectcheckbox1 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_incentivecreatedby']");//Locator for checkbox
 	By selectcheckbox2 = By.xpath("//input[@data-id = 'entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_incentivecreatedon']");//Locator for checkbox
@@ -22,7 +23,7 @@ public class CRMIncentivesPage {
 	By selectcontactname = By.xpath("//span[@data-id = 'xxc_contactid.fieldControl-emailaddress11_0_0']"); //Locator of Contact name from lookup list
 	By marckettxtbx = By.xpath("//input[@aria-label = 'Market, Lookup']"); //Locator for Market text field on incentive form
 	By marketssearchrecordsbtn = By.xpath("//button[@aria-label = 'Search records for Market, Lookup field']"); //Locator for Search records button of Market field
-	By selectmarketname = By.xpath("//span[@data-id='xxc_marketid.fieldControl-xxc_name0_0_0']"); //Locator of Market name from lookup list
+	By selectmarketname = By.xpath("//span[@data-id='xxc_marketid.fieldControl-LookupResultsDropdown_xxc_marketid_resultsLabel']"); //Locator of Market name from lookup list
 	By referralsourcetxtbx = By.xpath("//input[@aria-label = 'Referral Source, Lookup']"); //Locator for Referral source text field on incentive form
 	By referralsourcesearchrecordsbtn = By.xpath("//button[@aria-label = 'Search records for Referral Source, Lookup field']"); //Locator for Search records button of Referral Source field
 	By selectreferralsourcename = By.xpath("//span[@data-id = 'xxc_referralsourceid.fieldControl-xxc_type1_0_0']"); //Locator of Referral source name from lookup list
@@ -71,13 +72,26 @@ public class CRMIncentivesPage {
 	By updatecontactname = By.xpath("//span[@data-id='xxc_contactid.fieldControl-fullname0_0_2']"); //Locator for 2nd Contact name
 	By accountlinkinincentivestab = By.xpath("//div[@data-id='cell-0-2']/a"); //Locator for Account name in Incentives tab
 	By selectincentiverecordonaccform = By.xpath("//div[@aria-label='Readonly Grid']/div/div/div/div[2]/div[1]"); //Locator for select incentive record on account form
-	
+	By accounttxtbx = By.xpath("//input[@aria-label='Account, Lookup']"); //Locator for Account Text box 
+	By selectaccountname = By.xpath("//span[@data-id='xxc_accountid.fieldControl-name0_0_0']"); //Locator to select Account name
+	By campaignfieldlabel = By.xpath("//label[contains(text(),'Campaign')]"); //Locator for Campaign field label
+	By campaigntxtbx = By.xpath("//input[@aria-label='Campaign, Lookup']"); //Locator for Campaign Text box
+	By selectcampaignname = By.xpath("//span[@data-id='xxc_campaignid.fieldControl-name0_0_0']"); //Locator for Campaign Name from loop results
+	By campaignsearchrecordsbtn = By.xpath("//button[@aria-label='Search records for Campaign, Lookup field']"); //Locator for Campaign Search records button	
+	By validatecampaignname = By.xpath("//div[@data-id='cell-0-5']"); //Locator to validate Campaign name in Incentives tab
+	By selectedcampaignnamefield = By.xpath("//div[@data-id='xxc_campaignid.fieldControl-LookupResultsDropdown_xxc_campaignid_selected_tag_text']"); //Locator for selected Campaign name field
 	
 	public CRMIncentivesPage(WebDriver driver) {
 
 		this.driver = driver;
 	}
 	
+	public WebElement getCreateNewIncentiveBtn() throws InterruptedException {
+		Thread.sleep(5000);
+//		wait = new WebDriverWait (driver,20);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(createnewincentivebtn));
+		return driver.findElement(createnewincentivebtn);
+	}
 	public WebElement getclickexportoptionarrow() {
 
 		wait = new WebDriverWait (driver,15);
@@ -327,10 +341,40 @@ public class CRMIncentivesPage {
 	public WebElement getAccountLinkInIncentivesTab() {
 		return driver.findElement(accountlinkinincentivestab);
 	}
-	
 	public WebElement selectIncentiveRecordonAccForm() throws InterruptedException {
 		Thread.sleep(6000);
 		return driver.findElement(selectincentiverecordonaccform);
 	}
+	public WebElement getAccountTextBox() {
+		return driver.findElement(accounttxtbx);
+	}
+	public WebElement SelectAccountName() {
+		return driver.findElement(selectaccountname);
+	}
+	public WebElement getCampaignFieldLabel() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(campaignfieldlabel));
+		return driver.findElement(campaignfieldlabel);
+	}
+	public WebElement getCampaignTextBox() {
+		return driver.findElement(campaigntxtbx);
+	}
+	public WebElement SelectCampaignName() {
+		return driver.findElement(selectcampaignname);
+	}
+	public WebElement getCampaignSearchRecordsBtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(campaignsearchrecordsbtn));
+		return driver.findElement(campaignsearchrecordsbtn);
+	}
+	public WebElement getValidateCampaignName() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(validatecampaignname));
+		return driver.findElement(validatecampaignname);
+	}
+	public WebElement getSelectedCampaignNameField() {
+		return driver.findElement(selectedcampaignnamefield);
+	}
+	
 }
 

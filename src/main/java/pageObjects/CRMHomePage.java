@@ -80,7 +80,7 @@ public class CRMHomePage {
 	By searchchannelfield= By.xpath("//input[@aria-label='Search this view']"); //Locator for search channel field 
 	By startsearchbutton= By.xpath("//div[@data-id='data-set-quickFind-container']/button[1]/span[1]"); //Locator for start search
 	By channelsearchresult = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for channel name in search result
-
+	By campaignstab = By.xpath("//span[contains(text(),'Campaigns')]"); //Locator for Campaigns tab
 	
 	public CRMHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -408,6 +408,11 @@ public class CRMHomePage {
 	public WebElement getChannelSearchResult() throws InterruptedException {
 		Thread.sleep(3000);
 		return driver.findElement(channelsearchresult);
+	}
+	
+	public WebElement getCampaignsTab() {
+		// web element for the Campaigns tab at left find side pane
+		return driver.findElement(campaignstab);
 	}
 	
 }

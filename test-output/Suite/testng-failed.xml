@@ -3,12 +3,12 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.MarketsPageTest">
+      <class name="crmframework.crmAutomation.CampaignsPageTest">
         <methods>
-          <include name="TS002_VerifyJuniperMarketRecordTiedToJuniperMarketChannelTest"/>
+          <include name="TS003_VerifyCampaignLinkingToTheIncentivesTest"/>
           <include name="initialize"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.MarketsPageTest -->
+      </class> <!-- crmframework.crmAutomation.CampaignsPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
