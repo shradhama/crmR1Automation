@@ -18,7 +18,10 @@
 			<class name="crmframework.crmAutomation.ActivitiesPageTest"/>
 			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> 
 			<class name="crmframework.crmAutomation.CAB256PageTest"/> -->
-			<class name="crmframework.crmAutomation.MarketsPageTest"/>
+			<class name="crmframework.crmAutomation.CampaignsPageTest"/>
+			<methods>
+			<include name="TS003_VerifyCampaignLinkingToTheIncentivesTest"/>
+			</methods>
 		</classes>
 	</test>
 </suite>
