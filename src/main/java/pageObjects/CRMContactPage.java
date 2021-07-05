@@ -185,7 +185,7 @@ public class CRMContactPage {
 	By selectbeginswithoptrforaccname = By.xpath("//button[@data-index = '6']"); //Locator for Begins With operator for Account name
 	
 	
-	//CCAB-256
+	//CAB-256
 	By contactstatusnotavalidbuyingacc = By.xpath("//option[contains(text(),'Not a Valid Buying Account')]");
 	By gletterfilterlink = By.xpath("//a[@id='G_link']");
 	By statusreasonnotavalidbuyingaccinheader = By.xpath("//div[@title='Not a Valid Buying Account']");
@@ -200,6 +200,12 @@ public class CRMContactPage {
 	By accountatcontact = By.xpath("//div[@data-id = 'parentcustomerid.fieldControl-LookupResultsDropdown_parentcustomerid_selected_tag_text']");//Locator for Account Name at Contact Page
 	By jobtitle = By.xpath("//label[contains(text(),'Job Title')]");//Locator for Job Title
 	
+	//CAB-259
+	By contactalternativeidfield = By.xpath("//div[contains(text(),'Contact Alternative Id')]"); //Locator for Contact Alternative Id field
+	By contactalternativeidvalue = By.xpath("//div[@data-id='cell-0-8']"); //Locator for contact alternative id value
+	By contactaltidfield = By.xpath("//div[@data-id='xxc_contact_alt_id']"); //Locator for contact alternative id field
+	By allcontactsoptn = By.xpath("//*[text()='All Contacts']"); //Locator for All Contacts view option
+
 	//CAB-231
 	By contactstatus = By.xpath("//select[@aria-label = 'Contact Status']");//Locator for Contact Status
 	By contactstatusoption = By.xpath("//*[contains (text(), 'Interested')]");//Locator for contact status 
@@ -208,6 +214,7 @@ public class CRMContactPage {
 	By morecommandsforccp = By.xpath("//div[@data-id = 'dataSetRoot_ContactChannelProfilestab']/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/button[1]");//Locator for more options for Contact Channel Profiles
 	By deactivateccp = By.xpath("//div[@data-id = 'SetStateDialog']/div[1]/div[3]/button[1]");//Locator for Deactivate button for Contact Channel Profiles
 	By deactivateinccpgrid = By.xpath("//button[@data-id = 'xxc_contactchannelprofile|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_contactchannelprofile.Deactivate']");//Locator for Deactivate button for deactivating Contact Channel Profile in grid
+
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -1207,6 +1214,26 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(jobtitle));
 		return driver.findElement(jobtitle);
 	}
+
+	public WebElement getContactAlternativeIdField() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactalternativeidfield));
+		return driver.findElement(contactalternativeidfield);
+	}
+	public WebElement getContactAlternativeIdValue() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactalternativeidvalue));
+		return driver.findElement(contactalternativeidvalue);
+	}
+	public WebElement getContactAltIdField() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactaltidfield));
+		return driver.findElement(contactaltidfield);
+	}
+	public WebElement getAllContactsOptn() {
+		return driver.findElement(allcontactsoptn);
+	}
+	
 	public WebElement getcontactstatus() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatus));
@@ -1242,4 +1269,5 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(deactivateinccpgrid));
 		return driver.findElement(deactivateinccpgrid);
 	}
+
 }

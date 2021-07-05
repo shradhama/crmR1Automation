@@ -3,12 +3,12 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.CampaignsPageTest">
+      <class name="crmframework.crmAutomation.CAB269PageTest">
         <methods>
-          <include name="TS003_VerifyCampaignLinkingToTheIncentivesTest"/>
+          <include name="TS001_VerifyAlternativeContactIDTest"/>
           <include name="initialize"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.CampaignsPageTest -->
+      </class> <!-- crmframework.crmAutomation.CAB269PageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
