@@ -185,7 +185,7 @@ public class CRMContactPage {
 	By selectbeginswithoptrforaccname = By.xpath("//button[@data-index = '6']"); //Locator for Begins With operator for Account name
 	
 	
-	//CCAB-256
+	//CAB-256
 	By contactstatusnotavalidbuyingacc = By.xpath("//option[contains(text(),'Not a Valid Buying Account')]");
 	By gletterfilterlink = By.xpath("//a[@id='G_link']");
 	By statusreasonnotavalidbuyingaccinheader = By.xpath("//div[@title='Not a Valid Buying Account']");
@@ -199,6 +199,12 @@ public class CRMContactPage {
 	By contactalternativeid = By.xpath("//div[@data-id = 'editFormRoot']/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]");//Locator for altenative contact id
 	By accountatcontact = By.xpath("//div[@data-id = 'parentcustomerid.fieldControl-LookupResultsDropdown_parentcustomerid_selected_tag_text']");//Locator for Account Name at Contact Page
 	By jobtitle = By.xpath("//label[contains(text(),'Job Title')]");//Locator for Job Title
+	
+	//CAB-259
+	By contactalternativeidfield = By.xpath("//div[contains(text(),'Contact Alternative Id')]"); //Locator for Contact Alternative Id field
+	By contactalternativeidvalue = By.xpath("//div[@data-id='cell-0-8']"); //Locator for contact alternative id value
+	By contactaltidfield = By.xpath("//div[@data-id='xxc_contact_alt_id']"); //Locator for contact alternative id field
+	By allcontactsoptn = By.xpath("//*[text()='All Contacts']"); //Locator for All Contacts view option
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -1198,4 +1204,24 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(jobtitle));
 		return driver.findElement(jobtitle);
 	}
+	public WebElement getContactAlternativeIdField() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactalternativeidfield));
+		return driver.findElement(contactalternativeidfield);
+	}
+	public WebElement getContactAlternativeIdValue() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactalternativeidvalue));
+		return driver.findElement(contactalternativeidvalue);
+	}
+	public WebElement getContactAltIdField() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactaltidfield));
+		return driver.findElement(contactaltidfield);
+	}
+	public WebElement getAllContactsOptn() {
+		return driver.findElement(allcontactsoptn);
+	}
+	
+	
 }
