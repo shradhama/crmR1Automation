@@ -18,7 +18,7 @@
 			<class name="crmframework.crmAutomation.ActivitiesPageTest"/>
 			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> 
 			<class name="crmframework.crmAutomation.CAB256PageTest"/> -->
-			<class name="crmframework.crmAutomation.CAB269PageTest"/>
+			<class name="crmframework.crmAutomation.CAB231PageTest"/>
 		</classes>
 	</test>
 </suite>
