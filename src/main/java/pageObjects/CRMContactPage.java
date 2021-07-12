@@ -200,6 +200,12 @@ public class CRMContactPage {
 	By accountatcontact = By.xpath("//div[@data-id = 'parentcustomerid.fieldControl-LookupResultsDropdown_parentcustomerid_selected_tag_text']");//Locator for Account Name at Contact Page
 	By jobtitle = By.xpath("//label[contains(text(),'Job Title')]");//Locator for Job Title
 	
+	//CAB-269
+	By contactalternativeidfield = By.xpath("//div[contains(text(),'Contact Alternative Id')]"); //Locator for Contact Alternative Id field
+	By contactalternativeidvalue = By.xpath("//div[@data-id='cell-0-8']"); //Locator for contact alternative id value
+	By contactaltidfield = By.xpath("//div[@data-id='xxc_contact_alt_id']"); //Locator for contact alternative id field
+	By allcontactsoptn = By.xpath("//*[text()='All Contacts']"); //Locator for All Contacts view option
+
 	//CAB-231
 	By contactstatus = By.xpath("//select[@aria-label = 'Contact Status']");//Locator for Contact Status
 	By contactstatusoption = By.xpath("//*[contains (text(), 'Interested')]");//Locator for contact status 
@@ -1260,4 +1266,28 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(channelid));
 		return driver.findElement(channelid);
 	}
+	
+	public WebElement getContactAlternativeIdField() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactalternativeidfield));
+		return driver.findElement(contactalternativeidfield);
+	}
+	public WebElement getContactAlternativeIdValue() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactalternativeidvalue));
+		return driver.findElement(contactalternativeidvalue);
+	}
+	public WebElement getContactAltIdField() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactaltidfield));
+		return driver.findElement(contactaltidfield);
+	}
+	public WebElement getAllContactsOptn() {
+		return driver.findElement(allcontactsoptn);
+	}
+	
 }
+
+
+
+
