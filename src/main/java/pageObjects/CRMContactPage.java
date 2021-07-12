@@ -185,7 +185,7 @@ public class CRMContactPage {
 	By selectbeginswithoptrforaccname = By.xpath("//button[@data-index = '6']"); //Locator for Begins With operator for Account name
 	
 	
-	//CAB-256
+	//CCAB-256
 	By contactstatusnotavalidbuyingacc = By.xpath("//option[contains(text(),'Not a Valid Buying Account')]");
 	By gletterfilterlink = By.xpath("//a[@id='G_link']");
 	By statusreasonnotavalidbuyingaccinheader = By.xpath("//div[@title='Not a Valid Buying Account']");
@@ -205,6 +205,18 @@ public class CRMContactPage {
 	By contactalternativeidvalue = By.xpath("//div[@data-id='cell-0-8']"); //Locator for contact alternative id value
 	By contactaltidfield = By.xpath("//div[@data-id='xxc_contact_alt_id']"); //Locator for contact alternative id field
 	By allcontactsoptn = By.xpath("//*[text()='All Contacts']"); //Locator for All Contacts view option
+
+	//CAB-231
+	By contactstatus = By.xpath("//select[@aria-label = 'Contact Status']");//Locator for Contact Status
+	By contactstatusoption = By.xpath("//*[contains (text(), 'Interested')]");//Locator for contact status 
+	By marketoption = By.xpath("//ul[@aria-label = 'Lookup results']/li[1]");//Locator for market option
+	By contactchannelprofilestab = By.xpath("//ul[@aria-label = 'Contact Form']/li[3]");//Locator for Contact Channel Profiles tab
+	By morecommandsforccp = By.xpath("//div[@data-id = 'dataSetRoot_ContactChannelProfilestab']/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/button[1]");//Locator for more options for Contact Channel Profiles
+	By deactivateccp = By.xpath("//div[@data-id = 'SetStateDialog']/div[1]/div[3]/button[1]");//Locator for Deactivate button for Contact Channel Profiles
+	By deactivateinccpgrid = By.xpath("//button[@data-id = 'xxc_contactchannelprofile|NoRelationship|SubGridStandard|Mscrm.SubGrid.xxc_contactchannelprofile.Deactivate']");//Locator for Deactivate button for deactivating Contact Channel Profile in grid
+	By newccp = By.xpath("//button[@aria-label = 'New Contact Channel Profile']");//Locator for new Contact Channel Profile button
+	By ccpchannel = By.xpath("//input[@aria-label = 'Channel, Lookup']");//Locator for Channel 
+	By channelid = By.xpath("//div[@data-id = 'xxc_channelid.fieldControl-LookupResultsDropdown_xxc_channelid_infoContainer']");//Locator for JuniperMarket Channel in dd
 	
 	public CRMContactPage(WebDriver driver) {
 
@@ -1204,6 +1216,57 @@ public class CRMContactPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(jobtitle));
 		return driver.findElement(jobtitle);
 	}
+	public WebElement getcontactstatus() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatus));
+		return driver.findElement(contactstatus);
+	}
+	public WebElement getcontactstatusoption() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusoption));
+		return driver.findElement(contactstatusoption);
+	}
+	public WebElement getmarketoption() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(marketoption));
+		return driver.findElement(marketoption);
+	}
+	public WebElement getcontactchannelprofilestab() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactchannelprofilestab));
+		return driver.findElement(contactchannelprofilestab);
+	}
+	public WebElement getmorecommandsforccp() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(morecommandsforccp));
+		return driver.findElement(morecommandsforccp);
+	}
+	public WebElement getdeactivateccp() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(deactivateccp));
+		return driver.findElement(deactivateccp);
+	}
+	public WebElement getdeactivateinccpgrid() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(deactivateinccpgrid));
+		return driver.findElement(deactivateinccpgrid);
+	}
+	public WebElement getnewccp() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(newccp));
+		return driver.findElement(newccp);
+	}
+	public WebElement getccpchannel() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ccpchannel));
+		return driver.findElement(ccpchannel);
+	}
+	public WebElement getchannelid() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(channelid));
+		return driver.findElement(channelid);
+	}
+	
 	public WebElement getContactAlternativeIdField() {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(contactalternativeidfield));
@@ -1223,5 +1286,8 @@ public class CRMContactPage {
 		return driver.findElement(allcontactsoptn);
 	}
 	
-	
 }
+
+
+
+
