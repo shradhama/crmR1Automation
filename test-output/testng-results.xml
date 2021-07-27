@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" total="2" passed="0">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="312349" started-at="2021-07-09T05:21:45Z" finished-at="2021-07-09T05:26:57Z">
+  <suite name="Suite" duration-ms="221644" started-at="2021-07-27T08:18:16Z" finished-at="2021-07-27T08:21:58Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="312349" started-at="2021-07-09T05:21:45Z" finished-at="2021-07-09T05:26:57Z">
-      <class name="crmframework.crmAutomation.CAB231PageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.CAB231PageTest@523884b2]" name="initialize" is-config="true" duration-ms="193696" started-at="2021-07-09T10:51:45Z" finished-at="2021-07-09T10:54:58Z">
+    <test name="Test" duration-ms="221644" started-at="2021-07-27T08:18:16Z" finished-at="2021-07-27T08:21:58Z">
+      <class name="crmframework.crmAutomation.AccountPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@59f99ea]" name="initialize" is-config="true" duration-ms="117236" started-at="2021-07-27T13:48:16Z" finished-at="2021-07-27T13:50:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="FAIL" signature="TS001_VerifyContactChannelProfileforJuniper()[pri:0, instance:crmframework.crmAutomation.CAB231PageTest@523884b2]" name="TS001_VerifyContactChannelProfileforJuniper" duration-ms="50965" started-at="2021-07-09T10:54:58Z" finished-at="2021-07-09T10:55:49Z">
+        <test-method status="FAIL" signature="TS017_VerifyDuplicateAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@59f99ea]" name="TS017_VerifyDuplicateAccountTest" duration-ms="104289" started-at="2021-07-27T13:50:13Z" finished-at="2021-07-27T13:51:57Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[@aria-label='Create a timeline record.']"}
-  (Session info: chrome=91.0.4472.124)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@data-id='manageDuplicatesTitle']"}
+  (Session info: chrome=91.0.4472.164)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
 System info: host: 'SHRADHAMA-W10', ip: '172.27.182.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir12832_1985335987}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:55727}, acceptInsecureCerts=false, browserVersion=91.0.4472.124, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 3d140ef4f8915191bb6ac0988b71052d
-*** Element info: {Using=xpath, value=//button[@aria-label='Create a timeline record.']}]]>
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir16848_1234642439}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:59206}, acceptInsecureCerts=false, browserVersion=91.0.4472.164, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 8b237372a27a473b0848691d025ed438
+*** Element info: {Using=xpath, value=//h1[@data-id='manageDuplicatesTitle']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@aria-label='Create a timeline record.']"}
-  (Session info: chrome=91.0.4472.124)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@data-id='manageDuplicatesTitle']"}
+  (Session info: chrome=91.0.4472.164)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
 System info: host: 'SHRADHAMA-W10', ip: '172.27.182.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir12832_1985335987}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:55727}, acceptInsecureCerts=false, browserVersion=91.0.4472.124, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 3d140ef4f8915191bb6ac0988b71052d
-*** Element info: {Using=xpath, value=//button[@aria-label='Create a timeline record.']}
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir16848_1234642439}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:59206}, acceptInsecureCerts=false, browserVersion=91.0.4472.164, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 8b237372a27a473b0848691d025ed438
+*** Element info: {Using=xpath, value=//h1[@data-id='manageDuplicatesTitle']}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -48,8 +48,8 @@ Session ID: 3d140ef4f8915191bb6ac0988b71052d
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-	at pageObjects.CRMAccountsPage.getAddTimelineBtn(CRMAccountsPage.java:342)
-	at crmframework.crmAutomation.CAB231PageTest.TS001_VerifyContactChannelProfileforJuniper(CAB231PageTest.java:99)
+	at pageObjects.CRMAccountsPage.getDuplicateRecordsPopupTitle(CRMAccountsPage.java:821)
+	at crmframework.crmAutomation.AccountPageTest.TS017_VerifyDuplicateAccountTest(AccountPageTest.java:1043)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -79,61 +79,27 @@ Session ID: 3d140ef4f8915191bb6ac0988b71052d
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS001_VerifyContactChannelProfileforJuniper -->
-        <test-method status="FAIL" signature="TS002_VerifyContactChannelProfileInterestForJuniper()[pri:0, instance:crmframework.crmAutomation.CAB231PageTest@523884b2]" name="TS002_VerifyContactChannelProfileInterestForJuniper" duration-ms="67485" started-at="2021-07-09T10:55:49Z" finished-at="2021-07-09T10:56:57Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- TS017_VerifyDuplicateAccountTest -->
+        <test-method status="FAIL" signature="sendEmail()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@59f99ea]" name="sendEmail" is-config="true" duration-ms="0" started-at="2021-07-27T13:51:58Z" finished-at="2021-07-27T13:51:58Z">
+          <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-id='cell-0-2']"}
-  (Session info: chrome=91.0.4472.124)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'SHRADHAMA-W10', ip: '172.27.182.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir12832_1985335987}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:55727}, acceptInsecureCerts=false, browserVersion=91.0.4472.124, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 3d140ef4f8915191bb6ac0988b71052d
-*** Element info: {Using=xpath, value=//div[@data-id='cell-0-2']}]]>
+              <![CDATA[javax.mail.AuthenticationFailedException: 535 5.7.3 Authentication unsuccessful
+]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-id='cell-0-2']"}
-  (Session info: chrome=91.0.4472.124)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'SHRADHAMA-W10', ip: '172.27.182.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir12832_1985335987}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:55727}, acceptInsecureCerts=false, browserVersion=91.0.4472.124, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 3d140ef4f8915191bb6ac0988b71052d
-*** Element info: {Using=xpath, value=//div[@data-id='cell-0-2']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-	at pageObjects.CRMAccountsPage.getValidateInactiveAccName(CRMAccountsPage.java:419)
-	at crmframework.crmAutomation.CAB231PageTest.TS002_VerifyContactChannelProfileInterestForJuniper(CAB231PageTest.java:187)
+              <![CDATA[java.lang.RuntimeException: javax.mail.AuthenticationFailedException: 535 5.7.3 Authentication unsuccessful
+
+	at resources.SendEmail.sendEmailWithAttachment(SendEmail.java:101)
+	at crmframework.crmAutomation.AccountPageTest.sendEmail(AccountPageTest.java:1984)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:308)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
@@ -143,13 +109,25 @@ Session ID: 3d140ef4f8915191bb6ac0988b71052d
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: javax.mail.AuthenticationFailedException: 535 5.7.3 Authentication unsuccessful
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:965)
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780)
+	at javax.mail.Service.connect(Service.java:388)
+	at javax.mail.Service.connect(Service.java:246)
+	at javax.mail.Service.connect(Service.java:195)
+	at javax.mail.Transport.send0(Transport.java:254)
+	at javax.mail.Transport.send(Transport.java:124)
+	at resources.SendEmail.sendEmailWithAttachment(SendEmail.java:96)
+	... 19 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS002_VerifyContactChannelProfileInterestForJuniper -->
-      </class> <!-- crmframework.crmAutomation.CAB231PageTest -->
+        </test-method> <!-- sendEmail -->
+      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

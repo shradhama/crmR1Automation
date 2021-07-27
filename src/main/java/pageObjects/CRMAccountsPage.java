@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CRMAccountsPage {
+	
 
 	public WebDriver driver;
 	public FluentWait<WebDriver> wait;
@@ -59,7 +60,7 @@ public class CRMAccountsPage {
 	By activatepopupstatusfield = By.xpath("//select[@aria-label='Status']");
 	By accstatusbuysatcorplevel = By.xpath("//option[contains(text(),'Buys at Corporate Level')]");
 	By activatepopupactivatebtn = By.xpath("//button[@data-id='ok_id']");
-	By accstatusreason = By.xpath("//div[@data-lp-id='MscrmControls.FieldControls.PicklistStatusControl|header_statuscode.fieldControl|account']");
+	By accstatusreason = By.xpath("//div[@data-id = 'form-header']/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]");
 	By activeaccountslabel = By.xpath("//div[@aria-label='Active Accounts']");
 	By inactiveaccountslabel = By.xpath("//li[@aria-label='Inactive Accounts']");
 	By statusreasonbuysatcorplevelinheader = By.xpath("//div[@title='Buys at Corporate Level']");
@@ -86,18 +87,18 @@ public class CRMAccountsPage {
 	By addnotebutton = By.xpath("//button[@aria-label='Add note']");
 	By cancelnotebutton = By.xpath("//button[@id='create_note_cancel_btn']");
 	By notesubject = By.xpath("//div[@id='timeline_record_title_text520480cb-f222-56a8-9dcb-c78e97e2bce7']");
-	By viewcreatednote = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div/div[1]/div/div[2]/div[2]/div[1]/div"); //Locator for newly created Note name on timeline
+	By viewcreatednote = By.xpath("//div[@id='TimelineMainContainer']/div[1]/li[1]/div[1]/div[2]/div[2]/div[1]/div[1]"); //Locator for newly created Note name on timeline
 	By posttimelineoptn =By.xpath("//li[@data-id='notescontrol-createNewRecord_flyoutMenuItem_post']");
 	By posttextenter = By.xpath("//textarea[@id='create_post_postText']");
 	By postAddButton = By.xpath("//button[@aria-label='Add post']");
 	By postCancelButton = By.xpath("//button[@id='create_post_cancel_btn']");
-	By viewCreatedPost = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div/div[1]/div/div[2]/div[2]/div[1]/div"); //Locator for newly created Post name on timeline
+	By viewCreatedPost = By.xpath("//div[@id = 'TimelineMainContainer']/div[1]/li[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]"); //Locator for newly created Post name on timeline
 	By auditHistoryRelatedTab = By.xpath("//span[@id='navAudit_Related']"); //xpath added for AuditHistory option from Related Dropdown list
 	By auditHistoryTab = By.xpath("//li[@title='Audit History']"); // xpath for Activity History Tab
-	By deleteNote = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[2]"); //Locator for Delete Note button
+	By deleteNote = By.xpath("//div[@id = 'TimelineMainContainer']/div[1]/li[1]/div[1]/div[2]/div[1]/div[3]/button[2]"); //Locator for Delete Note button
 	By timelineDetails = By.xpath("//div[@id='TL_Group_key_3']//div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]");
 	By okConfirmBtn = By.xpath("//span[@id='confirmButtonText']");
-	By deletePost = By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/button[3]"); //Locator for Delete Post button
+	By deletePost = By.xpath("//div[@id = 'TimelineMainContainer']/div[1]/li[1]/div[1]/div[2]/div[1]/div[3]/button[3]"); //Locator for Delete Post button
 	By validateaccnameinsearchresults = By.xpath("//div[@data-id='cell-0-2']");
 	By applocation = By.xpath("//input[@data-id = 'location.fieldControl-text-box-text']");
 	By phonecalloption = By.xpath("//li[@aria-label = 'Phone Call Activity']");
@@ -162,7 +163,7 @@ public class CRMAccountsPage {
 	By movetoparentaccount = By.xpath("//span[@data-id = 'parentaccountid.fieldControl-crmSymbolFont_selectedRecords_entity-symbol']");
 	By deleteselectedparentaccount = By.xpath("//section[@id= 'ACCOUNT_INFORMATION']/section[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/button[1]/span[1]");
 	By clickparentaccountlookup = By.xpath("//input[@aria-label = 'Parent Account, Lookup']");
-	By selectparentaccount = By.xpath("//ul[@aria-label = 'Lookup recently used results']/li[1]/div[2]/span[1]");
+	By selectparentaccount = By.xpath("//ul[@aria-label = 'Lookup results']/li[1]/div[2]/span[1]");
 	By clickextensiontextbox = By.xpath("//input[@data-id = 'xxc_phone1ext.fieldControl-text-box-text']");
 	By clickfaxtextbox = By.xpath("//input[@aria-label = 'Fax']");
 	By clickwebsiteurl = By.xpath("//input[@data-id = 'websiteurl.fieldControl-url-text-input']");
@@ -197,7 +198,7 @@ public class CRMAccountsPage {
 	By exporttostaticworksheetpageonly = By.xpath("//button[@aria-label = 'Static Worksheet (Page only)']");
 	By exporttodynamicworksheet = By.xpath("//button[@aria-label = 'Dynamic Worksheet']");
 	By exporttodynamicpivottable = By.xpath("//button[@aria-label = 'Dynamic PivotTable']");
-	By phoneCallTimelineSubject= By.xpath("//div[@id='TimelineGroupsMainContainer']/div[1]/div/div[1]/div/div[2]/div[2]/label"); //Locator for newly created Phone call on Timeline
+	By phoneCallTimelineSubject= By.xpath("//div[@id='TimelineMainContainer']/div[1]/li[1]/div[1]/div[2]/div[2]"); //Locator for newly created Phone call on Timeline
 	By accrefreshbtn = By.xpath("//button[@aria-label='Refresh']");
 	By duplicaterecordspopupcancelbtn = By.xpath("//button[@aria-label = 'Cancel']");
 	By phonecallduedatecurrent = By.xpath("//div[@aria-label = 'Calendar']/div[1]/div[2]/div[2]/div[2]/table[1]/tbody[1]/tr[3]/td[3]/button[1]");
@@ -209,7 +210,7 @@ public class CRMAccountsPage {
 	By tasksavenclosebtn = By.xpath("//button[@data-id='quickCreateSaveAndCloseBtn']");
 	By acctypelabel = By.xpath("//div[@data-id = 'xxc_typecode-FieldSectionItemContainer']/div[2]/div[1]/div[1]/span[1]/label[1]");
 	By accstreet3label = By.xpath("//label[contains(text(),'Street 3')]");
-	By verifyaccountppointment = By.xpath("//div[@id = 'TimelineMainContainerSection']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/label[1]");//Locator for getting text of subject for an appointment
+	By verifyaccountppointment = By.xpath("//div[@id = 'TimelineGroupsMainContainer']/li[1]/div[1]/div[2]/div[2]/label[1]");//Locator for getting text of subject for an appointment
 	//By trackprogressexportbtn = By.xpath("//div[@data-id = 'alertdialog']div[1]/div[3]/button[1]/span[1]"); //Locator for track progress for export online option for accounts
 	By clickcountry = By.xpath("//div[@class = 'wj-listbox-item'][2]"); 
 	By summarytab = By.xpath("//h2[@data-id = 'form-sectionHeader-SUMMARY_TAB_column_3_section_1']");
@@ -219,6 +220,10 @@ public class CRMAccountsPage {
 	By contactpreferences = By.xpath("//section[@aria-label = 'Contact Preferences']");//Locator for Contact Preferences on details tab
 	By conprefoptions = By.xpath("//section[@data-id = 'CONTACT_PREFERENCES']");//Locator for Contact Preferences
 	By listsection = By.xpath("//section[@aria-label = 'Associated Lists']");//Locator for Lists section
+	By descriptiontitle = By.xpath("//h2[@title = 'Description']"); //Locator for Description section title
+	By selectedparentaccount = By.xpath("//div[@data-id = 'parentaccountid.fieldControl-entityIconContainer_selectedRecords']");//Locator for selected Parent Account
+	By notearrow = By.xpath("//div[@id = 'TimelineMainContainer']/div[1]/li[1]/div[1]/div[2]/div[5]/span[1]");//Locator for arrow for note
+	By postarrow = By.xpath("//div[@id = 'TimelineMainContainer']/div[1]/li[1]/div[1]/div[2]/div[4]/span[1]");//Locator for arrow for post
 	
 	//CAB-256
 	By accountstatusmerged = By.xpath("//option[contains(text(),'Merged')]"); //Locator for selecting Account status as merged
@@ -235,7 +240,7 @@ public class CRMAccountsPage {
 	By accountstatusnotvalidbuyingacc = By.xpath("//option[contains(text(),'Not valid Buying account')]"); //Locator for Account status Not valid Buying account
 	By verifyaccstatusnotvalidbuyingacc= By.xpath("//span[contains(text(),'Not valid Buying account')]"); //Locator to verify Account status Not valid Buying account
 	By contactstatusreasonnotvalidbuyingacc= By.xpath("//span[@title='Not a Valid Buying Account']"); //Locator for Contact Status reason Not valid Buying account
-	
+	 
 	
 	public CRMAccountsPage(WebDriver driver) {
 
@@ -488,7 +493,7 @@ public class CRMAccountsPage {
 	public WebElement getAccStatusReson() {
 
 		wait = new WebDriverWait (driver,20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasonbuysatcorplevelinheader));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accstatusreason));
 		return driver.findElement(accstatusreason);
 	}
 
@@ -519,7 +524,7 @@ public class CRMAccountsPage {
 	public WebElement getAccStatusResonForInactiveAcc() {
 
 		wait = new WebDriverWait (driver,20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(statusreasonoutofbusinessinheader));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accstatusreason));
 		return driver.findElement(accstatusreason);
 	}
 
@@ -1455,6 +1460,26 @@ public class CRMAccountsPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(contactstatusreasonnotvalidbuyingacc));
 		return driver.findElement(contactstatusreasonnotvalidbuyingacc);
+	}
+	public WebElement getdescriptiontitle() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(descriptiontitle));
+		return driver.findElement(descriptiontitle);
+	}
+	public WebElement getselectedparentaccount() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectedparentaccount));
+		return driver.findElement(selectedparentaccount);
+	}
+	public WebElement getnotearrow() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(notearrow));
+		return driver.findElement(notearrow);
+	}
+	public WebElement getpostarrow() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(postarrow));
+		return driver.findElement(postarrow);
 	}
 }
 
