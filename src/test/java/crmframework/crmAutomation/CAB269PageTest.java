@@ -17,6 +17,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
@@ -32,6 +33,7 @@ import pageObjects.CRMLandingPage;
 import pageObjects.CRMLoginPage;
 import pageObjects.CRMPeoplePage;
 import resources.GenerateData;
+import resources.SendEmail;
 import resources.Utility;
 import resources.base;
 
@@ -62,7 +64,8 @@ public class CAB269PageTest extends base{
 	JavascriptExecutor js;
 	CRMPeoplePage pl;
 	CRMIncentivesPage in;
-
+	SendEmail se;
+	
 	@BeforeTest
 	public void initialize() throws IOException, InterruptedException
 	{
@@ -138,5 +141,11 @@ public class CAB269PageTest extends base{
 	//		driver.close();
 	//	}
 
+	@AfterSuite
+	public void sendEmail() 
+	{
+		se = new SendEmail();
+		se.sendEmailWithAttachment();
+	}
 
 }

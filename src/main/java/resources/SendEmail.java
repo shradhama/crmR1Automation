@@ -1,7 +1,5 @@
 package resources;
 
-import java.util.ArrayList;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -18,15 +16,14 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 
-@SuppressWarnings("restriction")
 public class SendEmail extends base{
 
 	public void sendEmailWithAttachment(){
 		// Recipient's email ID needs to be mentioned.
 		
-		String cc = prop.getProperty("emailreceiver");
 		String to2 = prop.getProperty("emailreceiver1");
 		String to3 = prop.getProperty("emailreceiver2");
+		String cc = prop.getProperty("emailreceiver");
 
 		// Sender's email ID needs to be mentioned
 		String from = prop.getProperty("emailsender");
@@ -58,12 +55,12 @@ public class SendEmail extends base{
 			message.setFrom(new InternetAddress(from));
 
 			// Set To: header field of the header.
-			message.setRecipients(Message.RecipientType.CC,
-					InternetAddress.parse(cc));
 			message.setRecipients(Message.RecipientType.TO,
 					InternetAddress.parse(to2));
 			message.setRecipients(Message.RecipientType.TO,
 					InternetAddress.parse(to3));
+			message.setRecipients(Message.RecipientType.CC,
+					InternetAddress.parse(cc));
 			
 			// Set Subject: header field
 			message.setSubject("CRM Automation Test Results");
