@@ -58,10 +58,10 @@ public class ContactPageTest extends base{
 	@BeforeTest
 	public void initialize() throws IOException, InterruptedException
 	{
-		driver = initializeDriver(); //requires for Parallel text execution
+		//driver = initializeDriver(); //requires for Parallel text execution
 		genData=new GenerateData();
 		utl = new Utility(driver);
-		utl.verifyLoginFunctionality(); //requires for Parallel text execution
+		//utl.verifyLoginFunctionality(); //requires for Parallel text execution
 	}
 
 	/*@Test(priority=1)

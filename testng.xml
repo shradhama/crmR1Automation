@@ -6,8 +6,8 @@
 	</listners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<!-- <class name="crmframework.crmAutomation.AccountPageTest" />
-			<class name="crmframework.crmAutomation.ContactPageTest" />
+			<class name="crmframework.crmAutomation.AccountPageTest" />
+			<!--<class name="crmframework.crmAutomation.ContactPageTest" />
 			<class name="crmframework.crmAutomation.PeoplePageTest" />
 			<class name="crmframework.crmAutomation.IncentivesPageTest" />
 			<class name="crmframework.crmAutomation.IncentiveDetailsPageTest" />
@@ -16,9 +16,10 @@
 			<class name="crmframework.crmAutomation.ReferenceDataPageTest" />
 			<class name="crmframework.crmAutomation.DashboardPageTest" />
 			<class name="crmframework.crmAutomation.ActivitiesPageTest"/>
-			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> 
-			<class name="crmframework.crmAutomation.CAB256PageTest"/> -->
-			<class name="crmframework.crmAutomation.CAB231PageTest"/>
+			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> -->
 		</classes>
+		<methods>
+			<include name="TS017_VerifyDuplicateAccountTest" />
+		</methods>
 	</test>
 </suite>

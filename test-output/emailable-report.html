@@ -31,55 +31,49 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">2</td><td class="numi">312.3 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">221.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Test &#8212; failed (configuration methods)</th></tr>
+<tr class="failedodd"><td rowspan="1">crmframework.crmAutomation.AccountPageTest</td><td><a href="#m1"><b>sendEmail</b>  </a></td><td class="numi">1</td><td>1627374118832</td><td class="numi">0</td></tr>
 <tr><th colspan="4">Test &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="2">crmframework.crmAutomation.CAB231PageTest</td><td><a href="#m1"><b>TS001_VerifyContactChannelProfileforJuniper</b>  </a></td><td class="numi">1</td><td>1625808298761</td><td class="numi">50965</td></tr><tr class="failedodd"><td><a href="#m2"><b>TS002_VerifyContactChannelProfileInterestForJuniper</b>  </a></td><td class="numi">1</td><td>1625808349837</td><td class="numi">67485</td></tr>
+<tr class="failedodd"><td rowspan="1">crmframework.crmAutomation.AccountPageTest</td><td><a href="#m2"><b>TS017_VerifyDuplicateAccountTest</b>  </a></td><td class="numi">1</td><td>1627374013662</td><td class="numi">104289</td></tr>
 </table>
 <h1>Test</h1>
-<h2 id="m1">crmframework.crmAutomation.CAB231PageTest:TS001_VerifyContactChannelProfileforJuniper</h2>
+<h2 id="m1">crmframework.crmAutomation.AccountPageTest:sendEmail</h2>
 <div style="padding-left:3em">
-<p>no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@aria-label=&apos;Create a timeline record.&apos;]&quot;}
-  (Session info: chrome=91.0.4472.124)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;SHRADHAMA-W10&apos;, ip: &apos;172.27.182.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir12832_1985335987}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:55727}, acceptInsecureCerts=false, browserVersion=91.0.4472.124, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 3d140ef4f8915191bb6ac0988b71052d
-*** Element info: {Using=xpath, value=//button[@aria-label=&apos;Create a timeline record.&apos;]}</p>
-sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
-<br/>at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
-<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
-<br/>at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-<br/>at pageObjects.CRMAccountsPage.getAddTimelineBtn(CRMAccountsPage.java:342)
-<br/>at crmframework.crmAutomation.CAB231PageTest.TS001_VerifyContactChannelProfileforJuniper(CAB231PageTest.java:99)
-<br/>25 lines not shown
+<p>javax.mail.AuthenticationFailedException: 535 5.7.3 Authentication unsuccessful
+</p>
+resources.SendEmail.sendEmailWithAttachment(SendEmail.java:101)
+<br/>at crmframework.crmAutomation.AccountPageTest.sendEmail(AccountPageTest.java:1984)
+<br/>19 lines not shown
+<p>Caused by 535 5.7.3 Authentication unsuccessful
+</p>
+com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:965)
+<br/>at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876)
+<br/>at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780)
+<br/>at javax.mail.Service.connect(Service.java:388)
+<br/>at javax.mail.Service.connect(Service.java:246)
+<br/>at javax.mail.Service.connect(Service.java:195)
+<br/>at javax.mail.Transport.send0(Transport.java:254)
+<br/>at javax.mail.Transport.send(Transport.java:124)
+<br/>at resources.SendEmail.sendEmailWithAttachment(SendEmail.java:96)
+<br/>at crmframework.crmAutomation.AccountPageTest.sendEmail(AccountPageTest.java:1984)
+<br/>19 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">crmframework.crmAutomation.CAB231PageTest:TS002_VerifyContactChannelProfileInterestForJuniper</h2>
+<h2 id="m2">crmframework.crmAutomation.AccountPageTest:TS017_VerifyDuplicateAccountTest</h2>
 <div style="padding-left:3em">
-<p>no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@data-id=&apos;cell-0-2&apos;]&quot;}
-  (Session info: chrome=91.0.4472.124)
+<p>no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h1[@data-id=&apos;manageDuplicatesTitle&apos;]&quot;}
+  (Session info: chrome=91.0.4472.164)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
 System info: host: &apos;SHRADHAMA-W10&apos;, ip: &apos;172.27.182.74&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir12832_1985335987}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:55727}, acceptInsecureCerts=false, browserVersion=91.0.4472.124, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 3d140ef4f8915191bb6ac0988b71052d
-*** Element info: {Using=xpath, value=//div[@data-id=&apos;cell-0-2&apos;]}</p>
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir16848_1234642439}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:59206}, acceptInsecureCerts=false, browserVersion=91.0.4472.164, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 8b237372a27a473b0848691d025ed438
+*** Element info: {Using=xpath, value=//h1[@data-id=&apos;manageDuplicatesTitle&apos;]}</p>
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 <br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 <br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -94,8 +88,8 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 <br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
 <br/>at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 <br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-<br/>at pageObjects.CRMAccountsPage.getValidateInactiveAccName(CRMAccountsPage.java:419)
-<br/>at crmframework.crmAutomation.CAB231PageTest.TS002_VerifyContactChannelProfileInterestForJuniper(CAB231PageTest.java:187)
+<br/>at pageObjects.CRMAccountsPage.getDuplicateRecordsPopupTitle(CRMAccountsPage.java:821)
+<br/>at crmframework.crmAutomation.AccountPageTest.TS017_VerifyDuplicateAccountTest(AccountPageTest.java:1043)
 <br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
