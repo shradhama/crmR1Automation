@@ -17,12 +17,9 @@
 			<class name="crmframework.crmAutomation.DashboardPageTest" />
 			<class name="crmframework.crmAutomation.ActivitiesPageTest"/>
 			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> 
-			<class name="crmframework.crmAutomation.CAB256PageTest"/> -->
+			<class name="crmframework.crmAutomation.CAB256PageTest"/>
 			<class name="crmframework.crmAutomation.CAB269PageTest"/>
 			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> -->
 		</classes>
-		<methods>
-			<include name="TS017_VerifyDuplicateAccountTest" />
-		</methods>
 	</test>
 </suite>

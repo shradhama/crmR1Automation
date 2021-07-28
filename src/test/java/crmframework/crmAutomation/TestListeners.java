@@ -1,5 +1,7 @@
 package crmframework.crmAutomation;
 
+import java.io.IOException;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -9,8 +11,9 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import resources.ExtendReporterNG;
+import resources.base;
 
-public class TestListeners implements ITestListener {
+public class TestListeners extends base implements ITestListener {
 	
 	ExtentTest test;
 	ExtentReports extent = ExtendReporterNG.getReportObject();
@@ -32,7 +35,13 @@ public class TestListeners implements ITestListener {
 
 	public void onTestFailure(ITestResult arg0) {
 		// TODO Auto-generated method stub
-		test.fail(arg0.getThrowable());
+		try {
+			String testMethodName = arg0.getName().toString().trim();
+			test.addScreenCaptureFromPath(capture(driver, testMethodName));
+			test.fail(arg0.getThrowable());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void onTestSkipped(ITestResult arg0) {
