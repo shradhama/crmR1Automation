@@ -121,6 +121,30 @@ public class CRMReferenceDataPage {
 	By channelsearchresult = By.xpath("//div[@data-id = 'cell-0-2']"); //Locator for channel name in search result
 	By clearsearch= By.xpath("//button[@aria-label='Clear search']"); //Locator to clear search
 	
+	By chanelgrid= By.xpath("//div[@data-id='cell-0-3']/a[1]"); //Locator for Channel Grid
+	By contactchannelprofile= By.xpath("//li[@title='Contact Channel Profiles']"); //Locator for Contact Channel Profile
+	By selectjupitermarket= By.xpath("//div[@data-id='cell-0-3']/a[1]"); //Locator to select Juniper Market option
+	By registrationopenlabel= By.xpath("//label[contains(text(),'Registration Open')]"); //Locator for Registration Open label
+	By registrationcloselabel= By.xpath("//label[contains(text(),'Registration Close')]"); //Locator for Registration Close label
+	By CDSauthkaylabel= By.xpath("//label[contains(text(),'CDSAuthKey')]"); //Locator for CDSAuthKey label
+	By registrationopenvalue= By.xpath(""); //Locator for Registration Open value
+	By addnewincetivebutton= By.xpath("//button[@aria-label= 'New']"); //locator to add new Incentive Category
+	By newincentivecategorylabel= By.xpath("//h1[contains(text(),'New Incentive Category')]"); //Locator for New Incentive Category label
+	By incentivecategoryname= By.xpath("//input[@aria-label='Name']"); //Locator to enter incentive category name
+	By incentivecategorytypedropdown= By.xpath("//select[@aria-label='Type']"); //Locator for Incentive Category drop down
+	By junipermarketoption= By.xpath("//option[contains(text(),'Juniper Market')]"); //Locator to select Juniper Market option
+	By estimatedvalue = By.xpath("//input[@aria-label='Estimated Value']"); //Locator for Estimated Value
+	By saveandcloseinccategory= By.xpath("//span[contains(text(),'Save & Close')]"); //Locator for Save & Close button
+	By verifyactiveincentivecategoryoption= By.xpath("//span[contains(text(),'Active Incentive Categories')]"); //Locator to verify Active Incentive category option
+	By newincentiveaccname= By.xpath("//input[@aria-label='Account, Lookup']"); //Locator to enter Account Name in New Incentive
+	By crmincentivelookup= By.xpath("//input[@aria-label='Incentive, Lookup']"); //Locator for CRM Incentive Lookup field
+	By crmincentivelookupsearchbtn= By.xpath("//button[@aria-label='Search records for Incentive, Lookup field']");//Locator for CRM Incentive Lookup field search button
+	By selectrecordfromgrid= By.xpath("//div[@data-id='cell-0-2']"); //Locator to select record from grid
+	By selectcontactchannelprofile= By.xpath("//li[@aria-label='Contact Channel Profiles']"); //Locator to select Contact Channel Profile
+	By junipermrkrecord= By.xpath("//a[@title='JuniperMarket']//parent::div"); //Locator to select juniper market record
+	By editrecord= By.xpath("//button[@aria-label='Edit']"); //Locator to edit the record
+	By valueofjunipersrc= By.xpath("//select[@aria-label='Juniper Source']"); //Locator to get value of Juniper Source	
+	
 	
 	public CRMReferenceDataPage(WebDriver driver) {
 		this.driver = driver;
@@ -529,7 +553,143 @@ public class CRMReferenceDataPage {
 	public WebElement getClearSearch() {
 		return driver.findElement(clearsearch);
 	}
-
 	
+	public WebElement selecChannelFromGrid() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(chanelgrid));
+		return driver.findElement(chanelgrid);
+	}
+
+	public WebElement getContactChannelProfile() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(contactchannelprofile));
+		return driver.findElement(contactchannelprofile);
+	}
+	
+	public WebElement selectJupiterMarket() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectjupitermarket));
+		return driver.findElement(selectjupitermarket);
+	}
+	
+	public WebElement getRegistrationOpenLabel() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(registrationopenlabel));
+		return driver.findElement(registrationopenlabel);
+	}
+	
+	public WebElement getRegistrationCloseLabel() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(registrationcloselabel));
+		return driver.findElement(registrationcloselabel);
+	}
+	
+	public WebElement getCDSAuthKeyLabel() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(CDSauthkaylabel));
+		return driver.findElement(CDSauthkaylabel);
+	}
+	
+	public WebElement getRegistrationOpenValue() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(registrationopenvalue));
+		return driver.findElement(registrationopenvalue);
+	}
+	
+	public WebElement getAddNewIncetiveButton() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(addnewincetivebutton));
+		return driver.findElement(addnewincetivebutton);
+	}
+	
+	public WebElement getNewIncentiveCategoryLabel() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(newincentivecategorylabel));
+		return driver.findElement(newincentivecategorylabel);
+	}
+	
+	public WebElement getIncentiveCategoryName() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(incentivecategoryname));
+		return driver.findElement(incentivecategoryname);
+	}
+	
+	public WebElement getIncentiveCategoryDropDown() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(incentivecategorytypedropdown));
+		return driver.findElement(incentivecategorytypedropdown);
+	}
+	
+	public WebElement selectJuniperMarketOption() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(junipermarketoption));
+		return driver.findElement(junipermarketoption);
+	}
+	
+	public WebElement getEstimatedValue() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(estimatedvalue));
+		return driver.findElement(estimatedvalue);
+	}
+	
+	public WebElement selectSaveAndCloseIncCategory() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(saveandcloseinccategory));
+		return driver.findElement(saveandcloseinccategory);
+	}
+	
+	public WebElement verifyActiveIncentiveCategoryOption() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(verifyactiveincentivecategoryoption));
+		return driver.findElement(verifyactiveincentivecategoryoption);
+	}
+	
+	public WebElement getNewIncentiveAccName() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(newincentiveaccname));
+		return driver.findElement(newincentiveaccname);
+	}
+	
+	public WebElement getCRMIncentiveLookup() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(crmincentivelookup));
+		return driver.findElement(crmincentivelookup);
+	}
+	
+	public WebElement getCRMIncentiveLookupSearchBtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(crmincentivelookupsearchbtn));
+		return driver.findElement(crmincentivelookupsearchbtn);
+	}
+	
+	public WebElement selectRecordFromGrid() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectrecordfromgrid));
+		return driver.findElement(selectrecordfromgrid);
+	}
+	
+	public WebElement selectContactChannelProfile() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(selectcontactchannelprofile));
+		return driver.findElement(selectcontactchannelprofile);
+	}
+	
+	public WebElement selectJuniperMrkRecord() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(junipermrkrecord));
+		return driver.findElement(junipermrkrecord);
+	}
+	
+	public WebElement getEditRecord() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(editrecord));
+		return driver.findElement(editrecord);
+	}
+	
+	public WebElement getValueofJuniperSrc() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(valueofjunipersrc));
+		return driver.findElement(valueofjunipersrc);
+	}
 }
 

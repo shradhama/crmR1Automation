@@ -5,6 +5,11 @@
     <failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: element is not attached to the page document
   (Session info: chrome=91.0.4472.124)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+<testsuite hostname="shradhama-w10" name="Test" tests="1" failures="1" timestamp="27 Jul 2021 08:21:58 GMT" time="221.644" errors="0">
+  <testcase name="TS017_VerifyDuplicateAccountTest" time="104.289" classname="crmframework.crmAutomation.AccountPageTest">
+    <failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&amp;quot;method&amp;quot;:&amp;quot;xpath&amp;quot;,&amp;quot;selector&amp;quot;:&amp;quot;//h1[@data-id=&amp;apos;manageDuplicatesTitle&amp;apos;]&amp;quot;}
+  (Session info: chrome=91.0.4472.164)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &amp;apos;3.4.0&amp;apos;, revision: &amp;apos;unknown&amp;apos;, time: &amp;apos;unknown&amp;apos;
 System info: host: &amp;apos;NILAMMA-W10&amp;apos;, ip: &amp;apos;192.168.68.2&amp;apos;, os.name: &amp;apos;Windows 10&amp;apos;, os.arch: &amp;apos;amd64&amp;apos;, os.version: &amp;apos;10.0&amp;apos;, java.version: &amp;apos;1.8.0_161&amp;apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
@@ -13,11 +18,20 @@ Session ID: 4db85c8d1209f72899afd71dddd989fd">
       <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
   (Session info: chrome=91.0.4472.124)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir16848_1234642439}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:59206}, acceptInsecureCerts=false, browserVersion=91.0.4472.164, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 8b237372a27a473b0848691d025ed438
+*** Element info: {Using=xpath, value=//h1[@data-id=&amp;apos;manageDuplicatesTitle&amp;apos;]}">
+      <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@data-id='manageDuplicatesTitle']"}
+  (Session info: chrome=91.0.4472.164)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
 System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir10872_973801315}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:61235}, acceptInsecureCerts=false, browserVersion=91.0.4472.124, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
 Session ID: 4db85c8d1209f72899afd71dddd989fd
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir16848_1234642439}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:59206}, acceptInsecureCerts=false, browserVersion=91.0.4472.164, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 8b237372a27a473b0848691d025ed438
+*** Element info: {Using=xpath, value=//h1[@data-id='manageDuplicatesTitle']}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
@@ -30,4 +44,13 @@ Session ID: 4db85c8d1209f72899afd71dddd989fd
 ... Removed 28 stack frames]]>
     </failure>
   </testcase> <!-- TS001_VerifyAlternativeContactIDTest -->
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
+	at pageObjects.CRMAccountsPage.getDuplicateRecordsPopupTitle(CRMAccountsPage.java:821)
+	at crmframework.crmAutomation.AccountPageTest.TS017_VerifyDuplicateAccountTest(AccountPageTest.java:1043)
+... Removed 28 stack frames]]>
+    </failure>
+  </testcase> <!-- TS017_VerifyDuplicateAccountTest -->
 </testsuite> <!-- Test -->

@@ -10,6 +10,13 @@
           <include name="initialize"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.CAB269PageTest -->
+      <class name="crmframework.crmAutomation.AccountPageTest">
+        <methods>
+          <include name="TS017_VerifyDuplicateAccountTest"/>
+          <include name="initialize"/>
+          <include name="sendEmail"/>
+        </methods>
+      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
