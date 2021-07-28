@@ -3,18 +3,11 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.CAB269PageTest">
-        <methods>
-          <include name="TS001_VerifyAlternativeContactIDTest"/>
-          <include name="sendEmail"/>
-          <include name="initialize"/>
-        </methods>
-      </class> <!-- crmframework.crmAutomation.CAB269PageTest -->
       <class name="crmframework.crmAutomation.AccountPageTest">
         <methods>
-          <include name="TS017_VerifyDuplicateAccountTest"/>
           <include name="initialize"/>
           <include name="sendEmail"/>
+          <include name="TS001_VerifyHomePageTest"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.AccountPageTest -->
     </classes>

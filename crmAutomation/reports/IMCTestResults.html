@@ -35,8 +35,7 @@
 <a href="#"><span class="badge badge-primary">CRM Automation Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jul 16, 2021 02:51:22 PM</span></a>
-<a href="#"><span class="badge badge-primary">Jul 27, 2021 01:48:16 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jul 28, 2021 10:12:51 AM</span></a>
 </li>
 </ul>
 </div>
@@ -46,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -67,7 +71,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -75,18 +79,14 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">TS001_VerifyAlternativeContactIDTest</p>
+            <p class="name">TS001_VerifyHomePageTest</p>
             <p class="text-sm">
-              <span>14:53:20 PM</span> / <span>00:00:00:000</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            <p class="name">TS017_VerifyDuplicateAccountTest</p>
-            <p class="text-sm">
-              <span>13:50:13 PM</span> / <span>00:01:44:323</span>
+              <span>10:13:08 AM</span> / <span>00:01:49:480</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -94,38 +94,34 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">TS001_VerifyAlternativeContactIDTest</h5>
-<span class='badge badge-success'>07.16.2021 14:53:20</span>
-<span class='badge badge-danger'>07.16.2021 14:53:20</span>
-<span class='badge badge-default'>00:00:00:000</span>
+<h5 class="test-status text-fail">TS001_VerifyHomePageTest</h5>
+<span class='badge badge-success'>07.28.2021 10:13:08</span>
+<span class='badge badge-danger'>07.28.2021 10:14:58</span>
+<span class='badge badge-default'>00:01:49:480</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 </div>
-</div>          </div>
-<h5 class="test-status text-fail">TS017_VerifyDuplicateAccountTest</h5>
-<span class='badge badge-success'>07.27.2021 13:50:13</span>
-<span class='badge badge-danger'>07.27.2021 13:51:57</span>
-<span class='badge badge-default'>00:01:44:323</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='C:\Users\nilamma\crmR1Automation\src\..\screenshots\TS001_VerifyHomePageTest.png' src="C:\Users\nilamma\crmR1Automation\src\..\screenshots\TS001_VerifyHomePageTest.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>1:51:57 PM</td>
+        <td>10:14:58 AM</td>
         <td>
-          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@data-id='manageDuplicatesTitle']"}
-  (Session info: chrome=91.0.4472.164)
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#idSubmit_SAOTCC_Continue"}
+  (Session info: chrome=92.0.4515.107)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'SHRADHAMA-W10', ip: '172.27.182.74', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir16848_1234642439}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:59206}, acceptInsecureCerts=false, browserVersion=91.0.4472.164, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 8b237372a27a473b0848691d025ed438
-*** Element info: {Using=xpath, value=//h1[@data-id='manageDuplicatesTitle']}
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir21216_1125980040}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:58164}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=92.0.4515.107, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 2e2bdbbb0dde0194797a8c34de506006
+*** Element info: {Using=id, value=idSubmit_SAOTCC_Continue}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -137,11 +133,11 @@ Session ID: 8b237372a27a473b0848691d025ed438
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:453)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-	at pageObjects.CRMAccountsPage.getDuplicateRecordsPopupTitle(CRMAccountsPage.java:821)
-	at crmframework.crmAutomation.AccountPageTest.TS017_VerifyDuplicateAccountTest(AccountPageTest.java:1043)
+	at pageObjects.CRMLoginPage.getVerify(CRMLoginPage.java:43)
+	at crmframework.crmAutomation.AccountPageTest.TS001_VerifyHomePageTest(AccountPageTest.java:86)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -163,9 +159,9 @@ Session ID: 8b237372a27a473b0848691d025ed438
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
 	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
 </textarea>
           
         </td>
@@ -184,7 +180,6 @@ Session ID: 8b237372a27a473b0848691d025ed438
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
 <div class="test-wrapper row view exception-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
@@ -217,9 +212,9 @@ Session ID: 8b237372a27a473b0848691d025ed438
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>13:50:13 PM</td>
+<td>10:13:08 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='1'>TS017_VerifyDuplicateAccountTest</a>
+<a href="#" class="linked" test-id='1' id='1'>TS001_VerifyHomePageTest</a>
 </td>
 </tr>
 </tbody>
@@ -239,27 +234,24 @@ Session ID: 8b237372a27a473b0848691d025ed438
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jul 16, 2021 02:51:22 PM</h3>
-<h3>Jul 27, 2021 01:48:16 PM</h3>
+<h3>Jul 28, 2021 10:12:51 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jul 16, 2021 02:53:20 PM</h3>
-<h3>Jul 27, 2021 01:51:58 PM</h3>
+<h3>Jul 28, 2021 10:14:58 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
 <h3>1</h3>
 </div></div>
 </div>
@@ -276,12 +268,11 @@ Session ID: 8b237372a27a473b0848691d025ed438
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
 <small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
@@ -319,8 +310,7 @@ Session ID: 8b237372a27a473b0848691d025ed438
 </div></div>
 <script>
 var timeline = {
-"TS001_VerifyAlternativeContactIDTest":0
-"TS017_VerifyDuplicateAccountTest":104.323
+"TS001_VerifyHomePageTest":109.48
 };
 </script>
 <div class="row">
@@ -343,8 +333,6 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
 passParent: 0,
 failParent: 1,
 warningParent: 0,
@@ -363,7 +351,6 @@ skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 passEvents: 0,
-failEvents: 0,
 failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,

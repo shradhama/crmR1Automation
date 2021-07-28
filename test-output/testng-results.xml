@@ -2,62 +2,38 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="195165" started-at="2021-07-12T12:41:09Z" finished-at="2021-07-12T12:44:24Z">
+  <suite name="Suite" duration-ms="126124" started-at="2021-07-28T04:42:52Z" finished-at="2021-07-28T04:44:58Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="195165" started-at="2021-07-12T12:41:09Z" finished-at="2021-07-12T12:44:24Z">
-      <class name="crmframework.crmAutomation.CAB269PageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.CAB269PageTest@523884b2]" name="initialize" is-config="true" duration-ms="120181" started-at="2021-07-12T18:11:09Z" finished-at="2021-07-12T18:13:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="FAIL" signature="TS001_VerifyAlternativeContactIDTest()[pri:0, instance:crmframework.crmAutomation.CAB269PageTest@523884b2]" name="TS001_VerifyAlternativeContactIDTest" duration-ms="74855" started-at="2021-07-12T18:13:09Z" finished-at="2021-07-12T18:14:24Z">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
-            <message>
-              <![CDATA[stale element reference: element is not attached to the page document
-  (Session info: chrome=91.0.4472.124)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
-  <suite name="Suite" duration-ms="221644" started-at="2021-07-27T08:18:16Z" finished-at="2021-07-27T08:21:58Z">
-    <groups>
-    </groups>
-    <test name="Test" duration-ms="221644" started-at="2021-07-27T08:18:16Z" finished-at="2021-07-27T08:21:58Z">
+    <test name="Test" duration-ms="126124" started-at="2021-07-28T04:42:52Z" finished-at="2021-07-28T04:44:58Z">
       <class name="crmframework.crmAutomation.AccountPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@59f99ea]" name="initialize" is-config="true" duration-ms="117236" started-at="2021-07-27T13:48:16Z" finished-at="2021-07-27T13:50:13Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@ae45eb6]" name="initialize" is-config="true" duration-ms="16441" started-at="2021-07-28T10:12:52Z" finished-at="2021-07-28T10:13:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="FAIL" signature="TS017_VerifyDuplicateAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@59f99ea]" name="TS017_VerifyDuplicateAccountTest" duration-ms="104289" started-at="2021-07-27T13:50:13Z" finished-at="2021-07-27T13:51:57Z">
+        <test-method status="FAIL" signature="TS001_VerifyHomePageTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@ae45eb6]" name="TS001_VerifyHomePageTest" duration-ms="108883" started-at="2021-07-28T10:13:08Z" finished-at="2021-07-28T10:14:57Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@data-id='manageDuplicatesTitle']"}
-  (Session info: chrome=91.0.4472.164)
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#idSubmit_SAOTCC_Continue"}
+  (Session info: chrome=92.0.4515.107)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
 System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir10872_973801315}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:61235}, acceptInsecureCerts=false, browserVersion=91.0.4472.124, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 4db85c8d1209f72899afd71dddd989fd]]>
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir21216_1125980040}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:58164}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=92.0.4515.107, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 2e2bdbbb0dde0194797a8c34de506006
+*** Element info: {Using=id, value=idSubmit_SAOTCC_Continue}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=91.0.4472.124)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir16848_1234642439}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:59206}, acceptInsecureCerts=false, browserVersion=91.0.4472.164, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 8b237372a27a473b0848691d025ed438
-*** Element info: {Using=xpath, value=//h1[@data-id='manageDuplicatesTitle']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@data-id='manageDuplicatesTitle']"}
-  (Session info: chrome=91.0.4472.164)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#idSubmit_SAOTCC_Continue"}
+  (Session info: chrome=92.0.4515.107)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
 System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir10872_973801315}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:61235}, acceptInsecureCerts=false, browserVersion=91.0.4472.124, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 4db85c8d1209f72899afd71dddd989fd
-Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}), userDataDir=C:\Users\SHRADH~1\AppData\Local\Temp\scoped_dir16848_1234642439}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:59206}, acceptInsecureCerts=false, browserVersion=91.0.4472.164, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
-Session ID: 8b237372a27a473b0848691d025ed438
-*** Element info: {Using=xpath, value=//h1[@data-id='manageDuplicatesTitle']}
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir21216_1125980040}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:58164}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=92.0.4515.107, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 2e2bdbbb0dde0194797a8c34de506006
+*** Element info: {Using=id, value=idSubmit_SAOTCC_Continue}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -68,15 +44,12 @@ Session ID: 8b237372a27a473b0848691d025ed438
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:313)
-	at crmframework.crmAutomation.CAB269PageTest.TS001_VerifyAlternativeContactIDTest(CAB269PageTest.java:117)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:453)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
-	at pageObjects.CRMAccountsPage.getDuplicateRecordsPopupTitle(CRMAccountsPage.java:821)
-	at crmframework.crmAutomation.AccountPageTest.TS017_VerifyDuplicateAccountTest(AccountPageTest.java:1043)
+	at pageObjects.CRMLoginPage.getVerify(CRMLoginPage.java:43)
+	at crmframework.crmAutomation.AccountPageTest.TS001_VerifyHomePageTest(AccountPageTest.java:86)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -103,60 +76,11 @@ Session ID: 8b237372a27a473b0848691d025ed438
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS001_VerifyAlternativeContactIDTest -->
-        <test-method status="PASS" signature="sendEmail()[pri:0, instance:crmframework.crmAutomation.CAB269PageTest@523884b2]" name="sendEmail" is-config="true" duration-ms="1738" started-at="2021-07-12T18:14:26Z" finished-at="2021-07-12T18:14:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sendEmail -->
-      </class> <!-- crmframework.crmAutomation.CAB269PageTest -->
-        </test-method> <!-- TS017_VerifyDuplicateAccountTest -->
-        <test-method status="FAIL" signature="sendEmail()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@59f99ea]" name="sendEmail" is-config="true" duration-ms="0" started-at="2021-07-27T13:51:58Z" finished-at="2021-07-27T13:51:58Z">
-          <exception class="java.lang.RuntimeException">
-            <message>
-              <![CDATA[javax.mail.AuthenticationFailedException: 535 5.7.3 Authentication unsuccessful
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: javax.mail.AuthenticationFailedException: 535 5.7.3 Authentication unsuccessful
-
-	at resources.SendEmail.sendEmailWithAttachment(SendEmail.java:101)
-	at crmframework.crmAutomation.AccountPageTest.sendEmail(AccountPageTest.java:1984)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:308)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: javax.mail.AuthenticationFailedException: 535 5.7.3 Authentication unsuccessful
-
-	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:965)
-	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876)
-	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780)
-	at javax.mail.Service.connect(Service.java:388)
-	at javax.mail.Service.connect(Service.java:246)
-	at javax.mail.Service.connect(Service.java:195)
-	at javax.mail.Transport.send0(Transport.java:254)
-	at javax.mail.Transport.send(Transport.java:124)
-	at resources.SendEmail.sendEmailWithAttachment(SendEmail.java:96)
-	... 19 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
+        </test-method> <!-- TS001_VerifyHomePageTest -->
+        <test-method status="PASS" signature="sendEmail()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@ae45eb6]" name="sendEmail" is-config="true" duration-ms="1744" started-at="2021-07-28T10:15:02Z" finished-at="2021-07-28T10:15:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sendEmail -->
