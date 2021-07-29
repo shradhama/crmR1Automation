@@ -25,6 +25,7 @@ import pageObjects.CRMAddMarketingRelationshipOwner;
 import pageObjects.CRMContactPage;
 import pageObjects.CRMHomePage;
 import pageObjects.CRMIncentiveTab;
+import pageObjects.CRMIncentivesPage;
 import pageObjects.CRMLandingPage;
 import pageObjects.CRMLoginPage;
 import pageObjects.CRMPeoplePage;
@@ -48,7 +49,7 @@ public class AccountPageTest extends base {
 	AppLandingPage alp;
 	CRMHomePage hp;
 	CRMAccountsPage ap;
-	CRMIncentiveTab inc;
+	CRMIncentivesPage in;
 	CRMAddMarketingRelationshipOwner amro;
 	Actions act;
 	CRMContactPage cp;
@@ -143,8 +144,7 @@ public class AccountPageTest extends base {
 		Thread.sleep(3000);
 		
 		//Scroll down on the page
-		act.keyDown(Keys.CONTROL).sendKeys(Keys.DOWN).perform();
-		act.keyDown(Keys.CONTROL).sendKeys(Keys.DOWN).release().perform();
+		utl.scrollToElement(ap.getAddress());
 		Thread.sleep(2000);
 		
 		//Enter Street1 address
@@ -162,7 +162,11 @@ public class AccountPageTest extends base {
 		Thread.sleep(2000);
 		ap.getState().sendKeys(prop.getProperty("state"));
 		Thread.sleep(2000);
-
+		
+		//Scroll down till Country field
+		utl.scrollToElement(ap.getCity());
+		Thread.sleep(3000);
+		
 		//Enter zipcode
 		ap.getZipcode().click();
 		Thread.sleep(2000);
@@ -618,6 +622,7 @@ public class AccountPageTest extends base {
 		String typewarningmessage=ap.getTypeNotificationWrapperMsg().getText();
 		Assert.assertEquals(typewarningmessage, "Type : Required fields must be filled in.");
 		System.out.println("Displayed only Type warning message displayed.");
+		Thread.sleep(5000);
 		ap.getPageBackBtn().click();
 		Thread.sleep(15000);
 		ap.getDiscardChangesBtn().click();
@@ -650,7 +655,7 @@ public class AccountPageTest extends base {
 		ap.getNoteTitleTextbox().click();
 		String subjectnote = "Cyb_Note";
 		ap.getNoteTitleTextbox().sendKeys(subjectnote);
-		utl.scrollToElement(ap.getAccTypeLabel());
+		utl.scrollToElement(ap.getAddress());
 		Thread.sleep(5000);
 		/*ap.getNoteiframe().click();
 		ap.getNoteiframe().sendKeys(genData.generateRandomString(25));
@@ -751,7 +756,8 @@ public class AccountPageTest extends base {
 		//Enter Phone Call details
 		String phonesubject = "Cyb_PhoneCall";
 		ap.getphonecallsubject().click();
-		ap.getphonecallsubject().clear();
+		ap.getphonecallsubject().click();
+		//ap.getphonecallsubject().clear();
 		ap.getphonecallsubject().sendKeys(phonesubject);
 		ap.getclickphonecallduedatecalendor().click();
 		ap.getphonecallduedatecurrent().click();
@@ -808,7 +814,7 @@ public class AccountPageTest extends base {
 		for (int i=0;i<7;i++)
 		{
 			regionvaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-6']"));
-			Assert.assertTrue(regionvaluesongrid.getText().contains(ExpectedRegion));
+			Assert.assertTrue(regionvaluesongrid.getText().equalsIgnoreCase(ExpectedRegion));
 		}
 		System.out.println("Region matches expected criteria");
 
@@ -832,7 +838,7 @@ public class AccountPageTest extends base {
 		for (int i=0;i<7;i++)
 		{
 			statevaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-5']"));
-			Assert.assertTrue(statevaluesongrid.getText().toUpperCase().contains(prop.getProperty("gridstatefilter")));
+			Assert.assertTrue(statevaluesongrid.getText().equalsIgnoreCase(prop.getProperty("gridstatefilter")));
 		}
 		System.out.println("State matches expected criteria");	
 
@@ -859,6 +865,7 @@ public class AccountPageTest extends base {
 		
 		//Click funnel for Account DBA Name column
 		ap.getclickdbanamegridfunnel().click();
+		Thread.sleep(3000);
 		ap.getclickfunnelfilter().click();
 
 		//Select filter options
@@ -884,6 +891,7 @@ public class AccountPageTest extends base {
 
 		//Click funnel for Phone column
 		ap.getclickdbaphonegridfunnel().click();
+		Thread.sleep(3000);
 		ap.getclickfunnelfilter().click();
 
 		//Select filter options
@@ -908,6 +916,7 @@ public class AccountPageTest extends base {
 
 		//Click funnel for City column
 		ap.getclickdbacitygridfunnel().click();
+		Thread.sleep(3000);
 		ap.getclickfunnelfilter().click();
 
 		//Select filter options
@@ -918,12 +927,15 @@ public class AccountPageTest extends base {
 		Thread.sleep(5000);	
 
 		//Verify city value selected on accounts grid
+		String City = prop.getProperty("city");
 		WebElement cityvaluesongrid = null;
+		Thread.sleep(3000);
 		for (int i=0;i<6;i++)
 		{
 			cityvaluesongrid = driver.findElement(By.xpath("//div[@data-id='cell-"+i+"-4']"));
-			Assert.assertTrue(cityvaluesongrid.getText().contains(prop.getProperty("city")));
+			Assert.assertTrue(cityvaluesongrid.getText().equalsIgnoreCase(City));
 		}
+		Thread.sleep(3000);
 		System.out.println("City matches expected criteria");
 
 		//Clear Filter for Phone
@@ -1121,9 +1133,9 @@ public class AccountPageTest extends base {
 		Thread.sleep(15000);
 		
 		//Verify that new account is created and displayed under Active accounts list
-		hp.getSearchAccountField().click();
-		hp.getSearchAccountField().sendKeys(accnameText);
-		hp.getstartsearch().click();
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(accnameText);
+		ap.getclicksearchbutton().click();
 		WebElement accnameinsearch = hp.getSearchResultAcc();
 		Assert.assertTrue(accnameinsearch.getText().contains(accnameText));
 
@@ -1143,9 +1155,9 @@ public class AccountPageTest extends base {
 
 		hp.getAccountTab().click();
 		Thread.sleep(15000);
-		hp.getSearchAccountField().click();
-		hp.getSearchAccountField().sendKeys(accnameText);
-		hp.getstartsearch().click();
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(accnameText);
+		ap.getclicksearchbutton().click();
 		//Thread.sleep(10000);
 
 		WebElement validateAccName = driver.findElement(By.xpath("//label[contains(text(),'"+accnameText+"')]"));
@@ -1254,9 +1266,9 @@ public class AccountPageTest extends base {
 		//Verification for updated account information
 		hp.getAccountTab().click();
 		Thread.sleep(15000);
-		hp.getSearchAccountField().click();
-		hp.getSearchAccountField().sendKeys(AccountNameNew);
-		hp.getstartsearch().click();
+		ap.getsearchaccounttextbox().click();
+		ap.getsearchaccounttextbox().sendKeys(AccountNameNew);
+		ap.getclicksearchbutton().click();
 		Thread.sleep(20000);
 		WebElement accountdbanameafterupdate = ap.getValidateInactiveAccName();
 		Assert.assertFalse(accountdbanameafterupdate.getText().contains(accountdbanamebeforeupdate));
@@ -1334,6 +1346,7 @@ public class AccountPageTest extends base {
 		hp = new CRMHomePage(driver);
 		ap = new CRMAccountsPage(driver);
 		cp = new CRMContactPage(driver);
+		in = new CRMIncentivesPage(driver);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		//Click on Accounts Tab at left menu.
@@ -1343,10 +1356,10 @@ public class AccountPageTest extends base {
 		try {
 			while(staleElement){
 				//Click on 'Search' view and enter an account name having associated Contacts (C & R Vintage)
-				hp.getSearchAccountField().click();
-				hp.getSearchAccountField().sendKeys(prop.getProperty("acchavingcontacts"));
-				hp.getstartsearch().click();
-				hp.getSearchResultAcc().click();
+				ap.getsearchaccounttextbox().click();
+				ap.getsearchaccounttextbox().sendKeys(prop.getProperty("acchavingcontacts"));
+				ap.getclicksearchbutton().click();
+				in.selectIncentiveRecord().click();
 				ap.getAccNaviagteBtn().click();
 				staleElement = false;
 			}
@@ -1460,10 +1473,12 @@ public class AccountPageTest extends base {
 		//Verify that 'Media Segmentation' and 'Media Type' fields are displayed
 		List<WebElement> mediasegmentnlabel = ap.getMediaSegmentationFieldLabel();
 		Assert.assertTrue(mediasegmentnlabel.size()!= 0);
-
+		System.out.println("Media Segmentation field is displayed.");
+		
 		List<WebElement> mediatypelabel = ap.getMediaTypeFieldLabel();
 		Assert.assertTrue(mediatypelabel.size()!= 0);
-
+		System.out.println("Media Type field is displayed.");
+		
 		//Click on 'Media Segmentation' drop down
 		ap.getMediaSegmentationDropdown().click();
 		//Select a value in Media Segmentation (Las Vegas Local)
@@ -1489,9 +1504,11 @@ public class AccountPageTest extends base {
 		//Verify that Media Segmentation and Media Type fields should be disappeared from the new account form
 		List<WebElement> mediasegmentnlabel1 = ap.getMediaSegmentationFieldLabel();
 		Assert.assertFalse(mediasegmentnlabel1.size()!= 0);
-
+		System.out.println("Media Segmentation field is disappeared.");
+		
 		List<WebElement> mediatypelabel1 = ap.getMediaTypeFieldLabel();
 		Assert.assertFalse(mediatypelabel1.size()!= 0);
+		System.out.println("Media Type field is disappeared.");
 
 		//Navigate back to Active accounts list
 
@@ -1533,7 +1550,8 @@ public class AccountPageTest extends base {
 
 				//Click on 'Deactivate' button
 				ap.getDeactivatePopupDeactivatebtn();
-
+				Thread.sleep(5000);
+				
 				//Click on 'Refresh' button
 				ap.getAccRefreshBtn().click();
 				staleElement = false;
@@ -1588,12 +1606,12 @@ public class AccountPageTest extends base {
 		
 		//Click on 'New' button
 		ap.getAccountNewbtn().click();
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 		
 		//Enter Account DBA Name and click Save button to verify message for mandatory fields
-		ap.getAccountnametxtbx().click();
+		ap.getAccDBANametxbox().click();
 		Thread.sleep(3000);
-		ap.getAccountnametxtbx().sendKeys(genData.generateRandomAlphaNumeric(10));
+		ap.getAccDBANametxbox().sendKeys(genData.generateRandomAlphaNumeric(10));
 		Thread.sleep(5000);
 		ap.getAccSaveBtn().click();
 		//String totalwarningmessage= ap.getNotificationWrapperMsg().getText();
@@ -1609,14 +1627,14 @@ public class AccountPageTest extends base {
 		ap.getPhone().click();	*/
 		//String totalwarningmessage= ap.getNotificationWrapperMsg().getText();
 		
-		utl.scrollToElement(ap.getAccountnametxtbx());
+		utl.scrollToElement(ap.getAccDBANametxbox());
 		Thread.sleep(5000);
 		ap.getPhone().click();
 		Thread.sleep(5000);
 		ap.getPhone().sendKeys(genData.generateRandomNumber(10));
 		Thread.sleep(5000);
 		ap.getAccSaveBtn().click();
-		Thread.sleep(15000);
+		Thread.sleep(5000);
 		Assert.assertEquals(ap.getTypeNotificationWrapperMsg().getText(), "Type : Required fields must be filled in.");
 		System.out.println("Warning message is displayed properly.");
 		Thread.sleep(5000);
@@ -1631,15 +1649,15 @@ public class AccountPageTest extends base {
 		Thread.sleep(5000);
 		
 		//Enter Account DBA Name and click Save button to verify message for mandatory fields
-		ap.getAccountnametxtbx().click();
+		ap.getAccDBANametxbox().click();
 		Thread.sleep(3000);
-		ap.getAccountnametxtbx().sendKeys(genData.generateRandomAlphaNumeric(10));
+		ap.getAccDBANametxbox().sendKeys(genData.generateRandomAlphaNumeric(10));
 		Thread.sleep(3000);
-		ap.getAccountnametxtbx().click();
-		Thread.sleep(3000);
+		ap.getAccDBANametxbox().click();
+		Thread.sleep(5000);
 			
 		//Scroll down on the page		
-		utl.scrollToElement(ap.getAccTypeLabel());
+		utl.scrollToElement(ap.getAddress());
 		Thread.sleep(5000);
 		
 		//Enter Street1 address
@@ -1667,11 +1685,11 @@ public class AccountPageTest extends base {
 
 		//Enter country
 		ap.getCountrytxbx().click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		ap.getCountrydrpbtn().click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		ap.getCountryName().click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		ap.getAccSaveBtn().click();
 		Thread.sleep(5000);
 		String typewarningmessage=ap.getTypeNotificationWrapperMsg().getText();
@@ -1815,13 +1833,14 @@ public class AccountPageTest extends base {
 		cp.getexporttrackprogressbtn().click();
 		
 		//Switch to new My Imports tab
-		Set<String> windows1 = driver.getWindowHandles();
+		/*Set<String> windows1 = driver.getWindowHandles();
 		Iterator<String>it = windows1.iterator();
 		String parentId = it.next();
 		String childId = it.next();
-		driver.switchTo().window(childId);
-		Thread.sleep(15000);
+		driver.switchTo().window(childId);*/
+		Thread.sleep(5000);
 		driver.navigate().refresh();
+		Thread.sleep(5000);
 		
 		//Verify export to excel online
 		System.out.println(pl.getonlineexportverification().getText());
@@ -1830,12 +1849,19 @@ public class AccountPageTest extends base {
 		Thread.sleep(5000);
 
 		//Switch to previous browser tab
-		Set<String> windows = driver.getWindowHandles();
+		/*Set<String> windows = driver.getWindowHandles();
 		Iterator<String>it1 = windows.iterator();
 		String parentId1 = it1.next();
 		String childId1 = it1.next();
-		driver.switchTo().window(parentId1);
+		driver.switchTo().window(parentId1);*/
 
+		//Go to Accounts tab again
+		hp.getAccountTab().click();
+		Thread.sleep(15000);
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
+		ap.getclicksearchbutton().click();
+		Thread.sleep(15000);
+		
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
 

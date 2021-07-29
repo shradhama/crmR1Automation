@@ -21,5 +21,8 @@
 			<class name="crmframework.crmAutomation.CAB269PageTest"/>
 			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> -->
 		</classes>
+		<methods>
+		<!-- <include name="TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest()" />-->
+		</methods>
 	</test>
 </suite>
