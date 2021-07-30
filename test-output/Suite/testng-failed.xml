@@ -6,8 +6,9 @@
       <class name="crmframework.crmAutomation.AccountPageTest">
         <methods>
           <include name="initialize"/>
+          <include name="TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest"/>
           <include name="sendEmail"/>
-          <include name="TS001_VerifyHomePageTest"/>
+          <include name="TS024_VerifyExportToExcelTest"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.AccountPageTest -->
     </classes>

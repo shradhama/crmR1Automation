@@ -1,3 +1,4 @@
+
 package pageObjects;
 
 import java.util.List;
@@ -208,7 +209,7 @@ public class CRMAccountsPage {
 	By taskbtnontimeline = By.xpath("//div[text() = 'Task']");
 	By tasksubjecttxtbx = By.xpath("//input[@aria-label='Subject']");
 	By tasksavenclosebtn = By.xpath("//button[@data-id='quickCreateSaveAndCloseBtn']");
-	By acctypelabel = By.xpath("//div[@data-id = 'xxc_typecode-FieldSectionItemContainer']/div[2]/div[1]/div[1]/span[1]/label[1]");
+	By acctypelabel = By.xpath("//div[@data-id = 'xxc_typecode']/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/span[1]/label[1]");
 	By accstreet3label = By.xpath("//label[contains(text(),'Street 3')]");
 	By verifyaccountppointment = By.xpath("//div[@id = 'TimelineGroupsMainContainer']/li[1]/div[1]/div[2]/div[2]/label[1]");//Locator for getting text of subject for an appointment
 	//By trackprogressexportbtn = By.xpath("//div[@data-id = 'alertdialog']div[1]/div[3]/button[1]/span[1]"); //Locator for track progress for export online option for accounts
