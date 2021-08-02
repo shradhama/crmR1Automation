@@ -15,7 +15,8 @@ public class CRMRegistrationsPage {
 	By registrationname = By.xpath("//input[@aria-label = 'Name']");//Locator for Registration Name
 	By readonlynotification = By.xpath("//div[@id = 'notificationMessageAndButtons']");//Locator for read only mesage
 	By regexportexcel = By.xpath("//button[@data-id = 'xxc_registration|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_registration.ExportToExcel.Menu$splitButtonId']");//Locator for export to excel arrow
-	
+	By accountfieldonreggrid = By.xpath("//div[@data-id='cell-0-6']"); //Locator for Account field on Registration Grid
+
 	public CRMRegistrationsPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -34,6 +35,11 @@ public class CRMRegistrationsPage {
 		wait = new WebDriverWait (driver,20);
 		wait.until(ExpectedConditions.elementToBeClickable(regexportexcel));
 		return driver.findElement(regexportexcel);
+	}
+	public WebElement getAccountFieldOnRegGrid() {
+		wait = new WebDriverWait (driver,15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accountfieldonreggrid));
+		return driver.findElement(accountfieldonreggrid);
 	}
 
 }

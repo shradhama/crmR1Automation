@@ -66,7 +66,7 @@ public class PhoneCallMarketOutcomePageTest extends base {
 	public String listNameText;
 
 	@BeforeTest
-	public void initialize() throws IOException
+	public void initialize() throws IOException, InterruptedException
 	{
 		//driver = initializeDriver(); //requires for Parallel text execution
 		genData=new GenerateData();

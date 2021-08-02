@@ -60,7 +60,7 @@ public class RegistrationsPageTest extends base {
 	public String listNameText;
 	
 	@BeforeTest
-	public void initialize() throws IOException
+	public void initialize() throws IOException, InterruptedException
 	{
 		//driver = initializeDriver(); //requires for Parallel text execution
 		genData=new GenerateData();
@@ -136,7 +136,7 @@ public class RegistrationsPageTest extends base {
 		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("registrationaccount"));
 		ap.getclicksearchbutton().click();
 		Thread.sleep(3000);
-		Assert.assertTrue(cp.getContactMarketProfileDeclinedReasonField().getText().contains(prop.getProperty("registrationaccount")));
+		Assert.assertTrue(reg.getAccountFieldOnRegGrid().getText().contains(prop.getProperty("registrationaccount")));
 		System.out.println("Regitration Account is searched properly.");
 		in.getclearsearch().click();
 		
@@ -160,7 +160,7 @@ public class RegistrationsPageTest extends base {
 		ap.getAccPageBackBtn().click();
 		Thread.sleep(5000);
 		Assert.assertTrue(ap.getAccountNameSearchTable().getText().equals(RegistrationName));
-		Assert.assertTrue(cp.getContactMarketProfileDeclinedReasonField().getText().equals(AccountName));
+		Assert.assertTrue(reg.getAccountFieldOnRegGrid().getText().equals(AccountName));
 		Assert.assertTrue(ap.getPhoneinSearchTable().getText().equals(ContactName));
 		System.out.println("Regitration details are matching with grid details.");
 		
@@ -239,14 +239,16 @@ public class RegistrationsPageTest extends base {
 		cp.getexporttrackprogressbtn().click();
 		
 		//Switch to new My Imports tab
-		Set<String> windows1 = driver.getWindowHandles();
+		/*Set<String> windows1 = driver.getWindowHandles();
 		Iterator<String>it = windows1.iterator();
 		String parentId = it.next();
 		String childId = it.next();
-		driver.switchTo().window(childId);
+		driver.switchTo().window(childId);*/
 		
-		Thread.sleep(15000);
+		Thread.sleep(5000);
 		driver.navigate().refresh();
+		Thread.sleep(5000);
+		
 		//Verify export to excel online
 		System.out.println(pl.getonlineexportverification().getText());
 		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
@@ -254,17 +256,20 @@ public class RegistrationsPageTest extends base {
 		Thread.sleep(10000);
 
 		//Switch to previous browser tab
-		Set<String> windows = driver.getWindowHandles();
+		/*Set<String> windows = driver.getWindowHandles();
 		Iterator<String>it1 = windows.iterator();
 		String parentId1 = it1.next();
 		String childId1 = it1.next();
-		driver.switchTo().window(parentId1);
+		driver.switchTo().window(parentId1);*/
 		
-/*
-		//Click three dots for Export option in header
-		ap.getclickoverflowbutton().click();
-*/
-		Thread.sleep(10000);
+		hp.getregistrationstab().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("registrationexportsearch"));
+		ap.getclicksearchbutton().click();
+		
+		/*//Click three dots for Export option in header
+		ap.getclickoverflowbutton().click()*/;
+
+		//Thread.sleep(10000);
 		//Click Export To Excel option under it
 		reg.getregexportexcel().click();
 
