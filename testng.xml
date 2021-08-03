@@ -6,23 +6,19 @@
 	</listners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="crmframework.crmAutomation.AccountPageTest" />
-			<!--<class name="crmframework.crmAutomation.ContactPageTest" />
+			<!--<class name="crmframework.crmAutomation.AccountPageTest" />
+			<class name="crmframework.crmAutomation.ContactPageTest" />
 			<class name="crmframework.crmAutomation.PeoplePageTest" />
 			<class name="crmframework.crmAutomation.IncentivesPageTest" />
-			<class name="crmframework.crmAutomation.IncentiveDetailsPageTest" />
-			<class name="crmframework.crmAutomation.RegistrationsPageTest" />
+			<class name="crmframework.crmAutomation.IncentiveDetailsPageTest" /> 
+			<class name="crmframework.crmAutomation.RegistrationsPageTest" />-->
 			<class name="crmframework.crmAutomation.ListManagementPageTest"/>
-			<class name="crmframework.crmAutomation.ReferenceDataPageTest" />
+			<!--<class name="crmframework.crmAutomation.ReferenceDataPageTest" />
 			<class name="crmframework.crmAutomation.DashboardPageTest" />
 			<class name="crmframework.crmAutomation.ActivitiesPageTest"/>
 			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> 
 			<class name="crmframework.crmAutomation.CAB256PageTest"/>
-			<class name="crmframework.crmAutomation.CAB269PageTest"/>
-			<class name="crmframework.crmAutomation.PhoneCallMarketOutcomePageTest" /> -->
+			<class name="crmframework.crmAutomation.CAB269PageTest"/>-->
 		</classes>
-		<methods>
-		<!-- <include name="TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest()" />-->
-		</methods>
 	</test>
 </suite>

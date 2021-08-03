@@ -1,116 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" total="28" passed="26">
+<testng-results skipped="0" failed="5" total="6" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="2998963" started-at="2021-07-29T13:51:10Z" finished-at="2021-07-29T14:41:09Z">
+  <suite name="Suite" duration-ms="524962" started-at="2021-08-02T13:02:49Z" finished-at="2021-08-02T13:11:34Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="2998963" started-at="2021-07-29T13:51:10Z" finished-at="2021-07-29T14:41:09Z">
-      <class name="crmframework.crmAutomation.AccountPageTest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="initialize" is-config="true" duration-ms="110601" started-at="2021-07-29T19:21:10Z" finished-at="2021-07-29T19:23:01Z">
+    <test name="Test" duration-ms="524962" started-at="2021-08-02T13:02:49Z" finished-at="2021-08-02T13:11:34Z">
+      <class name="crmframework.crmAutomation.ListManagementPageTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@4501b7af]" name="initialize" is-config="true" duration-ms="129792" started-at="2021-08-02T18:32:49Z" finished-at="2021-08-02T18:34:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="TS002_VerifyCreateNewAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS002_VerifyCreateNewAccountTest" duration-ms="153350" started-at="2021-07-29T19:23:01Z" finished-at="2021-07-29T19:25:34Z">
+        <test-method status="PASS" signature="TS002_VerifyExportToExcelListsTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@4501b7af]" name="TS002_VerifyExportToExcelListsTest" duration-ms="167078" started-at="2021-08-02T18:34:59Z" finished-at="2021-08-02T18:37:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS002_VerifyCreateNewAccountTest -->
-        <test-method status="PASS" signature="TS003_VerifyAddAppointmentToAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS003_VerifyAddAppointmentToAccountTest" duration-ms="122151" started-at="2021-07-29T19:25:34Z" finished-at="2021-07-29T19:27:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS003_VerifyAddAppointmentToAccountTest -->
-        <test-method status="PASS" signature="TS004_VerifyAddMarketingRelationshipOwnerToAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS004_VerifyAddMarketingRelationshipOwnerToAccountTest" duration-ms="113782" started-at="2021-07-29T19:27:36Z" finished-at="2021-07-29T19:29:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS004_VerifyAddMarketingRelationshipOwnerToAccountTest -->
-        <test-method status="PASS" signature="TS005_VerifySearchAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS005_VerifySearchAccountTest" duration-ms="42971" started-at="2021-07-29T19:29:30Z" finished-at="2021-07-29T19:30:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS005_VerifySearchAccountTest -->
-        <test-method status="PASS" signature="TS006_VerifyAuditHistoryTabOnAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS006_VerifyAuditHistoryTabOnAccountTest" duration-ms="82026" started-at="2021-07-29T19:30:13Z" finished-at="2021-07-29T19:31:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS006_VerifyAuditHistoryTabOnAccountTest -->
-        <test-method status="PASS" signature="TS007_VerifyParentAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS007_VerifyParentAccountTest" duration-ms="77093" started-at="2021-07-29T19:31:35Z" finished-at="2021-07-29T19:32:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS007_VerifyParentAccountTest -->
-        <test-method status="PASS" signature="TS008_VerifyAccountStatusToActivateAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS008_VerifyAccountStatusToActivateAccountTest" duration-ms="85524" started-at="2021-07-29T19:32:52Z" finished-at="2021-07-29T19:34:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS008_VerifyAccountStatusToActivateAccountTest -->
-        <test-method status="PASS" signature="TS009_VerifyAccountStatusToDeactivateAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS009_VerifyAccountStatusToDeactivateAccountTest" duration-ms="69120" started-at="2021-07-29T19:34:18Z" finished-at="2021-07-29T19:35:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS009_VerifyAccountStatusToDeactivateAccountTest -->
-        <test-method status="PASS" signature="TS010_VerifyBusinessRuleForPhoneNumberTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS010_VerifyBusinessRuleForPhoneNumberTest" duration-ms="127264" started-at="2021-07-29T19:35:27Z" finished-at="2021-07-29T19:37:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS010_VerifyBusinessRuleForPhoneNumberTest -->
-        <test-method status="PASS" signature="TS011_VerifyAddNoteToAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS011_VerifyAddNoteToAccountTest" duration-ms="84315" started-at="2021-07-29T19:37:34Z" finished-at="2021-07-29T19:38:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS011_VerifyAddNoteToAccountTest -->
-        <test-method status="PASS" signature="TS012_VerifyAddNewPostToAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS012_VerifyAddNewPostToAccountTest" duration-ms="62883" started-at="2021-07-29T19:38:59Z" finished-at="2021-07-29T19:40:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS012_VerifyAddNewPostToAccountTest -->
-        <test-method status="PASS" signature="TS013_VerifyPhoneCallOnAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS013_VerifyPhoneCallOnAccountTest" duration-ms="96588" started-at="2021-07-29T19:40:01Z" finished-at="2021-07-29T19:41:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS013_VerifyPhoneCallOnAccountTest -->
-        <test-method status="PASS" signature="TS014_VerifyStateAndRegionInGridTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS014_VerifyStateAndRegionInGridTest" duration-ms="75645" started-at="2021-07-29T19:41:38Z" finished-at="2021-07-29T19:42:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS014_VerifyStateAndRegionInGridTest -->
-        <test-method status="PASS" signature="TS015_VerifyNamePhoneCityInGridTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS015_VerifyNamePhoneCityInGridTest" duration-ms="147314" started-at="2021-07-29T19:42:54Z" finished-at="2021-07-29T19:45:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS015_VerifyNamePhoneCityInGridTest -->
-        <test-method status="PASS" signature="TS016_VerifySearchusingAccountNameandPhoneTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS016_VerifySearchusingAccountNameandPhoneTest" duration-ms="97492" started-at="2021-07-29T19:45:21Z" finished-at="2021-07-29T19:46:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS016_VerifySearchusingAccountNameandPhoneTest -->
-        <test-method status="PASS" signature="TS027_VerifyAddNewTaskFromTimelineToAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS027_VerifyAddNewTaskFromTimelineToAccountTest" duration-ms="45419" started-at="2021-07-29T19:46:59Z" finished-at="2021-07-29T19:47:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS027_VerifyAddNewTaskFromTimelineToAccountTest -->
-        <test-method status="PASS" signature="TS028_VerifyCountryAutocomplete()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS028_VerifyCountryAutocomplete" duration-ms="51732" started-at="2021-07-29T19:47:44Z" finished-at="2021-07-29T19:48:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS028_VerifyCountryAutocomplete -->
-        <test-method status="PASS" signature="TS019_VerifyUpdateAccountInformation()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS019_VerifyUpdateAccountInformation" duration-ms="150247" started-at="2021-07-29T19:48:36Z" finished-at="2021-07-29T19:51:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS019_VerifyUpdateAccountInformation -->
-        <test-method status="PASS" signature="TS020_VerifyAddContactTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS020_VerifyAddContactTest" duration-ms="65413" started-at="2021-07-29T19:51:06Z" finished-at="2021-07-29T19:52:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS020_VerifyAddContactTest -->
-        <test-method status="PASS" signature="TS021_VerifyUpdateContactsFromAccountFormTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS021_VerifyUpdateContactsFromAccountFormTest" duration-ms="168870" started-at="2021-07-29T19:52:11Z" finished-at="2021-07-29T19:55:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS021_VerifyUpdateContactsFromAccountFormTest -->
-        <test-method status="PASS" signature="TS022_VerifyMediaSegmentationFieldTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS022_VerifyMediaSegmentationFieldTest" duration-ms="123264" started-at="2021-07-29T19:55:00Z" finished-at="2021-07-29T19:57:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS022_VerifyMediaSegmentationFieldTest -->
-        <test-method status="PASS" signature="TS023_VerifyDetailsTabOnAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS023_VerifyDetailsTabOnAccountTest" duration-ms="88087" started-at="2021-07-29T19:57:03Z" finished-at="2021-07-29T19:58:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS023_VerifyDetailsTabOnAccountTest -->
-        <test-method status="FAIL" signature="TS024_VerifyExportToExcelTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS024_VerifyExportToExcelTest" duration-ms="104538" started-at="2021-07-29T19:58:32Z" finished-at="2021-07-29T20:00:16Z">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- TS002_VerifyExportToExcelListsTest -->
+        <test-method status="FAIL" signature="TS003_VerifyCooperativeListsAccountsViewTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@4501b7af]" name="TS003_VerifyCooperativeListsAccountsViewTest" duration-ms="35535" started-at="2021-08-02T18:37:46Z" finished-at="2021-08-02T18:38:22Z">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h1[1]/div[1] (tried for 15 second(s) with 500 MILLISECONDS interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertTrue(Assert.java:42)
-	at org.testng.Assert.assertTrue(Assert.java:52)
-	at crmframework.crmAutomation.AccountPageTest.TS024_VerifyExportToExcelTest(AccountPageTest.java:1847)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h1[1]/div[1] (tried for 15 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMIncentiveDetailsPage.getclickarrowforactiveincentive(CRMIncentiveDetailsPage.java:172)
+	at crmframework.crmAutomation.ListManagementPageTest.TS003_VerifyCooperativeListsAccountsViewTest(ListManagementPageTest.java:238)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -132,43 +47,69 @@
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
 	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h1[1]/div[1]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:644)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS024_VerifyExportToExcelTest -->
-        <test-method status="PASS" signature="TS025_VerifyBusinessRuleForAddressTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS025_VerifyBusinessRuleForAddressTest" duration-ms="202223" started-at="2021-07-29T20:00:17Z" finished-at="2021-07-29T20:03:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS025_VerifyBusinessRuleForAddressTest -->
-        <test-method status="PASS" signature="TS026_VerifyAssociatedListsSectionTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS026_VerifyAssociatedListsSectionTest" duration-ms="105396" started-at="2021-07-29T20:03:39Z" finished-at="2021-07-29T20:05:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS026_VerifyAssociatedListsSectionTest -->
-        <test-method status="PASS" signature="TS017_VerifyDuplicateAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS017_VerifyDuplicateAccountTest" duration-ms="214493" started-at="2021-07-29T20:05:24Z" finished-at="2021-07-29T20:08:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS017_VerifyDuplicateAccountTest -->
-        <test-method status="PASS" signature="TS018_VerifyDeactivateAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS018_VerifyDeactivateAccountTest" duration-ms="54946" started-at="2021-07-29T20:08:59Z" finished-at="2021-07-29T20:09:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TS018_VerifyDeactivateAccountTest -->
-        <test-method status="FAIL" signature="TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest" duration-ms="74930" started-at="2021-07-29T20:09:54Z" finished-at="2021-07-29T20:11:09Z">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- TS003_VerifyCooperativeListsAccountsViewTest -->
+        <test-method status="FAIL" signature="TS004_VerifyCreateNewListTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@4501b7af]" name="TS004_VerifyCreateNewListTest" duration-ms="43992" started-at="2021-08-02T18:38:23Z" finished-at="2021-08-02T18:39:07Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='id-7ff65c21-4d68-426f-8735-20aa96d791b0-1-xxc_name8-xxc_name.fieldControl-text-box-text']"}
+  (Session info: chrome=92.0.4515.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir28284_1361403827}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:60245}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=92.0.4515.107, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 5b5dd3619b2992821d4c3b24c37df572
+*** Element info: {Using=xpath, value=//input[@id='id-7ff65c21-4d68-426f-8735-20aa96d791b0-1-xxc_name8-xxc_name.fieldControl-text-box-text']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertTrue(Assert.java:42)
-	at org.testng.Assert.assertTrue(Assert.java:52)
-	at crmframework.crmAutomation.AccountPageTest.TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest(AccountPageTest.java:1589)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='id-7ff65c21-4d68-426f-8735-20aa96d791b0-1-xxc_name8-xxc_name.fieldControl-text-box-text']"}
+  (Session info: chrome=92.0.4515.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=92.0.4515.43 (8c61b7e2989f2990d42f859cac71319137787cce-refs/branch-heads/4515@{#306}), userDataDir=C:\Users\nilamma\AppData\Local\Temp\scoped_dir28284_1361403827}, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=ANY, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:60245}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=92.0.4515.107, browserName=chrome, javascriptEnabled=true, platformName=windows, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 5b5dd3619b2992821d4c3b24c37df572
+*** Element info: {Using=xpath, value=//input[@id='id-7ff65c21-4d68-426f-8735-20aa96d791b0-1-xxc_name8-xxc_name.fieldControl-text-box-text']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
+	at pageObjects.CRMListManagementPage.getlistname(CRMListManagementPage.java:118)
+	at crmframework.crmAutomation.ListManagementPageTest.TS004_VerifyCreateNewListTest(ListManagementPageTest.java:276)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -190,72 +131,152 @@
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
 	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest -->
-        <test-method status="FAIL" signature="sendEmail()[pri:0, instance:crmframework.crmAutomation.AccountPageTest@26653222]" name="sendEmail" is-config="true" duration-ms="0" started-at="2021-07-29T20:11:10Z" finished-at="2021-07-29T20:11:10Z">
-          <exception class="java.lang.RuntimeException">
+        </test-method> <!-- TS004_VerifyCreateNewListTest -->
+        <test-method status="FAIL" signature="TS005_VerifyListMembersRemovedViewTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@4501b7af]" name="TS005_VerifyListMembersRemovedViewTest" duration-ms="35918" started-at="2021-08-02T18:39:07Z" finished-at="2021-08-02T18:39:43Z">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[javax.mail.MessagingException: Can't send command to SMTP host;
-  nested exception is:
-	java.net.SocketException: Software caused connection abort: socket write error]]>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h1[1]/div[1] (tried for 15 second(s) with 500 MILLISECONDS interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: javax.mail.MessagingException: Can't send command to SMTP host;
-  nested exception is:
-	java.net.SocketException: Software caused connection abort: socket write error
-	at resources.SendEmail.sendEmailWithAttachment(SendEmail.java:98)
-	at crmframework.crmAutomation.AccountPageTest.sendEmail(AccountPageTest.java:2010)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h1[1]/div[1] (tried for 15 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at pageObjects.CRMIncentiveDetailsPage.getclickarrowforactiveincentive(CRMIncentiveDetailsPage.java:172)
+	at crmframework.crmAutomation.ListManagementPageTest.TS005_VerifyListMembersRemovedViewTest(ListManagementPageTest.java:324)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:308)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
 	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: javax.mail.MessagingException: Can't send command to SMTP host;
-  nested exception is:
-	java.net.SocketException: Software caused connection abort: socket write error
-	at com.sun.mail.smtp.SMTPTransport.sendCommand(SMTPTransport.java:2415)
-	at com.sun.mail.smtp.SMTPTransport.sendCommand(SMTPTransport.java:2402)
-	at com.sun.mail.smtp.SMTPTransport.close(SMTPTransport.java:1409)
-	at javax.mail.Transport.send0(Transport.java:257)
-	at javax.mail.Transport.send(Transport.java:124)
-	at resources.SendEmail.sendEmailWithAttachment(SendEmail.java:93)
-	... 19 more
-Caused by: java.net.SocketException: Software caused connection abort: socket write error
-	at java.net.SocketOutputStream.socketWrite0(Native Method)
-	at java.net.SocketOutputStream.socketWrite(Unknown Source)
-	at java.net.SocketOutputStream.write(Unknown Source)
-	at com.sun.mail.util.TraceOutputStream.write(TraceOutputStream.java:140)
-	at java.io.BufferedOutputStream.flushBuffer(Unknown Source)
-	at java.io.BufferedOutputStream.flush(Unknown Source)
-	at com.sun.mail.smtp.SMTPTransport.sendCommand(SMTPTransport.java:2413)
-	... 24 more
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@data-id = 'GridRoot']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h1[1]/div[1]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'NILAMMA-W10', ip: '192.168.68.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:644)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 26 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sendEmail -->
-      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
+        </test-method> <!-- TS005_VerifyListMembersRemovedViewTest -->
+        <test-method status="FAIL" signature="TS006_ManualFail_VerifyListMemberLastAddedRemovedUpdatedTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@4501b7af]" name="TS006_ManualFail_VerifyListMemberLastAddedRemovedUpdatedTest" duration-ms="42172" started-at="2021-08-02T18:39:43Z" finished-at="2021-08-02T18:40:25Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [7/31/2021 3:09 AM] but found []]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [7/31/2021 3:09 AM] but found []
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at crmframework.crmAutomation.ListManagementPageTest.TS006_ManualFail_VerifyListMemberLastAddedRemovedUpdatedTest(ListManagementPageTest.java:378)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS006_ManualFail_VerifyListMemberLastAddedRemovedUpdatedTest -->
+        <test-method status="FAIL" signature="TS007_VerifyExportToExcelListMembersTest()[pri:0, instance:crmframework.crmAutomation.ListManagementPageTest@4501b7af]" name="TS007_VerifyExportToExcelListMembersTest" duration-ms="68257" started-at="2021-08-02T18:40:25Z" finished-at="2021-08-02T18:41:34Z">
+          <exception class="java.util.NoSuchElementException">
+            <full-stacktrace>
+              <![CDATA[java.util.NoSuchElementException
+	at java.util.LinkedHashMap$LinkedHashIterator.nextNode(Unknown Source)
+	at java.util.LinkedHashMap$LinkedKeyIterator.next(Unknown Source)
+	at crmframework.crmAutomation.ListManagementPageTest.TS007_VerifyExportToExcelListMembersTest(ListManagementPageTest.java:557)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.util.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TS007_VerifyExportToExcelListMembersTest -->
+      </class> <!-- crmframework.crmAutomation.ListManagementPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

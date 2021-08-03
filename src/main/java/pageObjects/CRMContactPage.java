@@ -184,7 +184,6 @@ public class CRMContactPage {
 	By selectbeginswithoptr = By.xpath("//button[@data-index = '4']"); //Locator for Begins With operator
 	By selectbeginswithoptrforaccname = By.xpath("//button[@data-index = '6']"); //Locator for Begins With operator for Account name
 	
-	
 	//CCAB-256
 	By contactstatusnotavalidbuyingacc = By.xpath("//option[contains(text(),'Not a Valid Buying Account')]");
 	By gletterfilterlink = By.xpath("//a[@id='G_link']");

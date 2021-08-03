@@ -3,14 +3,16 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="crmframework.crmAutomation.AccountPageTest">
+      <class name="crmframework.crmAutomation.ListManagementPageTest">
         <methods>
+          <include name="TS006_ManualFail_VerifyListMemberLastAddedRemovedUpdatedTest"/>
+          <include name="TS007_VerifyExportToExcelListMembersTest"/>
+          <include name="TS004_VerifyCreateNewListTest"/>
           <include name="initialize"/>
-          <include name="TS029_ManualFail_VerifyAssociatedContactsAccountStatusOfDeactivatedAccountTest"/>
-          <include name="sendEmail"/>
-          <include name="TS024_VerifyExportToExcelTest"/>
+          <include name="TS005_VerifyListMembersRemovedViewTest"/>
+          <include name="TS003_VerifyCooperativeListsAccountsViewTest"/>
         </methods>
-      </class> <!-- crmframework.crmAutomation.AccountPageTest -->
+      </class> <!-- crmframework.crmAutomation.ListManagementPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -13,8 +13,8 @@ public class CRMListManagementPage {
 
 
 	By listsexportdropdown= By.xpath("//button[@data-id = 'xxc_list|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_list.ExportToExcel.Menu$splitButtonId']");//Locator for export to excel dropdown
-	By selectcheckbox1 = By.xpath("//input[@id='id-3a9ef5c2-02f2-49fc-b79e-5bb37b19ac68-1-entitySelector_id3-entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_listcreatedby']");//Locator for checkbox
-	By selectcheckbox2 = By.xpath("//input[@id='id-3a9ef5c2-02f2-49fc-b79e-5bb37b19ac68-1-entitySelector_id3-entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_listcreatedon']");//Locator for checkbox
+	By selectcheckbox1 = By.xpath("//div[@data-id='entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_listcreatedby']");//Locator for checkbox
+	By selectcheckbox2 = By.xpath("//div[@data-id='entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_listcreatedon']");//Locator for checkbox
 	//By selectview = By.xpath("li[contain (text(),'Co-Op List Query for Un-contacted Accounts')");//Locator for view in drop down for 'Co-Op List Query for Un-contacted Accounts'
 	By pagegrid = By.xpath("//div[@aria-label = 'Editable Grid']");//Locator for entity grid
 	By pinuncontacted = By.xpath("//div[@aria-label = 'Pin Co-Op List Query for Un-contacted Accounts']");//Locator for pin button for 'Co-Op List Query for Un-contacted Accounts'
