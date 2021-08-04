@@ -60,10 +60,10 @@ public class ListManagementPageTest extends base {
 	@BeforeTest
 	public void initialize() throws IOException, InterruptedException
 	{
-		driver = initializeDriver(); //requires for Parallel text execution
+		//driver = initializeDriver(); //requires for Parallel text execution
 		genData=new GenerateData();
 		utl=new Utility(driver);
-		utl.verifyLoginFunctionality(); //requires for Parallel text execution
+		//utl.verifyLoginFunctionality(); //requires for Parallel text execution
 	}
 
 	/*@Test(priority=1)
@@ -235,7 +235,7 @@ public class ListManagementPageTest extends base {
 		hp.getAccountTab().click();
 		
 		//Select Co-Op List Query for Uncontacted Accounts option in Views
-		ind.getclickarrowforactiveincentive().click();
+		ap.getActiveAccDropDownBtn().click();
 		Thread.sleep(5000);
 		lmp.getpinuncontacted().click();
 		Thread.sleep(15000);
@@ -243,9 +243,9 @@ public class ListManagementPageTest extends base {
 		//Verification if report data is displayed properly
 		Assert.assertTrue(lmp.getpagegrid().isDisplayed());
 		System.out.println("Report is diplayed properly."); 
-		ind.getclickarrowforactiveincentive().click();
+		/*ind.getclickarrowforactiveincentive().click();
 		Thread.sleep(5000);
-		lmp.getunpin().click();
+		lmp.getunpin().click();*/
 	}
 	
 	@Test(priority=4)
@@ -321,7 +321,7 @@ public class ListManagementPageTest extends base {
 		Thread.sleep(5000);
 		
 		//Select List Members Removed in Views
-		ind.getclickarrowforactiveincentive().click();
+		ap.getActiveAccDropDownBtn().click();
 		Thread.sleep(10000);
 		lmp.getlistmembersremoved().click();
 		Thread.sleep(10000);
@@ -551,32 +551,38 @@ public class ListManagementPageTest extends base {
 		cp.getexporttrackprogressbtn().click();
 		
 		//Switch to new My Imports tab
-		Set<String> windows1 = driver.getWindowHandles();
+		/*Set<String> windows1 = driver.getWindowHandles();
 		Iterator<String>it = windows1.iterator();
 		String parentId = it.next();
 		String childId = it.next();
-		driver.switchTo().window(childId);
+		driver.switchTo().window(childId);*/
 		
 		Thread.sleep(30000);
 		driver.navigate().refresh();
+		Thread.sleep(5000);
 		//Verify export to excel online
 		System.out.println(pl.getonlineexportverification().getText());
 		Assert.assertTrue(pl.getonlineexportverification().getText().contains("Completed"));
 		System.out.println("Excel exported online successfully.");
 		Thread.sleep(10000);
 
-		//Switch to previous browser tab
+		/*//Switch to previous browser tab
 		Set<String> windows = driver.getWindowHandles();
 		Iterator<String>it1 = windows.iterator();
 		String parentId1 = it1.next();
 		String childId1 = it1.next();
-		driver.switchTo().window(parentId1);
+		driver.switchTo().window(parentId1);*/
 		
 /*
 		//Click three dots for Export option in header
 		ap.getclickoverflowbutton().click();
 */
-		Thread.sleep(10000);
+		//Thread.sleep(10000);
+		
+		hp.getlistmemberstab().click();
+		ap.getsearchaccounttextbox().sendKeys(prop.getProperty("name"));
+		ap.getclicksearchbutton().click();
+		
 		//Click Export To Excel option under it
 		lmp.getexportlistmembers().click();
 

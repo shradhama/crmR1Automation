@@ -14,16 +14,16 @@ public class CRMListManagementPage {
 
 	By listsexportdropdown= By.xpath("//button[@data-id = 'xxc_list|NoRelationship|HomePageGrid|Mscrm.HomepageGrid.xxc_list.ExportToExcel.Menu$splitButtonId']");//Locator for export to excel dropdown
 	By selectcheckbox1 = By.xpath("//div[@data-id='entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_listcreatedby']");//Locator for checkbox
-	By selectcheckbox2 = By.xpath("//div[@data-id='entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_listcreatedon']");//Locator for checkbox
+	By selectcheckbox2 = By.xpath("//div[@data-id=entitySelector_id.fieldControl-selectAllCheckBoxElementKeyxxc_listcreatedon']");//Locator for checkbox
 	//By selectview = By.xpath("li[contain (text(),'Co-Op List Query for Un-contacted Accounts')");//Locator for view in drop down for 'Co-Op List Query for Un-contacted Accounts'
 	By pagegrid = By.xpath("//div[@aria-label = 'Editable Grid']");//Locator for entity grid
-	By pinuncontacted = By.xpath("//div[@aria-label = 'Pin Co-Op List Query for Un-contacted Accounts']");//Locator for pin button for 'Co-Op List Query for Un-contacted Accounts'
+	By pinuncontacted = By.xpath("//li[@aria-label='Co-Op List Query for Un-contacted Accounts']");//Locator for pin button for 'Co-Op List Query for Un-contacted Accounts'
 	By unpin = By.xpath("//div[@title = 'Default view for this list']");//Locator for unpining default view
 	By listmembersremoved = By.xpath("//li[@aria-label = 'List Members Removed']");//Locator for LIst Members Removed view
 	By openlist = By.xpath("//div[@data-id = 'xxc_list.fieldControl-LookupResultsDropdown_xxc_list_selected_tag_text']");//Locator for List at List Member page
 	By selectview = By.xpath("li[contain (text(),'Co-Op List Query for Un-contacted Accounts')");//Locator for view in drop down for 'Co-Op List Query for Un-contacted Accounts'
-	By listname= By.xpath("//input[@id='id-7ff65c21-4d68-426f-8735-20aa96d791b0-1-xxc_name8-xxc_name.fieldControl-text-box-text']"); //Locator to enter the name
-	By listtype= By.xpath("//select[@id='id-7ff65c21-4d68-426f-8735-20aa96d791b0-4-xxc_type8-xxc_type.fieldControl-option-set-select']"); //Locator to select list type
+	By listname= By.xpath("//input[@aria-label='Name']"); //Locator to enter the name
+	By listtype= By.xpath("//select[@aria-label='Type']"); //Locator to select list type
 	By listtypeoption= By.xpath("//option[@value='272970001']"); //Locator to select list type option
 	By listsaveclosebtn= By.xpath("//button[@aria-label='Save & Close']"); //Locator to click on save and close button
 	By listnewbtn = By.xpath("//span[contains(text(),'New')]"); //Locator to click on list add new button
@@ -91,7 +91,7 @@ public class CRMListManagementPage {
 	public WebElement getpinuncontacted() {
 
 		wait = new WebDriverWait (driver,15);
-		wait.until(ExpectedConditions.elementToBeClickable(pinuncontacted));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(pinuncontacted));
 		return driver.findElement(pinuncontacted);
 	}
 
@@ -264,9 +264,8 @@ public class CRMListManagementPage {
 	public WebElement getListLastUpdatedDate() {
 		return driver.findElement(listlastupdateddate);
 	}
-	public WebElement getexportlistmembers() {
-		wait = new WebDriverWait (driver,20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(exportlistmembers));
+	public WebElement getexportlistmembers() throws InterruptedException {
+		Thread.sleep(5000);
 		return driver.findElement(exportlistmembers);
 	}
 	public WebElement getlistmembercreatedby() {
