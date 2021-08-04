@@ -10,6 +10,7 @@
           <include name="TS004_VerifyCreateNewListTest"/>
           <include name="initialize"/>
           <include name="TS005_VerifyListMembersRemovedViewTest"/>
+          <include name="TS002_VerifyExportToExcelListsTest"/>
           <include name="TS003_VerifyCooperativeListsAccountsViewTest"/>
         </methods>
       </class> <!-- crmframework.crmAutomation.ListManagementPageTest -->

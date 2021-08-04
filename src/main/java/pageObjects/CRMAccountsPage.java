@@ -414,6 +414,8 @@ public class CRMAccountsPage {
 	}
 
 	public WebElement getActiveAccDropDownBtn() {
+		wait = new WebDriverWait (driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(accdropdownbtn));
 		return driver.findElement(accdropdownbtn);
 	}
 
